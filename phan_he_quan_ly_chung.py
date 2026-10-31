@@ -297,7 +297,7 @@ def render_phan_he_quan_ly_chung(df_tai_khoan, role_curr, nam_hoc, BASE_DIR, THU
     so_nu = tong_hs - so_nam
     so_dtts = len(df_hs_all[df_hs_all['Dân tộc'] != 'Kinh']) if not df_hs_all.empty else 495
     df_bt_now = pd.read_csv(f_bt_ktx, encoding='utf-8-sig') if os.path.exists(f_bt_ktx) else pd.DataFrame()
-    so_ban_tru = len(df_bt_now) if not df_bt_now.empty else 207
+    so_ban_tru = len(df_bt_now) if not df_bt_now.empty else 196
 
     # Khởi tạo 6 Tab chức năng cốt lõi (Gọn gàng - Khoa học - Vừa vặn màn hình)
     tab_dieu_hanh, tab_doi_ngu_hs, tab_chu_nhiem, tab_chuyen_mon, tab_ke_hoach, tab_admin_nh = st.tabs([
@@ -319,7 +319,7 @@ def render_phan_he_quan_ly_chung(df_tai_khoan, role_curr, nam_hoc, BASE_DIR, THU
         m1.metric("👨‍🎓 Tổng Sĩ Số", f"{tong_hs} HS", delta="21 Lớp học")
         m2.metric("👦 Nam / 👧 Nữ", f"{so_nam} / {so_nu}", delta=f"Nữ: {(so_nu/tong_hs*100):.1f}%")
         m3.metric("🏔️ Dân Tộc Thiểu Số", f"{so_dtts} HS", delta=f"{(so_dtts/tong_hs*100):.1f}% toàn trường")
-        m4.metric("🛏️ Bán Trú KTX", f"{so_ban_tru} HS", delta="207 suất chính thức")
+        m4.metric("🛏️ Bán Trú KTX", f"{so_ban_tru} HS", delta=f"{so_ban_tru} suất đăng ký")
         m5.metric("🏫 Quy Mô Khối", "21 Lớp", delta="K10: 7 | K11: 7 | K12: 7")
 
         st.markdown("---")
@@ -427,7 +427,7 @@ def render_phan_he_quan_ly_chung(df_tai_khoan, role_curr, nam_hoc, BASE_DIR, THU
                     <h6 style='color:#991B1B; margin:0 0 4px 0;'>🍀 7. Kết Nối Bán Trú KTX</h6>
                     <p style='font-size:11.5px; color:#4B5563; margin:0;'>Giám sát bữa ăn & phòng ở:</p>
                     <ul style='font-size:11.5px; color:#1F2937; padding-left:14px; margin:4px 0 0 0;'>
-                        <li><b>Suất cơm trưa:</b> 207 suất live</li>
+                        <li><b>Suất cơm trưa:</b> {so_ban_tru} suất live</li>
                         <li><b>Phòng ở:</b> 19P (Nam 9P, Nữ 10P)</li>
                         <li><b>ATTP 3 bước:</b> Đạt chuẩn ✓</li>
                     </ul>
@@ -986,13 +986,17 @@ def render_phan_he_quan_ly_chung(df_tai_khoan, role_curr, nam_hoc, BASE_DIR, THU
                 d_url = cfg_gs.get("drive_folder_url", "").strip() or "https://drive.google.com/drive/my-drive"
                 st.link_button("📂 MỞ GOOGLE DRIVE", d_url, use_container_width=True)
 
-            # Chỉ số dữ liệu toàn trường sẵn sàng đồng bộ
+            # Chỉ số dữ liệu toàn trường sẵn sàng đồng bộ (Thời gian thực)
+            so_xe_now = len(pd.read_csv(os.path.join(BASE_DIR, 'quan_ly_phuong_tien.csv'), encoding='utf-8-sig')) if os.path.exists(os.path.join(BASE_DIR, 'quan_ly_phuong_tien.csv')) else 549
+            so_gv_now = len(pd.read_csv(f_gv_db, encoding='utf-8-sig')) if os.path.exists(f_gv_db) else 42
+            so_doan_now = len(pd.read_csv(os.path.join(BASE_DIR, 'thi_dua_dtn_20_lop.csv'), encoding='utf-8-sig')) if os.path.exists(os.path.join(BASE_DIR, 'thi_dua_dtn_20_lop.csv')) else 21
+
             m_gs1, m_gs2, m_gs3, m_gs4, m_gs5 = st.columns(5)
-            m_gs1.metric("👨‍🎓 Học sinh", "829 HS", "21 Lớp")
-            m_gs2.metric("🛵 Phương tiện", "549 Xe", "Mã QR")
-            m_gs3.metric("📋 CBGV-NV", "42 Người", "4 Tổ")
-            m_gs4.metric("🛏️ Bán trú", "207 HS", "19 Phòng")
-            m_gs5.metric("🏆 Thi đua", "21 Chi đoàn", "Nề nếp Live")
+            m_gs1.metric("👨‍🎓 Học sinh", f"{tong_hs} HS", "21 Lớp")
+            m_gs2.metric("🛵 Phương tiện", f"{so_xe_now} Xe", "Mã QR")
+            m_gs3.metric("📋 CBGV-NV", f"{so_gv_now} Người", "4 Tổ")
+            m_gs4.metric("🛏️ Bán trú", f"{so_ban_tru} HS", "19 Phòng")
+            m_gs5.metric("🏆 Thi đua", f"{so_doan_now} Chi đoàn", "Nề nếp Live")
 
             st.markdown("---")
 
@@ -1092,7 +1096,7 @@ def render_phan_he_quan_ly_chung(df_tai_khoan, role_curr, nam_hoc, BASE_DIR, THU
                             ('Hoc_Sinh_829', f_hs_tt),
                             ('Phuong_Tien_549', os.path.join(BASE_DIR, 'quan_ly_phuong_tien.csv')),
                             ('Can_Bo_42', f_gv_db),
-                            ('Ban_Tru_207', f_bt_ktx),
+                            ('Ban_Tru_KTX', f_bt_ktx),
                             ('Thi_Dua_21_Lop', os.path.join(BASE_DIR, 'thi_dua_dtn_20_lop.csv'))
                         ]:
                             if os.path.exists(f_p):
@@ -1261,12 +1265,12 @@ def render_phan_he_quan_ly_chung(df_tai_khoan, role_curr, nam_hoc, BASE_DIR, THU
 
                 c_ck1, c_ck2 = st.columns(2)
                 with c_ck1:
-                    sync_hs = st.checkbox("👨‍🎓 1. Danh sách 829 Học sinh toàn trường", value=True, key="ck_s_hs")
-                    sync_xe = st.checkbox("🛵 2. Danh sách 549 Phương tiện & Mã QR định danh", value=True, key="ck_s_xe")
-                    sync_gv = st.checkbox("📋 3. Danh bạ 42 Cán bộ Giáo viên Nhân viên & Phân công", value=True, key="ck_s_gv")
+                    sync_hs = st.checkbox(f"👨‍🎓 1. Danh sách {tong_hs} Học sinh toàn trường", value=True, key="ck_s_hs")
+                    sync_xe = st.checkbox("🛵 2. Danh sách Phương tiện & Mã QR định danh", value=True, key="ck_s_xe")
+                    sync_gv = st.checkbox("📋 3. Danh bạ Cán bộ Giáo viên Nhân viên & Phân công", value=True, key="ck_s_gv")
                 with c_ck2:
-                    sync_bt = st.checkbox("🛏️ 4. Hồ sơ 207 Học sinh Bán trú KTX & Quân số ăn", value=True, key="ck_s_bt")
-                    sync_td = st.checkbox("🏆 5. Bảng điểm thi đua 21 Chi đoàn & Nhật ký nề nếp", value=True, key="ck_s_td")
+                    sync_bt = st.checkbox(f"🛏️ 4. Hồ sơ {so_ban_tru} Học sinh Bán trú KTX & Quân số ăn", value=True, key="ck_s_bt")
+                    sync_td = st.checkbox("🏆 5. Bảng điểm thi đua Chi đoàn & Nhật ký nề nếp", value=True, key="ck_s_td")
 
                 c_act1, c_act2 = st.columns([1.5, 1.2])
                 with c_act1:
@@ -1286,7 +1290,7 @@ def render_phan_he_quan_ly_chung(df_tai_khoan, role_curr, nam_hoc, BASE_DIR, THU
                                     if sync_gv and os.path.exists(f_gv_db):
                                         sheets_dict["Can_Bo_42"] = pd.read_csv(f_gv_db, encoding='utf-8-sig').fillna("").to_dict(orient="records")
                                     if sync_bt and os.path.exists(f_bt_ktx):
-                                        sheets_dict["Ban_Tru_207"] = pd.read_csv(f_bt_ktx, encoding='utf-8-sig').fillna("").to_dict(orient="records")
+                                        sheets_dict["Ban_Tru_KTX"] = pd.read_csv(f_bt_ktx, encoding='utf-8-sig').fillna("").to_dict(orient="records")
                                     if sync_td and os.path.exists(os.path.join(BASE_DIR, "thi_dua_dtn_20_lop.csv")):
                                         sheets_dict["Thi_Dua_21_Lop"] = pd.read_csv(os.path.join(BASE_DIR, "thi_dua_dtn_20_lop.csv"), encoding='utf-8-sig').fillna("").to_dict(orient="records")
 
@@ -1316,7 +1320,7 @@ def render_phan_he_quan_ly_chung(df_tai_khoan, role_curr, nam_hoc, BASE_DIR, THU
                             ('Hoc_Sinh_829', f_hs_tt),
                             ('Phuong_Tien_549', os.path.join(BASE_DIR, 'quan_ly_phuong_tien.csv')),
                             ('Can_Bo_42', f_gv_db),
-                            ('Ban_Tru_207', f_bt_ktx),
+                            ('Ban_Tru_KTX', f_bt_ktx),
                             ('Thi_Dua_21_Lop', os.path.join(BASE_DIR, 'thi_dua_dtn_20_lop.csv'))
                         ]:
                             if os.path.exists(f_path):

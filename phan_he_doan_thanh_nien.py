@@ -354,7 +354,7 @@ def render_phan_he_doan_thanh_nien(df_tai_khoan, role_curr, nam_hoc, BASE_DIR, T
     tab_bang_vang, tab_cham_diem, tab_phuong_tien, tab_phong_trao_dv = st.tabs([
         "🏆 Bảng Vàng Thi Đua 21 Lớp",
         "⚖️ Chấm Điểm & Nề Nếp Live",
-        "🛵 Quản Lý 549 Xe & Mã QR",
+        "🛵 Quản Lý Phương Tiện & Mã QR",
         "🎯 Phong Trào & Sổ Đoàn"
     ])
 

@@ -695,8 +695,8 @@ if not st.session_state.user_login.get("logged_in", False):
             | **👨‍🏫 Giáo viên Chủ nhiệm (21 Lớp)** | `gvcn_10a1`, `gvcn_10a2`, `gvcn_11a1`... | `gvcn123` |
             | **🍳 Bếp Trưởng & Tổ Cấp Dưỡng** | `beptruong` / `capduong` / `nhabep` | `bep123` |
             | **💰 Kế Toán Bán Trú** | `ketoan` | `kt123` |
-            | **🎒 207 Học sinh Bán trú** | Mã HS (VD: `hsn001`, `hsu001`) hoặc SĐT HS | `hs123` |
-            | **👨‍👩‍👧 207 Phụ huynh Học sinh** | **Số điện thoại Bố/Mẹ** hoặc `ph_hsn001`... | `ph123` |
+            | **🎒 Học sinh Bán trú KTX** | Mã HS (VD: `hsn001`, `hsu001`) hoặc SĐT HS | `hs123` |
+            | **👨‍👩‍👧 Phụ huynh Học sinh** | **Số điện thoại Bố/Mẹ** hoặc `ph_hsn001`... | `ph123` |
             """)
 
     with col_l2:
@@ -1349,7 +1349,7 @@ st.markdown("---")
 if role_curr == "Ban Giám hiệu":
     # 4 Phân hệ nghiệp vụ Bán trú & KTX chuẩn hóa dành cho BGH
     tab_cluster1, tab_cluster2, tab_cluster3, tab_cluster4 = st.tabs([
-        "📋 HỒ SƠ 207 HS & ĐIỂM DANH BÁO CƠM",
+        f"📋 HỒ SƠ {len(df_current)} HS & ĐIỂM DANH BÁO CƠM",
         "🏢 KÝ TÚC XÁ & THI ĐUA PHÒNG Ở",
         "🍳 BẾP ĂN, DINH DƯỠNG & KIỂM THỰC",
         "💰 TÀI CHÍNH BÁN TRÚ & KẾ TOÁN"
@@ -1887,14 +1887,20 @@ elif role_curr == "Nhà bếp / Cấp dưỡng":
         nam_toi = int(df_current[df_current["Dãy nhà"] == "Dãy Nam"]["Ăn tối"].sum()) if "Ăn tối" in df_current.columns else nam_trua
         nu_toi = int(df_current[df_current["Dãy nhà"] == "Dãy Nữ"]["Ăn tối"].sum()) if "Ăn tối" in df_current.columns else nu_trua
         
+        so_nam_live = len(df_current[df_current["Dãy nhà"] == "Dãy Nam"])
+        so_nu_live = len(df_current[df_current["Dãy nhà"] == "Dãy Nữ"])
+        tong_hs_live = len(df_current)
+        cat_trua_live = max(0, tong_hs_live - tong_trua)
+        cat_toi_live = max(0, tong_hs_live - tong_toi)
+        
         c_bep1, c_bep2 = st.columns(2)
         with c_bep1:
             st.markdown(f"""
             <div style="background:#EFF6FF; border-left:5px solid #2563EB; padding:15px; border-radius:10px;">
                 <h4 style="margin-top:0; color:#1E40AF;">🍲 1. SUẤT CƠM BỮA TRƯA: {tong_trua} SUẤT</h4>
-                <p>• <b>Khu Nam (9 phòng):</b> <b>{nam_trua} suất</b> (Sĩ số 95)</p>
-                <p>• <b>Khu Nữ (10 phòng):</b> <b>{nu_trua} suất</b> (Sĩ số 112)</p>
-                <p>• <b>Số suất cắt / vắng trưa:</b> <span style="color:#DC2626; font-weight:bold;">{207 - tong_trua} suất</span></p>
+                <p>• <b>Khu Nam (9 phòng):</b> <b>{nam_trua} suất</b> (Sĩ số {so_nam_live})</p>
+                <p>• <b>Khu Nữ (10 phòng):</b> <b>{nu_trua} suất</b> (Sĩ số {so_nu_live})</p>
+                <p>• <b>Số suất cắt / vắng trưa:</b> <span style="color:#DC2626; font-weight:bold;">{cat_trua_live} suất</span></p>
                 <p style="font-size:12px; color:#4B5563;">Chốt quân số trước 08:00 sáng hàng ngày.</p>
             </div>
             """, unsafe_allow_html=True)
@@ -1903,9 +1909,9 @@ elif role_curr == "Nhà bếp / Cấp dưỡng":
             st.markdown(f"""
             <div style="background:#FEF3C7; border-left:5px solid #D97706; padding:15px; border-radius:10px;">
                 <h4 style="margin-top:0; color:#B45309;">🍛 2. SUẤT CƠM BỮA TỐI: {tong_toi} SUẤT</h4>
-                <p>• <b>Khu Nam (9 phòng):</b> <b>{nam_toi} suất</b> (Sĩ số 95)</p>
-                <p>• <b>Khu Nữ (10 phòng):</b> <b>{nu_toi} suất</b> (Sĩ số 112)</p>
-                <p>• <b>Số suất cắt / vắng tối:</b> <span style="color:#DC2626; font-weight:bold;">{207 - tong_toi} suất</span></p>
+                <p>• <b>Khu Nam (9 phòng):</b> <b>{nam_toi} suất</b> (Sĩ số {so_nam_live})</p>
+                <p>• <b>Khu Nữ (10 phòng):</b> <b>{nu_toi} suất</b> (Sĩ số {so_nu_live})</p>
+                <p>• <b>Số suất cắt / vắng tối:</b> <span style="color:#DC2626; font-weight:bold;">{cat_toi_live} suất</span></p>
                 <p style="font-size:12px; color:#4B5563;">Chốt quân số trước 16:00 chiều hàng ngày.</p>
             </div>
             """, unsafe_allow_html=True)
@@ -2014,7 +2020,7 @@ elif role_curr == "Kế toán bán trú":
         df_ds["Tiền phải nộp (VNĐ)"] = df_ds["Số ngày ăn"] * 30000
         df_ds["Tình trạng đóng"] = "Chưa đóng"
         st.dataframe(df_ds, use_container_width=True, hide_index=True)
-        st.markdown(f"**Tổng tiền dự thu toàn trường (207 học sinh):** `{df_ds['Tiền phải nộp (VNĐ)'].sum():,.0f} VNĐ`")
+        st.markdown(f"**Tổng tiền dự thu toàn trường ({len(df_ds)} học sinh):** `{df_ds['Tiền phải nộp (VNĐ)'].sum():,.0f} VNĐ`")
 
 # --------------------------------------------------------
 # VAI TRÒ 5: PHỤ HUYNH HỌC SINH

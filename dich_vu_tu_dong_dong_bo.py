@@ -74,7 +74,7 @@ def tao_goi_sao_luu_zip_bytes(base_dir=BASE_DIR, bao_gom_ma_nguon=True):
                 ('Hoc_Sinh_829', f_hs),
                 ('Phuong_Tien_549', f_xe),
                 ('Can_Bo_42', f_gv),
-                ('Ban_Tru_207', f_bt),
+                ('Ban_Tru_KTX', f_bt),
                 ('Thi_Dua_21_Lop', f_td)
             ]:
                 if os.path.exists(f_p):
@@ -127,7 +127,7 @@ def thuc_hien_dong_bo(trigger="Tu_Dong"):
             if os.path.exists(f_gv):
                 sheets_dict["Can_Bo_42"] = pd.read_csv(f_gv, encoding='utf-8-sig').fillna("").to_dict(orient="records")
             if os.path.exists(f_bt):
-                sheets_dict["Ban_Tru_207"] = pd.read_csv(f_bt, encoding='utf-8-sig').fillna("").to_dict(orient="records")
+                sheets_dict["Ban_Tru_KTX"] = pd.read_csv(f_bt, encoding='utf-8-sig').fillna("").to_dict(orient="records")
             if os.path.exists(f_td):
                 sheets_dict["Thi_Dua_21_Lop"] = pd.read_csv(f_td, encoding='utf-8-sig').fillna("").to_dict(orient="records")
 
