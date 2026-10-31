@@ -304,7 +304,7 @@ def render_phan_he_quan_ly_chung(df_tai_khoan, role_curr, nam_hoc, BASE_DIR, THU
         "🏛️ Trung Tâm Điều Hành Tổng Thể",
         "👥 Đội Ngũ - Học Sinh",
         "👨‍🏫 Công Tác Chủ Nhiệm",
-        "📚 Tiến Độ Chương Trình",
+        "📚 Công Tác Chuyên Môn",
         "🎯 Kế Hoạch Năm Học",
         "👑 Quản Trị & Niên Khóa"
     ])
@@ -436,21 +436,11 @@ def render_phan_he_quan_ly_chung(df_tai_khoan, role_curr, nam_hoc, BASE_DIR, THU
 
         st.markdown("---")
 
-        # Biểu đồ phân bố 3 Khối
-        st.markdown("#### 📈 **Phân Bố Sĩ Số Học Sinh 3 Khối (K10: 7 Lớp • K11: 7 Lớp • K12: 7 Lớp)**")
-        if os.path.exists(f_cc):
-            df_cc_view = pd.read_csv(f_cc, encoding='utf-8-sig')
-            chart_data = df_cc_view.groupby('Khối')[['Sĩ số hiện tại', 'Học sinh Nam', 'Học sinh Nữ', 'Bán trú KTX']].sum()
-            st.bar_chart(chart_data)
-
-        st.markdown("---")
-
         # CHI TIẾT NGHIỆP VỤ ĐIỀU HÀNH & LỊCH CÔNG TÁC
         st.markdown("#### 📋 **Chi Tiết Nhiệm Vụ Điều Hành, Lịch Tuần & Giám Sát Trọng Tâm**")
-        sub_dh1, sub_dh2, sub_dh3, sub_dh4 = st.tabs([
+        sub_dh1, sub_dh2, sub_dh3 = st.tabs([
             "📅 LỊCH CÔNG TÁC TUẦN TẬP TRUNG",
             "📌 GIAO VIỆC RÕ NGƯỜI, RÕ HẠN & TIẾN ĐỘ",
-            "🔬 SỬ DỤNG & MƯỢN TRẢ THIẾT BỊ DẠY HỌC",
             "🍀 KẾT NỐI GIÁM SÁT BÁN TRÚ & KTX"
         ])
 
@@ -527,14 +517,6 @@ def render_phan_he_quan_ly_chung(df_tai_khoan, role_curr, nam_hoc, BASE_DIR, THU
                                 st.rerun()
 
         with sub_dh3:
-            st.markdown("##### 🔬 **Theo Dõi Sử Dụng, Mượn & Trả Thiết Bị Dạy Học**")
-            df_tb = pd.read_csv(f_tb, encoding='utf-8-sig') if os.path.exists(f_tb) else pd.DataFrame()
-            if not df_tb.empty:
-                st.dataframe(df_tb, use_container_width=True, hide_index=True)
-            else:
-                st.info("Chưa có dữ liệu thiết bị dạy học.")
-
-        with sub_dh4:
             st.markdown("##### 🍀 **Kết Nối Thông Tin Bán Trú & Hỗ Trợ Giám Sát Bữa Ăn - KTX**")
             st.info("💡 Dữ liệu được liên kết tự động trực tiếp thời gian thực từ phân hệ **🛏️ QUẢN LÝ BÁN TRÚ & KTX**:")
             c_gs1, c_gs2, c_gs3 = st.columns(3)
@@ -566,7 +548,14 @@ def render_phan_he_quan_ly_chung(df_tai_khoan, role_curr, nam_hoc, BASE_DIR, THU
             c_hs3.metric("🏔️ Dân Tộc Thiểu Số", f"{so_dtts} HS", f"{(so_dtts/tong_hs*100):.1f}%")
             c_hs4.metric("🛏️ Học Sinh Bán Trú", f"{so_ban_tru} HS", "KTX trường")
 
-            st.markdown("<div style='height:6px;'></div>", unsafe_allow_html=True)
+            # Biểu đồ phân bố 3 Khối
+            st.markdown("#### 📈 **Phân Bố Sĩ Số Học Sinh 3 Khối (K10: 7 Lớp • K11: 7 Lớp • K12: 7 Lớp)**")
+            if os.path.exists(f_cc):
+                df_cc_view = pd.read_csv(f_cc, encoding='utf-8-sig')
+                chart_data = df_cc_view.groupby('Khối')[['Sĩ số hiện tại', 'Học sinh Nam', 'Học sinh Nữ', 'Bán trú KTX']].sum()
+                st.bar_chart(chart_data)
+
+            st.markdown("---")
 
             if not df_hs_all.empty:
                 col_l1, col_l2, col_l3, col_l4 = st.columns([1, 1, 1, 1.5])
@@ -755,11 +744,12 @@ def render_phan_he_quan_ly_chung(df_tai_khoan, role_curr, nam_hoc, BASE_DIR, THU
     # TAB 5: TIẾN ĐỘ CHƯƠNG TRÌNH & CHUYÊN MÔN
     # =========================================================================
     with tab_chuyen_mon:
-        st.subheader("📚 Theo Dõi Tiến Độ Chương Trình & Công Tác Chuyên Môn")
-        st.caption("Quản lý tiến độ giảng dạy 21 lớp theo từng môn học, Thời khóa biểu và Sổ đầu bài điện tử.")
+        st.subheader("📚 Công Tác Chuyên Môn & Quản Lý Dạy Học")
+        st.caption("Quản lý toàn diện công tác chuyên môn: Tiến độ chương trình 21 lớp, Quản lý thiết bị dạy học, Thời khóa biểu, Lịch báo giảng và Sổ đầu bài điện tử.")
 
-        sub_cm1, sub_cm2, sub_cm3, sub_cm4 = st.tabs([
+        sub_cm1, sub_cm2, sub_cm3, sub_cm4, sub_cm5 = st.tabs([
             "📚 TIẾN ĐỘ CHƯƠNG TRÌNH (21 LỚP)",
+            "🔬 SỬ DỤNG, MƯỢN & TRẢ THIẾT BỊ DẠY HỌC",
             "🕒 THỜI KHÓA BIỂU (TKB)",
             "📖 LỊCH BÁO GIẢNG ĐIỆN TỬ",
             "✍️ SỔ ĐẦU BÀI ĐIỆN TỬ (SĐB)"
@@ -791,12 +781,21 @@ def render_phan_he_quan_ly_chung(df_tai_khoan, role_curr, nam_hoc, BASE_DIR, THU
                 st.info("Chưa có dữ liệu tiến độ chương trình.")
 
         with sub_cm2:
+            st.markdown("#### 🔬 **Theo Dõi Sử Dụng, Mượn & Trả Thiết Bị Dạy Học**")
+            st.caption("Quản lý thiết bị dạy học, đồ dùng thí nghiệm thực hành các tổ bộ môn KHTN, KHXH, Tin học, Ngoại ngữ.")
+            df_tb = pd.read_csv(f_tb, encoding='utf-8-sig') if os.path.exists(f_tb) else pd.DataFrame()
+            if not df_tb.empty:
+                st.dataframe(df_tb, use_container_width=True, hide_index=True)
+            else:
+                st.info("Chưa có dữ liệu thiết bị dạy học.")
+
+        with sub_cm3:
             st.markdown("#### 🕒 **Thời Khóa Biểu Giảng Dạy 21 Lớp**")
             df_tkb = pd.read_csv(f_tkb, encoding='utf-8-sig') if os.path.exists(f_tkb) else pd.DataFrame()
             if not df_tkb.empty:
                 st.dataframe(df_tkb, use_container_width=True, hide_index=True)
 
-        with sub_cm3:
+        with sub_cm4:
             st.markdown("#### 📖 **Lịch Báo Giảng Tuần Của Giáo Viên**")
             df_bg_mau = pd.DataFrame([
                 {"Tiết PPCT": 18, "Lớp": "10A1", "Môn": "Toán học", "Tên bài dạy": "Hàm số bậc hai và đồ thị", "Thiết bị sử dụng": "Máy chiếu, Geogebra", "Trạng thái": "Đã dạy"},
@@ -806,7 +805,7 @@ def render_phan_he_quan_ly_chung(df_tai_khoan, role_curr, nam_hoc, BASE_DIR, THU
             ])
             st.dataframe(df_bg_mau, use_container_width=True, hide_index=True)
 
-        with sub_cm4:
+        with sub_cm5:
             st.markdown("#### ✍️ **Sổ Đầu Bài Điện Tử (SĐB) - Ký Duyệt Trực Tuyến**")
             df_sdb = pd.read_csv(f_sdb, encoding='utf-8-sig') if os.path.exists(f_sdb) else pd.DataFrame()
             if not df_sdb.empty:

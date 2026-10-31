@@ -118,5 +118,15 @@
     "phone": "988400184.0",
     "quyen_quan_ly": "Toàn quyền quản trị",
     "saved_at": "31/10/2026 10:06:47"
+  },
+  "f61138f1701f6ecea7a04dbb13bcc158": {
+    "username": "admin",
+    "fullname": "Ban Giám Hiệu (Admin)",
+    "role": "Ban Giám hiệu",
+    "chuc_danh": "Hiệu trưởng / Admin tối cao",
+    "ma_lien_ket": "Toàn trường",
+    "phone": "988400184.0",
+    "quyen_quan_ly": "Toàn quyền quản trị",
+    "saved_at": "31/10/2026 11:05:56"
   }
 }
