@@ -436,12 +436,13 @@ def render_phan_he_quan_ly_chung(df_tai_khoan, role_curr, nam_hoc, BASE_DIR, THU
 
         st.markdown("---")
 
-        # CHI TIẾT NGHIỆP VỤ ĐIỀU HÀNH & LỊCH CÔNG TÁC
-        st.markdown("#### 📋 **Chi Tiết Nhiệm Vụ Điều Hành, Lịch Tuần & Giám Sát Trọng Tâm**")
-        sub_dh1, sub_dh2, sub_dh3 = st.tabs([
+        # CHI TIẾT NGHIỆP VỤ ĐIỀU HÀNH, LỊCH CÔNG TÁC & CÀI ĐẶT APP
+        st.markdown("#### 📋 **Chi Tiết Nhiệm Vụ Điều Hành, Lịch Tuần, Giám Sát & Ứng Dụng Di Động**")
+        sub_dh1, sub_dh2, sub_dh3, sub_dh4 = st.tabs([
             "📅 LỊCH CÔNG TÁC TUẦN TẬP TRUNG",
             "📌 GIAO VIỆC RÕ NGƯỜI, RÕ HẠN & TIẾN ĐỘ",
-            "🍀 KẾT NỐI GIÁM SÁT BÁN TRÚ & KTX"
+            "🍀 KẾT NỐI GIÁM SÁT BÁN TRÚ & KTX",
+            "📱 HƯỚNG DẪN CÀI ĐẶT APP LÊN ĐIỆN THOẠI"
         ])
 
         with sub_dh1:
@@ -523,6 +524,73 @@ def render_phan_he_quan_ly_chung(df_tai_khoan, role_curr, nam_hoc, BASE_DIR, THU
             c_gs1.metric("👥 Quân số Bán trú Live", f"{so_ban_tru} HS", "19 Phòng ở KTX")
             c_gs2.metric("🍲 Suất ăn trưa hôm nay", f"{so_ban_tru} Suất", "Bếp ăn đã nhận thực đơn")
             c_gs3.metric("🏆 Thi đua KTX Tuần", "Phòng 301 dẫn đầu", "Đạt 39.5/40 điểm 5S")
+
+        with sub_dh4:
+            st.markdown("##### 📱 **HƯỚNG DẪN TẢI & CÀI ĐẶT APP DI ĐỘNG LÊN MÀN HÌNH CHÍNH**")
+            st.caption("Ứng dụng Web Lũy Tiến (PWA) chính thức của Trường THPT số 2 Bảo Yên - Cài đặt trực tiếp lên iPhone/iPad & Android không cần qua App Store hay CH Play.")
+            
+            col_m1, col_m2 = st.columns([1, 1.2], gap="large")
+            with col_m1:
+                url_app_cloud = "https://thpt2baoyen.streamlit.app"
+                st.markdown(f"""
+                <div style="text-align: center; border: 3px solid #16A34A; padding: 18px; border-radius: 16px; background: #F0FDF4; box-shadow: 0 4px 15px rgba(22, 163, 74, 0.15); margin-bottom: 12px;">
+                    <div style="background:#16A34A; color:white; display:inline-block; padding:4px 14px; border-radius:20px; font-weight:bold; font-size:12px; margin-bottom:8px;">
+                        🌟 ĐỊA CHỈ TRỰC TUYẾN CHÍNH THỨC (CHẠY 24/7 TOÀN CẦU)
+                    </div>
+                    <h4 style="color:#15803D; margin:4px 0 8px 0;">DÙNG CAMERA ĐIỆN THOẠI QUÉT MÃ</h4>
+                    <div style="background:white; padding:10px; border-radius:12px; display:inline-block; border:1px solid #BBF7D0;">
+                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data={url_app_cloud}" width="220" style="display:block; border-radius:6px;">
+                    </div>
+                    <p style="margin-top:10px; font-size:13.5px; font-weight:bold; color:#166534;">Địa chỉ trực tuyến chính thức:<br>
+                    <a href="{url_app_cloud}" target="_blank" style="color:#2563EB; font-size:15px; word-break:break-all; text-decoration:underline;">{url_app_cloud}</a></p>
+                    <p style="font-size:11.5px; color:#4B5563; margin-bottom:0;">(Mở được trên mọi mạng 4G/5G hoặc Wi-Fi bất kỳ, không phụ thuộc máy tính)</p>
+                </div>
+                """, unsafe_allow_html=True)
+                
+                f_qr_loc = os.path.join(BASE_DIR, "QR_Cai_App_Ban_Tru.png")
+                if os.path.exists(f_qr_loc):
+                    with open(f_qr_loc, "rb") as f_qr:
+                        st.download_button(
+                            label="💾 TẢI ẢNH MÃ QR VỀ MÁY (ĐỂ IN HOẶC GỬI ZALO)",
+                            data=f_qr.read(),
+                            file_name="QR_Cai_App_THPT2_BaoYen.png",
+                            mime="image/png",
+                            use_container_width=True,
+                            key="btn_dl_qr_app_tab1"
+                        )
+            
+            with col_m2:
+                st.markdown("##### 📲 **BIỂU TƯỢNG APP CHÍNH THỨC CỦA NHÀ TRƯỜNG:**")
+                c_ico1, c_ico2 = st.columns([1, 2.2])
+                with c_ico1:
+                    f_logo_show = os.path.join(BASE_DIR, "logo_truong.png")
+                    if not os.path.exists(f_logo_show):
+                        f_logo_show = os.path.join(BASE_DIR, "logo_thpt2_baoyen.png")
+                    if os.path.exists(f_logo_show):
+                        st.image(f_logo_show, width=95, caption="Logo THPT số 2 Bảo Yên")
+                with c_ico2:
+                    st.markdown("""
+                    - **Biểu tượng App:** Huy hiệu tròn **Trường THPT số 2 Bảo Yên**.
+                    - **Tên hiển thị:** `THPT 2 Bảo Yên`.
+                    - **Phục vụ toàn diện:** Ban Giám Hiệu, Giáo viên, Cán bộ nhân viên, Phụ huynh & Học sinh.
+                    """)
+                st.markdown("""
+                ---
+                ###### 🍏 Dành cho iPhone / iPad (Trình duyệt Safari):
+                1. **Mở Camera** quét mã QR bên trái ➔ Chạm thông báo để mở web trong **Safari**.
+                2. Ở thanh công cụ dưới đáy Safari, bấm nút **Chia sẻ** *(ô vuông có mũi tên chỉ lên ⬆️)*.
+                3. Cuộn xuống và chọn **"Thêm vào Màn hình chính"** *(Add to Home Screen)*.
+                4. Bấm **"Thêm"** *(Add)* ở góc trên bên phải màn hình.
+                
+                ###### 🤖 Dành cho Android (Samsung, Oppo, Xiaomi qua Chrome / Cốc Cốc):
+                1. Dùng **Camera / Zalo** quét mã QR bên trái ➔ Mở bằng trình duyệt **Chrome**.
+                2. Bấm biểu tượng **3 chấm (⋮)** ở góc trên bên phải màn hình.
+                3. Chọn dòng **"Cài đặt ứng dụng"** hoặc **"Thêm vào Màn hình chính"**.
+                4. Bấm **"Cài đặt" / "Thêm"** để hoàn tất.
+                
+                ---
+                ✨ **LỢI ÍCH:** Mở ứng dụng toàn màn hình mượt mà, biểu tượng nằm ngay màn hình chính, không thanh địa chỉ web, không cần gõ link hay quét mã lại những lần sau!
+                """)
 
     # =========================================================================
     # TAB 2: ĐỘI NGŨ - HỌC SINH

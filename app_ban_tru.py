@@ -1,4 +1,4 @@
-import secrets
+﻿import secrets
 import random
 import streamlit as st
 import pandas as pd
@@ -1544,49 +1544,56 @@ if role_curr == "Ban Giám hiệu":
 
 
 
-    # --- CỤM 4: TÀI CHÍNH & TIỆN ÍCH ---
+    # --- CỤM 4: TÀI CHÍNH BÁN TRÚ & KẾ TOÁN ---
     with tab_cluster4:
-        sub_c4_kt, sub_c4_app, sub_c4_gs = st.tabs([
-            "💰 Quản Lý Biểu Phí & Cổng Thanh Toán VietQR Tự Động",
-            "📱 Hướng Dẫn Tải & Cài Đặt App Di Động",
-            "☁️ Trung Tâm Kết Nối Google Sheets"
-        ])
-        with sub_c4_kt:
-            st.subheader("💰 Quản Lý Biểu Phí & Cổng Thanh Toán VietQR Tự Động")
-            st.caption("Tự động tính tiền ăn dựa trên ngày ăn thực tế và khấu trừ các ngày báo cắt cơm trước 08:00 sáng.")
+        st.subheader("💰 Quản Lý Biểu Phí & Cổng Thanh Toán VietQR Tự Động")
+        st.caption("Tự động tính tiền ăn dựa trên ngày ăn thực tế và khấu trừ các ngày báo cắt cơm trước 08:00 sáng.")
+    
+        c_fee1, c_fee2 = st.columns([1, 1])
+        with c_fee1:
+            dinh_muc_ngay = st.number_input("Định mức tiền ăn / ngày (VNĐ):", value=30000, step=1000)
+            so_ngay_thang = st.number_input("Số ngày bán trú trong tháng:", value=22, step=1)
+            tien_chuan = dinh_muc_ngay * so_ngay_thang
+            st.markdown(f"**Mức thu chuẩn 1 học sinh / tháng:** `{tien_chuan:,.0f} VNĐ`")
         
-            c_fee1, c_fee2 = st.columns([1, 1])
-            with c_fee1:
-                dinh_muc_ngay = st.number_input("Định mức tiền ăn / ngày (VNĐ):", value=30000, step=1000)
-                so_ngay_thang = st.number_input("Số ngày bán trú trong tháng:", value=22, step=1)
-                tien_chuan = dinh_muc_ngay * so_ngay_thang
-                st.markdown(f"**Mức thu chuẩn 1 học sinh / tháng:** `{tien_chuan:,.0f} VNĐ`")
-            
-                # Chọn học sinh để tạo phiếu thu VietQR
-                hs_vietqr = st.selectbox("Chọn học sinh phát hành mã VietQR:", df_current["Họ và tên"].tolist(), key="bgh_vqr")
-                row_vqr = df_current[df_current["Họ và tên"] == hs_vietqr].iloc[0]
-            
-                so_ngay_nghi = 1 if row_vqr["Trạng thái"] == "Xin về nhà" else 0
-                tien_phai_dong = (so_ngay_thang - so_ngay_nghi) * dinh_muc_ngay
-                st.markdown(f"- Học sinh: **{row_vqr['Họ và tên']}** (Lớp: {row_vqr['Lớp']} - {row_vqr['Phòng']})")
-                st.markdown(f"- Số ngày báo nghỉ hợp lệ được trừ: **{so_ngay_nghi} ngày**")
-                st.markdown(f"- **TỔNG TIỀN PHẢI ĐÓNG:** <span style='font-size:18px;color:#DC2626;font-weight:bold;'>{tien_phai_dong:,.0f} VNĐ</span>", unsafe_allow_html=True)
-            
-            with c_fee2:
-                st.markdown("#### 📱 Mã VietQR Động Cho Phụ Huynh Quét Đóng Tiền:")
-                noi_dung_ck = f"THPT2BY {row_vqr['Mã HS']} {row_vqr['Họ và tên']} Dong tien an thang 10"
-                noi_dung_url = urllib.parse.quote(noi_dung_ck)
-                vietqr_img_url = f"https://img.vietqr.io/image/agribank-8800205123456-compact2.png?amount={tien_phai_dong}&addInfo={noi_dung_url}&accountName=THPT%20SO%202%20BAO%20YEN"
-                st.image(vietqr_img_url, width=280)
-                st.caption("Phụ huynh quét mã này trên bất kỳ ứng dụng ngân hàng nào (Agribank, BIDV, Vietinbank...) tiền sẽ tự điền đúng tên con và lớp.")
+            # Chọn học sinh để tạo phiếu thu VietQR
+            hs_vietqr = st.selectbox("Chọn học sinh phát hành mã VietQR:", df_current["Họ và tên"].tolist(), key="bgh_vqr")
+            row_vqr = df_current[df_current["Họ và tên"] == hs_vietqr].iloc[0]
+        
+            so_ngay_nghi = 1 if row_vqr["Trạng thái"] == "Xin về nhà" else 0
+            tien_phai_dong = (so_ngay_thang - so_ngay_nghi) * dinh_muc_ngay
+            st.markdown(f"- Học sinh: **{row_vqr['Họ và tên']}** (Lớp: {row_vqr['Lớp']} - {row_vqr['Phòng']})")
+            st.markdown(f"- Số ngày báo nghỉ hợp lệ được trừ: **{so_ngay_nghi} ngày**")
+            st.markdown(f"- **TỔNG TIỀN PHẢI ĐÓNG:** <span style='font-size:18px;color:#DC2626;font-weight:bold;'>{tien_phai_dong:,.0f} VNĐ</span>", unsafe_allow_html=True)
+        
+        with c_fee2:
+            st.markdown("#### 📱 Mã VietQR Động Cho Phụ Huynh Quét Đóng Tiền:")
+            noi_dung_ck = f"THPT2BY {row_vqr['Mã HS']} {row_vqr['Họ và tên']} Dong tien an thang 10"
+            noi_dung_url = urllib.parse.quote(noi_dung_ck)
+            vietqr_img_url = f"https://img.vietqr.io/image/agribank-8800205123456-compact2.png?amount={tien_phai_dong}&addInfo={noi_dung_url}&accountName=THPT%20SO%202%20BAO%20YEN"
+            st.image(vietqr_img_url, width=280)
+            st.caption("Phụ huynh quét mã này trên bất kỳ ứng dụng ngân hàng nào (Agribank, BIDV, Vietinbank...) tiền sẽ tự điền đúng tên con và lớp.")
 
-
-        with sub_c4_app:
-            hien_thi_tab_cai_dat_app(duong_dan_online, duong_dan_app_mobile)
-
-
-        with sub_c4_gs:
-            render_tab_google_sheets(BASE_DIR, st.session_state.nam_hoc_hien_tai, THU_MUC_NAM_HOC)
+        st.markdown("---")
+        st.markdown("""
+            <div style="background:#F0F9FF; border:1px solid #BAE6FD; border-radius:12px; padding:15px; margin-top:10px;">
+                <h5 style="color:#0369A1; margin:0 0 6px 0;">🏛️ THÔNG BÁO QUY HOẠCH HỆ THỐNG ĐỒNG BỘ TOÀN TRƯỜNG:</h5>
+                <ul style="color:#0C4A6E; font-size:13px; margin:0; padding-left:18px;">
+                    <li><b>📱 Hướng dẫn tải & cài đặt App di động (PWA):</b> Đã được chuyển về <b>🏛️ TRUNG TÂM ĐIỀU HÀNH TỔNG THỂ NHÀ TRƯỜNG (Tab 1)</b> để toàn bộ Thầy Cô, PHHS và Học sinh toàn trường cùng sử dụng chung một chuẩn ứng dụng.</li>
+                    <li><b>☁️ Đồng bộ đám mây Google Drive & Google Sheets:</b> Đã được tích hợp trọn vẹn tại <b>👑 QUẢN TRỊ TÀI KHOẢN, NIÊN KHÓA & ĐÁM MÂY (Tab 6)</b> với đầy đủ 5 bảng biểu toàn diện (829 HS, 549 Xe, 42 CBGV, 207 Bán trú, 21 Chi đoàn).</li>
+                </ul>
+            </div>
+        """, unsafe_allow_html=True)
+        
+        c_nav1, c_nav2 = st.columns(2)
+        with c_nav1:
+            if st.button("👉 Xem Hướng Dẫn Cài Đặt App Tại Trung Tâm Điều Hành", key="btn_goto_app_guide", use_container_width=True):
+                st.session_state.phan_he_hien_tai = "🏛️ HỆ THỐNG QUẢN TRỊ & ĐIỀU HÀNH NHÀ TRƯỜNG"
+                st.rerun()
+        with c_nav2:
+            if st.button("👉 Mở Trung Tâm Đồng Bộ Đám Mây Google Sheets (Kênh 1)", key="btn_goto_gsheets_k1", use_container_width=True):
+                st.session_state.phan_he_hien_tai = "🏛️ HỆ THỐNG QUẢN TRỊ & ĐIỀU HÀNH NHÀ TRƯỜNG"
+                st.rerun()
 
 
 
