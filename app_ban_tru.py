@@ -746,7 +746,7 @@ with st.sidebar:
     st.caption(f"Trường THPT số 2 Bảo Yên - Lào Cai ({st.session_state.nam_hoc_hien_tai})")
     
     st.markdown("---")
-    st.markdown("#### 📅 **NĂM HỌC BÁN TRÚ**")
+    st.markdown("#### 📅 **NĂM HỌC**")
     chon_nh_sb = st.selectbox(
         "Năm học làm việc:",
         options=danh_sach_nam_hoc,
