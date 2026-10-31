@@ -1170,13 +1170,89 @@ elif st.session_state.phan_he_hien_tai == "🚩 ĐOÀN THANH NIÊN (ĐTN)":
     st.stop()
 
 # ========================================================
-# PHÂN HỆ: QUẢN LÝ BÁN TRÚ & KÝ TÚC XÁ (GIAO DIỆN HIỆN TẠI)
+# HÀM HIỂN THỊ HƯỚNG DẪN CÀI ĐẶT APP DI ĐỘNG (DÙNG CHUNG)
 # ========================================================
+def hien_thi_tab_cai_dat_app(duong_dan_online, duong_dan_app_mobile):
+    st.subheader("📱 HƯỚNG DẪN TẢI & CÀI ĐẶT APP BÁN TRÚ LÊN ĐIỆN THOẠI")
+    col_m1, col_m2 = st.columns([1, 1.2], gap="large")
+    with col_m1:
+        st.markdown(f"""
+        <div style="text-align: center; border: 3px solid #16A34A; padding: 20px; border-radius: 16px; background: #F0FDF4; box-shadow: 0 4px 15px rgba(22, 163, 74, 0.15); margin-bottom: 15px;">
+            <div style="background:#16A34A; color:white; display:inline-block; padding:5px 16px; border-radius:20px; font-weight:bold; font-size:12px; margin-bottom:10px;">
+                🌟 ĐỊA CHỈ ĐÁM MÂY CHÍNH THỨC (CHẠY 24/7 TOÀN CẦU)
+            </div>
+            <h4 style="color:#15803D; margin:5px 0 10px 0;">DÙNG CAMERA ĐIỆN THOẠI QUÉT MÃ</h4>
+            <div style="background:white; padding:12px; border-radius:12px; display:inline-block; border:1px solid #BBF7D0;">
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data={duong_dan_online}" width="230" style="display:block; border-radius:6px;">
+            </div>
+            <p style="margin-top:10px; font-size:14px; font-weight:bold; color:#166534;">Địa chỉ trực tuyến chính thức:<br>
+            <a href="{duong_dan_online}" target="_blank" style="color:#2563EB; font-size:16px; word-break:break-all; text-decoration:underline;">{duong_dan_online}</a></p>
+            <p style="font-size:12px; color:#4B5563; margin-bottom:0;">(Mở được trên mọi mạng 4G/5G hoặc Wi-Fi bất kỳ, không phụ thuộc máy tính)</p>
+        </div>
+        """, unsafe_allow_html=True)
+        
+        file_qr_local = "D:\\QR_Cai_App_Ban_Tru.png"
+        if os.path.exists(file_qr_local):
+            with open(file_qr_local, "rb") as f_qr:
+                st.download_button(
+                    label="💾 TẢI ẢNH MÃ QR VỀ MÁY (ĐỂ IN HOẶC GỬI ZALO)",
+                    data=f_qr.read(),
+                    file_name="QR_Cai_App_Ban_Tru_THPT2_BaoYen.png",
+                    mime="image/png",
+                    use_container_width=True
+                )
+    with col_m2:
+        st.markdown("### 📲 BIỂU TƯỢNG APP CHÍNH THỨC CỦA TRƯỜNG:")
+        c_ico1, c_ico2 = st.columns([1, 2])
+        with c_ico1:
+            if os.path.exists(FILE_LOGO):
+                st.image(FILE_LOGO, width=95, caption="Logo THPT số 2 Bảo Yên")
+        with c_ico2:
+            st.markdown("""
+            - **Biểu tượng App:** Huy hiệu **Trường THPT số 2 Bảo Yên**.
+            - **Tên App trên điện thoại:** `THPT 2 Bảo Yên`.
+            """)
+        st.markdown("""
+        ---
+        #### 🍏 Dành cho iPhone / iPad (Trình duyệt Safari):
+        1. **Mở Camera** quét mã QR bên trái ➜ Chạm vào thông báo để mở web.
+        2. Ở thanh dưới cùng Safari, bấm nút **Chia sẻ** *(ô vuông có mũi tên chỉ lên ⬆️)*.
+        3. Cuộn xuống và chọn **"Thêm vào Màn hình chính"** *(Add to Home Screen)*.
+        4. Bấm **"Thêm"** *(Add)* ở góc trên bên phải.
+        
+        ---
+        #### 🤖 Dành cho Android (Samsung, Oppo, Xiaomi qua Chrome / Cốc Cốc):
+        1. Dùng **Camera / Zalo** quét mã QR bên trái ➜ Mở bằng Chrome.
+        2. Bấm dấu **3 chấm (⋮)** ở góc trên bên phải màn hình.
+        3. Chọn dòng **"Cài đặt ứng dụng"** hoặc **"Thêm vào Màn hình chính"**.
+        4. Bấm **"Cài đặt" / "Thêm"** để xác nhận.
+        
+        ---
+        ✨ **LỢI ÍCH:** Mở ra dùng toàn màn hình mượt mà, không có thanh địa chỉ web, không cần gõ link hay quét mã lại những lần sau!
+        """)
+
 # ========================================================
-# PHÂN HỆ: QUẢN LÝ BÁN TRÚ & KÝ TÚC XÁ (GIAO DIỆN CHÍNH)
+# 4. HEADER CHÍNH: TIÊU ĐỀ KÊNH BÁN TRÚ
+# ========================================================
+col_h1, col_h2 = st.columns([3, 1])
+with col_h1:
+    col_lg, col_tt = st.columns([1, 6])
+    with col_lg:
+        if os.path.exists(FILE_LOGO):
+            st.image(FILE_LOGO, width=80)
+    with col_tt:
+        st.markdown("<h2 style='margin:0; padding:0; color:#1E3A8A;'>🏫 QUẢN LÝ BÁN TRÚ - THPT SỐ 2 BẢO YÊN</h2>", unsafe_allow_html=True)
+        st.markdown(f"**Năm học: {st.session_state.nam_hoc_hien_tai}** | Vai trò: `<span class='{badge_color}'>{role_curr}</span>`", unsafe_allow_html=True)
+
+with col_h2:
+    link_hien = duong_dan_online if duong_dan_online else duong_dan_app_mobile
+    st.success(f"📱 **Link App 24/7:**\n`{link_hien}`")
+
+# ========================================================
+# BỘ LỌC ĐIỀU HÀNH 4 TIÊU CHÍ (NGAY DƯỚI TÊN KÊNH)
 # ========================================================
 with st.container():
-    st.markdown("<div style='background:#F8FAFC; border:1px solid #E2E8F0; border-radius:10px; padding:12px 16px; margin-bottom:12px;'>", unsafe_allow_html=True)
+    st.markdown("<div style='background:#F8FAFC; border:1px solid #E2E8F0; border-radius:10px; padding:12px 16px; margin:10px 0;'>", unsafe_allow_html=True)
     col_f1, col_f2, col_f3, col_f4 = st.columns([1.1, 1.4, 1.3, 1.8])
     with col_f1:
         ngay_lam_viec = st.date_input("📅 Ngày làm việc:", date.today(), key="main_ngay_lv")
@@ -1238,83 +1314,6 @@ so_ve_nha = len(df_hien_thi[mask_ve_nha])
 mask_gv_bao_vang = df_hien_thi["Trạng thái"].str.contains("GV báo|Ốm|không phép|Vắng có phép", case=False, na=False)
 so_gv_bao_vang = len(df_hien_thi[mask_gv_bao_vang])
 
-# Hàm hiển thị hướng dẫn cài đặt App điện thoại dùng chung cho các vai trò
-def hien_thi_tab_cai_dat_app(duong_dan_online, duong_dan_app_mobile):
-    st.subheader("📱 HƯỚNG DẪN TẢI & CÀI ĐẶT APP BÁN TRÚ LÊN ĐIỆN THOẠI")
-    col_m1, col_m2 = st.columns([1, 1.2], gap="large")
-    with col_m1:
-        st.markdown(f"""
-        <div style="text-align: center; border: 3px solid #16A34A; padding: 20px; border-radius: 16px; background: #F0FDF4; box-shadow: 0 4px 15px rgba(22, 163, 74, 0.15); margin-bottom: 15px;">
-            <div style="background:#16A34A; color:white; display:inline-block; padding:5px 16px; border-radius:20px; font-weight:bold; font-size:12px; margin-bottom:10px;">
-                🌟 ĐỊA CHỈ ĐÁM MÂY CHÍNH THỨC (CHẠY 24/7 TOÀN CẦU)
-            </div>
-            <h4 style="color:#15803D; margin:5px 0 10px 0;">DÙNG CAMERA ĐIỆN THOẠI QUÉT MÃ</h4>
-            <div style="background:white; padding:12px; border-radius:12px; display:inline-block; border:1px solid #BBF7D0;">
-                <img src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data={duong_dan_online}" width="230" style="display:block; border-radius:6px;">
-            </div>
-            <p style="margin-top:10px; font-size:14px; font-weight:bold; color:#166534;">Địa chỉ trực tuyến chính thức:<br>
-            <a href="{duong_dan_online}" target="_blank" style="color:#2563EB; font-size:16px; word-break:break-all; text-decoration:underline;">{duong_dan_online}</a></p>
-            <p style="font-size:12px; color:#4B5563; margin-bottom:0;">(Mở được trên mọi mạng 4G/5G hoặc Wi-Fi bất kỳ, không phụ thuộc máy tính)</p>
-        </div>
-        """, unsafe_allow_html=True)
-        
-        file_qr_local = "D:\\QR_Cai_App_Ban_Tru.png"
-        if os.path.exists(file_qr_local):
-            with open(file_qr_local, "rb") as f_qr:
-                st.download_button(
-                    label="💾 TẢI ẢNH MÃ QR VỀ MÁY (ĐỂ IN HOẶC GỬI ZALO)",
-                    data=f_qr.read(),
-                    file_name="QR_Cai_App_Ban_Tru_THPT2_BaoYen.png",
-                    mime="image/png",
-                    use_container_width=True
-                )
-    with col_m2:
-        st.markdown("### 📲 BIỂU TƯỢNG APP CHÍNH THỨC CỦA TRƯỜNG:")
-        c_ico1, c_ico2 = st.columns([1, 2])
-        with c_ico1:
-            if os.path.exists(FILE_LOGO):
-                st.image(FILE_LOGO, width=95, caption="Logo THPT số 2 Bảo Yên")
-        with c_ico2:
-            st.markdown("""
-            - **Biểu tượng App:** Huy hiệu **Trường THPT số 2 Bảo Yên**.
-            - **Tên App trên điện thoại:** `Bán Trú THPT 2`.
-            """)
-        st.markdown("""
-        ---
-        #### 🍏 Dành cho iPhone / iPad (Trình duyệt Safari):
-        1. **Mở Camera** quét mã QR bên trái ➜ Chạm vào thông báo để mở web.
-        2. Ở thanh dưới cùng Safari, bấm nút **Chia sẻ** *(ô vuông có mũi tên chỉ lên ⬆️)*.
-        3. Cuộn xuống và chọn **"Thêm vào Màn hình chính"** *(Add to Home Screen)*.
-        4. Bấm **"Thêm"** *(Add)* ở góc trên bên phải.
-        
-        ---
-        #### 🤖 Dành cho Android (Samsung, Oppo, Xiaomi qua Chrome / Cốc Cốc):
-        1. Dùng **Camera / Zalo** quét mã QR bên trái ➜ Mở bằng Chrome.
-        2. Bấm dấu **3 chấm (⋮)** ở góc trên bên phải màn hình.
-        3. Chọn dòng **"Cài đặt ứng dụng"** hoặc **"Thêm vào Màn hình chính"**.
-        4. Bấm **"Cài đặt" / "Thêm"** để xác nhận.
-        
-        ---
-        ✨ **LỢI ÍCH:** Mở ra dùng toàn màn hình mượt mà, không có thanh địa chỉ web, không cần gõ link hay quét mã lại những lần sau!
-        """)
-
-# ========================================================
-# 4. HEADER CHÍNH
-# ========================================================
-col_h1, col_h2 = st.columns([3, 1])
-with col_h1:
-    col_lg, col_tt = st.columns([1, 6])
-    with col_lg:
-        if os.path.exists(FILE_LOGO):
-            st.image(FILE_LOGO, width=80)
-    with col_tt:
-        st.markdown("<h2 style='margin:0; padding:0; color:#1E3A8A;'>🏫 QUẢN LÝ BÁN TRÚ - THPT SỐ 2 BẢO YÊN</h2>", unsafe_allow_html=True)
-        st.markdown(f"**Năm học: {st.session_state.nam_hoc_hien_tai}** | Ngày: **{ngay_lam_viec.strftime('%d/%m/%Y')}** | Vai trò: `<span class='{badge_color}'>{role_curr}</span>`", unsafe_allow_html=True)
-
-with col_h2:
-    link_hien = duong_dan_online if duong_dan_online else duong_dan_app_mobile
-    st.success(f"📱 **Link App 24/7:**\n`{link_hien}`")
-
 st.markdown("#### 📊 **QUÂN SỐ THỜI GIAN THỰC & SUẤT ĂN HAI BỮA (TRƯA - TỐI)**")
 c_m1, c_m2, c_m3, c_m4 = st.columns(4)
 c_m1.metric("👥 Sĩ Số Bán Trú", f"{tong_hs_khu_vuc} HS", delta=f"Nam: {so_nam} | Nữ: {so_nu}")
@@ -1359,10 +1358,10 @@ if role_curr == "Ban Giám hiệu":
     # 4 CỤM NGHIỆP VỤ BÁN TRÚ & KTX CHUẨN HÓA DÀNH CHO BGH
     # --------------------------------------------------------
     tab_cluster1, tab_cluster2, tab_cluster3, tab_cluster4 = st.tabs([
-        "📋 CỤM 1: HỒ SƠ 207 HS & ĐIỂM DANH BÁO CƠM",
-        "🏢 CỤM 2: KÝ TÚC XÁ & THI ĐUA PHÒNG Ở",
-        "🍳 CỤM 3: BẾP ĂN, DINH DƯỠNG & KIỂM THỰC",
-        "💰 CỤM 4: TÀI CHÍNH BÁN TRÚ & KẾ TOÁN"
+        "📋 HỒ SƠ 207 HS & ĐIỂM DANH BÁO CƠM",
+        "🏢 KÝ TÚC XÁ & THI ĐUA PHÒNG Ở",
+        "🍳 BẾP ĂN, DINH DƯỠNG & KIỂM THỰC",
+        "💰 TÀI CHÍNH BÁN TRÚ & KẾ TOÁN"
     ])
 
     # --- CỤM 1: HỒ SƠ & ĐIỂM DANH ---
