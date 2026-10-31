@@ -1,0 +1,568 @@
+﻿Mã xe,Họ và tên,Lớp,Loại xe,Hãng xe,Màu xe,Biển số xe,SĐT Học sinh,GVCN,SĐT GVCN,Họ tên Phụ huynh,SĐT Phụ huynh,Nơi gửi xe,Địa chỉ,Tình trạng,Số lần vi phạm,Ghi chú
+XE-001,Nguyễn Thị Thanh Thảo,10A1,xe đạp điện,YAEDEA,,Đang cấp thẻ (10A1),327330743.0,Trần Văn Đoàn,947157111,Nguyễn DĐức Minh,388086180.0,Trong trường,"Ngòi Lẫu, Xã Châu Quế",Đủ điều kiện lưu hành,0,
+XE-002,Vàng Thị Hoàng Diệp - 10A1 Vàng Thị Ngọc Bích - 12A5,10A1,xe điện,,,Đang cấp thẻ (10A1),337057910.0,Trần Văn Đoàn,947157111,Phụ huynh em Vàng Thị Hoàng Diệp - 10A1 Vàng Thị Ngọc Bích - 12A5,338954557.0,Trong trường,"Bảo Hà, Bảo Yên, Lào Cai",Đủ điều kiện lưu hành,0,đi xe với cùng chị lớp Bích 12a5 chủ phương tiện
+XE-003,Trướng Thị Ngọc Ánh - 10A1 Nguyễn Đức Tâm - 12A3,10A1,xe máy điện,YAEDEA,,24-AA-764.82,961149697.0,Trần Văn Đoàn,947157111,Phụ huynh em Trướng Thị Ngọc Ánh - 10A1 Nguyễn Đức Tâm - 12A3,982472281.0,Trong trường,"Bảo Hà, Bảo Yên, Lào Cai",Nhắc nhở nề nếp,1,đi cùng chị học sinh lớp Tâm 12a3 chủ phương tiện
+XE-004,Mai Ánh Nhi,10A1,Xe máy điện,vekoo,,24- AA 214.50,915904228.0,Trần Văn Đoàn,947157111,Mai Văn Triệu,839327313.0,Trong trường,"Liên Hải, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-005,Triệu Thị Hiền - 10A1 Triệu Kim Ngân - 11A3,10A1,Xe máy điện,50cc,,24-AA 636.27,978083718.0,Trần Văn Đoàn,947157111,Phụ huynh em Triệu Thị Hiền - 10A1 Triệu Kim Ngân - 11A3,983990102.0,Trong trường,"Bảo Hà, Bảo Yên, Lào Cai",Đủ điều kiện lưu hành,0,đi xe cùng với anh Ngân lớp 11a3 chủ phương tiện
+XE-006,Đặng Thị Quỳnh Anh,10A1,Xe máy điện,AZUKI,,Đang cấp thẻ (10A1),978490351.0,Trần Văn Đoàn,947157111,Đặng Văn Hương,962698738.0,Trong trường,", Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-007,Chướng Ngọc Ánh,10A1,Xe máy điện,YADEA,,24-AA 083.37,963327920.0,Trần Văn Đoàn,947157111,Chướng Văn Thành,392565091.0,Trong trường,"Ngầm Thỉn, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-008,Đặng Nhất Chi Mai,10A1,Xe máy điện,yadea,,24-AB 0483,354870885.0,Trần Văn Đoàn,947157111,Đặng Văn Thanh,399459275.0,Trong trường,"Ngầm Thỉn, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-009,Hoàng Thùy Linh - 10A1 Lý Thị Anh Đào - 10A2,10A1,Xe máy điện,yadea,,Đang cấp thẻ (10A1),368337636.0,Trần Văn Đoàn,947157111,Phụ huynh em Hoàng Thùy Linh - 10A1 Lý Thị Anh Đào - 10A2,364809283.0,Trong trường,"Bảo Hà, Bảo Yên, Lào Cai",Đủ điều kiện lưu hành,0,Lý Thị Anh Đào đi cùng
+XE-010,Lý Lan Phương - 10A1 Đặng Thị Vân Anh - 12A3,10A1,xe máy,50cc,,24-AB 030.64,369080231.0,Trần Văn Đoàn,947157111,Phụ huynh em Lý Lan Phương - 10A1 Đặng Thị Vân Anh - 12A3,336675404.0,Trong trường,"Bảo Hà, Bảo Yên, Lào Cai",Đủ điều kiện lưu hành,0,đi xe cùng chị lớp Anh 12a3 chủ  phương tiện
+XE-011,Nguyễn Hà Vy - 10A1 Vũ Đình Hùng - 12A2,10A1,Xe máy điện,Dibao,,21-MĐ4 002.35,327146067.0,Trần Văn Đoàn,947157111,Phụ huynh em Nguyễn Hà Vy - 10A1 Vũ Đình Hùng - 12A2,379220861.0,Trong trường,"Bảo Hà, Bảo Yên, Lào Cai",Đủ điều kiện lưu hành,0,Đi xe cùng anh Hùng lớp 12A3 chủ phương tiện
+XE-012,Triệu Thu Yến,10A1,Xe máy,rsx,,24-AA 507.48,395423735.0,Trần Văn Đoàn,947157111,Triệu Tòn Chản,375109274.0,Trong trường,"Khe Bàn, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-013,Phạm Khánh Thi,10A1,Xe đạp,,,Đang cấp thẻ (10A1),866987957.0,Trần Văn Đoàn,947157111,Phạm Văn Duẩn,974881183.0,Trong trường,"Bảo Vinh, Xã Bảo Hà",Đủ điều kiện lưu hành,0,Để xe cô Trang bán xe đạp đối  diện trường cấp 2
+XE-014,Dương yến vi,10A1,xe điện,Kazuki,,Đang cấp thẻ (10A1),376910527.0,Trần Văn Đoàn,947157111,Dương Văn Thích,348289574.0,Trong trường,"Tân An, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-015,Lý Quỳnh Anh,10A1,Xe đạp điện,M133,,Đang cấp thẻ (10A1),359664844.0,Trần Văn Đoàn,947157111,Lý Văn Minh,356376088.0,Trong trường,"Thùng, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-016,Phùng Thị Khách,10A1,xe máy,rsx,,24-AA151.46,394515961.0,Trần Văn Đoàn,947157111,Phùng Thị Liều,377536147.0,Trong trường,"Khe Bàn, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-017,Đặng Ngọc Dũng,10A1,xe đạp,,,Đang cấp thẻ (10A1),396266335.0,Trần Văn Đoàn,947157111,Đặng Ngọc Phương,966668507.0,Trong trường,"Bảo Vinh, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-018,Kim Ánh Ngọc,10A1,xe đạp điện,Th36 Bike,,Đang cấp thẻ (10A1),356619420.0,Trần Văn Đoàn,947157111,Kim Văn Dương,971085416.0,Trong trường,"Tân An, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-019,Nguyễn Quỳnh Chi,10A1,xe máy,Honda,,68-H1 7396,354901511.0,Trần Văn Đoàn,947157111,Nguyễn Bá Quỳnh,378314989.0,Trong trường,"An Khánh, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-020,Nguyễn Thị Khánh  Ly,10A1,xe đạp điện,Santosar,,Đang cấp thẻ (10A1),343294783.0,Trần Văn Đoàn,947157111,Phụ huynh em Nguyễn Thị Khánh  Ly,916677096.0,Trong trường,"Bảo Hà, Bảo Yên, Lào Cai",Đủ điều kiện lưu hành,0,
+XE-021,Trần Huy Tường,10A2,Xe máy điện,Gogo,Xanh,24MĐ1-189.85,355832692.0,Hoàng Thị Oanh,356656712,Trần Văn Tuyên,379843439.0,Trong trường,"Thôn Thống Nhất, Xã Bảo Hà",Đủ điều kiện lưu hành,0,Đi cùng chị Trúc lớp 12A3
+XE-022,Bàn Thị Trang,10A2,Xe đạp điện,M133,Đỏ,Đang cấp thẻ (10A2),356787621.0,Hoàng Thị Oanh,356656712,Bàn Phúc Thắng,385967950.0,Trong trường,"Thôn Thùng, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-023,Vũ Yến Nhi,10A2,Xe đạp điện,Rzuki,Xanh đen,Đang cấp thẻ (10A2),338437845.0,Hoàng Thị Oanh,356656712,Vũ Hồng Công,338180343.0,Trong trường,"Thôn Đồng Tâm, Xã Châu Quế",Đủ điều kiện lưu hành,0,
+XE-024,Trịnh Thanh Thảo,10A2,xe đạp điện,Yadea,Đen nhám,24-AA 128.74,365212173.0,Hoàng Thị Oanh,356656712,Trịnh Đức Cường,399851032.0,Trong trường,"Thôn Mai Hồng, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-025,Đinh Lục Duy Linh,10A2,Xe đạp điện,Yadea,Đen,Đang cấp thẻ (10A2),367613654.0,Hoàng Thị Oanh,356656712,Đinh Duy Bình,385368383.0,Trong trường,"Thôn Tắp 2, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-026,Triệu Dung Phúc,10A2,Xe đạp điện,M133,Đen,Đang cấp thẻ (10A2),867679735.0,Hoàng Thị Oanh,356656712,Triệu Thị Hợi,335093718.0,Trong trường,"Thôn Bông 4, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-027,Trịnh Tám Chín,10A2,Xe đạp điện,Espero,Đen,Đang cấp thẻ (10A2),,Hoàng Thị Oanh,356656712,Trịnh Xuân Hòa,973564447.0,Trong trường,"Thôn Hồng Sơn, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-028,Trần Đức Mạnh,10A2,Xe đạp điện,yadea,Trắng,Đang cấp thẻ (10A2),337290229.0,Hoàng Thị Oanh,356656712,Trần Mạnh Cường,975403612.0,Trong trường,"Thôn Bông, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-029,Triệu Thị Thảo,10A2,Xe máy điện,SONCO BUN,Xám,24-AA448.63,358884602.0,Hoàng Thị Oanh,356656712,Triệu Xuân Trường,788005108.0,Trong trường,"Thôn Mai Hồng, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-030,Đặng Thị Như,10A2,Xe máy điện,M133,Xanh đen,Đang cấp thẻ (10A2),869219938.0,Hoàng Thị Oanh,356656712,Đặng Trung Văn,384496890.0,Trong trường,"Thôn Ly, Xã Lâm Giang",Đủ điều kiện lưu hành,0,
+XE-031,Sầm Thị Hoàng Diệu,10A2,Xe máy,50cc,Trắng,24-HB 1392,329881226.0,Hoàng Thị Oanh,356656712,Sầm Minh Tiếp,373063818.0,Trong trường,"Thôn Kim Sơn, Xã Bảo Hà",Đủ điều kiện lưu hành,0,Đi cùng chị Hoa 12A7
+XE-032,Nguyễn Thị Mai Quỳnh,10A2,Xe đạp điện,Kazuki,Đỏ,Đang cấp thẻ (10A2),,Hoàng Thị Oanh,356656712,Nguyễn Văn Tính,364424180.0,Trong trường,"Thôn Tân An 1, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-033,Đặng Trung Hiếu,10A2,Xe đạp điện,Azuki,Đen,Đang cấp thẻ (10A2),862306861.0,Hoàng Thị Oanh,356656712,Đặng Văn Thủy,919102199.0,Trong trường,"Thôn Đồng Tâm, Xã Châu Quế",Đủ điều kiện lưu hành,0,
+XE-034,Nguyễn Sơn Hà,10A2,Xe đạp điện,kazuki,Đen,Đang cấp thẻ (10A2),965843615.0,Hoàng Thị Oanh,356656712,Nguyễn Thị Huệ,359817172.0,Trong trường,"Thôn Tiền Phong, Xã Lâm Giang",Đủ điều kiện lưu hành,0,
+XE-035,Trần Bá Khánh,10A2,Xe đạp điện,Dibao,Đỏ,Đang cấp thẻ (10A2),963878811.0,Hoàng Thị Oanh,356656712,Trần Đại Dương,919731288.0,Trong trường,"Thôn Liên Hà 1, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-036,Phạm Xuân Hải,10A2,Xe đạp điện,Kazuki,Xám,Đang cấp thẻ (10A2),985198560.0,Hoàng Thị Oanh,356656712,Phạm Văn Thỉnh,385456044.0,Trong trường,"Thôn Tiền Phong, Xã Lâm Giang",Đủ điều kiện lưu hành,0,
+XE-037,Nguyễn Đức Cường,10A2,Xe đạp điện,Yadea,Đen nhám,24-AA 1543,378578480.0,Hoàng Thị Oanh,356656712,Nguyễn văn Chiến,382154192.0,Trong trường,"Thôn Hồng Sang, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-038,Bàn Tuấn Hưng,10A2,Xe đạp điện,Yadea,Đen,24-AA 253.92,325867290.0,Hoàng Thị Oanh,356656712,Bàn Văn Thương,346469644.0,Trong trường,"Thôn Khe Dài, Xã Bảo Hà",Đủ điều kiện lưu hành,0,Đi cùng Cường 12A2
+XE-039,Phạm Tuấn Tú,10A2,50cc,VTRS,Xanh,21-FA 02111,975698843.0,Hoàng Thị Oanh,356656712,Phạm Minh Tuấn,898432712.0,Trong trường,"Thôn Tắp 1, Xã Bảo Hà",Đủ điều kiện lưu hành,0,Đi cùng Lương Thị Huyên 12A3
+XE-040,Hồ Minh Hiếu,10A2,Xe đạp điện,CAP A_9,Đen,Đang cấp thẻ (10A2),365944340.0,Hoàng Thị Oanh,356656712,Hồ Quang Hùng,977596425.0,Trong trường,"Thôn Thống Nhất, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-041,Phan Thu Hằng,10A2,Xe máy điện,Xe điện 133,đen đỏ,Đang cấp thẻ (10A2),,Hoàng Thị Oanh,356656712,Phan Văn Toàn,399129647.0,Trong trường,"Thôn Khoai 3, Xã Bảo Hà",Đủ điều kiện lưu hành,0,Đi cùng Phan Thị Huyền Trang 12A1
+XE-042,Lý Thị Anh Đào,10A2,Xe đạp điện,Yadea,Trắng hồng,Đang cấp thẻ (10A2),384971193.0,Hoàng Thị Oanh,356656712,Lý Văn Đói,392802833.0,Trong trường,"Thôn Tân Sơn, Xã Bảo Hà",Đủ điều kiện lưu hành,0,di cùng Hoàng Thùy Linh 10A1
+XE-043,Họ và tên học sinh,LỚP,Loại phương tiện (1),Hãng xe / Model (2),Màu sơn xe,Biển số xe (3),,Thầy/Cô Chủ Nhiệm LỚP,988123001,Phụ huynh em Họ và tên học sinh,,Nơi để (Gửi xe),"Bảo Hà, Bảo Yên, Lào Cai",Đủ điều kiện lưu hành,0,Ghi chú
+XE-044,Chu Chí Sơn,10A2,Xe máy điện,Gogo Espero,Đen,Đang cấp thẻ (10A2),913536392.0,Hoàng Thị Oanh,356656712,Chu Chí Hiếu,399544238.0,Bãi gần đồn công an,"Thôn Tắp 4, Xã Bảo Hà",Đủ điều kiện lưu hành,0,Đi cùng Lương Gia Huy 11A4
+XE-045,Thái Thanh Hà,10A3,Xe đạp điện,Osakar,đen,Đang cấp thẻ (10A3),972305594.0,Trần Thị Hiền,974657769,Phụ huynh em Thái Thanh Hà,982502273.0,trong trường,"Bảo Hà, Bảo Yên, Lào Cai",Đủ điều kiện lưu hành,0,đi một minh
+XE-046,Nông Đức Hiệp,10A3,xe đạp điện,,xanh nhám,Đang cấp thẻ (10A3),347478320.0,Trần Thị Hiền,974657769,Nông Văn Noọng,987679240.0,trong trường,"Thôn Mai Hồng, Xã Bảo Hà",Đủ điều kiện lưu hành,0,đi 1 mình
+XE-047,Nguyễn Minh Hoàng,10A3,xe đạp,,xám đen,Đang cấp thẻ (10A3),,Trần Thị Hiền,974657769,Nguyễn Trọng Hưng,333024999.0,trong trường,"Ngầm Thỉn, Xã Bảo Hà",Đủ điều kiện lưu hành,0,đi một mình
+XE-048,Lê Quốc Huy,10A3,Xe đạp điện,kazuki,xanh,Đang cấp thẻ (10A3),332185371.0,Trần Thị Hiền,974657769,Lê Viết Dũng,354493097.0,trong trường,"Tiền Phong, Xã Lâm Giang",Đủ điều kiện lưu hành,0,đi vs anh 10a7
+XE-049,Trần Thị Khuyên,10A3,xe đạp điện,kazuki,trắng,Đang cấp thẻ (10A3),,Trần Thị Hiền,974657769,Trần Văn Páo,973800992.0,trong trường,"Thôn Thống Nhất, Xã Bảo Hà",Đủ điều kiện lưu hành,0,đi 1 mình
+XE-050,Bàn Thị Kim Ngọc,10A3,Xe máy điện,Kazuki,Đỏ,Đang cấp thẻ (10A3),963451049.0,Trần Thị Hiền,974657769,Bàn Văn Đông,818184251.0,trong trường,"Thôn Mai Hồng, Xã Bảo Hà",Đủ điều kiện lưu hành,0,Đi 1 mình
+XE-051,Lý Hoàng Như,10A3,Xe đạp điện,Ofli,trắng,Đang cấp thẻ (10A3),345701946.0,Trần Thị Hiền,974657769,Hoàng Văn Thái,362205904.0,trong trường,"Thôn 1 Tân Văn, Xã Bảo Hà",Đủ điều kiện lưu hành,0,đi 1 mình
+XE-052,Lương Vũ Phong,10A3,Xe máy,,Xanh đậm,Đang cấp thẻ (10A3),988783881.0,Trần Thị Hiền,974657769,Lương Văn Mười,988783881.0,Trong trường,"Thôn 5AB, Xã Bảo Hà",Đủ điều kiện lưu hành,0,Đi vs anh 12A4
+XE-053,Đặng Mai Phương,10A3,xe đạp điện,weezee240w,xám,Đang cấp thẻ (10A3),363620950.0,Trần Thị Hiền,974657769,Đặng Văn Phín,962176970.0,trong trường,"Thôn Tân Trúc, Xã Bảo Hà",Đủ điều kiện lưu hành,0,đi 1 mình
+XE-054,Trần Đình Quang,10A3,xe đạp điện,AIMA-X86,đỏ đen,Đang cấp thẻ (10A3),961402983.0,Trần Thị Hiền,974657769,Trần Đình Tùng,968948756.0,trong trường,"Thôn Ngầm Thỉn, Xã Bảo Hà",Đủ điều kiện lưu hành,0,đi vs Thiện 10a3
+XE-055,Triệu Long Quý,10A3,xe máy 50cc,hb,xanh,Đang cấp thẻ (10A3),869086275.0,Trần Thị Hiền,974657769,Triệu Văn Phấy,364884404.0,trong trường,"Thôn Bông, Xã Bảo Hà",Đủ điều kiện lưu hành,0,đi cùng chị 11a3
+XE-056,Nguyễn Châu Như Quỳnh,10A3,Xe máy điện,K1,Nâu be,Đang cấp thẻ (10A3),385523104.0,Trần Thị Hiền,974657769,Nguyễn Ngọc Nghiêm,397808916.0,trong trường,"Thôn Tân Thượng, Xã Bảo Hà",Đủ điều kiện lưu hành,0,đi một minh
+XE-057,Nguyễn Quyết Tiến,10A3,Xe đạp điện,yadea xbull,đen,Đang cấp thẻ (10A3),344416927.0,Trần Thị Hiền,974657769,Nguyễn Văn Dền,358773042.0,trong trường,"Thôn Tân Trúc, Xã Bảo Hà",Đủ điều kiện lưu hành,0,đi với Thắng 10a4
+XE-058,Vi Đức Thiện,10A3,xe đạp điện,AIMA-X86,đỏ đen,Đang cấp thẻ (10A3),866562450.0,Trần Thị Hiền,974657769,Vi Văn Mong,393011365.0,trong trường,"Thôn Ngầm Thỉn, Xã Bảo Hà",Đủ điều kiện lưu hành,0,chở quang 10a3
+XE-059,Họ và tên học sinh,LỚP,Loại phương tiện (1),Hãng xe / Model (2),Màu sơn xe,Biển số xe (3),,Thầy/Cô Chủ Nhiệm LỚP,988123001,Phụ huynh em Họ và tên học sinh,,Nơi để (Gửi xe),"Bảo Hà, Bảo Yên, Lào Cai",Đủ điều kiện lưu hành,0,Ghi chú
+XE-060,Mai Thị Lan Anh,10A3,xe đạp điện,Aimia M133,đen,Đang cấp thẻ (10A3),,Trần Thị Hiền,974657769,Mai Xuân Hùng,356962530.0,ngoài trường,"Thôn Ba Soi, Xã Bảo Hà",Đủ điều kiện lưu hành,0,đi 1 mình
+XE-061,Hoàng Nam Anh,10A3,xe đạp điện,sport g2,đen.,Đang cấp thẻ (10A3),385197674.0,Trần Thị Hiền,974657769,Hoàng Văn Quyền,377038956.0,ngoài trường,"Thôn Hồng Bùn, Xã Bảo Hà",Đủ điều kiện lưu hành,0,đi 1 mình
+XE-062,Trần Mạnh Hùng,10A3,xe máy điện,YAKA,xám,24AA-3525,789109425.0,Trần Thị Hiền,974657769,Trần Văn Man,336556700.0,ngoài trường,"Bản Mai, Xã Bảo Hà",Đủ điều kiện lưu hành,0,đi với chị 12a4
+XE-063,Nguyễn Đức Vượng,10A3,xe đạp,Borki,Trắng,Đang cấp thẻ (10A3),979105883.0,Trần Thị Hiền,974657769,Nguyễn Văn Tâm,966970175.0,Ngoài trường,"Thôn Bảo Vinh, Xã Bảo Hà",Đủ điều kiện lưu hành,0,đi một mình
+XE-064,Phan Thị Phương Thảo,10A3,xe máy điện,GoGo,Xám ghi,Đang cấp thẻ (10A3),866568730.0,Trần Thị Hiền,974657769,Phan Văn Huy,985224393.0,Ngoài trường,"Thôn Kim Quang, Xã Bảo Hà",Đủ điều kiện lưu hành,0,đi hai người
+XE-065,Nguyễn Thị Ngọc,10A3,Xe đạp điện,Kazuki,đen,Đang cấp thẻ (10A3),326278340.0,Trần Thị Hiền,974657769,Nguyễn Thành Tiếp,377571772.0,Ngoài trường,"Bản Liên Hải, Xã Bảo Hà",Đủ điều kiện lưu hành,0,Đi 1 mình
+XE-066,Trương Minh Anh,10A4,Xe máy điện,espero,Đen,Đang cấp thẻ (10A4),344126802.0,Phạm Đức Hưng,359220000,Trương Ngọc Đệ,376723746.0,trong trường,"Bản Hồng bùn, Xã Bảo Hà",Đủ điều kiện lưu hành,0,đi 1 mình
+XE-067,Triệu Thị Ánh,10A4,xe điện,,Đỏ,Đang cấp thẻ (10A4),,Phạm Đức Hưng,359220000,Triệu Văn Ngọ,336945002.0,trong trường,"Cam 2, Xã Bảo Hà",Đủ điều kiện lưu hành,0,đi với chị Đặng Thị Vân 11a4
+XE-068,Đinh Thị Thúy Bình,10A4,xe máy,Detech,Đen,24AA-247.16,326097011.0,Phạm Đức Hưng,359220000,Đinh Văn Nông,326117584.0,trong trường,"7AB, Xã Bảo Hà",Đủ điều kiện lưu hành,0,đi với chị lớp 12A3
+XE-069,Ma Thị Ngọc Diễm,10A4,Xe máy điện,133,Xám,Đang cấp thẻ (10A4),899418738.0,Phạm Đức Hưng,359220000,Ma văn Chúng,383229114.0,trong trường,"Bản Hồng bùn, Xã Bảo Hà",Đủ điều kiện lưu hành,0,Đi với chị Hoàng AnhVân lớp 11A3
+XE-070,Phạm Thu Hiền,10A4,Xe đạp,,Đen,Đang cấp thẻ (10A4),966252632.0,Phạm Đức Hưng,359220000,Phạm Đức Vượng,977680259.0,trong trường,"Bảo Vinh, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-071,Bàn Thị Hoa,10A4,xe máy,50cc,Xanh than,Đang cấp thẻ (10A4),868654376.0,Phạm Đức Hưng,359220000,Bàn Tuấn Anh,974216321.0,trong trường,"1 Nhai Tẻn, Xã Bảo Hà",Đủ điều kiện lưu hành,0,đi với anh Bàn Thanh Chung 12a5
+XE-072,Phạm Khánh Huyền,10A4,Xe máy điện,kazuki,Đỏ,Đang cấp thẻ (10A4),363194592.0,Phạm Đức Hưng,359220000,Phạm Ngọc Hậu,386056717.0,trong trường,"Hồng Sơn, Xã Bảo Hà",Đủ điều kiện lưu hành,0,đi 1 mình
+XE-073,Lương Ngọc Khuê,10A4,Xe điện,,Đen,Đang cấp thẻ (10A4),967046589.0,Phạm Đức Hưng,359220000,Lương Văn Nhất,325667281.0,trong trường,"Tắp 2, Xã Bảo Hà",Đủ điều kiện lưu hành,0,đi với chị Lương nguyễn thuỳ trâm lớp 11a6
+XE-074,Trần Diệu Linh,10A4,xe đạp,,Nâu,Đang cấp thẻ (10A4),393135802.0,Phạm Đức Hưng,359220000,Trần Duy Hưng,776471552.0,trong trường,"An Khánh, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-075,Trướng Thị Khánh Linh,10A4,Xe máy điện,SONCO BUN,Xám,24AA-488.63,973174125.0,Phạm Đức Hưng,359220000,Trướng Văn Tế,964043728.0,trong trường,"Tân Sơn, Xã Bảo Hà",Đủ điều kiện lưu hành,0,đi cùng bạn Triệu Thị Thảo lớp 10a2
+XE-076,Nguyễn Duy Mạnh,10A4,Xe đạp điên,133,Đen,Đang cấp thẻ (10A4),396963631.0,Phạm Đức Hưng,359220000,Nguyễn Đức Hải,339193502.0,trong trường,"Tắp 1, Xã Bảo Hà",Đủ điều kiện lưu hành,0,đi 1 mình
+XE-077,Ngô Thị Khánh Ngân,10A4,Xe máy điện,Yadea,Đen,24MĐ1-237.74,812448855.0,Phạm Đức Hưng,359220000,Ngô Hồng việt,975333606.0,trong trường,"Thôn Bảo vinh, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-078,Ngô Đỗ Khánh Nhi,10A4,Xe máy điện,Aima M1 Sport,Đen,Đang cấp thẻ (10A4),862136504.0,Phạm Đức Hưng,359220000,Ngô Tân Xuân,364958344.0,trong trường,"Mai Ù, Xã Bảo Hà",Đủ điều kiện lưu hành,0,đi một mình
+XE-079,Triệu Quỳnh Như,10A4,Xe máy điện,Azuki,Đỏ,Đang cấp thẻ (10A4),,Phạm Đức Hưng,359220000,Triệu Văn Bình,966266963.0,trong trường,"Thôn Hồng Sơn, Xã Bảo Hà",Đủ điều kiện lưu hành,0,Đi 1 mình
+XE-080,Nguyễn Kim Oanh,10A4,Xe đạp điên,yadea i8,Xám,Đang cấp thẻ (10A4),975282644.0,Phạm Đức Hưng,359220000,Nguyễn Đức Tấn,338383786.0,trong trường,"Bông 1, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-081,Nguyễn Duy Quyết,10A4,Xe đạp điện,Karuki,Xanh nhạt,Đang cấp thẻ (10A4),396217802.0,Phạm Đức Hưng,359220000,Nguyễn Bá Cương,974889612.0,trong trường,"Thôn Hồng Sang, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-082,Phạm Tuấn Tú,10A4,Xe đạp điện,Kazuki,Đỏ,Đang cấp thẻ (10A4),393024271.0,Phạm Đức Hưng,359220000,Phạm Thanh Tâm,398797952.0,trong trường,"Thôn Liên Hải, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-083,Trương Văn Tường,10A4,Xe đạp điên,133,Xanh,Đang cấp thẻ (10A4),364006574.0,Phạm Đức Hưng,359220000,Trương văn Diêu,869353722.0,trong trường,"Ngầm Thỉn, Xã Bảo Hà",Đủ điều kiện lưu hành,0,đi một mình
+XE-084,Đặng Phúc Thắng,10A4,Xe đạp điên,Yadea xbull,Đen,Đang cấp thẻ (10A4),348049460.0,Phạm Đức Hưng,359220000,Đặng Văn Chản,325332451.0,trong trường,"Khe Dài, Xã Bảo Hà",Đủ điều kiện lưu hành,0,Đi một mình
+XE-085,Lý Thị Thơm,10A4,Xe máy điện,JVC,Xanh,24-AA513.71,788016131.0,Phạm Đức Hưng,359220000,Lý Văn Phúc,368251355.0,trong trường,"Tân Trúc, Xã Bảo Hà",Đủ điều kiện lưu hành,0,Đi một mình
+XE-086,Bàn Hiểu Thuần,10A4,Xe đạp điên,Yadea,Đen xám,Đang cấp thẻ (10A4),395685771.0,Phạm Đức Hưng,359220000,Bàn Văn Tiếp,329073046.0,trong trường,"Thôn Ly, Xã Lâm Giang",Đủ điều kiện lưu hành,0,Đi một mình
+XE-087,Triệu Thị Thuý,10A4,Xe đạp điên,st lotus,đen,Đang cấp thẻ (10A4),978200965.0,Phạm Đức Hưng,359220000,Triệu Văn Chản,382182220.0,trong trường,"Thôn Khe Dài, Xã Bảo Hà",Đủ điều kiện lưu hành,0,đi một mình
+XE-088,Nguyễn Thị Anh Thư,10A4,xe máy điện,Nịna,đen xám,24-HD1 092.57,397267729.0,Phạm Đức Hưng,359220000,Nguyễn Văn Chính,974996874.0,trong trường,"Thôn Thống Nhất, Xã Bảo Hà",Đủ điều kiện lưu hành,0,đi cùng chị 11a2
+XE-089,Phan Thị Thu Thương,10A4,xe đạp điện,kazuki,Đen,Đang cấp thẻ (10A4),344405347.0,Phạm Đức Hưng,359220000,Phan Văn Thể,395450798.0,trong trường,"Thôn Liên Hải, Xã Bảo Hà",Đủ điều kiện lưu hành,0,đi một mình
+XE-090,Nông Văn Viên,10A4,Xe máy điện,Gogo,Trắng,24-AA 152.15,372408341.0,Phạm Đức Hưng,359220000,Nông Văn Cu,979574451.0,trong trường,"Thôn Mai Ù, Xã Bảo Hà",Đủ điều kiện lưu hành,0,đi cùng chị 11a4
+XE-091,Hoàng Thị Phương Vy,10A4,Xe đạp điên,Lc bike,Đen,Đang cấp thẻ (10A4),377749422.0,Phạm Đức Hưng,359220000,Vũ Quốc Minh,373114614.0,trong trường,"Thôn Hồng Sơn, Xã Bảo Hà",Đủ điều kiện lưu hành,0,đi một mình
+XE-092,Họ và tên học sinh,10A4,Loại phương tiện (1),Hãng xe / Model (2),Màu  sơn xe,Biển  số xe (3),,Phạm Đức Hưng,359220000,Phụ huynh em Họ và tên học sinh,,Nơi để (Gửi xe),"Bảo Hà, Bảo Yên, Lào Cai",Đủ điều kiện lưu hành,0,Ghi chú
+XE-093,Nguyễn Mỹ Phương,10A4,Xe máy điện,xmen,Đen,Đang cấp thẻ (10A4),377649104.0,Phạm Đức Hưng,359220000,Nguyễn Minh Hoạt,325614586.0,Ngoài trường nhà dũng toan,"Thôn Thống Nhất, Xã Bảo Hà",Đủ điều kiện lưu hành,0,đi cùng anh trai 12a7
+XE-094,Nguyễn Thị Hải Yến,10A4,Xe đạp điện,ZBiKe,Đen tím,Đang cấp thẻ (10A4),366165608.0,Phạm Đức Hưng,359220000,Nguyễn Đức Khôi,967656736.0,Ngoài trường (ở nha khoa Hà Nội ),"Thôn thống nhất, Xã Bảo Hà",Đủ điều kiện lưu hành,0,Để nhà chú ruột
+XE-095,Lã anh khôi,10A5,xe đạp điện,kazuki,đen,xe động cơ  dưới 250w,372266102.0,Nguyễn Nhật Hà,342361644,Lã Văn Duyến,349901842.0,Trong trường,"Hồng Sang, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-096,Trần Gia Bảo,10A5,Xe đạp điện,Yadea,Đen nhám,24-AA 151.64,867634396.0,Nguyễn Nhật Hà,342361644,Trần Văn Dao,975147965.0,Trong trường,"Thôn Mai Hồng 3, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-097,Lục Hải Đăng,10A5,Xe đạp điện,Yadea,Xám xi măng,Đang cấp thẻ (10A5),888271888.0,Nguyễn Nhật Hà,342361644,Lục Đức Thanh,984782419.0,Trong trường,"Bản Liên Hà 3, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-098,Nguyễn Mạnh Cường,10A5,xe đạp,Knight,đen xanh lam,Đang cấp thẻ (10A5),904923306.0,Nguyễn Nhật Hà,342361644,Nguyễn Minh Tiến,385990071.0,Trong trường,"Bản Liên Hà 5, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-099,Tống Thị Kiều Ân,10A5,xe đạp điện,Espero Weezee M3,đen,Đang cấp thẻ (10A5),776427226.0,Nguyễn Nhật Hà,342361644,Tống Văn Mười,325731450.0,Trong trường,"Thôn Đồng Tâm, Xã Châu Quế",Đủ điều kiện lưu hành,0,
+XE-100,Nguyễn Thế Duyệt,10A5,xe đạp điện,kazuki,đen,Đang cấp thẻ (10A5),369988223.0,Nguyễn Nhật Hà,342361644,Nguyễn Thế Anh,382005726.0,Trong trường,"Thôn Tắp 2, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-101,Đoàn Thị Ngọc Như,10A5,xe đạp điện,kazuki,xám xi măng,Đang cấp thẻ (10A5),335238624.0,Nguyễn Nhật Hà,342361644,Đoàn Đức Cảnh,377816924.0,Trong trường,"Thôn Tân An, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-102,Ngô Mỹ Duyên,10A5,xe đạp điện,YADEA,Vàng xám,24AA-635.67,369935470.0,Nguyễn Nhật Hà,342361644,Ngô Đình Thuận,363543889.0,Trong trường,"Thôn Tắp 2, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-103,Nguyễn Thị Trúc,10A5,Xe điện,Kazuki,Đen,24-MĐ1 238.30,384436502.0,Nguyễn Nhật Hà,342361644,Nguyễn Đức Nghĩa,963474327.0,Trong trường,"Thôn Kim Quang, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-104,Phạm Minh Dũng,10A5,xe đạp,Asama,xanh,Đang cấp thẻ (10A5),826262566.0,Nguyễn Nhật Hà,342361644,Phạm Ngọc Sơn,974687758.0,Trong trường,"Bản Liên Hà 4, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-105,Phạm Thị Thu Huyền,10A5,Xe đạp điện,kazuki,Xanh,Đang cấp thẻ (10A5),921715789.0,Nguyễn Nhật Hà,342361644,Phạm Văn Đính,971525771.0,Trong trường,"Bảo Vinh, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-106,Đào Linh Đan,10A5,Xe đạp điên,Weezy,Trắng,Đang cấp thẻ (10A5),964715852.0,Nguyễn Nhật Hà,342361644,Đào Văn Công,366702811.0,Trong trường,"Thôn Nghĩa Dũng, Xã Lâm Giang",Đủ điều kiện lưu hành,0,
+XE-107,Trần Quỳnh Nhi,10A5,xe đạp điện,kazuki,xanh,Đang cấp thẻ (10A5),363682603.0,Nguyễn Nhật Hà,342361644,Trần Văn Thuyên,379868618.0,Trong trường,"Thôn Hồng Sơn, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-108,Tạ Khánh Duy,10A5,xe đạp điện,G8,xanh,Đang cấp thẻ (10A5),334367517.0,Nguyễn Nhật Hà,342361644,Tạ Ngọc Long,945212206.0,Trong trường,"Thôn Nghĩa Dũng, Xã Lâm Giang",Đủ điều kiện lưu hành,0,
+XE-109,Lê Anh Đức,10A5,xe đạp điện,gians,đen,Đang cấp thẻ (10A5),362290389.0,Nguyễn Nhật Hà,342361644,Lê Văn Thái,388289806.0,Trong trường,"Tân An 1, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-110,Lê Phan Chiến,10A6,xe đạp điện,espero,xám si măng,Đang cấp thẻ (10A6),332715112.0,Phạm Thị Tin,347769860,Phụ huynh em Lê Phan Chiến,327042361.0,Trong trường,"Bảo Hà, Bảo Yên, Lào Cai",Đủ điều kiện lưu hành,0,
+XE-111,Nguyễn Tấn Dũng,10A6,xe máy điện,gogo,màu trắng,24MĐ1-240.93,389415753.0,Phạm Thị Tin,347769860,Nguyễn Văn Thắng,347609916.0,Trong trường,"Tân An, Xã Bảo Hà",Đủ điều kiện lưu hành,0,Đi nhờ anh trai: Nguyễn Thanh Quang 12A7
+XE-112,Nguyễn Bảo Long,10A6,xe đạp điện,yadea,xanh tím,24-AB-060.24,374775165.0,Phạm Thị Tin,347769860,Nguyễn Văn Việt,376373335.0,trong trường,"Tân Văn, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-113,Nguyễn Lâm Nhi,10A6,Xe đạp,,Màu đen,Đang cấp thẻ (10A6),337370604.0,Phạm Thị Tin,347769860,Nguyễn Trung Dũng,372026596.0,trong trường,"Bảo Vinh, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-114,Nguyễn Hoài An,10A6,Xe đạp,,Màu đen,Đang cấp thẻ (10A6),569990666.0,Phạm Thị Tin,347769860,Nguyễn Quang Tú,968227722.0,trong trường,"Tân An, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-115,Hoàng Thu Hoài,10A6,xe máy,50cc,xanh đen,24-AA-083.45,359032330.0,Phạm Thị Tin,347769860,Hoàng Văn Tuấn,366663240.0,trong trường,"Liên Hải, Xã Bảo Hà",Đủ điều kiện lưu hành,0,Đi xe cùng chị Nguyễn Thảo My 12A2
+XE-116,Lương Khánh Chi,10A6,xe đạp điện,,Đen,Đang cấp thẻ (10A6),394820154.0,Phạm Thị Tin,347769860,Lương Xuân Đạt,973467719.0,trong trường,"Bảo Vinh, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-117,Phạm Hải Nam,10A6,Xe đạp,,Đen,Đang cấp thẻ (10A6),869739115.0,Phạm Thị Tin,347769860,Phạm Hải Toàn,334158598.0,trong trường,"Liên Hà 2, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-118,Vũ Hạ Xuân Thu,10A6,xe đạp,,xanh đen,Đang cấp thẻ (10A6),708518999.0,Phạm Thị Tin,347769860,Vũ Đông,393167528.0,trong trường,"Bảo Vinh, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-119,Nguyễn Khánh Lâm,10A6,xe đạp,,trắng,Đang cấp thẻ (10A6),368568305.0,Phạm Thị Tin,347769860,Nguyễn Văn Cường,353169072.0,trong trường,"Liên Hải, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-120,Trần Lan Hương,10A6,Xe đạp điện,,xanh đen,Đang cấp thẻ (10A6),386121057.0,Phạm Thị Tin,347769860,Trần Xuân Lai,356209078.0,trong trường,"Liên Hà 1, Xã Bảo Hà",Đủ điều kiện lưu hành,0,Đi cùng chị Hoàng Phương Anh lớp 11A3
+XE-121,Trần Phương Anh,10A6,xe máy,50cc,đen,24-AA249.27,355039211.0,Phạm Thị Tin,347769860,Trần Văn Trọng,961721546.0,trong trường,"Tân Thành, Xã Bảo Hà",Đủ điều kiện lưu hành,0,Đi cùng anh Trần Nguyên An lớp 12A2
+XE-122,Đỗ Quỳnh Chi,10A6,xe đạp điện,YADEA,xanh nhám,24-AA21641,349488208.0,Phạm Thị Tin,347769860,Đỗ Văn Vinh,356087688.0,trong trường,"Tân An, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-123,Nguyễn Công Vương,10A6,xe đạp điện,Kazuki,xanh than,Đang cấp thẻ (10A6),867877412.0,Phạm Thị Tin,347769860,Nguyễn Văn Đại,989157082.0,trong trường,"Liên Hải, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-124,Nguyễn Quỳnh Như,10A6,Xe đạp điện,Nnuia,Đen,Đang cấp thẻ (10A6),339634518.0,Phạm Thị Tin,347769860,Nguyễn Khánh Hoà,375885106.0,trong trường,"Kim Quang, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-125,Bùi Khánh Toàn,10A6,xe đạp điện,m133 250w,đỏ,24MĐ1 00298,976850980.0,Phạm Thị Tin,347769860,Bùi Anh Tuấn,394354160.0,trong trường,"Tân Văn, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-126,Nguyễn Kiều Linh,10A6,xe máy điện,yadea,xanh,24-AA 5060,333072132.0,Phạm Thị Tin,347769860,Nguyễn Việt Dũng,985336890.0,trong trường,"Tân An, Xã Bảo Hà",Đủ điều kiện lưu hành,0,đi cùng chị Nguyễn Thị Ngọc Mai lớp 12A6
+XE-127,Trần Yến Nhi,10A6,Xe máy điện,Gogo,,24-MĐ1-099.92,377407857.0,Phạm Thị Tin,347769860,Trần Ngọc Trưởng,337158776.0,trong trường,"Bản Mai, Xã Bảo Hà",Đủ điều kiện lưu hành,0,Đi cùng anh họ Trần Việt Hoàng lớp 12A2
+XE-128,Lê Đắc Huy,10A6,xe đạp diện,Yadea,xám,Đang cấp thẻ (10A6),327544713.0,Phạm Thị Tin,347769860,Lê Đắc Thái,333311397.0,trong trường,"Nghĩa Dũng, Xã Lâm Giang",Đủ điều kiện lưu hành,0,
+XE-129,Lâm Văn Nhật,10A6,Xe máy,Detech,trắng,Đang cấp thẻ (10A6),962463092.0,Phạm Thị Tin,347769860,Lâm Văn Đạt,338179371.0,trong trường,"Kim Sơn, Xã Bảo Hà",Đủ điều kiện lưu hành,0,Đi cùng anh trai Lâm Văn Đức 12A4
+XE-130,Kim Hoàng Hải,10A6,xe đạp,fixed gear,trắng,Đang cấp thẻ (10A6),327216976.0,Phạm Thị Tin,347769860,Kim Văn Phóng,977108067.0,trong trường,"An Khánh, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-131,Nguyễn Gia Hưng,10A6,xe đạp,road,xanh dương,Đang cấp thẻ (10A6),843268782.0,Phạm Thị Tin,347769860,Nguyễn Văn Dương,942872867.0,trong trường,"Tân An, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-132,Nguyễn Thảo Nguyên,10A6,Xe HB,Wave50cc,Đen,24HB-065.88,357667413.0,Phạm Thị Tin,347769860,Nguyễn Văn Định,943744519.0,trong trường,"Tân Thành, Xã Bảo Hà",Đủ điều kiện lưu hành,0,Đi nhờ anh Vũ Văn Thịnh 12A4
+XE-133,Nguyễn Hoàng Minh,10A6,Xe điện,Espero,Đen,Đang cấp thẻ (10A6),345437762.0,Phạm Thị Tin,347769860,Nguyễn Minh Tư,389596998.0,trong trường,"Liên Hà 5, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-134,Nguyễn Đức Thiện,10A6,Xe đạp,,Trắng,Đang cấp thẻ (10A6),373612604.0,Phạm Thị Tin,347769860,Nguyễn Đức Trung,376761278.0,trong trường,"Liên Hà 5, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-135,Nguyễn Minh Đức,10A6,Xe đạp,,xám,Đang cấp thẻ (10A6),372054846.0,Phạm Thị Tin,347769860,Nguyễn Văn Hà,973376861.0,trong trường,"Bảo Vinh, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-136,Đoàn Dương Nghĩa,10A6,Xe đạp,,Đen,Đang cấp thẻ (10A6),326062806.0,Phạm Thị Tin,347769860,Đoàn Văn Kiên,941164685.0,trong trường,"Liên Hà 2, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-137,Kim Hoàng Hải,10A6,Xe đạp,Pink,trắng,Đang cấp thẻ (10A6),327216976.0,Phạm Thị Tin,347769860,Kim Văn Phóng,977108067.0,trong trường,"An Khánh, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-138,Tô Tuấn Dũng,10A6,Xe  đạp,,Đen,Đang cấp thẻ (10A6),366752811.0,Phạm Thị Tin,347769860,Tô Quang Trường,983711402.0,trong trường,"Liên Hà 1, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-139,Họ và tên học sinh,LỚP,Loại phương tiện (1),Hãng xe / Model (2),Màu sơn xe,Biển số xe (3),,Thầy/Cô Chủ Nhiệm LỚP,988123001,Phụ huynh em Họ và tên học sinh,,Nơi để (Gửi xe),"Bảo Hà, Bảo Yên, Lào Cai",Đủ điều kiện lưu hành,0,Ghi chú
+XE-140,Đặng Ngọc Ánh,10A6,Xe đạp điện,Nijia,Màu đỏ,Đang cấp thẻ (10A6),989245482.0,Phạm Thị Tin,347769860,Đặng Văn Mạnh,965626691.0,Trường THCS Bảo Hà,"Liên Hà 1, Xã Bảo Hà",Đủ điều kiện lưu hành,0,đi cùng em gái
+XE-141,Lê Kim Hiền,10A6,xe máy điện,Faro,Trắng cam,24-AA 213.67,356339384.0,Phạm Thị Tin,347769860,Lê Văn Đức,968036885.0,Ngoài trường  (nhà Dũng Toan),"Tân Sơn, Xã Bảo Hà",Đủ điều kiện lưu hành,0,Đi cùng chị Lê Phương Thảo lớp 12a7
+XE-142,Trần Thị Hương Giang,10A7,xe máy điện,YADEA,Xám nhám,Đang cấp thẻ (10A7),327422846.0,Trần Thị Dòng,337117336,Trần Văn Toàn,983085703.0,Trong trường,"Thôn Bảo Ân, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-143,Đặng Khánh Hạ,10A7,xe máy điện,Kazuki,Hồng,Đang cấp thẻ (10A7),866126899.0,Trần Thị Dòng,337117336,Đặng Văn Dáng,983730774.0,Trong trường,"Thôn Tân Sơn, Xã Bảo Hà",Đủ điều kiện lưu hành,0,Đi cung chị 12a6
+XE-144,Trần Phương Linh,10A7,Xe máy điện,113,Đen,Đang cấp thẻ (10A7),973708931.0,Trần Thị Dòng,337117336,Trần Gia Nam,985846971.0,Trong trường,"Thôn Nghĩa Dũng, Xã Lâm Giang",Đủ điều kiện lưu hành,0,
+XE-145,Lự Thị Hồng Khuê,10A7,xe máy điện,YADEA,Vàng,Đang cấp thẻ (10A7),,Trần Thị Dòng,337117336,Lự Văn Công,886515097.0,Trong trường,"Thôn Tắp 1, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-146,Vũ Linh Sâm,10A7,xe máy điện,YaKa t1,Đen,Đang cấp thẻ (10A7),346030967.0,Trần Thị Dòng,337117336,Vũ Trọng Thủy,379153437.0,Trong trường,"Thôn Nghĩa Giang, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-147,Lý Thị Huyền Trang,10A7,xe máy điện,Yakat1,Đen,Đang cấp thẻ (10A7),338871062.0,Trần Thị Dòng,337117336,Lý Đức Thiên,977602837.0,Trong trường,"Thôn Ly, Xã Lâm Giang",Đủ điều kiện lưu hành,0,
+XE-148,Đặng Thị Nhi,10A7,Xe máy điện,Yadea,Đen,Đang cấp thẻ (10A7),395088320.0,Trần Thị Dòng,337117336,Đặng Văn Nốc,,Trong trường,"Thôn Thíp Dạo, Xã Lâm Giang",Đủ điều kiện lưu hành,0,
+XE-149,Hoàng Hải Anh,10A7,Xe máy điện,Dibao,Cam,24MĐ1 04708,865352429.0,Trần Thị Dòng,337117336,Hoàng Đình Thành,967016187.0,Trong trường,"Thôn 2 Tân Văn, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-150,Lý Ngọc Tiến,10A7,Xe máy điện,yadea icandy,Xám nhám,Đang cấp thẻ (10A7),358332409.0,Trần Thị Dòng,337117336,Lý Xuân Đàm,354268806.0,Trong trường,"Thôn Ly, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-151,Trương Thị Hoa,10A7,xe máy điện,VEKOO,Xám,24AA 44854,357446384.0,Trần Thị Dòng,337117336,Trương Văn Tó,835555085.0,Trong trường,"Thôn Thống Nhất, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-152,Bàn Thị Tâm Linh,10A7,xe đạp điện,yadea,Xám,Đang cấp thẻ (10A7),334335216.0,Trần Thị Dòng,337117336,Bàn Văn Mun,377236043.0,Trong trường,"Thôn Khe Dài, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-153,Nguyễn Thi Trà My,10A7,xe máy điện,,Đen,Đang cấp thẻ (10A7),348331513.0,Trần Thị Dòng,337117336,Phụ huynh em Nguyễn Thi Trà My,838653120.0,Trong trường,"Bảo Hà, Bảo Yên, Lào Cai",Đủ điều kiện lưu hành,0,
+XE-154,Nguyễn Thị Hồng Quyên,10A7,xe đạp điện,xbull,Xám,24AB 060024,372122704.0,Trần Thị Dòng,337117336,Nguyễn Văn Đằng,398078054.0,Trong trường,"Thôn Bảo Ân, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-155,Lại Thị Thanh Chúc,10A7,xe máy điện,Kazuki,Đen,24AA 25393,396340724.0,Trần Thị Dòng,337117336,Lại Văn Trường,359261250.0,Trong trường,"Thôn Liên Hải, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-156,Nguyễn Chí Dũng,10A7,xe máy điện,YADAE,Đen,24AA  15449,944345569.0,Trần Thị Dòng,337117336,Nguyễn Mạnh Hà,981141569.0,Trong trường,"Thôn Tân Trúc, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-157,Họ và tên học sinh,LỚP,Loại phương tiện (1),Hãng xe / Model (2),Màu sơn xe,Biển số xe (3),,Thầy/Cô Chủ Nhiệm LỚP,988123001,Phụ huynh em Họ và tên học sinh,,Nơi để (Gửi xe),"Bảo Hà, Bảo Yên, Lào Cai",Đủ điều kiện lưu hành,0,Ghi chú
+XE-158,Nguyễn Trà My,10A7,Xe máy điện,Yađea,Xám,Đang cấp thẻ (10A7),327490394.0,Trần Thị Dòng,337117336,Nguyễn Ngọc Thắng,967709863.0,Nhà chị ( gần cầu),"Thôn Thống Nhất, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-159,Trịnh Thuỳ Dương,10A7,xe máy điện,DIBAO,ĐỎ,24AA 21363,344390810.0,Trần Thị Dòng,337117336,Phụ huynh em Trịnh Thuỳ Dương,369288567.0,Quán nước Uỷ ban,"Bảo Hà, Bảo Yên, Lào Cai",Đủ điều kiện lưu hành,0,
+XE-160,Sầm Yến Yến,11A1,Xe điện,Victoria,Đen,Đang cấp thẻ (11A1),345047033.0,Bàn Thị Thu Hương,961727636,Sầm Văn Sơn,367644690.0,trong trường,"Mai Hồng 1, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-161,Đào Hà Ngọc Anh,11A1,xe điện,133,Đen,Đang cấp thẻ (11A1),868547152.0,Bàn Thị Thu Hương,961727636,Đào Trọng Huấn,368094941.0,trong trường,"Thôn Nghĩa Giang, Xã Lâm Giang",Đủ điều kiện lưu hành,0,
+XE-162,Triệu Kim Oanh,11A1,Xe điện,Gogo,Xanh đen,24-MĐ1 240.95,788005561.0,Bàn Thị Thu Hương,961727636,Triệu Văn Đách,384856286.0,trong trường,"Cam 1, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-163,Bàn Thị Ngân,11A1,Xe điện,Espero,Xám xanh,24AA-636.33,342303364.0,Bàn Thị Thu Hương,961727636,Bàn Văn Các,333540944.0,trong trường,"Ba Xã, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-164,Trần Thị Khánh Ly,11A1,xe điện,kazuki,xanh rêu,24-MĐ1 145.81,868956673.0,Bàn Thị Thu Hương,961727636,Trần Văn Tuấn,975614408.0,trong trường,"Liên Hà 5, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-165,Hoàng Đình Khải,11A1,Xe máy điện,50cc,Đen xám,24-HB 10829,357508650.0,Bàn Thị Thu Hương,961727636,Hoàng Văn Nhu,362013615.0,trong trường,"Bản 2AB, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-166,Trương Thuỷ Hoàn,11A1,Xe máy điện,49cc,Màu đen,23AÂ-043.24,372604095.0,Bàn Thị Thu Hương,961727636,Phụ huynh em Trương Thuỷ Hoàn,384566897.0,trong trường,"Bảo Hà, Bảo Yên, Lào Cai",Đủ điều kiện lưu hành,0,
+XE-167,Lương Hoàng Lâm,11A1,Xe điện,133,Màu đen,Đang cấp thẻ (11A1),876575983.0,Bàn Thị Thu Hương,961727636,Lương Đình Huấn,338862391.0,trong trường,"Thôn Nghĩa Dũng, Xã Lâm Giang",Đủ điều kiện lưu hành,0,
+XE-168,Đăng Ánh nguyệt,11A1,Xe điện,Victory,Màu đỏ,Đang cấp thẻ (11A1),352308452.0,Bàn Thị Thu Hương,961727636,Phụ huynh em Đăng Ánh nguyệt,329029210.0,trong trường,"Bảo Hà, Bảo Yên, Lào Cai",Đủ điều kiện lưu hành,0,
+XE-169,Đỗ Ngọc Diệp,11A1,xe điện,Dibao,Xanh rêu,24-MĐ1 188.84,978292125.0,Bàn Thị Thu Hương,961727636,Đỗ Đắc Đạt,947568000.0,trong trường,"Tân An, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-170,Lý Thị Phương Trinh,11A1,xe điện,m133,Xanh đen,Đang cấp thẻ (11A1),879618719.0,Bàn Thị Thu Hương,961727636,Lý Đức Thanh,878266718.0,trong trường,"Thôn Ly, Xã Lâm Giang",Đủ điều kiện lưu hành,0,
+XE-171,Nguyễn Thị Lợi,11A1,Xe máy,JVC,Đỏ,Đang cấp thẻ (11A1),867050341.0,Bàn Thị Thu Hương,961727636,Nguyễn Đức Thắng,363995725.0,trong trường,"Bản Kim Quang, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-172,Đặng Tuấn Anh,11A1,Xe máy,Detech,Trắng bạc,24-HB 099.65,333785199.0,Bàn Thị Thu Hương,961727636,Đặng Quang Lợi,968391620.0,trong trường,"Nhai Tẻn, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-173,Nguyễn Thị Thanh Hằng,11A1,xe máy,victoria,Xanh,21-BA 091.80,918957659.0,Bàn Thị Thu Hương,961727636,Nguyễn Quang Huy,388685701.0,trong trường,"Thôn Tiền Phong, Xã Lâm Giang",Đủ điều kiện lưu hành,0,
+XE-174,Nguyễn Gia Hân,11A1,xe máy điện,kazuki,Xanh,24-MĐ1 1883,366864367.0,Bàn Thị Thu Hương,961727636,Nguyễn Văn Đạt,833187286.0,trong trường,"Tân Lập, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-175,Hoàng Thị Mỹ Duyên,11A1,Xe máy,Victoria,Xanh than,24 - HB 148.71,337207413.0,Bàn Thị Thu Hương,961727636,Hoàng Văn Canh,373950683.0,trong trường,"Thôn 7AB, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-176,Đỗ Yến Phương,11A1,xe máy,Honda,Xanh xám,Đang cấp thẻ (11A1),968020032.0,Bàn Thị Thu Hương,961727636,Đỗ Văn Triệu,374569454.0,trong trường,"Lỵ 2,3, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-177,Hoàng Quốc Tỷ,11A1,Xe máy,Honda,Đen,24-HB 13593,352106882.0,Bàn Thị Thu Hương,961727636,Hoàng Văn Phú,326824340.0,trong trường,"Bản 6AB, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-178,Trần Trà My,11A1,Xe điện,kazuki,Đen,Đang cấp thẻ (11A1),335982116.0,Bàn Thị Thu Hương,961727636,Trần Văn Toàn,397125363.0,trong trường,"Ngầm Thìn, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-179,Trần Anh Tú,11A1,xe đạp điện,KAWASI,Đen,Đang cấp thẻ (11A1),364833220.0,Bàn Thị Thu Hương,961727636,Trần Văn Thành,983276709.0,trong trường,"Thôn Ù Sóc, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-180,Triệu Văn Long,11A1,xe máy điện,Gogo,Trắng,24AA-08529,866083829.0,Bàn Thị Thu Hương,961727636,Triệu Văn Linh,869188848.0,trong trường,"Mai Hồng 2, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-181,Bàn Đình Thiên,11A1,xe máy điện,Wave,Sám,38.AK29-32,372800403.0,Bàn Thị Thu Hương,961727636,Bàn Văn An,971909561.0,trong trường,"Ba Soi, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-182,Nguyễn Thị Tâm Như,11A1,xe đạp điện,S600,Đỏ,Đang cấp thẻ (11A1),862660573.0,Bàn Thị Thu Hương,961727636,Nguyễn Văn Thư,385675665.0,trong trường,"Liên Hải, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-183,Lục mai Phương,11A1,xe máy điện,Honda,Xanh lá,24-AC- 00260,352343099.0,Bàn Thị Thu Hương,961727636,Lục Thế Anh,394617256.0,trong trường,"Bản 1AB, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-184,Họ và tên học sinh,LỚP,Loại phương tiện (1),Hãng xe / Model (2),Màu sơn xe,Biển số xe (3),,Thầy/Cô Chủ Nhiệm LỚP,988123001,Phụ huynh em Họ và tên học sinh,,Nơi để (Gửi xe),"Bảo Hà, Bảo Yên, Lào Cai",Đủ điều kiện lưu hành,0,Ghi chú
+XE-185,Nguyễn Hoàng Bảo Linh,11A1,Xe điện,M133,Đỏ đen,Đang cấp thẻ (11A1),396796826.0,Bàn Thị Thu Hương,961727636,Nguyễn Hữu Hảo,977105337.0,Bà Hà (đường rẽ vào ủy ban),"Bản Liên Hà 1, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-186,Tống Khánh Linh,11A1,xe điện,kazuki,Hồng ánh tím,24-AA 081.96,813848421.0,Bàn Thị Thu Hương,961727636,Tống Văn Quyết,854513266.0,Bà Hà (đường rẽ vào ủy ban),"Ngòi Lèn, Xã Châu Quế",Đủ điều kiện lưu hành,0,
+XE-187,Hoàng Thị Vui,11A1,Xe máy,Hon da,Trắng,24-HB138.71,329907189.0,Bàn Thị Thu Hương,961727636,Hoàng Văn Thành,376084739.0,Bà Hà (đường rẽ vào ủy ban),"Bản 4AB, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-188,Lại Hoài Thu,11A1,xe điện,133,Màu vàng,Đang cấp thẻ (11A1),906188251.0,Bàn Thị Thu Hương,961727636,Lại Thị Hải,344123501.0,Bà Hà (đường rẽ vào ủy ban),"Liên Hải 1, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-189,Phùng Quốc Việt,11A1,Xe máy,Honda,Xanh than,24HB-09595,974938597.0,Bàn Thị Thu Hương,961727636,Phùng Văn Bình,96886128.0,Chú Dũng (Cạnh nhà bà Hà),"Tân Tiến, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-190,Ma Thị Hương,11A2,Xe máy,Wave,Màu đỏ đen,24FA-1720,362422816.0,Trần Thị Dung,388639750,Ma Seo Chư,376447773.0,Trong trường,"Thôn Bông, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-191,Nguyễn Thị Thùy Chi,11A2,xe máy điện,YADEA,Màu xanh lá,24-AE 04232,358474316.0,Trần Thị Dung,388639750,Phụ huynh em Nguyễn Thị Thùy Chi,867814875.0,Trong trường,"Bảo Hà, Bảo Yên, Lào Cai",Đủ điều kiện lưu hành,0,
+XE-192,Hoàng Trai Ngọc,11A2,Xe máy điện,YADEA,Màu xanh,24-MD1 238 88,333612934.0,Trần Thị Dung,388639750,Nguyễn Văn Minh,393317043.0,Trong trường,"Bản 7AB, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-193,Phạm Tuệ Linh,11A2,xe đạp điện,aima,Màu đen,Không có biển số,969655811.0,Trần Thị Dung,388639750,Phạm Văn Thương,979924908.0,Trong trường,"Liên Hà 1, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-194,Lê Quỳnh Anh,11A2,xe máy điện,kazuki,Màu đen,24-AA-248.24,368379148.0,Trần Thị Dung,388639750,Lê Xuân Hữu,982283221.0,Trong trường,"Liên Hà 7, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-195,Nguyễn Xuân Khánh,11A2,xe đạp điện,kazuki,Màu đen,không có biển số,325587198.0,Trần Thị Dung,388639750,Nguyễn Xuân Cường,969048662.0,Trong trường,"Nghĩa Giang, Xã Lâm Giang",Đủ điều kiện lưu hành,0,
+XE-196,Triệu Kiều Vy,11A2,Xe máy điện,kazuki,Màu đen,24AA-08376,342772040.0,Trần Thị Dung,388639750,Triệu Đức Nam,988743709.0,Trong trường,"Mai Hồng, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-197,Đặng Thanh Lâm,11A2,xe máy 50C,Wave,Tím than,24HB-00725,338639155.0,Trần Thị Dung,388639750,Đặng Văn Thắng,961252849.0,Trong trường,"2 Nhai Tẻn, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-198,Trần Bảo Long,11A2,Xe đạp điện,kazuki,Màu đen,Không có biển số,39617607.0,Trần Thị Dung,388639750,Trần Văn Chính,84323427.0,Trong trường,"Tân An, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-199,Trương Thị Vân,11A2,Xe máy điện,kazuki,Màu xám,24AA-5201,389844240.0,Trần Thị Dung,388639750,Trương Văn Xuân,961435506.0,Trong trường,"Nghĩa Giang, Xã Lâm Giang",Đủ điều kiện lưu hành,0,
+XE-200,Lại Tuyết Mai,11A2,Xe đạp điện,ESPERO,Màu đen,không có biển số,827524457.0,Trần Thị Dung,388639750,Lại Hồng Phú,823797348.0,Trong trường,"Liên Hải, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-201,Họ và tên học sinh,11A2,Loại phương tiện (1),Hãng xe / Model (2),Màu sơn xe,Biển số xe (3),,Trần Thị Dung,388639750,Phụ huynh em Họ và tên học sinh,,Nơi để (Gửi xe),"Bảo Hà, Bảo Yên, Lào Cai",Đủ điều kiện lưu hành,0,Ghi chú
+XE-202,Nguyễn T.Hoàng Ngọc,11A2,Xe máy điện,gogofo,Màu đỏ,24.MĐ108994,328715687.0,Trần Thị Dung,388639750,Phụ huynh em Nguyễn T.Hoàng Ngọc,357141039.0,Nhà bà Hà,"Bảo Hà, Bảo Yên, Lào Cai",Đủ điều kiện lưu hành,0,
+XE-203,Nguyễn Đình Toàn,11A2,Xe đạp điện,kazuki,Màu xanh,không có biển số,345171647.0,Trần Thị Dung,388639750,Nguyễn Đình Khải,356471549.0,Nhà bà Hà,"Kim Quang, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-204,Lương Thị Yến Nhi,11A2,Xe máy điện,gogofo,Màu đen,24MĐ123857,372522598.0,Trần Thị Dung,388639750,Lương Văn Hà,966222591.0,Nhà bà Hà,"Hồng Bùn, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-205,Nguyễn Thanh Thảo,11A2,Xe đạp điện,kazuki,Màu trắng,không có biển số,367681021.0,Trần Thị Dung,388639750,Nguyễn Thanh Cảnh,868411092.0,Nhà bà Hà,"Tân Văn, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-206,Triệu Văn Lập,11A2,xe máy50cc,Wave,Màu đen,24HB-148-87,345009026.0,Trần Thị Dung,388639750,Triệu Văn Phin,346476944.0,Nhà bà Hà,"Bông, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-207,Lê Mạnh Tâm,11A2,Xe máy 50cc,DETECH,Màu đen,24-HB 142.94,332069225.0,Trần Thị Dung,388639750,Lê Văn Thi,368653044.0,Nhà bà Hà,"Kim Quang, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-208,Đỗ Thu Huệ,11A2,Xe máy điện,osakar,Màu xám,21-FA 117.80,379303402.0,Trần Thị Dung,388639750,Đõ Đức Huy,857853105.0,Nhà bà Hà,"Đồng Tâm, Xã Châu Quế",Đủ điều kiện lưu hành,0,
+XE-209,Nguyễn Khánh Ly,11A3,xe máy điện,50cc,,24-A A 151.34,337476151.0,Trần Thị Thu Huyền,919662825,Nguyễn Mạnh Thắng,989932685.0,Trong trường,"Thôn Tân Sơn, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-210,Triệu Ngọc Yên,11A3,xe máy,50cc,,24-HB 089.12,337919341.0,Trần Thị Thu Huyền,919662825,Bàn Ton Văng,988476042.0,Trong trường,"Thôn Bông 1, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-211,Lê Thị Diệu Huyền,11A3,Xe đạp điện,,,Đang cấp thẻ (11A3),967721571.0,Trần Thị Thu Huyền,919662825,Lê Hữu Chiến,349972985.0,Trong trường,"Thôn Bùn 4, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-212,Nông Tài Phú,11A3,xe máy,50cc,,24-HB 126.23,788006714.0,Trần Thị Thu Huyền,919662825,Nông Văn Quý,332167706.0,Trong trường,"Thôn Lỵ 1-2, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-213,Lâm Đình Văn,11A3,xe máy,50cc,,24HB 107.22,353554875.0,Trần Thị Thu Huyền,919662825,Lâm Văn Điều,372865430.0,Trong trường,"Thôn 5AB, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-214,Nguyễn Minh Quân,11A3,xe đạp điện,yadea,,24-AA506.71,879156173.0,Trần Thị Thu Huyền,919662825,Nguyễn Văn Bảo,356322771.0,Trong trường,"Thôn 2 Tân Văn, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-215,Nguyễn Tùng Dương,11A3,xe máy điện,M133,,Đang cấp thẻ (11A3),37780346.0,Trần Thị Thu Huyền,919662825,Nguyễn Văn Tú,368595865.0,Trong trường,"Thôn Bản Mai, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-216,Hoàng Phương Anh,11A3,xe máy điện,X men,,20-MD7063.59,942788170.0,Trần Thị Thu Huyền,919662825,Hoàng Quyết Tiến,384749631.0,Trong trường,"Thôn Liên Hà 1, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-217,Hàn Bảo Ngọc,11A3,xe máy điện,M133,,Đang cấp thẻ (11A3),335889483.0,Trần Thị Thu Huyền,919662825,Hàn Văn Minh,976492983.0,Trong trường,"Thôn Ngầm Thìn, Xã Bảo Hà",Đủ điều kiện lưu hành,0,Ở bán trú
+XE-218,Phạm Thị Hoài,11A3,Xe đạp điện,M133,,Đang cấp thẻ (11A3),779365649.0,Trần Thị Thu Huyền,919662825,Phạm Văn Đạt,334524810.0,Trong trường,"Thôn Bùn 2, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-219,Nguyễn Ngọc Anh,11A3,Xe máy,50cc,,21- FA 034.31,332420542.0,Trần Thị Thu Huyền,919662825,Nguyễn Văn Tuấn,355563241.0,Trong trường,"Thôn 4AB, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-220,Lê Minh Hoàng,11A3,xe máy điện,gogo,,24MD1 188.16,,Trần Thị Thu Huyền,919662825,Lê Trọng Thọ,355922164.0,trong trường,"Thôn Tân Sơn, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-221,Lục Đức Nhật,11A3,Xe máy,50cc,,24-HB065.22,364147096.0,Trần Thị Thu Huyền,919662825,Lục Thanh Dự,327619510.0,Trong trường,"Thôn Tắp 2, Xã Bảo Hà",Đủ điều kiện lưu hành,0,Ở bán trú
+XE-222,Triệu Kim Ngân,11A3,Xe máy,50cc,,24AA 636.27,968940910.0,Trần Thị Thu Huyền,919662825,Triệu Văn Hai,983990102.0,Trong trường,"Thôn Bỗng Buôn, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-223,Đỗ Văn Nhật,11A3,Xe máy,50cc,,24AA247.30,372086317.0,Trần Thị Thu Huyền,919662825,Đỗ Văn Tuyến,867150553.0,Trong trường,"Thôn Bo, Xã Lâm Giang",Đủ điều kiện lưu hành,0,
+XE-224,Lương Đức Mạnh,11A3,Xe đạp điện,yadea,,Đang cấp thẻ (11A3),354344772.0,Trần Thị Thu Huyền,919662825,Lương Anh Bôn,327977672.0,Trong trường,"Thôn Tân Lập, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-225,Trịnh Văn Toàn,11A3,Xe máy,50cc,,24HB050.57,362562344.0,Trần Thị Thu Huyền,919662825,Trịnh Văn Nghĩa,389357900.0,Trong trường,"Thôn Kim Quang, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-226,Nguyễn Thuý Hường,11A3,Xe đạp điện,,,Đang cấp thẻ (11A3),866162710.0,Trần Thị Thu Huyền,919662825,Phụ huynh em Nguyễn Thuý Hường,961909707.0,Trong trường,"Bảo Hà, Bảo Yên, Lào Cai",Đủ điều kiện lưu hành,0,
+XE-227,Phan Thị Thanh Trúc,11A3,xe máy điện,,,24MD1252.97,336589687.0,Trần Thị Thu Huyền,919662825,Phan Văn Huỳnh,973479457.0,Trong trường,"Thôn Kim Quang, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-228,Vũ Minh Quân,11A3,xe máy điện,,,Đang cấp thẻ (11A3),385768187.0,Trần Thị Thu Huyền,919662825,Vũ Mã Cương,978218140.0,Trong trường,"Thôn 1 Tân Văn, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-229,Nguyễn Xuân Hùng,11A3,xe máy điện,,,Đang cấp thẻ (11A3),,Trần Thị Thu Huyền,919662825,Nguyễn Văn Khương,377845565.0,Trong trường,"Thôn Liên Hải, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-230,Phạm Anh Tuấn,11A3,xe đạp điện,,,Đang cấp thẻ (11A3),812151347.0,Trần Thị Thu Huyền,919662825,Phạm Văn Hòa,985941055.0,Trong trường,"Thôn Lâm sản, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-231,Trần Trung Kiên,11A3,Xe Máy,50cc,,24-FA 1760,357158322.0,Trần Thị Thu Huyền,919662825,Trần Văn Lương,352324627.0,Trong trường,"Thôn Nghĩa Dũng, Xã Lâm Giang",Đủ điều kiện lưu hành,0,
+XE-232,Trương Thị Thu Thảo,11A3,xe máy điện,,,Đang cấp thẻ (11A3),338061422.0,Trần Thị Thu Huyền,919662825,Trương Văn Kiên,335431454.0,Trong trường,"Thôn Bùn 2, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-233,Hoàng Thị Hồng Mai,11A4,xe máy,50cc,,24-HB 081.48,348393184.0,Nguyễn Thị Hương Giang,943438550,Hoàng Văn Lưng,862175022.0,Trong trường,"Bản Khoai 2, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-234,Trịnh Thị Hường,11A4,xe máy điện,kazuki,,24-AA 0828,334262138.0,Nguyễn Thị Hương Giang,943438550,Trịnh Minh Thảo,328642906.0,Trong trường,", Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-235,Hoàng Văn Quyến,11A4,xe máy,50cc,,24-HB 097.66,358991055.0,Nguyễn Thị Hương Giang,943438550,Hoàng Văn Nghề,335125170.0,Trong trường,"Bản 4AB, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-236,Nguyễn Văn luân,11A4,xe máy,wave 50cc,,24-HB 092.87,373682192.0,Nguyễn Thị Hương Giang,943438550,Nguyễn Văn Điểm,898711335.0,Trong trường,"Bản Kim Quang, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-237,Trướng Văn Khương,11A4,Xe máy điện,Xmen,,12-MD2 508.20,,Nguyễn Thị Hương Giang,943438550,Trướng Văn Sinh,373117512.0,Trong trường,", Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-238,Bàn Thị Thúy Hân,11A4,xe đạp điện,M133,,Đang cấp thẻ (11A4),961208223.0,Nguyễn Thị Hương Giang,943438550,Bàn Văn Mạnh,834746157.0,Trong trường,"Mai Hồng, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-239,Bàn Thanh Thảo,11A4,xe máy điện,Vigor,,24-AA 248.40,359765936.0,Nguyễn Thị Hương Giang,943438550,Bàn Văn Sơn,336263370.0,Trong trường,"Thôn Tân Trúc, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-240,Nguyễn Ánh Dương,11A4,xe máy điện,kazuki,,24-AA 216.43,865977505.0,Nguyễn Thị Hương Giang,943438550,Nguyễn Đăng Hải,865587942.0,Trong trường,"Mai Hồng 1, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-241,Lê Tiến Dũng,11A4,xe máy,50cc,,24-HB 010.30,979166214.0,Nguyễn Thị Hương Giang,943438550,Lê Văn Quý,869256493.0,Trong trường,"Bản 1 Nhai Tẻn, Xã Bảo Hà",Đủ điều kiện lưu hành,0,Ở bán trú
+XE-242,Đặng Hoài Anh,11A4,Xe đạp điện,M133,,Đang cấp thẻ (11A4),969194956.0,Nguyễn Thị Hương Giang,943438550,Đặng Hữu Lý,339987455.0,Trong trường,"Bông 3, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-243,Nguyễn Thị Ánh,11A4,Xe đạp điện,133,,Đang cấp thẻ (11A4),397974072.0,Nguyễn Thị Hương Giang,943438550,Nguyễn Văn Ngoày,866992924.0,Trong trường,"Ba Soi, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-244,Nông Thị Liên,11A4,xe máy điện,gogo,,Đang cấp thẻ (11A4),944132522.0,Nguyễn Thị Hương Giang,943438550,Nông Văn Cu,979574451.0,trong trường,"Bản Mai, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-245,Hoàng Tố vân,11A4,Xe hb,Wave 50cc,,21hb-028.32,327083645.0,Nguyễn Thị Hương Giang,943438550,Hoàng Văn Tú,,Trong trường,"Bản 3AB, Xã Bảo Hà",Đủ điều kiện lưu hành,0,Ở bán trú
+XE-246,Bàn Oanh Huệ,11A4,Xe đạp điện,133,,Đang cấp thẻ (11A4),334858631.0,Nguyễn Thị Hương Giang,943438550,Bàn Văn Nhẫn,334858637.0,Trong trường,"Thôn Thùng 1, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-247,Họ và tên học sinh,LỚP,Loại phương tiện (1),Hãng xe / Model (2),"Ảnh phương tiện (chụp rõ biển số, màu xe)",Biển số xe (3),,Thầy/Cô Chủ Nhiệm LỚP,988123001,Phụ huynh em Họ và tên học sinh,,Nơi để (Gửi xe),"Bảo Hà, Bảo Yên, Lào Cai",Đủ điều kiện lưu hành,0,Ghi chú
+XE-248,Vũ Huy Hoàng,11A4,xe máy,wave 50cc,,24-AA 059.53,339716473.0,Nguyễn Thị Hương Giang,943438550,Vũ Văn Hài,339997797.0,Bà Hà lùn,"Bản 1 Tân Văn, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-249,Nguyễn Bảo Nhật Linh,11A4,xe đạp điện,yadea,,Đang cấp thẻ (11A4),334505123.0,Nguyễn Thị Hương Giang,943438550,Nguyễn Văn Quảng,967015456.0,Bà Hà lùn,", Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-250,Bùi Thị Phương Thảo,11A4,Xe đạp điện,M133,,Đang cấp thẻ (11A4),346596287.0,Nguyễn Thị Hương Giang,943438550,Bùi Xuân Hiển,352298269.0,Bà Hà lùn,"Bản Bông 1, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-251,Bùi Thị Khánh Linh,11A4,xe máy điện,ébego,,24-MD1145.58,332870973.0,Nguyễn Thị Hương Giang,943438550,Bùi Văn Trọng,379269003.0,Bà Hà lùn,"Bản Liên Hà 6, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-252,Lương Gia Bảo,11A4,Xe đạp điện,kazuki,,Đang cấp thẻ (11A4),395514023.0,Nguyễn Thị Hương Giang,943438550,Lương Văn Cương,366425341.0,Quán Tuấn,"Bản Bùn 2, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-253,Đỗ Khánh Linh,11A5,Xe máy điện,Gogo,Đen,24AB00134,825950667.0,Trịnh Văn Thể,918099828,Đỗ Mạnh Điểm,878533045.0,Trong trường,"Bùn 4, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-254,Nguyễn Tường Vi,11A5,Xe đạp điện,Gogo,Đen,Đang cấp thẻ (11A5),327624098.0,Trịnh Văn Thể,918099828,Nguyễn Đức Thuận,968112365.0,Trong trường,"Thôn Ngầm Thỉn, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-255,Triệu Hữu Dũng,11A5,Xe máy,Victoria,Trắng,24AB18930,966588213.0,Trịnh Văn Thể,918099828,Triệu Văn Lạng,967381168.0,Trong trường,"Bỗng Buôn, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-256,Trịnh Hải Yến,11A5,Xe máy điện,Dibao,Xanh xám,15MD801468,359581548.0,Trịnh Văn Thể,918099828,Trịnh Đức Trọng,348687234.0,Trong trường,"Thôn Bảo Ân, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-257,Phạm Lương Phương Linh,11A5,Xe đạp điện,Gogo,Trắng,Đang cấp thẻ (11A5),819327782.0,Trịnh Văn Thể,918099828,Phạm Đức Tuấn,857631686.0,Trong trường,"Tân Sơn, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-258,Đỗ Trang Nhung,11A5,Xe đạp điện,Gogo,Đen,Đang cấp thẻ (11A5),393402709.0,Trịnh Văn Thể,918099828,Đỗ Minh Phú,978333460.0,Trong trường,"Lâm Sản, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-259,Nguyễn Thu Hương,11A5,Xe đạp điện,Gogo,Amia,Đang cấp thẻ (11A5),335986052.0,Trịnh Văn Thể,918099828,Nguyễn Ngọc Hùng,333405130.0,Trong trường,"Thôn Tân Lập, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-260,Nguyễn Bích Thùy,11A5,Xe máy điện,Gogo,Trắng,24AA21395,328041592.0,Trịnh Văn Thể,918099828,Nguyễn Văn Tám,984279890.0,Trong trường,"Bùn 2, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-261,Phạm Thị Lư,11A5,Xe máy điện,Gogo,Xanh,24HD14623,865317703.0,Trịnh Văn Thể,918099828,Phạm Văn Minh ( Đã Chết),968045169.0,Trong trường,"Bản Bùn 2, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-262,Vũ Hữu Trường Sơn,11A5,Xe máy điện,Vinfat,Đen,24AB5119,352619004.0,Trịnh Văn Thể,918099828,Vũ Hữu Giáp,387865515.0,Trong trường,"Thôn Tân An 2, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-263,Phạm Như Quỳnh,11A5,Xe máy điện,Gogo,Xanh,Đang cấp thẻ (11A5),397567967.0,Trịnh Văn Thể,918099828,Phạm Văn Quyết,986182691.0,Trong trường,"Tân Sơn, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-264,Phan Thùy Linh,11A5,Xe máy điện,Vinfat,Đen,24AA63685,772698603.0,Trịnh Văn Thể,918099828,Phan Văn Giang,914442935.0,Trong trường,"Thôn Tân An 2, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-265,Nguyễn Bảo Trân,11A5,Xe máy điện,Xmen,Đen,24MD108990,345106629.0,Trịnh Văn Thể,918099828,Nguyễn Văn Thanh,985540644.0,Trong trường,"Lỵ 2-3, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-266,Lại Hoài Nhi,11A5,Xe đạp điện,kazuki,Đen,Đang cấp thẻ (11A5),359808264.0,Trịnh Văn Thể,918099828,Lại Văn Tới,969297264.0,Trong trường,"Liên Hải, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-267,Nguyễn Khánh Chi,11A5,Xe đạp điện,yadea,Xanh,21AA03283,325104625.0,Trịnh Văn Thể,918099828,Nguyễn Xuân Kiều,385023135.0,Trong trường,"Thôn Nghĩa Dũng, Xã Lâm Giang",Đủ điều kiện lưu hành,0,
+XE-268,Lê Thị Hồng Anh,11A5,Xe máy điện,Gogo,Xanh,24MD108842,374853730.0,Trịnh Văn Thể,918099828,Lê Xuân Hợi,784263325.0,Trong trường,"Bản Kim Quang, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-269,Vũ Hồng Duyên,11A5,Xe máy điện,Gogo,Đen,24AA39135,328850152.0,Trịnh Văn Thể,918099828,Vũ Chí Công,395281214.0,Trong trường,"Bản Bùn 3, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-270,Lê Hà Vi,11A5,Xe máy điện,Oxaka,Đen,21FA13182,325783905.0,Trịnh Văn Thể,918099828,Lê Văn Thịnh,773315060.0,Trong trường,"Thôn Nghĩa Dũng, Xã Lâm Giang",Đủ điều kiện lưu hành,0,
+XE-271,Đặng Văn Học,11A5,Xe máy,Cub,Nâu,29AA41203,528043975.0,Trịnh Văn Thể,918099828,Đặng Văn Thắng,975510175.0,Trong trường,"Bông 3, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-272,Nguyễn Duy Hưng,11A5,Xe máy điện,yadea,Hồng,24MD 123760,347166536.0,Trịnh Văn Thể,918099828,Nguyễn Đức Huấn,354646328.0,Trong trường,"Bảo Vinh, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-273,Trần Bá Vương Nhân,11A5,Xe đạp điện,Victoria,Đen,Đang cấp thẻ (11A5),384672792.0,Trịnh Văn Thể,918099828,Trần Bá Nam,815850039.0,Trong trường,"Thôn Tân Lập, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-274,Họ và tên học sinh,LỚP,Loại phương tiện (1),Hãng xe / Model (2),Màu sơn xe,Biển số xe (3),,Thầy/Cô Chủ Nhiệm LỚP,988123001,Phụ huynh em Họ và tên học sinh,,Nơi để (Gửi xe),"Bảo Hà, Bảo Yên, Lào Cai",Đủ điều kiện lưu hành,0,Ghi chú
+XE-275,Đỗ Thái Bình,11A5,Xe máy,Espero,Xanh,24HB00209,328195942.0,Trịnh Văn Thể,918099828,Đỗ Thị Huệ,383233065.0,Quán Sinh Soái,"Bản 2 Tân Văn, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-276,Bàn Thị Hà,11A5,Xe máy điện,yadea,Xám,Đang cấp thẻ (11A5),364594310.0,Trịnh Văn Thể,918099828,Bàn Ton Chản,847036572.0,Bác Dũng,"Bông 3, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-277,Lê Khánh Huyền,11A5,Xe máy điện,Gogo,Đen,21MD412160,358454071.0,Trịnh Văn Thể,918099828,Lê Công Thế,865885115.0,Bà Hà,"Bản bùn 4, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-278,Hoàng Diệu Linh,11A5,Xe máy điện,Gogo,Xanh,24MD114595,912559577.0,Trịnh Văn Thể,918099828,Hoàng Văn Trường,919108361.0,Bà Hà,"Bản Lúc, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-279,Lương Duy Tiến,11A5,Xe máy điện,yadea,Trắng,24AA08581,354758074.0,Trịnh Văn Thể,918099828,Lương Quang Biên,966861285.0,Cô Thủy,"Bản Bùn 2, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-280,Lê Văn Nguyên,11A5,Xe máy điện,Gogo,Trắng,24MD109825,968768942.0,Trịnh Văn Thể,918099828,Lê Văn Nghiu,988768942.0,Bà Hà,"Liên Hà 6, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-281,Lại Huy Hoàn,11A5,Xe đạp điện,Gogo,Đỏ,Đang cấp thẻ (11A5),896931210.0,Trịnh Văn Thể,918099828,Lại Hồng Phong,987547196.0,Bà Hà,"Liên Hải 1, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-282,Trần Thị Thúy Loan,11A6,xe máy điện,yadea,đen,24AA. 215.13,367927732.0,Nguyễn Thị Thủy,966981691,Phụ huynh em Trần Thị Thúy Loan,914446587.0,Trong trường,"Bảo Hà, Bảo Yên, Lào Cai",Đủ điều kiện lưu hành,0,
+XE-283,Nguyễn Ngọc Bảo Châm,11A6,xe máy điện,Juka,xám xanh,ko có,347851890.0,Nguyễn Thị Thủy,966981691,Nguyễn Văn Tiến,328772427.0,Trong trường,"Tiền Phong, Xã Lâm Giang",Đủ điều kiện lưu hành,0,
+XE-284,Chu Mạnh Huy,11A6,xe đạp,,xanh đen,Đang cấp thẻ (11A6),344794443.0,Nguyễn Thị Thủy,966981691,Chu Mạnh Công,368694318.0,Trong trường,"Liên Hà 5, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-285,Nguyễn Vũ Duy,11A6,xe điện,Jukio,đen,Đang cấp thẻ (11A6),833100910.0,Nguyễn Thị Thủy,966981691,Nguyễn Trung Dũng,977065452.0,Trong trường,"Tân An, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-286,Nguyễn Đình Thế Đan,11A6,Xe máy điện,Yadea,đen,24AA. 507.16,325430192.0,Nguyễn Thị Thủy,966981691,Nguyễn Văn Thịnh,393454524.0,Trong trường,"Hang Rồng, Xã Si Ma Cai",Đủ điều kiện lưu hành,0,
+XE-287,Nguyễn Anh Tuấn,11A6,xe máy điện,kazuki,đen,24MĐ.1238.28,335397613.0,Nguyễn Thị Thủy,966981691,Nguyễn Văn Phong,868848103.0,Trong trường,"Hồng Sang, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-288,Phạm Trung Dũng,11A6,Xe máy điện,Xmen,Đen,29-MĐ 056.78,352169419.0,Nguyễn Thị Thủy,966981691,Phạm Ngọc Hiền,357934252.0,Trong trường,"Mai Ù, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-289,Lê Thị Kim Huệ,11A6,xe đạp điện,Pega,đen,ko có,388803723.0,Nguyễn Thị Thủy,966981691,Lê Xuân Hiến,976005629.0,Trong trường,"Mai Ù, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-290,Bàn Ngọc Hà,11A6,xe điện,Xmen,tím,ko có,869214681.0,Nguyễn Thị Thủy,966981691,Bàn Thị Ngọc Hoa,862118683.0,Trong trường,"Tân Sơn, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-291,Trần Duy Khương,11A6,xe đạp,DTZ 1000,Đen trắng,Đang cấp thẻ (11A6),866928538.0,Nguyễn Thị Thủy,966981691,Trần Tuấn Phương,989017118.0,Trong trường,"Liên Hà 2, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-292,Nguyễn Thị Thu Hà,11A6,Xe điện,JVC,đỏ đen,ko có,367281635.0,Nguyễn Thị Thủy,966981691,Nguyễn Văn Thùy,352558832.0,Trong trường,"Hồng Sang, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-293,Trần Thanh Tâm,11A6,Xe máy điện,Espero,Đen,21AA. 01589,366682737.0,Nguyễn Thị Thủy,966981691,Trần Thị Bình,325959413.0,Trong trường,"Nghĩa Dũng, Xã Lâm Giang",Đủ điều kiện lưu hành,0,
+XE-294,Hoàng Diệu Linh B,11A6,xe máy điện,Espero,xanh,24MĐ1. 237.20,372319382.0,Nguyễn Thị Thủy,966981691,Phụ huynh em Hoàng Diệu Linh B,377914341.0,Trong trường,"Bảo Hà, Bảo Yên, Lào Cai",Đủ điều kiện lưu hành,0,Đi cùng  Khôi 11A6
+XE-295,Vũ Văn Quân,11A6,Xe đạp,,Đỏ đen,Đang cấp thẻ (11A6),363312381.0,Nguyễn Thị Thủy,966981691,Vũ Văn Tuyển,342065973.0,Trong trường,"Tân An, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-296,Nguyễn Thị Thuỳ Linh,11A6,Xe HB,Honda,Cam,24HB.13622,971901988.0,Nguyễn Thị Thủy,966981691,Nguyễn Văn Hậu,971901988.0,Trong trường,"Tân Thành, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-297,Lê Thị Hoài,11A6,Xe máy điện,,,Đang cấp thẻ (11A6),,Nguyễn Thị Thủy,966981691,Lê Xuân Huấn,363710228.0,Trong trường,"Cam Cọn 1, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-298,Họ và tên học sinh,LỚP,Loại phương tiện (1),Hãng xe / Model (2),Màu sơn xe,Biển số xe (3),,Thầy/Cô Chủ Nhiệm LỚP,988123001,Phụ huynh em Họ và tên học sinh,,Nơi để (Gửi xe),"Bảo Hà, Bảo Yên, Lào Cai",Đủ điều kiện lưu hành,0,Ghi chú
+XE-299,Lý Thu Hà,11A6,xe máy điện,kazuki,đen,ko có,355076518.0,Nguyễn Thị Thủy,966981691,Lý Văn Cúc,355183242.0,Nhà bà Hà gần  chỗ ủy ban,"Tân Thượng, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-300,Hoàng Bảo Phong,11A6,xe máy điện,Yadea,xe xanh,24AA. 213.81,365929679.0,Nguyễn Thị Thủy,966981691,Hoàng Chí Quân,976043540.0,Nhà bà Hà gần  chỗ ủy ban,"Bản Tắp 2, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-301,Bùi Thảo Ngân,11A6,Xe máy điện,yadea,Be,24MĐ1.237.45,389210666.0,Nguyễn Thị Thủy,966981691,Bùi Đình Mạnh,974212666.0,Nhà bà Hà gần  chỗ ủy ban,"Bảo Vinh, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-302,Nguyễn Đức Minh Trí,11A6,xe máy điện,Gogo,đỏ,24MĐ1. 097.52,336818837.0,Nguyễn Thị Thủy,966981691,Nguyễn Đức Vượng,356341889.0,Nhà bà Hà gần  chỗ ủy ban,"Kim Quang, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-303,Lương Nguyễn Thùy  Trâm,11A6,xe máy điện,ESRERO,màu đen,ko có,866547240.0,Nguyễn Thị Thủy,966981691,Phụ huynh em Lương Nguyễn Thùy  Trâm,392589097.0,Nhà bà Hà gần  chỗ ủy ban,"Bảo Hà, Bảo Yên, Lào Cai",Đủ điều kiện lưu hành,0,
+XE-304,Hoàng Thu Thuỷ,11A6,Xe điện,Kawasi,Đen,ko có,975922800.0,Nguyễn Thị Thủy,966981691,Phụ huynh em Hoàng Thu Thuỷ,968322039.0,Nhà bà Hà gần  chỗ ủy ban,"Bảo Hà, Bảo Yên, Lào Cai",Đủ điều kiện lưu hành,0,
+XE-305,Hoàng Hà Vy,11A6,xe điện,espero,xanh đen,24MĐ1.237.63,793866382.0,Nguyễn Thị Thủy,966981691,Hoàng Văn Chung,989032084.0,Nhà bà Hà gần  chỗ ủy ban,"Bản Lúc, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-306,La Diệp Vỹ,11A6,xe máy điện,yadea,xanh lá cây,"24AA.177,08",332493782.0,Nguyễn Thị Thủy,966981691,La Minh Lũy,352621327.0,Nhà bà Hà gần  chỗ ủy ban,"Tắp 2, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-307,Đỗ Ngọc Yến Nhi,11A6,Xe đạp,,Đen,Đang cấp thẻ (11A6),977108925.0,Nguyễn Thị Thủy,966981691,Đỗ Ngọc Lâm,327525680.0,Quán sửa xe  Hưng Linh,"Liên Hà 5, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-308,Nguyễn Văn Hải Anh,11A6,Xe đạp điện,Ninja,"Đỏ, đen",ko có,788016085.0,Nguyễn Thị Thủy,966981691,Nguyễn Văn Huynh,911251383.0,Nhà bà Hà gần  chỗ ủy ban,"Bảo Vinh, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-309,Nguyễn Minh Anh,11A6,Xe máy điện,Dibao,Xanh xám,24MĐ1.146.26,976539921.0,Nguyễn Thị Thủy,966981691,Nguyễn Văn Thịnh,977804342.0,Nhà ông việt  gần cầu Lâm sản,"Tân Văn, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-310,Trương Ngọc Linh,11A6,Xe máy điện,gogo,xanh lá cây,24MĐ1. 145.65,869607007.0,Nguyễn Thị Thủy,966981691,Trương Đức Hải,983879316.0,Quán  Xingfu,"Bảo Vinh, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-311,Lê Thị Hoài,11A6,Xe điện,,Trắng,ko có,363710228.0,Nguyễn Thị Thủy,966981691,Lê Xuân Huấn,798746877.0,Nhà c Hà  Liên Hà 2,"Cam Cọn 1, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-312,Vũ Tiến Đang,11A7,Xe máy điện,cub 50cc,màu vàng,24HB-043.99,364728707.0,Ngô Thị Thùy,334668132,Vũ Tiến Đại,364655101.0,Trong trường,"An Khánh, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-313,Vũ Nguyễn Khánh Đoài,11A7,Xe đạp điện,Kazuki,màu xanh,Đang cấp thẻ (11A7),358935941.0,Ngô Thị Thùy,334668132,Vũ Văn Điều,978680808.0,Trong trường,"An Khánh, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-314,Trần Ngọc Hân,11A7,Xe đạp điện,Kazuki,Xanh lá,Đang cấp thẻ (11A7),336695155.0,Ngô Thị Thùy,334668132,Trần Xuân Hào,843926555.0,Trong trường,"Tân An, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-315,Phạm Huy Hoàng,11A7,Xe máy điện,Gogo,Xám,24-AA 02614,827983961.0,Ngô Thị Thùy,334668132,Nguyễn Thị Mai,968868924.0,Trong trường,"Ngầm Thỉn, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-316,Hoàng Đức Khôi,11A7,xe máy điện,gogo,trắng,24023,868027220.0,Ngô Thị Thùy,334668132,Hoàng Văn Cừ,383417442.0,Trong trường,"Hồng Bùn, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-317,Lý Thị Hồng Khuyên,11A7,Xe đạp điện,Kazuki,Xanh,Đang cấp thẻ (11A7),325933017.0,Ngô Thị Thùy,334668132,Lý Văn Chiêm,379146978.0,Trong trường,"Ngầm Thỉn, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-318,Lý Thị Lan,11A7,Xe đạp điện,Kazuki,Xanh rêu,Đang cấp thẻ (11A7),329041865.0,Ngô Thị Thùy,334668132,Lý Seo Thào,819768645.0,Trong trường,"Thùng, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-319,Trần Quang Minh,11A7,Xe đạp,,Xám,Đang cấp thẻ (11A7),839498568.0,Ngô Thị Thùy,334668132,Trần Ngọc Toàn,379555376.0,Trong trường,"Tân An, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-320,Chu Thị Na,11A7,Xe đạp điện,Kazuki,Xanh,Đang cấp thẻ (11A7),329936901.0,Ngô Thị Thùy,334668132,Chu Văn Quân,987711690.0,Trong trường,"Hồng Bùn, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-321,Trần Bảo Nam,11A7,xe máy điện,Espero,ghi đen,24 AA-21491,974389640.0,Ngô Thị Thùy,334668132,Trần Đại Hoàng,963694897.0,Trong trường,"Liên Hà 5, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-322,Hoàng Bảo Ngọc,11A7,xe máy điện,vinfast,màu đen,485.18,342128230.0,Ngô Thị Thùy,334668132,Lý Tiến Hương,987898550.0,Trong trường,"3 Nhai Thổ, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-323,Hoàng Thị Thái Ngọc,11A7,Xe máy điện,Kazuki,Đen,Đang cấp thẻ (11A7),335157252.0,Ngô Thị Thùy,334668132,Trần Thị Huê,389056563.0,Trong trường,"Tân Thành, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-324,Lương Công Nguyên,11A7,Xe điện,Kazuki,Sữa,3396,335511893.0,Ngô Thị Thùy,334668132,Lương Công Trình,339603662.0,Trong trường,"Tắp 1, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-325,Triệu Bích Nguyệt,11A7,Xe đạp điện,133,Đen,Đang cấp thẻ (11A7),377829489.0,Ngô Thị Thùy,334668132,Triệu Văn Phức,354039694.0,Trong trường,"Tắp 1, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-326,Mai Quỳnh Nhi,11A7,Xe đạp điện,133,Đen,Đang cấp thẻ (11A7),965026933.0,Ngô Thị Thùy,334668132,Mai Văn Nam,966784209.0,Trong trường,"Tiền Phong, Xã Lâm Giang",Đủ điều kiện lưu hành,0,
+XE-327,Nguyễn Uyển Nhi,11A7,Xe máy điện,Vioor,Xanh đậm,24-MĐ1145.92,862421987.0,Ngô Thị Thùy,334668132,Nguyễn Văn Chung,973978483.0,Trong trường,"Bảo Vinh, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-328,Lê Thị Hồng Phước,11A7,Xe điện,133,Đen,Đang cấp thẻ (11A7),325266075.0,Ngô Thị Thùy,334668132,Lê Văn Ghi,862720464.0,Trong trường,"Nghĩa Giang, Xã Lâm Giang",Đủ điều kiện lưu hành,0,
+XE-329,Lê Thị Phương,11A7,xe điện 133,ecobike g8i,xanh than,Đang cấp thẻ (11A7),356134671.0,Ngô Thị Thùy,334668132,Lê Văn Mạnh,374202897.0,Trong trường,"Thíp Dạo, Xã Lâm Giang",Đủ điều kiện lưu hành,0,
+XE-330,Đặng Kim Phượng,11A7,Xe máy điện,Vespa,Đen,Đang cấp thẻ (11A7),983832687.0,Ngô Thị Thùy,334668132,Đặng Văn Cường,962651661.0,Trong trường,"Tân Sơn, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-331,Lý Việt Quân,11A7,Xe máy điện,Xmen,Trắng,Đang cấp thẻ (11A7),976189590.0,Ngô Thị Thùy,334668132,Lý Văn An,379129116.0,Trong trường,"Ngầm Thỉn, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-332,Trần Quang Thịnh,11A7,Xe đạp điện,133,Bạc đen,Đang cấp thẻ (11A7),981806120.0,Ngô Thị Thùy,334668132,Trần Văn Hiệp,377203210.0,Trong trường,"Mai Ù, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-333,Nguyễn Minh Tiến,11A7,Xe điện,Kazuki,Xanh lục,Đang cấp thẻ (11A7),326520332.0,Ngô Thị Thùy,334668132,Nguyễn Đức Điệp,337340984.0,Trong trường,"Liên Hà 1, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-334,Nguyễn Bá Minh Tuấn,11A7,Xe đạp điện,Nijja,Đen,Đang cấp thẻ (11A7),382857383.0,Ngô Thị Thùy,334668132,Nguyễn Tiến Sỹ,357100738.0,Trong trường,"Nghĩa Giang, Xã Lâm Giang",Đủ điều kiện lưu hành,0,
+XE-335,Họ và tên học sinh,LỚP,Loại phương tiện (1),Hãng xe / Model (2),Màu sơn xe,Biển số xe (3),,Thầy/Cô Chủ Nhiệm LỚP,988123001,Phụ huynh em Họ và tên học sinh,,Nơi để (Gửi xe),"Bảo Hà, Bảo Yên, Lào Cai",Đủ điều kiện lưu hành,0,Ghi chú
+XE-336,Trần Thị Ngọc Ánh,11A7,Xe điện,yadea,xanh,24-AA 82070,822965206.0,Ngô Thị Thùy,334668132,Trần Quang Đạt,981260707.0,"Bà Hà - Bản Bảo Vinh, Xã Bảo Hà","Liên Hà 1, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-337,Nguyễn Trường Giang,11A7,Xe máy,wave 50cc,bạc,24 HB- 14866,967979173.0,Ngô Thị Thùy,334668132,Nguyễn Thanh Sơn,962124226.0,"Bà Hà - Bản Bảo Vinh, Xã Bảo Hà","Tân Văn, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-338,Vi Quỳnh Như,11A7,Xe điện,Yadea,Ghi be,63523,865510558.0,Ngô Thị Thùy,334668132,Vi Văn Tư,388356562.0,"Bà Hà - Bản Bảo Vinh, Xã Bảo Hà","Tắp 1, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-339,Hứa Đức Thắng,11A7,Xe máy điện,Yadea,Đen,24-MĐ1145.82,868732808.0,Ngô Thị Thùy,334668132,Nghiêm Đình Trưởng,828875687.0,"Bà Hà - Bản Bảo Vinh, Xã Bảo Hà","Bảo Vinh, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-340,Lê Quang Lập,12A1,xe máy điện,gogo,trắng,24md1 23808,342372844.0,Phạm Thị Thu,988346058,Lê Văn Cường,987382964.0,trong trường,"Thôn Kim Quang, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-341,Trương việt anh,12A1,Xe máy điện,Gogo,Xanh,24md1 14590,369824929.0,Phạm Thị Thu,988346058,Trương Quyết Thắng,964299686.0,Trong trường,"Bùn 2, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-342,Trần Thu Nga,12A1,Xe máy,Wave 50cc,Xanh đen,21-FA 028.42,978327361.0,Phạm Thị Thu,988346058,Trần Xuân Sinh,354293196.0,Trong trường,"Thôn Tân An 1, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-343,Lý quốc huy,12A1,Xe máy điện,Xmen,Đen,98-MĐ2 040.55,367020751.0,Phạm Thị Thu,988346058,Lý Văn Minh,356376088.0,Trong trường,"Thôn Thùng I, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-344,Hảng Seo Lành,12A1,xe máy,wave 50cc,đen,24HB 14449,976841150.0,Phạm Thị Thu,988346058,Hảng Seo Sảng,392366160.0,Trong trường,"Liên Hà 3, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-345,Mai Đức Mạnh,12A1,Xe máy điện,gogo,Đen,21-MĐ4 025.17,971579762.0,Phạm Thị Thu,988346058,Mai Xuân Kiên,817149839.0,Trong trường,"bản Bảo Vinh, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-346,Đặng Thị Thanh Vân,12A1,xe máy,wave 50cc,Đen,24HB-066.30,342363155.0,Phạm Thị Thu,988346058,Đặng Văn Ngọc,374737518.0,Trong trường,"Thôn 1 Nhai Tẻn, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-347,Trần Thị Tuyết Minh,12A1,Xe máy điện,Gogo,Đỏ,90-MĐ145136,378814578.0,Phạm Thị Thu,988346058,Trần Tuấn Anh,342381985.0,Trong trường,"Bản Lúc, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-348,Đặng Minh Sơn,12A1,xe máy,wave 50cc,đen,24HB-204.38,981276177.0,Phạm Thị Thu,988346058,Đặng Văn Bình,867025185.0,trong trường,"Thôn 1 nhai Tẻn, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-349,Nguyễn Duy Phước,12A1,Xe máy,dream50 cc,Xanh,24HB-1487,357176713.0,Phạm Thị Thu,988346058,Nguyễn Văn Mừng,386175901.0,trong trường,"Khoai 3, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-350,Nguyễn Lê Quốc Toản,12A1,Xe máy,wave50cc,xanh,24HB-143-71,385151866.0,Phạm Thị Thu,988346058,Nguyễn Đăc Dịu,962962189.0,trong trường,"Bản Liên Hà 7, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-351,Hoàng Thị Quỳnh Nhân,12A1,Xe máy,Wave 50cc,Xanh,24-HB-101.27,347092491.0,Phạm Thị Thu,988346058,Hoàng Văn Tuấn,396928392.0,Trông trường,"Thôn 3 AB, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-352,Bàn Thị Dư,12A1,xe đạp điện,kazuki,Xanh đen,Đang cấp thẻ (12A1),344627103.0,Phạm Thị Thu,988346058,Bàn Văn Lợi,386311038.0,trong trường,"Thôn Bản Mai, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-353,Bùi Quang Minh,12A1,xe máy,wave 50cc,xanh,24-HB-0745,328689160.0,Phạm Thị Thu,988346058,Bùi Huy Thân,336382724.0,trong trường,"Thôn Ù Sóc, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-354,Lê Thị Ánh Ngọc,12A1,xe máy điện,xe điện 133,đen,Đang cấp thẻ (12A1),332992926.0,Phạm Thị Thu,988346058,Lê Văn Toán,386497231.0,trong trường,"Thôn Tân Trúc, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-355,Hoàng Trọng Khôi,12A1,Xe máy,50cc,Đỏ,21-FA -006.11,974630324.0,Phạm Thị Thu,988346058,Hoàng Văn Lực,377080237.0,Trong trường,"Bản 3AB, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-356,vi duy hoàng,12A1,Xe máy,50cc,xanh,24HB-158-16,328848962.0,Phạm Thị Thu,988346058,Phụ huynh em vi duy hoàng,866721046.0,trong trường,"Bảo Hà, Bảo Yên, Lào Cai",Đủ điều kiện lưu hành,0,
+XE-357,Ma Văn Đồng,12A1,Xe máy,50cc,Trắng,24-HB-122.36,363428705.0,Phạm Thị Thu,988346058,Ma Seo Kếnh,984417060.0,Trong trường,"Thôn Thùng 2, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-358,vũ hoàng quân,12A1,Xe máy điện,Xe điện 133,Đen,Đang cấp thẻ (12A1),349264435.0,Phạm Thị Thu,988346058,Vũ Đình Tuấn,359844377.0,Trong trường,"Liên Hà 5, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-359,Nông Thị Ánh Nguyệt,12A1,xe máy điện,xe điện Yadea,đen,24AA635.32,389071452.0,Phạm Thị Thu,988346058,Nông Ton Pham,366675523.0,trong trường,"Bông 3, Xã Bảo Hà",Đủ điều kiện lưu hành,0,Xe mới lấy chưa có biển
+XE-360,Lê Thị Thanh Uyên,12A1,xe máy điện,,"đen,đỏ",Đang cấp thẻ (12A1),964228465.0,Phạm Thị Thu,988346058,Lê Công Vịnh,966462385.0,trong trường,"Liên Hà 6, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-361,Đặng Thị Diệu Ly,12A1,Xe máy 50cc,wave,đen,24Hp 10501,984005903.0,Phạm Thị Thu,988346058,Đặng Văn Sinh,965627915.0,trong trường,"Thôn Nhai Tẻn 2, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-362,Nguyễn Minh Thư,12A1,xe máy điện,Kảu ki,cam,24MD1237.19,386098871.0,Phạm Thị Thu,988346058,Nguyễn Văn Nghĩa,983789600.0,trong trường,"Lâm Sản, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-363,Họ và tên học sinh,LỚP,Loại phương tiện (1),Hãng xe / Model (2),Màu sơn xe,Biển số xe (3),,Thầy/Cô Chủ Nhiệm LỚP,988123001,Phụ huynh em Họ và tên học sinh,,Nơi để (Gửi xe),"Bảo Hà, Bảo Yên, Lào Cai",Đủ điều kiện lưu hành,0,Ghi chú
+XE-364,Bùi Thị Hải Anh,12A1,xe máy điện,xe điện 133,đen,Đang cấp thẻ (12A1),,Phạm Thị Thu,988346058,Bùi Văn Duy,974630295.0,Ngoài trường,"Bảo Vinh, Xã Bảo Hà",Đủ điều kiện lưu hành,0,nhà bác hà bản lâm sản bảo hà
+XE-365,phan thị huyền trang,12A1,xe đạp điện,xe điện 133,đen đỏ,Đang cấp thẻ (12A1),,Phạm Thị Thu,988346058,Phan Văn Toàn,399129647.0,Ngoài trường,"Khoai 3, Xã Bảo Hà",Đủ điều kiện lưu hành,0,nhà bác mơ bản liên hà3 bảo hà
+XE-366,Hoàng Thị Khánh Ly,12A1,xe máy điện,YADEA,đen,24-MĐ1 23712,,Phạm Thị Thu,988346058,Hoàng Trung Dũng,962992969.0,Ngoài trường,"Tắp 2, Xã Bảo Hà",Đủ điều kiện lưu hành,0,nhà bà hà bản lâm sản bảo hà
+XE-367,Nguyễn Hoàng Phương,12A1,Xe đạp điện,Xe đạp điên good,Vàng,Đang cấp thẻ (12A1),,Phạm Thị Thu,988346058,Nguyễn Mạnh Hùng,383906416.0,Ngoài trường,"Liên hà 3, Xã Bảo Hà",Đủ điều kiện lưu hành,0,Nhà bác châu bản bảo vinh
+XE-368,Nguyễn Trần Khánh Duy,12A2,Đạp điện,133S,Đen,Đang cấp thẻ (12A2),968033282.0,Lê Minh Huệ,983711402,Nguyễn Văn Lợi,869256820.0,Trong trường,"Thôn Tân Văn 2, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-369,Vũ Thị Quỳnh Vân,12A2,Đạp điện,133S,Đỏ,Đang cấp thẻ (12A2),396713061.0,Lê Minh Huệ,983711402,vũ Xuân Liên,334175007.0,Trong trường,"Bản Liên Hà 6, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-370,Đinh Lê Kim Huệ,12A2,Máy điện,gogo,Xanh,24MĐ- 118912,383261027.0,Lê Minh Huệ,983711402,Đinh Duy Quyết,981240160.0,Trong trường,"Thôn Xuân Sang, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-371,Hoàng Hà Linh,12A2,Xe máy điện,YADEA,XÁM,24AA- 08206,85833015.0,Lê Minh Huệ,983711402,Hoàng Văn Tành,362766882.0,Trong trường,"Bản Lúc, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-372,Hoàng Bảo Trâm,12A2,Đi nhờ,YADEA,Xám,24AA- 08206,947259897.0,Lê Minh Huệ,983711402,Hoàng Quốc Bạo,379191985.0,Trong trường,"Bản Lúc, Xã Bảo Hà",Đủ điều kiện lưu hành,0,Đi xe cùng Hà Linh 12A2
+XE-373,Triệu Thị Hường,12A2,Xe máy điện,kazuki,Xám ánh kim,Đang cấp thẻ (12A2),354984067.0,Lê Minh Huệ,983711402,Triệu Văn Dốt,912343317.0,Trong trường,"Thôn Mai Hồng 3, Xã Bảo Hà",Đủ điều kiện lưu hành,0,Mới mua đang đăng ký biển
+XE-374,Lự Anh Khoa,12A2,Xe điện,133S,Đen,Đang cấp thẻ (12A2),385816290.0,Lê Minh Huệ,983711402,Lự Khắc Duy,334236553.0,Trong trường,"Bản Tắp 2, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-375,Trần Hà My,12A2,Xe điện,Kazuki,Đen,24AA-24715,987548905.0,Lê Minh Huệ,983711402,Trần Văn Thành,983276709.0,Trong trường,"Thôn Ù Sóc, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-376,Triệu Thị Linh,12A2,Xe máy điện,Espero,Hồng,24MĐ1-09940,865113809.0,Lê Minh Huệ,983711402,Triệu Văn Toán,388626584.0,Trong trường,"Thôn Ngầm Thỉn, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-377,Nguyễn Huyền Ngọc,12A2,Xe điện,Dibao,Xám,24AA-24990,823340524.0,Lê Minh Huệ,983711402,Nguyễn Đình Vượng,329079276.0,Trong trường,"Thôn Ngầm Thỉn, Xã Bảo Hà",Đủ điều kiện lưu hành,0,Đi cùng M.Trang 12A2
+XE-378,Trần Nguyên An,12A2,Xe HB,HB,Đen,24AA -24927,339848751.0,Lê Minh Huệ,983711402,Trần Văn Trọng,339848751.0,Trong trường,"Thôn Tân Thành, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-379,Nông Ngọc Chuyên,12A2,Xe điện,YADEA,Đỏ,24MĐ1-09603,349359125.0,Lê Minh Huệ,983711402,Nông Ngọc Tưởng,393697130.0,Trong trường,"Thôn Ù Sóc, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-380,Bàn Trí Cường,12A2,Xe điện,YADEA,Đen,24AA-25392,989369091.0,Lê Minh Huệ,983711402,Bàn Văn Thương,346469644.0,Trong trường,"Thôn Khe Dài, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-381,Tô Thị Oanh,12A2,Xe điện,133S,Đỏ,Đang cấp thẻ (12A2),398904547.0,Lê Minh Huệ,983711402,Tô Văn Hòa,973102427.0,Trong trường,"Bản Bùn 1, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-382,Trần Thị Kim Thanh,12A2,Xe đạp điện,Kazuki,Đen,Đang cấp thẻ (12A2),343661642.0,Lê Minh Huệ,983711402,Trần Văn Hà,394184123.0,Trong trường,"Bản Liên Hà 5, Xã Bảo Hà",Đủ điều kiện lưu hành,0,Đi cùng Duy 10a6
+XE-383,Nguyễn Mai Trang,12A2,Xe điện,Dibao,Xám,24AA-24990,335650652.0,Lê Minh Huệ,983711402,Nguyễn Đình Dương,335650652.0,Trong trường,"Thôn Ngầm Thỉn, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-384,Trần Việt Hoàng,12A2,Xe HB,Cup,Xanh,29624-VU,373506985.0,Lê Minh Huệ,983711402,Trần Ngọc Trưởng,364407443.0,Trong trường,"Thôn Ù Sóc, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-385,Bàn Thúy Kim,12A2,Xe đạp điện,M133,Đen,M133,328591545.0,Lê Minh Huệ,983711402,Bàn Văn Khi,344610271.0,Trong trường,"Thôn Cam 1, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-386,Đinh Thùy Phương,12A2,Xe máy điện,Espero,Xám,24AA-08511,344808742.0,Lê Minh Huệ,983711402,Đinh Văn Dũng,343521337.0,Trong trường,"Thôn Đồng Tâm, Xã Châu Quế",Đủ điều kiện lưu hành,0,
+XE-387,Lý Thị Nga,12A2,Xe HB,wave,Xanh lá,24-HB-14891,345955260.0,Lê Minh Huệ,983711402,Lý Văn Thành,985125102.0,Trong trường,"Bản 1 Nhai Tẻn, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-388,Trướng Thị Luyến,12A2,Xe máy điện,Dibao,Tím,15MĐ- 131524,866360411.0,Lê Minh Huệ,983711402,Trướng Văn Nguyên,776412566.0,Trong trường,"Thôn Mai Hồng 2, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-389,Dương Hồng Ân,12A2,Xe máy điện,Kazuki,Xám,24-MĐ1- 23769,353509276.0,Lê Minh Huệ,983711402,Dương Xuân Tuấn,393821006.0,Trong trường,"Bản Bùn 3, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-390,Hoàng Thế Anh,12A2,Xe HB,50CC,Xanh,24-HB-11166,327187895.0,Lê Minh Huệ,983711402,Nguyễn Văn Đồng,334233873.0,Trong trường,"Bản 6AB, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-391,Phùng Đức Nhật,12A2,xe HB,50cc,xanh,24-AA-73414,339419224.0,Lê Minh Huệ,983711402,Phùng Đức tài,352384351.0,Trong trường,"Thôn 1 Nhai Tẻn, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-392,Nguyễn Thuỳ Trâm,12A2,HB,50CC,Trắng,24-AA-25324,362521400.0,Lê Minh Huệ,983711402,Phụ huynh em Nguyễn Thuỳ Trâm,379378649.0,Trong trường,"Bảo Hà, Bảo Yên, Lào Cai",Đủ điều kiện lưu hành,0,
+XE-393,Hoàng Thị Bảo Ngọc,12A2,Xe HB,50CC,Cam,34-AA 253.48,332869792.0,Lê Minh Huệ,983711402,Hoàng Văn Đẹp,332211847.0,Trong trường,"Bản 7AB, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-394,Hoàng Đình Tập,12A2,Xe  HB,50CC,Đen,24-HB 148.19,971110758.0,Lê Minh Huệ,983711402,Hoàng Văn Thuận,867982915.0,Trong trường,"Bản 3 Nhai Thổ, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-395,Họ và tên học sinh,12A2,Loại phương tiện (1),Hãng xe / Model (2),Màu sơn xe,Biển số xe (3),,Lê Minh Huệ,983711402,Phụ huynh em Họ và tên học sinh,,Nơi để (Gửi xe),"Bảo Hà, Bảo Yên, Lào Cai",Đủ điều kiện lưu hành,0,Ghi chú
+XE-396,Nguyễn Thảo My,12A2,Đi nhờ,wave,xanh đen,24-AA-08345,343589106.0,Lê Minh Huệ,983711402,Nguyễn Đình Hạ,357107599.0,Nhà bác Mai Bảo,"Bản Liên Hà 7, Xã Bảo Hà",Đủ điều kiện lưu hành,0,Đi xe cùng Hoài 10a6
+XE-397,Vàng Duy Vũ,12A2,Xe HB,Đream,Đỏ,24HB-12591,378042045.0,Lê Minh Huệ,983711402,Nguyễn Đức Quỳnh,342379668.0,Đối diện trường cấp1,"Thôn Lỵ 2-3, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-398,Đặng Thị Bình,12A2,đi nhờ,Espero,Đen,Đang cấp thẻ (12A2),337098402.0,Lê Minh Huệ,983711402,Đặng Văn An,366178807.0,Đối diện trường cấp1,"Bản Bông 4, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-399,Trần Văn Phong,12A2,Xe HB,Wave,Đen,24-AA-05953,357940736.0,Lê Minh Huệ,983711402,Trần Hữu Điền,373132199.0,Để nhà bà Hà,"Thôn 1 Tân Văn, Xã Bảo Hà",Đủ điều kiện lưu hành,0,Đi xe cùng Hoàng 11A4
+XE-400,Vũ Thế Bảo,12A2,Xe điện,133S,Đen,Đang cấp thẻ (12A2),853766027.0,Lê Minh Huệ,983711402,Vũ Thị Thương,912429654.0,Để khu cầu sắt,"Bản Bùn 1, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-401,Bàn Xuân Dương,12A2,Xe đạp điện,133S,Đen,Đang cấp thẻ (12A2),355574216.0,Lê Minh Huệ,983711402,Bàn Văn Thanh,387381913.0,Để nhà bà Hà cổng UB,"Bản Liên Hà 5, Xã Bảo Hà",Đủ điều kiện lưu hành,0,Đi cùng Thái 12A2
+XE-402,Lương Anh Hiển,12A2,Xe đạp điện,133S,Xanh,Đang cấp thẻ (12A2),347011951.0,Lê Minh Huệ,983711402,Lương Văn Tuân,373450197.0,Để khu cầu sắt,"Bản Bùn 2, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-403,Tô Huy Hoàng,12A2,Xe điện,Kazuki,Đỏ,Đang cấp thẻ (12A2),397411854.0,Lê Minh Huệ,983711402,Tô Văn Hà,355855243.0,Để khu cầu sắt,"Bản Bùn 1, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-404,Đặng Trần Danh Thái,12A2,Xe điện,133S,Đen,Đang cấp thẻ (12A2),329380743.0,Lê Minh Huệ,983711402,Đặng Thế Huỳnh,392663991.0,Để nhà ông Thân Thảo,"Bản Liên Hà 4, Xã Bảo Hà",Đủ điều kiện lưu hành,0,Đi cùng Dương 12A2
+XE-405,Hoàng Thị Ngân,12A2,Xe HB,50cc,Trắng,24-HB-11358,352987424.0,Lê Minh Huệ,983711402,Hoàng Thị Thuật,985394319.0,Nhà trọ khu cầu sát cũ,"Bản 7AB, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-406,Nguyễn Thị Yến Nhi,12A3,xe máy điện,,,24MĐ1-237.66 0335267432,352508869.0,Lò Văn Giáp,986374248,Nguyễn Văn Nghị,,trong trường,"Bản Bùn 2, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-407,Lương  Văn trâm,12A3,XE Máy điện,,,24MĐ1-2377 0374375134,377123582.0,Lò Văn Giáp,986374248,Phụ huynh em Lương  Văn trâm,,trong trường,"Bảo Hà, Bảo Yên, Lào Cai",Đủ điều kiện lưu hành,0,
+XE-408,Lự Thúy Lành,12A3,XE máy điện,,,24MĐ 1-237.42 0328416800,349919548.0,Lò Văn Giáp,986374248,Phụ huynh em Lự Thúy Lành,,trong trường,"Bảo Hà, Bảo Yên, Lào Cai",Đủ điều kiện lưu hành,0,
+XE-409,hà thị hiên,12A3,wae HB,,,24-HB12855,334069220.0,Lò Văn Giáp,986374248,Hà Văn Gu,983276592.0,trong trường,"Thôn Khe Bàn, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-410,chu thị linh,12A3,ware HB,,,24-HB15518,332186098.0,Lò Văn Giáp,986374248,Chu Văn Ninh,369039498.0,trong trường,"Thôn 6AB, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-411,chu thị hải yến,12A3,wave HB,,,24-HB09885,62481095.0,Lò Văn Giáp,986374248,Chu Văn Chang,366383983.0,trong trường,"Bản 3AB, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-412,Hoàng Thị Tâm Như,12A3,wave HB,,,24-HB10720,344713214.0,Lò Văn Giáp,986374248,Hoàng Văn Trình,339236790.0,trong trường,"Bản 5AB, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-413,Lý Thị Lan Anh,12A3,wave HB,,,24-AB03064,364386771.0,Lò Văn Giáp,986374248,Lý Văn Chúi,344010097.0,trong trường,"Thôn Bỗng 2, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-414,Lương Thị Khánh Hưng,12A3,wave HB,,,24-AA05594,392735824.0,Lò Văn Giáp,986374248,Lương Văn Thảnh,374359429.0,trong trường,"Bản 3AB, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-415,Bàn Thị Thanh Lam,12A3,xe điện,,,Đang cấp thẻ (12A3),356792109.0,Lò Văn Giáp,986374248,Bàn Văn Chiến,965838106.0,trong trường,"Thôn Ba Soi, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-416,Nguyễn Văn Tiến,12A3,xe điện,,,Đang cấp thẻ (12A3),392951477.0,Lò Văn Giáp,986374248,Nguyễn Thành Tiếp,328902784.0,trong trường,"Thôn Liên Hải, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-417,Trướng Thị Thanh Tâm,12A3,xe máy điện,,,24-AA76482,822688632.0,Lò Văn Giáp,986374248,Trướng Văn Còi,362076675.0,trong trường,"Thôn Ngầm Thỉn, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-418,Đinh Thị Thùy Ngân,12A3,wave HB,,,24-AA24716,384872584.0,Lò Văn Giáp,986374248,Phụ huynh em Đinh Thị Thùy Ngân,326117584.0,trong trường,"Bảo Hà, Bảo Yên, Lào Cai",Đủ điều kiện lưu hành,0,
+XE-419,Trần Bảo Như Quỳnh,12A3,HB,,,24-AD05671,372824697.0,Lò Văn Giáp,986374248,Trần Khắc Phong,333286710.0,trong trường,"Thôn Mai Hồng 1, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-420,Phạm Thị Thùy Uyên,12A3,xe điện,,,Đang cấp thẻ (12A3),343945475.0,Lò Văn Giáp,986374248,Phụ huynh em Phạm Thị Thùy Uyên,333597804.0,trong trường,"Bảo Hà, Bảo Yên, Lào Cai",Đủ điều kiện lưu hành,0,
+XE-421,Phan Hữu Thắng,12A3,xe đạp,,,Đang cấp thẻ (12A3),345585361.0,Lò Văn Giáp,986374248,Phan Văn Bộ,973953577.0,trong trường,"Bản Liên Hà 1, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-422,Nguyễn Thị Ngọc Ánh,12A3,xe máy điện,,,24-MĐ1-092.33,328837237.0,Lò Văn Giáp,986374248,Nguyễn Văn Duyên,976760325.0,trong trường,"Bản Bùn 4, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-423,Trần Thanh Trúc,12A3,xe máy điện,,,24-MĐ1-189.85,334301722.0,Lò Văn Giáp,986374248,Trần Văn Tuyên,379843439.0,trong trường,"Thôn Lỵ 2-3, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-424,Bàn Thị Kim,12A3,xe điện,,,Đang cấp thẻ (12A3),362645325.0,Lò Văn Giáp,986374248,Bàn Văn Cường,982944594.0,trong trường,"Bản Mai, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-425,Nguyễn Ngọc Lan,12A3,xe điện,,,Đang cấp thẻ (12A3),366457253.0,Lò Văn Giáp,986374248,Nguyễn Văn Kiên,335070850.0,trong trường,"Thôn Tân Trúc, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-426,Đỗ Khánh Ngọc,12A3,xe điện,,,Đang cấp thẻ (12A3),943275350.0,Lò Văn Giáp,986374248,Đỗ Văn Long,366351418.0,trong trường,"Thôn Ù Sóc, Xã Bảo Hà",Đủ điều kiện lưu hành,0,Ngọc đi chung với Huyền
+XE-427,Nguyễn Thiên Toàn,12A3,xe máy điện,,,24-MĐ1-146.15,364205320.0,Lò Văn Giáp,986374248,Nguyễn Thiên Cường,343296661.0,trong trường,"Thôn Tân An 2, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-428,Đỗ Khánh Huyền,12A3,xe điện,,,Đang cấp thẻ (12A3),943275350.0,Lò Văn Giáp,986374248,Đỗ Văn Long,366351418.0,trong trường,"Thôn Ù Sóc, Xã Bảo Hà",Đủ điều kiện lưu hành,0,Huyền đi chung với Ngọc
+XE-429,Họ và tên học sinh,12A3,Loại phương tiện (1),Hãng xe / Model (2),Nơi để (Gửi xe),Biển số xe (3),,Lò Văn Giáp,986374248,Phụ huynh em Họ và tên học sinh,,Lớp,"Bảo Hà, Bảo Yên, Lào Cai",Đủ điều kiện lưu hành,0,Ghi chú
+XE-430,Lương Thế Dân,12A3,xe máy điện,,nhà bà Hà,Đang cấp thẻ (12A3),345094104.0,Lò Văn Giáp,986374248,Lương Văn Đồng,949766125.0,Ngoài trường,"Bản Bùn 1, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-431,Trương Thị Hường,12A3,xe điện,,nhà cô Thủy,Đang cấp thẻ (12A3),787181708.0,Lò Văn Giáp,986374248,Trương Văn Dũng,788083073.0,Ngoài trường,"Bản Bùn 2, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-432,Lương Văn Tài,12A3,xe điện,,nhà cô Thủy,Đang cấp thẻ (12A3),985689354.0,Lò Văn Giáp,986374248,Lương Văn Tuân,365636783.0,Ngoài trường,"Bản Bùn 4, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-433,Trịnh  Văn Phúc,12A3,xe điện,,nhà Trịnh Tân,Đang cấp thẻ (12A3),352874060.0,Lò Văn Giáp,986374248,Phụ huynh em Trịnh  Văn Phúc,372600870.0,Ngoài trường,"Bảo Hà, Bảo Yên, Lào Cai",Đủ điều kiện lưu hành,0,
+XE-434,Hoàng Trung Kiên,12A3,wave HB,,nhà bà Hà,24-HB10144,868543627.0,Lò Văn Giáp,986374248,Hoàng Trung Học,984333917.0,Ngoài trường,"Bản Liên Hà 7, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-435,Lương Thị Huyên,12A3,wave HB,,nhà bà Hà,21-FA,865291552.0,Lò Văn Giáp,986374248,Lương Văn Chuyên,334208202.0,Ngoài trường,"Bản Tắp 1, Xã Bảo Hà",Đủ điều kiện lưu hành,0,đi chung với Bảo Ngọc
+XE-436,Trịnh  Văn Hùng,12A3,xe máy điện,,nhà bà Hà,24-MĐ1-238.20,364339540.0,Lò Văn Giáp,986374248,Phụ huynh em Trịnh  Văn Hùng,373264822.0,Ngoài trường,"Bảo Hà, Bảo Yên, Lào Cai",Đủ điều kiện lưu hành,0,
+XE-437,Vũ Đình Hùng,12A3,xe máy điện,,nhà Cương Tấm,21-MĐ4-002.35,975019735.0,Lò Văn Giáp,986374248,Vũ Đình Yên,373410378.0,Ngoài trường,"Thôn Ngầm Thỉn, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-438,Trần Bảo Ngọc,12A3,wave HB,,nhà bà Hà,24-HB10144,385659397.0,Lò Văn Giáp,986374248,Trần Văn Hiệp,372352951.0,Ngoài trường,"Thôn An Khánh, Xã Bảo Hà",Đủ điều kiện lưu hành,0,đi chung với Kiên
+XE-439,Trần Văn Thanh,12A3,xe máy điện,,xe điện Thanh Thanh,24-MD1,381474096.0,Lò Văn Giáp,986374248,Trần Văn Minh,346838230.0,Ngoài trường,"Thôn Khe Dài, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-440,Đặng Hữu Thắng,12A3,wave HB,,nhà bà Hà,24-HB09977,328017359.0,Lò Văn Giáp,986374248,Lý Thị Chung,339946498.0,Ngoài trường,"Bản Bông 4, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-441,Hoàng Trần Hiệp,12A3,Drem,,,24B2-842.86,327711651.0,Lò Văn Giáp,986374248,Hoàng Thị Thảo,374684251.0,Ngoài trường,"Bản 3 Nhai Thổ, Xã Bảo Hà",Đủ điều kiện lưu hành,0,Mẹ đưa đi thứ 2 đến bán trú thứ 7 đón về
+XE-442,Nguyễn Tùng Dương,12A4,Xe máy,wave 49.5cc,Trắng,24-AA 247.45,364691502.0,Bùi Thị Xuân Thùy,919728372,Nguyễn Ngọc Nam,356893689.0,Trong trường,"Kim Quang, Xã Bảo Hà",Đủ điều kiện lưu hành,0,đi 1 mình
+XE-443,Trương Hoàng Linh,12A4,Xe máy điện,kazuki,Xám đen,24AA-213.19,336097231.0,Bùi Thị Xuân Thùy,919728372,Trương Quyết Thắng,379726743.0,Trong trường,"Thôn Hồng Sơn, Xã Bảo Hà",Đủ điều kiện lưu hành,0,đi 1 mình
+XE-444,Bàn Thị Loan,12A4,Xe máy điện,Yadea,Đen nhám,24-MĐ1-18824,362754907.0,Bùi Thị Xuân Thùy,919728372,Bàn Văn Cường,983492417.0,Trong trường,"Thôn Tân Sơn, Xã Bảo Hà",Đủ điều kiện lưu hành,0,Đi một mình
+XE-445,Đào Quỳnh hoa,12A4,Xe máy điện,Kazuik,Xám,24-AA-21430,356781264.0,Bùi Thị Xuân Thùy,919728372,Đào Văn Tuân,382894986.0,Trong trường,"Bắc Sơn, Xã Lâm Thượng",Đủ điều kiện lưu hành,0,
+XE-446,Vũ Văn Thịnh,12A4,Xe HB,50cc,Đen,24-HB065.88,327496614.0,Bùi Thị Xuân Thùy,919728372,Vũ Văn Khương,356111709.0,trong trường,"Thôn Tân Thành, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-447,Lương Phong Vũ,12A4,Xe HB,50cc,Xanh than,88AB-408.52,877948925.0,Bùi Thị Xuân Thùy,919728372,Lương Văn Mười,988783881.0,trong trường,"Thôn  Kim Sơn, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-448,Triệu Thị Thanh Phương,12A4,Xe HB,50cc,Trắng,24HB-141.52,347146224.0,Bùi Thị Xuân Thùy,919728372,Triệu Văn Tương,971098356.0,trong trường,"Thôn 7AB, Xã Bảo Hà",Đủ điều kiện lưu hành,0,đi một mình
+XE-449,Triệu Thị Linh,12A4,Xe máy,Detech,Đen,Đang cấp thẻ (12A4),987533802.0,Bùi Thị Xuân Thùy,919728372,Triệu Văn Lai,345751519.0,trong trường,"Tân Thành, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-450,Trần Tuấn Anh,12A4,Xe máy điện,Gogo,Xám,90MĐ1-227.46,347024175.0,Bùi Thị Xuân Thùy,919728372,Trần Văn Hoàng,989865335.0,Trong trường,"Thôn 2 Nhai Thổ, Xã Bảo Hà",Đủ điều kiện lưu hành,0,đi 1 mình
+XE-451,Triệu Thị Thanh Phương,12A4,Xe máy,50cc,Trắng,24-HB 141.52,347146224.0,Bùi Thị Xuân Thùy,919728372,Triệu Văn Tương,971098356.0,trong trường,"Thôn 7AB, Xã Bảo Hà",Đủ điều kiện lưu hành,0,đi 1 mình
+XE-452,Lý Văn Hùng,12A4,Xe máy điện,Kazuki,Xám đen,24-AA 21343,932280664.0,Bùi Thị Xuân Thùy,919728372,Lý Văn Vàng,389525264.0,trong trường,"Thôn Khe Dài, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-453,Nguyễn Nhật Hạ,12A4,Xe máy điện,gogo,Đỏ,24-MĐ1 171.52,967400645.0,Bùi Thị Xuân Thùy,919728372,Nguyễn Xuân Nhiên,398677825.0,trong trường,"Bảo Vinh, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-454,Trần Văn Đoàn,12A4,Xe HB,50cc,Đen,21-GA 201.92,372503251.0,Bùi Thị Xuân Thùy,919728372,Trần Văn Bốn,353492179.0,trong trường,"Lúc, Xã Bảo Hà",Đủ điều kiện lưu hành,0,Đi 1 mình
+XE-455,Sầm Minh Hữu,12A4,Xe HB,50cc,Đỏ,24-HB 0121,819683614.0,Bùi Thị Xuân Thùy,919728372,Sầm Văn Chiến,379348994.0,trong trường,"Tân Thành, Xã Bảo Hà",Đủ điều kiện lưu hành,0,Đi 1 mình
+XE-456,Hoàng Thị Phương Oanh,12A4,Xe HB,50cc,Đen,24HB-160.95,383207751.0,Bùi Thị Xuân Thùy,919728372,Hoàng Văn Tường,364668915.0,Trong trường,"7AB, Xã Bảo Hà",Đủ điều kiện lưu hành,0,Đi 1 mình
+XE-457,Đặng Xuân Nguyên,12A4,Xe điện,G20,xanh đen,G20,336824358.0,Bùi Thị Xuân Thùy,919728372,Đặng Văn Viêm,362261857.0,Trong trường,"Thôn Tân Thượng, Xã Bảo Hà",Đủ điều kiện lưu hành,0,đi một mình
+XE-458,Họ và tên học sinh,12A4,Loại phương  tiện (1),Hãng xe / Model (2),Màu sơn xe,Biển số xe (3),,Bùi Thị Xuân Thùy,919728372,Phụ huynh em Họ và tên học sinh,,Nơi để (Gửi xe),"Bảo Hà, Bảo Yên, Lào Cai",Đủ điều kiện lưu hành,0,Ghi chú
+XE-459,Lâm Văn Đức,12A4,Xe máy,Detech 50cc,"Trắng ,đen",24AA-081.98,866578167.0,Bùi Thị Xuân Thùy,919728372,Lâm Văn Đạt,338179372.0,"Ngoài trường,nhà để xe bà Hà","Kim Sơn, Xã Bảo Hà",Đủ điều kiện lưu hành,0,có em Lâm Văn Nhật  lớp 10a6 đi cùng
+XE-460,Vũ Gia Như,12A4,Xe máy điện,gogo,Xám trắng,24MD1-237.44,973978142.0,Bùi Thị Xuân Thùy,919728372,Vũ Văn Doanh,984250007.0,"Ngoài trường,nhà người thân, đi một mình","Bảo Vinh, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-461,Lương Phong Vũ,12A4,Xe HB,50cc,Xanh than,88AB-408.52,877948925.0,Bùi Thị Xuân Thùy,919728372,Lương Văn Mười,988783881.0,Ngoài trường để xe bà Hà,"Thôn  Kim Sơn, Xã Bảo Hà",Đủ điều kiện lưu hành,0,có em Lương Vũ Phong ở 10a3 đi cùng
+XE-462,Trần Quang Huy,12A4,Xe cub,vietthai 50cc,Xanh than,24HB05107,397472209.0,Bùi Thị Xuân Thùy,919728372,Trần Văn Ba,924505586.0,Ngoài trường để xe bà Hà,"Thôn Tân Thượng, Xã Bảo Hà",Đủ điều kiện lưu hành,0,đi 1 mình
+XE-463,Đỗ Ngọc Anh,12A4,Xe điện,Kazuki,Đen,K có biển,336542987.0,Bùi Thị Xuân Thùy,919728372,Đỗ Văn Cường,346451206.0,Ngoài trường( tạp hoá cam trang) nhà người thân,"Kim Quang, Xã Bảo Hà",Đủ điều kiện lưu hành,0,"đi 1 mình,"
+XE-464,Phạm Văn thắng,12A4,Xe máy điện,Canely,Đen,24-AC 039.77,869299874.0,Bùi Thị Xuân Thùy,919728372,Phạm Văn Điệp,789176188.0,Ngoài trường để xe bà Hà,"Liên Hà 2, Xã Bảo Hà",Đủ điều kiện lưu hành,0,Đi 1 mình
+XE-465,Lương Phong Vũ,12A4,Xe HB,50cc,Xanh than,88AB-408.52,877948925.0,Bùi Thị Xuân Thùy,919728372,Lương Văn Mười,988783881.0,Ngoài trường để xe bà Hà,"Thôn  Kim Sơn, Xã Bảo Hà",Đủ điều kiện lưu hành,0,có em ở 10a3 đi cùng
+XE-466,Trần Thị Mai Lệ,12A4,xe máy điện,YAKA,Xám,24AA-3525,789109425.0,Bùi Thị Xuân Thùy,919728372,Trần Văn Man,336556700.0,Ngoài trường để xe bà Hà,"Thôn Khe Dài, Xã Bảo Hà",Đủ điều kiện lưu hành,0,đi cùng em 10a3
+XE-467,Nguyễn Hoài Nam,12A4,Xe HB,wave 49.5cc,Xám,24HB-05555,981429280.0,Bùi Thị Xuân Thùy,919728372,Nguyễn Đức Hoài,,Ngoài trường để xe nhà Dũng quảng cáo,"Thôn Bảo Ân, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-468,Đặng Thị Vân Anh,12A5,Xe điện,gogo,,24-MĐ1 089.96,815699670.0,Phạm Thị Tuyết,944533302,Đặng Văn Vinh,327317260.0,Trong trường,"Thôn Hồng Bùn, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-469,Nguyễn Đức Anh,12A5,Xe điện,canely,,24-AB 00071,363190431.0,Phạm Thị Tuyết,944533302,Nguyễn Văn Huy,358326459.0,Trong trường,"Thôn Hồng Sang, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-470,Nguyễn Thế Anh,12A5,xe máy,Wave 50cc,,Đang cấp thẻ (12A5),336072876.0,Phạm Thị Tuyết,944533302,Nguyễn Văn Thắng,376372751.0,Trong trường,"Bùn 1, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-471,Hoàng Thị Vi Cầm,12A5,Xe máy,Romasx 50cc,,21-FA 0902,375303433.0,Phạm Thị Tuyết,944533302,Hoàng Thế Tòng,358792281.0,Trong trường,"Liên Hà 2, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-472,Lê Thị Kim Chi,12A5,xe máy điện,espro,,Đang cấp thẻ (12A5),332185371.0,Phạm Thị Tuyết,944533302,Lê Viết Dũng,354493097.0,Trong trường,"Thôn Tân Sơn, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-473,Bàn Thanh Chung,12A5,Xe máy,Detech,,24AB-1233,348231264.0,Phạm Thị Tuyết,944533302,Bàn Tuấn Anh,974216321.0,Trong trường,"Thôn Nhai Tẻn 1, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-474,Trần Ngọc Hải,12A5,xe đạp điện,kazuki,,Đang cấp thẻ (12A5),337889775.0,Phạm Thị Tuyết,944533302,Trần Văn Hiển,916226112.0,Trong trường,"Liên Hải, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-475,Luyện Khánh Huyền,12A5,Xe máy,Cup 50cc,,21-FA 019.68,335137054.0,Phạm Thị Tuyết,944533302,Luyện Sơn Hải,346451424.0,Trong trường,"Thôn Tân Sơn, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-476,Sầm Minh Đức,12A5,Xe máy,Wave 50cc,,24-HB 140.21,334783283.0,Phạm Thị Tuyết,944533302,Sầm Quốc Đạt,347953516.0,Trong trường,"Thôn Cọn 1, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-477,Vũ Thị Đan Lê,12A5,Xe máy điện,Gogo,,21-MĐ4 025.13,368185890.0,Phạm Thị Tuyết,944533302,Vũ Mạnh Linh,865593778.0,Trong trường,"Thôn Tân Sơn, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-478,Trần Thị Sao Mai,12A5,Xe máy điện,KAZUKI,,24AA-250.62,362905907.0,Phạm Thị Tuyết,944533302,Tràn Văn Bảo,394321295.0,Trong trường,"Lỵ 2-3, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-479,Đinh Quang Minh,12A5,xe đạp,,,Đang cấp thẻ (12A5),396215539.0,Phạm Thị Tuyết,944533302,Đinh Việt Hùng,987091433.0,Trong trường,"Lâm Sản, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-480,Phạm Văn Sơn,12A5,xe máy điện,,,Đang cấp thẻ (12A5),963332749.0,Phạm Thị Tuyết,944533302,Phạm Văn Thủy,382531116.0,Trong trường,"Bùn 2, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-481,Hoàng Thảo My,12A5,xe máy điện,gogo,,24-AA 047.68,912966346.0,Phạm Thị Tuyết,944533302,Hoàng Ngọc Quân,919453680.0,Trong trường,"Lúc, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-482,Hoàng Hải Nam,12A5,xe máy điện,XMEN,,24-MĐ1 237.79,867886330.0,Phạm Thị Tuyết,944533302,Hoàng Văn Vững,984617261.0,Trong trường,"Thôn Tân Lập, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-483,Nguyễn Bảo Nam,12A5,xe máy điện,EKR,,Đang cấp thẻ (12A5),348990294.0,Phạm Thị Tuyết,944533302,Nguyễn Văn Thỉnh,866922923.0,Trong trường,"Xuân Sang, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-484,Phạm Hằng Nga,12A5,Xe máy điện,Espero,,24-AA 0835,775900389.0,Phạm Thị Tuyết,944533302,Phạm Văn Ngà,972564565.0,Trong trường,"Liên Hà 4, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-485,Nguyễn Ánh Nhật,12A5,Xe máy điện,kazuki,,24MĐ18970,869056065.0,Phạm Thị Tuyết,944533302,Nguyễn Hồng Văn,862944275.0,Trong trường,"Thôn Xuân Sang, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-486,Nguyễn Yến Nhi,12A5,Xe đạp,,,Đang cấp thẻ (12A5),373692009.0,Phạm Thị Tuyết,944533302,Nguyễn Năng Tuấn,947807111.0,Trong trường,"Bảo Vinh, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-487,Nguyễn Văn Phương,12A5,Xe máy điện,Kazuki,,24-AA 213.11,918957098.0,Phạm Thị Tuyết,944533302,Nguyễn Văn Quang,369774220.0,Trong trường,"Liên Hà 7, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-488,Vương Thị Anh Thư,12A5,xe đạp điện,kazuki,,Đang cấp thẻ (12A5),394163520.0,Phạm Thị Tuyết,944533302,Vương Cát Lợi,333719600.0,Trong trường,"Thôn Tân Trúc, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-489,Nguyễn Hải Yến,12A5,xe máy điện,vinfast,,24MD-1071.48,355042914.0,Phạm Thị Tuyết,944533302,Nguyễn Cảnh Toàn,964675068.0,Trong trường,"Tân An 1, Xã Bảo Hà",Đủ điều kiện lưu hành,0,Đi cùng Lê Đăng -12A6
+XE-490,Trần Ánh Dương,12A5,xe máy điện,yadea,,24-AC03785,846008502.0,Phạm Thị Tuyết,944533302,Trần Văn Hải,976483022.0,Trong trường,"Tân An 1, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-491,Vũ Cẩm Anh,12A5,Xe máy,Wave 50cc,,21-FA 089.19,342367944.0,Phạm Thị Tuyết,944533302,Vũ Xuân Hải,965296897.0,Trong trường,"Thôn Tân Sơn, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-492,Vàng Thị Ngọc Bích,12A5,xe máy điện,YADEA,,24-AA253.84,337381627.0,Phạm Thị Tuyết,944533302,Hoàng Văn Bảy,389954557.0,Trong trường,"Bản 1 Tân Văn, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-493,Dương Quang Huy,12A5,xe máy điện,Kazuki,,Đang cấp thẻ (12A5),355947125.0,Phạm Thị Tuyết,944533302,Dương Văn Mạnh,388913010.0,Trong trường,"Ngầm Thỉn, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-494,Phan Thị Mến,12A5,Xe máy điện,CPI espero,,Đang cấp thẻ (12A5),374384341.0,Phạm Thị Tuyết,944533302,Phan Văn Kim,354748091.0,Trong trường,"Bông 4, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-495,Đỗ Hải Đăng,12A5,xe máy điện,nijia,,24-md 109532,367244085.0,Phạm Thị Tuyết,944533302,Đỗ Trọng Hải,353942456.0,Trong trường,"Bảo Vinh, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-496,Họ và tên học sinh,LỚP,Loại phương tiện (1),Hãng xe / Model (2),,Biển số xe (3),,Thầy/Cô Chủ Nhiệm LỚP,988123001,Phụ huynh em Họ và tên học sinh,,Nơi để (Gửi xe),"Bảo Hà, Bảo Yên, Lào Cai",Đủ điều kiện lưu hành,0,Ghi chú
+XE-497,Nguyễn Bảo Khánh,12A5,Xe máy điện,Gogo,,24-MĐ1 188.41,357619735.0,Phạm Thị Tuyết,944533302,Nguyễn Thành Trung,973432865.0,Nhà bà Hà gần uỷ ban,"Tân An 1, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-498,Nguyễn Nhật Minh,12A5,xe máy điện,KAZUKI,,Đang cấp thẻ (12A5),355872154.0,Phạm Thị Tuyết,944533302,Nguyễn Văn Sơn,945594081.0,Nhà bà Hà gần uỷ ban,"Tân Sơn, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-499,Nguyễn Đức Tâm,12A5,Xe máy,Detech,,24-AC 01651,366500831.0,Phạm Thị Tuyết,944533302,Nguyễn Đức Thuận,336843982.0,Nhà dũng phương,"Thôn Tân Thành, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-500,Lý Hoàng Vũ,12A5,xe máy,victoria,,24-HB-147.81,787446955.0,Phạm Thị Tuyết,944533302,Lý Minh Quân,947259483.0,Nhà dũng phương,"Lỵ 1-2, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-501,Nguyễn Huy Hoàng,12A6,Xe máy điện,Gogo,Xanh than,24-MĐ1 13779,982095767.0,Phạm Lệ Thu,354626005,Nguyễn Văn Hợi,979421819.0,Trong trường,"Xuân sang, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-502,Nguyễn Phương Anh,12A6,Xe máy điện,Kazuki,Xám xanh,24-MĐ1 23743,378334442.0,Phạm Lệ Thu,354626005,Nguyễn Văn Chung,974726533.0,trong trường,"Liên Hải, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-503,Vũ Thị Ngọc Mai,12A6,xe máy điện,yadea,Đỏ,24-AA21413,962192880.0,Phạm Lệ Thu,354626005,Vũ Minh Huấn,964119336.0,trong trường,"Tân An 1, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-504,Sầm Thị Xuân Hảo,12A6,xe HB,honda/50cc,xanh,24-HB 07940,833579398.0,Phạm Lệ Thu,354626005,Phụ huynh em Sầm Thị Xuân Hảo,377625033.0,Trong trường,"Bảo Hà, Bảo Yên, Lào Cai",Đủ điều kiện lưu hành,0,
+XE-505,Nguyễn Hoàng Thu,12A6,xe máy điện,133,đỏ đen,Đang cấp thẻ (12A6),862843721.0,Phạm Lệ Thu,354626005,Nguyễn Văn Tân,355867015.0,Trong trường,"Tân Thượng, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-506,Vũ Hữu Bình,12A6,xe máy,viet thai/50cc,xanh,24hb12414,335957230.0,Phạm Lệ Thu,354626005,Vũ Hữu Quang,334281956.0,Trong trường,"Thôn 6AB, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-507,Lương Thúy Ngân,12A6,xe máy điện,Kazuki,xám tinh vân,24AC03396,363526728.0,Phạm Lệ Thu,354626005,Lương Công Trình,366214299.0,Trong trường,"Tắp 1, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-508,TRẦN HOÀN THIỆN,12A6,Xe máy điện,Xmen,Đen,24 MD109320,335245813.0,Phạm Lệ Thu,354626005,Trần Xuân Cương,373192975.0,Trong trường,"Bùn 3, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-509,Hoàng Ngọc Quỳnh Nhi,12A6,Xe đạp điện,YADEA,Xanh,24AB00189,363459231.0,Phạm Lệ Thu,354626005,Hoàng Văn Lý,389565084.0,Trong trường,"Thôn Tân An 1, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-510,Lê Xuân Tài,12A6,Xe máy 50cc,VICTORIA,"Trắng , đen",24-HB 189.19,354465725.0,Phạm Lệ Thu,354626005,Lê Xuân Chang,356689091.0,Trong trường,"Thôn Cọn 1, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-511,Nguyễn Đức Thắng,12A6,xe máy điện,xmen,"trắng , đen",29MD123429,367005737.0,Phạm Lệ Thu,354626005,Nguyễn Văn Thi,362391361.0,Trong trường,"Thôn Tân An 2, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-512,Nguyễn Đình Tú,12A6,Xe máy điện,Kazuki,Xám,24AA23279,961940691.0,Phạm Lệ Thu,354626005,Nguyễn Đình Tâm,961732920.0,Trong trường,"Xuân Sang, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-513,Trần Thị Hương Trà,12A6,xe máy điện,Yadea,xanh,24-MĐ1 145.99,345172620.0,Phạm Lệ Thu,354626005,Trần Thị Thúy Quỳnh,325723455.0,trong trường,"Thôn tiền phong, Xã Lâm Giang",Đủ điều kiện lưu hành,0,
+XE-514,Bùi Ngọc Diệp,12A6,xe máy điện,kazuki,xám,24-MĐ1188.67,374635529.0,Phạm Lệ Thu,354626005,Bùi Văn Giáp,397623925.0,Trong trường,"Tân Sơn, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-515,Lâm Ngọc Hoa,12A6,xe máy điện,kazuki,xanh ghi,24-MĐ12373,779255790.0,Phạm Lệ Thu,354626005,Lâm Quản Nghị,397953769.0,trong trường,"Liên Hà 5, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-516,Trần Thị Đông Nhi,12A6,xe máy điện,Vinfast,trắng,24-AA 21598,817255633.0,Phạm Lệ Thu,354626005,Trần Huy Mạnh,946724382.0,trong trường,"Liên Hà 1, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-517,Trịnh Hà Thi,12A6,xe máy điện,nike bike,đỏ,Đang cấp thẻ (12A6),983789673.0,Phạm Lệ Thu,354626005,Trịnh Ngọc Liêm,867181229.0,trong trường,"Liên Hà 5, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-518,Lê Hải Đăng,12A6,Xe máy điện,Vinfast,Xám,24MD 1071.48,962128116.0,Phạm Lệ Thu,354626005,Lê Xuân Hoà,983032428.0,trong trường,"Tân An 2, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-519,Phạm Tiến phong,12A6,xe đạp điện,,xanh,Đang cấp thẻ (12A6),369934104.0,Phạm Lệ Thu,354626005,Phạm Anh Tuấn,916447632.0,trong trường,"Liên Hà 1, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-520,Nguyễn Yến Nhi,12A6,Xe đạp,,Nâu be,Đang cấp thẻ (12A6),325636160.0,Phạm Lệ Thu,354626005,Nguyễn Đức Ngọc,869403811.0,Trong trường,"Liên Hà 1, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-521,Nguyễn Khánh Vân,12A6,xe máy điện,kazuki,đỏ,Đang cấp thẻ (12A6),335429839.0,Phạm Lệ Thu,354626005,Nguyễn Ngọc Tuân,971855205.0,Trong trường,"Tân an 1, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-522,Nguyễn Quang Nhật,12A6,Xe máy 50cc,Việt thái,Xanh,21-BA 06576,972144806.0,Phạm Lệ Thu,354626005,Nguyễn Xuân Thịnh,338346460.0,Trong trường,"Thôn Nghĩa Dũng, Xã Lâm Giang",Đủ điều kiện lưu hành,0,
+XE-523,Phạm Hoàng Nam,12A6,Xe máy điện,Yadea,Xanh,24AA08317,827369389.0,Phạm Lệ Thu,354626005,Phạm Duy Thanh,915095449.0,Trong trường,"Liên Hà 3, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-524,Phạm Hà Hải Đăng,12A6,xe máy điện,yadea,đen,24AA08217,,Phạm Lệ Thu,354626005,Thào A Sơn,985596811.0,Trong trường,"Lâm Sản, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-525,Nguyễn Diệu Ly,12A6,xe máy điện,gogo,cam,Đang cấp thẻ (12A6),325657271.0,Phạm Lệ Thu,354626005,Nguyễn Việt Hưng,975706034.0,Trong trường,"Liên Hà 3, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-526,Nguyễn Huyền Anh,12A6,xe đạp điện,Asuka,xanh rêu,Đang cấp thẻ (12A6),363480209.0,Phạm Lệ Thu,354626005,Nguyễn Văn Thắng,359565708.0,trong trường,"Tân An 2, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-527,Hoàng Huyền Chi,12A6,xe máy 50cc,honda/50cc,trắng,24-AA 057.70,826263486.0,Phạm Lệ Thu,354626005,Hoàng Cao Cường,849437867.0,trong trường,"6AB, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-528,Nguyễn Quang Sáng,12A6,Xe máy 50cc,HONDA/50cc,xanh,24HB09206,346958274.0,Phạm Lệ Thu,354626005,Nguyễn Mạnh Khởi,348081330.0,trong trường,"Tân Trúc, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-529,Họ và tên học sinh,12A6,Loại phương tiện (1),Hãng xe / Model (2),Màu sơn xe,Biển số xe (3),,Phạm Lệ Thu,354626005,Phụ huynh em Họ và tên học sinh,,Nơi để (Gửi xe),"Bảo Hà, Bảo Yên, Lào Cai",Đủ điều kiện lưu hành,0,
+XE-530,Nguyễn Quang Huy,12A6,Xe máy điện,133,Đỏ,Đang cấp thẻ (12A6),337403785.0,Phạm Lệ Thu,354626005,Nguyễn Văn Mạnh,333484332.0,nhà xe điện Thanh Thanh,"Liên Hải, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-531,Phạm Thuỳ Linh,12A6,xe máy 50cc,Detech,đen,24-AA 21325,826343014.0,Phạm Lệ Thu,354626005,Phụ huynh em Phạm Thuỳ Linh,981147040.0,Nhà bà Hồng,"Bảo Hà, Bảo Yên, Lào Cai",Đủ điều kiện lưu hành,0,
+XE-532,Nguyễn Tuấn Tú,12A6,xe máy 50cc,viet thai/50cc,trắng đen,24-HB 067.47,358352295.0,Phạm Lệ Thu,354626005,Nguyễn Minh Châm,963973106.0,nhà xe điện Thanh Thanh,"bùn 2, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-533,Lê Hoàng Yến,12A6,Xe máy điện,vinfast,đỏ,24MĐ108983,358029671.0,Phạm Lệ Thu,354626005,Lê Văn Toàn,349847655.0,nhà bà hà,"Liên Hà 7, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-534,Thái Bảo Ngân,12A6,xe máy điện,Dibao,Xanh than,24MĐ108895,383238829.0,Phạm Lệ Thu,354626005,Thái Văn Quang,969782216.0,Nhà Huệ Đủ,"Bản Liên Hải, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-535,Bàn Phúc Long,12A7,Xe máy điện,Victoria,Trắng,24-MĐ1 237.26,365619140.0,Hoàng Ngọc Anh,944512243,Bàn Văn Nghính,375426440.0,Trong trường,"Thôn Bông, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-536,Nguyễn Loan Phương,12A7,Xe máy 50cc,DETECH,Trắng,24-AA 151.98,962122186.0,Hoàng Ngọc Anh,944512243,Nguyễn Huy Tuân,964162333.0,Trong trường,"Thôn Bảo Ân, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-537,Trướng Quốc Ngọc,12A7,Xe HB,Wave 50cc,Xanh bạc,24-HB-05594,364715811.0,Hoàng Ngọc Anh,944512243,Trướng Văn Lô,914585715.0,Trong trường,"Thôn Mai Hồng, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-538,Triệu Thị Hoàng Hoa,12A7,Xe HB,Wave 50cc,Trắng,24-HB-1392,345713204.0,Hoàng Ngọc Anh,944512243,Triệu Văn Giáp,364985358.0,Trong trường,"Thôn Kim Sơn, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-539,Lương Thị Kim Mai,12A7,Xe HB,Wave 50cc,Xám,24-HB 080.12,329258404.0,Hoàng Ngọc Anh,944512243,Lương Tiến Huân,356059208.0,Trong trường,"Thôn Tắp 1, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-540,Lương Thị Mật Mật,12A7,Xe HB,Wave 50cc,Xanh Dương,24-HB0674,349153522.0,Hoàng Ngọc Anh,944512243,Lương Văn Quang,865489256.0,Trong trường,"Thôn Lúc, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-541,Bàn Ngọc Hân,12A7,Xe máy điện,Yadea,Đen nhám,24-AA 247.14,972249783.0,Hoàng Ngọc Anh,944512243,Bàn Văn Đỏ,868282144.0,Trong trường,"Thôn Mai Hồng, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-542,Đặng Thị Yến Nhi,12A7,xe máy,FA 50cc,xanh than,21-FA 030.78,373840285.0,Hoàng Ngọc Anh,944512243,Đặng Văn Xan,332631529.0,trong trường,"Thôn Tân Thành, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-543,Lê Văn Thưởng,12A7,xe máy,50cc,đen,24-AA 253.20,372537432.0,Hoàng Ngọc Anh,944512243,Lê Văn Thương,366303931.0,trong trường,"Thôn Tân Thành, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-544,Nguyễn Phi Cường,12A7,xe 50cc,victoria,tím than,21FA-028.41,965539354.0,Hoàng Ngọc Anh,944512243,Nguyễn Văn Thành,355473596.0,trong trường,"Thôn Nghĩa Dũng, Xã Lâm Giang",Đủ điều kiện lưu hành,0,
+XE-545,Triệu Thị An,12A7,xe đạp điện,Yadea,đen bóng,Đang cấp thẻ (12A7),822176237.0,Hoàng Ngọc Anh,944512243,Triệu Văn Yên,369247769.0,trong trường,"Thôn Tân Sơn, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-546,Nguyễn Hoàng Dương,12A7,xe máy điện,Yadea,Xanh than,24MĐ14561,352198235.0,Hoàng Ngọc Anh,944512243,Nguyễn Thành Hưng,865345268.0,Trong trường,"Thôn Bảo Vinh, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-547,Trần Văn Dương,12A7,Xe máy,wave 50cc,ghi,24HB-1481,358716605.0,Hoàng Ngọc Anh,944512243,Trần Văn Trọng,973447004.0,trong trường,"Thôn An Khánh, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-548,Lê Thị Thúy Hằng,12A7,Xe máy điện,Vespa,Đen,15- MD1-28948,325880166.0,Hoàng Ngọc Anh,944512243,Phụ huynh em Lê Thị Thúy Hằng,392227881.0,Trong trường,"Bảo Hà, Bảo Yên, Lào Cai",Đủ điều kiện lưu hành,0,
+XE-549,Nguyễn Thanh Quang,12A7,Xe máy điện,gogo,Trắng,24MD1-24093,,Hoàng Ngọc Anh,944512243,Nguyễn Văn Thắng,347609916.0,Trong trường,"Thôn Tân An, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-550,Đặng Phương Nam,12A7,Xe máy điện,gogo,Xám,24AB-001.85,374614838.0,Hoàng Ngọc Anh,944512243,Đặng Văn Xuân,969052643.0,Trong trường,"Thôn Mai Hồng, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-551,Cầm Xuân Điệp,12A7,Xe máy điện,gogo,sám,24-MĐ1099.26,357145083.0,Hoàng Ngọc Anh,944512243,Cầm Văn Sơn,386378405.0,trong trường,"Thôn Mai Hồng, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-552,Họ và tên học sinh,LỚP,Loại phương tiện (1),Hãng xe / Model (2),Màu sơn xe,Biển số xe (3),,Thầy/Cô Chủ Nhiệm LỚP,988123001,Phụ huynh em Họ và tên học sinh,,Nơi để (Gửi xe),"Bảo Hà, Bảo Yên, Lào Cai",Đủ điều kiện lưu hành,0,Ghi chú
+XE-553,Nguyễn Anh Quân,12A7,xe máy,wave 50cc,xanh bạc,24-HB 148.89,334745294.0,Hoàng Ngọc Anh,944512243,Nguyễn Văn Quang,362591869.0,nhà bà hà thôn lâm sản xã bảo hà tỉnh lào cai,"Thôn Bảo Ân, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-554,Phạm Thị Thu Hà,12A7,xe máy điện,Dibao,Đen,24-MĐ1 142.66,336508740.0,Hoàng Ngọc Anh,944512243,phạm văn đăng,988725214.0,Ngoài trường (nhà bác Vinh đối diện trường cấp 2),"Thôn Kim Quang, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-555,Lý Lan Anh,12A7,xe máy điện,gogo,xám xi,Đang cấp thẻ (12A7),328045331.0,Hoàng Ngọc Anh,944512243,Lý Ngọc Ninh,373168185.0,nhà bà hà thôn lâm sản xã bảo hà tỉnh lào cai,"Thôn Nhai Tẻn, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-556,Triệu Thu Dung,12A7,xe máy,wave 50cc,trắng,21- FA 01737,911984527.0,Hoàng Ngọc Anh,944512243,Triệu Tài Huyện,329594182.0,nhà bà hà thôn lâm sản xã bảo hà tỉnh lào cai,"Thôn Cao Sơn, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-557,Lê Hồng Nhung,12A7,xe máy,wave 50cc,trắng,21-BA 066.88,337908616.0,Hoàng Ngọc Anh,944512243,Lê Đức Tiến,349467741.0,nhà bà hà thôn lâm sản xã bảo hà tỉnh lào cai,"Thôn Nghĩa Dũng, Xã Lâm Giang",Đủ điều kiện lưu hành,0,
+XE-558,Lê Trọng Hiếu,12A7,xe điện,gogo,xanh,24AA-24836,984735209.0,Hoàng Ngọc Anh,944512243,Lê Trọng Đồng,368827772.0,nhà bà hà thôn lâm sản xã bảo hà tỉnh lào cai,"Thôn Tân Sơn, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-559,Bàn Phúc An,12A7,Xe HB,namoto,Xanh Bạc,24-HB-13589,347013241.0,Hoàng Ngọc Anh,944512243,Bàn Ton Xuân,967797175.0,ngoài trường(bà hà),"Thôn Bông, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-560,Nguyễn Trung Hiếu,12A7,Xe máy điện,Espero,Xám,24-MĐ1 188.14,345225235.0,Hoàng Ngọc Anh,944512243,Nguyễn Xuân Hà,966858664.0,Ngoài trường (bà hà),"Thôn Tân An, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-561,Lê Phương Thảo,12A7,xe máy điện,Favo,"cam,trắng",24AA-213.67,363395732.0,Hoàng Ngọc Anh,944512243,Lê Văn Đức,987202968.0,ngoài trường(dũng toan),"Thôn Tân Sơn, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-562,Hoàng Mỹ Lệ,12A7,Xe HB,Wave 50cc,Trắng,24-HB 138.71,971507360.0,Hoàng Ngọc Anh,944512243,Hoàng Văn Thuấn,333160172.0,Ngoài trường (bà hà),"Thôn 7AB, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-563,Nguyễn Khánh Chi,12A7,xe máy,ware 50cc,đen,24-HB 251.57,395874812.0,Hoàng Ngọc Anh,944512243,Nguyễn Huy Tấn,335650619.0,nhà bà hà thôn lâm sản xã bảo hà tỉnh lào cai,"Thôn 3 AB, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-564,Nguyễn Tiến Đạt,12A7,Xe máy điện,Gogo,Xanh,24MĐ 19576,847431617.0,Hoàng Ngọc Anh,944512243,Nguyễn Thanh Tâm,357580876.0,Ngoài trường ( bà hà),"Thôn Liên Hà 1, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-565,Lục Thành Đạt,12A7,xe điện,xe đạp điện,xanh đen,24-HB 06522,355298605.0,Hoàng Ngọc Anh,944512243,Lục Quang Vinh,987836564.0,nhà bà hà thôn lâm sản xã bảo hà tỉnh lào cai,"Thôn Tắp 2, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-566,Nguyễn Duy Quang,12A7,xe máy điện,gogo,Xanh dương,24-AA 215.80,389728587.0,Hoàng Ngọc Anh,944512243,Nguyễn Quang Hanh,342386566.0,Ngoài trường (bà hà),"Thôn Kim Quang, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-567,Nguyễn Minh Tiến,12A7,Xe máy điện,xmen,đen,ko có,963678209.0,Hoàng Ngọc Anh,944512243,Nguyễn Minh Hoạt,325614586.0,ngoài trường (dũng toàn),"Thôn Thống Nhất, Xã Bảo Hà",Đủ điều kiện lưu hành,0,

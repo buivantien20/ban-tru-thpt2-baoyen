@@ -1,208 +1,197 @@
-﻿Mã HS,Họ và tên,Giới tính,Khối,Lớp,Dãy nhà,Phòng,Giường,Dân tộc,Thôn,Xã,Họ tên Bố,Họ tên Mẹ,SĐT Phụ huynh,SĐT Học sinh,Cách trường (KM),Chính sách NĐ116,GĐ1: Ăn trưa,GĐ2: Phòng nghỉ,Trạng thái,Ghi chú nề nếp,Ăn tối
-HSN-001,Bàn Hải Phong,Nam,Khối 10,10A1,Dãy Nam,NAM-308,G-01,Dao,Khe Bàn,Bảo Hà,Bàn Văn Trịnh,Lý Thị Neo,867106916,971909148.0,12,Có,True,True,Tại trường,,True
-HSN-002,Đặng Đức Khiêm,Nam,Khối 10,10A1,Dãy Nam,NAM-308,G-02,Dao,Bông,Bảo Hà,Đặng Văn Hoàng,Triệu Thị Phấy,977183836,869753415.0,10,Có,True,True,Tại trường,,True
-HSN-003,Hoàng Minh Quân,Nam,Khối 10,10A1,Dãy Nam,NAM-308,G-03,Tày,Cam cọn 1,Bảo Hà,Hoàng Văn Nhiễu,Hoàng Thị Nhàn,971994864,869889243.0,16,Có,True,True,Tại trường,,True
-HSN-004,Hoàng Quốc Phòng,Nam,Khối 10,10A1,Dãy Nam,NAM-308,G-04,xa phó,Nhai thổ 2,Bảo Hà,Hoàng Văn Hải,Tẩn San Mẩy,387149387,327654940.0,20,Có,True,True,Tại trường,,True
-HSN-005,Hoàng Xuân Huần,Nam,Khối 10,10A1,Dãy Nam,NAM-308,G-05,Tày,3 nhai thổ,Bảo Hà,Hoàng Văn Hoà,Sầm thị biết,365140211,377690811.0,18,Có,True,True,Tại trường,,True
-HSN-006,Nông Đức Duy,Nam,Khối 10,10A1,Dãy Nam,NAM-308,G-06,Dao,Bông,Bảo hà,Nông Ton Pham,Sầm Thị Nghè,366675523,325242301.0,10,Có,True,True,Tại trường,,True
-HSN-007,Hoàng Thừa Tài,Nam,Khối 10,10A1,Dãy Nam,NAM-308,G-07,Dao,Khe Bàn,Bảo Hà,Hoàng Xuân Lâm,Triệu Thị Náy,335402730,33509143.0,15km,Có,True,True,Tại trường,,True
-HSN-008,Hoàng Văn Ánh,Nam,Khối 10,10A1,Dãy Nam,NAM-308,G-08,Tày,Thôn 3AB,Bảo Hà,Hoàng Văn Hoàn,Hoàng Thị Hòa,336821553,334172984.0,,Có,True,True,Tại trường,,True
-HSN-009,Triệu Quang Vũ,Nam,Khối 10,10A2,Dãy Nam,NAM-308,G-09,Kinh,Tân Thành,Bảo Hà,Triệu Công Đoàn,Hoàng Thị Tuyết,382528034,373502163.0,15,Có,True,True,Tại trường,,True
-HSN-010,Sùng Thuận Phong,Nam,Khối 10,10A2,Dãy Nam,NAM-308,G-10,H'Mông,Thùng 2,Bảo Hà,Sùng A Giáo,Thào Thị Đấu,382221652,344448939.0,7,Có,True,True,Tại trường,,True
-HSN-011,Lý Quang Hùng,Nam,Khối 10,10A3,Dãy Nam,NAM-308,G-11,Dao,1 Nhai Tẻn,Bảo Hà,Lý Văn Thành,Bàn Thị Tánh,985125102,389175004.0,,Có,True,True,Tại trường,,True
-HSN-012,Đặng Minh Toan,Nam,Khối 10,10A3,Dãy Nam,NAM-307,G-01,Phù Lá,2 Nhai Thổ,Bảo Hà,Đặng Văn Túc,Hoàng Thị Xuân,392724342,383066871.0,17km,Có,True,True,Tại trường,,True
-HSN-013,Hoàng Gia Bảo,Nam,Khối 10,10A3,Dãy Nam,NAM-307,G-02,Tày,3AB,Bảo Hà,Hoàng Văn Tuyến,Hoàng Thị Huế,337287811,327065011.0,17km,Có,True,True,Tại trường,,True
-HSN-014,Hà Chí Tường,Nam,Khối 10,10A3,Dãy Nam,NAM-307,G-03,Tày,6AB,Bảo Hà,Hà Văn Hướng,Hoàng Thị Mến,345554070,357756445.0,10km,Có,True,True,Tại trường,,True
-HSN-015,Hoàng Đức Lương,Nam,Khối 10,10A3,Dãy Nam,NAM-307,G-04,Tày,7AB,Bảo Hà,Hoàng Văn Thành,Nguyễn Thị Kiều,362754731,339259811.0,16km,Có,True,True,Tại trường,,True
-HSN-016,Lý Chí Kiên,Nam,Khối 10,10A3,Dãy Nam,NAM-307,G-05,Dao,1 Nhai Tẻn,Bảo Hà,Lý Văn Sơn,Lý Thị Nguyên,385305641,383819941.0,16km,Có,True,True,Tại trường,,True
-HSN-017,Hoàng Phi Long,Nam,Khối 10,10A3,Dãy Nam,NAM-307,G-06,Tày,Cao Sơn,Bảo Hà,Hoàng Văn Hằng,Đặng Thị Tình,977815398,367424987.0,18km,Có,True,True,Tại trường,Khuyết tật,True
-HSN-018,Đặng Quang Dũng,Nam,Khối 10,10A3,Dãy Nam,NAM-307,G-07,Dao,Thống Nhất,Bảo Hà,Đặng Văn Tiên,Trần Thị Thắm,906194200,702041505.0,10km,Có,True,True,Tại trường,,True
-HSN-019,Bàn Minh Đức,Nam,Khối 10,10A3,Dãy Nam,NAM-307,G-08,Dao,Thống Nhất,Bảo Hà,Bàn Văn May,Bàn Thị Lan,388039801,,10km,Có,True,True,Tại trường,,True
-HSN-020,Hoàng Hữu Duy,Nam,Khối 10,10A3,Dãy Nam,NAM-307,G-09,Tày,Khoai 2,Bảo Hà,Hoàng Văn Đức,Triệu Thị Phương,964141142,,12km,Có,True,True,Tại trường,,True
-HSN-021,Nông Xuân Kiểm,Nam,Khối 10,10A3,Dãy Nam,NAM-307,G-10,Tày,3AB,Bảo Hà,Nông Văn Đại,Dương Thi Oai,364247326,862705096.0,17km,Có,True,True,Tại trường,,True
-HSN-022,Bàn Quốc Anh,Nam,Khối 10,10A4,Dãy Nam,NAM-307,G-11,Dao,4 Nhai Thổ,Bảo Hà,Nguyễn Duy Thưởng,Bàn Thị Hoa,868640391,327590264.0,15,Có,True,True,Tại trường,,True
-HSN-023,Bàn Thành Nghiệp,Nam,Khối 10,10A4,Dãy Nam,NAM-306,G-01,Dao,Bông 3,Bảo Hà,Bàn Ton San,Đặng Thị Hương,359845021,367313671.0,11,Có,True,True,Tại trường,,True
-HSN-024,Đặng Nguyên Long,Nam,Khối 10,10A4,Dãy Nam,NAM-306,G-02,Dao,Bông 3,Bảo Hà,Đặng Văn Hùng,Đặng Thị Nhình,966231870,357413720.0,11,Có,True,True,Tại trường,,True
-HSN-025,Đặng Nguyên Lương,Nam,Khối 10,10A4,Dãy Nam,NAM-306,G-03,Dao,Bông 3,Bảo Hà,Hoàng Văn Ngợi,Đặng Thị Sàn,915586635,349976830.0,11,Có,True,True,Tại trường,,True
-HSN-026,Hà Xuân Quang,Nam,Khối 10,10A4,Dãy Nam,NAM-306,G-04,Tày,6AB,Bảo Hà,Hà Văn Long,Hoàng Thị Bến,359615338,352633953.0,13,Có,True,True,Tại trường,,True
-HSN-027,Hoàng Trung Đức,Nam,Khối 10,10A4,Dãy Nam,NAM-306,G-05,Tày,3 AB,Bảo Hà,Hoàng Văn Huỳnh,Hoàng Thị Chuyến,394977390,862105274.0,15,Có,True,True,Tại trường,,True
-HSN-028,Hoàng Văn Thượng,Nam,Khối 10,10A4,Dãy Nam,NAM-306,G-06,Tày,7AB,Bảo Hà,Hoàng văn Hoàng,Đinh Thị Hằng,968022730,335508944.0,12,Có,True,True,Tại trường,,True
-HSN-029,Bùi Đức Hiếu,Nam,Khối 10,10A7,Dãy Nam,NAM-306,G-07,Nùng,1 Tân Văn,Bảo Hà,Bùi Văn Minh,Hoàng Thị Ban,879005432,975994825.0,15,Có,True,True,Tại trường,Mồ côi bố,True
-HSN-030,Lý Văn Hiếu,Nam,Khối 10,10A7,Dãy Nam,NAM-306,G-08,Dao,Nhai Tẻn,Bảo Hà,Lý Văn Đức,Đặng Thị Ngọc,386690111,355298309.0,20,Có,True,True,Tại trường,,True
-HSN-031,Nguyễn Tiến Thành,Nam,Khối 10,10A7,Dãy Nam,NAM-306,G-09,Cao Lan,Bản Khoai 3,Bảo Hà,Nguyễn Văn Tý,Hoàng Thị Lê,813658987,,10,Có,True,True,Tại trường,,True
-HSN-032,Triệu Đức Lương,Nam,Khối 10,10A7,Dãy Nam,NAM-306,G-10,Tày,Bản Khoai 2,Bảo Hà,Triệu Văn Phong,Triệu Thị Mẳn,337554986,,15,Có,True,True,Tại trường,,True
-HSN-033,Triệu Văn Tuấn,Nam,Khối 10,10A7,Dãy Nam,NAM-305,G-01,Dao,Khe Bàn,Bảo Hà,Triệu Tòn Khách,Triệu Thị Tam,359796861,,15,Có,True,True,Tại trường,,True
-HSN-034,Hoàng Quốc Tân,Nam,Khối 11,11A1,Dãy Nam,NAM-305,G-02,Tày,3AB,Bảo Hà,Hoàng Văn Tuyệt,Chu Thị Tuất,986295990,357689190.0,16km,Có,True,True,Tại trường,,True
-HSN-035,Cư Seo Tánh,Nam,Khối 11,11A1,Dãy Nam,NAM-305,G-03,H'mông,Thíp Dạo,Lâm Giang,Cư Seo Giả,Sùng Thị Mê,355802206,356063728.0,11,Có,True,True,Tại trường,Mồ côi bố,True
-HSN-036,Đặng Tuấn Anh,Nam,Khối 11,11A1,Dãy Nam,NAM-305,G-04,Dao,1 nhai tẻn,Bảo Hà,Đặng Quang lợi,Đặng Thị Hà,986391620,333785199.0,20,Có,True,True,Tại trường,,True
-HSN-037,Hoàng đình Khải,Nam,Khối 11,11A1,Dãy Nam,NAM-305,G-05,Tày,2AB,Bảo Hà,Hoàng văn nhu,Hoàng Thị Diên,362013615,357508650.0,15,Có,True,True,Tại trường,,True
-HSN-038,Đoàn Bình Tin,Nam,Khối 11,11A2,Dãy Nam,NAM-305,G-06,Kinh,Cam Cọn 2,Bảo Hà,Đoàn Xuân Hưng,Sầm Thị Mơ,362615095,326730495.0,16,Có,True,True,Tại trường,,True
-HSN-039,Lý Thành Vương,Nam,Khối 11,11A2,Dãy Nam,NAM-305,G-07,Dao,Cọn 2,Bảo Hà,Lý Văn Bắc,Bàn Thị Hoảnh,987220421,868556054.0,17,Có,True,True,Tại trường,,True
-HSN-040,Ma Seo Cương,Nam,Khối 11,11A2,Dãy Nam,NAM-305,G-08,Mông,Thùng,Bảo Hà,Ma Seo Vẳng,Vàng Thị Si,336161311,,7,Có,True,True,Tại trường,,True
-HSN-041,Đặng Thanh Lâm,Nam,Khối 11,11A2,Dãy Nam,NAM-305,G-09,Dao,Nhai Tẻn 2,Bảo Hà,ĐặngVăn Thắng,Đặng Thị Hoa,961252844,338639155.0,22,Có,True,True,Tại trường,,True
-HSN-042,Nguyễn Tùng Dương,Nam,Khối 11,11A2,Dãy Nam,NAM-305,G-10,Kinh,Cam Cọn 1,Bảo Hà,Nguyễn Văn Sơn,Đoàn Thị Liên,375591987,818233010.0,15,Có,True,True,Tại trường,,True
-HSN-043,Trần Văn Cương,Nam,Khối 11,11A2,Dãy Nam,NAM-305,G-11,Tày,Khoai 2,Bảo Hà,Trần Văn Biên,Hoàng Thị Thượng,382263861,347059024.0,12,Có,True,True,Tại trường,,True
-HSN-044,Triệu Tiến Chu,Nam,Khối 11,11A2,Dãy Nam,NAM-304,G-01,Dao,Khe Bàn,Bảo Hà,Triệu Văn Minh,Lý Thị Xuân,373021933,869511475.0,11,Có,True,True,Tại trường,,True
-HSN-045,Hoàng Văn Yên,Nam,Khối 11,11A3,Dãy Nam,NAM-304,G-02,Tày,Cọn 2,Bảo Hà,Hoàng Văn Nhất,Lương Thị Lâm,326862213,326862213.0,15,Có,True,True,Tại trường,,True
-HSN-046,Trương Ngọc Quý,Nam,Khối 11,11A3,Dãy Nam,NAM-304,G-03,Tày,Bỗng Buôn,Bảo hà,Trương Văn Hùng,Ngô Thị Biên,332167706,869954329.0,14,Có,True,True,Tại trường,,True
-HSN-047,Triệu Kim Ngân,Nam,Khối 11,11A3,Dãy Nam,NAM-304,G-04,Dao,Bỗng Buôn,Bảo hà,Triệu Văn Hai,Triệu Thị Mấy,339005679,968940910.0,15,Có,True,True,Tại trường,,True
-HSN-048,Nông Tài Phú,Nam,Khối 11,11A3,Dãy Nam,NAM-304,G-05,Dao,Lỵ 1-2,Bảo hà,Nông Văn Quý,Trần Thị Lai,332167706,788006714.0,12,Có,True,True,Tại trường,,True
-HSN-049,Phùng Kim Ngân,Nam,Khối 11,11A3,Dãy Nam,NAM-304,G-06,Dao,Khe Bàn,Bảo hà,Phùng Tòn Cau,Triệu Thị Còi,989215410,375618620.0,15,Có,True,True,Tại trường,,True
-HSN-050,Nguyễn Tuấn Hưng,Nam,Khối 11,11A3,Dãy Nam,NAM-304,G-07,Tày,Bông 1-2,Bảo hà,Nguyễn Văn Oanh,Lý Thị Chản,336338785,343797540.0,10,Có,True,True,Tại trường,,True
-HSN-051,Ma A Chính,Nam,Khối 11,11A3,Dãy Nam,NAM-304,G-08,H mông,Thùng 2,Bảo hà,Ma Seo Dình,Giàng Thị Líu,398513625,368265904.0,10,Có,True,True,Tại trường,,True
-HSN-052,Ma Seo Minh,Nam,Khối 11,11A3,Dãy Nam,NAM-304,G-09,H mông,Thùng 3,Bảo hà,Ma Seo Kếnh,Thào Thị Súa,984417060,867594844.0,10,Có,True,True,Tại trường,,True
-HSN-053,Nguyễn Đoàn Huy,Nam,Khối 11,11A3,Dãy Nam,NAM-304,G-10,Thái,Thôn 1Tân Văn,Bảo hà,Nguyễn Văn Tuyên,La Thị Sim,379284224,969491485.0,13,Có,True,True,Tại trường,,True
-HSN-054,Sầm Quyết Thắng,Nam,Khối 11,11A3,Dãy Nam,NAM-304,G-11,Kinh,Bỗng Buôn,Bảo hà,Sầm Văn Chiến,Nông Thị Kiểm,367966816,347819042.0,14,Có,True,True,Tại trường,,True
-HSN-055,Lê Tiến Dũng,Nam,Khối 11,11A4,Dãy Nam,NAM-303,G-01,Dao,Nhai Tẻn,Bảo Hà,Lê Văn Quý,Đặng Thị Liên,973108813,,11,Có,True,True,Tại trường,,True
-HSN-056,Lương Đình Nhật,Nam,Khối 11,11A4,Dãy Nam,NAM-303,G-02,Tày,Thôn Kim sơn,Bảo Hà,Lương Văn Minh,Hoàng Thị Biền,982330038,,11,Có,True,True,Tại trường,,True
-HSN-057,Ma Gia Huy,Nam,Khối 11,11A4,Dãy Nam,NAM-303,G-03,Mông,Thôn Thùng,Bảo Hà,Ma Seo Trang,Giàng Thị Phương,329345427,,7,Có,True,True,Tại trường,,True
-HSN-058,Nông Quang Lê,Nam,Khối 11,11A4,Dãy Nam,NAM-303,G-04,Dao,Thôn bông,Bảo Hà,Nông Hữu Long,Hoàng Thị Ghến,967112007,,8,Có,True,True,Tại trường,,True
-HSN-059,Trần Quang Chiến,Nam,Khối 11,11A4,Dãy Nam,NAM-303,G-05,Dao,Thống nhất,Bảo Hà,Trần Văn Sáng,Trần Thị Nọi,961039921,,12,Có,True,True,Tại trường,,True
-HSN-060,Hoàng Quốc Dân,Nam,Khối 11,11A4,Dãy Nam,NAM-303,G-06,Tày,3AB,Bảo Hà,Hoàng Văn Định,Hà Thị Duyên,374381468,337092110.0,15,Có,False,False,Xin về nhà,vắng,False
-HSN-061,Triệu Tiến Duy,Nam,Khối 11,11A4,Dãy Nam,NAM-303,G-07,Dao,Thống nhất,Bảo Hà,Triệu Văn Dung,Lý Thị Êm,823620135,,11,Có,False,False,Xin về nhà,vắng,False
-HSN-062,Đặng Văn Học,Nam,Khối 11,11A5,Dãy Nam,NAM-303,G-08,dao,Liên Sơn,Lâm Giang,Đặng Văn Thắng,Đỗ Thị Hoàn,975510175,528043975.0,11,Có,True,True,Tại trường,,True
-HSN-063,Hoàng Xuân Trường,Nam,Khối 11,11A5,Dãy Nam,NAM-303,G-09,tày,Kim sơn,Bảo Hà,Hoàng Văn Toàn,Lý Thị Hưng,964744195,339996815.0,16,Có,True,True,Tại trường,,True
-HSN-064,Nguyễn Sinh Hùng,Nam,Khối 11,11A5,Dãy Nam,NAM-303,G-10,tày,Bỗng Buôn,Bảo Hà,Nguyễn Văn Lả,Nông Thị Cảnh,965866703,377027607.0,12,Có,True,True,Tại trường,,True
-HSN-065,Nguyễn Trịnh Quang,Nam,Khối 11,11A5,Dãy Nam,NAM-303,G-11,kinh,Bảo Ân,Bảo Hà,Nguyễn Long Phi,Nguyễn Thị Thu,366474580,865729436.0,15,Có,True,True,Tại trường,,True
-HSN-066,Triệu Hữu Dũng,Nam,Khối 11,11A5,Dãy Nam,NAM-302,G-01,dao,Bỗng Buôn,Bảo Hà,Triệu Văn Lạng,Triệu Thị Thim,326860289,966588213.0,15,Có,True,True,Tại trường,,True
-HSN-067,Đặng Hải Nam,Nam,Khối 11,11A6,Dãy Nam,NAM-302,G-02,Dao,4 Nhai Thổ,Bảo Hà,Đặng Văn Bìn,Đặng Thị Nga,327297821,,19,Có,True,True,Tại trường,,True
-HSN-068,Hảng Thuận Phú,Nam,Khối 11,11A6,Dãy Nam,NAM-302,G-03,Mông,Bùn Dạo,Lam Giang,Hảng Seo Thành,Vàng Thị Chẩu,979630403,373342490.0,15,Có,True,True,Tại trường,,True
-HSN-069,Hà Duy Lợi,Nam,Khối 11,11A7,Dãy Nam,NAM-302,G-04,Tày,Kim Sơn,Bảo Hà,Hà Ngọc Chuyển,Hoàng Thị Đậm,345526774,356663914.0,15,Có,True,True,Tại trường,,True
-HSN-070,Lý Minh Bảo,Nam,Khối 11,11A7,Dãy Nam,NAM-302,G-05,Dao,Nhai Tẻn,Bảo Hà,Lý Văn Giáp,Đặng Thị Lan,963970115,333281827.0,18,Có,True,True,Tại trường,,True
-HSN-071,Sùng A Phong,Nam,Khối 11,11A7,Dãy Nam,NAM-302,G-06,Mông,Thíp Dạo,Lâm Giang,Sùng A Chư,Hạng Thị Chấu,867058874,822086471.0,17,Có,True,True,Tại trường,,True
-HSN-072,Đặng Minh Sơn,Nam,Khối 12,12A1,Dãy Nam,NAM-302,G-07,Dao,Nhai Tẻn,Bảo Hà,Đặng Văn Bình,Đặng Thị Hà,359295548,981276177.0,20,Có,True,True,Tại trường,,True
-HSN-073,Hảng Seo Lành,Nam,Khối 12,12A1,Dãy Nam,NAM-302,G-08,Mông,Bùn Dạo,Lâm Giang,Hảng Seo Sảng,Lù Thị Hoa,392366160,867594844.0,16,Có,True,True,Tại trường,,True
-HSN-074,Hoàng Trọng Khôi,Nam,Khối 12,12A1,Dãy Nam,NAM-302,G-09,Tày,3 AB,Bảo Hà,Hoàng Văn Lực,Triệu Thị In,974630324,789076768.0,16,Có,True,True,Tại trường,,True
-HSN-075,Tẩn Hoàng Nghiệp,Nam,Khối 12,12A1,Dãy Nam,NAM-302,G-10,Dao,Nhai Thổ,Kim Sơn,Tẩn A Khế,Hoàng Thị Tâm,989063570,988611544.0,15,Có,True,True,Tại trường,,True
-HSN-076,Triệu Anh Quang,Nam,Khối 12,12A1,Dãy Nam,NAM-301,G-01,Dao,Hồng Cam,Bảo Hà,Triệu Xuân Vượng,Triệu Thị Lai,398854726,,10,Có,True,True,Tại trường,,True
-HSN-077,Vi Duy Hoàng,Nam,Khối 12,12A1,Dãy Nam,NAM-301,G-02,Dao,Nhai Tẻn,Bảo Hà,Vi Văn Kiên,Đặng Thị Tâm,866721046,866721046.0,23,Có,True,True,Tại trường,,True
-HSN-078,Đặng Văn Hiếu,Nam,Khối 12,12A2,Dãy Nam,NAM-301,G-03,Dao,Bông,Bảo Hà,Nguyễn Văn Hoán,Đặng Thị Phái,327512038,382253891.0,10,Có,True,True,Tại trường,,True
-HSN-079,Hoàng Đình Tập,Nam,Khối 12,12A2,Dãy Nam,NAM-301,G-04,Tày,3 Nhai Thổ,Bảo Hà,Hoàng Văn Thuận,Bàn Thị Hà,971110758,867982915.0,20,Có,True,True,Tại trường,,True
-HSN-080,Hoàng Minh Vũ,Nam,Khối 12,12A2,Dãy Nam,NAM-301,G-05,Tày,Cam cọn,Bảo Hà,Hoàng Văn Vựng,Hoàng Thị Nhiệm,359367426,364198642.0,17,Có,True,True,Tại trường,,True
-HSN-081,Lê Bảo Nghĩa,Nam,Khối 12,12A4,Dãy Nam,NAM-301,G-06,Dao,Nhai Tẻn,Bảo Hà,Lê Thái Đình,Đặng Thị Thơm,342136204,383058557.0,13,Có,True,True,Tại trường,,True
-HSN-082,Nông Khánh Duy,Nam,Khối 12,12A4,Dãy Nam,NAM-301,G-07,Dao,Thống nhất,Bảo Hà,Nông Văn Hình,Đặng Thị Giảng,776705861,,10,Có,True,True,Tại trường,,True
-HSN-083,Sầm Minh Hữu,Nam,Khối 12,12A4,Dãy Nam,NAM-301,G-08,Tày,Tân Thành,Bảo Hà,Sầm Văn Chiến,Nông Thị Kiểm,367966816,819683614.0,17,Có,True,True,Tại trường,,True
-HSN-084,Trần Tuấn Anh,Nam,Khối 12,12A4,Dãy Nam,NAM-301,G-09,Kinh,3 Nhai Thổ,Bảo Hà,Trần Văn Hoàng,Hoàng Thị Toan,989865335,347024175.0,14,Có,True,True,Tại trường,,True
-HSN-085,Triệu Tiến Thắng,Nam,Khối 12,12A4,Dãy Nam,NAM-301,G-10,Dao,Khe Bàn,Bảo Hà,Triệu Văn Lán,Phùng Thị Tam,366851077,328063484.0,12,Có,True,True,Tại trường,,True
-HSN-086,Bàn Duy Khoa,Nam,Khối 12,12A5,Dãy Nam,NAM-301,G-11,Dao,Bông 3,Bảo Hà,Bàn Ton San,Đặng Thị Hương,973983608,328323191.0,10,Có,True,True,Tại trường,,True
-HSN-087,Bàn Thanh Chung,Nam,Khối 12,12A5,Dãy Nam,NAM-205,G-01,Dao,Nhai Tẻn,Bảo Hà,Bàn Tuấn Anh,Tráng Thị Mai,363145091,329384292.0,20,Có,True,True,Tại trường,,True
-HSN-088,Hà Phúc Lâm,Nam,Khối 12,12A5,Dãy Nam,NAM-205,G-02,Xa phó,3 Nhai Thổ,Bảo Hà,Hà Xuân Tình,Lý Thị Chắc,336383054,376608278.0,18,Có,False,False,Xin về nhà,Bố mẹ ly hôn vắng,False
-HSN-089,Hoàng Hải Duy,Nam,Khối 12,12A5,Dãy Nam,NAM-205,G-03,Xa phó,2 Nhai Thổ,Bảo Hà,Hoàng Văn Hồng,Nông Thị Thúy,334181619,356516499.0,24,Có,True,True,Tại trường,Mồ côi cha,True
-HSN-090,Sầm Minh Đức,Nam,Khối 12,12A5,Dãy Nam,NAM-205,G-04,Tày,Cọn 2,Bảo Hà,Sầm Quốc Đạt(mất),Tòng Thị Pheng,347953516,,15,Có,True,True,Tại trường,,True
-HSN-091,Triệu Qúy Đức,Nam,Khối 12,12A5,Dãy Nam,NAM-205,G-05,Dao,Khe Bàn,Bảo Hà,Hoàng Văn Lai,Triệu Thị Mùi,354162240,375967056.0,16,Có,True,True,Tại trường,Bố mẹ ly hôn,True
-HSN-092,Vũ Duy Khánh,Nam,Khối 12,12A5,Dãy Nam,NAM-205,G-06,Kinh,Tân Thành,Bảo Hà,Vũ Văn Toàn,Lê Ngọc Thu,379414597,357071304.0,8,Có,True,True,Tại trường,,True
-HSN-093,La Ngọc Tuyến,Nam,Khối 12,12A7,Dãy Nam,NAM-205,G-07,Tày,Cọn 1,Bảo Hà,La Văn Tuyên,Hà Thị Thuỳ,378922358,327883495.0,15,Có,True,True,Tại trường,,True
-HSN-094,Triệu Trung Quý,Nam,Khối 12,12A3,Dãy Nam,NAM-205,G-08,Dao,Bông 3,Bảo Hà,Triệu Trung Kim,,985681214,,,Có,True,True,Tại trường,,True
-HSN-095,Hoàng Trần Hiệp,Nam,Khối 12,12A3,Dãy Nam,NAM-205,G-09,Tày,Thôn 3 Nhai Thổ,Bảo hà,Nguyễn Văn Thưởng,Hoàng Thị Thảo,374684251,327711651.0,20,Có,True,True,Tại trường,,True
-HSF-001,Triệu Thị Hiền,Nữ,Khối 10,10A1,Dãy Nữ,NU-401,G-01,Dao,Tân thành,Bảo Hà,Triệu Văn Hai,Triệu Thị Mấy,983990102,978083718.0,16,Có,True,True,Tại trường,,True
-HSF-002,Lý Lan Phương,Nữ,Khối 10,10A1,Dãy Nữ,NU-401,G-02,Dao,Tân thành,Bảo Hà,Lý Văn Chúi,Bàn Thị Náy,336675404,369080231.0,15,Có,True,True,Tại trường,,True
-HSF-003,Lý Thị Thảo,Nữ,Khối 10,10A1,Dãy Nữ,NU-401,G-03,Dao,Bùn Dạo,Lâm Giang,Lý Văn Xuân,Đặng Thị Liên,392107797,339869621.0,13,Có,True,True,Tại trường,,True
-HSF-004,Triệu Thị Thuý Hằng,Nữ,Khối 10,10A1,Dãy Nữ,NU-401,G-04,Dao,Bông 3,Bảo Hà,Triệu Văn Phúc,Triệu Thị Chung,971316587,368814711.0,10,Có,True,True,Tại trường,,True
-HSF-005,Phùng Thị Khách,Nữ,Khối 10,10A1,Dãy Nữ,NU-401,G-05,Dao,Khe bàn,Bảo Hà,Đặng Văn Xương,Phùng Thị Liều,377536147,394515961.0,10,Có,True,True,Tại trường,,True
-HSF-006,Triệu Thu Yến,Nữ,Khối 10,10A1,Dãy Nữ,NU-401,G-06,dao,khe bàn,Bảo Hà,Triệu Tòn Chản,Triệu Thị Tám,375109274,395423735.0,10,Có,True,True,Tại trường,,True
-HSF-007,Lý Bảo Thanh,Nữ,Khối 10,10A1,Dãy Nữ,NU-401,G-07,Dao,Khe Bàn,Bảo Hà,Lý Văn Tém,Hà Thị Nhàn,963534328,387266574.0,12,Có,True,True,Tại trường,,True
-HSF-008,Hà Tố Uyên,Nữ,Khối 10,10A1,Dãy Nữ,NU-401,G-08,Thái,Khe Bàn,Bảo Hà,Hà Văn Nam,Nguyễn Thị Mai,966511169,362800201.0,10,Có,True,True,Tại trường,,True
-HSF-009,Hoàng Mỹ Lệ,Nữ,Khối 10,10A1,Dãy Nữ,NU-401,G-09,Tày,Kim Sơn,Bảo Hà,Hoàng Văn Phú,Hà Thị Năm,326824340,328958260.0,15,Có,True,True,Tại trường,,True
-HSF-010,Lương Thị Thu Hoài,Nữ,Khối 10,10A1,Dãy Nữ,NU-401,G-10,Tày,Kim Sơn,Bảo Hà,Lương Văn Hiếu,Hoàng Thị Cứ,394276331,354059236.0,15,Có,True,True,Tại trường,,True
-HSF-011,Nguyễn Thị Bích Hợp,Nữ,Khối 10,10A1,Dãy Nữ,NU-401,G-11,Tày,Kim Sơn,Bảo Hà,Nguyễn Văn Hoà,Lý Thị Đới,962190098,358263884.0,20Km,Có,True,True,Tại trường,,True
-HSF-012,Sùng Thị Yến Chi,Nữ,Khối 10,10A2,Dãy Nữ,NU-402,G-01,H'mông,Khoai,Bảo Hà,Sùng Seo Dế,Sần Thị Gánh,388587059,,10,Có,True,True,Tại trường,,True
-HSF-013,Lý Quỳnh Anh,Nữ,Khối 10,10A2,Dãy Nữ,NU-402,G-02,Dao,Thống Nhất,Bảo Hà,Lý Văn Sêm,Bàn Thị Vin,343564169,365134102.0,12,Có,True,True,Tại trường,,True
-HSF-014,Ma Thị Thiệu Mấn,Nữ,Khối 10,10A2,Dãy Nữ,NU-402,G-03,H'mông,Thùng 2,Bảo Hà,Ma Seo Vinh,Giàng Thị Đỡ,967067434,927106212.0,7,Có,True,True,Tại trường,,True
-HSF-015,Lý Thị Tâm Như,Nữ,Khối 10,10A2,Dãy Nữ,NU-402,G-04,Tày,6AB,Bảo Hà,,Nông Thị Châm,376549216,328939607.0,14,Có,True,True,Tại trường,,True
-HSF-016,Lý Thị Mẫn,Nữ,Khối 10,10A3,Dãy Nữ,NU-402,G-05,Tày,Kim Sơn,Bảo Hà,,Lý Thị Môn,965005785,386843454.0,15,Có,True,True,Tại trường,,True
-HSF-017,Giàng Thị Thu Trang,Nữ,Khối 10,10A3,Dãy Nữ,NU-402,G-06,H' Mông,Tắp 1,Bảo Hà,Giàng Seo Quang,Vù Thị Tâu,326633006,387326153.0,17,Có,True,True,Tại trường,,True
-HSF-018,Triệu Phương Thảo,Nữ,Khối 10,10A3,Dãy Nữ,NU-402,G-07,Dao,Khe Dai,Bảo Hà,Triệu Nguyên Bình,Đặng Thị Tếch,868884083,,8,Có,True,True,Tại trường,,True
-HSF-019,Giàng Thị Thoại,Nữ,Khối 10,10A3,Dãy Nữ,NU-402,G-08,H' Mông,Chùn,Bảo Hà,Giàng Seo Dìn,Chấu Thị Chứ,967295787,337400273.0,10,Có,True,True,Tại trường,,True
-HSF-020,Đặng Thùy Tâm,Nữ,Khối 10,10A3,Dãy Nữ,NU-402,G-09,Dao,Thùng 2,Bảo Hà,Đặng Văn Nhất,Hoàng Thị Mùi,968047896,356996937.0,9,Có,True,True,Tại trường,,True
-HSF-021,Phùng Thị Thiên Thu,Nữ,Khối 10,10A3,Dãy Nữ,NU-402,G-10,Dao,Khe Dai,Bảo Hà,Phùng Văn Phúc,Lý Thi Lai,382940304,343364542.0,8,Có,True,True,Tại trường,,True
-HSF-022,Hoàng Thị Việt Anh,Nữ,Khối 10,10A3,Dãy Nữ,NU-402,G-11,Tày,Khoai 2,Bảo Hà,Hoàng Văn Chiến,Triệu Thị Lắc,388345114,,12,Có,True,True,Tại trường,,True
-HSF-023,Trần Thị Khuyên,Nữ,Khối 10,10A3,Dãy Nữ,NU-402,G-12,Dao,Thống Nhất,Bảo Hà,Trần Văn Páo,Bàn Thị Néo,973800992,876031730.0,14,Có,True,True,Tại trường,,True
-HSF-024,Triệu Thị Hà Vy,Nữ,Khối 10,10A3,Dãy Nữ,NU-403,G-01,Tày,Khoai 2,Bảo Hà,Triệu Văn Phượng,Nguyễn Thị Mơ,964049067,358377993.0,12,Có,True,True,Tại trường,,True
-HSF-025,Bàn Thị Thanh Trúc,Nữ,Khối 10,10A3,Dãy Nữ,NU-403,G-02,Dao,Bông 3,Bảo Hà,Bàn Ton Máy,Triệu Thi Sai,376930020,345533218.0,10,Có,True,True,Tại trường,,True
-HSF-026,Tô Thị Khánh Ngọc,Nữ,Khối 10,10A3,Dãy Nữ,NU-403,G-03,Dao,Tân Thành,Bảo Hà,Tô Văn Oai,Lù Thị Ly,392872778,397626423.0,12,Có,True,True,Tại trường,,True
-HSF-027,Triệu Thị Ánh,Nữ,Khối 10,10A4,Dãy Nữ,NU-403,G-04,Dao,Cam 2,Bảo Hà,Triệu Văn Ngọ,Đặng Thị Điệp,968309335,,20,Có,True,True,Tại trường,,True
-HSF-028,Bàn Thị Hoa,Nữ,Khối 10,10A4,Dãy Nữ,NU-403,G-05,Dao,1 Nhai Tẻn,Bảo Hà,Bàn Tuấn Anh,Tráng Thị Mai,971240758,868654376.0,17,Có,True,True,Tại trường,,True
-HSF-029,Triệu Thị Huyền,Nữ,Khối 10,10A4,Dãy Nữ,NU-403,G-06,Dao,Tân Thành,Bảo Hà,Triệu Văn Thắng,Triệu Thị Náy,378346106,387053047.0,12,Có,True,True,Tại trường,,True
-HSF-030,Phan Quỳnh Nga,Nữ,Khối 10,10A4,Dãy Nữ,NU-403,G-07,Tày,Kim Sơn,Bảo Hà,Phan Trung Thành,Hoàng Thị Hiền,378402157,396963631.0,12,Có,True,True,Tại trường,,True
-HSF-031,Hoàng Thị Nhi,Nữ,Khối 10,10A4,Dãy Nữ,NU-403,G-08,Tày,3 Nhai Thổ,Bảo Hà,Hoàng Văn Thuận,Bàn Thị Hà,344245596,325103423.0,15,Có,True,True,Tại trường,,True
-HSF-032,Đặng Thị Nhung,Nữ,Khối 10,10A4,Dãy Nữ,NU-403,G-09,Dao,Tân Thành,Bảo Hà,Đặng Văn Xan,Đặng Thị Khách,961049812,382814837.0,12,Có,True,True,Tại trường,,True
-HSF-033,Hoàng Thu Phương,Nữ,Khối 10,10A4,Dãy Nữ,NU-403,G-10,Dao,Thôn thùng 2,Bảo Hà,Hoàng Thừa Hiển,Phùng Thị Mấy,369738258,384060643.0,6,Có,True,True,Tại trường,,True
-HSF-034,Triệu Phương Thảo,Nữ,Khối 10,10A4,Dãy Nữ,NU-403,G-11,Dao,Khe Bàn,Bảo Hà,Triệu Hồng Hai,Triệu Thị Thim,346489164,365504034.0,12,Có,True,True,Tại trường,,True
-HSF-035,Triệu Thị Thu Thuỷ,Nữ,Khối 10,10A4,Dãy Nữ,NU-403,G-12,Tày,Kim Sơn,Bảo Hà,Đặng Minh Tuấn,Triệu Thị Tom,357737660,327475431.0,12,Có,True,True,Tại trường,,True
-HSF-036,Hoàng Bảo Trân,Nữ,Khối 10,10A4,Dãy Nữ,NU-404,G-01,Tày,3 Nhai Thổ,Bảo Hà,Hoàng Văn Phòng,Huỳnh Thị Ly,377059015,342111506.0,15,Có,True,True,Tại trường,,True
-HSF-037,Lò Thị Mai Hương,Nữ,Khối 10,10A6,Dãy Nữ,NU-404,G-02,Dao,Khoai 2,Bảo Hà,Lý Văn Đạt,Lò Thị Mùi,379953812,,7,Có,True,True,Tại trường,,True
-HSF-038,Triệu Phương Anh,Nữ,Khối 10,10A7,Dãy Nữ,NU-404,G-03,Dao,Khe Bàn,Bảo Hà,Triệu Phúc Bảo,Triệu Thị Mùi,375299757,,15,Có,True,True,Tại trường,,True
-HSF-039,Triệu Phương Nhi,Nữ,Khối 10,10A7,Dãy Nữ,NU-404,G-04,Dao,Khe Bàn,Bảo Hà,Triệu Tòn Cau,Triệu Thị Vân,373708930,377173493.0,15,Có,True,True,Tại trường,,True
-HSF-040,Triệu Thị Hồng Thắm,Nữ,Khối 10,10A7,Dãy Nữ,NU-404,G-05,Dao,Thống Nhất,Bảo Hà,Triệu Văn Dũng,Bàn Thị Yệng,9131186459,,11,Có,True,True,Tại trường,,True
-HSF-041,Lâm Hoài Thương,Nữ,Khối 10,10A7,Dãy Nữ,NU-404,G-06,Tày,2 Tân Văn,Bảo Hà,Lâm Sỹ Tưởng,Nguyễn Thị Tươi,357731984,,11,Có,True,True,Tại trường,,True
-HSF-042,Lê Ngọc Ánh,Nữ,Khối 10,10A7,Dãy Nữ,NU-404,G-07,Dao,Thống Nhất,Bảo Hà,Lê Văn Sơn,Lý Hồng Kim,327501693,,10,Có,True,True,Tại trường,,True
-HSF-043,Triệu Thiên My,Nữ,Khối 10,10A7,Dãy Nữ,NU-404,G-08,Dao,Tân Thành,Bảo Hà,Triệu Văn Nhất,Bàn Thị Mấy,332457830,,14,Có,True,True,Tại trường,,True
-HSF-044,Trương Thị Hoa,Nữ,Khối 10,10A7,Dãy Nữ,NU-404,G-09,Dao,Thống Nhất,Bảo Hà,Trương Văn Tó,Đặng Thị Ghi,932251314,,11,Có,True,True,Tại trường,,True
-HSF-045,Lý Bảo Linh,Nữ,Khối 10,10A7,Dãy Nữ,NU-404,G-10,Dao,1 Nhai Tẻn,Bảo Hà,Hoàng Ngọc Lâm,Hoàng Thị Chang,866159110,,20,Có,True,True,Tại trường,,True
-HSF-046,Đặng Yến Nhi,Nữ,Khối 10,10A7,Dãy Nữ,NU-404,G-11,Dao,1 Nhai Tẻn,Bảo Hà,Đặng Quốc Phong,Trướng Thị Hoa,865577163,,19,Có,True,True,Tại trường,,True
-HSF-047,Nguyễn Khánh Linh,Nữ,Khối 11,11A1,Dãy Nữ,NU-405,G-01,Kinh,Bảo Ân,Bảo Hà,Nguyễn Bá Duy,Nguyễn Thị Ngà,976732702,865241865.0,15,Có,True,True,Tại trường,,True
-HSF-048,Ma Thị Hoa,Nữ,Khối 11,11A1,Dãy Nữ,NU-405,G-02,H'mông,Thùng 2,Bảo Hà,Ma Seo Xá,Giàng Thị Ly,375513312,388897314.0,7,Có,True,True,Tại trường,,True
-HSF-049,Hoàng Hải Yến,Nữ,Khối 11,11A1,Dãy Nữ,NU-405,G-03,Tày,Cọn 2,Bảo Hà,Nguyễn Văn Huy.,Hoàng Thị Hạnh,354771469,392932010.0,17,Có,True,True,Tại trường,,True
-HSF-050,Lục Mai Phương,Nữ,Khối 11,11A1,Dãy Nữ,NU-405,G-04,Tày,1AB,Bảo Hà,Lục Thế Anh,Lý Thị Minh,394617256,352343099.0,15,Có,True,True,Tại trường,,True
-HSF-051,Trương Thủy Hoàn,Nữ,Khối 11,11A1,Dãy Nữ,NU-405,G-05,:Dao.,1 Nhai Tẻn,Bảo Hà,Trương Văn Chấn,Đặng Thị Loan,384566897,372604095.0,25,Có,True,True,Tại trường,,True
-HSF-052,Nông Thị Quý,Nữ,Khối 11,11A1,Dãy Nữ,NU-405,G-06,Dao,Thống Nhất,Bảo Hà,Nông Văn Tôn,Triệu Thị Hoa,347341064,375547964.0,15,Có,True,True,Tại trường,,True
-HSF-053,Bàn Thị Hồng Thêm,Nữ,Khối 11,11A2,Dãy Nữ,NU-405,G-07,Dao,Nhai Tẻn,Bảo Hà,Bàn Văn Tinh,Đặng Thị Hồng,865160428,376705948.0,21,Có,True,True,Tại trường,,True
-HSF-054,Hoàng Thị Hồng Nhung,Nữ,Khối 11,11A2,Dãy Nữ,NU-405,G-08,Tày,Nhai Thổ 3,Bảo Hà,Hoàng Văn Sinh,Triệu Thị Nhi,966153442,337685142.0,20,Có,True,True,Tại trường,,True
-HSF-055,Hoàng Thuý Tiên,Nữ,Khối 11,11A2,Dãy Nữ,NU-405,G-09,Xa Phó,Nhai Thổ 2,Bảo Hà,Hoàng Văn Tiến,Hoàng Thị Vần,328428391,981514010.0,21,Có,True,True,Tại trường,,True
-HSF-056,Đặng Khánh Linh,Nữ,Khối 11,11A2,Dãy Nữ,NU-405,G-10,Dao,Nhai Tẻn,Bảo Hà,Đặng Văn Hải,Đặng Thị Thắng,367920906,386849760.0,20,Có,True,True,Tại trường,,True
-HSF-057,Ma Thị Nga,Nữ,Khối 11,11A2,Dãy Nữ,NU-405,G-11,Mông,Khoai 1,Bảo Hà,Ma Seo Của,Sùng Thị Chứ,336881647,337271613.0,13,Có,True,True,Tại trường,,True
-HSF-058,Ma Thị Hương,Nữ,Khối 11,11A2,Dãy Nữ,NU-405,G-12,Mông,Chùn,Bảo Hà,Ma Seo Chư,Thào Thị Chứ,376447773,362422816.0,10,Có,True,True,Tại trường,,True
-HSF-059,Nguyễn Minh Tâm,Nữ,Khối 11,11A2,Dãy Nữ,NU-406,G-01,Kinh,Cam Cọn 2,Bảo Hà,Nguyễn Thành Chung,La Thị Chuyền,399614192,965430664.0,16,Có,True,True,Tại trường,,True
-HSF-060,Sùng Thuý Liên,Nữ,Khối 11,11A2,Dãy Nữ,NU-406,G-02,Mông,Nhai Tẻn 2,Bảo Hà,Sùng Seo Xủ,Giàng Thị Cái,969534104,867904896.0,22,Có,True,True,Tại trường,,True
-HSF-061,Hoàng Ngọc Diệp,Nữ,Khối 11,11A2,Dãy Nữ,NU-406,G-03,Tày,Cọn 1,Bảo Hà,Hoàng Văn Nhiễu,Hoàng Thị Nhàn,865613874,343961184.0,16,Có,True,True,Tại trường,,True
-HSF-062,Hoàng Thị Nhung,Nữ,Khối 11,11A2,Dãy Nữ,NU-406,G-04,Tày,Khoai 2,Bảo Hà,Hoàng Văn Lệ,Hoàng Thị Sáo,971560361,366925813.0,13,Có,True,True,Tại trường,,True
-HSF-063,Đặng Thị Hoa,Nữ,Khối 11,11A3,Dãy Nữ,NU-406,G-05,Dao,Bông 1-2,Bảo Hà,Nguyễn Văn Hoán,Đặng Thị Phái,969052416,969052416.0,10,Có,True,True,Tại trường,,True
-HSF-064,Lê Như Quỳnh,Nữ,Khối 11,11A3,Dãy Nữ,NU-406,G-06,Tày,Cọn 1,Bảo Hà,Lê Xuân Chỉnh,Hoàng Thị Lương,387879813,988476042.0,15,Có,True,True,Tại trường,,True
-HSF-065,Tráng Thị Đại,Nữ,Khối 11,11A4,Dãy Nữ,NU-406,G-07,Dao,Nhai Tẻn,Bảo Hà,Tráng Văn Trấn,Đặng Thị Dòng,369808294,,16,Có,True,True,Tại trường,,True
-HSF-066,Triệu Thị Thu Hiền,Nữ,Khối 11,11A4,Dãy Nữ,NU-406,G-08,Dao,Khe Bàn,Bảo Hà,Triệu Kim Hương,Triệu Thị Mắn,342024303,,11,Có,True,True,Tại trường,,True
-HSF-067,Đặng Hồng Hoa,Nữ,Khối 11,11A4,Dãy Nữ,NU-406,G-09,Dao,Tân thành,Bảo Hà,Đặng Văn Nhì,Triệu Thị Chúi,393130600,,11,Có,True,True,Tại trường,,True
-HSF-068,Hoàng Thị Hồng Mai,Nữ,Khối 11,11A4,Dãy Nữ,NU-406,G-10,Tày,Thôn Khoai,Bảo Hà,Hoàng Văn Lưng,Triệu Thị Thủy,862175022,,13,Có,False,False,Xin về nhà,vắng,False
-HSF-069,Đinh Thị Hồng Thái,Nữ,Khối 11,11A4,Dãy Nữ,NU-406,G-11,Tày,Thôn 7 AB,Bảo Hà,Đinh Quang Sáng,Lương Thị Thơi,393679215,,14,Có,True,True,Tại trường,,True
-HSF-070,Triệu Thanh Thảo,Nữ,Khối 11,11A4,Dãy Nữ,NU-406,G-12,Dao,Khe Bàn,Bảo Hà,Hoàng Văn Lai,Triệu Thị Mùi,354162240,,16,Có,True,True,Tại trường,,True
-HSF-071,Đặng Hồng Thư,Nữ,Khối 11,11A4,Dãy Nữ,NU-407,G-01,Dao,Bỗng,Bảo Hà,Đặng Ton Thanh,Triệu Thị Thủy,365471167,,9,Có,True,True,Tại trường,,True
-HSF-072,Đặng Thị Vân,Nữ,Khối 11,11A4,Dãy Nữ,NU-407,G-02,Dao,Hồng Cam,Bảo Hà,Đặng Văn Thức,Bàn Thị Nhàn,862908820,,11,Có,True,True,Tại trường,,True
-HSF-073,Hoàng Tố Vân,Nữ,Khối 11,11A4,Dãy Nữ,NU-407,G-03,Tày,Thôn 3 AB,Bảo Hà,Hoàng Văn Tú,Lương Thị Bình,396141165,,12,Có,True,True,Tại trường,,True
-HSF-074,Lý Hồng Mỹ,Nữ,Khối 11,11A4,Dãy Nữ,NU-407,G-04,Dao,Nhai tẻn,Bảo Hà,Lý Văn Đanh,Lý Thị Phương,375302378,,12,Có,True,True,Tại trường,,True
-HSF-075,Triệu Thùy Linh,Nữ,Khối 11,11A5,Dãy Nữ,NU-407,G-05,dao,Khe Bàn,Bảo Hà,Triệu Văn Nhất,Triệu Thị Thiên Lý,329966224,376596804.0,15,Có,True,True,Tại trường,,True
-HSF-076,Lê Thị Hoài,Nữ,Khối 11,11A6,Dãy Nữ,NU-407,G-06,Kinh,Cam Cọn,Bảo Hà,Lê Xuân Huấn,Phạm Thị Hồng,363710228,798746877.0,11,Có,True,True,Tại trường,,True
-HSF-077,Lý Thị Yến,Nữ,Khối 11,11A6,Dãy Nữ,NU-407,G-07,Dao,Khe Bàn,Bảo Hà,Lý Tòn Cau,Triệu Thị Chầy,975991760,338364398.0,15,Có,True,True,Tại trường,,True
-HSF-078,Trần Thị Thu,Nữ,Khối 11,11A7,Dãy Nữ,NU-407,G-08,Kinh,Khoai,Xã Bảo Hà,Trần Văn Luận,Kim Thị Nhàn,328995435,364201038.0,9,Có,True,True,Tại trường,,True
-HSF-079,Tráng Thị Dung,Nữ,Khối 11,11A7,Dãy Nữ,NU-407,G-09,H'Mông,Nhai Tẻn,Xã Bảo Hà,Tráng A Hồ,Cư Thị Do,328219084,373502744.0,22,Có,True,True,Tại trường,,True
-HSF-080,Đặng Thị Anh Đào,Nữ,Khối 11,11A7,Dãy Nữ,NU-407,G-10,Dao,Bông,Xã Bảo Hà,Đặng Văn Hoàng,Triệu Thị Phấy,372158238,389864250.0,11,Có,True,True,Tại trường,,True
-HSF-081,Hoàng Thị Thúy Kiều,Nữ,Khối 11,11A7,Dãy Nữ,NU-407,G-11,Tày,3AB,Xã Bảo Hà,Hoàng Văn Phức,Hoàng Thị Nhu,336455820,354751347.0,16,Có,True,True,Tại trường,,True
-HSF-082,Hoàng Bảo Ngọc,Nữ,Khối 11,11A7,Dãy Nữ,NU-407,G-12,Tày,3 Nhai Thổ,Xã Bảo Hà,Lý Tiến Hương,Hoàng Thị Hường,987898550,342128230.0,20,Có,True,True,Tại trường,,True
-HSF-083,Hoàng Thị Phương,Nữ,Khối 11,11A7,Dãy Nữ,NU-408,G-01,Tày,Cam 2,Xã Bảo Hà,Hoàng Văn Toản,Đinh Thị Liên,383945477,862516497.0,15,Có,True,True,Tại trường,,True
-HSF-084,Bàn Thanh Thuý,Nữ,Khối 11,11A7,Dãy Nữ,NU-408,G-02,Dao,Thống Nhất,Xã Bảo Hà,Bàn Văn Mài,Đặng Thị Thu,344615907,342986680.0,11,Có,True,True,Tại trường,,True
-HSF-085,Đặng Thị Thanh Vân,Nữ,Khối 12,12A1,Dãy Nữ,NU-408,G-03,Dao,Nhai Tẻn,Bảo Hà,Đặng Văn Ngọc,Vi Thị Lan,374737518,342363155.0,20,Có,True,True,Tại trường,,True
-HSF-086,Nông Thị Ánh Nguyệt,Nữ,Khối 12,12A1,Dãy Nữ,NU-408,G-04,Dao,Bông,Bảo Hà,Nông Ton Phan,Sầm Thị Nghè,334264373,862165844.0,10,Có,True,True,Tại trường,,True
-HSF-087,Phan Thị Yến nhi,Nữ,Khối 12,12A1,Dãy Nữ,NU-408,G-05,Dao,Bông,Bảo Hà,Đặng Văn Ton,Phan Thị Tam,325422275,,10,Có,True,True,Tại trường,,True
-HSF-088,Lý Thanh Hoa,Nữ,Khối 12,12A1,Dãy Nữ,NU-408,G-06,Dao,Thống Nhất,Bảo Hà,Lý văn phong,Nguyễn thị chích,971561057,971365265.0,9,Có,True,True,Tại trường,,True
-HSF-089,Đặng Thị Lan Anh,Nữ,Khối 12,12A1,Dãy Nữ,NU-408,G-07,Dao,Bản Cam 1,Cam Cọn,Đặng Văn Thôm,Triệu Thị Êm,342986321,363227019.0,10,Có,True,True,Tại trường,,True
-HSF-090,Hoàng Thị Thu,Nữ,Khối 12,12A2,Dãy Nữ,NU-408,G-08,Tày,Kim Sơn,Bảo Hà,Hoàng Văn Ích,Hà Thị Tuyên,368432272,328516810.0,11,Có,True,True,Tại trường,,True
-HSF-091,Lý Thị Nga,Nữ,Khối 12,12A2,Dãy Nữ,NU-408,G-09,Dao,Nhai Tẻn,Bảo Hà,Lý Văn Thành,Bàn Thị Tánh,389175004,345955260.0,15,Có,True,True,Tại trường,,True
-HSF-092,Bàn Thúy Kim,Nữ,Khối 12,12A2,Dãy Nữ,NU-408,G-10,Dao,Cam 1,Bảo Hà,Bàn Văn Khi,Đặng Thị Giêng,344610271,395251073.0,17,Có,True,True,Tại trường,,True
-HSF-093,Triệu Thị Thanh Huyên,Nữ,Khối 12,12A2,Dãy Nữ,NU-408,G-11,Tày,Khoai,Bảo Hà,Triệu Văn Hoàng,Hoàng Thị Hòa,348846980,976871507.0,13,Có,True,True,Tại trường,,True
-HSF-094,Hoàng Thị Thanh Mai,Nữ,Khối 12,12A2,Dãy Nữ,NU-408,G-12,Tày,3 Nhai Thổ,Bảo Hà,Hoàng Văn Huân,Chu Thị Hà,981260564,867569315.0,15,Có,True,True,Tại trường,,True
-HSF-095,Đặng Thị Kiều Trang,Nữ,Khối 12,12A2,Dãy Nữ,NU-207,G-01,Dao,Thống Nhất,Bảo Hà,Đặng Văn Huế,Triệu Thị Yêu,914447463,906138963.0,15,Có,True,True,Tại trường,,True
-HSF-096,Bàn Thị Kim Phượng,Nữ,Khối 12,12A2,Dãy Nữ,NU-207,G-02,Dao,Nhai Tẻn,Bảo Hà,Bàn Sơn Hà,Bàn Thị Hồng,363914593,348876307.0,14,Có,True,True,Tại trường,,True
-HSF-097,Nguyễn Thùy Trâm,Nữ,Khối 12,12A2,Dãy Nữ,NU-207,G-03,Tày,Kim Sơn,Bảo Hà,Nguyễn Văn Thuấn,Sầm Thị Trang,376988106,379378649.0,12,Có,False,False,Xin về nhà,vắng,False
-HSF-098,Lí Thị Lan Anh,Nữ,Khối 12,12A3,Dãy Nữ,NU-207,G-04,Dao,Bỗng 2,Bảo Hà,Lí Văn Chúi,Bàn Thị Náy,336675404,364386771.0,15,Có,True,True,Tại trường,,True
-HSF-099,Triệu Thanh Thư,Nữ,Khối 12,12A3,Dãy Nữ,NU-207,G-05,Dao,Bông 1-2,Bảo Hà,Triệu Văn Tư,Bàn Thị Thanh,865530827,971068785.0,9,Có,True,True,Tại trường,,True
-HSF-100,Chu Thị Hải Yến,Nữ,Khối 12,12A3,Dãy Nữ,NU-207,G-06,Tày,3AB,Bảo Hà,Chu Văn Chang,Lương Thị Dần,366383983,362481095.0,15,Có,True,True,Tại trường,,True
-HSF-101,Đặng Thị Xuyên,Nữ,Khối 12,12A3,Dãy Nữ,NU-207,G-07,Dao,Lỵ 1-2,Bảo Hà,Đặng Văn Nhật,Trần Thị Pu,915039526,376813920.0,10,Có,True,True,Tại trường,,True
-HSF-102,Hà Thị Nguyên,Nữ,Khối 12,12A3,Dãy Nữ,NU-207,G-08,Phù Lá,Kim Sơn,Bảo Hà,Hà Văn Hành,Hoàng Thị Nhất,866621716,353810009.0,17,Có,True,True,Tại trường,,True
-HSF-103,Chu Bích Loan,Nữ,Khối 12,12A4,Dãy Nữ,NU-207,G-09,Tày,Kim Sơn,Bao Hà,Chu Văn Đài,Mạc Thị Tài,346318191,335470790.0,12,Có,True,True,Tại trường,,True
-HSF-104,Hoàng Thị Nhài,Nữ,Khối 12,12A4,Dãy Nữ,NU-207,G-10,Tày,Khoai,Bao Hà,Hoàng Văn Đức,Triệu Thị Phương,964141142,353940311.0,10,Có,True,True,Tại trường,,True
-HSF-105,Hoàng Thị Phương Oanh,Nữ,Khối 12,12A4,Dãy Nữ,NU-208,G-01,Tày,7AB,Bảo Hà,Hoàng Văn Tường,Hoàng Thị Lợi,364668915,383207751.0,17,Có,True,True,Tại trường,,True
-HSF-106,Triệu Thị Sinh,Nữ,Khối 12,12A4,Dãy Nữ,NU-208,G-02,Dao,Khe Bàn,Bao Hà,Triệu Văn Thất,Hà Thị Săm,989559091,333446323.0,12,Có,True,True,Tại trường,,True
-HSF-107,Hoàng Thị Mừng,Nữ,Khối 12,12A4,Dãy Nữ,NU-208,G-03,Tày,Kim Sơn,Bao Hà,Hoàng Văn Màu,Hoàng Thị Mơ,399240014,,12,Có,True,True,Tại trường,,True
-HSF-108,Đặng Thị Nhung,Nữ,Khối 12,12A6,Dãy Nữ,NU-208,G-04,Dao,Thống Nhất,Bảo Hà,Đặng Văn Minh,Lý Thị Tiên,896016371,773033260.0,15,Có,True,True,Tại trường,,True
-HSF-109,Sầm Khánh Ly,Nữ,Khối 12,12A7,Dãy Nữ,NU-208,G-05,Tày,Cọn 1,Bảo Hà,Sầm Văn Chương,La Thị Thảo,356269517,702096831.0,20,Có,True,True,Tại trường,,True
-HSF-110,La Thị Thanh Huyên,Nữ,Khối 12,12A7,Dãy Nữ,NU-208,G-06,Giáy,Làng Đam,Lâm Giang,La Xuân Trường,Nông Thị Tâm,326578351,396971718.0,9,Có,True,True,Tại trường,,True
-HSF-111,Đặng Thị Yến Nhi,Nữ,Khối 12,12A7,Dãy Nữ,NU-208,G-07,Dao,Tân Thành,Bảo Hà,Đặng Văn Xan,Đặng Thị Khách,332631529,373840285.0,17,Có,True,True,Tại trường,,True
-HSF-112,Lương Thị Lý,Nữ,Khối 12,12A7,Dãy Nữ,NU-208,G-08,Tày,Bỗng Buôn,Bảo Hà,Lương Xuân Liêm,Vũ Thị Mơn,355060921,329462258.0,12,Có,True,True,Tại trường,,True
+﻿Mã HS,Họ và tên,Giới tính,Khối,Lớp,Dãy nhà,Phòng,Giường,Dân tộc,Thôn,Xã,Họ tên Bố,Họ tên Mẹ,SĐT Phụ huynh,SĐT Học sinh,Cách trường (KM),Chức vụ phòng,Chính sách NĐ116,GĐ1: Ăn trưa,GĐ2: Phòng nghỉ,Trạng thái,Ghi chú nề nếp,Ăn tối
+HSN-001,Bàn Hải Phong,Nam,Khối 10,10A1,Dãy Nam,Phòng 308,G-01,Dao,Khe Bàn,Bảo Hà,Bàn Văn Trịnh,Lý Thị Neo,0867106916,0971909148,12,Thành viên,Có,True,True,Tại trường,,True
+HSN-002,Đặng Đức Khiêm,Nam,Khối 10,10A1,Dãy Nam,Phòng 308,G-02,Dao,Bông,Bảo Hà,Đặng Văn Hoàng,Triệu Thị Phấy,0977183836,0869753415,10,Thành viên,Có,True,True,Tại trường,,True
+HSN-003,Hoàng Minh Quân,Nam,Khối 10,10A1,Dãy Nam,Phòng 308,G-03,Tày,Cam cọn 1,Bảo Hà,Hoàng Văn Nhiễu,Hoàng Thị Nhàn,0971994864,0869889243,16,Thành viên,Có,True,True,Tại trường,,True
+HSN-004,Hoàng Quốc Phòng,Nam,Khối 10,10A1,Dãy Nam,Phòng 308,G-04,Xa Phó,Nhai thổ 2,Bảo Hà,Hoàng Văn Hải,Tẩn San Mẩy,0387149387,0327654940,20,Thành viên,Có,True,True,Tại trường,,True
+HSN-005,Hoàng Xuân Huần,Nam,Khối 10,10A1,Dãy Nam,Phòng 308,G-05,Tày,3 nhai thổ,Bảo Hà,Hoàng Văn Hoà,Sầm thị biết,0365140211,0377690811,18,Thành viên,Có,True,True,Tại trường,,True
+HSN-006,Nông Đức Duy,Nam,Khối 10,10A1,Dãy Nam,Phòng 308,G-06,Dao,Bông,Bảo hà,Nông Ton Pham,Sầm Thị Nghè,0366675523,0325242301,10,Thành viên,Có,True,True,Tại trường,,True
+HSN-007,Hoàng Thừa Tài,Nam,Khối 10,10A1,Dãy Nam,Phòng 308,G-07,Dao,Khe Bàn,Bảo Hà,Hoàng Xuân Lâm,Triệu Thị Náy,0335402730,33509143,15,Thành viên,Có,True,True,Tại trường,,True
+HSN-008,Hoàng Văn Ánh,Nam,Khối 10,10A1,Dãy Nam,Phòng 308,G-08,Tày,Thôn 3AB,Bảo Hà,Hoàng Văn Hoàn,Hoàng Thị Hòa,0336821553,0334172984,15,Trưởng phòng,Có,True,True,Tại trường,Trưởng phòng,True
+HSN-009,Triệu Quang Vũ,Nam,Khối 10,10A2,Dãy Nam,Phòng 308,G-09,Kinh,Tân Thành,Bảo Hà,Triệu Công Đoàn,Hoàng Thị Tuyết,0382528034,0373502163,15,Thành viên,Có,True,True,Tại trường,,True
+HSN-010,Sùng Thuận Phong,Nam,Khối 10,10A2,Dãy Nam,Phòng 308,G-10,H'Mông,Thùng 2,Bảo Hà,Sùng A Giáo,Thào Thị Đấu,0382221652,0344448939,7,Thành viên,Có,True,True,Tại trường,,True
+HSN-011,Đặng Minh Toan,Nam,Khối 10,10A3,Dãy Nam,Phòng 307,G-01,Phù Lá,2 Nhai Thổ,Bảo Hà,Đặng Văn Túc,Hoàng Thị Xuân,0392724342,0383066871,17,Thành viên,Có,True,True,Tại trường,,True
+HSN-012,Hoàng Gia Bảo,Nam,Khối 10,10A3,Dãy Nam,Phòng 307,G-02,Tày,3AB,Bảo Hà,Hoàng Văn Tuyến,Hoàng Thị Huế,0337287811,0327065011,17,Thành viên,Có,True,True,Tại trường,,True
+HSN-013,Hà Chí Tường,Nam,Khối 10,10A3,Dãy Nam,Phòng 307,G-03,Tày,6AB,Bảo Hà,Hà Văn Hướng,Hoàng Thị Mến,0345554070,0357756445,10,Thành viên,Có,True,True,Tại trường,,True
+HSN-014,Hoàng Đức Lương,Nam,Khối 10,10A3,Dãy Nam,Phòng 307,G-04,Tày,7AB,Bảo Hà,Hoàng Văn Thành,Nguyễn Thị Kiều,0362754731,0339259811,16,Thành viên,Có,True,True,Tại trường,,True
+HSN-015,Lý Chí Kiên,Nam,Khối 10,10A3,Dãy Nam,Phòng 307,G-05,Dao,1 Nhai Tẻn,Bảo Hà,Lý Văn Sơn,Lý Thị Nguyên,0385305641,0383819941,16,Thành viên,Có,True,True,Tại trường,,True
+HSN-016,Hoàng Phi Long,Nam,Khối 10,10A3,Dãy Nam,Phòng 307,G-06,Tày,Cao Sơn,Bảo Hà,Hoàng Văn Hằng,Đặng Thị Tình,0977815398,0367424987,18,Thành viên,Có,True,True,Tại trường,,True
+HSN-017,Đặng Quang Dũng,Nam,Khối 10,10A3,Dãy Nam,Phòng 307,G-07,Dao,Thống Nhất,Bảo Hà,Đặng Văn Tiên,Trần Thị Thắm,0906194200,0702041505,10,Thành viên,Có,True,True,Tại trường,,True
+HSN-018,Bàn Minh Đức,Nam,Khối 10,10A3,Dãy Nam,Phòng 307,G-08,Dao,Thống Nhất,Bảo Hà,Bàn Văn May,Bàn Thị Lan,0388039801,,10,Thành viên,Có,True,True,Tại trường,,True
+HSN-019,Hoàng Hữu Duy,Nam,Khối 10,10A3,Dãy Nam,Phòng 307,G-09,Tày,Khoai 2,Bảo Hà,Hoàng Văn Đức,Triệu Thị Phương,0964141142,,12,Thành viên,Có,True,True,Tại trường,,True
+HSN-020,Nông Xuân Kiểm,Nam,Khối 10,10A3,Dãy Nam,Phòng 307,G-10,Tày,3AB,Bảo Hà,Nông Văn Đại,Dương Thi Oai,0364247326,0862705096,17,Thành viên,Có,True,True,Tại trường,,True
+HSN-021,Bàn Quốc Anh,Nam,Khối 10,10A4,Dãy Nam,Phòng 307,G-11,Dao,4 Nhai Thổ,Bảo Hà,Nguyễn Duy Thưởng,Bàn Thị Hoa,0868640391,0327590264,15,Trưởng phòng,Có,True,True,Tại trường,Trưởng phòng,True
+HSN-022,Bàn Thành Nghiệp,Nam,Khối 10,10A4,Dãy Nam,Phòng 306,G-01,Dao,Bông 3,Bảo Hà,Bàn Ton San,Đặng Thị Hương,0359845021,0367313671,11,Thành viên,Có,True,True,Tại trường,,True
+HSN-023,Đặng Nguyên Long,Nam,Khối 10,10A4,Dãy Nam,Phòng 306,G-02,Dao,Bông 3,Bảo Hà,Đặng Văn Hùng,Đặng Thị Nhình,0966231870,0357413720,11,Thành viên,Có,True,True,Tại trường,,True
+HSN-024,Đặng Nguyên Lương,Nam,Khối 10,10A4,Dãy Nam,Phòng 306,G-03,Dao,Bông 3,Bảo Hà,Hoàng Văn Ngợi,Đặng Thị Sàn,0915586635,0349976830,11,Thành viên,Có,True,True,Tại trường,,True
+HSN-025,Hà Xuân Quang,Nam,Khối 10,10A4,Dãy Nam,Phòng 306,G-04,Tày,6AB,Bảo Hà,Hà Văn Long,Hoàng Thị Bến,0359615338,0352633953,13,Thành viên,Có,True,True,Tại trường,,True
+HSN-026,Hoàng Trung Đức,Nam,Khối 10,10A4,Dãy Nam,Phòng 306,G-05,Tày,3 AB,Bảo Hà,Hoàng Văn Huỳnh,Hoàng Thị Chuyến,0394977390,0862105274,15,Thành viên,Có,True,True,Tại trường,,True
+HSN-027,Hoàng Văn Thượng,Nam,Khối 10,10A4,Dãy Nam,Phòng 306,G-06,Tày,7AB,Bảo Hà,Hoàng văn Hoàng,Đinh Thị Hằng,0968022730,0335508944,12,Thành viên,Có,True,True,Tại trường,,True
+HSN-028,Bùi Đức Hiếu,Nam,Khối 10,10A7,Dãy Nam,Phòng 306,G-07,Nùng,1 Tân Văn,Bảo Hà,Bùi Văn Minh,Hoàng Thị Ban,0879005432,0975994825,15,Trưởng phòng,Có,True,True,Tại trường,Trưởng phòng,True
+HSN-029,Lý Văn Hiếu,Nam,Khối 10,10A7,Dãy Nam,Phòng 306,G-08,Dao,Nhai Tẻn,Bảo Hà,Lý Văn Đức,Đặng Thị Ngọc,0386690111,0355298309,20,Thành viên,Có,True,True,Tại trường,,True
+HSN-030,Nguyễn Tiến Thành,Nam,Khối 10,10A7,Dãy Nam,Phòng 306,G-09,Cao Lan,Bản Khoai 3,Bảo Hà,Nguyễn Văn Tý,Hoàng Thị Lê,0813658987,,10,Thành viên,Có,True,True,Tại trường,,True
+HSN-031,Triệu Đức Lương,Nam,Khối 10,10A7,Dãy Nam,Phòng 306,G-10,Tày,Bản Khoai 2,Bảo Hà,Triệu Văn Phong,Triệu Thị Mẳn,0337554986,,15,Thành viên,Có,True,True,Tại trường,,True
+HSN-032,Triệu Văn Tuấn,Nam,Khối 10,10A7,Dãy Nam,Phòng 305,G-01,Dao,Khe Bàn,Bảo Hà,Triệu Tòn Khách,Triệu Thị Tam,0359796861,,15,Thành viên,Có,True,True,Tại trường,,True
+HSN-033,Cư Seo Tánh,Nam,Khối 11,11A1,Dãy Nam,Phòng 305,G-02,H'Mông,Thíp Dạo,Lâm Giang,Cư Seo Giả,Sùng Thị Mê,0355802206,0356063728,11,Trưởng phòng,Có,True,True,Tại trường,Trưởng phòng,True
+HSN-034,Đặng Tuấn Anh,Nam,Khối 11,11A1,Dãy Nam,Phòng 305,G-03,Dao,1 nhai tẻn,Bảo Hà,Đặng Quang lợi,Đặng Thị Hà,0986391620,0333785199,20,Thành viên,Có,True,True,Tại trường,,True
+HSN-035,Hoàng đình Khải,Nam,Khối 11,11A1,Dãy Nam,Phòng 305,G-04,Tày,2AB,Bảo Hà,Hoàng văn nhu,Hoàng Thị Diên,0362013615,0357508650,15,Thành viên,Có,True,True,Tại trường,,True
+HSN-036,Đoàn Bình Tin,Nam,Khối 11,11A2,Dãy Nam,Phòng 305,G-05,Kinh,Cam Cọn 2,Bảo Hà,Đoàn Xuân Hưng,Sầm Thị Mơ,0362615095,0326730495,16,Thành viên,Có,True,True,Tại trường,,True
+HSN-037,Lý Thành Vương,Nam,Khối 11,11A2,Dãy Nam,Phòng 305,G-06,Dao,Cọn 2,Bảo Hà,Lý Văn Bắc,Bàn Thị Hoảnh,0987220421,0868556054,17,Thành viên,Có,True,True,Tại trường,,True
+HSN-038,Ma Seo Cương,Nam,Khối 11,11A2,Dãy Nam,Phòng 305,G-07,Mông,Thùng,Bảo Hà,Ma Seo Vẳng,Vàng Thị Si,0336161311,,7,Thành viên,Có,True,True,Tại trường,,True
+HSN-039,Đặng Thanh Lâm,Nam,Khối 11,11A2,Dãy Nam,Phòng 305,G-08,Dao,Nhai Tẻn 2,Bảo Hà,ĐặngVăn Thắng,Đặng Thị Hoa,0961252844,0338639155,22,Thành viên,Có,True,True,Tại trường,,True
+HSN-040,Nguyễn Tùng Dương,Nam,Khối 11,11A2,Dãy Nam,Phòng 305,G-09,Kinh,Cam Cọn 1,Bảo Hà,Nguyễn Văn Sơn,Đoàn Thị Liên,0375591987,0818233010,15,Thành viên,Có,True,True,Tại trường,,True
+HSN-041,Trần Văn Cương,Nam,Khối 11,11A2,Dãy Nam,Phòng 305,G-10,Tày,Khoai 2,Bảo Hà,Trần Văn Biên,Hoàng Thị Thượng,0382263861,0347059024,12,Thành viên,Có,True,True,Tại trường,,True
+HSN-042,Triệu Tiến Chu,Nam,Khối 11,11A2,Dãy Nam,Phòng 304,G-01,Dao,Khe Bàn,Bảo Hà,Triệu Văn Minh,Lý Thị Xuân,0373021933,0869511475,11,Thành viên,Có,True,True,Tại trường,,True
+HSN-043,Hoàng Văn Yên,Nam,Khối 11,11A3,Dãy Nam,Phòng 304,G-02,Tày,Cọn 2,Bảo Hà,Hoàng Văn Nhất,Lương Thị Lâm,0326862213,0326862213,15,Thành viên,Có,True,True,Tại trường,,True
+HSN-044,Trương Ngọc Quý,Nam,Khối 11,11A3,Dãy Nam,Phòng 304,G-03,Tày,Bỗng Buôn,Bảo hà,Trương Văn Hùng,Ngô Thị Biên,0332167706,0869954329,14,Thành viên,Có,True,True,Tại trường,,True
+HSN-045,Triệu Kim Ngân,Nam,Khối 11,11A3,Dãy Nam,Phòng 304,G-04,Dao,Bỗng Buôn,Bảo hà,Triệu Văn Hai,Triệu Thị Mấy,0339005679,0968940910,15,Thành viên,Có,True,True,Tại trường,,True
+HSN-046,Nông Tài Phú,Nam,Khối 11,11A3,Dãy Nam,Phòng 304,G-05,Dao,Lỵ 1-2,Bảo hà,Nông Văn Quý,Trần Thị Lai,0332167706,0788006714,12,Thành viên,Có,True,True,Tại trường,,True
+HSN-047,Phùng Kim Ngân,Nam,Khối 11,11A3,Dãy Nam,Phòng 304,G-06,Dao,Khe Bàn,Bảo hà,Phùng Tòn Cau,Triệu Thị Còi,0989215410,0375618620,15,Thành viên,Có,True,True,Tại trường,,True
+HSN-048,Nguyễn Tuấn Hưng,Nam,Khối 11,11A3,Dãy Nam,Phòng 304,G-07,Tày,Bông 1-2,Bảo hà,Nguyễn Văn Oanh,Lý Thị Chản,0336338785,0343797540,10,Thành viên,Có,True,True,Tại trường,,True
+HSN-049,Ma A Chính,Nam,Khối 11,11A3,Dãy Nam,Phòng 304,G-08,H Mông,Thùng 2,Bảo hà,Ma Seo Dình,Giàng Thị Líu,0398513625,0368265904,10,Thành viên,Có,True,True,Tại trường,,True
+HSN-050,Ma Seo Minh,Nam,Khối 11,11A3,Dãy Nam,Phòng 304,G-09,H Mông,Thùng 3,Bảo hà,Ma Seo Kếnh,Thào Thị Súa,0984417060,0867594844,10,Trưởng phòng,Có,True,True,Tại trường,Trưởng phòng,True
+HSN-051,Nguyễn Đoàn Huy,Nam,Khối 11,11A3,Dãy Nam,Phòng 304,G-10,Thái,Thôn 1Tân Văn,Bảo hà,Nguyễn Văn Tuyên,La Thị Sim,0379284224,0969491485,13,Thành viên,Có,True,True,Tại trường,,True
+HSN-052,Sầm Quyết Thắng,Nam,Khối 11,11A3,Dãy Nam,Phòng 304,G-11,Kinh,Bỗng Buôn,Bảo hà,Sầm Văn Chiến,Nông Thị Kiểm,0367966816,0347819042,14,Thành viên,Có,True,True,Tại trường,,True
+HSN-053,Lê Tiến Dũng,Nam,Khối 11,11A4,Dãy Nam,Phòng 303,G-01,Dao,Nhai Tẻn,Bảo Hà,Lê Văn Quý,Đặng Thị Liên,0973108813,,11,Thành viên,Có,True,True,Tại trường,,True
+HSN-054,Lương Đình Nhật,Nam,Khối 11,11A4,Dãy Nam,Phòng 303,G-02,Tày,Thôn Kim sơn,Bảo Hà,Lương Văn Minh,Hoàng Thị Biền,0982330038,,11,Thành viên,Có,True,True,Tại trường,,True
+HSN-055,Ma Gia Huy,Nam,Khối 11,11A4,Dãy Nam,Phòng 303,G-03,Mông,Thôn Thùng,Bảo Hà,Ma Seo Trang,Giàng Thị Phương,0329345427,,7,Trưởng phòng,Có,True,True,Tại trường,Trưởng phòng,True
+HSN-056,Nông Quang Lê,Nam,Khối 11,11A4,Dãy Nam,Phòng 303,G-04,Dao,Thôn bông,Bảo Hà,Nông Hữu Long,Hoàng Thị Ghến,0967112007,,8,Thành viên,Có,True,True,Tại trường,,True
+HSN-057,Trần Quang Chiến,Nam,Khối 11,11A4,Dãy Nam,Phòng 303,G-05,Dao,Thống nhất,Bảo Hà,Trần Văn Sáng,Trần Thị Nọi,0961039921,,12,Thành viên,Có,True,True,Tại trường,,True
+HSN-058,Triệu Tiến Duy,Nam,Khối 11,11A4,Dãy Nam,Phòng 303,G-06,Dao,Thống nhất,Bảo Hà,Triệu Văn Dung,Lý Thị Êm,0823620135,,11,Thành viên,Có,True,True,Tại trường,,True
+HSN-059,Đặng Văn Học,Nam,Khối 11,11A5,Dãy Nam,Phòng 303,G-07,Dao,Liên Sơn,Lâm Giang,Đặng Văn Thắng,Đỗ Thị Hoàn,0975510175,0528043975,11,Thành viên,Có,True,True,Tại trường,,True
+HSN-060,Hoàng Xuân Trường,Nam,Khối 11,11A5,Dãy Nam,Phòng 303,G-08,Tày,Kim sơn,Bảo Hà,Hoàng Văn Toàn,Lý Thị Hưng,0964744195,0339996815,16,Thành viên,Có,True,True,Tại trường,,True
+HSN-061,Nguyễn Sinh Hùng,Nam,Khối 11,11A5,Dãy Nam,Phòng 303,G-09,Tày,Bỗng Buôn,Bảo Hà,Nguyễn Văn Lả,Nông Thị Cảnh,0965866703,0377027607,12,Thành viên,Có,True,True,Tại trường,,True
+HSN-062,Nguyễn Trịnh Quang,Nam,Khối 11,11A5,Dãy Nam,Phòng 303,G-10,Kinh,Bảo Ân,Bảo Hà,Nguyễn Long Phi,Nguyễn Thị Thu,0366474580,0865729436,15,Thành viên,Có,True,True,Tại trường,,True
+HSN-063,Triệu Hữu Dũng,Nam,Khối 11,11A5,Dãy Nam,Phòng 302,G-01,Dao,Bỗng Buôn,Bảo Hà,Triệu Văn Lạng,Triệu Thị Thim,0326860289,0966588213,15,Thành viên,Có,True,True,Tại trường,,True
+HSN-064,Đặng Hải Nam,Nam,Khối 11,11A6,Dãy Nam,Phòng 302,G-02,Dao,4 Nhai Thổ,Bảo Hà,Đặng Văn  Bìn,Đặng Thị Nga,0327297821,,19,Thành viên,Có,True,True,Tại trường,,True
+HSN-065,Hảng Thuận Phú,Nam,Khối 11,11A6,Dãy Nam,Phòng 302,G-03,Mông,Bùn Dạo,Lam Giang,Hảng Seo Thành,Vàng Thị Chẩu,0979630403,0373342490,15,Thành viên,Có,True,True,Tại trường,,True
+HSN-066,Hà Duy Lợi,Nam,Khối 11,11A7,Dãy Nam,Phòng 302,G-04,Tày,Kim Sơn,Bảo Hà,Hà Ngọc Chuyển,Hoàng Thị Đậm,0345526774,0356663914,15,Thành viên,Có,True,True,Tại trường,,True
+HSN-067,Lý Minh Bảo,Nam,Khối 11,11A7,Dãy Nam,Phòng 302,G-05,Dao,Nhai Tẻn,Bảo Hà,Lý Văn Giáp,Đặng Thị Lan,0963970115,0333281827,18,Thành viên,Có,True,True,Tại trường,,True
+HSN-068,Sùng A Phong,Nam,Khối 11,11A7,Dãy Nam,Phòng 302,G-06,Mông,Thíp Dạo,Lâm Giang,Sùng A Chư,Hạng Thị Chấu,0867058874,0822086471,17,Thành viên,Có,True,True,Tại trường,,True
+HSN-069,Đặng Minh Sơn,Nam,Khối 12,12A1,Dãy Nam,Phòng 302,G-07,Dao,Nhai Tẻn,Bảo Hà,Đặng Văn Bình,Đặng Thị Hà,0359295548,0981276177,20,Trưởng phòng,Có,True,True,Tại trường,Trưởng phòng,True
+HSN-070,Hảng Seo Lành,Nam,Khối 12,12A1,Dãy Nam,Phòng 302,G-08,Mông,Bùn Dạo,Lâm Giang,Hảng Seo Sảng,Lù Thị Hoa,0392366160,0867594844,16,Thành viên,Có,True,True,Tại trường,,True
+HSN-071,Tẩn Hoàng Nghiệp,Nam,Khối 12,12A1,Dãy Nam,Phòng 302,G-09,Dao,Nhai Thổ,Kim Sơn,Tẩn A Khế,Hoàng Thị Tâm,0989063570,0988611544,15,Thành viên,Có,True,True,Tại trường,,True
+HSN-072,Triệu Anh Quang,Nam,Khối 12,12A1,Dãy Nam,Phòng 301,G-01,Dao,Hồng Cam,Bảo Hà,Triệu Xuân Vượng,Triệu Thị Lai,0398854726,,10,Thành viên,Có,True,True,Tại trường,,True
+HSN-073,Hoàng Đình Tập,Nam,Khối 12,12A2,Dãy Nam,Phòng 301,G-02,Tày,3 Nhai Thổ,Bảo Hà,Hoàng Văn Thuận,Bàn Thị Hà,0971110758,0867982915,20,Thành viên,Có,True,True,Tại trường,,True
+HSN-074,Hoàng Minh Vũ,Nam,Khối 12,12A2,Dãy Nam,Phòng 301,G-03,Tày,Cam cọn,Bảo Hà,Hoàng Văn Vựng,Hoàng Thị Nhiệm,0359367426,0364198642,17,Thành viên,Có,True,True,Tại trường,,True
+HSN-075,Lê Bảo Nghĩa,Nam,Khối 12,12A4,Dãy Nam,Phòng 301,G-04,Dao,Nhai Tẻn,Bảo Hà,Lê Thái Đình,Đặng Thị Thơm,0342136204,0383058557,13,Thành viên,Có,True,True,Tại trường,,True
+HSN-076,Nông Khánh Duy,Nam,Khối 12,12A4,Dãy Nam,Phòng 301,G-05,Dao,Thống nhất,Bảo Hà,Nông Văn Hình,Đặng Thị Giảng,0776705861,,10,Thành viên,Có,True,True,Tại trường,,True
+HSN-077,Sầm Minh Hữu,Nam,Khối 12,12A4,Dãy Nam,Phòng 301,G-06,Tày,Tân Thành,Bảo Hà,Sầm Văn Chiến,Nông Thị Kiểm,0367966816,0819683614,17,Thành viên,Có,True,True,Tại trường,,True
+HSN-078,Trần Tuấn Anh,Nam,Khối 12,12A4,Dãy Nam,Phòng 301,G-07,Kinh,3 Nhai Thổ,Bảo Hà,Trần Văn Hoàng,Hoàng Thị Toan,0989865335,0347024175,14,Thành viên,Có,True,True,Tại trường,,True
+HSN-079,Triệu Tiến Thắng,Nam,Khối 12,12A4,Dãy Nam,Phòng 301,G-08,Dao,Khe Bàn,Bảo Hà,Triệu Văn Lán,Phùng Thị Tam,0366851077,0328063484,12,Thành viên,Có,True,True,Tại trường,,True
+HSN-080,Bàn Duy Khoa,Nam,Khối 12,12A5,Dãy Nam,Phòng 301,G-09,Dao,Bông 3,Bảo Hà,Bàn Ton San,Đặng Thị Hương,0973983608,0328323191,10,Trưởng phòng,Có,True,True,Tại trường,Trưởng phòng,True
+HSN-081,Bàn Thanh Chung,Nam,Khối 12,12A5,Dãy Nam,Phòng 205,G-01,Dao,Nhai Tẻn,Bảo Hà,Bàn Tuấn Anh,Tráng Thị Mai,0363145091,0329384292,20,Thành viên,Có,True,True,Tại trường,,True
+HSN-082,Hà Phúc Lâm,Nam,Khối 12,12A5,Dãy Nam,Phòng 205,G-02,Xa Phó,3 Nhai Thổ,Bảo Hà,Hà Xuân Tình,Lý Thị Chắc,0336383054,0376608278,18,Thành viên,Có,True,True,Tại trường,,True
+HSN-083,Hoàng Hải Duy,Nam,Khối 12,12A5,Dãy Nam,Phòng 205,G-03,Xa Phó,2 Nhai Thổ,Bảo Hà,Hoàng Văn Hồng,Nông Thị Thúy,0334181619,0356516499,24,Thành viên,Có,True,True,Tại trường,,True
+HSN-084,Sầm Minh Đức,Nam,Khối 12,12A5,Dãy Nam,Phòng 205,G-04,Tày,Cọn 2,Bảo Hà,Sầm Quốc Đạt(mất),Tòng Thị Pheng,0347953516,,15,Trưởng phòng,Có,True,True,Tại trường,Trưởng phòng,True
+HSN-085,Triệu Qúy Đức,Nam,Khối 12,12A5,Dãy Nam,Phòng 205,G-05,Dao,Khe Bàn,Bảo Hà,Hoàng Văn Lai,Triệu Thị Mùi,0354162240,0375967056,16,Thành viên,Có,True,True,Tại trường,,True
+HSN-086,Vũ Duy Khánh,Nam,Khối 12,12A5,Dãy Nam,Phòng 205,G-06,Kinh,Tân Thành,Bảo Hà,Vũ Văn Toàn,Lê Ngọc Thu,0379414597,0357071304,8,Thành viên,Có,True,True,Tại trường,,True
+HSN-087,La Ngọc Tuyến,Nam,Khối 12,12A7,Dãy Nam,Phòng 205,G-07,Tày,Cọn 1,Bảo Hà,La Văn Tuyên,Hà Thị Thuỳ,0378922358,0327883495,15,Thành viên,Có,True,True,Tại trường,,True
+HSN-088,Triệu Trung Quý,Nam,Khối 12,12A3,Dãy Nam,Phòng 205,G-08,Dao,Bông 3,Bảo Hà,Triệu Trung Kim,,0985681214,,,Thành viên,Có,True,True,Tại trường,,True
+HSN-089,Hoàng Trần Hiệp,Nam,Khối 12,12A3,Dãy Nam,Phòng 205,G-09,Tày,Thôn 3 Nhai Thổ,Bảo hà,Nguyễn Văn Thưởng,Hoàng Thị Thảo,0374684251,0327711651,20,Thành viên,Có,True,True,Tại trường,,True
+HSU-001,Triệu Thị Hiền,Nữ,Khối 10,10A1,Dãy Nữ,Phòng 401,G-01,Dao,Tân thành,Bảo Hà,Triệu Văn Hai,Triệu Thị Mấy,0983990102,0978083718,16,Thành viên,Có,True,True,Tại trường,,True
+HSU-002,Lý Lan Phương,Nữ,Khối 10,10A1,Dãy Nữ,Phòng 401,G-02,Dao,Tân thành,Bảo Hà,Lý Văn Chúi,Bàn Thị Náy,0336675404,0369080231,15,Thành viên,Có,True,True,Tại trường,,True
+HSU-003,Lý Thị Thảo,Nữ,Khối 10,10A1,Dãy Nữ,Phòng 401,G-03,Dao,Bùn Dạo,Lâm Giang,Lý Văn Xuân,Đặng Thị Liên,0392107797,0339869621,13,Trưởng phòng,Có,True,True,Tại trường,Trưởng phòng,True
+HSU-004,Triệu Thị Thuý Hằng,Nữ,Khối 10,10A1,Dãy Nữ,Phòng 401,G-04,Dao,Bông 3,Bảo Hà,Triệu Văn Phúc,Triệu Thị Chung,0971316587,0368814711,10,Thành viên,Có,True,True,Tại trường,,True
+HSU-005,Phùng Thị Khách,Nữ,Khối 10,10A1,Dãy Nữ,Phòng 401,G-05,Dao,Khe bàn,Bảo Hà,Đặng Văn Xương,Phùng Thị Liều,0377536147,0394515961,10,Thành viên,Có,True,True,Tại trường,,True
+HSU-006,Triệu Thu Yến,Nữ,Khối 10,10A1,Dãy Nữ,Phòng 401,G-06,Dao,khe bàn,Bảo Hà,Triệu Tòn Chản,Triệu Thị Tám,0375109274,0395423735,10,Thành viên,Có,True,True,Tại trường,,True
+HSU-007,Lý Bảo Thanh,Nữ,Khối 10,10A1,Dãy Nữ,Phòng 401,G-07,Dao,Khe Bàn,Bảo Hà,Lý Văn Tém,Hà Thị Nhàn,0963534328,0387266574,12,Thành viên,Có,True,True,Tại trường,,True
+HSU-008,Hà Tố Uyên,Nữ,Khối 10,10A1,Dãy Nữ,Phòng 401,G-08,Thái,Khe Bàn,Bảo Hà,Hà Văn Nam,Nguyễn Thị Mai,0966511169,0362800201,10,Thành viên,Có,True,True,Tại trường,,True
+HSU-009,Hoàng Mỹ Lệ,Nữ,Khối 10,10A1,Dãy Nữ,Phòng 401,G-09,Tày,Kim Sơn,Bảo Hà,Hoàng Văn Phú,Hà Thị Năm,0326824340,0328958260,15,Thành viên,Có,True,True,Tại trường,,True
+HSU-010,Lương Thị Thu Hoài,Nữ,Khối 10,10A1,Dãy Nữ,Phòng 401,G-10,Tày,Kim Sơn,Bảo Hà,Lương Văn Hiếu,Hoàng Thị Cứ,0394276331,0354059236,15,Thành viên,Có,True,True,Tại trường,,True
+HSU-011,Nguyễn Thị Bích Hợp,Nữ,Khối 10,10A1,Dãy Nữ,Phòng 401,G-11,Tày,Kim Sơn,Bảo Hà,Nguyễn Văn Hoà,Lý Thị Đới,0962190098,0358263884,20,Thành viên,Có,True,True,Tại trường,,True
+HSU-012,Sùng Thị Yến Chi,Nữ,Khối 10,10A2,Dãy Nữ,Phòng 402,G-01,H'Mông,Khoai,Bảo Hà,Sùng Seo Dế,Sần Thị Gánh,0388587059,,10,Thành viên,Có,True,True,Tại trường,,True
+HSU-013,Lý Quỳnh Anh,Nữ,Khối 10,10A2,Dãy Nữ,Phòng 402,G-02,Dao,Thống Nhất,Bảo Hà,Lý Văn Sêm,Bàn Thị Vin,0343564169,0365134102,12,Thành viên,Có,True,True,Tại trường,,True
+HSU-014,Ma Thị Thiệu Mấn,Nữ,Khối 10,10A2,Dãy Nữ,Phòng 402,G-03,H'Mông,Thùng 2,Bảo Hà,Ma Seo Vinh,Giàng Thị Đỡ,0967067434,0927106212,7,Thành viên,Có,True,True,Tại trường,,True
+HSU-015,Lý Thị Tâm Như,Nữ,Khối 10,10A2,Dãy Nữ,Phòng 402,G-04,Tày,6AB,Bảo Hà,,Nông Thị Châm,0376549216,0328939607,14,Thành viên,Có,True,True,Tại trường,,True
+HSU-016,Lý Thị Mẫn,Nữ,Khối 10,10A3,Dãy Nữ,Phòng 402,G-05,Tày,Kim Sơn,Bảo Hà,,Lý Thị Môn,0965005785,0386843454,15,Thành viên,Có,True,True,Tại trường,,True
+HSU-017,Giàng Thị Thu Trang,Nữ,Khối 10,10A3,Dãy Nữ,Phòng 402,G-06,H' Mông,Tắp 1,Bảo Hà,Giàng Seo Quang,Vù Thị Tâu,0326633006,0387326153,17,Thành viên,Có,True,True,Tại trường,,True
+HSU-018,Giàng Thị Thoại,Nữ,Khối 10,10A3,Dãy Nữ,Phòng 402,G-07,H' Mông,Chùn,Bảo Hà,Giàng Seo Dìn,Chấu Thị Chứ,0967295787,0337400273,10,Thành viên,Có,True,True,Tại trường,,True
+HSU-019,Đặng Thùy Tâm,Nữ,Khối 10,10A3,Dãy Nữ,Phòng 402,G-08,Dao,Thùng 2,Bảo Hà,Đặng Văn Nhất,Hoàng Thị Mùi,0968047896,0356996937,9,Trưởng phòng,Có,True,True,Tại trường,Trưởng phòng,True
+HSU-020,Phùng Thị Thiên Thu,Nữ,Khối 10,10A3,Dãy Nữ,Phòng 402,G-09,Dao,Khe Dai,Bảo Hà,Phùng Văn Phúc,Lý Thi Lai,0382940304,0343364542,8,Thành viên,Có,True,True,Tại trường,,True
+HSU-021,Hoàng Thị Việt Anh,Nữ,Khối 10,10A3,Dãy Nữ,Phòng 402,G-10,Tày,Khoai 2,Bảo Hà,Hoàng Văn Chiến,Triệu Thị Lắc,0388345114,,12,Thành viên,Có,True,True,Tại trường,,True
+HSU-022,Trần Thị Khuyên,Nữ,Khối 10,10A3,Dãy Nữ,Phòng 402,G-11,Dao,Thống Nhất,Bảo Hà,Trần Văn Páo,Bàn Thị Néo,0973800992,0876031730,14,Thành viên,Có,True,True,Tại trường,,True
+HSU-023,Triệu Thị Hà Vy,Nữ,Khối 10,10A3,Dãy Nữ,Phòng 403,G-01,Tày,Khoai 2,Bảo Hà,Triệu Văn Phượng,Nguyễn Thị Mơ,0964049067,0358377993,12,Thành viên,Có,True,True,Tại trường,,True
+HSU-024,Bàn Thị Thanh Trúc,Nữ,Khối 10,10A3,Dãy Nữ,Phòng 403,G-02,Dao,Bông 3,Bảo Hà,Bàn Ton Máy,Triệu Thi Sai,0376930020,0345533218,10,Trưởng phòng,Có,True,True,Tại trường,Trưởng phòng,True
+HSU-025,Tô Thị Khánh Ngọc,Nữ,Khối 10,10A3,Dãy Nữ,Phòng 403,G-03,Dao,Tân Thành,Bảo Hà,Tô Văn Oai,Lù Thị Ly,0392872778,0397626423,12,Thành viên,Có,True,True,Tại trường,,True
+HSU-026,Triệu Thị Ánh,Nữ,Khối 10,10A4,Dãy Nữ,Phòng 403,G-04,Dao,Cam 2,Bảo Hà,Triệu Văn Ngọ,Đặng Thị Điệp,0968309335,,20,Thành viên,Có,True,True,Tại trường,,True
+HSU-027,Bàn Thị Hoa,Nữ,Khối 10,10A4,Dãy Nữ,Phòng 403,G-05,Dao,1 Nhai Tẻn,Bảo Hà,Bàn Tuấn Anh,Tráng Thị Mai,0971240758,0868654376,17,Thành viên,Có,True,True,Tại trường,,True
+HSU-028,Triệu Thị Huyền,Nữ,Khối 10,10A4,Dãy Nữ,Phòng 403,G-06,Dao,Tân Thành,Bảo Hà,Triệu Văn Thắng,Triệu Thị Náy,0378346106,0387053047,12,Thành viên,Có,True,True,Tại trường,,True
+HSU-029,Hoàng Thị Nhi,Nữ,Khối 10,10A4,Dãy Nữ,Phòng 403,G-07,Tày,3 Nhai Thổ,Bảo Hà,Hoàng Văn Thuận,Bàn Thị Hà,0344245596,0325103423,15,Thành viên,Có,True,True,Tại trường,,True
+HSU-030,Đặng Thị Nhung,Nữ,Khối 10,10A4,Dãy Nữ,Phòng 403,G-08,Dao,Tân Thành,Bảo Hà,Đặng Văn Xan,Đặng Thị Khách,0961049812,0382814837,12,Thành viên,Có,True,True,Tại trường,,True
+HSU-031,Hoàng Thu Phương,Nữ,Khối 10,10A4,Dãy Nữ,Phòng 403,G-09,Dao,Thôn thùng 2,Bảo Hà,Hoàng Thừa Hiển,Phùng Thị Mấy,0369738258,0384060643,6,Thành viên,Có,True,True,Tại trường,,True
+HSU-032,Triệu Phương Thảo,Nữ,Khối 10,10A4,Dãy Nữ,Phòng 403,G-10,Dao,Khe Bàn,Bảo Hà,Triệu Hồng Hai,Triệu Thị Thim,0346489164,0365504034,12,Thành viên,Có,True,True,Tại trường,,True
+HSU-033,Triệu Thị Thu Thuỷ,Nữ,Khối 10,10A4,Dãy Nữ,Phòng 403,G-11,Tày,Kim Sơn,Bảo Hà,Đặng Minh Tuấn,Triệu Thị Tom,0357737660,0327475431,12,Thành viên,Có,True,True,Tại trường,,True
+HSU-034,Hoàng Bảo Trân,Nữ,Khối 10,10A4,Dãy Nữ,Phòng 404,G-01,Tày,3 Nhai Thổ,Bảo Hà,Hoàng Văn Phòng,Huỳnh Thị Ly,0377059015,0342111506,15,Thành viên,Có,True,True,Tại trường,,True
+HSU-035,Lò Thị Mai Hương,Nữ,Khối 10,10A6,Dãy Nữ,Phòng 404,G-02,Dao,Khoai 2,Bảo Hà,Lý Văn Đạt,Lò Thị Mùi,0379953812,,7,Thành viên,Có,True,True,Tại trường,,True
+HSU-036,Triệu Phương Anh,Nữ,Khối 10,10A7,Dãy Nữ,Phòng 404,G-03,Dao,Khe Bàn,Bảo Hà,Triệu Phúc Bảo,Triệu Thị Mùi,0375299757,,15,Trưởng phòng,Có,True,True,Tại trường,Trưởng phòng,True
+HSU-037,Triệu Phương Nhi,Nữ,Khối 10,10A7,Dãy Nữ,Phòng 404,G-04,Dao,Khe Bàn,Bảo Hà,Triệu Tòn Cau,Triệu Thị Vân,0373708930,0377173493,15,Thành viên,Có,True,True,Tại trường,,True
+HSU-038,Triệu Thị Hồng Thắm,Nữ,Khối 10,10A7,Dãy Nữ,Phòng 404,G-05,Dao,Thống Nhất,Bảo Hà,Triệu Văn Dũng,Bàn Thị Yệng,09131186459,,11,Thành viên,Có,True,True,Tại trường,,True
+HSU-039,Lâm Hoài Thương,Nữ,Khối 10,10A7,Dãy Nữ,Phòng 404,G-06,Tày,2 Tân Văn,Bảo Hà,Lâm Sỹ Tưởng,Nguyễn Thị Tươi,0357731984,,11,Thành viên,Có,True,True,Tại trường,,True
+HSU-040,Lê Ngọc Ánh,Nữ,Khối 10,10A7,Dãy Nữ,Phòng 404,G-07,Dao,Thống Nhất,Bảo Hà,Lê Văn Sơn,Lý Hồng Kim,0327501693,,10,Thành viên,Có,True,True,Tại trường,,True
+HSU-041,Triệu Thiên My,Nữ,Khối 10,10A7,Dãy Nữ,Phòng 404,G-08,Dao,Tân Thành,Bảo Hà,Triệu Văn Nhất,Bàn Thị Mấy,0332457830,,14,Thành viên,Có,True,True,Tại trường,,True
+HSU-042,Trương Thị Hoa,Nữ,Khối 10,10A7,Dãy Nữ,Phòng 404,G-09,Dao,Thống Nhất,Bảo Hà,Trương Văn Tó,Đặng Thị Ghi,0932251314,,11,Thành viên,Có,True,True,Tại trường,,True
+HSU-043,Lý Bảo Linh,Nữ,Khối 10,10A7,Dãy Nữ,Phòng 404,G-10,Dao,1 Nhai Tẻn,Bảo Hà,Hoàng Ngọc Lâm,Hoàng Thị Chang,0866159110,,20,Thành viên,Có,True,True,Tại trường,,True
+HSU-044,Đặng Yến Nhi,Nữ,Khối 10,10A7,Dãy Nữ,Phòng 404,G-11,Dao,1 Nhai Tẻn,Bảo Hà,Đặng Quốc Phong,Trướng Thị Hoa,0865577163,,19,Thành viên,Có,True,True,Tại trường,,True
+HSU-045,Nguyễn Khánh Linh,Nữ,Khối 11,11A1,Dãy Nữ,Phòng 405,G-01,Kinh,Bảo Ân,Bảo Hà,Nguyễn Bá Duy,Nguyễn Thị Ngà,0976732702,0865241865,15,Trưởng phòng,Có,True,True,Tại trường,Trưởng phòng,True
+HSU-046,Ma Thị Hoa,Nữ,Khối 11,11A1,Dãy Nữ,Phòng 405,G-02,H'Mông,Thùng 2,Bảo Hà,Ma Seo Xá,Giàng Thị Ly,0375513312,0388897314,7,Thành viên,Có,True,True,Tại trường,,True
+HSU-047,Hoàng Hải Yến,Nữ,Khối 11,11A1,Dãy Nữ,Phòng 405,G-03,Tày,Cọn 2,Bảo Hà,Nguyễn Văn Huy.,Hoàng Thị Hạnh,0354771469,0392932010,17,Thành viên,Có,True,True,Tại trường,,True
+HSU-048,Trương Thủy Hoàn,Nữ,Khối 11,11A1,Dãy Nữ,Phòng 405,G-04,:Dao.,1 Nhai Tẻn,Bảo Hà,Trương Văn Chấn,Đặng Thị Loan,0384566897,0372604095,25,Thành viên,Có,True,True,Tại trường,,True
+HSU-049,Nông Thị Quý,Nữ,Khối 11,11A1,Dãy Nữ,Phòng 405,G-05,Dao,Thống Nhất,Bảo Hà,Nông Văn Tôn,Triệu Thị Hoa,0347341064,0375547964,15,Thành viên,Có,True,True,Tại trường,,True
+HSU-050,Bàn Thị Hồng Thêm,Nữ,Khối 11,11A2,Dãy Nữ,Phòng 405,G-06,Dao,Nhai Tẻn,Bảo Hà,Bàn Văn Tinh,Đặng Thị Hồng,0865160428,0376705948,21,Thành viên,Có,True,True,Tại trường,,True
+HSU-051,Hoàng Thị Hồng Nhung,Nữ,Khối 11,11A2,Dãy Nữ,Phòng 405,G-07,Tày,Nhai Thổ 3,Bảo Hà,Hoàng Văn Sinh,Triệu Thị Nhi,0966153442,0337685142,20,Thành viên,Có,True,True,Tại trường,,True
+HSU-052,Hoàng Thuý Tiên,Nữ,Khối 11,11A2,Dãy Nữ,Phòng 405,G-08,Xa Phó,Nhai Thổ 2,Bảo Hà,Hoàng Văn Tiến,Hoàng Thị Vần,0328428391,0981514010,21,Thành viên,Có,True,True,Tại trường,,True
+HSU-053,Đặng Khánh Linh,Nữ,Khối 11,11A2,Dãy Nữ,Phòng 405,G-09,Dao,Nhai Tẻn,Bảo Hà,Đặng Văn Hải,Đặng Thị Thắng,0367920906,0386849760,20,Thành viên,Có,True,True,Tại trường,,True
+HSU-054,Ma Thị Nga,Nữ,Khối 11,11A2,Dãy Nữ,Phòng 405,G-10,Mông,Khoai 1,Bảo Hà,Ma Seo Của,Sùng Thị Chứ,0336881647,0337271613,13,Thành viên,Có,True,True,Tại trường,,True
+HSU-055,Ma Thị Hương,Nữ,Khối 11,11A2,Dãy Nữ,Phòng 405,G-11,Mông,Chùn,Bảo Hà,Ma Seo Chư,Thào Thị Chứ,0376447773,0362422816,10,Thành viên,Có,True,True,Tại trường,,True
+HSU-056,Nguyễn Minh Tâm,Nữ,Khối 11,11A2,Dãy Nữ,Phòng 406,G-01,Kinh,Cam Cọn 2,Bảo Hà,Nguyễn Thành Chung,La Thị Chuyền,0399614192,0965430664,16,Thành viên,Có,True,True,Tại trường,,True
+HSU-057,Hoàng Ngọc Diệp,Nữ,Khối 11,11A2,Dãy Nữ,Phòng 406,G-02,Tày,Cọn 1,Bảo Hà,Hoàng Văn Nhiễu,Hoàng Thị Nhàn,0865613874,0343961184,16,Thành viên,Có,True,True,Tại trường,,True
+HSU-058,Hoàng Thị Nhung,Nữ,Khối 11,11A2,Dãy Nữ,Phòng 406,G-03,Tày,Khoai 2,Bảo Hà,Hoàng Văn Lệ,Hoàng Thị Sáo,0971560361,0366925813,13,Thành viên,Có,True,True,Tại trường,,True
+HSU-059,Đặng Thị Hoa,Nữ,Khối 11,11A3,Dãy Nữ,Phòng 406,G-04,Dao,Bông 1-2,Bảo Hà,Nguyễn Văn Hoán,Đặng Thị Phái,0969052416,0969052416,10,Thành viên,Có,True,True,Tại trường,,True
+HSU-060,Lê Như Quỳnh,Nữ,Khối 11,11A3,Dãy Nữ,Phòng 406,G-05,Tày,Cọn 1,Bảo Hà,Lê Xuân Chỉnh,Hoàng Thị Lương,0387879813,0988476042,15,Thành viên,Có,True,True,Tại trường,,True
+HSU-061,Tráng Thị Đại,Nữ,Khối 11,11A4,Dãy Nữ,Phòng 406,G-06,Dao,Nhai Tẻn,Bảo Hà,Tráng Văn Trấn,Đặng Thị Dòng,0369808294,,16,Trưởng phòng,Có,True,True,Tại trường,Trưởng phòng,True
+HSU-062,Triệu Thị Thu Hiền,Nữ,Khối 11,11A4,Dãy Nữ,Phòng 406,G-07,Dao,Khe Bàn,Bảo Hà,Triệu Kim Hương,Triệu Thị Mắn,0342024303,,11,Thành viên,Có,True,True,Tại trường,,True
+HSU-063,Đặng Hồng Hoa,Nữ,Khối 11,11A4,Dãy Nữ,Phòng 406,G-08,Dao,Tân thành,Bảo Hà,Đặng Văn Nhì,Triệu Thị Chúi,0393130600,,11,Thành viên,Có,True,True,Tại trường,,True
+HSU-064,Hoàng Thị Hồng Mai,Nữ,Khối 11,11A4,Dãy Nữ,Phòng 406,G-09,Tày,Thôn Khoai,Bảo Hà,Hoàng Văn Lưng,Triệu Thị Thủy,0862175022,,13,Thành viên,Có,True,True,Tại trường,,True
+HSU-065,Đinh Thị Hồng Thái,Nữ,Khối 11,11A4,Dãy Nữ,Phòng 406,G-10,Tày,Thôn 7 AB,Bảo Hà,Đinh Quang Sáng,Lương Thị Thơi,0393679215,,14,Thành viên,Có,True,True,Tại trường,,True
+HSU-066,Triệu Thanh Thảo,Nữ,Khối 11,11A4,Dãy Nữ,Phòng 406,G-11,Dao,Khe Bàn,Bảo Hà,Hoàng Văn Lai,Triệu Thị Mùi,0354162240,,16,Thành viên,Có,True,True,Tại trường,,True
+HSU-067,Đặng Hồng Thư,Nữ,Khối 11,11A4,Dãy Nữ,Phòng 407,G-01,Dao,Bỗng,Bảo Hà,Đặng Ton Thanh,Triệu Thị Thủy,0365471167,,9,Thành viên,Có,True,True,Tại trường,,True
+HSU-068,Đặng Thị Vân,Nữ,Khối 11,11A4,Dãy Nữ,Phòng 407,G-02,Dao,Hồng Cam,Bảo Hà,Đặng Văn Thức,Bàn Thị Nhàn,0862908820,,11,Thành viên,Có,True,True,Tại trường,,True
+HSU-069,Hoàng Tố Vân,Nữ,Khối 11,11A4,Dãy Nữ,Phòng 407,G-03,Tày,Thôn 3 AB,Bảo Hà,Hoàng Văn Tú,Lương Thị Bình,0396141165,,12,Trưởng phòng,Có,True,True,Tại trường,Trưởng phòng,True
+HSU-070,Lý Hồng Mỹ,Nữ,Khối 11,11A4,Dãy Nữ,Phòng 407,G-04,Dao,Nhai tẻn,Bảo Hà,Lý Văn Đanh,Lý Thị Phương,0375302378,,12,Thành viên,Có,True,True,Tại trường,,True
+HSU-071,Triệu Thùy Linh,Nữ,Khối 11,11A5,Dãy Nữ,Phòng 407,G-05,Dao,Khe Bàn,Bảo Hà,Triệu Văn Nhất,Triệu Thị Thiên Lý,0329966224,0376596804,15,Thành viên,Có,True,True,Tại trường,,True
+HSU-072,Lý Thị Yến,Nữ,Khối 11,11A6,Dãy Nữ,Phòng 407,G-06,Dao,Khe Bàn,Bảo Hà,Lý Tòn Cau,Triệu Thị Chầy,0975991760,0338364398,15,Thành viên,Có,True,True,Tại trường,,True
+HSU-073,Trần Thị Thu,Nữ,Khối 11,11A7,Dãy Nữ,Phòng 407,G-07,Kinh,Khoai,Xã Bảo Hà,Trần Văn Luận,Kim Thị Nhàn,0328995435,0364201038,9,Thành viên,Có,True,True,Tại trường,,True
+HSU-074,Tráng Thị Dung,Nữ,Khối 11,11A7,Dãy Nữ,Phòng 407,G-08,H'Mông,Nhai Tẻn,Xã Bảo Hà,Tráng A Hồ,Cư Thị Do,0328219084,0373502744,22,Thành viên,Có,True,True,Tại trường,,True
+HSU-075,Đặng Thị Anh Đào,Nữ,Khối 11,11A7,Dãy Nữ,Phòng 407,G-09,Dao,Bông,Xã Bảo Hà,Đặng Văn Hoàng,Triệu Thị Phấy,0372158238,0389864250,11,Thành viên,Có,True,True,Tại trường,,True
+HSU-076,Hoàng Thị Thúy Kiều,Nữ,Khối 11,11A7,Dãy Nữ,Phòng 407,G-10,Tày,3AB,Xã Bảo Hà,Hoàng Văn Phức,Hoàng Thị Nhu,0336455820,0354751347,16,Thành viên,Có,True,True,Tại trường,,True
+HSU-077,Hoàng Bảo Ngọc,Nữ,Khối 11,11A7,Dãy Nữ,Phòng 407,G-11,Tày,3 Nhai Thổ,Xã Bảo Hà,Lý Tiến Hương,Hoàng Thị Hường,0987898550,0342128230,20,Thành viên,Có,True,True,Tại trường,,True
+HSU-078,Sùng Thuý Liên,Nữ,Khối 11,11A2,Dãy Nữ,Phòng 407,G-12,Mông,Nhai Tẻn 2,Bảo Hà,Sùng Seo Xủ,Giàng Thị Cái,0969534104,0867904896,22,Thành viên,Có,True,True,Tại trường,,True
+HSU-079,Hoàng Thị Phương,Nữ,Khối 11,11A7,Dãy Nữ,Phòng 408,G-01,Tày,Cam 2,Xã Bảo Hà,Hoàng Văn Toản,Đinh Thị Liên,0383945477,0862516497,15,Thành viên,Có,True,True,Tại trường,,True
+HSU-080,Bàn Thanh Thuý,Nữ,Khối 11,11A7,Dãy Nữ,Phòng 408,G-02,Dao,Thống Nhất,Xã Bảo Hà,Bàn Văn Mài,Đặng Thị Thu,0344615907,0342986680,11,Thành viên,Có,True,True,Tại trường,,True
+HSU-081,Đặng Thị Thanh Vân,Nữ,Khối 12,12A1,Dãy Nữ,Phòng 408,G-03,Dao,Nhai Tẻn,Bảo Hà,Đặng Văn Ngọc,Vi Thị Lan,0374737518,0342363155,20,Thành viên,Có,True,True,Tại trường,,True
+HSU-082,Nông Thị Ánh Nguyệt,Nữ,Khối 12,12A1,Dãy Nữ,Phòng 408,G-04,Dao,Bông,Bảo Hà,Nông Ton Phan,Sầm Thị Nghè,0334264373,0862165844,10,Thành viên,Có,True,True,Tại trường,,True
+HSU-083,Phan Thị Yến nhi,Nữ,Khối 12,12A1,Dãy Nữ,Phòng 408,G-05,Dao,Bông,Bảo Hà,Đặng Văn Ton,Phan Thị Tam,0325422275,,10,Thành viên,Có,True,True,Tại trường,,True
+HSU-084,Lý Thanh Hoa,Nữ,Khối 12,12A1,Dãy Nữ,Phòng 408,G-06,Dao,Thống Nhất,Bảo Hà,Lý văn phong,Nguyễn thị chích,0971561057,0971365265,9,Thành viên,Có,True,True,Tại trường,,True
+HSU-085,Đặng Thị Lan Anh,Nữ,Khối 12,12A1,Dãy Nữ,Phòng 408,G-07,Dao,Bản Cam 1,Cam Cọn,Đặng Văn Thôm,Triệu Thị Êm,0342986321,0363227019,10,Thành viên,Có,True,True,Tại trường,,True
+HSU-086,Hoàng Thị Thu,Nữ,Khối 12,12A2,Dãy Nữ,Phòng 408,G-08,Tày,Kim Sơn,Bảo Hà,Hoàng Văn Ích,Hà Thị Tuyên,0368432272,0328516810,11,Thành viên,Có,True,True,Tại trường,,True
+HSU-087,Lý Thị Nga,Nữ,Khối 12,12A2,Dãy Nữ,Phòng 408,G-09,Dao,Nhai Tẻn,Bảo Hà,Lý Văn Thành,Bàn Thị Tánh,0389175004,0345955260,15,Thành viên,Có,True,True,Tại trường,,True
+HSU-088,Bàn Thúy Kim,Nữ,Khối 12,12A2,Dãy Nữ,Phòng 408,G-10,Dao,Cam 1,Bảo Hà,Bàn Văn Khi,Đặng Thị Giêng,0344610271,0395251073,17,Thành viên,Có,True,True,Tại trường,,True
+HSU-089,Triệu Thị Thanh Huyên,Nữ,Khối 12,12A2,Dãy Nữ,Phòng 408,G-11,Tày,Khoai,Bảo Hà,Triệu Văn Hoàng,Hoàng Thị Hòa,0348846980,0976871507,13,Thành viên,Có,True,True,Tại trường,,True
+HSU-090,Hoàng Thị Thanh Mai,Nữ,Khối 12,12A2,Dãy Nữ,Phòng 408,G-12,Tày,3 Nhai Thổ,Bảo Hà,Hoàng Văn Huân,Chu Thị Hà,0981260564,0867569315,15,Trưởng phòng,Có,True,True,Tại trường,Trưởng phòng,True
+HSU-091,Đặng Thị Kiều Trang,Nữ,Khối 12,12A2,Dãy Nữ,Phòng 207,G-01,Dao,Thống Nhất,Bảo Hà,Đặng Văn Huế,Triệu Thị Yêu,0914447463,0906138963,15,Thành viên,Có,True,True,Tại trường,,True
+HSU-092,Bàn Thị Kim Phượng,Nữ,Khối 12,12A2,Dãy Nữ,Phòng 207,G-02,Dao,Nhai Tẻn,Bảo Hà,Bàn Sơn Hà,Bàn Thị Hồng,0363914593,0348876307,14,Thành viên,Có,True,True,Tại trường,,True
+HSU-093,Nguyễn Thùy Trâm,Nữ,Khối 12,12A2,Dãy Nữ,Phòng 207,G-03,Tày,Kim Sơn,Bảo Hà,Nguyễn Văn Thuấn,Sầm Thị Trang,0376988106,0379378649,12,Thành viên,Có,True,True,Tại trường,,True
+HSU-094,Lí Thị Lan Anh,Nữ,Khối 12,12A3,Dãy Nữ,Phòng 207,G-04,Dao,Bỗng 2,Bảo Hà,Lí Văn Chúi,Bàn Thị Náy,0336675404,0364386771,15,Thành viên,Có,True,True,Tại trường,,True
+HSU-095,Triệu Thanh Thư,Nữ,Khối 12,12A3,Dãy Nữ,Phòng 207,G-05,Dao,Bông 1-2,Bảo Hà,Triệu Văn Tư,Bàn Thị Thanh,0865530827,0971068785,9,Thành viên,Có,True,True,Tại trường,,True
+HSU-096,Chu Thị Hải Yến,Nữ,Khối 12,12A3,Dãy Nữ,Phòng 207,G-06,Tày,3AB,Bảo Hà,Chu Văn Chang,Lương Thị Dần,0366383983,0362481095,15,Thành viên,Có,True,True,Tại trường,,True
+HSU-097,Đặng Thị Xuyên,Nữ,Khối 12,12A3,Dãy Nữ,Phòng 207,G-07,Dao,Lỵ 1-2,Bảo Hà,Đặng Văn Nhật,Trần Thị Pu,0915039526,0376813920,10,Thành viên,Có,True,True,Tại trường,,True
+HSU-098,Hà Thị Nguyên,Nữ,Khối 12,12A3,Dãy Nữ,Phòng 207,G-08,Phù Lá,Kim Sơn,Bảo Hà,Hà Văn Hành,Hoàng Thị Nhất,0866621716,0353810009,17,Thành viên,Có,True,True,Tại trường,,True
+HSU-099,Chu Bích Loan,Nữ,Khối 12,12A4,Dãy Nữ,Phòng 207,G-09,Tày,Kim Sơn,Bao Hà,Chu Văn Đài,Mạc Thị Tài,0346318191,0335470790,12,Thành viên,Có,True,True,Tại trường,,True
+HSU-100,Hoàng Thị Nhài,Nữ,Khối 12,12A4,Dãy Nữ,Phòng 207,G-10,Tày,Khoai,Bao Hà,Hoàng Văn Đức,Triệu Thị Phương,0964141142,0353940311,10,Trưởng phòng,Có,True,True,Tại trường,Trưởng phòng,True
+HSU-101,Hoàng Thị Phương Oanh,Nữ,Khối 12,12A4,Dãy Nữ,Phòng 208,G-01,Tày,7AB,Bảo Hà,Hoàng Văn Tường,Hoàng Thị Lợi,0364668915,0383207751,17,Thành viên,Có,True,True,Tại trường,,True
+HSU-102,Triệu Thị Sinh,Nữ,Khối 12,12A4,Dãy Nữ,Phòng 208,G-02,Dao,Khe Bàn,Bao Hà,Triệu Văn Thất,Hà Thị Săm,0989559091,0333446323,12,Thành viên,Có,True,True,Tại trường,,True
+HSU-103,Đặng Thị Nhung,Nữ,Khối 12,12A6,Dãy Nữ,Phòng 208,G-03,Dao,Thống Nhất,Bảo Hà,Đặng Văn Minh,Lý Thị Tiên,0896016371,0773033260,15,Thành viên,Có,True,True,Tại trường,,True
+HSU-104,Sầm Khánh Ly,Nữ,Khối 12,12A7,Dãy Nữ,Phòng 208,G-04,Tày,Cọn 1,Bảo Hà,Sầm Văn Chương,La Thị Thảo,0356269517,0702096831,20,Thành viên,Có,True,True,Tại trường,,True
+HSU-105,La Thị Thanh Huyên,Nữ,Khối 12,12A7,Dãy Nữ,Phòng 208,G-05,Giáy,Làng Đam,Lâm Giang,La Xuân Trường,Nông Thị Tâm,0326578351,0396971718,9,Thành viên,Có,True,True,Tại trường,,True
+HSU-106,Đặng Thị Yến Nhi,Nữ,Khối 12,12A7,Dãy Nữ,Phòng 208,G-06,Dao,Tân Thành,Bảo Hà,Đặng Văn Xan,Đặng Thị Khách,0332631529,0373840285,17,Trưởng phòng,Có,True,True,Tại trường,Trưởng phòng,True
+HSU-107,Lương Thị Lý,Nữ,Khối 12,12A7,Dãy Nữ,Phòng 208,G-07,Tày,Bỗng Buôn,Bảo Hà,Lương Xuân Liêm,Vũ Thị Mơn,0355060921,0329462258,12,Thành viên,Có,True,True,Tại trường,,True

@@ -1,450 +1,448 @@
-﻿Tên đăng nhập,Mật khẩu,Họ và tên,Vai trò,Chức danh,Mã liên kết,Số điện thoại,Ghi chú,Trạng thái
-admin,bgh123,Ban Giám Hiệu (Admin),Ban Giám hiệu,Hiệu trưởng / Admin tối cao,Toàn trường,0988400184,Hiệu trưởng / Admin tối cao - Ban Giám Hiệu (Admin),Hoạt động
-hieutruong,ht123,Thầy Hiệu Trưởng,Ban Giám hiệu,Hiệu trưởng nhà trường,Toàn trường,0988123002,Hiệu trưởng nhà trường - Thầy Hiệu Trưởng,Hoạt động
-phohieutruong1,pht123,Phó Hiệu Trưởng 1,Ban Giám hiệu,Phó Hiệu trưởng PT Bán trú,Toàn trường,0988123003,Phó Hiệu trưởng PT Bán trú - Phó Hiệu Trưởng 1,Hoạt động
-phohieutruong2,pht123,Phó Hiệu Trưởng 2,Ban Giám hiệu,Phó Hiệu trưởng PT Chuyên môn,Toàn trường,0988123004,Phó Hiệu trưởng PT Chuyên môn - Phó Hiệu Trưởng 2,Hoạt động
-quannhiem,qn123,Thầy Quản Nhiệm Bán Trú,Giáo viên quản lý,Tổ trưởng Quản nhiệm ký túc xá,Toàn trường,0988123005,Tổ trưởng Quản nhiệm ký túc xá - Thầy Quản Nhiệm Bán Trú,Hoạt động
-gvtruc01,truc123,Giáo Viên Trực Ca 1,Giáo viên quản lý,Giáo viên trực ký túc xá,Toàn trường,0988123006,Giáo viên trực ký túc xá - Giáo Viên Trực Ca 1,Hoạt động
-gvtruc02,truc123,Giáo Viên Trực Ca 2,Giáo viên quản lý,Giáo viên trực ký túc xá,Toàn trường,0988123007,Giáo viên trực ký túc xá - Giáo Viên Trực Ca 2,Hoạt động
-beptruong,bep123,Bếp Trưởng Nhà Ăn,Nhà bếp / Cấp dưỡng,Bếp trưởng phụ trách dinh dưỡng,Toàn trường,0988123008,Bếp trưởng phụ trách dinh dưỡng - Bếp Trưởng Nhà Ăn,Hoạt động
-capduong,bep123,Tổ Cấp Dưỡng Bán Trú,Nhà bếp / Cấp dưỡng,Nhân viên cấp dưỡng,Toàn trường,0988123009,Nhân viên cấp dưỡng - Tổ Cấp Dưỡng Bán Trú,Hoạt động
-nhabep,bep123,Tổ Cấp Dưỡng Nhà Bếp,Nhà bếp / Cấp dưỡng,Nhân viên cấp dưỡng,Toàn trường,0988123010,Nhân viên cấp dưỡng - Tổ Cấp Dưỡng Nhà Bếp,Hoạt động
-ketoan,kt123,Kế Toán Bán Trú,Kế toán bán trú,Kế toán quản lý thu chi,Toàn trường,0988123011,Kế toán quản lý thu chi - Kế Toán Bán Trú,Hoạt động
-phuhuynh,ph123,Tài Khoản Phụ Huynh Mẫu,Phụ huynh học sinh,Phụ huynh học sinh chung,Toàn trường,0988123012,Phụ huynh học sinh chung - Tài Khoản Phụ Huynh Mẫu,Hoạt động
-hocsinh,hs123,Tài Khoản Học Sinh Mẫu,Học sinh,Học sinh bán trú chung,Toàn trường,0988123013,Học sinh bán trú chung - Tài Khoản Học Sinh Mẫu,Hoạt động
-gvcn_10a1,gvcn123,Thầy/Cô Chủ Nhiệm 10A1,Giáo viên quản lý,Giáo viên chủ nhiệm lớp 10A1,10A1,,GVCN Lớp 10A1 (19 học sinh bán trú),Hoạt động
-gvcn_10a2,gvcn123,Thầy/Cô Chủ Nhiệm 10A2,Giáo viên quản lý,Giáo viên chủ nhiệm lớp 10A2,10A2,,GVCN Lớp 10A2 (6 học sinh bán trú),Hoạt động
-gvcn_10a3,gvcn123,Thầy/Cô Chủ Nhiệm 10A3,Giáo viên quản lý,Giáo viên chủ nhiệm lớp 10A3,10A3,,GVCN Lớp 10A3 (22 học sinh bán trú),Hoạt động
-gvcn_10a4,gvcn123,Thầy/Cô Chủ Nhiệm 10A4,Giáo viên quản lý,Giáo viên chủ nhiệm lớp 10A4,10A4,,GVCN Lớp 10A4 (17 học sinh bán trú),Hoạt động
-gvcn_10a6,gvcn123,Thầy/Cô Chủ Nhiệm 10A6,Giáo viên quản lý,Giáo viên chủ nhiệm lớp 10A6,10A6,,GVCN Lớp 10A6 (1 học sinh bán trú),Hoạt động
-gvcn_10a7,gvcn123,Thầy/Cô Chủ Nhiệm 10A7,Giáo viên quản lý,Giáo viên chủ nhiệm lớp 10A7,10A7,,GVCN Lớp 10A7 (14 học sinh bán trú),Hoạt động
-gvcn_11a1,gvcn123,Thầy/Cô Chủ Nhiệm 11A1,Giáo viên quản lý,Giáo viên chủ nhiệm lớp 11A1,11A1,,GVCN Lớp 11A1 (10 học sinh bán trú),Hoạt động
-gvcn_11a2,gvcn123,Thầy/Cô Chủ Nhiệm 11A2,Giáo viên quản lý,Giáo viên chủ nhiệm lớp 11A2,11A2,,GVCN Lớp 11A2 (17 học sinh bán trú),Hoạt động
-gvcn_11a3,gvcn123,Thầy/Cô Chủ Nhiệm 11A3,Giáo viên quản lý,Giáo viên chủ nhiệm lớp 11A3,11A3,,GVCN Lớp 11A3 (12 học sinh bán trú),Hoạt động
-gvcn_11a4,gvcn123,Thầy/Cô Chủ Nhiệm 11A4,Giáo viên quản lý,Giáo viên chủ nhiệm lớp 11A4,11A4,,GVCN Lớp 11A4 (17 học sinh bán trú),Hoạt động
-gvcn_11a5,gvcn123,Thầy/Cô Chủ Nhiệm 11A5,Giáo viên quản lý,Giáo viên chủ nhiệm lớp 11A5,11A5,,GVCN Lớp 11A5 (6 học sinh bán trú),Hoạt động
-gvcn_11a6,gvcn123,Thầy/Cô Chủ Nhiệm 11A6,Giáo viên quản lý,Giáo viên chủ nhiệm lớp 11A6,11A6,,GVCN Lớp 11A6 (4 học sinh bán trú),Hoạt động
-gvcn_11a7,gvcn123,Thầy/Cô Chủ Nhiệm 11A7,Giáo viên quản lý,Giáo viên chủ nhiệm lớp 11A7,11A7,,GVCN Lớp 11A7 (10 học sinh bán trú),Hoạt động
-gvcn_12a1,gvcn123,Thầy/Cô Chủ Nhiệm 12A1,Giáo viên quản lý,Giáo viên chủ nhiệm lớp 12A1,12A1,,GVCN Lớp 12A1 (11 học sinh bán trú),Hoạt động
-gvcn_12a2,gvcn123,Thầy/Cô Chủ Nhiệm 12A2,Giáo viên quản lý,Giáo viên chủ nhiệm lớp 12A2,12A2,,GVCN Lớp 12A2 (11 học sinh bán trú),Hoạt động
-gvcn_12a3,gvcn123,Thầy/Cô Chủ Nhiệm 12A3,Giáo viên quản lý,Giáo viên chủ nhiệm lớp 12A3,12A3,,GVCN Lớp 12A3 (7 học sinh bán trú),Hoạt động
-gvcn_12a4,gvcn123,Thầy/Cô Chủ Nhiệm 12A4,Giáo viên quản lý,Giáo viên chủ nhiệm lớp 12A4,12A4,,GVCN Lớp 12A4 (10 học sinh bán trú),Hoạt động
-gvcn_12a5,gvcn123,Thầy/Cô Chủ Nhiệm 12A5,Giáo viên quản lý,Giáo viên chủ nhiệm lớp 12A5,12A5,,GVCN Lớp 12A5 (7 học sinh bán trú),Hoạt động
-gvcn_12a6,gvcn123,Thầy/Cô Chủ Nhiệm 12A6,Giáo viên quản lý,Giáo viên chủ nhiệm lớp 12A6,12A6,,GVCN Lớp 12A6 (1 học sinh bán trú),Hoạt động
-gvcn_12a7,gvcn123,Thầy/Cô Chủ Nhiệm 12A7,Giáo viên quản lý,Giáo viên chủ nhiệm lớp 12A7,12A7,,GVCN Lớp 12A7 (5 học sinh bán trú),Hoạt động
-hsn001,hs123,Bàn Hải Phong,Học sinh,Học sinh bán trú,HSN-001,0971909148,Lớp 10A1 - Phòng NAM-308 - Giường G-01,Hoạt động
-hsn002,hs123,Đặng Đức Khiêm,Học sinh,Học sinh bán trú,HSN-002,0869753415,Lớp 10A1 - Phòng NAM-308 - Giường G-02,Hoạt động
-hsn003,hs123,Hoàng Minh Quân,Học sinh,Học sinh bán trú,HSN-003,0869889243,Lớp 10A1 - Phòng NAM-308 - Giường G-03,Hoạt động
-hsn004,hs123,Hoàng Quốc Phòng,Học sinh,Học sinh bán trú,HSN-004,0327654940,Lớp 10A1 - Phòng NAM-308 - Giường G-04,Hoạt động
-hsn005,hs123,Hoàng Xuân Huần,Học sinh,Học sinh bán trú,HSN-005,0377690811,Lớp 10A1 - Phòng NAM-308 - Giường G-05,Hoạt động
-hsn006,hs123,Nông Đức Duy,Học sinh,Học sinh bán trú,HSN-006,0325242301,Lớp 10A1 - Phòng NAM-308 - Giường G-06,Hoạt động
-hsn007,hs123,Hoàng Thừa Tài,Học sinh,Học sinh bán trú,HSN-007,33509143,Lớp 10A1 - Phòng NAM-308 - Giường G-07,Hoạt động
-hsn008,hs123,Hoàng Văn Ánh,Học sinh,Học sinh bán trú,HSN-008,0334172984,Lớp 10A1 - Phòng NAM-308 - Giường G-08,Hoạt động
-hsn009,hs123,Triệu Quang Vũ,Học sinh,Học sinh bán trú,HSN-009,0373502163,Lớp 10A2 - Phòng NAM-308 - Giường G-09,Hoạt động
-hsn010,hs123,Sùng Thuận Phong,Học sinh,Học sinh bán trú,HSN-010,0344448939,Lớp 10A2 - Phòng NAM-308 - Giường G-10,Hoạt động
-hsn011,hs123,Lý Quang Hùng,Học sinh,Học sinh bán trú,HSN-011,0389175004,Lớp 10A3 - Phòng NAM-308 - Giường G-11,Hoạt động
-hsn012,hs123,Đặng Minh Toan,Học sinh,Học sinh bán trú,HSN-012,0383066871,Lớp 10A3 - Phòng NAM-307 - Giường G-01,Hoạt động
-hsn013,hs123,Hoàng Gia Bảo,Học sinh,Học sinh bán trú,HSN-013,0327065011,Lớp 10A3 - Phòng NAM-307 - Giường G-02,Hoạt động
-hsn014,hs123,Hà Chí Tường,Học sinh,Học sinh bán trú,HSN-014,0357756445,Lớp 10A3 - Phòng NAM-307 - Giường G-03,Hoạt động
-hsn015,hs123,Hoàng Đức Lương,Học sinh,Học sinh bán trú,HSN-015,0339259811,Lớp 10A3 - Phòng NAM-307 - Giường G-04,Hoạt động
-hsn016,hs123,Lý Chí Kiên,Học sinh,Học sinh bán trú,HSN-016,0383819941,Lớp 10A3 - Phòng NAM-307 - Giường G-05,Hoạt động
-hsn017,hs123,Hoàng Phi Long,Học sinh,Học sinh bán trú,HSN-017,0367424987,Lớp 10A3 - Phòng NAM-307 - Giường G-06,Hoạt động
-hsn018,hs123,Đặng Quang Dũng,Học sinh,Học sinh bán trú,HSN-018,0702041505,Lớp 10A3 - Phòng NAM-307 - Giường G-07,Hoạt động
-hsn019,hs123,Bàn Minh Đức,Học sinh,Học sinh bán trú,HSN-019,,Lớp 10A3 - Phòng NAM-307 - Giường G-08,Hoạt động
-hsn020,hs123,Hoàng Hữu Duy,Học sinh,Học sinh bán trú,HSN-020,,Lớp 10A3 - Phòng NAM-307 - Giường G-09,Hoạt động
-hsn021,hs123,Nông Xuân Kiểm,Học sinh,Học sinh bán trú,HSN-021,0862705096,Lớp 10A3 - Phòng NAM-307 - Giường G-10,Hoạt động
-hsn022,hs123,Bàn Quốc Anh,Học sinh,Học sinh bán trú,HSN-022,0327590264,Lớp 10A4 - Phòng NAM-307 - Giường G-11,Hoạt động
-hsn023,hs123,Bàn Thành Nghiệp,Học sinh,Học sinh bán trú,HSN-023,0367313671,Lớp 10A4 - Phòng NAM-306 - Giường G-01,Hoạt động
-hsn024,hs123,Đặng Nguyên Long,Học sinh,Học sinh bán trú,HSN-024,0357413720,Lớp 10A4 - Phòng NAM-306 - Giường G-02,Hoạt động
-hsn025,hs123,Đặng Nguyên Lương,Học sinh,Học sinh bán trú,HSN-025,0349976830,Lớp 10A4 - Phòng NAM-306 - Giường G-03,Hoạt động
-hsn026,hs123,Hà Xuân Quang,Học sinh,Học sinh bán trú,HSN-026,0352633953,Lớp 10A4 - Phòng NAM-306 - Giường G-04,Hoạt động
-hsn027,hs123,Hoàng Trung Đức,Học sinh,Học sinh bán trú,HSN-027,0862105274,Lớp 10A4 - Phòng NAM-306 - Giường G-05,Hoạt động
-hsn028,hs123,Hoàng Văn Thượng,Học sinh,Học sinh bán trú,HSN-028,0335508944,Lớp 10A4 - Phòng NAM-306 - Giường G-06,Hoạt động
-hsn029,hs123,Bùi Đức Hiếu,Học sinh,Học sinh bán trú,HSN-029,0975994825,Lớp 10A7 - Phòng NAM-306 - Giường G-07,Hoạt động
-hsn030,hs123,Lý Văn Hiếu,Học sinh,Học sinh bán trú,HSN-030,0355298309,Lớp 10A7 - Phòng NAM-306 - Giường G-08,Hoạt động
-hsn031,hs123,Nguyễn Tiến Thành,Học sinh,Học sinh bán trú,HSN-031,,Lớp 10A7 - Phòng NAM-306 - Giường G-09,Hoạt động
-hsn032,hs123,Triệu Đức Lương,Học sinh,Học sinh bán trú,HSN-032,,Lớp 10A7 - Phòng NAM-306 - Giường G-10,Hoạt động
-hsn033,hs123,Triệu Văn Tuấn,Học sinh,Học sinh bán trú,HSN-033,,Lớp 10A7 - Phòng NAM-305 - Giường G-01,Hoạt động
-hsn034,hs123,Hoàng Quốc Tân,Học sinh,Học sinh bán trú,HSN-034,0357689190,Lớp 11A1 - Phòng NAM-305 - Giường G-02,Hoạt động
-hsn035,hs123,Cư Seo Tánh,Học sinh,Học sinh bán trú,HSN-035,0356063728,Lớp 11A1 - Phòng NAM-305 - Giường G-03,Hoạt động
-hsn036,hs123,Đặng Tuấn Anh,Học sinh,Học sinh bán trú,HSN-036,0333785199,Lớp 11A1 - Phòng NAM-305 - Giường G-04,Hoạt động
-hsn037,hs123,Hoàng đình Khải,Học sinh,Học sinh bán trú,HSN-037,0357508650,Lớp 11A1 - Phòng NAM-305 - Giường G-05,Hoạt động
-hsn038,hs123,Đoàn Bình Tin,Học sinh,Học sinh bán trú,HSN-038,0326730495,Lớp 11A2 - Phòng NAM-305 - Giường G-06,Hoạt động
-hsn039,hs123,Lý Thành Vương,Học sinh,Học sinh bán trú,HSN-039,0868556054,Lớp 11A2 - Phòng NAM-305 - Giường G-07,Hoạt động
-hsn040,hs123,Ma Seo Cương,Học sinh,Học sinh bán trú,HSN-040,,Lớp 11A2 - Phòng NAM-305 - Giường G-08,Hoạt động
-hsn041,hs123,Đặng Thanh Lâm,Học sinh,Học sinh bán trú,HSN-041,0338639155,Lớp 11A2 - Phòng NAM-305 - Giường G-09,Hoạt động
-hsn042,hs123,Nguyễn Tùng Dương,Học sinh,Học sinh bán trú,HSN-042,0818233010,Lớp 11A2 - Phòng NAM-305 - Giường G-10,Hoạt động
-hsn043,hs123,Trần Văn Cương,Học sinh,Học sinh bán trú,HSN-043,0347059024,Lớp 11A2 - Phòng NAM-305 - Giường G-11,Hoạt động
-hsn044,hs123,Triệu Tiến Chu,Học sinh,Học sinh bán trú,HSN-044,0869511475,Lớp 11A2 - Phòng NAM-304 - Giường G-01,Hoạt động
-hsn045,hs123,Hoàng Văn Yên,Học sinh,Học sinh bán trú,HSN-045,0326862213,Lớp 11A3 - Phòng NAM-304 - Giường G-02,Hoạt động
-hsn046,hs123,Trương Ngọc Quý,Học sinh,Học sinh bán trú,HSN-046,0869954329,Lớp 11A3 - Phòng NAM-304 - Giường G-03,Hoạt động
-hsn047,hs123,Triệu Kim Ngân,Học sinh,Học sinh bán trú,HSN-047,0968940910,Lớp 11A3 - Phòng NAM-304 - Giường G-04,Hoạt động
-hsn048,hs123,Nông Tài Phú,Học sinh,Học sinh bán trú,HSN-048,0788006714,Lớp 11A3 - Phòng NAM-304 - Giường G-05,Hoạt động
-hsn049,hs123,Phùng Kim Ngân,Học sinh,Học sinh bán trú,HSN-049,0375618620,Lớp 11A3 - Phòng NAM-304 - Giường G-06,Hoạt động
-hsn050,hs123,Nguyễn Tuấn Hưng,Học sinh,Học sinh bán trú,HSN-050,0343797540,Lớp 11A3 - Phòng NAM-304 - Giường G-07,Hoạt động
-hsn051,hs123,Ma A Chính,Học sinh,Học sinh bán trú,HSN-051,0368265904,Lớp 11A3 - Phòng NAM-304 - Giường G-08,Hoạt động
-hsn052,hs123,Ma Seo Minh,Học sinh,Học sinh bán trú,HSN-052,0867594844,Lớp 11A3 - Phòng NAM-304 - Giường G-09,Hoạt động
-hsn053,hs123,Nguyễn Đoàn Huy,Học sinh,Học sinh bán trú,HSN-053,0969491485,Lớp 11A3 - Phòng NAM-304 - Giường G-10,Hoạt động
-hsn054,hs123,Sầm Quyết Thắng,Học sinh,Học sinh bán trú,HSN-054,0347819042,Lớp 11A3 - Phòng NAM-304 - Giường G-11,Hoạt động
-hsn055,hs123,Lê Tiến Dũng,Học sinh,Học sinh bán trú,HSN-055,,Lớp 11A4 - Phòng NAM-303 - Giường G-01,Hoạt động
-hsn056,hs123,Lương Đình Nhật,Học sinh,Học sinh bán trú,HSN-056,,Lớp 11A4 - Phòng NAM-303 - Giường G-02,Hoạt động
-hsn057,hs123,Ma Gia Huy,Học sinh,Học sinh bán trú,HSN-057,,Lớp 11A4 - Phòng NAM-303 - Giường G-03,Hoạt động
-hsn058,hs123,Nông Quang Lê,Học sinh,Học sinh bán trú,HSN-058,,Lớp 11A4 - Phòng NAM-303 - Giường G-04,Hoạt động
-hsn059,hs123,Trần Quang Chiến,Học sinh,Học sinh bán trú,HSN-059,,Lớp 11A4 - Phòng NAM-303 - Giường G-05,Hoạt động
-hsn060,hs123,Hoàng Quốc Dân,Học sinh,Học sinh bán trú,HSN-060,0337092110,Lớp 11A4 - Phòng NAM-303 - Giường G-06,Hoạt động
-hsn061,hs123,Triệu Tiến Duy,Học sinh,Học sinh bán trú,HSN-061,,Lớp 11A4 - Phòng NAM-303 - Giường G-07,Hoạt động
-hsn062,hs123,Đặng Văn Học,Học sinh,Học sinh bán trú,HSN-062,0528043975,Lớp 11A5 - Phòng NAM-303 - Giường G-08,Hoạt động
-hsn063,hs123,Hoàng Xuân Trường,Học sinh,Học sinh bán trú,HSN-063,0339996815,Lớp 11A5 - Phòng NAM-303 - Giường G-09,Hoạt động
-hsn064,hs123,Nguyễn Sinh Hùng,Học sinh,Học sinh bán trú,HSN-064,0377027607,Lớp 11A5 - Phòng NAM-303 - Giường G-10,Hoạt động
-hsn065,hs123,Nguyễn Trịnh Quang,Học sinh,Học sinh bán trú,HSN-065,0865729436,Lớp 11A5 - Phòng NAM-303 - Giường G-11,Hoạt động
-hsn066,hs123,Triệu Hữu Dũng,Học sinh,Học sinh bán trú,HSN-066,0966588213,Lớp 11A5 - Phòng NAM-302 - Giường G-01,Hoạt động
-hsn067,hs123,Đặng Hải Nam,Học sinh,Học sinh bán trú,HSN-067,,Lớp 11A6 - Phòng NAM-302 - Giường G-02,Hoạt động
-hsn068,hs123,Hảng Thuận Phú,Học sinh,Học sinh bán trú,HSN-068,0373342490,Lớp 11A6 - Phòng NAM-302 - Giường G-03,Hoạt động
-hsn069,hs123,Hà Duy Lợi,Học sinh,Học sinh bán trú,HSN-069,0356663914,Lớp 11A7 - Phòng NAM-302 - Giường G-04,Hoạt động
-hsn070,hs123,Lý Minh Bảo,Học sinh,Học sinh bán trú,HSN-070,0333281827,Lớp 11A7 - Phòng NAM-302 - Giường G-05,Hoạt động
-hsn071,hs123,Sùng A Phong,Học sinh,Học sinh bán trú,HSN-071,0822086471,Lớp 11A7 - Phòng NAM-302 - Giường G-06,Hoạt động
-hsn072,hs123,Đặng Minh Sơn,Học sinh,Học sinh bán trú,HSN-072,0981276177,Lớp 12A1 - Phòng NAM-302 - Giường G-07,Hoạt động
-hsn073,hs123,Hảng Seo Lành,Học sinh,Học sinh bán trú,HSN-073,0867594844,Lớp 12A1 - Phòng NAM-302 - Giường G-08,Hoạt động
-hsn074,hs123,Hoàng Trọng Khôi,Học sinh,Học sinh bán trú,HSN-074,0789076768,Lớp 12A1 - Phòng NAM-302 - Giường G-09,Hoạt động
-hsn075,hs123,Tẩn Hoàng Nghiệp,Học sinh,Học sinh bán trú,HSN-075,0988611544,Lớp 12A1 - Phòng NAM-302 - Giường G-10,Hoạt động
-hsn076,hs123,Triệu Anh Quang,Học sinh,Học sinh bán trú,HSN-076,,Lớp 12A1 - Phòng NAM-301 - Giường G-01,Hoạt động
-hsn077,hs123,Vi Duy Hoàng,Học sinh,Học sinh bán trú,HSN-077,0866721046,Lớp 12A1 - Phòng NAM-301 - Giường G-02,Hoạt động
-hsn078,hs123,Đặng Văn Hiếu,Học sinh,Học sinh bán trú,HSN-078,0382253891,Lớp 12A2 - Phòng NAM-301 - Giường G-03,Hoạt động
-hsn079,hs123,Hoàng Đình Tập,Học sinh,Học sinh bán trú,HSN-079,0867982915,Lớp 12A2 - Phòng NAM-301 - Giường G-04,Hoạt động
-hsn080,hs123,Hoàng Minh Vũ,Học sinh,Học sinh bán trú,HSN-080,0364198642,Lớp 12A2 - Phòng NAM-301 - Giường G-05,Hoạt động
-hsn081,hs123,Lê Bảo Nghĩa,Học sinh,Học sinh bán trú,HSN-081,0383058557,Lớp 12A4 - Phòng NAM-301 - Giường G-06,Hoạt động
-hsn082,hs123,Nông Khánh Duy,Học sinh,Học sinh bán trú,HSN-082,,Lớp 12A4 - Phòng NAM-301 - Giường G-07,Hoạt động
-hsn083,hs123,Sầm Minh Hữu,Học sinh,Học sinh bán trú,HSN-083,0819683614,Lớp 12A4 - Phòng NAM-301 - Giường G-08,Hoạt động
-hsn084,hs123,Trần Tuấn Anh,Học sinh,Học sinh bán trú,HSN-084,0347024175,Lớp 12A4 - Phòng NAM-301 - Giường G-09,Hoạt động
-hsn085,hs123,Triệu Tiến Thắng,Học sinh,Học sinh bán trú,HSN-085,0328063484,Lớp 12A4 - Phòng NAM-301 - Giường G-10,Hoạt động
-hsn086,hs123,Bàn Duy Khoa,Học sinh,Học sinh bán trú,HSN-086,0328323191,Lớp 12A5 - Phòng NAM-301 - Giường G-11,Hoạt động
-hsn087,hs123,Bàn Thanh Chung,Học sinh,Học sinh bán trú,HSN-087,0329384292,Lớp 12A5 - Phòng NAM-205 - Giường G-01,Hoạt động
-hsn088,hs123,Hà Phúc Lâm,Học sinh,Học sinh bán trú,HSN-088,0376608278,Lớp 12A5 - Phòng NAM-205 - Giường G-02,Hoạt động
-hsn089,hs123,Hoàng Hải Duy,Học sinh,Học sinh bán trú,HSN-089,0356516499,Lớp 12A5 - Phòng NAM-205 - Giường G-03,Hoạt động
-hsn090,hs123,Sầm Minh Đức,Học sinh,Học sinh bán trú,HSN-090,,Lớp 12A5 - Phòng NAM-205 - Giường G-04,Hoạt động
-hsn091,hs123,Triệu Qúy Đức,Học sinh,Học sinh bán trú,HSN-091,0375967056,Lớp 12A5 - Phòng NAM-205 - Giường G-05,Hoạt động
-hsn092,hs123,Vũ Duy Khánh,Học sinh,Học sinh bán trú,HSN-092,0357071304,Lớp 12A5 - Phòng NAM-205 - Giường G-06,Hoạt động
-hsn093,hs123,La Ngọc Tuyến,Học sinh,Học sinh bán trú,HSN-093,0327883495,Lớp 12A7 - Phòng NAM-205 - Giường G-07,Hoạt động
-hsn094,hs123,Triệu Trung Quý,Học sinh,Học sinh bán trú,HSN-094,,Lớp 12A3 - Phòng NAM-205 - Giường G-08,Hoạt động
-hsn095,hs123,Hoàng Trần Hiệp,Học sinh,Học sinh bán trú,HSN-095,0327711651,Lớp 12A3 - Phòng NAM-205 - Giường G-09,Hoạt động
-hsf001,hs123,Triệu Thị Hiền,Học sinh,Học sinh bán trú,HSF-001,0978083718,Lớp 10A1 - Phòng NU-401 - Giường G-01,Hoạt động
-hsf002,hs123,Lý Lan Phương,Học sinh,Học sinh bán trú,HSF-002,0369080231,Lớp 10A1 - Phòng NU-401 - Giường G-02,Hoạt động
-hsf003,hs123,Lý Thị Thảo,Học sinh,Học sinh bán trú,HSF-003,0339869621,Lớp 10A1 - Phòng NU-401 - Giường G-03,Hoạt động
-hsf004,hs123,Triệu Thị Thuý Hằng,Học sinh,Học sinh bán trú,HSF-004,0368814711,Lớp 10A1 - Phòng NU-401 - Giường G-04,Hoạt động
-hsf005,hs123,Phùng Thị Khách,Học sinh,Học sinh bán trú,HSF-005,0394515961,Lớp 10A1 - Phòng NU-401 - Giường G-05,Hoạt động
-hsf006,hs123,Triệu Thu Yến,Học sinh,Học sinh bán trú,HSF-006,0395423735,Lớp 10A1 - Phòng NU-401 - Giường G-06,Hoạt động
-hsf007,hs123,Lý Bảo Thanh,Học sinh,Học sinh bán trú,HSF-007,0387266574,Lớp 10A1 - Phòng NU-401 - Giường G-07,Hoạt động
-hsf008,hs123,Hà Tố Uyên,Học sinh,Học sinh bán trú,HSF-008,0362800201,Lớp 10A1 - Phòng NU-401 - Giường G-08,Hoạt động
-hsf009,hs123,Hoàng Mỹ Lệ,Học sinh,Học sinh bán trú,HSF-009,0328958260,Lớp 10A1 - Phòng NU-401 - Giường G-09,Hoạt động
-hsf010,hs123,Lương Thị Thu Hoài,Học sinh,Học sinh bán trú,HSF-010,0354059236,Lớp 10A1 - Phòng NU-401 - Giường G-10,Hoạt động
-hsf011,hs123,Nguyễn Thị Bích Hợp,Học sinh,Học sinh bán trú,HSF-011,0358263884,Lớp 10A1 - Phòng NU-401 - Giường G-11,Hoạt động
-hsf012,hs123,Sùng Thị Yến Chi,Học sinh,Học sinh bán trú,HSF-012,,Lớp 10A2 - Phòng NU-402 - Giường G-01,Hoạt động
-hsf013,hs123,Lý Quỳnh Anh,Học sinh,Học sinh bán trú,HSF-013,0365134102,Lớp 10A2 - Phòng NU-402 - Giường G-02,Hoạt động
-hsf014,hs123,Ma Thị Thiệu Mấn,Học sinh,Học sinh bán trú,HSF-014,0927106212,Lớp 10A2 - Phòng NU-402 - Giường G-03,Hoạt động
-hsf015,hs123,Lý Thị Tâm Như,Học sinh,Học sinh bán trú,HSF-015,0328939607,Lớp 10A2 - Phòng NU-402 - Giường G-04,Hoạt động
-hsf016,hs123,Lý Thị Mẫn,Học sinh,Học sinh bán trú,HSF-016,0386843454,Lớp 10A3 - Phòng NU-402 - Giường G-05,Hoạt động
-hsf017,hs123,Giàng Thị Thu Trang,Học sinh,Học sinh bán trú,HSF-017,0387326153,Lớp 10A3 - Phòng NU-402 - Giường G-06,Hoạt động
-hsf018,hs123,Triệu Phương Thảo,Học sinh,Học sinh bán trú,HSF-018,,Lớp 10A3 - Phòng NU-402 - Giường G-07,Hoạt động
-hsf019,hs123,Giàng Thị Thoại,Học sinh,Học sinh bán trú,HSF-019,0337400273,Lớp 10A3 - Phòng NU-402 - Giường G-08,Hoạt động
-hsf020,hs123,Đặng Thùy Tâm,Học sinh,Học sinh bán trú,HSF-020,0356996937,Lớp 10A3 - Phòng NU-402 - Giường G-09,Hoạt động
-hsf021,hs123,Phùng Thị Thiên Thu,Học sinh,Học sinh bán trú,HSF-021,0343364542,Lớp 10A3 - Phòng NU-402 - Giường G-10,Hoạt động
-hsf022,hs123,Hoàng Thị Việt Anh,Học sinh,Học sinh bán trú,HSF-022,,Lớp 10A3 - Phòng NU-402 - Giường G-11,Hoạt động
-hsf023,hs123,Trần Thị Khuyên,Học sinh,Học sinh bán trú,HSF-023,0876031730,Lớp 10A3 - Phòng NU-402 - Giường G-12,Hoạt động
-hsf024,hs123,Triệu Thị Hà Vy,Học sinh,Học sinh bán trú,HSF-024,0358377993,Lớp 10A3 - Phòng NU-403 - Giường G-01,Hoạt động
-hsf025,hs123,Bàn Thị Thanh Trúc,Học sinh,Học sinh bán trú,HSF-025,0345533218,Lớp 10A3 - Phòng NU-403 - Giường G-02,Hoạt động
-hsf026,hs123,Tô Thị Khánh Ngọc,Học sinh,Học sinh bán trú,HSF-026,0397626423,Lớp 10A3 - Phòng NU-403 - Giường G-03,Hoạt động
-hsf027,hs123,Triệu Thị Ánh,Học sinh,Học sinh bán trú,HSF-027,,Lớp 10A4 - Phòng NU-403 - Giường G-04,Hoạt động
-hsf028,hs123,Bàn Thị Hoa,Học sinh,Học sinh bán trú,HSF-028,0868654376,Lớp 10A4 - Phòng NU-403 - Giường G-05,Hoạt động
-hsf029,hs123,Triệu Thị Huyền,Học sinh,Học sinh bán trú,HSF-029,0387053047,Lớp 10A4 - Phòng NU-403 - Giường G-06,Hoạt động
-hsf030,hs123,Phan Quỳnh Nga,Học sinh,Học sinh bán trú,HSF-030,0396963631,Lớp 10A4 - Phòng NU-403 - Giường G-07,Hoạt động
-hsf031,hs123,Hoàng Thị Nhi,Học sinh,Học sinh bán trú,HSF-031,0325103423,Lớp 10A4 - Phòng NU-403 - Giường G-08,Hoạt động
-hsf032,hs123,Đặng Thị Nhung,Học sinh,Học sinh bán trú,HSF-032,0382814837,Lớp 10A4 - Phòng NU-403 - Giường G-09,Hoạt động
-hsf033,hs123,Hoàng Thu Phương,Học sinh,Học sinh bán trú,HSF-033,0384060643,Lớp 10A4 - Phòng NU-403 - Giường G-10,Hoạt động
-hsf034,hs123,Triệu Phương Thảo,Học sinh,Học sinh bán trú,HSF-034,0365504034,Lớp 10A4 - Phòng NU-403 - Giường G-11,Hoạt động
-hsf035,hs123,Triệu Thị Thu Thuỷ,Học sinh,Học sinh bán trú,HSF-035,0327475431,Lớp 10A4 - Phòng NU-403 - Giường G-12,Hoạt động
-hsf036,hs123,Hoàng Bảo Trân,Học sinh,Học sinh bán trú,HSF-036,0342111506,Lớp 10A4 - Phòng NU-404 - Giường G-01,Hoạt động
-hsf037,hs123,Lò Thị Mai Hương,Học sinh,Học sinh bán trú,HSF-037,,Lớp 10A6 - Phòng NU-404 - Giường G-02,Hoạt động
-hsf038,hs123,Triệu Phương Anh,Học sinh,Học sinh bán trú,HSF-038,,Lớp 10A7 - Phòng NU-404 - Giường G-03,Hoạt động
-hsf039,hs123,Triệu Phương Nhi,Học sinh,Học sinh bán trú,HSF-039,0377173493,Lớp 10A7 - Phòng NU-404 - Giường G-04,Hoạt động
-hsf040,hs123,Triệu Thị Hồng Thắm,Học sinh,Học sinh bán trú,HSF-040,,Lớp 10A7 - Phòng NU-404 - Giường G-05,Hoạt động
-hsf041,hs123,Lâm Hoài Thương,Học sinh,Học sinh bán trú,HSF-041,,Lớp 10A7 - Phòng NU-404 - Giường G-06,Hoạt động
-hsf042,hs123,Lê Ngọc Ánh,Học sinh,Học sinh bán trú,HSF-042,,Lớp 10A7 - Phòng NU-404 - Giường G-07,Hoạt động
-hsf043,hs123,Triệu Thiên My,Học sinh,Học sinh bán trú,HSF-043,,Lớp 10A7 - Phòng NU-404 - Giường G-08,Hoạt động
-hsf044,hs123,Trương Thị Hoa,Học sinh,Học sinh bán trú,HSF-044,,Lớp 10A7 - Phòng NU-404 - Giường G-09,Hoạt động
-hsf045,hs123,Lý Bảo Linh,Học sinh,Học sinh bán trú,HSF-045,,Lớp 10A7 - Phòng NU-404 - Giường G-10,Hoạt động
-hsf046,hs123,Đặng Yến Nhi,Học sinh,Học sinh bán trú,HSF-046,,Lớp 10A7 - Phòng NU-404 - Giường G-11,Hoạt động
-hsf047,hs123,Nguyễn Khánh Linh,Học sinh,Học sinh bán trú,HSF-047,0865241865,Lớp 11A1 - Phòng NU-405 - Giường G-01,Hoạt động
-hsf048,hs123,Ma Thị Hoa,Học sinh,Học sinh bán trú,HSF-048,0388897314,Lớp 11A1 - Phòng NU-405 - Giường G-02,Hoạt động
-hsf049,hs123,Hoàng Hải Yến,Học sinh,Học sinh bán trú,HSF-049,0392932010,Lớp 11A1 - Phòng NU-405 - Giường G-03,Hoạt động
-hsf050,hs123,Lục Mai Phương,Học sinh,Học sinh bán trú,HSF-050,0352343099,Lớp 11A1 - Phòng NU-405 - Giường G-04,Hoạt động
-hsf051,hs123,Trương Thủy Hoàn,Học sinh,Học sinh bán trú,HSF-051,0372604095,Lớp 11A1 - Phòng NU-405 - Giường G-05,Hoạt động
-hsf052,hs123,Nông Thị Quý,Học sinh,Học sinh bán trú,HSF-052,0375547964,Lớp 11A1 - Phòng NU-405 - Giường G-06,Hoạt động
-hsf053,hs123,Bàn Thị Hồng Thêm,Học sinh,Học sinh bán trú,HSF-053,0376705948,Lớp 11A2 - Phòng NU-405 - Giường G-07,Hoạt động
-hsf054,hs123,Hoàng Thị Hồng Nhung,Học sinh,Học sinh bán trú,HSF-054,0337685142,Lớp 11A2 - Phòng NU-405 - Giường G-08,Hoạt động
-hsf055,hs123,Hoàng Thuý Tiên,Học sinh,Học sinh bán trú,HSF-055,0981514010,Lớp 11A2 - Phòng NU-405 - Giường G-09,Hoạt động
-hsf056,hs123,Đặng Khánh Linh,Học sinh,Học sinh bán trú,HSF-056,0386849760,Lớp 11A2 - Phòng NU-405 - Giường G-10,Hoạt động
-hsf057,hs123,Ma Thị Nga,Học sinh,Học sinh bán trú,HSF-057,0337271613,Lớp 11A2 - Phòng NU-405 - Giường G-11,Hoạt động
-hsf058,hs123,Ma Thị Hương,Học sinh,Học sinh bán trú,HSF-058,0362422816,Lớp 11A2 - Phòng NU-405 - Giường G-12,Hoạt động
-hsf059,hs123,Nguyễn Minh Tâm,Học sinh,Học sinh bán trú,HSF-059,0965430664,Lớp 11A2 - Phòng NU-406 - Giường G-01,Hoạt động
-hsf060,hs123,Sùng Thuý Liên,Học sinh,Học sinh bán trú,HSF-060,0867904896,Lớp 11A2 - Phòng NU-406 - Giường G-02,Hoạt động
-hsf061,hs123,Hoàng Ngọc Diệp,Học sinh,Học sinh bán trú,HSF-061,0343961184,Lớp 11A2 - Phòng NU-406 - Giường G-03,Hoạt động
-hsf062,hs123,Hoàng Thị Nhung,Học sinh,Học sinh bán trú,HSF-062,0366925813,Lớp 11A2 - Phòng NU-406 - Giường G-04,Hoạt động
-hsf063,hs123,Đặng Thị Hoa,Học sinh,Học sinh bán trú,HSF-063,0969052416,Lớp 11A3 - Phòng NU-406 - Giường G-05,Hoạt động
-hsf064,hs123,Lê Như Quỳnh,Học sinh,Học sinh bán trú,HSF-064,0988476042,Lớp 11A3 - Phòng NU-406 - Giường G-06,Hoạt động
-hsf065,hs123,Tráng Thị Đại,Học sinh,Học sinh bán trú,HSF-065,,Lớp 11A4 - Phòng NU-406 - Giường G-07,Hoạt động
-hsf066,hs123,Triệu Thị Thu Hiền,Học sinh,Học sinh bán trú,HSF-066,,Lớp 11A4 - Phòng NU-406 - Giường G-08,Hoạt động
-hsf067,hs123,Đặng Hồng Hoa,Học sinh,Học sinh bán trú,HSF-067,,Lớp 11A4 - Phòng NU-406 - Giường G-09,Hoạt động
-hsf068,hs123,Hoàng Thị Hồng Mai,Học sinh,Học sinh bán trú,HSF-068,,Lớp 11A4 - Phòng NU-406 - Giường G-10,Hoạt động
-hsf069,hs123,Đinh Thị Hồng Thái,Học sinh,Học sinh bán trú,HSF-069,,Lớp 11A4 - Phòng NU-406 - Giường G-11,Hoạt động
-hsf070,hs123,Triệu Thanh Thảo,Học sinh,Học sinh bán trú,HSF-070,,Lớp 11A4 - Phòng NU-406 - Giường G-12,Hoạt động
-hsf071,hs123,Đặng Hồng Thư,Học sinh,Học sinh bán trú,HSF-071,,Lớp 11A4 - Phòng NU-407 - Giường G-01,Hoạt động
-hsf072,hs123,Đặng Thị Vân,Học sinh,Học sinh bán trú,HSF-072,,Lớp 11A4 - Phòng NU-407 - Giường G-02,Hoạt động
-hsf073,hs123,Hoàng Tố Vân,Học sinh,Học sinh bán trú,HSF-073,,Lớp 11A4 - Phòng NU-407 - Giường G-03,Hoạt động
-hsf074,hs123,Lý Hồng Mỹ,Học sinh,Học sinh bán trú,HSF-074,,Lớp 11A4 - Phòng NU-407 - Giường G-04,Hoạt động
-hsf075,hs123,Triệu Thùy Linh,Học sinh,Học sinh bán trú,HSF-075,0376596804,Lớp 11A5 - Phòng NU-407 - Giường G-05,Hoạt động
-hsf076,hs123,Lê Thị Hoài,Học sinh,Học sinh bán trú,HSF-076,0798746877,Lớp 11A6 - Phòng NU-407 - Giường G-06,Hoạt động
-hsf077,hs123,Lý Thị Yến,Học sinh,Học sinh bán trú,HSF-077,0338364398,Lớp 11A6 - Phòng NU-407 - Giường G-07,Hoạt động
-hsf078,hs123,Trần Thị Thu,Học sinh,Học sinh bán trú,HSF-078,0364201038,Lớp 11A7 - Phòng NU-407 - Giường G-08,Hoạt động
-hsf079,hs123,Tráng Thị Dung,Học sinh,Học sinh bán trú,HSF-079,0373502744,Lớp 11A7 - Phòng NU-407 - Giường G-09,Hoạt động
-hsf080,hs123,Đặng Thị Anh Đào,Học sinh,Học sinh bán trú,HSF-080,0389864250,Lớp 11A7 - Phòng NU-407 - Giường G-10,Hoạt động
-hsf081,hs123,Hoàng Thị Thúy Kiều,Học sinh,Học sinh bán trú,HSF-081,0354751347,Lớp 11A7 - Phòng NU-407 - Giường G-11,Hoạt động
-hsf082,hs123,Hoàng Bảo Ngọc,Học sinh,Học sinh bán trú,HSF-082,0342128230,Lớp 11A7 - Phòng NU-407 - Giường G-12,Hoạt động
-hsf083,hs123,Hoàng Thị Phương,Học sinh,Học sinh bán trú,HSF-083,0862516497,Lớp 11A7 - Phòng NU-408 - Giường G-01,Hoạt động
-hsf084,hs123,Bàn Thanh Thuý,Học sinh,Học sinh bán trú,HSF-084,0342986680,Lớp 11A7 - Phòng NU-408 - Giường G-02,Hoạt động
-hsf085,hs123,Đặng Thị Thanh Vân,Học sinh,Học sinh bán trú,HSF-085,0342363155,Lớp 12A1 - Phòng NU-408 - Giường G-03,Hoạt động
-hsf086,hs123,Nông Thị Ánh Nguyệt,Học sinh,Học sinh bán trú,HSF-086,0862165844,Lớp 12A1 - Phòng NU-408 - Giường G-04,Hoạt động
-hsf087,hs123,Phan Thị Yến nhi,Học sinh,Học sinh bán trú,HSF-087,,Lớp 12A1 - Phòng NU-408 - Giường G-05,Hoạt động
-hsf088,hs123,Lý Thanh Hoa,Học sinh,Học sinh bán trú,HSF-088,0971365265,Lớp 12A1 - Phòng NU-408 - Giường G-06,Hoạt động
-hsf089,hs123,Đặng Thị Lan Anh,Học sinh,Học sinh bán trú,HSF-089,0363227019,Lớp 12A1 - Phòng NU-408 - Giường G-07,Hoạt động
-hsf090,hs123,Hoàng Thị Thu,Học sinh,Học sinh bán trú,HSF-090,0328516810,Lớp 12A2 - Phòng NU-408 - Giường G-08,Hoạt động
-hsf091,hs123,Lý Thị Nga,Học sinh,Học sinh bán trú,HSF-091,0345955260,Lớp 12A2 - Phòng NU-408 - Giường G-09,Hoạt động
-hsf092,hs123,Bàn Thúy Kim,Học sinh,Học sinh bán trú,HSF-092,0395251073,Lớp 12A2 - Phòng NU-408 - Giường G-10,Hoạt động
-hsf093,hs123,Triệu Thị Thanh Huyên,Học sinh,Học sinh bán trú,HSF-093,0976871507,Lớp 12A2 - Phòng NU-408 - Giường G-11,Hoạt động
-hsf094,hs123,Hoàng Thị Thanh Mai,Học sinh,Học sinh bán trú,HSF-094,0867569315,Lớp 12A2 - Phòng NU-408 - Giường G-12,Hoạt động
-hsf095,hs123,Đặng Thị Kiều Trang,Học sinh,Học sinh bán trú,HSF-095,0906138963,Lớp 12A2 - Phòng NU-207 - Giường G-01,Hoạt động
-hsf096,hs123,Bàn Thị Kim Phượng,Học sinh,Học sinh bán trú,HSF-096,0348876307,Lớp 12A2 - Phòng NU-207 - Giường G-02,Hoạt động
-hsf097,hs123,Nguyễn Thùy Trâm,Học sinh,Học sinh bán trú,HSF-097,0379378649,Lớp 12A2 - Phòng NU-207 - Giường G-03,Hoạt động
-hsf098,hs123,Lí Thị Lan Anh,Học sinh,Học sinh bán trú,HSF-098,0364386771,Lớp 12A3 - Phòng NU-207 - Giường G-04,Hoạt động
-hsf099,hs123,Triệu Thanh Thư,Học sinh,Học sinh bán trú,HSF-099,0971068785,Lớp 12A3 - Phòng NU-207 - Giường G-05,Hoạt động
-hsf100,hs123,Chu Thị Hải Yến,Học sinh,Học sinh bán trú,HSF-100,0362481095,Lớp 12A3 - Phòng NU-207 - Giường G-06,Hoạt động
-hsf101,hs123,Đặng Thị Xuyên,Học sinh,Học sinh bán trú,HSF-101,0376813920,Lớp 12A3 - Phòng NU-207 - Giường G-07,Hoạt động
-hsf102,hs123,Hà Thị Nguyên,Học sinh,Học sinh bán trú,HSF-102,0353810009,Lớp 12A3 - Phòng NU-207 - Giường G-08,Hoạt động
-hsf103,hs123,Chu Bích Loan,Học sinh,Học sinh bán trú,HSF-103,0335470790,Lớp 12A4 - Phòng NU-207 - Giường G-09,Hoạt động
-hsf104,hs123,Hoàng Thị Nhài,Học sinh,Học sinh bán trú,HSF-104,0353940311,Lớp 12A4 - Phòng NU-207 - Giường G-10,Hoạt động
-hsf105,hs123,Hoàng Thị Phương Oanh,Học sinh,Học sinh bán trú,HSF-105,0383207751,Lớp 12A4 - Phòng NU-208 - Giường G-01,Hoạt động
-hsf106,hs123,Triệu Thị Sinh,Học sinh,Học sinh bán trú,HSF-106,0333446323,Lớp 12A4 - Phòng NU-208 - Giường G-02,Hoạt động
-hsf107,hs123,Hoàng Thị Mừng,Học sinh,Học sinh bán trú,HSF-107,,Lớp 12A4 - Phòng NU-208 - Giường G-03,Hoạt động
-hsf108,hs123,Đặng Thị Nhung,Học sinh,Học sinh bán trú,HSF-108,0773033260,Lớp 12A6 - Phòng NU-208 - Giường G-04,Hoạt động
-hsf109,hs123,Sầm Khánh Ly,Học sinh,Học sinh bán trú,HSF-109,0702096831,Lớp 12A7 - Phòng NU-208 - Giường G-05,Hoạt động
-hsf110,hs123,La Thị Thanh Huyên,Học sinh,Học sinh bán trú,HSF-110,0396971718,Lớp 12A7 - Phòng NU-208 - Giường G-06,Hoạt động
-hsf111,hs123,Đặng Thị Yến Nhi,Học sinh,Học sinh bán trú,HSF-111,0373840285,Lớp 12A7 - Phòng NU-208 - Giường G-07,Hoạt động
-hsf112,hs123,Lương Thị Lý,Học sinh,Học sinh bán trú,HSF-112,0329462258,Lớp 12A7 - Phòng NU-208 - Giường G-08,Hoạt động
-ph_hsn001,ph123,Bàn Văn Trịnh (PH Bàn Hải Phong),Phụ huynh học sinh,Phụ huynh học sinh Bàn Hải Phong,HSN-001,0867106916,Phụ huynh em Bàn Hải Phong (Lớp 10A1),Hoạt động
-ph_hsn002,ph123,Đặng Văn Hoàng (PH Đặng Đức Khiêm),Phụ huynh học sinh,Phụ huynh học sinh Đặng Đức Khiêm,HSN-002,0977183836,Phụ huynh em Đặng Đức Khiêm (Lớp 10A1),Hoạt động
-ph_hsn003,ph123,Hoàng Văn Nhiễu (PH Hoàng Minh Quân),Phụ huynh học sinh,Phụ huynh học sinh Hoàng Minh Quân,HSN-003,0971994864,Phụ huynh em Hoàng Minh Quân (Lớp 10A1),Hoạt động
-ph_hsn004,ph123,Hoàng Văn Hải (PH Hoàng Quốc Phòng),Phụ huynh học sinh,Phụ huynh học sinh Hoàng Quốc Phòng,HSN-004,0387149387,Phụ huynh em Hoàng Quốc Phòng (Lớp 10A1),Hoạt động
-ph_hsn005,ph123,Hoàng Văn Hoà (PH Hoàng Xuân Huần),Phụ huynh học sinh,Phụ huynh học sinh Hoàng Xuân Huần,HSN-005,0365140211,Phụ huynh em Hoàng Xuân Huần (Lớp 10A1),Hoạt động
-ph_hsn006,ph123,Nông Ton Pham (PH Nông Đức Duy),Phụ huynh học sinh,Phụ huynh học sinh Nông Đức Duy,HSN-006,0366675523,Phụ huynh em Nông Đức Duy (Lớp 10A1),Hoạt động
-ph_hsn007,ph123,Hoàng Xuân Lâm (PH Hoàng Thừa Tài),Phụ huynh học sinh,Phụ huynh học sinh Hoàng Thừa Tài,HSN-007,0335402730,Phụ huynh em Hoàng Thừa Tài (Lớp 10A1),Hoạt động
-ph_hsn008,ph123,Hoàng Văn Hoàn (PH Hoàng Văn Ánh),Phụ huynh học sinh,Phụ huynh học sinh Hoàng Văn Ánh,HSN-008,0336821553,Phụ huynh em Hoàng Văn Ánh (Lớp 10A1),Hoạt động
-ph_hsn009,ph123,Triệu Công Đoàn (PH Triệu Quang Vũ),Phụ huynh học sinh,Phụ huynh học sinh Triệu Quang Vũ,HSN-009,0382528034,Phụ huynh em Triệu Quang Vũ (Lớp 10A2),Hoạt động
-ph_hsn010,ph123,Sùng A Giáo (PH Sùng Thuận Phong),Phụ huynh học sinh,Phụ huynh học sinh Sùng Thuận Phong,HSN-010,0382221652,Phụ huynh em Sùng Thuận Phong (Lớp 10A2),Hoạt động
-ph_hsn011,ph123,Lý Văn Thành (PH Lý Quang Hùng),Phụ huynh học sinh,Phụ huynh học sinh Lý Quang Hùng,HSN-011,0985125102,Phụ huynh em Lý Quang Hùng (Lớp 10A3),Hoạt động
-ph_hsn012,ph123,Đặng Văn Túc (PH Đặng Minh Toan),Phụ huynh học sinh,Phụ huynh học sinh Đặng Minh Toan,HSN-012,0392724342,Phụ huynh em Đặng Minh Toan (Lớp 10A3),Hoạt động
-ph_hsn013,ph123,Hoàng Văn Tuyến (PH Hoàng Gia Bảo),Phụ huynh học sinh,Phụ huynh học sinh Hoàng Gia Bảo,HSN-013,0337287811,Phụ huynh em Hoàng Gia Bảo (Lớp 10A3),Hoạt động
-ph_hsn014,ph123,Hà Văn Hướng (PH Hà Chí Tường),Phụ huynh học sinh,Phụ huynh học sinh Hà Chí Tường,HSN-014,0345554070,Phụ huynh em Hà Chí Tường (Lớp 10A3),Hoạt động
-ph_hsn015,ph123,Hoàng Văn Thành (PH Hoàng Đức Lương),Phụ huynh học sinh,Phụ huynh học sinh Hoàng Đức Lương,HSN-015,0362754731,Phụ huynh em Hoàng Đức Lương (Lớp 10A3),Hoạt động
-ph_hsn016,ph123,Lý Văn Sơn (PH Lý Chí Kiên),Phụ huynh học sinh,Phụ huynh học sinh Lý Chí Kiên,HSN-016,0385305641,Phụ huynh em Lý Chí Kiên (Lớp 10A3),Hoạt động
-ph_hsn017,ph123,Hoàng Văn Hằng (PH Hoàng Phi Long),Phụ huynh học sinh,Phụ huynh học sinh Hoàng Phi Long,HSN-017,0977815398,Phụ huynh em Hoàng Phi Long (Lớp 10A3),Hoạt động
-ph_hsn018,ph123,Đặng Văn Tiên (PH Đặng Quang Dũng),Phụ huynh học sinh,Phụ huynh học sinh Đặng Quang Dũng,HSN-018,0906194200,Phụ huynh em Đặng Quang Dũng (Lớp 10A3),Hoạt động
-ph_hsn019,ph123,Bàn Văn May (PH Bàn Minh Đức),Phụ huynh học sinh,Phụ huynh học sinh Bàn Minh Đức,HSN-019,0388039801,Phụ huynh em Bàn Minh Đức (Lớp 10A3),Hoạt động
-ph_hsn020,ph123,Hoàng Văn Đức (PH Hoàng Hữu Duy),Phụ huynh học sinh,Phụ huynh học sinh Hoàng Hữu Duy,HSN-020,0964141142,Phụ huynh em Hoàng Hữu Duy (Lớp 10A3),Hoạt động
-ph_hsn021,ph123,Nông Văn Đại (PH Nông Xuân Kiểm),Phụ huynh học sinh,Phụ huynh học sinh Nông Xuân Kiểm,HSN-021,0364247326,Phụ huynh em Nông Xuân Kiểm (Lớp 10A3),Hoạt động
-ph_hsn022,ph123,Nguyễn Duy Thưởng (PH Bàn Quốc Anh),Phụ huynh học sinh,Phụ huynh học sinh Bàn Quốc Anh,HSN-022,0868640391,Phụ huynh em Bàn Quốc Anh (Lớp 10A4),Hoạt động
-ph_hsn023,ph123,Bàn Ton San (PH Bàn Thành Nghiệp),Phụ huynh học sinh,Phụ huynh học sinh Bàn Thành Nghiệp,HSN-023,0359845021,Phụ huynh em Bàn Thành Nghiệp (Lớp 10A4),Hoạt động
-ph_hsn024,ph123,Đặng Văn Hùng (PH Đặng Nguyên Long),Phụ huynh học sinh,Phụ huynh học sinh Đặng Nguyên Long,HSN-024,0966231870,Phụ huynh em Đặng Nguyên Long (Lớp 10A4),Hoạt động
-ph_hsn025,ph123,Hoàng Văn Ngợi (PH Đặng Nguyên Lương),Phụ huynh học sinh,Phụ huynh học sinh Đặng Nguyên Lương,HSN-025,0915586635,Phụ huynh em Đặng Nguyên Lương (Lớp 10A4),Hoạt động
-ph_hsn026,ph123,Hà Văn Long (PH Hà Xuân Quang),Phụ huynh học sinh,Phụ huynh học sinh Hà Xuân Quang,HSN-026,0359615338,Phụ huynh em Hà Xuân Quang (Lớp 10A4),Hoạt động
-ph_hsn027,ph123,Hoàng Văn Huỳnh (PH Hoàng Trung Đức),Phụ huynh học sinh,Phụ huynh học sinh Hoàng Trung Đức,HSN-027,0394977390,Phụ huynh em Hoàng Trung Đức (Lớp 10A4),Hoạt động
-ph_hsn028,ph123,Hoàng văn Hoàng (PH Hoàng Văn Thượng),Phụ huynh học sinh,Phụ huynh học sinh Hoàng Văn Thượng,HSN-028,0968022730,Phụ huynh em Hoàng Văn Thượng (Lớp 10A4),Hoạt động
-ph_hsn029,ph123,Bùi Văn Minh (PH Bùi Đức Hiếu),Phụ huynh học sinh,Phụ huynh học sinh Bùi Đức Hiếu,HSN-029,0879005432,Phụ huynh em Bùi Đức Hiếu (Lớp 10A7),Hoạt động
-ph_hsn030,ph123,Lý Văn Đức (PH Lý Văn Hiếu),Phụ huynh học sinh,Phụ huynh học sinh Lý Văn Hiếu,HSN-030,0386690111,Phụ huynh em Lý Văn Hiếu (Lớp 10A7),Hoạt động
-ph_hsn031,ph123,Nguyễn Văn Tý (PH Nguyễn Tiến Thành),Phụ huynh học sinh,Phụ huynh học sinh Nguyễn Tiến Thành,HSN-031,0813658987,Phụ huynh em Nguyễn Tiến Thành (Lớp 10A7),Hoạt động
-ph_hsn032,ph123,Triệu Văn Phong (PH Triệu Đức Lương),Phụ huynh học sinh,Phụ huynh học sinh Triệu Đức Lương,HSN-032,0337554986,Phụ huynh em Triệu Đức Lương (Lớp 10A7),Hoạt động
-ph_hsn033,ph123,Triệu Tòn Khách (PH Triệu Văn Tuấn),Phụ huynh học sinh,Phụ huynh học sinh Triệu Văn Tuấn,HSN-033,0359796861,Phụ huynh em Triệu Văn Tuấn (Lớp 10A7),Hoạt động
-ph_hsn034,ph123,Hoàng Văn Tuyệt (PH Hoàng Quốc Tân),Phụ huynh học sinh,Phụ huynh học sinh Hoàng Quốc Tân,HSN-034,0986295990,Phụ huynh em Hoàng Quốc Tân (Lớp 11A1),Hoạt động
-ph_hsn035,ph123,Cư Seo Giả (PH Cư Seo Tánh),Phụ huynh học sinh,Phụ huynh học sinh Cư Seo Tánh,HSN-035,0355802206,Phụ huynh em Cư Seo Tánh (Lớp 11A1),Hoạt động
-ph_hsn036,ph123,Đặng Quang lợi (PH Đặng Tuấn Anh),Phụ huynh học sinh,Phụ huynh học sinh Đặng Tuấn Anh,HSN-036,0986391620,Phụ huynh em Đặng Tuấn Anh (Lớp 11A1),Hoạt động
-ph_hsn037,ph123,Hoàng văn nhu (PH Hoàng đình Khải),Phụ huynh học sinh,Phụ huynh học sinh Hoàng đình Khải,HSN-037,0362013615,Phụ huynh em Hoàng đình Khải (Lớp 11A1),Hoạt động
-ph_hsn038,ph123,Đoàn Xuân Hưng (PH Đoàn Bình Tin),Phụ huynh học sinh,Phụ huynh học sinh Đoàn Bình Tin,HSN-038,0362615095,Phụ huynh em Đoàn Bình Tin (Lớp 11A2),Hoạt động
-ph_hsn039,ph123,Lý Văn Bắc (PH Lý Thành Vương),Phụ huynh học sinh,Phụ huynh học sinh Lý Thành Vương,HSN-039,0987220421,Phụ huynh em Lý Thành Vương (Lớp 11A2),Hoạt động
-ph_hsn040,ph123,Ma Seo Vẳng (PH Ma Seo Cương),Phụ huynh học sinh,Phụ huynh học sinh Ma Seo Cương,HSN-040,0336161311,Phụ huynh em Ma Seo Cương (Lớp 11A2),Hoạt động
-ph_hsn041,ph123,ĐặngVăn Thắng (PH Đặng Thanh Lâm),Phụ huynh học sinh,Phụ huynh học sinh Đặng Thanh Lâm,HSN-041,0961252844,Phụ huynh em Đặng Thanh Lâm (Lớp 11A2),Hoạt động
-ph_hsn042,ph123,Nguyễn Văn Sơn (PH Nguyễn Tùng Dương),Phụ huynh học sinh,Phụ huynh học sinh Nguyễn Tùng Dương,HSN-042,0375591987,Phụ huynh em Nguyễn Tùng Dương (Lớp 11A2),Hoạt động
-ph_hsn043,ph123,Trần Văn Biên (PH Trần Văn Cương),Phụ huynh học sinh,Phụ huynh học sinh Trần Văn Cương,HSN-043,0382263861,Phụ huynh em Trần Văn Cương (Lớp 11A2),Hoạt động
-ph_hsn044,ph123,Triệu Văn Minh (PH Triệu Tiến Chu),Phụ huynh học sinh,Phụ huynh học sinh Triệu Tiến Chu,HSN-044,0373021933,Phụ huynh em Triệu Tiến Chu (Lớp 11A2),Hoạt động
-ph_hsn045,ph123,Hoàng Văn Nhất (PH Hoàng Văn Yên),Phụ huynh học sinh,Phụ huynh học sinh Hoàng Văn Yên,HSN-045,0326862213,Phụ huynh em Hoàng Văn Yên (Lớp 11A3),Hoạt động
-ph_hsn046,ph123,Trương Văn Hùng (PH Trương Ngọc Quý),Phụ huynh học sinh,Phụ huynh học sinh Trương Ngọc Quý,HSN-046,0332167706,Phụ huynh em Trương Ngọc Quý (Lớp 11A3),Hoạt động
-ph_hsn047,ph123,Triệu Văn Hai (PH Triệu Kim Ngân),Phụ huynh học sinh,Phụ huynh học sinh Triệu Kim Ngân,HSN-047,0339005679,Phụ huynh em Triệu Kim Ngân (Lớp 11A3),Hoạt động
-ph_hsn048,ph123,Nông Văn Quý (PH Nông Tài Phú),Phụ huynh học sinh,Phụ huynh học sinh Nông Tài Phú,HSN-048,0332167706,Phụ huynh em Nông Tài Phú (Lớp 11A3),Hoạt động
-ph_hsn049,ph123,Phùng Tòn Cau (PH Phùng Kim Ngân),Phụ huynh học sinh,Phụ huynh học sinh Phùng Kim Ngân,HSN-049,0989215410,Phụ huynh em Phùng Kim Ngân (Lớp 11A3),Hoạt động
-ph_hsn050,ph123,Nguyễn Văn Oanh (PH Nguyễn Tuấn Hưng),Phụ huynh học sinh,Phụ huynh học sinh Nguyễn Tuấn Hưng,HSN-050,0336338785,Phụ huynh em Nguyễn Tuấn Hưng (Lớp 11A3),Hoạt động
-ph_hsn051,ph123,Ma Seo Dình (PH Ma A Chính),Phụ huynh học sinh,Phụ huynh học sinh Ma A Chính,HSN-051,0398513625,Phụ huynh em Ma A Chính (Lớp 11A3),Hoạt động
-ph_hsn052,ph123,Ma Seo Kếnh (PH Ma Seo Minh),Phụ huynh học sinh,Phụ huynh học sinh Ma Seo Minh,HSN-052,0984417060,Phụ huynh em Ma Seo Minh (Lớp 11A3),Hoạt động
-ph_hsn053,ph123,Nguyễn Văn Tuyên (PH Nguyễn Đoàn Huy),Phụ huynh học sinh,Phụ huynh học sinh Nguyễn Đoàn Huy,HSN-053,0379284224,Phụ huynh em Nguyễn Đoàn Huy (Lớp 11A3),Hoạt động
-ph_hsn054,ph123,Sầm Văn Chiến (PH Sầm Quyết Thắng),Phụ huynh học sinh,Phụ huynh học sinh Sầm Quyết Thắng,HSN-054,0367966816,Phụ huynh em Sầm Quyết Thắng (Lớp 11A3),Hoạt động
-ph_hsn055,ph123,Lê Văn Quý (PH Lê Tiến Dũng),Phụ huynh học sinh,Phụ huynh học sinh Lê Tiến Dũng,HSN-055,0973108813,Phụ huynh em Lê Tiến Dũng (Lớp 11A4),Hoạt động
-ph_hsn056,ph123,Lương Văn Minh (PH Lương Đình Nhật),Phụ huynh học sinh,Phụ huynh học sinh Lương Đình Nhật,HSN-056,0982330038,Phụ huynh em Lương Đình Nhật (Lớp 11A4),Hoạt động
-ph_hsn057,ph123,Ma Seo Trang (PH Ma Gia Huy),Phụ huynh học sinh,Phụ huynh học sinh Ma Gia Huy,HSN-057,0329345427,Phụ huynh em Ma Gia Huy (Lớp 11A4),Hoạt động
-ph_hsn058,ph123,Nông Hữu Long (PH Nông Quang Lê),Phụ huynh học sinh,Phụ huynh học sinh Nông Quang Lê,HSN-058,0967112007,Phụ huynh em Nông Quang Lê (Lớp 11A4),Hoạt động
-ph_hsn059,ph123,Trần Văn Sáng (PH Trần Quang Chiến),Phụ huynh học sinh,Phụ huynh học sinh Trần Quang Chiến,HSN-059,0961039921,Phụ huynh em Trần Quang Chiến (Lớp 11A4),Hoạt động
-ph_hsn060,ph123,Hoàng Văn Định (PH Hoàng Quốc Dân),Phụ huynh học sinh,Phụ huynh học sinh Hoàng Quốc Dân,HSN-060,0374381468,Phụ huynh em Hoàng Quốc Dân (Lớp 11A4),Hoạt động
-ph_hsn061,ph123,Triệu Văn Dung (PH Triệu Tiến Duy),Phụ huynh học sinh,Phụ huynh học sinh Triệu Tiến Duy,HSN-061,0823620135,Phụ huynh em Triệu Tiến Duy (Lớp 11A4),Hoạt động
-ph_hsn062,ph123,Đặng Văn Thắng (PH Đặng Văn Học),Phụ huynh học sinh,Phụ huynh học sinh Đặng Văn Học,HSN-062,0975510175,Phụ huynh em Đặng Văn Học (Lớp 11A5),Hoạt động
-ph_hsn063,ph123,Hoàng Văn Toàn (PH Hoàng Xuân Trường),Phụ huynh học sinh,Phụ huynh học sinh Hoàng Xuân Trường,HSN-063,0964744195,Phụ huynh em Hoàng Xuân Trường (Lớp 11A5),Hoạt động
-ph_hsn064,ph123,Nguyễn Văn Lả (PH Nguyễn Sinh Hùng),Phụ huynh học sinh,Phụ huynh học sinh Nguyễn Sinh Hùng,HSN-064,0965866703,Phụ huynh em Nguyễn Sinh Hùng (Lớp 11A5),Hoạt động
-ph_hsn065,ph123,Nguyễn Long Phi (PH Nguyễn Trịnh Quang),Phụ huynh học sinh,Phụ huynh học sinh Nguyễn Trịnh Quang,HSN-065,0366474580,Phụ huynh em Nguyễn Trịnh Quang (Lớp 11A5),Hoạt động
-ph_hsn066,ph123,Triệu Văn Lạng (PH Triệu Hữu Dũng),Phụ huynh học sinh,Phụ huynh học sinh Triệu Hữu Dũng,HSN-066,0326860289,Phụ huynh em Triệu Hữu Dũng (Lớp 11A5),Hoạt động
-ph_hsn067,ph123,Đặng Văn Bìn (PH Đặng Hải Nam),Phụ huynh học sinh,Phụ huynh học sinh Đặng Hải Nam,HSN-067,0327297821,Phụ huynh em Đặng Hải Nam (Lớp 11A6),Hoạt động
-ph_hsn068,ph123,Hảng Seo Thành (PH Hảng Thuận Phú),Phụ huynh học sinh,Phụ huynh học sinh Hảng Thuận Phú,HSN-068,0979630403,Phụ huynh em Hảng Thuận Phú (Lớp 11A6),Hoạt động
-ph_hsn069,ph123,Hà Ngọc Chuyển (PH Hà Duy Lợi),Phụ huynh học sinh,Phụ huynh học sinh Hà Duy Lợi,HSN-069,0345526774,Phụ huynh em Hà Duy Lợi (Lớp 11A7),Hoạt động
-ph_hsn070,ph123,Lý Văn Giáp (PH Lý Minh Bảo),Phụ huynh học sinh,Phụ huynh học sinh Lý Minh Bảo,HSN-070,0963970115,Phụ huynh em Lý Minh Bảo (Lớp 11A7),Hoạt động
-ph_hsn071,ph123,Sùng A Chư (PH Sùng A Phong),Phụ huynh học sinh,Phụ huynh học sinh Sùng A Phong,HSN-071,0867058874,Phụ huynh em Sùng A Phong (Lớp 11A7),Hoạt động
-ph_hsn072,ph123,Đặng Văn Bình (PH Đặng Minh Sơn),Phụ huynh học sinh,Phụ huynh học sinh Đặng Minh Sơn,HSN-072,0359295548,Phụ huynh em Đặng Minh Sơn (Lớp 12A1),Hoạt động
-ph_hsn073,ph123,Hảng Seo Sảng (PH Hảng Seo Lành),Phụ huynh học sinh,Phụ huynh học sinh Hảng Seo Lành,HSN-073,0392366160,Phụ huynh em Hảng Seo Lành (Lớp 12A1),Hoạt động
-ph_hsn074,ph123,Hoàng Văn Lực (PH Hoàng Trọng Khôi),Phụ huynh học sinh,Phụ huynh học sinh Hoàng Trọng Khôi,HSN-074,0974630324,Phụ huynh em Hoàng Trọng Khôi (Lớp 12A1),Hoạt động
-ph_hsn075,ph123,Tẩn A Khế (PH Tẩn Hoàng Nghiệp),Phụ huynh học sinh,Phụ huynh học sinh Tẩn Hoàng Nghiệp,HSN-075,0989063570,Phụ huynh em Tẩn Hoàng Nghiệp (Lớp 12A1),Hoạt động
-ph_hsn076,ph123,Triệu Xuân Vượng (PH Triệu Anh Quang),Phụ huynh học sinh,Phụ huynh học sinh Triệu Anh Quang,HSN-076,0398854726,Phụ huynh em Triệu Anh Quang (Lớp 12A1),Hoạt động
-ph_hsn077,ph123,Vi Văn Kiên (PH Vi Duy Hoàng),Phụ huynh học sinh,Phụ huynh học sinh Vi Duy Hoàng,HSN-077,0866721046,Phụ huynh em Vi Duy Hoàng (Lớp 12A1),Hoạt động
-ph_hsn078,ph123,Nguyễn Văn Hoán (PH Đặng Văn Hiếu),Phụ huynh học sinh,Phụ huynh học sinh Đặng Văn Hiếu,HSN-078,0327512038,Phụ huynh em Đặng Văn Hiếu (Lớp 12A2),Hoạt động
-ph_hsn079,ph123,Hoàng Văn Thuận (PH Hoàng Đình Tập),Phụ huynh học sinh,Phụ huynh học sinh Hoàng Đình Tập,HSN-079,0971110758,Phụ huynh em Hoàng Đình Tập (Lớp 12A2),Hoạt động
-ph_hsn080,ph123,Hoàng Văn Vựng (PH Hoàng Minh Vũ),Phụ huynh học sinh,Phụ huynh học sinh Hoàng Minh Vũ,HSN-080,0359367426,Phụ huynh em Hoàng Minh Vũ (Lớp 12A2),Hoạt động
-ph_hsn081,ph123,Lê Thái Đình (PH Lê Bảo Nghĩa),Phụ huynh học sinh,Phụ huynh học sinh Lê Bảo Nghĩa,HSN-081,0342136204,Phụ huynh em Lê Bảo Nghĩa (Lớp 12A4),Hoạt động
-ph_hsn082,ph123,Nông Văn Hình (PH Nông Khánh Duy),Phụ huynh học sinh,Phụ huynh học sinh Nông Khánh Duy,HSN-082,0776705861,Phụ huynh em Nông Khánh Duy (Lớp 12A4),Hoạt động
-ph_hsn083,ph123,Sầm Văn Chiến (PH Sầm Minh Hữu),Phụ huynh học sinh,Phụ huynh học sinh Sầm Minh Hữu,HSN-083,0367966816,Phụ huynh em Sầm Minh Hữu (Lớp 12A4),Hoạt động
-ph_hsn084,ph123,Trần Văn Hoàng (PH Trần Tuấn Anh),Phụ huynh học sinh,Phụ huynh học sinh Trần Tuấn Anh,HSN-084,0989865335,Phụ huynh em Trần Tuấn Anh (Lớp 12A4),Hoạt động
-ph_hsn085,ph123,Triệu Văn Lán (PH Triệu Tiến Thắng),Phụ huynh học sinh,Phụ huynh học sinh Triệu Tiến Thắng,HSN-085,0366851077,Phụ huynh em Triệu Tiến Thắng (Lớp 12A4),Hoạt động
-ph_hsn086,ph123,Bàn Ton San (PH Bàn Duy Khoa),Phụ huynh học sinh,Phụ huynh học sinh Bàn Duy Khoa,HSN-086,0973983608,Phụ huynh em Bàn Duy Khoa (Lớp 12A5),Hoạt động
-ph_hsn087,ph123,Bàn Tuấn Anh (PH Bàn Thanh Chung),Phụ huynh học sinh,Phụ huynh học sinh Bàn Thanh Chung,HSN-087,0363145091,Phụ huynh em Bàn Thanh Chung (Lớp 12A5),Hoạt động
-ph_hsn088,ph123,Hà Xuân Tình (PH Hà Phúc Lâm),Phụ huynh học sinh,Phụ huynh học sinh Hà Phúc Lâm,HSN-088,0336383054,Phụ huynh em Hà Phúc Lâm (Lớp 12A5),Hoạt động
-ph_hsn089,ph123,Hoàng Văn Hồng (PH Hoàng Hải Duy),Phụ huynh học sinh,Phụ huynh học sinh Hoàng Hải Duy,HSN-089,0334181619,Phụ huynh em Hoàng Hải Duy (Lớp 12A5),Hoạt động
-ph_hsn090,ph123,Sầm Quốc Đạt(mất) (PH Sầm Minh Đức),Phụ huynh học sinh,Phụ huynh học sinh Sầm Minh Đức,HSN-090,0347953516,Phụ huynh em Sầm Minh Đức (Lớp 12A5),Hoạt động
-ph_hsn091,ph123,Hoàng Văn Lai (PH Triệu Qúy Đức),Phụ huynh học sinh,Phụ huynh học sinh Triệu Qúy Đức,HSN-091,0354162240,Phụ huynh em Triệu Qúy Đức (Lớp 12A5),Hoạt động
-ph_hsn092,ph123,Vũ Văn Toàn (PH Vũ Duy Khánh),Phụ huynh học sinh,Phụ huynh học sinh Vũ Duy Khánh,HSN-092,0379414597,Phụ huynh em Vũ Duy Khánh (Lớp 12A5),Hoạt động
-ph_hsn093,ph123,La Văn Tuyên (PH La Ngọc Tuyến),Phụ huynh học sinh,Phụ huynh học sinh La Ngọc Tuyến,HSN-093,0378922358,Phụ huynh em La Ngọc Tuyến (Lớp 12A7),Hoạt động
-ph_hsn094,ph123,Triệu Trung Kim (PH Triệu Trung Quý),Phụ huynh học sinh,Phụ huynh học sinh Triệu Trung Quý,HSN-094,0985681214,Phụ huynh em Triệu Trung Quý (Lớp 12A3),Hoạt động
-ph_hsn095,ph123,Nguyễn Văn Thưởng (PH Hoàng Trần Hiệp),Phụ huynh học sinh,Phụ huynh học sinh Hoàng Trần Hiệp,HSN-095,0374684251,Phụ huynh em Hoàng Trần Hiệp (Lớp 12A3),Hoạt động
-ph_hsf001,ph123,Triệu Văn Hai (PH Triệu Thị Hiền),Phụ huynh học sinh,Phụ huynh học sinh Triệu Thị Hiền,HSF-001,0983990102,Phụ huynh em Triệu Thị Hiền (Lớp 10A1),Hoạt động
-ph_hsf002,ph123,Lý Văn Chúi (PH Lý Lan Phương),Phụ huynh học sinh,Phụ huynh học sinh Lý Lan Phương,HSF-002,0336675404,Phụ huynh em Lý Lan Phương (Lớp 10A1),Hoạt động
-ph_hsf003,ph123,Lý Văn Xuân (PH Lý Thị Thảo),Phụ huynh học sinh,Phụ huynh học sinh Lý Thị Thảo,HSF-003,0392107797,Phụ huynh em Lý Thị Thảo (Lớp 10A1),Hoạt động
-ph_hsf004,ph123,Triệu Văn Phúc (PH Triệu Thị Thuý Hằng),Phụ huynh học sinh,Phụ huynh học sinh Triệu Thị Thuý Hằng,HSF-004,0971316587,Phụ huynh em Triệu Thị Thuý Hằng (Lớp 10A1),Hoạt động
-ph_hsf005,ph123,Đặng Văn Xương (PH Phùng Thị Khách),Phụ huynh học sinh,Phụ huynh học sinh Phùng Thị Khách,HSF-005,0377536147,Phụ huynh em Phùng Thị Khách (Lớp 10A1),Hoạt động
-ph_hsf006,ph123,Triệu Tòn Chản (PH Triệu Thu Yến),Phụ huynh học sinh,Phụ huynh học sinh Triệu Thu Yến,HSF-006,0375109274,Phụ huynh em Triệu Thu Yến (Lớp 10A1),Hoạt động
-ph_hsf007,ph123,Lý Văn Tém (PH Lý Bảo Thanh),Phụ huynh học sinh,Phụ huynh học sinh Lý Bảo Thanh,HSF-007,0963534328,Phụ huynh em Lý Bảo Thanh (Lớp 10A1),Hoạt động
-ph_hsf008,ph123,Hà Văn Nam (PH Hà Tố Uyên),Phụ huynh học sinh,Phụ huynh học sinh Hà Tố Uyên,HSF-008,0966511169,Phụ huynh em Hà Tố Uyên (Lớp 10A1),Hoạt động
-ph_hsf009,ph123,Hoàng Văn Phú (PH Hoàng Mỹ Lệ),Phụ huynh học sinh,Phụ huynh học sinh Hoàng Mỹ Lệ,HSF-009,0326824340,Phụ huynh em Hoàng Mỹ Lệ (Lớp 10A1),Hoạt động
-ph_hsf010,ph123,Lương Văn Hiếu (PH Lương Thị Thu Hoài),Phụ huynh học sinh,Phụ huynh học sinh Lương Thị Thu Hoài,HSF-010,0394276331,Phụ huynh em Lương Thị Thu Hoài (Lớp 10A1),Hoạt động
-ph_hsf011,ph123,Nguyễn Văn Hoà (PH Nguyễn Thị Bích Hợp),Phụ huynh học sinh,Phụ huynh học sinh Nguyễn Thị Bích Hợp,HSF-011,0962190098,Phụ huynh em Nguyễn Thị Bích Hợp (Lớp 10A1),Hoạt động
-ph_hsf012,ph123,Sùng Seo Dế (PH Sùng Thị Yến Chi),Phụ huynh học sinh,Phụ huynh học sinh Sùng Thị Yến Chi,HSF-012,0388587059,Phụ huynh em Sùng Thị Yến Chi (Lớp 10A2),Hoạt động
-ph_hsf013,ph123,Lý Văn Sêm (PH Lý Quỳnh Anh),Phụ huynh học sinh,Phụ huynh học sinh Lý Quỳnh Anh,HSF-013,0343564169,Phụ huynh em Lý Quỳnh Anh (Lớp 10A2),Hoạt động
-ph_hsf014,ph123,Ma Seo Vinh (PH Ma Thị Thiệu Mấn),Phụ huynh học sinh,Phụ huynh học sinh Ma Thị Thiệu Mấn,HSF-014,0967067434,Phụ huynh em Ma Thị Thiệu Mấn (Lớp 10A2),Hoạt động
-ph_hsf015,ph123,Nông Thị Châm (PH Lý Thị Tâm Như),Phụ huynh học sinh,Phụ huynh học sinh Lý Thị Tâm Như,HSF-015,0376549216,Phụ huynh em Lý Thị Tâm Như (Lớp 10A2),Hoạt động
-ph_hsf016,ph123,Lý Thị Môn (PH Lý Thị Mẫn),Phụ huynh học sinh,Phụ huynh học sinh Lý Thị Mẫn,HSF-016,0965005785,Phụ huynh em Lý Thị Mẫn (Lớp 10A3),Hoạt động
-ph_hsf017,ph123,Giàng Seo Quang (PH Giàng Thị Thu Trang),Phụ huynh học sinh,Phụ huynh học sinh Giàng Thị Thu Trang,HSF-017,0326633006,Phụ huynh em Giàng Thị Thu Trang (Lớp 10A3),Hoạt động
-ph_hsf018,ph123,Triệu Nguyên Bình (PH Triệu Phương Thảo),Phụ huynh học sinh,Phụ huynh học sinh Triệu Phương Thảo,HSF-018,0868884083,Phụ huynh em Triệu Phương Thảo (Lớp 10A3),Hoạt động
-ph_hsf019,ph123,Giàng Seo Dìn (PH Giàng Thị Thoại),Phụ huynh học sinh,Phụ huynh học sinh Giàng Thị Thoại,HSF-019,0967295787,Phụ huynh em Giàng Thị Thoại (Lớp 10A3),Hoạt động
-ph_hsf020,ph123,Đặng Văn Nhất (PH Đặng Thùy Tâm),Phụ huynh học sinh,Phụ huynh học sinh Đặng Thùy Tâm,HSF-020,0968047896,Phụ huynh em Đặng Thùy Tâm (Lớp 10A3),Hoạt động
-ph_hsf021,ph123,Phùng Văn Phúc (PH Phùng Thị Thiên Thu),Phụ huynh học sinh,Phụ huynh học sinh Phùng Thị Thiên Thu,HSF-021,0382940304,Phụ huynh em Phùng Thị Thiên Thu (Lớp 10A3),Hoạt động
-ph_hsf022,ph123,Hoàng Văn Chiến (PH Hoàng Thị Việt Anh),Phụ huynh học sinh,Phụ huynh học sinh Hoàng Thị Việt Anh,HSF-022,0388345114,Phụ huynh em Hoàng Thị Việt Anh (Lớp 10A3),Hoạt động
-ph_hsf023,ph123,Trần Văn Páo (PH Trần Thị Khuyên),Phụ huynh học sinh,Phụ huynh học sinh Trần Thị Khuyên,HSF-023,0973800992,Phụ huynh em Trần Thị Khuyên (Lớp 10A3),Hoạt động
-ph_hsf024,ph123,Triệu Văn Phượng (PH Triệu Thị Hà Vy),Phụ huynh học sinh,Phụ huynh học sinh Triệu Thị Hà Vy,HSF-024,0964049067,Phụ huynh em Triệu Thị Hà Vy (Lớp 10A3),Hoạt động
-ph_hsf025,ph123,Bàn Ton Máy (PH Bàn Thị Thanh Trúc),Phụ huynh học sinh,Phụ huynh học sinh Bàn Thị Thanh Trúc,HSF-025,0376930020,Phụ huynh em Bàn Thị Thanh Trúc (Lớp 10A3),Hoạt động
-ph_hsf026,ph123,Tô Văn Oai (PH Tô Thị Khánh Ngọc),Phụ huynh học sinh,Phụ huynh học sinh Tô Thị Khánh Ngọc,HSF-026,0392872778,Phụ huynh em Tô Thị Khánh Ngọc (Lớp 10A3),Hoạt động
-ph_hsf027,ph123,Triệu Văn Ngọ (PH Triệu Thị Ánh),Phụ huynh học sinh,Phụ huynh học sinh Triệu Thị Ánh,HSF-027,0968309335,Phụ huynh em Triệu Thị Ánh (Lớp 10A4),Hoạt động
-ph_hsf028,ph123,Bàn Tuấn Anh (PH Bàn Thị Hoa),Phụ huynh học sinh,Phụ huynh học sinh Bàn Thị Hoa,HSF-028,0971240758,Phụ huynh em Bàn Thị Hoa (Lớp 10A4),Hoạt động
-ph_hsf029,ph123,Triệu Văn Thắng (PH Triệu Thị Huyền),Phụ huynh học sinh,Phụ huynh học sinh Triệu Thị Huyền,HSF-029,0378346106,Phụ huynh em Triệu Thị Huyền (Lớp 10A4),Hoạt động
-ph_hsf030,ph123,Phan Trung Thành (PH Phan Quỳnh Nga),Phụ huynh học sinh,Phụ huynh học sinh Phan Quỳnh Nga,HSF-030,0378402157,Phụ huynh em Phan Quỳnh Nga (Lớp 10A4),Hoạt động
-ph_hsf031,ph123,Hoàng Văn Thuận (PH Hoàng Thị Nhi),Phụ huynh học sinh,Phụ huynh học sinh Hoàng Thị Nhi,HSF-031,0344245596,Phụ huynh em Hoàng Thị Nhi (Lớp 10A4),Hoạt động
-ph_hsf032,ph123,Đặng Văn Xan (PH Đặng Thị Nhung),Phụ huynh học sinh,Phụ huynh học sinh Đặng Thị Nhung,HSF-032,0961049812,Phụ huynh em Đặng Thị Nhung (Lớp 10A4),Hoạt động
-ph_hsf033,ph123,Hoàng Thừa Hiển (PH Hoàng Thu Phương),Phụ huynh học sinh,Phụ huynh học sinh Hoàng Thu Phương,HSF-033,0369738258,Phụ huynh em Hoàng Thu Phương (Lớp 10A4),Hoạt động
-ph_hsf034,ph123,Triệu Hồng Hai (PH Triệu Phương Thảo),Phụ huynh học sinh,Phụ huynh học sinh Triệu Phương Thảo,HSF-034,0346489164,Phụ huynh em Triệu Phương Thảo (Lớp 10A4),Hoạt động
-ph_hsf035,ph123,Đặng Minh Tuấn (PH Triệu Thị Thu Thuỷ),Phụ huynh học sinh,Phụ huynh học sinh Triệu Thị Thu Thuỷ,HSF-035,0357737660,Phụ huynh em Triệu Thị Thu Thuỷ (Lớp 10A4),Hoạt động
-ph_hsf036,ph123,Hoàng Văn Phòng (PH Hoàng Bảo Trân),Phụ huynh học sinh,Phụ huynh học sinh Hoàng Bảo Trân,HSF-036,0377059015,Phụ huynh em Hoàng Bảo Trân (Lớp 10A4),Hoạt động
-ph_hsf037,ph123,Lý Văn Đạt (PH Lò Thị Mai Hương),Phụ huynh học sinh,Phụ huynh học sinh Lò Thị Mai Hương,HSF-037,0379953812,Phụ huynh em Lò Thị Mai Hương (Lớp 10A6),Hoạt động
-ph_hsf038,ph123,Triệu Phúc Bảo (PH Triệu Phương Anh),Phụ huynh học sinh,Phụ huynh học sinh Triệu Phương Anh,HSF-038,0375299757,Phụ huynh em Triệu Phương Anh (Lớp 10A7),Hoạt động
-ph_hsf039,ph123,Triệu Tòn Cau (PH Triệu Phương Nhi),Phụ huynh học sinh,Phụ huynh học sinh Triệu Phương Nhi,HSF-039,0373708930,Phụ huynh em Triệu Phương Nhi (Lớp 10A7),Hoạt động
-ph_hsf040,ph123,Triệu Văn Dũng (PH Triệu Thị Hồng Thắm),Phụ huynh học sinh,Phụ huynh học sinh Triệu Thị Hồng Thắm,HSF-040,9131186459,Phụ huynh em Triệu Thị Hồng Thắm (Lớp 10A7),Hoạt động
-ph_hsf041,ph123,Lâm Sỹ Tưởng (PH Lâm Hoài Thương),Phụ huynh học sinh,Phụ huynh học sinh Lâm Hoài Thương,HSF-041,0357731984,Phụ huynh em Lâm Hoài Thương (Lớp 10A7),Hoạt động
-ph_hsf042,ph123,Lê Văn Sơn (PH Lê Ngọc Ánh),Phụ huynh học sinh,Phụ huynh học sinh Lê Ngọc Ánh,HSF-042,0327501693,Phụ huynh em Lê Ngọc Ánh (Lớp 10A7),Hoạt động
-ph_hsf043,ph123,Triệu Văn Nhất (PH Triệu Thiên My),Phụ huynh học sinh,Phụ huynh học sinh Triệu Thiên My,HSF-043,0332457830,Phụ huynh em Triệu Thiên My (Lớp 10A7),Hoạt động
-ph_hsf044,ph123,Trương Văn Tó (PH Trương Thị Hoa),Phụ huynh học sinh,Phụ huynh học sinh Trương Thị Hoa,HSF-044,0932251314,Phụ huynh em Trương Thị Hoa (Lớp 10A7),Hoạt động
-ph_hsf045,ph123,Hoàng Ngọc Lâm (PH Lý Bảo Linh),Phụ huynh học sinh,Phụ huynh học sinh Lý Bảo Linh,HSF-045,0866159110,Phụ huynh em Lý Bảo Linh (Lớp 10A7),Hoạt động
-ph_hsf046,ph123,Đặng Quốc Phong (PH Đặng Yến Nhi),Phụ huynh học sinh,Phụ huynh học sinh Đặng Yến Nhi,HSF-046,0865577163,Phụ huynh em Đặng Yến Nhi (Lớp 10A7),Hoạt động
-ph_hsf047,ph123,Nguyễn Bá Duy (PH Nguyễn Khánh Linh),Phụ huynh học sinh,Phụ huynh học sinh Nguyễn Khánh Linh,HSF-047,0976732702,Phụ huynh em Nguyễn Khánh Linh (Lớp 11A1),Hoạt động
-ph_hsf048,ph123,Ma Seo Xá (PH Ma Thị Hoa),Phụ huynh học sinh,Phụ huynh học sinh Ma Thị Hoa,HSF-048,0375513312,Phụ huynh em Ma Thị Hoa (Lớp 11A1),Hoạt động
-ph_hsf049,ph123,Nguyễn Văn Huy. (PH Hoàng Hải Yến),Phụ huynh học sinh,Phụ huynh học sinh Hoàng Hải Yến,HSF-049,0354771469,Phụ huynh em Hoàng Hải Yến (Lớp 11A1),Hoạt động
-ph_hsf050,ph123,Lục Thế Anh (PH Lục Mai Phương),Phụ huynh học sinh,Phụ huynh học sinh Lục Mai Phương,HSF-050,0394617256,Phụ huynh em Lục Mai Phương (Lớp 11A1),Hoạt động
-ph_hsf051,ph123,Trương Văn Chấn (PH Trương Thủy Hoàn),Phụ huynh học sinh,Phụ huynh học sinh Trương Thủy Hoàn,HSF-051,0384566897,Phụ huynh em Trương Thủy Hoàn (Lớp 11A1),Hoạt động
-ph_hsf052,ph123,Nông Văn Tôn (PH Nông Thị Quý),Phụ huynh học sinh,Phụ huynh học sinh Nông Thị Quý,HSF-052,0347341064,Phụ huynh em Nông Thị Quý (Lớp 11A1),Hoạt động
-ph_hsf053,ph123,Bàn Văn Tinh (PH Bàn Thị Hồng Thêm),Phụ huynh học sinh,Phụ huynh học sinh Bàn Thị Hồng Thêm,HSF-053,0865160428,Phụ huynh em Bàn Thị Hồng Thêm (Lớp 11A2),Hoạt động
-ph_hsf054,ph123,Hoàng Văn Sinh (PH Hoàng Thị Hồng Nhung),Phụ huynh học sinh,Phụ huynh học sinh Hoàng Thị Hồng Nhung,HSF-054,0966153442,Phụ huynh em Hoàng Thị Hồng Nhung (Lớp 11A2),Hoạt động
-ph_hsf055,ph123,Hoàng Văn Tiến (PH Hoàng Thuý Tiên),Phụ huynh học sinh,Phụ huynh học sinh Hoàng Thuý Tiên,HSF-055,0328428391,Phụ huynh em Hoàng Thuý Tiên (Lớp 11A2),Hoạt động
-ph_hsf056,ph123,Đặng Văn Hải (PH Đặng Khánh Linh),Phụ huynh học sinh,Phụ huynh học sinh Đặng Khánh Linh,HSF-056,0367920906,Phụ huynh em Đặng Khánh Linh (Lớp 11A2),Hoạt động
-ph_hsf057,ph123,Ma Seo Của (PH Ma Thị Nga),Phụ huynh học sinh,Phụ huynh học sinh Ma Thị Nga,HSF-057,0336881647,Phụ huynh em Ma Thị Nga (Lớp 11A2),Hoạt động
-ph_hsf058,ph123,Ma Seo Chư (PH Ma Thị Hương),Phụ huynh học sinh,Phụ huynh học sinh Ma Thị Hương,HSF-058,0376447773,Phụ huynh em Ma Thị Hương (Lớp 11A2),Hoạt động
-ph_hsf059,ph123,Nguyễn Thành Chung (PH Nguyễn Minh Tâm),Phụ huynh học sinh,Phụ huynh học sinh Nguyễn Minh Tâm,HSF-059,0399614192,Phụ huynh em Nguyễn Minh Tâm (Lớp 11A2),Hoạt động
-ph_hsf060,ph123,Sùng Seo Xủ (PH Sùng Thuý Liên),Phụ huynh học sinh,Phụ huynh học sinh Sùng Thuý Liên,HSF-060,0969534104,Phụ huynh em Sùng Thuý Liên (Lớp 11A2),Hoạt động
-ph_hsf061,ph123,Hoàng Văn Nhiễu (PH Hoàng Ngọc Diệp),Phụ huynh học sinh,Phụ huynh học sinh Hoàng Ngọc Diệp,HSF-061,0865613874,Phụ huynh em Hoàng Ngọc Diệp (Lớp 11A2),Hoạt động
-ph_hsf062,ph123,Hoàng Văn Lệ (PH Hoàng Thị Nhung),Phụ huynh học sinh,Phụ huynh học sinh Hoàng Thị Nhung,HSF-062,0971560361,Phụ huynh em Hoàng Thị Nhung (Lớp 11A2),Hoạt động
-ph_hsf063,ph123,Nguyễn Văn Hoán (PH Đặng Thị Hoa),Phụ huynh học sinh,Phụ huynh học sinh Đặng Thị Hoa,HSF-063,0969052416,Phụ huynh em Đặng Thị Hoa (Lớp 11A3),Hoạt động
-ph_hsf064,ph123,Lê Xuân Chỉnh (PH Lê Như Quỳnh),Phụ huynh học sinh,Phụ huynh học sinh Lê Như Quỳnh,HSF-064,0387879813,Phụ huynh em Lê Như Quỳnh (Lớp 11A3),Hoạt động
-ph_hsf065,ph123,Tráng Văn Trấn (PH Tráng Thị Đại),Phụ huynh học sinh,Phụ huynh học sinh Tráng Thị Đại,HSF-065,0369808294,Phụ huynh em Tráng Thị Đại (Lớp 11A4),Hoạt động
-ph_hsf066,ph123,Triệu Kim Hương (PH Triệu Thị Thu Hiền),Phụ huynh học sinh,Phụ huynh học sinh Triệu Thị Thu Hiền,HSF-066,0342024303,Phụ huynh em Triệu Thị Thu Hiền (Lớp 11A4),Hoạt động
-ph_hsf067,ph123,Đặng Văn Nhì (PH Đặng Hồng Hoa),Phụ huynh học sinh,Phụ huynh học sinh Đặng Hồng Hoa,HSF-067,0393130600,Phụ huynh em Đặng Hồng Hoa (Lớp 11A4),Hoạt động
-ph_hsf068,ph123,Hoàng Văn Lưng (PH Hoàng Thị Hồng Mai),Phụ huynh học sinh,Phụ huynh học sinh Hoàng Thị Hồng Mai,HSF-068,0862175022,Phụ huynh em Hoàng Thị Hồng Mai (Lớp 11A4),Hoạt động
-ph_hsf069,ph123,Đinh Quang Sáng (PH Đinh Thị Hồng Thái),Phụ huynh học sinh,Phụ huynh học sinh Đinh Thị Hồng Thái,HSF-069,0393679215,Phụ huynh em Đinh Thị Hồng Thái (Lớp 11A4),Hoạt động
-ph_hsf070,ph123,Hoàng Văn Lai (PH Triệu Thanh Thảo),Phụ huynh học sinh,Phụ huynh học sinh Triệu Thanh Thảo,HSF-070,0354162240,Phụ huynh em Triệu Thanh Thảo (Lớp 11A4),Hoạt động
-ph_hsf071,ph123,Đặng Ton Thanh (PH Đặng Hồng Thư),Phụ huynh học sinh,Phụ huynh học sinh Đặng Hồng Thư,HSF-071,0365471167,Phụ huynh em Đặng Hồng Thư (Lớp 11A4),Hoạt động
-ph_hsf072,ph123,Đặng Văn Thức (PH Đặng Thị Vân),Phụ huynh học sinh,Phụ huynh học sinh Đặng Thị Vân,HSF-072,0862908820,Phụ huynh em Đặng Thị Vân (Lớp 11A4),Hoạt động
-ph_hsf073,ph123,Hoàng Văn Tú (PH Hoàng Tố Vân),Phụ huynh học sinh,Phụ huynh học sinh Hoàng Tố Vân,HSF-073,0396141165,Phụ huynh em Hoàng Tố Vân (Lớp 11A4),Hoạt động
-ph_hsf074,ph123,Lý Văn Đanh (PH Lý Hồng Mỹ),Phụ huynh học sinh,Phụ huynh học sinh Lý Hồng Mỹ,HSF-074,0375302378,Phụ huynh em Lý Hồng Mỹ (Lớp 11A4),Hoạt động
-ph_hsf075,ph123,Triệu Văn Nhất (PH Triệu Thùy Linh),Phụ huynh học sinh,Phụ huynh học sinh Triệu Thùy Linh,HSF-075,0329966224,Phụ huynh em Triệu Thùy Linh (Lớp 11A5),Hoạt động
-ph_hsf076,ph123,Lê Xuân Huấn (PH Lê Thị Hoài),Phụ huynh học sinh,Phụ huynh học sinh Lê Thị Hoài,HSF-076,0363710228,Phụ huynh em Lê Thị Hoài (Lớp 11A6),Hoạt động
-ph_hsf077,ph123,Lý Tòn Cau (PH Lý Thị Yến),Phụ huynh học sinh,Phụ huynh học sinh Lý Thị Yến,HSF-077,0975991760,Phụ huynh em Lý Thị Yến (Lớp 11A6),Hoạt động
-ph_hsf078,ph123,Trần Văn Luận (PH Trần Thị Thu),Phụ huynh học sinh,Phụ huynh học sinh Trần Thị Thu,HSF-078,0328995435,Phụ huynh em Trần Thị Thu (Lớp 11A7),Hoạt động
-ph_hsf079,ph123,Tráng A Hồ (PH Tráng Thị Dung),Phụ huynh học sinh,Phụ huynh học sinh Tráng Thị Dung,HSF-079,0328219084,Phụ huynh em Tráng Thị Dung (Lớp 11A7),Hoạt động
-ph_hsf080,ph123,Đặng Văn Hoàng (PH Đặng Thị Anh Đào),Phụ huynh học sinh,Phụ huynh học sinh Đặng Thị Anh Đào,HSF-080,0372158238,Phụ huynh em Đặng Thị Anh Đào (Lớp 11A7),Hoạt động
-ph_hsf081,ph123,Hoàng Văn Phức (PH Hoàng Thị Thúy Kiều),Phụ huynh học sinh,Phụ huynh học sinh Hoàng Thị Thúy Kiều,HSF-081,0336455820,Phụ huynh em Hoàng Thị Thúy Kiều (Lớp 11A7),Hoạt động
-ph_hsf082,ph123,Lý Tiến Hương (PH Hoàng Bảo Ngọc),Phụ huynh học sinh,Phụ huynh học sinh Hoàng Bảo Ngọc,HSF-082,0987898550,Phụ huynh em Hoàng Bảo Ngọc (Lớp 11A7),Hoạt động
-ph_hsf083,ph123,Hoàng Văn Toản (PH Hoàng Thị Phương),Phụ huynh học sinh,Phụ huynh học sinh Hoàng Thị Phương,HSF-083,0383945477,Phụ huynh em Hoàng Thị Phương (Lớp 11A7),Hoạt động
-ph_hsf084,ph123,Bàn Văn Mài (PH Bàn Thanh Thuý),Phụ huynh học sinh,Phụ huynh học sinh Bàn Thanh Thuý,HSF-084,0344615907,Phụ huynh em Bàn Thanh Thuý (Lớp 11A7),Hoạt động
-ph_hsf085,ph123,Đặng Văn Ngọc (PH Đặng Thị Thanh Vân),Phụ huynh học sinh,Phụ huynh học sinh Đặng Thị Thanh Vân,HSF-085,0374737518,Phụ huynh em Đặng Thị Thanh Vân (Lớp 12A1),Hoạt động
-ph_hsf086,ph123,Nông Ton Phan (PH Nông Thị Ánh Nguyệt),Phụ huynh học sinh,Phụ huynh học sinh Nông Thị Ánh Nguyệt,HSF-086,0334264373,Phụ huynh em Nông Thị Ánh Nguyệt (Lớp 12A1),Hoạt động
-ph_hsf087,ph123,Đặng Văn Ton (PH Phan Thị Yến nhi),Phụ huynh học sinh,Phụ huynh học sinh Phan Thị Yến nhi,HSF-087,0325422275,Phụ huynh em Phan Thị Yến nhi (Lớp 12A1),Hoạt động
-ph_hsf088,ph123,Lý văn phong (PH Lý Thanh Hoa),Phụ huynh học sinh,Phụ huynh học sinh Lý Thanh Hoa,HSF-088,0971561057,Phụ huynh em Lý Thanh Hoa (Lớp 12A1),Hoạt động
-ph_hsf089,ph123,Đặng Văn Thôm (PH Đặng Thị Lan Anh),Phụ huynh học sinh,Phụ huynh học sinh Đặng Thị Lan Anh,HSF-089,0342986321,Phụ huynh em Đặng Thị Lan Anh (Lớp 12A1),Hoạt động
-ph_hsf090,ph123,Hoàng Văn Ích (PH Hoàng Thị Thu),Phụ huynh học sinh,Phụ huynh học sinh Hoàng Thị Thu,HSF-090,0368432272,Phụ huynh em Hoàng Thị Thu (Lớp 12A2),Hoạt động
-ph_hsf091,ph123,Lý Văn Thành (PH Lý Thị Nga),Phụ huynh học sinh,Phụ huynh học sinh Lý Thị Nga,HSF-091,0389175004,Phụ huynh em Lý Thị Nga (Lớp 12A2),Hoạt động
-ph_hsf092,ph123,Bàn Văn Khi (PH Bàn Thúy Kim),Phụ huynh học sinh,Phụ huynh học sinh Bàn Thúy Kim,HSF-092,0344610271,Phụ huynh em Bàn Thúy Kim (Lớp 12A2),Hoạt động
-ph_hsf093,ph123,Triệu Văn Hoàng (PH Triệu Thị Thanh Huyên),Phụ huynh học sinh,Phụ huynh học sinh Triệu Thị Thanh Huyên,HSF-093,0348846980,Phụ huynh em Triệu Thị Thanh Huyên (Lớp 12A2),Hoạt động
-ph_hsf094,ph123,Hoàng Văn Huân (PH Hoàng Thị Thanh Mai),Phụ huynh học sinh,Phụ huynh học sinh Hoàng Thị Thanh Mai,HSF-094,0981260564,Phụ huynh em Hoàng Thị Thanh Mai (Lớp 12A2),Hoạt động
-ph_hsf095,ph123,Đặng Văn Huế (PH Đặng Thị Kiều Trang),Phụ huynh học sinh,Phụ huynh học sinh Đặng Thị Kiều Trang,HSF-095,0914447463,Phụ huynh em Đặng Thị Kiều Trang (Lớp 12A2),Hoạt động
-ph_hsf096,ph123,Bàn Sơn Hà (PH Bàn Thị Kim Phượng),Phụ huynh học sinh,Phụ huynh học sinh Bàn Thị Kim Phượng,HSF-096,0363914593,Phụ huynh em Bàn Thị Kim Phượng (Lớp 12A2),Hoạt động
-ph_hsf097,ph123,Nguyễn Văn Thuấn (PH Nguyễn Thùy Trâm),Phụ huynh học sinh,Phụ huynh học sinh Nguyễn Thùy Trâm,HSF-097,0376988106,Phụ huynh em Nguyễn Thùy Trâm (Lớp 12A2),Hoạt động
-ph_hsf098,ph123,Lí Văn Chúi (PH Lí Thị Lan Anh),Phụ huynh học sinh,Phụ huynh học sinh Lí Thị Lan Anh,HSF-098,0336675404,Phụ huynh em Lí Thị Lan Anh (Lớp 12A3),Hoạt động
-ph_hsf099,ph123,Triệu Văn Tư (PH Triệu Thanh Thư),Phụ huynh học sinh,Phụ huynh học sinh Triệu Thanh Thư,HSF-099,0865530827,Phụ huynh em Triệu Thanh Thư (Lớp 12A3),Hoạt động
-ph_hsf100,ph123,Chu Văn Chang (PH Chu Thị Hải Yến),Phụ huynh học sinh,Phụ huynh học sinh Chu Thị Hải Yến,HSF-100,0366383983,Phụ huynh em Chu Thị Hải Yến (Lớp 12A3),Hoạt động
-ph_hsf101,ph123,Đặng Văn Nhật (PH Đặng Thị Xuyên),Phụ huynh học sinh,Phụ huynh học sinh Đặng Thị Xuyên,HSF-101,0915039526,Phụ huynh em Đặng Thị Xuyên (Lớp 12A3),Hoạt động
-ph_hsf102,ph123,Hà Văn Hành (PH Hà Thị Nguyên),Phụ huynh học sinh,Phụ huynh học sinh Hà Thị Nguyên,HSF-102,0866621716,Phụ huynh em Hà Thị Nguyên (Lớp 12A3),Hoạt động
-ph_hsf103,ph123,Chu Văn Đài (PH Chu Bích Loan),Phụ huynh học sinh,Phụ huynh học sinh Chu Bích Loan,HSF-103,0346318191,Phụ huynh em Chu Bích Loan (Lớp 12A4),Hoạt động
-ph_hsf104,ph123,Hoàng Văn Đức (PH Hoàng Thị Nhài),Phụ huynh học sinh,Phụ huynh học sinh Hoàng Thị Nhài,HSF-104,0964141142,Phụ huynh em Hoàng Thị Nhài (Lớp 12A4),Hoạt động
-ph_hsf105,ph123,Hoàng Văn Tường (PH Hoàng Thị Phương Oanh),Phụ huynh học sinh,Phụ huynh học sinh Hoàng Thị Phương Oanh,HSF-105,0364668915,Phụ huynh em Hoàng Thị Phương Oanh (Lớp 12A4),Hoạt động
-ph_hsf106,ph123,Triệu Văn Thất (PH Triệu Thị Sinh),Phụ huynh học sinh,Phụ huynh học sinh Triệu Thị Sinh,HSF-106,0989559091,Phụ huynh em Triệu Thị Sinh (Lớp 12A4),Hoạt động
-ph_hsf107,ph123,Hoàng Văn Màu (PH Hoàng Thị Mừng),Phụ huynh học sinh,Phụ huynh học sinh Hoàng Thị Mừng,HSF-107,0399240014,Phụ huynh em Hoàng Thị Mừng (Lớp 12A4),Hoạt động
-ph_hsf108,ph123,Đặng Văn Minh (PH Đặng Thị Nhung),Phụ huynh học sinh,Phụ huynh học sinh Đặng Thị Nhung,HSF-108,0896016371,Phụ huynh em Đặng Thị Nhung (Lớp 12A6),Hoạt động
-ph_hsf109,ph123,Sầm Văn Chương (PH Sầm Khánh Ly),Phụ huynh học sinh,Phụ huynh học sinh Sầm Khánh Ly,HSF-109,0356269517,Phụ huynh em Sầm Khánh Ly (Lớp 12A7),Hoạt động
-ph_hsf110,ph123,La Xuân Trường (PH La Thị Thanh Huyên),Phụ huynh học sinh,Phụ huynh học sinh La Thị Thanh Huyên,HSF-110,0326578351,Phụ huynh em La Thị Thanh Huyên (Lớp 12A7),Hoạt động
-ph_hsf111,ph123,Đặng Văn Xan (PH Đặng Thị Yến Nhi),Phụ huynh học sinh,Phụ huynh học sinh Đặng Thị Yến Nhi,HSF-111,0332631529,Phụ huynh em Đặng Thị Yến Nhi (Lớp 12A7),Hoạt động
-ph_hsf112,ph123,Lương Xuân Liêm (PH Lương Thị Lý),Phụ huynh học sinh,Phụ huynh học sinh Lương Thị Lý,HSF-112,0355060921,Phụ huynh em Lương Thị Lý (Lớp 12A7),Hoạt động
-bithudoan,dtn123,Bí Thư Đoàn Trường,Ban Chấp hành Đoàn,Bí thư Đoàn TNCS Hồ Chí Minh,Toàn trường,0988123456,Quản lý phong trào & thi đua ĐTN,Hoạt động
-codo,codo123,Đội Cờ Đỏ Chấm Nề Nếp,Đội Cờ đỏ,Đội cờ đỏ thanh niên xung kích,Toàn trường,0988654321,Chấm điểm nề nếp 20 chi đoàn,Hoạt động
+﻿Tên đăng nhập,Mật khẩu,Họ và tên,Vai trò,Chức danh,Mã liên kết,Số điện thoại,Ghi chú,Trạng thái,Quyền quản lý
+admin,bgh123,Ban Giám Hiệu (Admin),Ban Giám hiệu,Hiệu trưởng / Admin tối cao,Toàn trường,0988400184,Hiệu trưởng / Admin tối cao - Ban Giám Hiệu (Admin),Hoạt động,Toàn quyền quản trị
+hieutruong,ht123,Bùi Văn Tiến,Ban Giám hiệu,Hiệu trưởng nhà trường,Toàn trường,0988400184,Hiệu trưởng nhà trường - Bùi Văn Tiến,Hoạt động,Toàn quyền quản trị
+phohieutruong1,pht123,Đỗ Thị Hồng Phương,Ban Giám hiệu,Phó Hiệu trưởng PT Bán trú & CSVC,Toàn trường,0374083336,Phó Hiệu trưởng PT Bán trú & CSVC - Đỗ Thị Hồng Phương,Hoạt động,Toàn quyền quản trị
+phohieutruong2,pht123,Nguyễn Thị Hồng Thanh,Ban Giám hiệu,Phó Hiệu trưởng PT Chuyên môn,Toàn trường,0389191058,Phó Hiệu trưởng PT Chuyên môn - Nguyễn Thị Hồng Thanh,Hoạt động,Toàn quyền quản trị
+bithudoan,dtn123,Phạm Duy Thanh,Ban Chấp hành Đoàn,Bí thư Đoàn TNCS Hồ Chí Minh,Toàn trường,0915095449,Bí thư Đoàn TNCS Hồ Chí Minh - Phạm Duy Thanh,Hoạt động,Quản lý phương tiện & Cờ đỏ
+codo,codo123,Đội Cờ Đỏ Chấm Nề Nếp,Đội Cờ đỏ,Đội viên Cờ đỏ thanh niên xung kích,Toàn trường,0915095449,Đội viên Cờ đỏ thanh niên xung kích - Đội Cờ Đỏ Chấm Nề Nếp,Hoạt động,Quản lý phương tiện & Cờ đỏ
+quannhiem,qn123,Đỗ Văn Kiên,Giáo viên quản lý,Tổ trưởng Quản nhiệm ký túc xá,Toàn trường,0988123005,Tổ trưởng Quản nhiệm ký túc xá - Đỗ Văn Kiên,Hoạt động,Quản lý bán trú
+gvtruc01,truc123,Giáo Viên Trực Ca 1,Giáo viên quản lý,Giáo viên trực ký túc xá,Toàn trường,0988123006,Giáo viên trực ký túc xá - Giáo Viên Trực Ca 1,Hoạt động,Quản lý bán trú
+gvtruc02,truc123,Giáo Viên Trực Ca 2,Giáo viên quản lý,Giáo viên trực ký túc xá,Toàn trường,0988123007,Giáo viên trực ký túc xá - Giáo Viên Trực Ca 2,Hoạt động,Quản lý bán trú
+ketoan,kt123,Doãn Thị Hồng Anh,Kế toán bán trú,Nhân viên kế toán tài chính & bán trú,Toàn trường,0947217000,Nhân viên kế toán tài chính & bán trú - Doãn Thị Hồng Anh,Hoạt động,Cá nhân
+beptruong,bep123,Bếp Trưởng Nhà Ăn,Nhà bếp / Cấp dưỡng,Bếp trưởng phụ trách dinh dưỡng,Toàn trường,0988123008,Bếp trưởng phụ trách dinh dưỡng - Bếp Trưởng Nhà Ăn,Hoạt động,Cá nhân
+capduong,bep123,Tổ Cấp Dưỡng Bán Trú,Nhà bếp / Cấp dưỡng,Nhân viên cấp dưỡng,Toàn trường,0988123009,Nhân viên cấp dưỡng - Tổ Cấp Dưỡng Bán Trú,Hoạt động,Cá nhân
+nhabep,bep123,Tổ Cấp Dưỡng Nhà Bếp,Nhà bếp / Cấp dưỡng,Nhân viên cấp dưỡng,Toàn trường,0988123010,Nhân viên cấp dưỡng - Tổ Cấp Dưỡng Nhà Bếp,Hoạt động,Cá nhân
+gvcn_12a7,gvcn123,Hoàng Ngọc Anh,Giáo viên quản lý,GVCN Lớp 12A7 (Môn: Hóa học),12A7,0944512243,Giáo viên chủ nhiệm lớp 12A7,Hoạt động,Cá nhân
+gvcn_10a1,gvcn123,Trần Văn Đoàn,Giáo viên quản lý,GVCN Lớp 10A1 (Môn: Lịch sử),10A1,0947157111,Giáo viên chủ nhiệm lớp 10A1,Hoạt động,Cá nhân
+gvcn_10a7,gvcn123,Trần Thị Dòng,Giáo viên quản lý,GVCN Lớp 10A7 (Môn: Ngữ văn),10A7,0337117336,Giáo viên chủ nhiệm lớp 10A7,Hoạt động,Cá nhân
+gvcn_11a2,gvcn123,Trần Thị Dung,Giáo viên quản lý,GVCN Lớp 11A2 (Môn: Ngữ văn),11A2,0388639750,Giáo viên chủ nhiệm lớp 11A2,Hoạt động,Cá nhân
+gvcn_11a4,gvcn123,Nguyễn Thị Hương Giang,Giáo viên quản lý,GVCN Lớp 11A4 (Môn: Công nghệ),11A4,0943438550,Giáo viên chủ nhiệm lớp 11A4,Hoạt động,Cá nhân
+gvcn_12a3,gvcn123,Lò Văn Giáp,Giáo viên quản lý,GVCN Lớp 12A3 (Môn: Vật lý),12A3,0986374248,Giáo viên chủ nhiệm lớp 12A3,Hoạt động,Cá nhân
+gvcn_10a5,gvcn123,Nguyễn Nhật Hà,Giáo viên quản lý,GVCN Lớp 10A5 (Môn: Vật lý),10A5,0342361644,Giáo viên chủ nhiệm lớp 10A5,Hoạt động,Cá nhân
+gvcn_10a3,gvcn123,Trần Thị Hiền,Giáo viên quản lý,GVCN Lớp 10A3 (Môn: Ngữ văn),10A3,0974657769,Giáo viên chủ nhiệm lớp 10A3,Hoạt động,Cá nhân
+gvcn_12a2,gvcn123,Lê Minh Huệ,Giáo viên quản lý,GVCN Lớp 12A2 (Môn: Ngữ văn),12A2,0983711402,Giáo viên chủ nhiệm lớp 12A2,Hoạt động,Cá nhân
+gvcn_10a4,gvcn123,Phạm Đức Hưng,Giáo viên quản lý,GVCN Lớp 10A4 (Môn: Sinh học),10A4,0359220000,Giáo viên chủ nhiệm lớp 10A4,Hoạt động,Cá nhân
+gvcn_11a1,gvcn123,Bàn Thị Thu Hương,Giáo viên quản lý,GVCN Lớp 11A1 (Môn: Hóa học),11A1,0961727636,Giáo viên chủ nhiệm lớp 11A1,Hoạt động,Cá nhân
+gvcn_11a3,gvcn123,Trần Thị Thu Huyền,Giáo viên quản lý,GVCN Lớp 11A3 (Môn: Giáo dục thể chất),11A3,0919662825,Giáo viên chủ nhiệm lớp 11A3,Hoạt động,Cá nhân
+gvcn_10a2,gvcn123,Hoàng Thị Oanh,Giáo viên quản lý,GVCN Lớp 10A2 (Môn: Ngữ văn),10A2,0356656712,Giáo viên chủ nhiệm lớp 10A2,Hoạt động,Cá nhân
+gvcn_11a5,gvcn123,Trịnh Văn Thể,Giáo viên quản lý,GVCN Lớp 11A5 (Môn: Sinh học),11A5,0918099828,Giáo viên chủ nhiệm lớp 11A5,Hoạt động,Cá nhân
+gvcn_12a6,gvcn123,Phạm Lệ Thu,Giáo viên quản lý,GVCN Lớp 12A6 (Môn: Toán),12A6,0354626005,Giáo viên chủ nhiệm lớp 12A6,Hoạt động,Cá nhân
+gvcn_12a1,gvcn123,Phạm Thị Thu,Giáo viên quản lý,GVCN Lớp 12A1 (Môn: Giáo dục kinh tế và pháp luật),12A1,0988346058,Giáo viên chủ nhiệm lớp 12A1,Hoạt động,Cá nhân
+gvcn_12a4,gvcn123,Bùi Thị Xuân Thùy,Giáo viên quản lý,GVCN Lớp 12A4 (Môn: Lịch sử),12A4,0919728372,Giáo viên chủ nhiệm lớp 12A4,Hoạt động,Cá nhân
+gvcn_11a7,gvcn123,Ngô Thị Thùy,Giáo viên quản lý,GVCN Lớp 11A7 (Môn: Toán),11A7,0334668132,Giáo viên chủ nhiệm lớp 11A7,Hoạt động,Cá nhân
+gvcn_11a6,gvcn123,Nguyễn Thị Thủy,Giáo viên quản lý,GVCN Lớp 11A6 (Môn: Toán),11A6,0966981691,Giáo viên chủ nhiệm lớp 11A6,Hoạt động,Cá nhân
+gvcn_10a6,gvcn123,Phạm Thị Tin,Giáo viên quản lý,GVCN Lớp 10A6 (Môn: Sinh học),10A6,0347769860,Giáo viên chủ nhiệm lớp 10A6,Hoạt động,Cá nhân
+gvcn_12a5,gvcn123,Phạm Thị Tuyết,Giáo viên quản lý,GVCN Lớp 12A5 (Môn: Hóa học),12A5,0944533302,Giáo viên chủ nhiệm lớp 12A5,Hoạt động,Cá nhân
+gv_anh,gv123,Doãn Thị Hồng Anh,Nhân viên,Nhân viên - Nhân viên kế toán,1012633027,0947217000,Đại học - Kinh,Hoạt động,Cá nhân
+gv_bích,gv123,Hoàng Ngọc Bích,Nhân viên,Nhân viên - Nhân viên văn thư,1027757075,0965162534,Cao đẳng - Tày,Hoạt động,Cá nhân
+gv_đáng,gv123,Cao Văn Đáng,Giáo viên quản lý,Giáo viên - Tin học,1000164344,0962878326,Đại học và có chứng chỉ BDNVSP - Kinh,Hoạt động,Cá nhân
+gv_đông,gv123,Đỗ Minh Đông,Giáo viên quản lý,Giáo viên - Giáo dục thể chất,1003299488,0972189589,Đại học sư phạm - Kinh,Hoạt động,Cá nhân
+gv_hiền,gv123,Trần Thu Hiền,Giáo viên quản lý,Giáo viên - Địa lý,1012810275,0973427852,Đại học sư phạm - Kinh,Hoạt động,Cá nhân
+gv_hương,gv123,Lương Lan Hương,Giáo viên quản lý,Giáo viên - Tiếng Anh,1012631616,0392749918,Đại học sư phạm - Kinh,Hoạt động,Cá nhân
+gv_huyền,gv123,Phạm Thị Huyền,Giáo viên quản lý,Giáo viên - Tiếng Anh,1003299362,0833403333,Đại học sư phạm - Kinh,Hoạt động,Cá nhân
+gv_lắm,gv123,Lương Thị Lắm,Giáo viên quản lý,Giáo viên - Địa lý,1017860031,0971954989,Đại học sư phạm - Tày,Hoạt động,Cá nhân
+gv_mạnh,gv123,Trần Huy Mạnh,Giáo viên quản lý,Giáo viên - Toán,1000164331,0946724382,Thạc sĩ KHGD&ĐTGV - Kinh,Hoạt động,Cá nhân
+gv_phương,gv123,Đỗ Thị Hồng Phương,Nhân viên,Cán bộ quản lý - Vật lý,1003299352,0374083336,Đại học sư phạm - Kinh,Hoạt động,Cá nhân
+gv_quý,gv123,Đỗ Minh Quý,Giáo viên quản lý,Giáo viên - Giáo dục quốc phòng,1012722914,0983480416,Đại học sư phạm - Kinh,Hoạt động,Cá nhân
+gv_sơn,gv123,Thào A Sơn,Giáo viên quản lý,Giáo viên - Ngữ văn,1012631038,0985596811,Đại học sư phạm - HMông,Hoạt động,Cá nhân
+gv_thanh,gv123,Nguyễn Thị Hồng Thanh,Nhân viên,Cán bộ quản lý - Toán,1015057996,0389191058,Thạc sĩ KHGD&ĐTGV - Kinh,Hoạt động,Cá nhân
+gv_thanh2,gv123,Phạm Duy Thanh,Giáo viên quản lý,Giáo viên - Toán,1003299330,0915095449,Đại học sư phạm - Kinh,Hoạt động,Cá nhân
+gv_thật,gv123,Nguyễn Văn Thật,Giáo viên quản lý,Giáo viên - Giáo dục thể chất,1003299414,0974177132,Đại học sư phạm - Kinh,Hoạt động,Cá nhân
+gv_thúy,gv123,Nguyễn Thi Thúy,Nhân viên,Nhân viên - Nhân viên thiết bị,1017859638,0827982155,Cao đẳng - Kinh,Hoạt động,Cá nhân
+gv_thùy,gv123,Đoàn Thu Thùy,Giáo viên quản lý,Giáo viên - Tin học,1012810287,0947568000,Đại học - Kinh,Hoạt động,Cá nhân
+gv_tiến,gv123,Bùi Văn Tiến,Nhân viên,Cán bộ quản lý - Vật lý,1012640311,0988400184,Thạc sĩ KHGD&ĐTGV - Kinh,Hoạt động,Cá nhân
+gv_trường,gv123,Lê Thái Trường,Nhân viên,Nhân viên - Nhân viên bảo vệ,1036347354,0966261760, - Kinh,Hoạt động,Cá nhân
+gv_xuân,gv123,Nguyễn Thị Xuân,Giáo viên quản lý,Giáo viên - Tiếng Anh,1003299400,0972698556,Đại học - Kinh,Hoạt động,Cá nhân
+gv_xuân2,gv123,Phạm Hồng Xuân,Giáo viên quản lý,Giáo viên - Lịch sử,1003299346,0332819468,Thạc sĩ KHGD&ĐTGV - Kinh,Hoạt động,Cá nhân
+hsn001,hs123,Bàn Hải Phong,Học sinh,Học sinh bán trú (Phòng 308),HSN-001,0971909148,Lớp 10A1 - Phòng 308 - G-01 (Thành viên),Hoạt động,Cá nhân
+ph_hsn001,ph123,Bàn Văn Trịnh (PH Bàn Hải Phong),Phụ huynh học sinh,Phụ huynh em Bàn Hải Phong,HSN-001,0867106916,Phụ huynh em Bàn Hải Phong (Lớp 10A1 - Phòng 308),Hoạt động,Cá nhân
+hsn002,hs123,Đặng Đức Khiêm,Học sinh,Học sinh bán trú (Phòng 308),HSN-002,0869753415,Lớp 10A1 - Phòng 308 - G-02 (Thành viên),Hoạt động,Cá nhân
+ph_hsn002,ph123,Đặng Văn Hoàng (PH Đặng Đức Khiêm),Phụ huynh học sinh,Phụ huynh em Đặng Đức Khiêm,HSN-002,0977183836,Phụ huynh em Đặng Đức Khiêm (Lớp 10A1 - Phòng 308),Hoạt động,Cá nhân
+hsn003,hs123,Hoàng Minh Quân,Học sinh,Học sinh bán trú (Phòng 308),HSN-003,0869889243,Lớp 10A1 - Phòng 308 - G-03 (Thành viên),Hoạt động,Cá nhân
+ph_hsn003,ph123,Hoàng Văn Nhiễu (PH Hoàng Minh Quân),Phụ huynh học sinh,Phụ huynh em Hoàng Minh Quân,HSN-003,0971994864,Phụ huynh em Hoàng Minh Quân (Lớp 10A1 - Phòng 308),Hoạt động,Cá nhân
+hsn004,hs123,Hoàng Quốc Phòng,Học sinh,Học sinh bán trú (Phòng 308),HSN-004,0327654940,Lớp 10A1 - Phòng 308 - G-04 (Thành viên),Hoạt động,Cá nhân
+ph_hsn004,ph123,Hoàng Văn Hải (PH Hoàng Quốc Phòng),Phụ huynh học sinh,Phụ huynh em Hoàng Quốc Phòng,HSN-004,0387149387,Phụ huynh em Hoàng Quốc Phòng (Lớp 10A1 - Phòng 308),Hoạt động,Cá nhân
+hsn005,hs123,Hoàng Xuân Huần,Học sinh,Học sinh bán trú (Phòng 308),HSN-005,0377690811,Lớp 10A1 - Phòng 308 - G-05 (Thành viên),Hoạt động,Cá nhân
+ph_hsn005,ph123,Hoàng Văn Hoà (PH Hoàng Xuân Huần),Phụ huynh học sinh,Phụ huynh em Hoàng Xuân Huần,HSN-005,0365140211,Phụ huynh em Hoàng Xuân Huần (Lớp 10A1 - Phòng 308),Hoạt động,Cá nhân
+hsn006,hs123,Nông Đức Duy,Học sinh,Học sinh bán trú (Phòng 308),HSN-006,0325242301,Lớp 10A1 - Phòng 308 - G-06 (Thành viên),Hoạt động,Cá nhân
+ph_hsn006,ph123,Nông Ton Pham (PH Nông Đức Duy),Phụ huynh học sinh,Phụ huynh em Nông Đức Duy,HSN-006,0366675523,Phụ huynh em Nông Đức Duy (Lớp 10A1 - Phòng 308),Hoạt động,Cá nhân
+hsn007,hs123,Hoàng Thừa Tài,Học sinh,Học sinh bán trú (Phòng 308),HSN-007,33509143,Lớp 10A1 - Phòng 308 - G-07 (Thành viên),Hoạt động,Cá nhân
+ph_hsn007,ph123,Hoàng Xuân Lâm (PH Hoàng Thừa Tài),Phụ huynh học sinh,Phụ huynh em Hoàng Thừa Tài,HSN-007,0335402730,Phụ huynh em Hoàng Thừa Tài (Lớp 10A1 - Phòng 308),Hoạt động,Cá nhân
+hsn008,hs123,Hoàng Văn Ánh,Học sinh,Trưởng phòng (Phòng 308),HSN-008,0334172984,Lớp 10A1 - Phòng 308 - G-08 (Trưởng phòng),Hoạt động,Cá nhân
+ph_hsn008,ph123,Hoàng Văn Hoàn (PH Hoàng Văn Ánh),Phụ huynh học sinh,Phụ huynh em Hoàng Văn Ánh,HSN-008,0336821553,Phụ huynh em Hoàng Văn Ánh (Lớp 10A1 - Phòng 308),Hoạt động,Cá nhân
+hsn009,hs123,Triệu Quang Vũ,Học sinh,Học sinh bán trú (Phòng 308),HSN-009,0373502163,Lớp 10A2 - Phòng 308 - G-09 (Thành viên),Hoạt động,Cá nhân
+ph_hsn009,ph123,Triệu Công Đoàn (PH Triệu Quang Vũ),Phụ huynh học sinh,Phụ huynh em Triệu Quang Vũ,HSN-009,0382528034,Phụ huynh em Triệu Quang Vũ (Lớp 10A2 - Phòng 308),Hoạt động,Cá nhân
+hsn010,hs123,Sùng Thuận Phong,Học sinh,Học sinh bán trú (Phòng 308),HSN-010,0344448939,Lớp 10A2 - Phòng 308 - G-10 (Thành viên),Hoạt động,Cá nhân
+ph_hsn010,ph123,Sùng A Giáo (PH Sùng Thuận Phong),Phụ huynh học sinh,Phụ huynh em Sùng Thuận Phong,HSN-010,0382221652,Phụ huynh em Sùng Thuận Phong (Lớp 10A2 - Phòng 308),Hoạt động,Cá nhân
+hsn011,hs123,Đặng Minh Toan,Học sinh,Học sinh bán trú (Phòng 307),HSN-011,0383066871,Lớp 10A3 - Phòng 307 - G-11 (Thành viên),Hoạt động,Cá nhân
+ph_hsn011,ph123,Đặng Văn Túc (PH Đặng Minh Toan),Phụ huynh học sinh,Phụ huynh em Đặng Minh Toan,HSN-011,0392724342,Phụ huynh em Đặng Minh Toan (Lớp 10A3 - Phòng 307),Hoạt động,Cá nhân
+hsn012,hs123,Hoàng Gia Bảo,Học sinh,Học sinh bán trú (Phòng 307),HSN-012,0327065011,Lớp 10A3 - Phòng 307 - G-12 (Thành viên),Hoạt động,Cá nhân
+ph_hsn012,ph123,Hoàng Văn Tuyến (PH Hoàng Gia Bảo),Phụ huynh học sinh,Phụ huynh em Hoàng Gia Bảo,HSN-012,0337287811,Phụ huynh em Hoàng Gia Bảo (Lớp 10A3 - Phòng 307),Hoạt động,Cá nhân
+hsn013,hs123,Hà Chí Tường,Học sinh,Học sinh bán trú (Phòng 307),HSN-013,0357756445,Lớp 10A3 - Phòng 307 - G-01 (Thành viên),Hoạt động,Cá nhân
+ph_hsn013,ph123,Hà Văn Hướng (PH Hà Chí Tường),Phụ huynh học sinh,Phụ huynh em Hà Chí Tường,HSN-013,0345554070,Phụ huynh em Hà Chí Tường (Lớp 10A3 - Phòng 307),Hoạt động,Cá nhân
+hsn014,hs123,Hoàng Đức Lương,Học sinh,Học sinh bán trú (Phòng 307),HSN-014,0339259811,Lớp 10A3 - Phòng 307 - G-02 (Thành viên),Hoạt động,Cá nhân
+ph_hsn014,ph123,Hoàng Văn Thành (PH Hoàng Đức Lương),Phụ huynh học sinh,Phụ huynh em Hoàng Đức Lương,HSN-014,0362754731,Phụ huynh em Hoàng Đức Lương (Lớp 10A3 - Phòng 307),Hoạt động,Cá nhân
+hsn015,hs123,Lý Chí Kiên,Học sinh,Học sinh bán trú (Phòng 307),HSN-015,0383819941,Lớp 10A3 - Phòng 307 - G-03 (Thành viên),Hoạt động,Cá nhân
+ph_hsn015,ph123,Lý Văn Sơn (PH Lý Chí Kiên),Phụ huynh học sinh,Phụ huynh em Lý Chí Kiên,HSN-015,0385305641,Phụ huynh em Lý Chí Kiên (Lớp 10A3 - Phòng 307),Hoạt động,Cá nhân
+hsn016,hs123,Hoàng Phi Long,Học sinh,Học sinh bán trú (Phòng 307),HSN-016,0367424987,Lớp 10A3 - Phòng 307 - G-04 (Thành viên),Hoạt động,Cá nhân
+ph_hsn016,ph123,Hoàng Văn Hằng (PH Hoàng Phi Long),Phụ huynh học sinh,Phụ huynh em Hoàng Phi Long,HSN-016,0977815398,Phụ huynh em Hoàng Phi Long (Lớp 10A3 - Phòng 307),Hoạt động,Cá nhân
+hsn017,hs123,Đặng Quang Dũng,Học sinh,Học sinh bán trú (Phòng 307),HSN-017,0702041505,Lớp 10A3 - Phòng 307 - G-05 (Thành viên),Hoạt động,Cá nhân
+ph_hsn017,ph123,Đặng Văn Tiên (PH Đặng Quang Dũng),Phụ huynh học sinh,Phụ huynh em Đặng Quang Dũng,HSN-017,0906194200,Phụ huynh em Đặng Quang Dũng (Lớp 10A3 - Phòng 307),Hoạt động,Cá nhân
+hsn018,hs123,Bàn Minh Đức,Học sinh,Học sinh bán trú (Phòng 307),HSN-018,,Lớp 10A3 - Phòng 307 - G-06 (Thành viên),Hoạt động,Cá nhân
+ph_hsn018,ph123,Bàn Văn May (PH Bàn Minh Đức),Phụ huynh học sinh,Phụ huynh em Bàn Minh Đức,HSN-018,0388039801,Phụ huynh em Bàn Minh Đức (Lớp 10A3 - Phòng 307),Hoạt động,Cá nhân
+hsn019,hs123,Hoàng Hữu Duy,Học sinh,Học sinh bán trú (Phòng 307),HSN-019,,Lớp 10A3 - Phòng 307 - G-07 (Thành viên),Hoạt động,Cá nhân
+ph_hsn019,ph123,Hoàng Văn Đức (PH Hoàng Hữu Duy),Phụ huynh học sinh,Phụ huynh em Hoàng Hữu Duy,HSN-019,0964141142,Phụ huynh em Hoàng Hữu Duy (Lớp 10A3 - Phòng 307),Hoạt động,Cá nhân
+hsn020,hs123,Nông Xuân Kiểm,Học sinh,Học sinh bán trú (Phòng 307),HSN-020,0862705096,Lớp 10A3 - Phòng 307 - G-08 (Thành viên),Hoạt động,Cá nhân
+ph_hsn020,ph123,Nông Văn Đại (PH Nông Xuân Kiểm),Phụ huynh học sinh,Phụ huynh em Nông Xuân Kiểm,HSN-020,0364247326,Phụ huynh em Nông Xuân Kiểm (Lớp 10A3 - Phòng 307),Hoạt động,Cá nhân
+hsn021,hs123,Bàn Quốc Anh,Học sinh,Trưởng phòng (Phòng 307),HSN-021,0327590264,Lớp 10A4 - Phòng 307 - G-09 (Trưởng phòng),Hoạt động,Cá nhân
+ph_hsn021,ph123,Nguyễn Duy Thưởng (PH Bàn Quốc Anh),Phụ huynh học sinh,Phụ huynh em Bàn Quốc Anh,HSN-021,0868640391,Phụ huynh em Bàn Quốc Anh (Lớp 10A4 - Phòng 307),Hoạt động,Cá nhân
+hsn022,hs123,Bàn Thành Nghiệp,Học sinh,Học sinh bán trú (Phòng 306),HSN-022,0367313671,Lớp 10A4 - Phòng 306 - G-10 (Thành viên),Hoạt động,Cá nhân
+ph_hsn022,ph123,Bàn Ton San (PH Bàn Thành Nghiệp),Phụ huynh học sinh,Phụ huynh em Bàn Thành Nghiệp,HSN-022,0359845021,Phụ huynh em Bàn Thành Nghiệp (Lớp 10A4 - Phòng 306),Hoạt động,Cá nhân
+hsn023,hs123,Đặng Nguyên Long,Học sinh,Học sinh bán trú (Phòng 306),HSN-023,0357413720,Lớp 10A4 - Phòng 306 - G-11 (Thành viên),Hoạt động,Cá nhân
+ph_hsn023,ph123,Đặng Văn Hùng (PH Đặng Nguyên Long),Phụ huynh học sinh,Phụ huynh em Đặng Nguyên Long,HSN-023,0966231870,Phụ huynh em Đặng Nguyên Long (Lớp 10A4 - Phòng 306),Hoạt động,Cá nhân
+hsn024,hs123,Đặng Nguyên Lương,Học sinh,Học sinh bán trú (Phòng 306),HSN-024,0349976830,Lớp 10A4 - Phòng 306 - G-12 (Thành viên),Hoạt động,Cá nhân
+ph_hsn024,ph123,Hoàng Văn Ngợi (PH Đặng Nguyên Lương),Phụ huynh học sinh,Phụ huynh em Đặng Nguyên Lương,HSN-024,0915586635,Phụ huynh em Đặng Nguyên Lương (Lớp 10A4 - Phòng 306),Hoạt động,Cá nhân
+hsn025,hs123,Hà Xuân Quang,Học sinh,Học sinh bán trú (Phòng 306),HSN-025,0352633953,Lớp 10A4 - Phòng 306 - G-01 (Thành viên),Hoạt động,Cá nhân
+ph_hsn025,ph123,Hà Văn Long (PH Hà Xuân Quang),Phụ huynh học sinh,Phụ huynh em Hà Xuân Quang,HSN-025,0359615338,Phụ huynh em Hà Xuân Quang (Lớp 10A4 - Phòng 306),Hoạt động,Cá nhân
+hsn026,hs123,Hoàng Trung Đức,Học sinh,Học sinh bán trú (Phòng 306),HSN-026,0862105274,Lớp 10A4 - Phòng 306 - G-02 (Thành viên),Hoạt động,Cá nhân
+ph_hsn026,ph123,Hoàng Văn Huỳnh (PH Hoàng Trung Đức),Phụ huynh học sinh,Phụ huynh em Hoàng Trung Đức,HSN-026,0394977390,Phụ huynh em Hoàng Trung Đức (Lớp 10A4 - Phòng 306),Hoạt động,Cá nhân
+hsn027,hs123,Hoàng Văn Thượng,Học sinh,Học sinh bán trú (Phòng 306),HSN-027,0335508944,Lớp 10A4 - Phòng 306 - G-03 (Thành viên),Hoạt động,Cá nhân
+ph_hsn027,ph123,Hoàng văn Hoàng (PH Hoàng Văn Thượng),Phụ huynh học sinh,Phụ huynh em Hoàng Văn Thượng,HSN-027,0968022730,Phụ huynh em Hoàng Văn Thượng (Lớp 10A4 - Phòng 306),Hoạt động,Cá nhân
+hsn028,hs123,Bùi Đức Hiếu,Học sinh,Trưởng phòng (Phòng 306),HSN-028,0975994825,Lớp 10A7 - Phòng 306 - G-04 (Trưởng phòng),Hoạt động,Cá nhân
+ph_hsn028,ph123,Bùi Văn Minh (PH Bùi Đức Hiếu),Phụ huynh học sinh,Phụ huynh em Bùi Đức Hiếu,HSN-028,0879005432,Phụ huynh em Bùi Đức Hiếu (Lớp 10A7 - Phòng 306),Hoạt động,Cá nhân
+hsn029,hs123,Lý Văn Hiếu,Học sinh,Học sinh bán trú (Phòng 306),HSN-029,0355298309,Lớp 10A7 - Phòng 306 - G-05 (Thành viên),Hoạt động,Cá nhân
+ph_hsn029,ph123,Lý Văn Đức (PH Lý Văn Hiếu),Phụ huynh học sinh,Phụ huynh em Lý Văn Hiếu,HSN-029,0386690111,Phụ huynh em Lý Văn Hiếu (Lớp 10A7 - Phòng 306),Hoạt động,Cá nhân
+hsn030,hs123,Nguyễn Tiến Thành,Học sinh,Học sinh bán trú (Phòng 306),HSN-030,,Lớp 10A7 - Phòng 306 - G-06 (Thành viên),Hoạt động,Cá nhân
+ph_hsn030,ph123,Nguyễn Văn Tý (PH Nguyễn Tiến Thành),Phụ huynh học sinh,Phụ huynh em Nguyễn Tiến Thành,HSN-030,0813658987,Phụ huynh em Nguyễn Tiến Thành (Lớp 10A7 - Phòng 306),Hoạt động,Cá nhân
+hsn031,hs123,Triệu Đức Lương,Học sinh,Học sinh bán trú (Phòng 306),HSN-031,,Lớp 10A7 - Phòng 306 - G-07 (Thành viên),Hoạt động,Cá nhân
+ph_hsn031,ph123,Triệu Văn Phong (PH Triệu Đức Lương),Phụ huynh học sinh,Phụ huynh em Triệu Đức Lương,HSN-031,0337554986,Phụ huynh em Triệu Đức Lương (Lớp 10A7 - Phòng 306),Hoạt động,Cá nhân
+hsn032,hs123,Triệu Văn Tuấn,Học sinh,Học sinh bán trú (Phòng 305),HSN-032,,Lớp 10A7 - Phòng 305 - G-08 (Thành viên),Hoạt động,Cá nhân
+ph_hsn032,ph123,Triệu Tòn Khách (PH Triệu Văn Tuấn),Phụ huynh học sinh,Phụ huynh em Triệu Văn Tuấn,HSN-032,0359796861,Phụ huynh em Triệu Văn Tuấn (Lớp 10A7 - Phòng 305),Hoạt động,Cá nhân
+hsn033,hs123,Cư Seo Tánh,Học sinh,Trưởng phòng (Phòng 305),HSN-033,0356063728,Lớp 11A1 - Phòng 305 - G-09 (Trưởng phòng),Hoạt động,Cá nhân
+ph_hsn033,ph123,Cư Seo Giả (PH Cư Seo Tánh),Phụ huynh học sinh,Phụ huynh em Cư Seo Tánh,HSN-033,0355802206,Phụ huynh em Cư Seo Tánh (Lớp 11A1 - Phòng 305),Hoạt động,Cá nhân
+hsn034,hs123,Đặng Tuấn Anh,Học sinh,Học sinh bán trú (Phòng 305),HSN-034,0333785199,Lớp 11A1 - Phòng 305 - G-10 (Thành viên),Hoạt động,Cá nhân
+ph_hsn034,ph123,Đặng Quang lợi (PH Đặng Tuấn Anh),Phụ huynh học sinh,Phụ huynh em Đặng Tuấn Anh,HSN-034,0986391620,Phụ huynh em Đặng Tuấn Anh (Lớp 11A1 - Phòng 305),Hoạt động,Cá nhân
+hsn035,hs123,Hoàng đình Khải,Học sinh,Học sinh bán trú (Phòng 305),HSN-035,0357508650,Lớp 11A1 - Phòng 305 - G-11 (Thành viên),Hoạt động,Cá nhân
+ph_hsn035,ph123,Hoàng văn nhu (PH Hoàng đình Khải),Phụ huynh học sinh,Phụ huynh em Hoàng đình Khải,HSN-035,0362013615,Phụ huynh em Hoàng đình Khải (Lớp 11A1 - Phòng 305),Hoạt động,Cá nhân
+hsn036,hs123,Đoàn Bình Tin,Học sinh,Học sinh bán trú (Phòng 305),HSN-036,0326730495,Lớp 11A2 - Phòng 305 - G-12 (Thành viên),Hoạt động,Cá nhân
+ph_hsn036,ph123,Đoàn Xuân Hưng (PH Đoàn Bình Tin),Phụ huynh học sinh,Phụ huynh em Đoàn Bình Tin,HSN-036,0362615095,Phụ huynh em Đoàn Bình Tin (Lớp 11A2 - Phòng 305),Hoạt động,Cá nhân
+hsn037,hs123,Lý Thành Vương,Học sinh,Học sinh bán trú (Phòng 305),HSN-037,0868556054,Lớp 11A2 - Phòng 305 - G-01 (Thành viên),Hoạt động,Cá nhân
+ph_hsn037,ph123,Lý Văn Bắc (PH Lý Thành Vương),Phụ huynh học sinh,Phụ huynh em Lý Thành Vương,HSN-037,0987220421,Phụ huynh em Lý Thành Vương (Lớp 11A2 - Phòng 305),Hoạt động,Cá nhân
+hsn038,hs123,Ma Seo Cương,Học sinh,Học sinh bán trú (Phòng 305),HSN-038,,Lớp 11A2 - Phòng 305 - G-02 (Thành viên),Hoạt động,Cá nhân
+ph_hsn038,ph123,Ma Seo Vẳng (PH Ma Seo Cương),Phụ huynh học sinh,Phụ huynh em Ma Seo Cương,HSN-038,0336161311,Phụ huynh em Ma Seo Cương (Lớp 11A2 - Phòng 305),Hoạt động,Cá nhân
+hsn039,hs123,Đặng Thanh Lâm,Học sinh,Học sinh bán trú (Phòng 305),HSN-039,0338639155,Lớp 11A2 - Phòng 305 - G-03 (Thành viên),Hoạt động,Cá nhân
+ph_hsn039,ph123,ĐặngVăn Thắng (PH Đặng Thanh Lâm),Phụ huynh học sinh,Phụ huynh em Đặng Thanh Lâm,HSN-039,0961252844,Phụ huynh em Đặng Thanh Lâm (Lớp 11A2 - Phòng 305),Hoạt động,Cá nhân
+hsn040,hs123,Nguyễn Tùng Dương,Học sinh,Học sinh bán trú (Phòng 305),HSN-040,0818233010,Lớp 11A2 - Phòng 305 - G-04 (Thành viên),Hoạt động,Cá nhân
+ph_hsn040,ph123,Nguyễn Văn Sơn (PH Nguyễn Tùng Dương),Phụ huynh học sinh,Phụ huynh em Nguyễn Tùng Dương,HSN-040,0375591987,Phụ huynh em Nguyễn Tùng Dương (Lớp 11A2 - Phòng 305),Hoạt động,Cá nhân
+hsn041,hs123,Trần Văn Cương,Học sinh,Học sinh bán trú (Phòng 305),HSN-041,0347059024,Lớp 11A2 - Phòng 305 - G-05 (Thành viên),Hoạt động,Cá nhân
+ph_hsn041,ph123,Trần Văn Biên (PH Trần Văn Cương),Phụ huynh học sinh,Phụ huynh em Trần Văn Cương,HSN-041,0382263861,Phụ huynh em Trần Văn Cương (Lớp 11A2 - Phòng 305),Hoạt động,Cá nhân
+hsn042,hs123,Triệu Tiến Chu,Học sinh,Học sinh bán trú (Phòng 304),HSN-042,0869511475,Lớp 11A2 - Phòng 304 - G-06 (Thành viên),Hoạt động,Cá nhân
+ph_hsn042,ph123,Triệu Văn Minh (PH Triệu Tiến Chu),Phụ huynh học sinh,Phụ huynh em Triệu Tiến Chu,HSN-042,0373021933,Phụ huynh em Triệu Tiến Chu (Lớp 11A2 - Phòng 304),Hoạt động,Cá nhân
+hsn043,hs123,Hoàng Văn Yên,Học sinh,Học sinh bán trú (Phòng 304),HSN-043,0326862213,Lớp 11A3 - Phòng 304 - G-07 (Thành viên),Hoạt động,Cá nhân
+ph_hsn043,ph123,Hoàng Văn Nhất (PH Hoàng Văn Yên),Phụ huynh học sinh,Phụ huynh em Hoàng Văn Yên,HSN-043,0326862213,Phụ huynh em Hoàng Văn Yên (Lớp 11A3 - Phòng 304),Hoạt động,Cá nhân
+hsn044,hs123,Trương Ngọc Quý,Học sinh,Học sinh bán trú (Phòng 304),HSN-044,0869954329,Lớp 11A3 - Phòng 304 - G-08 (Thành viên),Hoạt động,Cá nhân
+ph_hsn044,ph123,Trương Văn Hùng (PH Trương Ngọc Quý),Phụ huynh học sinh,Phụ huynh em Trương Ngọc Quý,HSN-044,0332167706,Phụ huynh em Trương Ngọc Quý (Lớp 11A3 - Phòng 304),Hoạt động,Cá nhân
+hsn045,hs123,Triệu Kim Ngân,Học sinh,Học sinh bán trú (Phòng 304),HSN-045,0968940910,Lớp 11A3 - Phòng 304 - G-09 (Thành viên),Hoạt động,Cá nhân
+ph_hsn045,ph123,Triệu Văn Hai (PH Triệu Kim Ngân),Phụ huynh học sinh,Phụ huynh em Triệu Kim Ngân,HSN-045,0339005679,Phụ huynh em Triệu Kim Ngân (Lớp 11A3 - Phòng 304),Hoạt động,Cá nhân
+hsn046,hs123,Nông Tài Phú,Học sinh,Học sinh bán trú (Phòng 304),HSN-046,0788006714,Lớp 11A3 - Phòng 304 - G-10 (Thành viên),Hoạt động,Cá nhân
+ph_hsn046,ph123,Nông Văn Quý (PH Nông Tài Phú),Phụ huynh học sinh,Phụ huynh em Nông Tài Phú,HSN-046,0332167706,Phụ huynh em Nông Tài Phú (Lớp 11A3 - Phòng 304),Hoạt động,Cá nhân
+hsn047,hs123,Phùng Kim Ngân,Học sinh,Học sinh bán trú (Phòng 304),HSN-047,0375618620,Lớp 11A3 - Phòng 304 - G-11 (Thành viên),Hoạt động,Cá nhân
+ph_hsn047,ph123,Phùng Tòn Cau (PH Phùng Kim Ngân),Phụ huynh học sinh,Phụ huynh em Phùng Kim Ngân,HSN-047,0989215410,Phụ huynh em Phùng Kim Ngân (Lớp 11A3 - Phòng 304),Hoạt động,Cá nhân
+hsn048,hs123,Nguyễn Tuấn Hưng,Học sinh,Học sinh bán trú (Phòng 304),HSN-048,0343797540,Lớp 11A3 - Phòng 304 - G-12 (Thành viên),Hoạt động,Cá nhân
+ph_hsn048,ph123,Nguyễn Văn Oanh (PH Nguyễn Tuấn Hưng),Phụ huynh học sinh,Phụ huynh em Nguyễn Tuấn Hưng,HSN-048,0336338785,Phụ huynh em Nguyễn Tuấn Hưng (Lớp 11A3 - Phòng 304),Hoạt động,Cá nhân
+hsn049,hs123,Ma A Chính,Học sinh,Học sinh bán trú (Phòng 304),HSN-049,0368265904,Lớp 11A3 - Phòng 304 - G-01 (Thành viên),Hoạt động,Cá nhân
+ph_hsn049,ph123,Ma Seo Dình (PH Ma A Chính),Phụ huynh học sinh,Phụ huynh em Ma A Chính,HSN-049,0398513625,Phụ huynh em Ma A Chính (Lớp 11A3 - Phòng 304),Hoạt động,Cá nhân
+hsn050,hs123,Ma Seo Minh,Học sinh,Trưởng phòng (Phòng 304),HSN-050,0867594844,Lớp 11A3 - Phòng 304 - G-02 (Trưởng phòng),Hoạt động,Cá nhân
+ph_hsn050,ph123,Ma Seo Kếnh (PH Ma Seo Minh),Phụ huynh học sinh,Phụ huynh em Ma Seo Minh,HSN-050,0984417060,Phụ huynh em Ma Seo Minh (Lớp 11A3 - Phòng 304),Hoạt động,Cá nhân
+hsn051,hs123,Nguyễn Đoàn Huy,Học sinh,Học sinh bán trú (Phòng 304),HSN-051,0969491485,Lớp 11A3 - Phòng 304 - G-03 (Thành viên),Hoạt động,Cá nhân
+ph_hsn051,ph123,Nguyễn Văn Tuyên (PH Nguyễn Đoàn Huy),Phụ huynh học sinh,Phụ huynh em Nguyễn Đoàn Huy,HSN-051,0379284224,Phụ huynh em Nguyễn Đoàn Huy (Lớp 11A3 - Phòng 304),Hoạt động,Cá nhân
+hsn052,hs123,Sầm Quyết Thắng,Học sinh,Học sinh bán trú (Phòng 304),HSN-052,0347819042,Lớp 11A3 - Phòng 304 - G-04 (Thành viên),Hoạt động,Cá nhân
+ph_hsn052,ph123,Sầm Văn Chiến (PH Sầm Quyết Thắng),Phụ huynh học sinh,Phụ huynh em Sầm Quyết Thắng,HSN-052,0367966816,Phụ huynh em Sầm Quyết Thắng (Lớp 11A3 - Phòng 304),Hoạt động,Cá nhân
+hsn053,hs123,Lê Tiến Dũng,Học sinh,Học sinh bán trú (Phòng 303),HSN-053,,Lớp 11A4 - Phòng 303 - G-05 (Thành viên),Hoạt động,Cá nhân
+ph_hsn053,ph123,Lê Văn Quý (PH Lê Tiến Dũng),Phụ huynh học sinh,Phụ huynh em Lê Tiến Dũng,HSN-053,0973108813,Phụ huynh em Lê Tiến Dũng (Lớp 11A4 - Phòng 303),Hoạt động,Cá nhân
+hsn054,hs123,Lương Đình Nhật,Học sinh,Học sinh bán trú (Phòng 303),HSN-054,,Lớp 11A4 - Phòng 303 - G-06 (Thành viên),Hoạt động,Cá nhân
+ph_hsn054,ph123,Lương Văn Minh (PH Lương Đình Nhật),Phụ huynh học sinh,Phụ huynh em Lương Đình Nhật,HSN-054,0982330038,Phụ huynh em Lương Đình Nhật (Lớp 11A4 - Phòng 303),Hoạt động,Cá nhân
+hsn055,hs123,Ma Gia Huy,Học sinh,Trưởng phòng (Phòng 303),HSN-055,,Lớp 11A4 - Phòng 303 - G-07 (Trưởng phòng),Hoạt động,Cá nhân
+ph_hsn055,ph123,Ma Seo Trang (PH Ma Gia Huy),Phụ huynh học sinh,Phụ huynh em Ma Gia Huy,HSN-055,0329345427,Phụ huynh em Ma Gia Huy (Lớp 11A4 - Phòng 303),Hoạt động,Cá nhân
+hsn056,hs123,Nông Quang Lê,Học sinh,Học sinh bán trú (Phòng 303),HSN-056,,Lớp 11A4 - Phòng 303 - G-08 (Thành viên),Hoạt động,Cá nhân
+ph_hsn056,ph123,Nông Hữu Long (PH Nông Quang Lê),Phụ huynh học sinh,Phụ huynh em Nông Quang Lê,HSN-056,0967112007,Phụ huynh em Nông Quang Lê (Lớp 11A4 - Phòng 303),Hoạt động,Cá nhân
+hsn057,hs123,Trần Quang Chiến,Học sinh,Học sinh bán trú (Phòng 303),HSN-057,,Lớp 11A4 - Phòng 303 - G-09 (Thành viên),Hoạt động,Cá nhân
+ph_hsn057,ph123,Trần Văn Sáng (PH Trần Quang Chiến),Phụ huynh học sinh,Phụ huynh em Trần Quang Chiến,HSN-057,0961039921,Phụ huynh em Trần Quang Chiến (Lớp 11A4 - Phòng 303),Hoạt động,Cá nhân
+hsn058,hs123,Triệu Tiến Duy,Học sinh,Học sinh bán trú (Phòng 303),HSN-058,,Lớp 11A4 - Phòng 303 - G-10 (Thành viên),Hoạt động,Cá nhân
+ph_hsn058,ph123,Triệu Văn Dung (PH Triệu Tiến Duy),Phụ huynh học sinh,Phụ huynh em Triệu Tiến Duy,HSN-058,0823620135,Phụ huynh em Triệu Tiến Duy (Lớp 11A4 - Phòng 303),Hoạt động,Cá nhân
+hsn059,hs123,Đặng Văn Học,Học sinh,Học sinh bán trú (Phòng 303),HSN-059,0528043975,Lớp 11A5 - Phòng 303 - G-11 (Thành viên),Hoạt động,Cá nhân
+ph_hsn059,ph123,Đặng Văn Thắng (PH Đặng Văn Học),Phụ huynh học sinh,Phụ huynh em Đặng Văn Học,HSN-059,0975510175,Phụ huynh em Đặng Văn Học (Lớp 11A5 - Phòng 303),Hoạt động,Cá nhân
+hsn060,hs123,Hoàng Xuân Trường,Học sinh,Học sinh bán trú (Phòng 303),HSN-060,0339996815,Lớp 11A5 - Phòng 303 - G-12 (Thành viên),Hoạt động,Cá nhân
+ph_hsn060,ph123,Hoàng Văn Toàn (PH Hoàng Xuân Trường),Phụ huynh học sinh,Phụ huynh em Hoàng Xuân Trường,HSN-060,0964744195,Phụ huynh em Hoàng Xuân Trường (Lớp 11A5 - Phòng 303),Hoạt động,Cá nhân
+hsn061,hs123,Nguyễn Sinh Hùng,Học sinh,Học sinh bán trú (Phòng 303),HSN-061,0377027607,Lớp 11A5 - Phòng 303 - G-01 (Thành viên),Hoạt động,Cá nhân
+ph_hsn061,ph123,Nguyễn Văn Lả (PH Nguyễn Sinh Hùng),Phụ huynh học sinh,Phụ huynh em Nguyễn Sinh Hùng,HSN-061,0965866703,Phụ huynh em Nguyễn Sinh Hùng (Lớp 11A5 - Phòng 303),Hoạt động,Cá nhân
+hsn062,hs123,Nguyễn Trịnh Quang,Học sinh,Học sinh bán trú (Phòng 303),HSN-062,0865729436,Lớp 11A5 - Phòng 303 - G-02 (Thành viên),Hoạt động,Cá nhân
+ph_hsn062,ph123,Nguyễn Long Phi (PH Nguyễn Trịnh Quang),Phụ huynh học sinh,Phụ huynh em Nguyễn Trịnh Quang,HSN-062,0366474580,Phụ huynh em Nguyễn Trịnh Quang (Lớp 11A5 - Phòng 303),Hoạt động,Cá nhân
+hsn063,hs123,Triệu Hữu Dũng,Học sinh,Học sinh bán trú (Phòng 302),HSN-063,0966588213,Lớp 11A5 - Phòng 302 - G-03 (Thành viên),Hoạt động,Cá nhân
+ph_hsn063,ph123,Triệu Văn Lạng (PH Triệu Hữu Dũng),Phụ huynh học sinh,Phụ huynh em Triệu Hữu Dũng,HSN-063,0326860289,Phụ huynh em Triệu Hữu Dũng (Lớp 11A5 - Phòng 302),Hoạt động,Cá nhân
+hsn064,hs123,Đặng Hải Nam,Học sinh,Học sinh bán trú (Phòng 302),HSN-064,,Lớp 11A6 - Phòng 302 - G-04 (Thành viên),Hoạt động,Cá nhân
+ph_hsn064,ph123,Đặng Văn  Bìn (PH Đặng Hải Nam),Phụ huynh học sinh,Phụ huynh em Đặng Hải Nam,HSN-064,0327297821,Phụ huynh em Đặng Hải Nam (Lớp 11A6 - Phòng 302),Hoạt động,Cá nhân
+hsn065,hs123,Hảng Thuận Phú,Học sinh,Học sinh bán trú (Phòng 302),HSN-065,0373342490,Lớp 11A6 - Phòng 302 - G-05 (Thành viên),Hoạt động,Cá nhân
+ph_hsn065,ph123,Hảng Seo Thành (PH Hảng Thuận Phú),Phụ huynh học sinh,Phụ huynh em Hảng Thuận Phú,HSN-065,0979630403,Phụ huynh em Hảng Thuận Phú (Lớp 11A6 - Phòng 302),Hoạt động,Cá nhân
+hsn066,hs123,Hà Duy Lợi,Học sinh,Học sinh bán trú (Phòng 302),HSN-066,0356663914,Lớp 11A7 - Phòng 302 - G-06 (Thành viên),Hoạt động,Cá nhân
+ph_hsn066,ph123,Hà Ngọc Chuyển (PH Hà Duy Lợi),Phụ huynh học sinh,Phụ huynh em Hà Duy Lợi,HSN-066,0345526774,Phụ huynh em Hà Duy Lợi (Lớp 11A7 - Phòng 302),Hoạt động,Cá nhân
+hsn067,hs123,Lý Minh Bảo,Học sinh,Học sinh bán trú (Phòng 302),HSN-067,0333281827,Lớp 11A7 - Phòng 302 - G-07 (Thành viên),Hoạt động,Cá nhân
+ph_hsn067,ph123,Lý Văn Giáp (PH Lý Minh Bảo),Phụ huynh học sinh,Phụ huynh em Lý Minh Bảo,HSN-067,0963970115,Phụ huynh em Lý Minh Bảo (Lớp 11A7 - Phòng 302),Hoạt động,Cá nhân
+hsn068,hs123,Sùng A Phong,Học sinh,Học sinh bán trú (Phòng 302),HSN-068,0822086471,Lớp 11A7 - Phòng 302 - G-08 (Thành viên),Hoạt động,Cá nhân
+ph_hsn068,ph123,Sùng A Chư (PH Sùng A Phong),Phụ huynh học sinh,Phụ huynh em Sùng A Phong,HSN-068,0867058874,Phụ huynh em Sùng A Phong (Lớp 11A7 - Phòng 302),Hoạt động,Cá nhân
+hsn069,hs123,Đặng Minh Sơn,Học sinh,Trưởng phòng (Phòng 302),HSN-069,0981276177,Lớp 12A1 - Phòng 302 - G-09 (Trưởng phòng),Hoạt động,Cá nhân
+ph_hsn069,ph123,Đặng Văn Bình (PH Đặng Minh Sơn),Phụ huynh học sinh,Phụ huynh em Đặng Minh Sơn,HSN-069,0359295548,Phụ huynh em Đặng Minh Sơn (Lớp 12A1 - Phòng 302),Hoạt động,Cá nhân
+hsn070,hs123,Hảng Seo Lành,Học sinh,Học sinh bán trú (Phòng 302),HSN-070,0867594844,Lớp 12A1 - Phòng 302 - G-10 (Thành viên),Hoạt động,Cá nhân
+ph_hsn070,ph123,Hảng Seo Sảng (PH Hảng Seo Lành),Phụ huynh học sinh,Phụ huynh em Hảng Seo Lành,HSN-070,0392366160,Phụ huynh em Hảng Seo Lành (Lớp 12A1 - Phòng 302),Hoạt động,Cá nhân
+hsn071,hs123,Tẩn Hoàng Nghiệp,Học sinh,Học sinh bán trú (Phòng 302),HSN-071,0988611544,Lớp 12A1 - Phòng 302 - G-11 (Thành viên),Hoạt động,Cá nhân
+ph_hsn071,ph123,Tẩn A Khế (PH Tẩn Hoàng Nghiệp),Phụ huynh học sinh,Phụ huynh em Tẩn Hoàng Nghiệp,HSN-071,0989063570,Phụ huynh em Tẩn Hoàng Nghiệp (Lớp 12A1 - Phòng 302),Hoạt động,Cá nhân
+hsn072,hs123,Triệu Anh Quang,Học sinh,Học sinh bán trú (Phòng 301),HSN-072,,Lớp 12A1 - Phòng 301 - G-12 (Thành viên),Hoạt động,Cá nhân
+ph_hsn072,ph123,Triệu Xuân Vượng (PH Triệu Anh Quang),Phụ huynh học sinh,Phụ huynh em Triệu Anh Quang,HSN-072,0398854726,Phụ huynh em Triệu Anh Quang (Lớp 12A1 - Phòng 301),Hoạt động,Cá nhân
+hsn073,hs123,Hoàng Đình Tập,Học sinh,Học sinh bán trú (Phòng 301),HSN-073,0867982915,Lớp 12A2 - Phòng 301 - G-01 (Thành viên),Hoạt động,Cá nhân
+ph_hsn073,ph123,Hoàng Văn Thuận (PH Hoàng Đình Tập),Phụ huynh học sinh,Phụ huynh em Hoàng Đình Tập,HSN-073,0971110758,Phụ huynh em Hoàng Đình Tập (Lớp 12A2 - Phòng 301),Hoạt động,Cá nhân
+hsn074,hs123,Hoàng Minh Vũ,Học sinh,Học sinh bán trú (Phòng 301),HSN-074,0364198642,Lớp 12A2 - Phòng 301 - G-02 (Thành viên),Hoạt động,Cá nhân
+ph_hsn074,ph123,Hoàng Văn Vựng (PH Hoàng Minh Vũ),Phụ huynh học sinh,Phụ huynh em Hoàng Minh Vũ,HSN-074,0359367426,Phụ huynh em Hoàng Minh Vũ (Lớp 12A2 - Phòng 301),Hoạt động,Cá nhân
+hsn075,hs123,Lê Bảo Nghĩa,Học sinh,Học sinh bán trú (Phòng 301),HSN-075,0383058557,Lớp 12A4 - Phòng 301 - G-03 (Thành viên),Hoạt động,Cá nhân
+ph_hsn075,ph123,Lê Thái Đình (PH Lê Bảo Nghĩa),Phụ huynh học sinh,Phụ huynh em Lê Bảo Nghĩa,HSN-075,0342136204,Phụ huynh em Lê Bảo Nghĩa (Lớp 12A4 - Phòng 301),Hoạt động,Cá nhân
+hsn076,hs123,Nông Khánh Duy,Học sinh,Học sinh bán trú (Phòng 301),HSN-076,,Lớp 12A4 - Phòng 301 - G-04 (Thành viên),Hoạt động,Cá nhân
+ph_hsn076,ph123,Nông Văn Hình (PH Nông Khánh Duy),Phụ huynh học sinh,Phụ huynh em Nông Khánh Duy,HSN-076,0776705861,Phụ huynh em Nông Khánh Duy (Lớp 12A4 - Phòng 301),Hoạt động,Cá nhân
+hsn077,hs123,Sầm Minh Hữu,Học sinh,Học sinh bán trú (Phòng 301),HSN-077,0819683614,Lớp 12A4 - Phòng 301 - G-05 (Thành viên),Hoạt động,Cá nhân
+ph_hsn077,ph123,Sầm Văn Chiến (PH Sầm Minh Hữu),Phụ huynh học sinh,Phụ huynh em Sầm Minh Hữu,HSN-077,0367966816,Phụ huynh em Sầm Minh Hữu (Lớp 12A4 - Phòng 301),Hoạt động,Cá nhân
+hsn078,hs123,Trần Tuấn Anh,Học sinh,Học sinh bán trú (Phòng 301),HSN-078,0347024175,Lớp 12A4 - Phòng 301 - G-06 (Thành viên),Hoạt động,Cá nhân
+ph_hsn078,ph123,Trần Văn Hoàng (PH Trần Tuấn Anh),Phụ huynh học sinh,Phụ huynh em Trần Tuấn Anh,HSN-078,0989865335,Phụ huynh em Trần Tuấn Anh (Lớp 12A4 - Phòng 301),Hoạt động,Cá nhân
+hsn079,hs123,Triệu Tiến Thắng,Học sinh,Học sinh bán trú (Phòng 301),HSN-079,0328063484,Lớp 12A4 - Phòng 301 - G-07 (Thành viên),Hoạt động,Cá nhân
+ph_hsn079,ph123,Triệu Văn Lán (PH Triệu Tiến Thắng),Phụ huynh học sinh,Phụ huynh em Triệu Tiến Thắng,HSN-079,0366851077,Phụ huynh em Triệu Tiến Thắng (Lớp 12A4 - Phòng 301),Hoạt động,Cá nhân
+hsn080,hs123,Bàn Duy Khoa,Học sinh,Trưởng phòng (Phòng 301),HSN-080,0328323191,Lớp 12A5 - Phòng 301 - G-08 (Trưởng phòng),Hoạt động,Cá nhân
+ph_hsn080,ph123,Bàn Ton San (PH Bàn Duy Khoa),Phụ huynh học sinh,Phụ huynh em Bàn Duy Khoa,HSN-080,0973983608,Phụ huynh em Bàn Duy Khoa (Lớp 12A5 - Phòng 301),Hoạt động,Cá nhân
+hsn081,hs123,Bàn Thanh Chung,Học sinh,Học sinh bán trú (Phòng 205),HSN-081,0329384292,Lớp 12A5 - Phòng 205 - G-09 (Thành viên),Hoạt động,Cá nhân
+ph_hsn081,ph123,Bàn Tuấn Anh (PH Bàn Thanh Chung),Phụ huynh học sinh,Phụ huynh em Bàn Thanh Chung,HSN-081,0363145091,Phụ huynh em Bàn Thanh Chung (Lớp 12A5 - Phòng 205),Hoạt động,Cá nhân
+hsn082,hs123,Hà Phúc Lâm,Học sinh,Học sinh bán trú (Phòng 205),HSN-082,0376608278,Lớp 12A5 - Phòng 205 - G-10 (Thành viên),Hoạt động,Cá nhân
+ph_hsn082,ph123,Hà Xuân Tình (PH Hà Phúc Lâm),Phụ huynh học sinh,Phụ huynh em Hà Phúc Lâm,HSN-082,0336383054,Phụ huynh em Hà Phúc Lâm (Lớp 12A5 - Phòng 205),Hoạt động,Cá nhân
+hsn083,hs123,Hoàng Hải Duy,Học sinh,Học sinh bán trú (Phòng 205),HSN-083,0356516499,Lớp 12A5 - Phòng 205 - G-11 (Thành viên),Hoạt động,Cá nhân
+ph_hsn083,ph123,Hoàng Văn Hồng (PH Hoàng Hải Duy),Phụ huynh học sinh,Phụ huynh em Hoàng Hải Duy,HSN-083,0334181619,Phụ huynh em Hoàng Hải Duy (Lớp 12A5 - Phòng 205),Hoạt động,Cá nhân
+hsn084,hs123,Sầm Minh Đức,Học sinh,Trưởng phòng (Phòng 205),HSN-084,,Lớp 12A5 - Phòng 205 - G-12 (Trưởng phòng),Hoạt động,Cá nhân
+ph_hsn084,ph123,Sầm Quốc Đạt(mất) (PH Sầm Minh Đức),Phụ huynh học sinh,Phụ huynh em Sầm Minh Đức,HSN-084,0347953516,Phụ huynh em Sầm Minh Đức (Lớp 12A5 - Phòng 205),Hoạt động,Cá nhân
+hsn085,hs123,Triệu Qúy Đức,Học sinh,Học sinh bán trú (Phòng 205),HSN-085,0375967056,Lớp 12A5 - Phòng 205 - G-01 (Thành viên),Hoạt động,Cá nhân
+ph_hsn085,ph123,Hoàng Văn Lai (PH Triệu Qúy Đức),Phụ huynh học sinh,Phụ huynh em Triệu Qúy Đức,HSN-085,0354162240,Phụ huynh em Triệu Qúy Đức (Lớp 12A5 - Phòng 205),Hoạt động,Cá nhân
+hsn086,hs123,Vũ Duy Khánh,Học sinh,Học sinh bán trú (Phòng 205),HSN-086,0357071304,Lớp 12A5 - Phòng 205 - G-02 (Thành viên),Hoạt động,Cá nhân
+ph_hsn086,ph123,Vũ Văn Toàn (PH Vũ Duy Khánh),Phụ huynh học sinh,Phụ huynh em Vũ Duy Khánh,HSN-086,0379414597,Phụ huynh em Vũ Duy Khánh (Lớp 12A5 - Phòng 205),Hoạt động,Cá nhân
+hsn087,hs123,La Ngọc Tuyến,Học sinh,Học sinh bán trú (Phòng 205),HSN-087,0327883495,Lớp 12A7 - Phòng 205 - G-03 (Thành viên),Hoạt động,Cá nhân
+ph_hsn087,ph123,La Văn Tuyên (PH La Ngọc Tuyến),Phụ huynh học sinh,Phụ huynh em La Ngọc Tuyến,HSN-087,0378922358,Phụ huynh em La Ngọc Tuyến (Lớp 12A7 - Phòng 205),Hoạt động,Cá nhân
+hsn088,hs123,Triệu Trung Quý,Học sinh,Học sinh bán trú (Phòng 205),HSN-088,,Lớp 12A3 - Phòng 205 - G-04 (Thành viên),Hoạt động,Cá nhân
+ph_hsn088,ph123,Triệu Trung Kim (PH Triệu Trung Quý),Phụ huynh học sinh,Phụ huynh em Triệu Trung Quý,HSN-088,0985681214,Phụ huynh em Triệu Trung Quý (Lớp 12A3 - Phòng 205),Hoạt động,Cá nhân
+hsn089,hs123,Hoàng Trần Hiệp,Học sinh,Học sinh bán trú (Phòng 205),HSN-089,0327711651,Lớp 12A3 - Phòng 205 - G-05 (Thành viên),Hoạt động,Cá nhân
+ph_hsn089,ph123,Nguyễn Văn Thưởng (PH Hoàng Trần Hiệp),Phụ huynh học sinh,Phụ huynh em Hoàng Trần Hiệp,HSN-089,0374684251,Phụ huynh em Hoàng Trần Hiệp (Lớp 12A3 - Phòng 205),Hoạt động,Cá nhân
+hsu001,hs123,Triệu Thị Hiền,Học sinh,Học sinh bán trú (Phòng 401),HSU-001,0978083718,Lớp 10A1 - Phòng 401 - G-01 (Thành viên),Hoạt động,Cá nhân
+ph_hsu001,ph123,Triệu Văn Hai (PH Triệu Thị Hiền),Phụ huynh học sinh,Phụ huynh em Triệu Thị Hiền,HSU-001,0983990102,Phụ huynh em Triệu Thị Hiền (Lớp 10A1 - Phòng 401),Hoạt động,Cá nhân
+hsu002,hs123,Lý Lan Phương,Học sinh,Học sinh bán trú (Phòng 401),HSU-002,0369080231,Lớp 10A1 - Phòng 401 - G-02 (Thành viên),Hoạt động,Cá nhân
+ph_hsu002,ph123,Lý Văn Chúi (PH Lý Lan Phương),Phụ huynh học sinh,Phụ huynh em Lý Lan Phương,HSU-002,0336675404,Phụ huynh em Lý Lan Phương (Lớp 10A1 - Phòng 401),Hoạt động,Cá nhân
+hsu003,hs123,Lý Thị Thảo,Học sinh,Trưởng phòng (Phòng 401),HSU-003,0339869621,Lớp 10A1 - Phòng 401 - G-03 (Trưởng phòng),Hoạt động,Cá nhân
+ph_hsu003,ph123,Lý Văn Xuân (PH Lý Thị Thảo),Phụ huynh học sinh,Phụ huynh em Lý Thị Thảo,HSU-003,0392107797,Phụ huynh em Lý Thị Thảo (Lớp 10A1 - Phòng 401),Hoạt động,Cá nhân
+hsu004,hs123,Triệu Thị Thuý Hằng,Học sinh,Học sinh bán trú (Phòng 401),HSU-004,0368814711,Lớp 10A1 - Phòng 401 - G-04 (Thành viên),Hoạt động,Cá nhân
+ph_hsu004,ph123,Triệu Văn Phúc (PH Triệu Thị Thuý Hằng),Phụ huynh học sinh,Phụ huynh em Triệu Thị Thuý Hằng,HSU-004,0971316587,Phụ huynh em Triệu Thị Thuý Hằng (Lớp 10A1 - Phòng 401),Hoạt động,Cá nhân
+hsu005,hs123,Phùng Thị Khách,Học sinh,Học sinh bán trú (Phòng 401),HSU-005,0394515961,Lớp 10A1 - Phòng 401 - G-05 (Thành viên),Hoạt động,Cá nhân
+ph_hsu005,ph123,Đặng Văn Xương (PH Phùng Thị Khách),Phụ huynh học sinh,Phụ huynh em Phùng Thị Khách,HSU-005,0377536147,Phụ huynh em Phùng Thị Khách (Lớp 10A1 - Phòng 401),Hoạt động,Cá nhân
+hsu006,hs123,Triệu Thu Yến,Học sinh,Học sinh bán trú (Phòng 401),HSU-006,0395423735,Lớp 10A1 - Phòng 401 - G-06 (Thành viên),Hoạt động,Cá nhân
+ph_hsu006,ph123,Triệu Tòn Chản (PH Triệu Thu Yến),Phụ huynh học sinh,Phụ huynh em Triệu Thu Yến,HSU-006,0375109274,Phụ huynh em Triệu Thu Yến (Lớp 10A1 - Phòng 401),Hoạt động,Cá nhân
+hsu007,hs123,Lý Bảo Thanh,Học sinh,Học sinh bán trú (Phòng 401),HSU-007,0387266574,Lớp 10A1 - Phòng 401 - G-07 (Thành viên),Hoạt động,Cá nhân
+ph_hsu007,ph123,Lý Văn Tém (PH Lý Bảo Thanh),Phụ huynh học sinh,Phụ huynh em Lý Bảo Thanh,HSU-007,0963534328,Phụ huynh em Lý Bảo Thanh (Lớp 10A1 - Phòng 401),Hoạt động,Cá nhân
+hsu008,hs123,Hà Tố Uyên,Học sinh,Học sinh bán trú (Phòng 401),HSU-008,0362800201,Lớp 10A1 - Phòng 401 - G-08 (Thành viên),Hoạt động,Cá nhân
+ph_hsu008,ph123,Hà Văn Nam (PH Hà Tố Uyên),Phụ huynh học sinh,Phụ huynh em Hà Tố Uyên,HSU-008,0966511169,Phụ huynh em Hà Tố Uyên (Lớp 10A1 - Phòng 401),Hoạt động,Cá nhân
+hsu009,hs123,Hoàng Mỹ Lệ,Học sinh,Học sinh bán trú (Phòng 401),HSU-009,0328958260,Lớp 10A1 - Phòng 401 - G-09 (Thành viên),Hoạt động,Cá nhân
+ph_hsu009,ph123,Hoàng Văn Phú (PH Hoàng Mỹ Lệ),Phụ huynh học sinh,Phụ huynh em Hoàng Mỹ Lệ,HSU-009,0326824340,Phụ huynh em Hoàng Mỹ Lệ (Lớp 10A1 - Phòng 401),Hoạt động,Cá nhân
+hsu010,hs123,Lương Thị Thu Hoài,Học sinh,Học sinh bán trú (Phòng 401),HSU-010,0354059236,Lớp 10A1 - Phòng 401 - G-10 (Thành viên),Hoạt động,Cá nhân
+ph_hsu010,ph123,Lương Văn Hiếu (PH Lương Thị Thu Hoài),Phụ huynh học sinh,Phụ huynh em Lương Thị Thu Hoài,HSU-010,0394276331,Phụ huynh em Lương Thị Thu Hoài (Lớp 10A1 - Phòng 401),Hoạt động,Cá nhân
+hsu011,hs123,Nguyễn Thị Bích Hợp,Học sinh,Học sinh bán trú (Phòng 401),HSU-011,0358263884,Lớp 10A1 - Phòng 401 - G-11 (Thành viên),Hoạt động,Cá nhân
+ph_hsu011,ph123,Nguyễn Văn Hoà (PH Nguyễn Thị Bích Hợp),Phụ huynh học sinh,Phụ huynh em Nguyễn Thị Bích Hợp,HSU-011,0962190098,Phụ huynh em Nguyễn Thị Bích Hợp (Lớp 10A1 - Phòng 401),Hoạt động,Cá nhân
+hsu012,hs123,Sùng Thị Yến Chi,Học sinh,Học sinh bán trú (Phòng 402),HSU-012,,Lớp 10A2 - Phòng 402 - G-12 (Thành viên),Hoạt động,Cá nhân
+ph_hsu012,ph123,Sùng Seo Dế (PH Sùng Thị Yến Chi),Phụ huynh học sinh,Phụ huynh em Sùng Thị Yến Chi,HSU-012,0388587059,Phụ huynh em Sùng Thị Yến Chi (Lớp 10A2 - Phòng 402),Hoạt động,Cá nhân
+hsu013,hs123,Lý Quỳnh Anh,Học sinh,Học sinh bán trú (Phòng 402),HSU-013,0365134102,Lớp 10A2 - Phòng 402 - G-01 (Thành viên),Hoạt động,Cá nhân
+ph_hsu013,ph123,Lý Văn Sêm (PH Lý Quỳnh Anh),Phụ huynh học sinh,Phụ huynh em Lý Quỳnh Anh,HSU-013,0343564169,Phụ huynh em Lý Quỳnh Anh (Lớp 10A2 - Phòng 402),Hoạt động,Cá nhân
+hsu014,hs123,Ma Thị Thiệu Mấn,Học sinh,Học sinh bán trú (Phòng 402),HSU-014,0927106212,Lớp 10A2 - Phòng 402 - G-02 (Thành viên),Hoạt động,Cá nhân
+ph_hsu014,ph123,Ma Seo Vinh (PH Ma Thị Thiệu Mấn),Phụ huynh học sinh,Phụ huynh em Ma Thị Thiệu Mấn,HSU-014,0967067434,Phụ huynh em Ma Thị Thiệu Mấn (Lớp 10A2 - Phòng 402),Hoạt động,Cá nhân
+hsu015,hs123,Lý Thị Tâm Như,Học sinh,Học sinh bán trú (Phòng 402),HSU-015,0328939607,Lớp 10A2 - Phòng 402 - G-03 (Thành viên),Hoạt động,Cá nhân
+ph_hsu015,ph123,Nông Thị Châm (PH Lý Thị Tâm Như),Phụ huynh học sinh,Phụ huynh em Lý Thị Tâm Như,HSU-015,0376549216,Phụ huynh em Lý Thị Tâm Như (Lớp 10A2 - Phòng 402),Hoạt động,Cá nhân
+hsu016,hs123,Lý Thị Mẫn,Học sinh,Học sinh bán trú (Phòng 402),HSU-016,0386843454,Lớp 10A3 - Phòng 402 - G-04 (Thành viên),Hoạt động,Cá nhân
+ph_hsu016,ph123,Lý Thị Môn (PH Lý Thị Mẫn),Phụ huynh học sinh,Phụ huynh em Lý Thị Mẫn,HSU-016,0965005785,Phụ huynh em Lý Thị Mẫn (Lớp 10A3 - Phòng 402),Hoạt động,Cá nhân
+hsu017,hs123,Giàng Thị Thu Trang,Học sinh,Học sinh bán trú (Phòng 402),HSU-017,0387326153,Lớp 10A3 - Phòng 402 - G-05 (Thành viên),Hoạt động,Cá nhân
+ph_hsu017,ph123,Giàng Seo Quang (PH Giàng Thị Thu Trang),Phụ huynh học sinh,Phụ huynh em Giàng Thị Thu Trang,HSU-017,0326633006,Phụ huynh em Giàng Thị Thu Trang (Lớp 10A3 - Phòng 402),Hoạt động,Cá nhân
+hsu018,hs123,Giàng Thị Thoại,Học sinh,Học sinh bán trú (Phòng 402),HSU-018,0337400273,Lớp 10A3 - Phòng 402 - G-06 (Thành viên),Hoạt động,Cá nhân
+ph_hsu018,ph123,Giàng Seo Dìn (PH Giàng Thị Thoại),Phụ huynh học sinh,Phụ huynh em Giàng Thị Thoại,HSU-018,0967295787,Phụ huynh em Giàng Thị Thoại (Lớp 10A3 - Phòng 402),Hoạt động,Cá nhân
+hsu019,hs123,Đặng Thùy Tâm,Học sinh,Trưởng phòng (Phòng 402),HSU-019,0356996937,Lớp 10A3 - Phòng 402 - G-07 (Trưởng phòng),Hoạt động,Cá nhân
+ph_hsu019,ph123,Đặng Văn Nhất (PH Đặng Thùy Tâm),Phụ huynh học sinh,Phụ huynh em Đặng Thùy Tâm,HSU-019,0968047896,Phụ huynh em Đặng Thùy Tâm (Lớp 10A3 - Phòng 402),Hoạt động,Cá nhân
+hsu020,hs123,Phùng Thị Thiên Thu,Học sinh,Học sinh bán trú (Phòng 402),HSU-020,0343364542,Lớp 10A3 - Phòng 402 - G-08 (Thành viên),Hoạt động,Cá nhân
+ph_hsu020,ph123,Phùng Văn Phúc (PH Phùng Thị Thiên Thu),Phụ huynh học sinh,Phụ huynh em Phùng Thị Thiên Thu,HSU-020,0382940304,Phụ huynh em Phùng Thị Thiên Thu (Lớp 10A3 - Phòng 402),Hoạt động,Cá nhân
+hsu021,hs123,Hoàng Thị Việt Anh,Học sinh,Học sinh bán trú (Phòng 402),HSU-021,,Lớp 10A3 - Phòng 402 - G-09 (Thành viên),Hoạt động,Cá nhân
+ph_hsu021,ph123,Hoàng Văn Chiến (PH Hoàng Thị Việt Anh),Phụ huynh học sinh,Phụ huynh em Hoàng Thị Việt Anh,HSU-021,0388345114,Phụ huynh em Hoàng Thị Việt Anh (Lớp 10A3 - Phòng 402),Hoạt động,Cá nhân
+hsu022,hs123,Trần Thị Khuyên,Học sinh,Học sinh bán trú (Phòng 402),HSU-022,0876031730,Lớp 10A3 - Phòng 402 - G-10 (Thành viên),Hoạt động,Cá nhân
+ph_hsu022,ph123,Trần Văn Páo (PH Trần Thị Khuyên),Phụ huynh học sinh,Phụ huynh em Trần Thị Khuyên,HSU-022,0973800992,Phụ huynh em Trần Thị Khuyên (Lớp 10A3 - Phòng 402),Hoạt động,Cá nhân
+hsu023,hs123,Triệu Thị Hà Vy,Học sinh,Học sinh bán trú (Phòng 403),HSU-023,0358377993,Lớp 10A3 - Phòng 403 - G-11 (Thành viên),Hoạt động,Cá nhân
+ph_hsu023,ph123,Triệu Văn Phượng (PH Triệu Thị Hà Vy),Phụ huynh học sinh,Phụ huynh em Triệu Thị Hà Vy,HSU-023,0964049067,Phụ huynh em Triệu Thị Hà Vy (Lớp 10A3 - Phòng 403),Hoạt động,Cá nhân
+hsu024,hs123,Bàn Thị Thanh Trúc,Học sinh,Trưởng phòng (Phòng 403),HSU-024,0345533218,Lớp 10A3 - Phòng 403 - G-12 (Trưởng phòng),Hoạt động,Cá nhân
+ph_hsu024,ph123,Bàn Ton Máy (PH Bàn Thị Thanh Trúc),Phụ huynh học sinh,Phụ huynh em Bàn Thị Thanh Trúc,HSU-024,0376930020,Phụ huynh em Bàn Thị Thanh Trúc (Lớp 10A3 - Phòng 403),Hoạt động,Cá nhân
+hsu025,hs123,Tô Thị Khánh Ngọc,Học sinh,Học sinh bán trú (Phòng 403),HSU-025,0397626423,Lớp 10A3 - Phòng 403 - G-01 (Thành viên),Hoạt động,Cá nhân
+ph_hsu025,ph123,Tô Văn Oai (PH Tô Thị Khánh Ngọc),Phụ huynh học sinh,Phụ huynh em Tô Thị Khánh Ngọc,HSU-025,0392872778,Phụ huynh em Tô Thị Khánh Ngọc (Lớp 10A3 - Phòng 403),Hoạt động,Cá nhân
+hsu026,hs123,Triệu Thị Ánh,Học sinh,Học sinh bán trú (Phòng 403),HSU-026,,Lớp 10A4 - Phòng 403 - G-02 (Thành viên),Hoạt động,Cá nhân
+ph_hsu026,ph123,Triệu Văn Ngọ (PH Triệu Thị Ánh),Phụ huynh học sinh,Phụ huynh em Triệu Thị Ánh,HSU-026,0968309335,Phụ huynh em Triệu Thị Ánh (Lớp 10A4 - Phòng 403),Hoạt động,Cá nhân
+hsu027,hs123,Bàn Thị Hoa,Học sinh,Học sinh bán trú (Phòng 403),HSU-027,0868654376,Lớp 10A4 - Phòng 403 - G-03 (Thành viên),Hoạt động,Cá nhân
+ph_hsu027,ph123,Bàn Tuấn Anh (PH Bàn Thị Hoa),Phụ huynh học sinh,Phụ huynh em Bàn Thị Hoa,HSU-027,0971240758,Phụ huynh em Bàn Thị Hoa (Lớp 10A4 - Phòng 403),Hoạt động,Cá nhân
+hsu028,hs123,Triệu Thị Huyền,Học sinh,Học sinh bán trú (Phòng 403),HSU-028,0387053047,Lớp 10A4 - Phòng 403 - G-04 (Thành viên),Hoạt động,Cá nhân
+ph_hsu028,ph123,Triệu Văn Thắng (PH Triệu Thị Huyền),Phụ huynh học sinh,Phụ huynh em Triệu Thị Huyền,HSU-028,0378346106,Phụ huynh em Triệu Thị Huyền (Lớp 10A4 - Phòng 403),Hoạt động,Cá nhân
+hsu029,hs123,Hoàng Thị Nhi,Học sinh,Học sinh bán trú (Phòng 403),HSU-029,0325103423,Lớp 10A4 - Phòng 403 - G-05 (Thành viên),Hoạt động,Cá nhân
+ph_hsu029,ph123,Hoàng Văn Thuận (PH Hoàng Thị Nhi),Phụ huynh học sinh,Phụ huynh em Hoàng Thị Nhi,HSU-029,0344245596,Phụ huynh em Hoàng Thị Nhi (Lớp 10A4 - Phòng 403),Hoạt động,Cá nhân
+hsu030,hs123,Đặng Thị Nhung,Học sinh,Học sinh bán trú (Phòng 403),HSU-030,0382814837,Lớp 10A4 - Phòng 403 - G-06 (Thành viên),Hoạt động,Cá nhân
+ph_hsu030,ph123,Đặng Văn Xan (PH Đặng Thị Nhung),Phụ huynh học sinh,Phụ huynh em Đặng Thị Nhung,HSU-030,0961049812,Phụ huynh em Đặng Thị Nhung (Lớp 10A4 - Phòng 403),Hoạt động,Cá nhân
+hsu031,hs123,Hoàng Thu Phương,Học sinh,Học sinh bán trú (Phòng 403),HSU-031,0384060643,Lớp 10A4 - Phòng 403 - G-07 (Thành viên),Hoạt động,Cá nhân
+ph_hsu031,ph123,Hoàng Thừa Hiển (PH Hoàng Thu Phương),Phụ huynh học sinh,Phụ huynh em Hoàng Thu Phương,HSU-031,0369738258,Phụ huynh em Hoàng Thu Phương (Lớp 10A4 - Phòng 403),Hoạt động,Cá nhân
+hsu032,hs123,Triệu Phương Thảo,Học sinh,Học sinh bán trú (Phòng 403),HSU-032,0365504034,Lớp 10A4 - Phòng 403 - G-08 (Thành viên),Hoạt động,Cá nhân
+ph_hsu032,ph123,Triệu Hồng Hai (PH Triệu Phương Thảo),Phụ huynh học sinh,Phụ huynh em Triệu Phương Thảo,HSU-032,0346489164,Phụ huynh em Triệu Phương Thảo (Lớp 10A4 - Phòng 403),Hoạt động,Cá nhân
+hsu033,hs123,Triệu Thị Thu Thuỷ,Học sinh,Học sinh bán trú (Phòng 403),HSU-033,0327475431,Lớp 10A4 - Phòng 403 - G-09 (Thành viên),Hoạt động,Cá nhân
+ph_hsu033,ph123,Đặng Minh Tuấn (PH Triệu Thị Thu Thuỷ),Phụ huynh học sinh,Phụ huynh em Triệu Thị Thu Thuỷ,HSU-033,0357737660,Phụ huynh em Triệu Thị Thu Thuỷ (Lớp 10A4 - Phòng 403),Hoạt động,Cá nhân
+hsu034,hs123,Hoàng Bảo Trân,Học sinh,Học sinh bán trú (Phòng 404),HSU-034,0342111506,Lớp 10A4 - Phòng 404 - G-10 (Thành viên),Hoạt động,Cá nhân
+ph_hsu034,ph123,Hoàng Văn Phòng (PH Hoàng Bảo Trân),Phụ huynh học sinh,Phụ huynh em Hoàng Bảo Trân,HSU-034,0377059015,Phụ huynh em Hoàng Bảo Trân (Lớp 10A4 - Phòng 404),Hoạt động,Cá nhân
+hsu035,hs123,Lò Thị Mai Hương,Học sinh,Học sinh bán trú (Phòng 404),HSU-035,,Lớp 10A6 - Phòng 404 - G-11 (Thành viên),Hoạt động,Cá nhân
+ph_hsu035,ph123,Lý Văn Đạt (PH Lò Thị Mai Hương),Phụ huynh học sinh,Phụ huynh em Lò Thị Mai Hương,HSU-035,0379953812,Phụ huynh em Lò Thị Mai Hương (Lớp 10A6 - Phòng 404),Hoạt động,Cá nhân
+hsu036,hs123,Triệu Phương Anh,Học sinh,Trưởng phòng (Phòng 404),HSU-036,,Lớp 10A7 - Phòng 404 - G-12 (Trưởng phòng),Hoạt động,Cá nhân
+ph_hsu036,ph123,Triệu Phúc Bảo (PH Triệu Phương Anh),Phụ huynh học sinh,Phụ huynh em Triệu Phương Anh,HSU-036,0375299757,Phụ huynh em Triệu Phương Anh (Lớp 10A7 - Phòng 404),Hoạt động,Cá nhân
+hsu037,hs123,Triệu Phương Nhi,Học sinh,Học sinh bán trú (Phòng 404),HSU-037,0377173493,Lớp 10A7 - Phòng 404 - G-01 (Thành viên),Hoạt động,Cá nhân
+ph_hsu037,ph123,Triệu Tòn Cau (PH Triệu Phương Nhi),Phụ huynh học sinh,Phụ huynh em Triệu Phương Nhi,HSU-037,0373708930,Phụ huynh em Triệu Phương Nhi (Lớp 10A7 - Phòng 404),Hoạt động,Cá nhân
+hsu038,hs123,Triệu Thị Hồng Thắm,Học sinh,Học sinh bán trú (Phòng 404),HSU-038,,Lớp 10A7 - Phòng 404 - G-02 (Thành viên),Hoạt động,Cá nhân
+ph_hsu038,ph123,Triệu Văn Dũng (PH Triệu Thị Hồng Thắm),Phụ huynh học sinh,Phụ huynh em Triệu Thị Hồng Thắm,HSU-038,0913118645,Phụ huynh em Triệu Thị Hồng Thắm (Lớp 10A7 - Phòng 404),Hoạt động,Cá nhân
+hsu039,hs123,Lâm Hoài Thương,Học sinh,Học sinh bán trú (Phòng 404),HSU-039,,Lớp 10A7 - Phòng 404 - G-03 (Thành viên),Hoạt động,Cá nhân
+ph_hsu039,ph123,Lâm Sỹ Tưởng (PH Lâm Hoài Thương),Phụ huynh học sinh,Phụ huynh em Lâm Hoài Thương,HSU-039,0357731984,Phụ huynh em Lâm Hoài Thương (Lớp 10A7 - Phòng 404),Hoạt động,Cá nhân
+hsu040,hs123,Lê Ngọc Ánh,Học sinh,Học sinh bán trú (Phòng 404),HSU-040,,Lớp 10A7 - Phòng 404 - G-04 (Thành viên),Hoạt động,Cá nhân
+ph_hsu040,ph123,Lê Văn Sơn (PH Lê Ngọc Ánh),Phụ huynh học sinh,Phụ huynh em Lê Ngọc Ánh,HSU-040,0327501693,Phụ huynh em Lê Ngọc Ánh (Lớp 10A7 - Phòng 404),Hoạt động,Cá nhân
+hsu041,hs123,Triệu Thiên My,Học sinh,Học sinh bán trú (Phòng 404),HSU-041,,Lớp 10A7 - Phòng 404 - G-05 (Thành viên),Hoạt động,Cá nhân
+ph_hsu041,ph123,Triệu Văn Nhất (PH Triệu Thiên My),Phụ huynh học sinh,Phụ huynh em Triệu Thiên My,HSU-041,0332457830,Phụ huynh em Triệu Thiên My (Lớp 10A7 - Phòng 404),Hoạt động,Cá nhân
+hsu042,hs123,Trương Thị Hoa,Học sinh,Học sinh bán trú (Phòng 404),HSU-042,,Lớp 10A7 - Phòng 404 - G-06 (Thành viên),Hoạt động,Cá nhân
+ph_hsu042,ph123,Trương Văn Tó (PH Trương Thị Hoa),Phụ huynh học sinh,Phụ huynh em Trương Thị Hoa,HSU-042,0932251314,Phụ huynh em Trương Thị Hoa (Lớp 10A7 - Phòng 404),Hoạt động,Cá nhân
+hsu043,hs123,Lý Bảo Linh,Học sinh,Học sinh bán trú (Phòng 404),HSU-043,,Lớp 10A7 - Phòng 404 - G-07 (Thành viên),Hoạt động,Cá nhân
+ph_hsu043,ph123,Hoàng Ngọc Lâm (PH Lý Bảo Linh),Phụ huynh học sinh,Phụ huynh em Lý Bảo Linh,HSU-043,0866159110,Phụ huynh em Lý Bảo Linh (Lớp 10A7 - Phòng 404),Hoạt động,Cá nhân
+hsu044,hs123,Đặng Yến Nhi,Học sinh,Học sinh bán trú (Phòng 404),HSU-044,,Lớp 10A7 - Phòng 404 - G-08 (Thành viên),Hoạt động,Cá nhân
+ph_hsu044,ph123,Đặng Quốc Phong (PH Đặng Yến Nhi),Phụ huynh học sinh,Phụ huynh em Đặng Yến Nhi,HSU-044,0865577163,Phụ huynh em Đặng Yến Nhi (Lớp 10A7 - Phòng 404),Hoạt động,Cá nhân
+hsu045,hs123,Nguyễn Khánh Linh,Học sinh,Trưởng phòng (Phòng 405),HSU-045,0865241865,Lớp 11A1 - Phòng 405 - G-09 (Trưởng phòng),Hoạt động,Cá nhân
+ph_hsu045,ph123,Nguyễn Bá Duy (PH Nguyễn Khánh Linh),Phụ huynh học sinh,Phụ huynh em Nguyễn Khánh Linh,HSU-045,0976732702,Phụ huynh em Nguyễn Khánh Linh (Lớp 11A1 - Phòng 405),Hoạt động,Cá nhân
+hsu046,hs123,Ma Thị Hoa,Học sinh,Học sinh bán trú (Phòng 405),HSU-046,0388897314,Lớp 11A1 - Phòng 405 - G-10 (Thành viên),Hoạt động,Cá nhân
+ph_hsu046,ph123,Ma Seo Xá (PH Ma Thị Hoa),Phụ huynh học sinh,Phụ huynh em Ma Thị Hoa,HSU-046,0375513312,Phụ huynh em Ma Thị Hoa (Lớp 11A1 - Phòng 405),Hoạt động,Cá nhân
+hsu047,hs123,Hoàng Hải Yến,Học sinh,Học sinh bán trú (Phòng 405),HSU-047,0392932010,Lớp 11A1 - Phòng 405 - G-11 (Thành viên),Hoạt động,Cá nhân
+ph_hsu047,ph123,Nguyễn Văn Huy. (PH Hoàng Hải Yến),Phụ huynh học sinh,Phụ huynh em Hoàng Hải Yến,HSU-047,0354771469,Phụ huynh em Hoàng Hải Yến (Lớp 11A1 - Phòng 405),Hoạt động,Cá nhân
+hsu048,hs123,Trương Thủy Hoàn,Học sinh,Học sinh bán trú (Phòng 405),HSU-048,0372604095,Lớp 11A1 - Phòng 405 - G-12 (Thành viên),Hoạt động,Cá nhân
+ph_hsu048,ph123,Trương Văn Chấn (PH Trương Thủy Hoàn),Phụ huynh học sinh,Phụ huynh em Trương Thủy Hoàn,HSU-048,0384566897,Phụ huynh em Trương Thủy Hoàn (Lớp 11A1 - Phòng 405),Hoạt động,Cá nhân
+hsu049,hs123,Nông Thị Quý,Học sinh,Học sinh bán trú (Phòng 405),HSU-049,0375547964,Lớp 11A1 - Phòng 405 - G-01 (Thành viên),Hoạt động,Cá nhân
+ph_hsu049,ph123,Nông Văn Tôn (PH Nông Thị Quý),Phụ huynh học sinh,Phụ huynh em Nông Thị Quý,HSU-049,0347341064,Phụ huynh em Nông Thị Quý (Lớp 11A1 - Phòng 405),Hoạt động,Cá nhân
+hsu050,hs123,Bàn Thị Hồng Thêm,Học sinh,Học sinh bán trú (Phòng 405),HSU-050,0376705948,Lớp 11A2 - Phòng 405 - G-02 (Thành viên),Hoạt động,Cá nhân
+ph_hsu050,ph123,Bàn Văn Tinh (PH Bàn Thị Hồng Thêm),Phụ huynh học sinh,Phụ huynh em Bàn Thị Hồng Thêm,HSU-050,0865160428,Phụ huynh em Bàn Thị Hồng Thêm (Lớp 11A2 - Phòng 405),Hoạt động,Cá nhân
+hsu051,hs123,Hoàng Thị Hồng Nhung,Học sinh,Học sinh bán trú (Phòng 405),HSU-051,0337685142,Lớp 11A2 - Phòng 405 - G-03 (Thành viên),Hoạt động,Cá nhân
+ph_hsu051,ph123,Hoàng Văn Sinh (PH Hoàng Thị Hồng Nhung),Phụ huynh học sinh,Phụ huynh em Hoàng Thị Hồng Nhung,HSU-051,0966153442,Phụ huynh em Hoàng Thị Hồng Nhung (Lớp 11A2 - Phòng 405),Hoạt động,Cá nhân
+hsu052,hs123,Hoàng Thuý Tiên,Học sinh,Học sinh bán trú (Phòng 405),HSU-052,0981514010,Lớp 11A2 - Phòng 405 - G-04 (Thành viên),Hoạt động,Cá nhân
+ph_hsu052,ph123,Hoàng Văn Tiến (PH Hoàng Thuý Tiên),Phụ huynh học sinh,Phụ huynh em Hoàng Thuý Tiên,HSU-052,0328428391,Phụ huynh em Hoàng Thuý Tiên (Lớp 11A2 - Phòng 405),Hoạt động,Cá nhân
+hsu053,hs123,Đặng Khánh Linh,Học sinh,Học sinh bán trú (Phòng 405),HSU-053,0386849760,Lớp 11A2 - Phòng 405 - G-05 (Thành viên),Hoạt động,Cá nhân
+ph_hsu053,ph123,Đặng Văn Hải (PH Đặng Khánh Linh),Phụ huynh học sinh,Phụ huynh em Đặng Khánh Linh,HSU-053,0367920906,Phụ huynh em Đặng Khánh Linh (Lớp 11A2 - Phòng 405),Hoạt động,Cá nhân
+hsu054,hs123,Ma Thị Nga,Học sinh,Học sinh bán trú (Phòng 405),HSU-054,0337271613,Lớp 11A2 - Phòng 405 - G-06 (Thành viên),Hoạt động,Cá nhân
+ph_hsu054,ph123,Ma Seo Của (PH Ma Thị Nga),Phụ huynh học sinh,Phụ huynh em Ma Thị Nga,HSU-054,0336881647,Phụ huynh em Ma Thị Nga (Lớp 11A2 - Phòng 405),Hoạt động,Cá nhân
+hsu055,hs123,Ma Thị Hương,Học sinh,Học sinh bán trú (Phòng 405),HSU-055,0362422816,Lớp 11A2 - Phòng 405 - G-07 (Thành viên),Hoạt động,Cá nhân
+ph_hsu055,ph123,Ma Seo Chư (PH Ma Thị Hương),Phụ huynh học sinh,Phụ huynh em Ma Thị Hương,HSU-055,0376447773,Phụ huynh em Ma Thị Hương (Lớp 11A2 - Phòng 405),Hoạt động,Cá nhân
+hsu056,hs123,Nguyễn Minh Tâm,Học sinh,Học sinh bán trú (Phòng 406),HSU-056,0965430664,Lớp 11A2 - Phòng 406 - G-08 (Thành viên),Hoạt động,Cá nhân
+ph_hsu056,ph123,Nguyễn Thành Chung (PH Nguyễn Minh Tâm),Phụ huynh học sinh,Phụ huynh em Nguyễn Minh Tâm,HSU-056,0399614192,Phụ huynh em Nguyễn Minh Tâm (Lớp 11A2 - Phòng 406),Hoạt động,Cá nhân
+hsu057,hs123,Hoàng Ngọc Diệp,Học sinh,Học sinh bán trú (Phòng 406),HSU-057,0343961184,Lớp 11A2 - Phòng 406 - G-09 (Thành viên),Hoạt động,Cá nhân
+ph_hsu057,ph123,Hoàng Văn Nhiễu (PH Hoàng Ngọc Diệp),Phụ huynh học sinh,Phụ huynh em Hoàng Ngọc Diệp,HSU-057,0865613874,Phụ huynh em Hoàng Ngọc Diệp (Lớp 11A2 - Phòng 406),Hoạt động,Cá nhân
+hsu058,hs123,Hoàng Thị Nhung,Học sinh,Học sinh bán trú (Phòng 406),HSU-058,0366925813,Lớp 11A2 - Phòng 406 - G-10 (Thành viên),Hoạt động,Cá nhân
+ph_hsu058,ph123,Hoàng Văn Lệ (PH Hoàng Thị Nhung),Phụ huynh học sinh,Phụ huynh em Hoàng Thị Nhung,HSU-058,0971560361,Phụ huynh em Hoàng Thị Nhung (Lớp 11A2 - Phòng 406),Hoạt động,Cá nhân
+hsu059,hs123,Đặng Thị Hoa,Học sinh,Học sinh bán trú (Phòng 406),HSU-059,0969052416,Lớp 11A3 - Phòng 406 - G-11 (Thành viên),Hoạt động,Cá nhân
+ph_hsu059,ph123,Nguyễn Văn Hoán (PH Đặng Thị Hoa),Phụ huynh học sinh,Phụ huynh em Đặng Thị Hoa,HSU-059,0969052416,Phụ huynh em Đặng Thị Hoa (Lớp 11A3 - Phòng 406),Hoạt động,Cá nhân
+hsu060,hs123,Lê Như Quỳnh,Học sinh,Học sinh bán trú (Phòng 406),HSU-060,0988476042,Lớp 11A3 - Phòng 406 - G-12 (Thành viên),Hoạt động,Cá nhân
+ph_hsu060,ph123,Lê Xuân Chỉnh (PH Lê Như Quỳnh),Phụ huynh học sinh,Phụ huynh em Lê Như Quỳnh,HSU-060,0387879813,Phụ huynh em Lê Như Quỳnh (Lớp 11A3 - Phòng 406),Hoạt động,Cá nhân
+hsu061,hs123,Tráng Thị Đại,Học sinh,Trưởng phòng (Phòng 406),HSU-061,,Lớp 11A4 - Phòng 406 - G-01 (Trưởng phòng),Hoạt động,Cá nhân
+ph_hsu061,ph123,Tráng Văn Trấn (PH Tráng Thị Đại),Phụ huynh học sinh,Phụ huynh em Tráng Thị Đại,HSU-061,0369808294,Phụ huynh em Tráng Thị Đại (Lớp 11A4 - Phòng 406),Hoạt động,Cá nhân
+hsu062,hs123,Triệu Thị Thu Hiền,Học sinh,Học sinh bán trú (Phòng 406),HSU-062,,Lớp 11A4 - Phòng 406 - G-02 (Thành viên),Hoạt động,Cá nhân
+ph_hsu062,ph123,Triệu Kim Hương (PH Triệu Thị Thu Hiền),Phụ huynh học sinh,Phụ huynh em Triệu Thị Thu Hiền,HSU-062,0342024303,Phụ huynh em Triệu Thị Thu Hiền (Lớp 11A4 - Phòng 406),Hoạt động,Cá nhân
+hsu063,hs123,Đặng Hồng Hoa,Học sinh,Học sinh bán trú (Phòng 406),HSU-063,,Lớp 11A4 - Phòng 406 - G-03 (Thành viên),Hoạt động,Cá nhân
+ph_hsu063,ph123,Đặng Văn Nhì (PH Đặng Hồng Hoa),Phụ huynh học sinh,Phụ huynh em Đặng Hồng Hoa,HSU-063,0393130600,Phụ huynh em Đặng Hồng Hoa (Lớp 11A4 - Phòng 406),Hoạt động,Cá nhân
+hsu064,hs123,Hoàng Thị Hồng Mai,Học sinh,Học sinh bán trú (Phòng 406),HSU-064,,Lớp 11A4 - Phòng 406 - G-04 (Thành viên),Hoạt động,Cá nhân
+ph_hsu064,ph123,Hoàng Văn Lưng (PH Hoàng Thị Hồng Mai),Phụ huynh học sinh,Phụ huynh em Hoàng Thị Hồng Mai,HSU-064,0862175022,Phụ huynh em Hoàng Thị Hồng Mai (Lớp 11A4 - Phòng 406),Hoạt động,Cá nhân
+hsu065,hs123,Đinh Thị Hồng Thái,Học sinh,Học sinh bán trú (Phòng 406),HSU-065,,Lớp 11A4 - Phòng 406 - G-05 (Thành viên),Hoạt động,Cá nhân
+ph_hsu065,ph123,Đinh Quang Sáng (PH Đinh Thị Hồng Thái),Phụ huynh học sinh,Phụ huynh em Đinh Thị Hồng Thái,HSU-065,0393679215,Phụ huynh em Đinh Thị Hồng Thái (Lớp 11A4 - Phòng 406),Hoạt động,Cá nhân
+hsu066,hs123,Triệu Thanh Thảo,Học sinh,Học sinh bán trú (Phòng 406),HSU-066,,Lớp 11A4 - Phòng 406 - G-06 (Thành viên),Hoạt động,Cá nhân
+ph_hsu066,ph123,Hoàng Văn Lai (PH Triệu Thanh Thảo),Phụ huynh học sinh,Phụ huynh em Triệu Thanh Thảo,HSU-066,0354162240,Phụ huynh em Triệu Thanh Thảo (Lớp 11A4 - Phòng 406),Hoạt động,Cá nhân
+hsu067,hs123,Đặng Hồng Thư,Học sinh,Học sinh bán trú (Phòng 407),HSU-067,,Lớp 11A4 - Phòng 407 - G-07 (Thành viên),Hoạt động,Cá nhân
+ph_hsu067,ph123,Đặng Ton Thanh (PH Đặng Hồng Thư),Phụ huynh học sinh,Phụ huynh em Đặng Hồng Thư,HSU-067,0365471167,Phụ huynh em Đặng Hồng Thư (Lớp 11A4 - Phòng 407),Hoạt động,Cá nhân
+hsu068,hs123,Đặng Thị Vân,Học sinh,Học sinh bán trú (Phòng 407),HSU-068,,Lớp 11A4 - Phòng 407 - G-08 (Thành viên),Hoạt động,Cá nhân
+ph_hsu068,ph123,Đặng Văn Thức (PH Đặng Thị Vân),Phụ huynh học sinh,Phụ huynh em Đặng Thị Vân,HSU-068,0862908820,Phụ huynh em Đặng Thị Vân (Lớp 11A4 - Phòng 407),Hoạt động,Cá nhân
+hsu069,hs123,Hoàng Tố Vân,Học sinh,Trưởng phòng (Phòng 407),HSU-069,,Lớp 11A4 - Phòng 407 - G-09 (Trưởng phòng),Hoạt động,Cá nhân
+ph_hsu069,ph123,Hoàng Văn Tú (PH Hoàng Tố Vân),Phụ huynh học sinh,Phụ huynh em Hoàng Tố Vân,HSU-069,0396141165,Phụ huynh em Hoàng Tố Vân (Lớp 11A4 - Phòng 407),Hoạt động,Cá nhân
+hsu070,hs123,Lý Hồng Mỹ,Học sinh,Học sinh bán trú (Phòng 407),HSU-070,,Lớp 11A4 - Phòng 407 - G-10 (Thành viên),Hoạt động,Cá nhân
+ph_hsu070,ph123,Lý Văn Đanh (PH Lý Hồng Mỹ),Phụ huynh học sinh,Phụ huynh em Lý Hồng Mỹ,HSU-070,0375302378,Phụ huynh em Lý Hồng Mỹ (Lớp 11A4 - Phòng 407),Hoạt động,Cá nhân
+hsu071,hs123,Triệu Thùy Linh,Học sinh,Học sinh bán trú (Phòng 407),HSU-071,0376596804,Lớp 11A5 - Phòng 407 - G-11 (Thành viên),Hoạt động,Cá nhân
+ph_hsu071,ph123,Triệu Văn Nhất (PH Triệu Thùy Linh),Phụ huynh học sinh,Phụ huynh em Triệu Thùy Linh,HSU-071,0329966224,Phụ huynh em Triệu Thùy Linh (Lớp 11A5 - Phòng 407),Hoạt động,Cá nhân
+hsu072,hs123,Lý Thị Yến,Học sinh,Học sinh bán trú (Phòng 407),HSU-072,0338364398,Lớp 11A6 - Phòng 407 - G-12 (Thành viên),Hoạt động,Cá nhân
+ph_hsu072,ph123,Lý Tòn Cau (PH Lý Thị Yến),Phụ huynh học sinh,Phụ huynh em Lý Thị Yến,HSU-072,0975991760,Phụ huynh em Lý Thị Yến (Lớp 11A6 - Phòng 407),Hoạt động,Cá nhân
+hsu073,hs123,Trần Thị Thu,Học sinh,Học sinh bán trú (Phòng 407),HSU-073,0364201038,Lớp 11A7 - Phòng 407 - G-01 (Thành viên),Hoạt động,Cá nhân
+ph_hsu073,ph123,Trần Văn Luận (PH Trần Thị Thu),Phụ huynh học sinh,Phụ huynh em Trần Thị Thu,HSU-073,0328995435,Phụ huynh em Trần Thị Thu (Lớp 11A7 - Phòng 407),Hoạt động,Cá nhân
+hsu074,hs123,Tráng Thị Dung,Học sinh,Học sinh bán trú (Phòng 407),HSU-074,0373502744,Lớp 11A7 - Phòng 407 - G-02 (Thành viên),Hoạt động,Cá nhân
+ph_hsu074,ph123,Tráng A Hồ (PH Tráng Thị Dung),Phụ huynh học sinh,Phụ huynh em Tráng Thị Dung,HSU-074,0328219084,Phụ huynh em Tráng Thị Dung (Lớp 11A7 - Phòng 407),Hoạt động,Cá nhân
+hsu075,hs123,Đặng Thị Anh Đào,Học sinh,Học sinh bán trú (Phòng 407),HSU-075,0389864250,Lớp 11A7 - Phòng 407 - G-03 (Thành viên),Hoạt động,Cá nhân
+ph_hsu075,ph123,Đặng Văn Hoàng (PH Đặng Thị Anh Đào),Phụ huynh học sinh,Phụ huynh em Đặng Thị Anh Đào,HSU-075,0372158238,Phụ huynh em Đặng Thị Anh Đào (Lớp 11A7 - Phòng 407),Hoạt động,Cá nhân
+hsu076,hs123,Hoàng Thị Thúy Kiều,Học sinh,Học sinh bán trú (Phòng 407),HSU-076,0354751347,Lớp 11A7 - Phòng 407 - G-04 (Thành viên),Hoạt động,Cá nhân
+ph_hsu076,ph123,Hoàng Văn Phức (PH Hoàng Thị Thúy Kiều),Phụ huynh học sinh,Phụ huynh em Hoàng Thị Thúy Kiều,HSU-076,0336455820,Phụ huynh em Hoàng Thị Thúy Kiều (Lớp 11A7 - Phòng 407),Hoạt động,Cá nhân
+hsu077,hs123,Hoàng Bảo Ngọc,Học sinh,Học sinh bán trú (Phòng 407),HSU-077,0342128230,Lớp 11A7 - Phòng 407 - G-05 (Thành viên),Hoạt động,Cá nhân
+ph_hsu077,ph123,Lý Tiến Hương (PH Hoàng Bảo Ngọc),Phụ huynh học sinh,Phụ huynh em Hoàng Bảo Ngọc,HSU-077,0987898550,Phụ huynh em Hoàng Bảo Ngọc (Lớp 11A7 - Phòng 407),Hoạt động,Cá nhân
+hsu078,hs123,Sùng Thuý Liên,Học sinh,Học sinh bán trú (Phòng 407),HSU-078,0867904896,Lớp 11A2 - Phòng 407 - G-06 (Thành viên),Hoạt động,Cá nhân
+ph_hsu078,ph123,Sùng Seo Xủ (PH Sùng Thuý Liên),Phụ huynh học sinh,Phụ huynh em Sùng Thuý Liên,HSU-078,0969534104,Phụ huynh em Sùng Thuý Liên (Lớp 11A2 - Phòng 407),Hoạt động,Cá nhân
+hsu079,hs123,Hoàng Thị Phương,Học sinh,Học sinh bán trú (Phòng 408),HSU-079,0862516497,Lớp 11A7 - Phòng 408 - G-07 (Thành viên),Hoạt động,Cá nhân
+ph_hsu079,ph123,Hoàng Văn Toản (PH Hoàng Thị Phương),Phụ huynh học sinh,Phụ huynh em Hoàng Thị Phương,HSU-079,0383945477,Phụ huynh em Hoàng Thị Phương (Lớp 11A7 - Phòng 408),Hoạt động,Cá nhân
+hsu080,hs123,Bàn Thanh Thuý,Học sinh,Học sinh bán trú (Phòng 408),HSU-080,0342986680,Lớp 11A7 - Phòng 408 - G-08 (Thành viên),Hoạt động,Cá nhân
+ph_hsu080,ph123,Bàn Văn Mài (PH Bàn Thanh Thuý),Phụ huynh học sinh,Phụ huynh em Bàn Thanh Thuý,HSU-080,0344615907,Phụ huynh em Bàn Thanh Thuý (Lớp 11A7 - Phòng 408),Hoạt động,Cá nhân
+hsu081,hs123,Đặng Thị Thanh Vân,Học sinh,Học sinh bán trú (Phòng 408),HSU-081,0342363155,Lớp 12A1 - Phòng 408 - G-09 (Thành viên),Hoạt động,Cá nhân
+ph_hsu081,ph123,Đặng Văn Ngọc (PH Đặng Thị Thanh Vân),Phụ huynh học sinh,Phụ huynh em Đặng Thị Thanh Vân,HSU-081,0374737518,Phụ huynh em Đặng Thị Thanh Vân (Lớp 12A1 - Phòng 408),Hoạt động,Cá nhân
+hsu082,hs123,Nông Thị Ánh Nguyệt,Học sinh,Học sinh bán trú (Phòng 408),HSU-082,0862165844,Lớp 12A1 - Phòng 408 - G-10 (Thành viên),Hoạt động,Cá nhân
+ph_hsu082,ph123,Nông Ton Phan (PH Nông Thị Ánh Nguyệt),Phụ huynh học sinh,Phụ huynh em Nông Thị Ánh Nguyệt,HSU-082,0334264373,Phụ huynh em Nông Thị Ánh Nguyệt (Lớp 12A1 - Phòng 408),Hoạt động,Cá nhân
+hsu083,hs123,Phan Thị Yến nhi,Học sinh,Học sinh bán trú (Phòng 408),HSU-083,,Lớp 12A1 - Phòng 408 - G-11 (Thành viên),Hoạt động,Cá nhân
+ph_hsu083,ph123,Đặng Văn Ton (PH Phan Thị Yến nhi),Phụ huynh học sinh,Phụ huynh em Phan Thị Yến nhi,HSU-083,0325422275,Phụ huynh em Phan Thị Yến nhi (Lớp 12A1 - Phòng 408),Hoạt động,Cá nhân
+hsu084,hs123,Lý Thanh Hoa,Học sinh,Học sinh bán trú (Phòng 408),HSU-084,0971365265,Lớp 12A1 - Phòng 408 - G-12 (Thành viên),Hoạt động,Cá nhân
+ph_hsu084,ph123,Lý văn phong (PH Lý Thanh Hoa),Phụ huynh học sinh,Phụ huynh em Lý Thanh Hoa,HSU-084,0971561057,Phụ huynh em Lý Thanh Hoa (Lớp 12A1 - Phòng 408),Hoạt động,Cá nhân
+hsu085,hs123,Đặng Thị Lan Anh,Học sinh,Học sinh bán trú (Phòng 408),HSU-085,0363227019,Lớp 12A1 - Phòng 408 - G-01 (Thành viên),Hoạt động,Cá nhân
+ph_hsu085,ph123,Đặng Văn Thôm (PH Đặng Thị Lan Anh),Phụ huynh học sinh,Phụ huynh em Đặng Thị Lan Anh,HSU-085,0342986321,Phụ huynh em Đặng Thị Lan Anh (Lớp 12A1 - Phòng 408),Hoạt động,Cá nhân
+hsu086,hs123,Hoàng Thị Thu,Học sinh,Học sinh bán trú (Phòng 408),HSU-086,0328516810,Lớp 12A2 - Phòng 408 - G-02 (Thành viên),Hoạt động,Cá nhân
+ph_hsu086,ph123,Hoàng Văn Ích (PH Hoàng Thị Thu),Phụ huynh học sinh,Phụ huynh em Hoàng Thị Thu,HSU-086,0368432272,Phụ huynh em Hoàng Thị Thu (Lớp 12A2 - Phòng 408),Hoạt động,Cá nhân
+hsu087,hs123,Lý Thị Nga,Học sinh,Học sinh bán trú (Phòng 408),HSU-087,0345955260,Lớp 12A2 - Phòng 408 - G-03 (Thành viên),Hoạt động,Cá nhân
+ph_hsu087,ph123,Lý Văn Thành (PH Lý Thị Nga),Phụ huynh học sinh,Phụ huynh em Lý Thị Nga,HSU-087,0389175004,Phụ huynh em Lý Thị Nga (Lớp 12A2 - Phòng 408),Hoạt động,Cá nhân
+hsu088,hs123,Bàn Thúy Kim,Học sinh,Học sinh bán trú (Phòng 408),HSU-088,0395251073,Lớp 12A2 - Phòng 408 - G-04 (Thành viên),Hoạt động,Cá nhân
+ph_hsu088,ph123,Bàn Văn Khi (PH Bàn Thúy Kim),Phụ huynh học sinh,Phụ huynh em Bàn Thúy Kim,HSU-088,0344610271,Phụ huynh em Bàn Thúy Kim (Lớp 12A2 - Phòng 408),Hoạt động,Cá nhân
+hsu089,hs123,Triệu Thị Thanh Huyên,Học sinh,Học sinh bán trú (Phòng 408),HSU-089,0976871507,Lớp 12A2 - Phòng 408 - G-05 (Thành viên),Hoạt động,Cá nhân
+ph_hsu089,ph123,Triệu Văn Hoàng (PH Triệu Thị Thanh Huyên),Phụ huynh học sinh,Phụ huynh em Triệu Thị Thanh Huyên,HSU-089,0348846980,Phụ huynh em Triệu Thị Thanh Huyên (Lớp 12A2 - Phòng 408),Hoạt động,Cá nhân
+hsu090,hs123,Hoàng Thị Thanh Mai,Học sinh,Trưởng phòng (Phòng 408),HSU-090,0867569315,Lớp 12A2 - Phòng 408 - G-06 (Trưởng phòng),Hoạt động,Cá nhân
+ph_hsu090,ph123,Hoàng Văn Huân (PH Hoàng Thị Thanh Mai),Phụ huynh học sinh,Phụ huynh em Hoàng Thị Thanh Mai,HSU-090,0981260564,Phụ huynh em Hoàng Thị Thanh Mai (Lớp 12A2 - Phòng 408),Hoạt động,Cá nhân
+hsu091,hs123,Đặng Thị Kiều Trang,Học sinh,Học sinh bán trú (Phòng 207),HSU-091,0906138963,Lớp 12A2 - Phòng 207 - G-07 (Thành viên),Hoạt động,Cá nhân
+ph_hsu091,ph123,Đặng Văn Huế (PH Đặng Thị Kiều Trang),Phụ huynh học sinh,Phụ huynh em Đặng Thị Kiều Trang,HSU-091,0914447463,Phụ huynh em Đặng Thị Kiều Trang (Lớp 12A2 - Phòng 207),Hoạt động,Cá nhân
+hsu092,hs123,Bàn Thị Kim Phượng,Học sinh,Học sinh bán trú (Phòng 207),HSU-092,0348876307,Lớp 12A2 - Phòng 207 - G-08 (Thành viên),Hoạt động,Cá nhân
+ph_hsu092,ph123,Bàn Sơn Hà (PH Bàn Thị Kim Phượng),Phụ huynh học sinh,Phụ huynh em Bàn Thị Kim Phượng,HSU-092,0363914593,Phụ huynh em Bàn Thị Kim Phượng (Lớp 12A2 - Phòng 207),Hoạt động,Cá nhân
+hsu093,hs123,Nguyễn Thùy Trâm,Học sinh,Học sinh bán trú (Phòng 207),HSU-093,0379378649,Lớp 12A2 - Phòng 207 - G-09 (Thành viên),Hoạt động,Cá nhân
+ph_hsu093,ph123,Nguyễn Văn Thuấn (PH Nguyễn Thùy Trâm),Phụ huynh học sinh,Phụ huynh em Nguyễn Thùy Trâm,HSU-093,0376988106,Phụ huynh em Nguyễn Thùy Trâm (Lớp 12A2 - Phòng 207),Hoạt động,Cá nhân
+hsu094,hs123,Lí Thị Lan Anh,Học sinh,Học sinh bán trú (Phòng 207),HSU-094,0364386771,Lớp 12A3 - Phòng 207 - G-10 (Thành viên),Hoạt động,Cá nhân
+ph_hsu094,ph123,Lí Văn Chúi (PH Lí Thị Lan Anh),Phụ huynh học sinh,Phụ huynh em Lí Thị Lan Anh,HSU-094,0336675404,Phụ huynh em Lí Thị Lan Anh (Lớp 12A3 - Phòng 207),Hoạt động,Cá nhân
+hsu095,hs123,Triệu Thanh Thư,Học sinh,Học sinh bán trú (Phòng 207),HSU-095,0971068785,Lớp 12A3 - Phòng 207 - G-11 (Thành viên),Hoạt động,Cá nhân
+ph_hsu095,ph123,Triệu Văn Tư (PH Triệu Thanh Thư),Phụ huynh học sinh,Phụ huynh em Triệu Thanh Thư,HSU-095,0865530827,Phụ huynh em Triệu Thanh Thư (Lớp 12A3 - Phòng 207),Hoạt động,Cá nhân
+hsu096,hs123,Chu Thị Hải Yến,Học sinh,Học sinh bán trú (Phòng 207),HSU-096,0362481095,Lớp 12A3 - Phòng 207 - G-12 (Thành viên),Hoạt động,Cá nhân
+ph_hsu096,ph123,Chu Văn Chang (PH Chu Thị Hải Yến),Phụ huynh học sinh,Phụ huynh em Chu Thị Hải Yến,HSU-096,0366383983,Phụ huynh em Chu Thị Hải Yến (Lớp 12A3 - Phòng 207),Hoạt động,Cá nhân
+hsu097,hs123,Đặng Thị Xuyên,Học sinh,Học sinh bán trú (Phòng 207),HSU-097,0376813920,Lớp 12A3 - Phòng 207 - G-01 (Thành viên),Hoạt động,Cá nhân
+ph_hsu097,ph123,Đặng Văn Nhật (PH Đặng Thị Xuyên),Phụ huynh học sinh,Phụ huynh em Đặng Thị Xuyên,HSU-097,0915039526,Phụ huynh em Đặng Thị Xuyên (Lớp 12A3 - Phòng 207),Hoạt động,Cá nhân
+hsu098,hs123,Hà Thị Nguyên,Học sinh,Học sinh bán trú (Phòng 207),HSU-098,0353810009,Lớp 12A3 - Phòng 207 - G-02 (Thành viên),Hoạt động,Cá nhân
+ph_hsu098,ph123,Hà Văn Hành (PH Hà Thị Nguyên),Phụ huynh học sinh,Phụ huynh em Hà Thị Nguyên,HSU-098,0866621716,Phụ huynh em Hà Thị Nguyên (Lớp 12A3 - Phòng 207),Hoạt động,Cá nhân
+hsu099,hs123,Chu Bích Loan,Học sinh,Học sinh bán trú (Phòng 207),HSU-099,0335470790,Lớp 12A4 - Phòng 207 - G-03 (Thành viên),Hoạt động,Cá nhân
+ph_hsu099,ph123,Chu Văn Đài (PH Chu Bích Loan),Phụ huynh học sinh,Phụ huynh em Chu Bích Loan,HSU-099,0346318191,Phụ huynh em Chu Bích Loan (Lớp 12A4 - Phòng 207),Hoạt động,Cá nhân
+hsu100,hs123,Hoàng Thị Nhài,Học sinh,Trưởng phòng (Phòng 207),HSU-100,0353940311,Lớp 12A4 - Phòng 207 - G-04 (Trưởng phòng),Hoạt động,Cá nhân
+ph_hsu100,ph123,Hoàng Văn Đức (PH Hoàng Thị Nhài),Phụ huynh học sinh,Phụ huynh em Hoàng Thị Nhài,HSU-100,0964141142,Phụ huynh em Hoàng Thị Nhài (Lớp 12A4 - Phòng 207),Hoạt động,Cá nhân
+hsu101,hs123,Hoàng Thị Phương Oanh,Học sinh,Học sinh bán trú (Phòng 208),HSU-101,0383207751,Lớp 12A4 - Phòng 208 - G-05 (Thành viên),Hoạt động,Cá nhân
+ph_hsu101,ph123,Hoàng Văn Tường (PH Hoàng Thị Phương Oanh),Phụ huynh học sinh,Phụ huynh em Hoàng Thị Phương Oanh,HSU-101,0364668915,Phụ huynh em Hoàng Thị Phương Oanh (Lớp 12A4 - Phòng 208),Hoạt động,Cá nhân
+hsu102,hs123,Triệu Thị Sinh,Học sinh,Học sinh bán trú (Phòng 208),HSU-102,0333446323,Lớp 12A4 - Phòng 208 - G-06 (Thành viên),Hoạt động,Cá nhân
+ph_hsu102,ph123,Triệu Văn Thất (PH Triệu Thị Sinh),Phụ huynh học sinh,Phụ huynh em Triệu Thị Sinh,HSU-102,0989559091,Phụ huynh em Triệu Thị Sinh (Lớp 12A4 - Phòng 208),Hoạt động,Cá nhân
+hsu103,hs123,Đặng Thị Nhung,Học sinh,Học sinh bán trú (Phòng 208),HSU-103,0773033260,Lớp 12A6 - Phòng 208 - G-07 (Thành viên),Hoạt động,Cá nhân
+ph_hsu103,ph123,Đặng Văn Minh (PH Đặng Thị Nhung),Phụ huynh học sinh,Phụ huynh em Đặng Thị Nhung,HSU-103,0896016371,Phụ huynh em Đặng Thị Nhung (Lớp 12A6 - Phòng 208),Hoạt động,Cá nhân
+hsu104,hs123,Sầm Khánh Ly,Học sinh,Học sinh bán trú (Phòng 208),HSU-104,0702096831,Lớp 12A7 - Phòng 208 - G-08 (Thành viên),Hoạt động,Cá nhân
+ph_hsu104,ph123,Sầm Văn Chương (PH Sầm Khánh Ly),Phụ huynh học sinh,Phụ huynh em Sầm Khánh Ly,HSU-104,0356269517,Phụ huynh em Sầm Khánh Ly (Lớp 12A7 - Phòng 208),Hoạt động,Cá nhân
+hsu105,hs123,La Thị Thanh Huyên,Học sinh,Học sinh bán trú (Phòng 208),HSU-105,0396971718,Lớp 12A7 - Phòng 208 - G-09 (Thành viên),Hoạt động,Cá nhân
+ph_hsu105,ph123,La Xuân Trường (PH La Thị Thanh Huyên),Phụ huynh học sinh,Phụ huynh em La Thị Thanh Huyên,HSU-105,0326578351,Phụ huynh em La Thị Thanh Huyên (Lớp 12A7 - Phòng 208),Hoạt động,Cá nhân
+hsu106,hs123,Đặng Thị Yến Nhi,Học sinh,Trưởng phòng (Phòng 208),HSU-106,0373840285,Lớp 12A7 - Phòng 208 - G-10 (Trưởng phòng),Hoạt động,Cá nhân
+ph_hsu106,ph123,Đặng Văn Xan (PH Đặng Thị Yến Nhi),Phụ huynh học sinh,Phụ huynh em Đặng Thị Yến Nhi,HSU-106,0332631529,Phụ huynh em Đặng Thị Yến Nhi (Lớp 12A7 - Phòng 208),Hoạt động,Cá nhân
+hsu107,hs123,Lương Thị Lý,Học sinh,Học sinh bán trú (Phòng 208),HSU-107,0329462258,Lớp 12A7 - Phòng 208 - G-11 (Thành viên),Hoạt động,Cá nhân
+ph_hsu107,ph123,Lương Xuân Liêm (PH Lương Thị Lý),Phụ huynh học sinh,Phụ huynh em Lương Thị Lý,HSU-107,0355060921,Phụ huynh em Lương Thị Lý (Lớp 12A7 - Phòng 208),Hoạt động,Cá nhân

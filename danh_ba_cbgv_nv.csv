@@ -1,0 +1,43 @@
+﻿STT,Mã định danh,Họ và tên,Ngày sinh,Giới tính,Dân tộc,Số điện thoại,Vị trí việc làm,Nhóm chức vụ,Chức vụ hiển thị,Trình độ chuyên môn,Môn dạy,Giáo viên chủ nhiệm lớp,Ghi chú,Tổ chuyên môn
+1,1012633027,Doãn Thị Hồng Anh,20/10/1983,Nữ,Kinh,0947217000,Nhân viên,Nhân viên kế toán,Nhân viên kế toán,Đại học,,,,Tổ Văn phòng
+2,1003299347,Hoàng Ngọc Anh,04/02/1979,Nam,Kinh,0944512243,Giáo viên,,GVCN 12A7,Đại học sư phạm,Hóa học,12A7,,Tổ Tự nhiên (KHTN)
+3,1027757075,Hoàng Ngọc Bích,08/10/1996,Nữ,Tày,0965162534,Nhân viên,Nhân viên văn thư,Nhân viên văn thư,Cao đẳng,,,,Tổ Văn phòng
+4,1000164344,Cao Văn Đáng,25/07/1985,Nam,Kinh,0962878326,Giáo viên,,Giáo viên,Đại học và có chứng chỉ BDNVSP,Tin học,,,Tổ Tự nhiên (KHTN)
+5,1003299363,Trần Văn Đoàn,01/11/1982,Nam,Kinh,0947157111,Giáo viên,Tổ trưởng chuyên môn,Tổ trưởng chuyên môn,Thạc sĩ KHGD&ĐTGV,Lịch sử,10A1,,Tổ Xã hội (KHXH)
+6,1003010877,Trần Thị Dòng,11/08/1995,Nữ,Tày,0337117336,Giáo viên,,GVCN 10A7,Đại học sư phạm,Ngữ văn,10A7,,Tổ Xã hội (KHXH)
+7,1003299488,Đỗ Minh Đông,28/11/1981,Nam,Kinh,0972189589,Giáo viên,,Giáo viên,Đại học sư phạm,Giáo dục thể chất,,,Tổ Xã hội (KHXH)
+8,1012653310,Trần Thị Dung,07/11/1983,Nữ,Kinh,0388639750,Giáo viên,,GVCN 11A2,Đại học,Ngữ văn,11A2,,Tổ Xã hội (KHXH)
+9,1024630222,Nguyễn Thị Hương Giang,10/04/1977,Nữ,Kinh,0943438550,Giáo viên,,GVCN 11A4,Đại học,Công nghệ,11A4,,Tổ Tự nhiên (KHTN)
+10,1003299329,Lò Văn Giáp,06/02/1984,Nam,Thái,0986374248,Giáo viên,,GVCN 12A3,Thạc sĩ KHGD&ĐTGV,Vật lý,12A3,,Tổ Tự nhiên (KHTN)
+11,1037728305,Nguyễn Nhật Hà,30/07/2001,Nữ,Kinh,0342361644,Giáo viên,,GVCN 10A5,Đại học sư phạm,Vật lý,10A5,,Tổ Tự nhiên (KHTN)
+12,1003299348,Trần Thị Hiền,11/05/1989,Nữ,Kinh,0974657769,Giáo viên,,GVCN 10A3,Đại học,Ngữ văn,10A3,,Tổ Xã hội (KHXH)
+13,1012810275,Trần Thu Hiền,08/06/1990,Nữ,Kinh,0973427852,Giáo viên,Tổ phó chuyên môn,Tổ phó chuyên môn,Đại học sư phạm,Địa lý,,,Tổ Xã hội (KHXH)
+14,1003299331,Lê Minh Huệ,04/02/1985,Nữ,Tày,0983711402,Giáo viên,,GVCN 12A2,Đại học,Ngữ văn,12A2,,Tổ Xã hội (KHXH)
+15,1003299344,Phạm Đức Hưng,16/10/1987,Nam,Kinh,0359220000,Giáo viên,,GVCN 10A4,Đại học,Sinh học,10A4,,Tổ Tự nhiên (KHTN)
+16,1003299342,Bàn Thị Thu Hương,18/01/1985,Nữ,Dao,0961727636,Giáo viên,,GVCN 11A1,Đại học,Hóa học,11A1,,Tổ Tự nhiên (KHTN)
+17,1012631616,Lương Lan Hương,05/10/1990,Nữ,Kinh,0392749918,Giáo viên,,Giáo viên,Đại học sư phạm,Tiếng Anh,,,Tổ Xã hội (KHXH)
+18,1003299362,Phạm Thị Huyền,20/03/1983,Nữ,Kinh,0833403333,Giáo viên,,Giáo viên,Đại học sư phạm,Tiếng Anh,,,Tổ Xã hội (KHXH)
+19,1003299427,Trần Thị Thu Huyền,05/11/1981,Nữ,Kinh,0919662825,Giáo viên,,GVCN 11A3,Đại học sư phạm,Giáo dục thể chất,11A3,,Tổ Xã hội (KHXH)
+20,1017860031,Lương Thị Lắm,18/09/1991,Nữ,Tày,0971954989,Giáo viên,,Giáo viên,Đại học sư phạm,Địa lý,,,Tổ Xã hội (KHXH)
+21,1000164331,Trần Huy Mạnh,26/10/1982,Nam,Kinh,0946724382,Giáo viên,Tổ phó chuyên môn,Tổ phó chuyên môn,Thạc sĩ KHGD&ĐTGV,Toán,,,Tổ Tự nhiên (KHTN)
+22,1012597427,Hoàng Thị Oanh,06/01/1993,Nữ,Giáy,0356656712,Giáo viên,,GVCN 10A2,Đại học sư phạm,Ngữ văn,10A2,,Tổ Xã hội (KHXH)
+23,1003299352,Đỗ Thị Hồng Phương,19/09/1979,Nữ,Kinh,0374083336,Cán bộ quản lý,Phó hiệu trưởng,Phó hiệu trưởng,Đại học sư phạm,Vật lý,,,Ban Giám hiệu
+24,1012722914,Đỗ Minh Quý,10/11/1987,Nam,Kinh,0983480416,Giáo viên,,Giáo viên,Đại học sư phạm,Giáo dục quốc phòng,,,Tổ Xã hội (KHXH)
+25,1012631038,Thào A Sơn,06/11/1977,Nam,HMông,0985596811,Giáo viên,,Giáo viên,Đại học sư phạm,Ngữ văn,,,Tổ Xã hội (KHXH)
+26,1015057996,Nguyễn Thị Hồng Thanh,04/06/1981,Nữ,Kinh,0389191058,Cán bộ quản lý,Phó hiệu trưởng,Phó hiệu trưởng,Thạc sĩ KHGD&ĐTGV,Toán,,,Ban Giám hiệu
+27,1003299330,Phạm Duy Thanh,16/09/1983,Nam,Kinh,0915095449,Giáo viên,ĐTN,ĐTN,Đại học sư phạm,Toán,,,Tổ Tự nhiên (KHTN)
+28,1003299414,Nguyễn Văn Thật,29/01/1984,Nam,Kinh,0974177132,Giáo viên,Tổ phó chuyên môn,Tổ phó chuyên môn,Đại học sư phạm,Giáo dục thể chất,,,Tổ Xã hội (KHXH)
+29,1000148434,Trịnh Văn Thể,18/07/1983,Nam,Kinh,0918099828,Giáo viên,,GVCN 11A5,Đại học,Sinh học,11A5,,Tổ Tự nhiên (KHTN)
+30,1003299420,Phạm Lệ Thu,26/08/1988,Nữ,Kinh,0354626005,Giáo viên,,GVCN 12A6,Đại học,Toán,12A6,,Tổ Tự nhiên (KHTN)
+31,1012557293,Phạm Thị Thu,26/09/1983,Nữ,Kinh,0988346058,Giáo viên,,GVCN 12A1,Đại học,Giáo dục kinh tế và pháp luật,12A1,,Tổ Tự nhiên (KHTN)
+32,1017859638,Nguyễn Thi Thúy,16/03/1991,Nữ,Kinh,0827982155,Nhân viên,Nhân viên thiết bị,Nhân viên thiết bị,Cao đẳng,,,,Tổ Văn phòng
+33,1003299358,Bùi Thị Xuân Thùy,01/10/1984,Nữ,Kinh,0919728372,Giáo viên,,GVCN 12A4,Đại học,Lịch sử,12A4,,Tổ Xã hội (KHXH)
+34,1012810287,Đoàn Thu Thùy,08/07/1983,Nữ,Kinh,0947568000,Giáo viên,Tổ trưởng chuyên môn,Tổ trưởng chuyên môn,Đại học,Tin học,,,Tổ Tự nhiên (KHTN)
+35,1012636940,Ngô Thị Thùy,09/12/1994,Nữ,Kinh,0334668132,Giáo viên,,GVCN 11A7,Đại học sư phạm,Toán,11A7,,Tổ Tự nhiên (KHTN)
+36,1003299401,Nguyễn Thị Thủy,01/06/1991,Nữ,Tày,0966981691,Giáo viên,,GVCN 11A6,Đại học sư phạm,Toán,11A6,,Tổ Tự nhiên (KHTN)
+37,1012640311,Bùi Văn Tiến,20/11/1985,Nam,Kinh,0988400184,Cán bộ quản lý,Hiệu trưởng,Hiệu trưởng,Thạc sĩ KHGD&ĐTGV,Vật lý,,,Ban Giám hiệu
+38,1012634616,Phạm Thị Tin,12/07/1987,Nữ,Kinh,0347769860,Giáo viên,Tổ trưởng chuyên môn,Tổ trưởng chuyên môn,Đại học sư phạm,Sinh học,10A6,,Tổ Tự nhiên (KHTN)
+39,1036347354,Lê Thái Trường,19/05/1975,Nam,Kinh,0966261760,Nhân viên,Nhân viên bảo vệ,Nhân viên bảo vệ,,,,,Tổ Văn phòng
+40,1003299345,Phạm Thị Tuyết,19/04/1982,Nữ,Kinh,0944533302,Giáo viên,,GVCN 12A5,Đại học sư phạm,Hóa học,12A5,,Tổ Tự nhiên (KHTN)
+41,1003299400,Nguyễn Thị Xuân,17/02/1989,Nữ,Kinh,0972698556,Giáo viên,,Giáo viên,Đại học,Tiếng Anh,,,Tổ Xã hội (KHXH)
+42,1003299346,Phạm Hồng Xuân,14/11/1984,Nam,Kinh,0332819468,Giáo viên,,Giáo viên,Thạc sĩ KHGD&ĐTGV,Lịch sử,,,Tổ Xã hội (KHXH)
