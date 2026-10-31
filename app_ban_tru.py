@@ -1343,6 +1343,47 @@ st.markdown("---")
 # 5. ĐIỀU HƯỚNG THEO PHÂN QUYỀN VAI TRÒ
 # ========================================================
 
+
+def tao_excel_phieu_bao_com(df_all, ngay_lv):
+    """Tạo file Excel Phiếu Báo Cơm chuẩn cho Bếp ăn và Ban Giám Hiệu"""
+    buffer = io.BytesIO()
+    with pd.ExcelWriter(buffer, engine='openpyxl') as writer:
+        # Sheet 1: Bảng tổng hợp theo 19 phòng
+        ds_phong_all = sorted(list(df_all["Phòng"].dropna().unique()))
+        rows_th = []
+        for p in ds_phong_all:
+            df_p = df_all[df_all["Phòng"] == p]
+            day_p = df_p["Dãy nhà"].iloc[0] if "Dãy nhà" in df_p.columns and len(df_p) > 0 else ""
+            si_so = len(df_p)
+            trua = int(df_p["GĐ1: Ăn trưa"].sum()) if "GĐ1: Ăn trưa" in df_p.columns else 0
+            toi = int(df_p["Ăn tối"].sum()) if "Ăn tối" in df_p.columns else trua
+            cat_trua = max(0, si_so - trua)
+            cat_toi = max(0, si_so - toi)
+            rows_th.append({
+                "Phòng KTX": p,
+                "Khu Vực": day_p,
+                "Sĩ Số Phòng": si_so,
+                "Suất Ăn Trưa": trua,
+                "Cắt Cơm Trưa": cat_trua,
+                "Suất Ăn Tối": toi,
+                "Cắt Cơm Tối": cat_toi,
+                "Ghi Chú": "Đủ 100%" if cat_trua == 0 and cat_toi == 0 else f"Vắng trưa:{cat_trua}, tối:{cat_toi}"
+            })
+        df_th = pd.DataFrame(rows_th)
+        df_th.to_excel(writer, sheet_name="Tong_Hop_19_Phong", index=False)
+        
+        # Sheet 2: Danh sách học sinh vắng / cắt cơm hôm nay
+        mask_v = (df_all["GĐ1: Ăn trưa"] == False) | (df_all["Ăn tối"] == False) | (df_all["Trạng thái"] != "Tại trường")
+        df_v = df_all[mask_v][["Phòng", "Giường", "Họ và tên", "Lớp", "GĐ1: Ăn trưa", "Ăn tối", "Trạng thái", "Họ tên Bố", "Họ tên Mẹ", "SĐT Phụ huynh", "Ghi chú nề nếp"]].copy()
+        df_v.rename(columns={"GĐ1: Ăn trưa": "Ăn Trưa (Có/Không)", "Ăn tối": "Ăn Tối (Có/Không)"}, inplace=True)
+        df_v.to_excel(writer, sheet_name="Danh_Sach_Cat_Com", index=False)
+        
+        # Sheet 3: Danh sách toàn trường
+        cols_tt = [c for c in ["Mã HS", "Phòng", "Giường", "Họ và tên", "Giới tính", "Lớp", "Dãy nhà", "GĐ1: Ăn trưa", "Ăn tối", "GĐ2: Phòng nghỉ", "Trạng thái", "SĐT Phụ huynh"] if c in df_all.columns]
+        df_all[cols_tt].to_excel(writer, sheet_name="Chi_Tiet_Toan_Truong", index=False)
+        
+    return buffer.getvalue()
+
 # --------------------------------------------------------
 # VAI TRÒ 1: BAN GIÁM HIỆU (ADMIN TỐI CAO)
 # --------------------------------------------------------
@@ -1384,6 +1425,177 @@ if role_curr == "Ban Giám hiệu":
                 else:
                     st.success("🎉 Toàn bộ học sinh bán trú đi học và ăn cơm đầy đủ 100%!")
 
+
+            # ========================================================
+            # TÍNH NĂNG 1: KHỐI DUYỆT ĐƠN XIN VỀ / BÁO CẮT CƠM TỪ PHỤ HUYNH & HỌC SINH
+            # ========================================================
+            if os.path.exists(FILE_XIN_VE):
+                try:
+                    df_xv_live = pd.read_csv(FILE_XIN_VE, encoding='utf-8-sig')
+                except Exception:
+                    df_xv_live = pd.DataFrame()
+            else:
+                df_xv_live = pd.DataFrame()
+
+            if not df_xv_live.empty and "Trạng thái" in df_xv_live.columns:
+                df_cho_duyet = df_xv_live[df_xv_live["Trạng thái"].str.contains("Chờ duyệt|Chờ BGH|Chờ QN", case=False, na=False)]
+            else:
+                df_cho_duyet = pd.DataFrame()
+
+            if not df_cho_duyet.empty:
+                st.markdown(f"""
+                <div style="background:#FFFBEB; border:2px solid #F59E0B; border-radius:10px; padding:14px; margin:10px 0 16px 0;">
+                    <h4 style="color:#B45309; margin:0 0 8px 0;">🚨 CÓ {len(df_cho_duyet)} ĐƠN XIN NGHỈ / CẮT CƠM TỪ PHỤ HUYNH CẦN DUYỆT:</h4>
+                    <p style="font-size:12.5px; color:#4B5563; margin:0;">Thầy/Cô duyệt đơn để hệ thống tự động trừ suất ăn của nhà bếp và cập nhật trạng thái an toàn cho học sinh.</p>
+                </div>
+                """, unsafe_allow_html=True)
+                
+                for idx_xv, row_xv in df_cho_duyet.iterrows():
+                    c_d1, c_d2, c_d3, c_d4 = st.columns([2.5, 2.5, 1.3, 1.2])
+                    with c_d1:
+                        st.markdown(f"**🎒 {row_xv.get('Họ và tên', '')}** (Lớp: `{row_xv.get('Lớp', '')}` - {row_xv.get('Phòng', '')})")
+                        st.caption(f"⏰ Gửi lúc: {row_xv.get('Thời gian', '')} | Người đón: {row_xv.get('Người đón / SĐT', 'Gia đình đón')}")
+                    with c_d2:
+                        st.markdown(f"**Lý do:** *{row_xv.get('Lý do', 'Xin về gia đình')}*")
+                        st.caption("Hình thức: Cắt cơm & Về nhà an toàn")
+                    with c_d3:
+                        if st.button("✅ DUYỆT ĐƠN", key=f"btn_dy_{idx_xv}", type="primary", use_container_width=True):
+                            # 1. Cập nhật file xin về
+                            df_xv_live.loc[idx_xv, "Trạng thái"] = "Đã duyệt (Về nhà)"
+                            df_xv_live.loc[idx_xv, "Người duyệt"] = u_curr.get("fullname", "BGH/Quản Nhiệm")
+                            df_xv_live.to_csv(FILE_XIN_VE, index=False, encoding='utf-8-sig')
+                            
+                            # 2. Tự động cắt cơm và chuyển trạng thái học sinh
+                            df_up_hs = pd.DataFrame(st.session_state.ds_hoc_sinh_live)
+                            ten_hs = row_xv.get('Họ và tên', '')
+                            df_up_hs.loc[df_up_hs["Họ và tên"] == ten_hs, "Trạng thái"] = "Xin về nhà"
+                            df_up_hs.loc[df_up_hs["Họ và tên"] == ten_hs, "GĐ1: Ăn trưa"] = False
+                            df_up_hs.loc[df_up_hs["Họ và tên"] == ten_hs, "Ăn tối"] = False
+                            df_up_hs.loc[df_up_hs["Họ và tên"] == ten_hs, "GĐ2: Phòng nghỉ"] = False
+                            st.session_state.ds_hoc_sinh_live = df_up_hs.to_dict('records')
+                            df_up_hs.to_csv(FILE_DU_LIEU_THUC_TE, index=False, encoding='utf-8-sig')
+                            st.success(f"🎉 Đã duyệt cho em **{ten_hs}**! Nhà bếp đã tự động trừ suất ăn.")
+                            st.rerun()
+                    with c_d4:
+                        if st.button("❌ TỪ CHỐI", key=f"btn_tc_{idx_xv}", use_container_width=True):
+                            df_xv_live.loc[idx_xv, "Trạng thái"] = "Từ chối duyệt"
+                            df_xv_live.loc[idx_xv, "Người duyệt"] = u_curr.get("fullname", "BGH/Quản Nhiệm")
+                            df_xv_live.to_csv(FILE_XIN_VE, index=False, encoding='utf-8-sig')
+                            st.warning(f"Đã từ chối đơn của em {row_xv.get('Họ và tên', '')}.")
+                            st.rerun()
+                st.markdown("---")
+
+            # ========================================================
+            # TÍNH NĂNG 2 & 3: BỘ CÔNG CỤ 1-CHẠM & PHIẾU BÁO CƠM CHUẨN A4
+            # ========================================================
+            st.markdown("#### ⚡ **Thao Tác Nhanh & Xuất Báo Cáo Chuyên Cần**")
+            col_act1, col_act2, col_act3 = st.columns([1.6, 1.8, 1.6])
+            
+            with col_act1:
+                lbl_all_btn = f"🟢 ĐIỂM DANH ĐỦ 100% ({len(df_hien_thi)} HS)"
+                if st.button(lbl_all_btn, type="secondary", use_container_width=True, help="Tự động tích có mặt ăn trưa, ăn tối, nghỉ trưa cho toàn bộ học sinh đang lọc"):
+                    df_cap_nhat = pd.DataFrame(st.session_state.ds_hoc_sinh_live)
+                    ds_ma_hien_thi = df_hien_thi["Mã HS"].tolist()
+                    for ma_hs in ds_ma_hien_thi:
+                        df_cap_nhat.loc[df_cap_nhat["Mã HS"] == ma_hs, "GĐ1: Ăn trưa"] = True
+                        df_cap_nhat.loc[df_cap_nhat["Mã HS"] == ma_hs, "Ăn tối"] = True
+                        df_cap_nhat.loc[df_cap_nhat["Mã HS"] == ma_hs, "GĐ2: Phòng nghỉ"] = True
+                        df_cap_nhat.loc[df_cap_nhat["Mã HS"] == ma_hs, "Trạng thái"] = "Tại trường"
+                    st.session_state.ds_hoc_sinh_live = df_cap_nhat.to_dict('records')
+                    df_cap_nhat.to_csv(FILE_DU_LIEU_THUC_TE, index=False, encoding='utf-8-sig')
+                    st.success(f"🎉 Đã điểm danh CÓ MẶT 100% cho {len(ds_ma_hien_thi)} học sinh thành công!")
+                    st.rerun()
+
+            with col_act2:
+                # Nút xuất file Excel báo cơm trực tiếp
+                excel_bytes = tao_excel_phieu_bao_com(df_current, ngay_lam_viec)
+                ten_file_excel = f"Phieu_Bao_Com_THPT2_BaoYen_{ngay_lam_viec.strftime('%Y%m%d')}.xlsx"
+                st.download_button(
+                    label=f"📥 TẢI FILE EXCEL BÁO CƠM BẾP ({ngay_lam_viec.strftime('%d/%m')})",
+                    data=excel_bytes,
+                    file_name=ten_file_excel,
+                    mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+                    use_container_width=True,
+                    help="Tải file Excel đầy đủ 3 sheet để gửi Zalo cho Nhà bếp hoặc lưu trữ kế toán"
+                )
+
+            with col_act3:
+                mo_phieu_in = st.checkbox("📄 XEM MẪU IN PHIẾU BÁO CƠM (A4)", value=False, key="ck_mo_phieu_a4")
+
+            # MẪU IN PHIẾU BÁO CƠM CHUẨN A4
+            if mo_phieu_in:
+                so_suat_trua_tt = int(df_current["GĐ1: Ăn trưa"].sum()) if "GĐ1: Ăn trưa" in df_current.columns else 0
+                so_suat_toi_tt = int(df_current["Ăn tối"].sum()) if "Ăn tối" in df_current.columns else so_suat_trua_tt
+                so_cat_trua_tt = max(0, len(df_current) - so_suat_trua_tt)
+                so_cat_toi_tt = max(0, len(df_current) - so_suat_toi_tt)
+                
+                st.markdown(f"""
+                <div style="background:white; border:2px solid #1E3A8A; border-radius:12px; padding:24px; margin:12px 0; font-family:'Times New Roman', Times, serif; color:#0F172A; box-shadow:0 4px 14px rgba(0,0,0,0.06);">
+                    <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:12px;">
+                        <div style="text-align:center;">
+                            <span style="font-size:12px;">SỞ GIÁO DỤC VÀ ĐÀO TẠO LÀO CAI</span><br>
+                            <b style="font-size:13.5px; color:#1E3A8A;">TRƯỜNG THPT SỐ 2 BẢO YÊN</b><br>
+                            <span style="font-size:11.5px; text-decoration:underline;">TỔ BÁN TRÚ & CẤP DƯỠNG</span>
+                        </div>
+                        <div style="text-align:center;">
+                            <b style="font-size:12.5px;">CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM</b><br>
+                            <span style="font-size:12px; font-weight:bold; text-decoration:underline;">Độc lập - Tự do - Hạnh phúc</span><br>
+                            <span style="font-size:11.5px; font-style:italic;">Bảo Yên, ngày {ngay_lam_viec.strftime('%d')} tháng {ngay_lam_viec.strftime('%m')} năm {ngay_lam_viec.strftime('%Y')}</span>
+                        </div>
+                    </div>
+                    
+                    <h3 style="text-align:center; color:#1E3A8A; margin:12px 0 4px 0; letter-spacing:0.5px;">PHIẾU BÁO CƠM BÁN TRÚ HÀNG NGÀY</h3>
+                    <p style="text-align:center; font-style:italic; font-size:12.5px; margin:0 0 14px 0;">(Kèm theo nhật ký kiểm thực và sổ chốt suất ăn ký túc xá)</p>
+                    
+                    <table style="width:100%; border-collapse:collapse; margin-bottom:14px; font-size:13px;">
+                        <tr style="background:#F1F5F9;">
+                            <th style="border:1px solid #CBD5E1; padding:8px; text-align:left;">Chỉ Số Tổng Hợp Quân Số</th>
+                            <th style="border:1px solid #CBD5E1; padding:8px; text-align:center; width:130px;">Bữa Trưa</th>
+                            <th style="border:1px solid #CBD5E1; padding:8px; text-align:center; width:130px;">Bữa Tối</th>
+                            <th style="border:1px solid #CBD5E1; padding:8px; text-align:center; width:130px;">Ghi Chú</th>
+                        </tr>
+                        <tr>
+                            <td style="border:1px solid #CBD5E1; padding:7px;"><b>1. Tổng sĩ số học sinh bán trú:</b></td>
+                            <td style="border:1px solid #CBD5E1; padding:7px; text-align:center;"><b>{len(df_current)} HS</b></td>
+                            <td style="border:1px solid #CBD5E1; padding:7px; text-align:center;"><b>{len(df_current)} HS</b></td>
+                            <td style="border:1px solid #CBD5E1; padding:7px; text-align:center;">19 Phòng KTX</td>
+                        </tr>
+                        <tr>
+                            <td style="border:1px solid #CBD5E1; padding:7px; color:#15803D;"><b>2. Số suất ăn thực tế (Nấu cơm):</b></td>
+                            <td style="border:1px solid #CBD5E1; padding:7px; text-align:center; color:#15803D; font-weight:bold; font-size:14px;">{so_suat_trua_tt} suất</td>
+                            <td style="border:1px solid #CBD5E1; padding:7px; text-align:center; color:#15803D; font-weight:bold; font-size:14px;">{so_suat_toi_tt} suất</td>
+                            <td style="border:1px solid #CBD5E1; padding:7px; text-align:center; color:#15803D;">Bếp xuất kho</td>
+                        </tr>
+                        <tr>
+                            <td style="border:1px solid #CBD5E1; padding:7px; color:#DC2626;"><b>3. Số suất cắt / vắng ăn:</b></td>
+                            <td style="border:1px solid #CBD5E1; padding:7px; text-align:center; color:#DC2626; font-weight:bold;">{so_cat_trua_tt} suất</td>
+                            <td style="border:1px solid #CBD5E1; padding:7px; text-align:center; color:#DC2626; font-weight:bold;">{so_cat_toi_tt} suất</td>
+                            <td style="border:1px solid #CBD5E1; padding:7px; text-align:center; color:#DC2626;">Khấu trừ tiền ăn</td>
+                        </tr>
+                    </table>
+
+                    <div style="display:flex; justify-content:space-between; margin-top:28px; text-align:center; font-size:13px;">
+                        <div style="width:30%;">
+                            <b>ĐẠI DIỆN BẾP ĂN</b><br>
+                            <span style="font-size:11.5px; font-style:italic;">(Ký và ghi rõ họ tên)</span>
+                            <div style="height:55px;"></div>
+                            <b>Tổ Cấp Dưỡng</b>
+                        </div>
+                        <div style="width:30%;">
+                            <b>GIÁO VIÊN TRỰC BÁN TRÚ</b><br>
+                            <span style="font-size:11.5px; font-style:italic;">(Ký và ghi rõ họ tên)</span>
+                            <div style="height:55px;"></div>
+                            <b>Thầy Quản Nhiệm</b>
+                        </div>
+                        <div style="width:30%;">
+                            <b>HIỆU TRƯỞNG / BGH</b><br>
+                            <span style="font-size:11.5px; font-style:italic;">(Phê duyệt)</span>
+                            <div style="height:55px;"></div>
+                            <b>Ban Giám Hiệu</b>
+                        </div>
+                    </div>
+                </div>
+                """, unsafe_allow_html=True)
 
             st.subheader("📋 Bảng Điểm Danh 2 Giai Đoạn & 2 Bữa Ăn Thời Gian Thực")
             cot_dd = ["Mã HS", "Phòng", "Giường", "Họ và tên", "Chức vụ phòng", "Lớp", "GĐ1: Ăn trưa", "Ăn tối", "GĐ2: Phòng nghỉ", "Trạng thái", "SĐT Học sinh", "SĐT Phụ huynh", "Ghi chú nề nếp"]
@@ -2082,11 +2294,20 @@ elif role_curr == "Phụ huynh học sinh":
             btn_ph_cat = st.form_submit_button("Gửi Yêu Cầu Cắt Cơm Xuống Bếp", type="primary")
             
             if btn_ph_cat:
-                df_up_hs = pd.DataFrame(st.session_state.ds_hoc_sinh_live)
-                df_up_hs.loc[df_up_hs["Họ và tên"] == con_em, "GĐ1: Ăn trưa"] = False
-                st.session_state.ds_hoc_sinh_live = df_up_hs.to_dict('records')
-                df_up_hs.to_csv(FILE_DU_LIEU_THUC_TE, index=False, encoding='utf-8-sig')
-                st.success(f"✅ Đã báo cắt cơm thành công cho cháu {con_em} ngày {ngay_cat.strftime('%d/%m/%Y')}! Suất ăn đã được khấu trừ.")
+                # Ghi đơn vào lịch sử xin về để Thầy/Cô duyệt
+                dong_cat_ph = {
+                    "Thời gian": datetime.now().strftime("%d/%m/%Y %H:%M"),
+                    "Mã HS": row_con.get("Mã HS", ""), "Họ và tên": con_em, "Lớp": row_con.get("Lớp", ""),
+                    "Phòng": row_con.get("Phòng", ""), "Hình thức": f"Báo cắt cơm ({bua_cat})",
+                    "Lý do": ly_do_cat, "Người đón / SĐT": u_curr.get("fullname", "Phụ huynh"),
+                    "Người duyệt": "Chờ duyệt", "Trạng thái": "Chờ duyệt ⏳"
+                }
+                df_xv_cur = pd.read_csv(FILE_XIN_VE, encoding='utf-8-sig') if os.path.exists(FILE_XIN_VE) else pd.DataFrame()
+                df_xv_cur = pd.concat([df_xv_cur, pd.DataFrame([dong_cat_ph])], ignore_index=True)
+                df_xv_cur.to_csv(FILE_XIN_VE, index=False, encoding='utf-8-sig')
+                
+                st.success(f"✅ Đã gửi đơn báo cắt cơm cho cháu {con_em} ngày {ngay_cat.strftime('%d/%m/%Y')}! Thầy Quản Nhiệm sẽ phê duyệt và báo nhà bếp khấu trừ ngay.")
+                st.balloons()
                 st.rerun()
 
     with tab_ph_ve:
