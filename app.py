@@ -1347,16 +1347,7 @@ st.markdown("---")
 # VAI TRÒ 1: BAN GIÁM HIỆU (ADMIN TỐI CAO)
 # --------------------------------------------------------
 if role_curr == "Ban Giám hiệu":
-    st.info("ℹ️ **Quy hoạch hệ thống quản trị:** Nhánh **👑 Quản Trị Cấp Quyền & Tài Khoản Toàn Trường** và **📅 Quản Lý Hoạt Động Theo Năm Học** đã được chuyển sang phân hệ **🏛️ HỆ THỐNG QUẢN TRỊ & ĐIỀU HÀNH NHÀ TRƯỜNG**.")
-    c_sw1, _ = st.columns([1.5, 2])
-    with c_sw1:
-        if st.button("👉 Mở Hệ Thống Quản Trị & Điều Hành Nhà Trường", key="btn_goto_qt_chung"):
-            st.session_state.phan_he_hien_tai = "🏛️ HỆ THỐNG QUẢN TRỊ & ĐIỀU HÀNH NHÀ TRƯỜNG"
-            st.rerun()
-
-    # --------------------------------------------------------
-    # 4 CỤM NGHIỆP VỤ BÁN TRÚ & KTX CHUẨN HÓA DÀNH CHO BGH
-    # --------------------------------------------------------
+    # 4 Phân hệ nghiệp vụ Bán trú & KTX chuẩn hóa dành cho BGH
     tab_cluster1, tab_cluster2, tab_cluster3, tab_cluster4 = st.tabs([
         "📋 HỒ SƠ 207 HS & ĐIỂM DANH BÁO CƠM",
         "🏢 KÝ TÚC XÁ & THI ĐUA PHÒNG Ở",
