@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*-
+﻿# -*- coding: utf-8 -*-
 """
 PHÂN HỆ 1: HỆ THỐNG QUẢN TRỊ & ĐIỀU HÀNH NHÀ TRƯỜNG (TOÀN DIỆN)
 Trường THPT số 2 Bảo Yên - Xã Bảo Hà, Huyện Bảo Yên, Tỉnh Lào Cai
@@ -928,8 +928,9 @@ def render_phan_he_quan_ly_chung(df_tai_khoan, role_curr, nam_hoc, BASE_DIR, THU
 
             st.markdown("---")
 
-            tab_auto_sync, tab_sync_drive, tab_sync_sheets, tab_sync_cfg, tab_sync_guide = st.tabs([
+            tab_auto_sync, tab_sync_github, tab_sync_drive, tab_sync_sheets, tab_sync_cfg, tab_sync_guide = st.tabs([
                 "🤖 TỰ ĐỘNG ĐỒNG BỘ (AUTO-SYNC 24/7)",
+                "🐙 ĐỒNG BỘ GITHUB (WEB CLOUD)",
                 "📁 ĐỒNG BỘ LÊN GOOGLE DRIVE (LƯU TRỮ VĨNH VIỄN)",
                 "📊 ĐỒNG BỘ LÊN GOOGLE SHEETS (BẢNG TÍNH THỜI GIAN THỰC)",
                 "⚙️ CẤU HÌNH LIÊN KẾT & TEST PING",
@@ -1038,6 +1039,59 @@ def render_phan_he_quan_ly_chung(df_tai_khoan, role_curr, nam_hoc, BASE_DIR, THU
                 return buf.getvalue()
 
             # -------------------------------------------------------------
+
+            # -------------------------------------------------------------
+            # 0.1. ĐỒNG BỘ GITHUB (WEB CLOUD)
+            # -------------------------------------------------------------
+            with tab_sync_github:
+                st.markdown("#### 🐙 **Đồng Bộ Mã Nguồn Lên GitHub & Cập Nhật Web Cloud**")
+                st.caption("Cập nhật toàn bộ mã nguồn, cấu hình biểu tượng màn hình chính và dữ liệu lên kho GitHub của trường. Trang web [thpt2baoyen.streamlit.app](https://thpt2baoyen.streamlit.app) sẽ tự động cập nhật ngay sau khi đẩy.")
+                
+                try:
+                    import tu_dong_day_len_github
+                    gh_cfg = tu_dong_day_len_github.load_github_cfg()
+                except Exception:
+                    gh_cfg = {"repo": "buivantien20/ban-tru-thpt2-baoyen", "branch": "main", "token": "", "last_push": "Chưa đồng bộ"}
+                
+                col_gh1, col_gh2 = st.columns([1.4, 1.2])
+                with col_gh1:
+                    st.markdown("##### ⚙️ **Thông Tin Kết Nối GitHub:**")
+                    st.write(f"• **Kho lưu trữ (Repository):** `https://github.com/{gh_cfg.get('repo', 'buivantien20/ban-tru-thpt2-baoyen')}`")
+                    st.write(f"• **Nhánh chính (Branch):** `{gh_cfg.get('branch', 'main')}`")
+                    st.write("• **Trang Web Cloud chính thức:** [thpt2baoyen.streamlit.app](https://thpt2baoyen.streamlit.app)")
+                    
+                    token_ht = gh_cfg.get("token", "")
+                    tok_inp = st.text_input(
+                        "Mã GitHub Personal Access Token (PAT):",
+                        value=token_ht,
+                        type="password",
+                        help="Mã truy cập cá nhân bắt đầu bằng ghp_...",
+                        key="input_gh_pat_token"
+                    )
+                    if st.button("💾 LƯU CẤU HÌNH GITHUB", use_container_width=True, key="btn_save_gh_cfg"):
+                        gh_cfg["token"] = tok_inp.strip()
+                        tu_dong_day_len_github.save_github_cfg(gh_cfg)
+                        st.success("✅ Đã lưu cấu hình GitHub Token thành công!")
+                        st.rerun()
+
+                with col_gh2:
+                    st.markdown("##### 🚀 **Thao Tác Đồng Bộ Tức Thì:**")
+                    st.write(f"⏰ **Lần đồng bộ gần nhất:** `{gh_cfg.get('last_push', 'Chưa đồng bộ')}`")
+                    if token_ht:
+                        st.success("🟢 **TOKEN: ĐÃ SẴN SÀNG ĐỒNG BỘ**")
+                    else:
+                        st.warning("🟡 **CHƯA CẤU HÌNH MÃ TOKEN**")
+                    
+                    if st.button("🚀 ĐẨY MÃ NGUỒN LÊN GITHUB NGAY", type="primary", use_container_width=True, key="btn_push_to_gh_now"):
+                        with st.spinner("Đang đóng gói và tự động đẩy toàn bộ dữ liệu & mã nguồn lên GitHub..."):
+                            tok_to_use = tok_inp.strip() if tok_inp.strip() else token_ht
+                            ok_push, msg_push = tu_dong_day_len_github.push_to_github_api(tok_to_use)
+                            if ok_push:
+                                st.success(msg_push)
+                                st.balloons()
+                            else:
+                                st.error(msg_push)
+
             # 1. ĐỒNG BỘ LÊN GOOGLE DRIVE
             # -------------------------------------------------------------
             with tab_sync_drive:
