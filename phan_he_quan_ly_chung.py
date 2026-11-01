@@ -647,6 +647,17 @@ def render_phan_he_quan_ly_chung(df_tai_khoan, role_curr, nam_hoc, BASE_DIR, THU
                 ✨ **LỢI ÍCH:** Mở ứng dụng toàn màn hình mượt mà, biểu tượng nằm ngay màn hình chính, không thanh địa chỉ web, không cần gõ link hay quét mã lại những lần sau!
                 """)
 
+            # TRUNG TÂM BÁO SĨ SỐ THỜI GIAN THỰC 21 LỚP HÔM NAY (BGH THEO DÕI)
+        st.markdown("---")
+        st.markdown("### 📊 TÌNH HÌNH SĨ SỐ & CHUYÊN CẦN 21 LỚP THỜI GIAN THỰC HÔM NAY")
+        st.caption("Ban Giám Hiệu theo dõi trực tiếp tiến độ báo cáo quân số của 21 Lớp trưởng và GVCN theo từng buổi:")
+        import quan_ly_si_so_lop
+        ngay_hom_nay_live = date.today().strftime("%d/%m/%Y")
+        col_bgh_live1, col_bgh_live2 = st.columns([1, 2.5])
+        with col_bgh_live1:
+            buoi_xem_live = st.radio("Chọn buổi xem quân số:", ["Buổi sáng", "Buổi chiều", "Cả ngày"], horizontal=True, key="rb_live_bgh_top")
+        quan_ly_si_so_lop.render_bang_tong_hop_si_so_21_lop(ngay_hom_nay_live, buoi_xem_live, BASE_DIR)
+
     # =========================================================================
     # TAB 2: ĐỘI NGŨ - HỌC SINH
     # (Hợp nhất Danh bạ 42 CBGV-NV & Tra cứu Bộ lọc 829 Học sinh)
@@ -815,42 +826,20 @@ def render_phan_he_quan_ly_chung(df_tai_khoan, role_curr, nam_hoc, BASE_DIR, THU
         st.caption("Dành cho 21 Thầy/Cô GVCN và Ban Giám Hiệu theo dõi sĩ số, chuyên cần, nền nếp và kế hoạch chủ nhiệm.")
 
         sub_cn1, sub_cn2, sub_cn3 = st.tabs([
-            "📋 ĐIỂM DANH & CHUYÊN CẦN LỚP",
+            "📊 BÁO SĨ SỐ & ĐIỂM DANH CHUYÊN CẦN (LIVE)",
             "📝 KẾ HOẠCH CHỦ NHIỆM TUẦN / THÁNG",
             "📱 SỔ LIÊN LẠC PHỤ HUYNH ĐIỆN TỬ"
         ])
 
         with sub_cn1:
-            st.markdown("#### 📋 **Điểm Danh Chuyên Cần Lớp Học Hàng Ngày**")
-            ds_lop_cn = [f"10A{i}" for i in range(1, 8)] + [f"11A{i}" for i in range(1, 8)] + [f"12A{i}" for i in range(1, 8)]
-            c_cn_s1, c_cn_s2 = st.columns([1, 2])
-            with c_cn_s1:
-                lop_chon_cn = st.selectbox("Chọn lớp điểm danh:", ds_lop_cn, index=0, key="sb_lop_cn")
-            with c_cn_s2:
-                ngay_dd_cn = st.date_input("Ngày điểm danh:", date.today(), key="dt_dd_cn")
-
-            df_hs_lop = df_hs_all[df_hs_all['Lớp'] == lop_chon_cn] if not df_hs_all.empty else pd.DataFrame()
-            if not df_hs_lop.empty:
-                st.caption(f"Lớp **{lop_chon_cn}** có tổng số **{len(df_hs_lop)} học sinh**.")
-                df_dd_show = df_hs_lop[['STT', 'Mã học sinh', 'Họ và tên', 'Giới tính', 'Dân tộc', 'Bán trú', 'SĐT Bố', 'SĐT Mẹ']].copy()
-                df_dd_show['Có mặt'] = True
-                df_dd_show['Đi học muộn'] = False
-                df_dd_show['Trạng thái'] = "Có mặt"
-                df_dd_show['Lý do vắng'] = ""
-                
-                edited_dd = st.data_editor(
-                    df_dd_show,
-                    column_config={
-                        'Có mặt': st.column_config.CheckboxColumn('Có mặt [✓]', default=True),
-                        'Đi học muộn': st.column_config.CheckboxColumn('Đi muộn [✓]', default=False),
-                        'Trạng thái': st.column_config.SelectboxColumn('Trạng thái', options=['Có mặt', 'Vắng có phép', 'Vắng không phép 🚨', 'Nghỉ ốm'])
-                    },
-                    disabled=['STT', 'Mã học sinh', 'Họ và tên', 'Giới tính', 'Dân tộc', 'Bán trú', 'SĐT Bố', 'SĐT Mẹ'],
-                    hide_index=True,
-                    use_container_width=True
-                )
-                if st.button("💾 LƯU BẢNG ĐIỂM DANH LỚP HÔM NAY", type="primary", key="btn_save_dd_lop"):
-                    st.success(f"🎉 Đã lưu kết quả điểm danh chuyên cần Lớp {lop_chon_cn} ngày {ngay_dd_cn.strftime('%d/%m/%Y')} thành công!")
+            import quan_ly_si_so_lop
+            quan_ly_si_so_lop.render_giao_dien_bao_si_so(
+                u_curr=u_curr,
+                role_curr=role_curr,
+                base_dir=BASE_DIR,
+                is_gvcn=True,
+                is_admin=la_bgh_admin
+            )
 
         with sub_cn2:
             st.markdown("#### 📝 **Kế Hoạch Công Tác Chủ Nhiệm Tuần / Tháng**")
