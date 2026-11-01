@@ -1401,7 +1401,8 @@ if role_curr == "Ban Giám hiệu":
             # ========================================================
             # TÍNH NĂNG 2 & 3: BỘ CÔNG CỤ 1-CHẠM & PHIẾU BÁO CƠM CHUẨN A4
             # ========================================================
-            st.markdown("#### ⚡ **Thao Tác Nhanh & Xuất Báo Cáo Chuyên Cần**")
+            st.markdown("#### ☀️ **LỆNH BÁO CƠM NHÀ BẾP (08:00 - 08:30) & PHIẾU BÁO CƠM 3 BÊN**")
+            st.caption("Khung giờ vàng 08:00 - 08:30: Quản nhiệm bấm nút 1-chạm '🟢 ĐIỂM DANH ĐỦ 100%' hoặc loại trừ học sinh vắng/nghỉ; xuất Phiếu Báo Cơm ký nhận 3 bên (Nhà bếp nhận - Quản nhiệm lập - BGH ký duyệt).")
             col_act1, col_act2, col_act3 = st.columns([1.6, 1.8, 1.6])
             
             with col_act1:

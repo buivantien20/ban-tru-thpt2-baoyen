@@ -97,7 +97,7 @@ def render_cong_phu_huynh(u_curr, df_current, ngay_lam_viec, BASE_DIR, FILE_DU_L
 
     # 1.3. CÁC TÁC NGHIỆP PHỤ HUYNH
     tab_ph_cat, tab_ph_ve, tab_ph_qr, tab_ph_td, tab_ph_edit = st.tabs([
-        "🥣 BÁO CẮT CƠM (TRƯỚC 08:00)",
+        "🥣 BÁO CẮT CƠM (06:30 - 07:30)",
         "🚗 BÁO CON XIN VỀ / XUỐNG TRƯỜNG",
         "💳 ĐÓNG TIỀN ĂN QUA MÃ VIETQR",
         "🥗 THỰC ĐƠN BỮA ĂN CỦA CON",
@@ -106,7 +106,7 @@ def render_cong_phu_huynh(u_curr, df_current, ngay_lam_viec, BASE_DIR, FILE_DU_L
 
     with tab_ph_cat:
         st.markdown("#### 🥣 Báo Cắt Cơm Bán Trú Cho Con")
-        st.info("⏰ **Quy định:** Quý phụ huynh vui lòng gửi thông báo cắt cơm **trước 08:00 sáng**. Nhà bếp sẽ giảm nấu đúng suất và bộ phận kế toán sẽ khấu trừ tiền ăn ngày hôm đó cho gia đình.")
+        st.info("⏰ **Khung giờ vàng (06:30 - 07:30 sáng):** Quý phụ huynh vui lòng gửi thông báo cắt cơm trong khung giờ **06:30 - 07:30 (Hạn chót trước 08:00)** để Thầy Quản nhiệm tổng hợp rà soát và kịp thời xuất Lệnh báo cơm cho nhà bếp lúc 08:00. Nhà bếp sẽ giảm nấu đúng suất và kế toán khấu trừ tiền ăn cho gia đình.")
         with st.form("form_ph_cat_com"):
             ngay_cat = st.date_input("Ngày xin cắt cơm:", date.today())
             bua_cat = st.selectbox("Bữa cắt:", ["Bữa trưa hôm nay", "Bữa tối hôm nay", "Cả ngày hôm nay", "Từ ngày mai"])
@@ -427,14 +427,15 @@ def render_cong_hoc_sinh(u_curr, df_current, ngay_lam_viec, BASE_DIR, FILE_DU_LI
             else:
                 phong_dd = st.selectbox("Chọn phòng KTX cần điểm danh:", ds_cac_phong)
 
-            # 4 Thời điểm trong ngày theo đúng yêu cầu
+            # 4 Khung giờ trọng điểm trong ngày theo đúng quy định của Nhà trường
             thoi_diem_dd = st.selectbox(
-                "⏰ Chọn thời điểm điểm danh trong ngày:",
+                "⏰ Chọn khung giờ trọng điểm trong ngày (Golden Hours):",
                 [
-                    "🌅 Sáng sớm (06:00 - 06:30): Báo thức, thể dục & dọn dẹp",
-                    "☀️ Buổi trưa (11:30 - 12:30): Ăn cơm trưa & Nghỉ trưa KTX",
-                    "🌆 Buổi tối (17:30 - 18:30): Ăn cơm tối & Điểm danh buổi tối",
-                    "🌙 Ban đêm (21:30 - 22:00): Tắt đèn KTX đi ngủ"
+                    "🌅 05:30 - 06:00 | THỂ DỤC & VỆ SINH PHÒNG: Kiểm tra 5S, báo vắng sáng sớm (ốm Y tế / đã về tối qua)",
+                    "⏰ 06:30 - 07:30 | CHỐT CẮT CƠM & XIN VỀ (HẠN CHÓT): Rà soát vắng trước khi Quản nhiệm ra lệnh báo cơm",
+                    "☀️ 11:30 - 12:30 | BUỔI TRƯA: Giờ ăn cơm trưa & Nghỉ trưa KTX tại phòng",
+                    "🌆 17:30 - 18:30 | BUỔI TỐI: Giờ ăn cơm tối & Điểm danh tự học",
+                    "🌙 21:30 - 22:00 | ĐIỂM DANH ĐÊM & TẮT ĐÈN: Sĩ số ngủ đêm 19 phòng (Báo ngay nếu vắng bất thường)"
                 ]
             )
 
