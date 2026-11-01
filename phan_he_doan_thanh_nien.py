@@ -71,6 +71,15 @@ def tao_noi_dung_qr_xe(r):
     else:
         loai_mau = "Xe học sinh"
 
+    # Lấy thông tin Nơi để xe / Nơi gửi xe
+    noi_de_raw = str(r.get('Nơi để xe', r.get('Nơi gửi xe', ''))).strip()
+    if not noi_de_raw or noi_de_raw.lower() == 'nan':
+        noi_de_xe = "Trong trường"
+    elif noi_de_raw.lower() == 'trong trường':
+        noi_de_xe = "Trong trường"
+    else:
+        noi_de_xe = noi_de_raw
+
     ten_ph = str(r.get('Họ tên Phụ huynh', '')).strip()
     if not ten_ph or ten_ph.lower() == 'nan':
         ten_ph = "Phụ huynh"
@@ -87,6 +96,7 @@ def tao_noi_dung_qr_xe(r):
         f"HS: {ten_hs} - {lop}\n"
         f"SĐT: {sdt_hs}\n"
         f"Loại/Màu xe: {loai_mau}\n"
+        f"Nơi để xe: {noi_de_xe}\n"
         f"{ph_str}"
     )
 
@@ -128,6 +138,8 @@ def tao_html_in_tem_qr(df_in, tieu_de_pham_vi):
         img_qr = tao_anh_qr_base64(txt_qr)
         mo_ta_mau = lay_mo_ta_mau_xe(r)
         sdt_hs = dinh_dang_sdt(r.get('SĐT Học sinh', ''))
+        noi_de_raw = str(r.get('Nơi để xe', r.get('Nơi gửi xe', ''))).strip()
+        noi_de_xe = "Trong trường" if (not noi_de_raw or noi_de_raw.lower() in ['nan', 'trong trường']) else noi_de_raw
         sdt_ph = dinh_dang_sdt(r.get('SĐT Phụ huynh', ''))
         ten_ph = str(r.get('Họ tên Phụ huynh', 'Chưa cập nhật')).strip()
         if not ten_ph or ten_ph.lower() == 'nan':
@@ -149,6 +161,7 @@ def tao_html_in_tem_qr(df_in, tieu_de_pham_vi):
                     <div class="info-line">📱 <b>SĐT:</b> {sdt_hs}</div>
                     <div class="info-line">🛵 <b>Loại:</b> {r['Loại xe']}</div>
                     <div class="info-line">🎨 <b>Màu:</b> {mo_ta_mau}</div>
+                    <div class="info-line">📍 <b>Nơi để:</b> {noi_de_xe}</div>
                     <div class="info-line">👨‍👩‍👧 <b>PH:</b> {ten_ph} ({sdt_ph})</div>
                 </div>
             </div>
