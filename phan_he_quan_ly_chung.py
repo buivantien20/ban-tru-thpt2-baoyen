@@ -24,6 +24,56 @@ from datetime import datetime, date, timedelta
 # -----------------------------------------------------------------------------
 # CÁC HÀM TIỆN ÍCH DÙNG CHUNG CHO QUẢN TRỊ NĂM HỌC & TÀI KHOẢN
 # -----------------------------------------------------------------------------
+
+def kiem_tra_quyen_quan_tri_nien_khoa(u_curr, role_curr, BASE_DIR="D:/"):
+    """
+    Kiem tra quyen truy cap tab Quan tri & Nien khoa:
+    Chi mo duoc bang tai khoan admin / Hieu truong, PHT, hoac giao vien duoc phan quyen.
+    Cac tai khoan khac khong the mo duoc de bao ve an toan & bao mat thong tin.
+    """
+    if not u_curr or not isinstance(u_curr, dict):
+        return False
+        
+    u_username = str(u_curr.get("username", "")).strip().lower()
+    chuc_danh = str(u_curr.get("chuc_danh", "")).strip().lower()
+    quyen_ql = str(u_curr.get("quyen_quan_ly", "")).strip().lower()
+    role = str(role_curr).strip().lower()
+    
+    # 1. Admin he thong
+    if u_username == "admin" or u_username.startswith("admin_") or ("toàn quyền" in quyen_ql) or ("toan quyen" in quyen_ql):
+        return True
+        
+    # 2. Ban Giam hieu / Hieu truong
+    if "ban giám hiệu" in role or "ban giam hieu" in role:
+        return True
+    if u_username in ["hieutruong", "tienbv"]:
+        return True
+    if "hiệu trưởng" in chuc_danh or "hieu truong" in chuc_danh:
+        return True
+        
+    # 3. Pho Hieu truong (PHT)
+    if u_username in ["phohieutruong1", "phohieutruong2", "thanhnth", "phuongđth", "phuongdth", "pht"]:
+        return True
+    if "phó hiệu trưởng" in chuc_danh or "pho hieu truong" in chuc_danh or "pht" in chuc_danh:
+        return True
+        
+    # 4. Giao vien duoc phan quyen quan tri
+    if "quản trị" in quyen_ql or "quan tri" in quyen_ql:
+        return True
+        
+    # 5. Kiem tra danh sach giao vien duoc BGH uy quyen trong file JSON
+    f_gv_auth = os.path.join(BASE_DIR, "cau_hinh_giao_vien_quan_tri.json")
+    if os.path.exists(f_gv_auth):
+        try:
+            with open(f_gv_auth, "r", encoding="utf-8") as f_ja:
+                ds_uy_quyen = [str(x).strip().lower() for x in json.load(f_ja).get("danh_sach_uy_quyen", [])]
+                if u_username in ds_uy_quyen or str(u_curr.get("phone", "")).strip() in ds_uy_quyen:
+                    return True
+        except Exception:
+            pass
+
+    return False
+
 def doc_cau_hinh_nam_hoc(file_cfg):
     mac_dinh = {
         "nam_hoc_mac_dinh": "2026 - 2027",
@@ -278,7 +328,11 @@ def render_phan_he_quan_ly_chung(df_tai_khoan, role_curr, nam_hoc, BASE_DIR, THU
 
     u_curr = st.session_state.get("user_login", {})
     quyen_ql = str(u_curr.get("quyen_quan_ly", "")).strip()
-    la_bgh_admin = (role_curr == "Ban Giám hiệu") or ("Toàn quyền" in quyen_ql)
+    u_username = str(u_curr.get("username", "")).strip().lower()
+    
+    # Kiem tra quyen quan tri & nien khoa (Admin / Hieu truong / PHT / GV duoc phan quyen)
+    duoc_quyen_quan_tri = kiem_tra_quyen_quan_tri_nien_khoa(u_curr, role_curr, BASE_DIR)
+    la_bgh_admin = duoc_quyen_quan_tri
     is_ph_hs = (role_curr in ["Phụ huynh học sinh", "Học sinh"])
 
     cfg_nh = doc_cau_hinh_nam_hoc(file_cfg_nh)
@@ -300,13 +354,14 @@ def render_phan_he_quan_ly_chung(df_tai_khoan, role_curr, nam_hoc, BASE_DIR, THU
     so_ban_tru = len(df_bt_now) if not df_bt_now.empty else 196
 
     # Khởi tạo 6 Tab chức năng cốt lõi (Gọn gàng - Khoa học - Vừa vặn màn hình)
+    tab_admin_title = "⚙️ Quản Trị & Niên Khóa" if duoc_quyen_quan_tri else "🔒 Quản Trị & Niên Khóa"
     tab_dieu_hanh, tab_doi_ngu_hs, tab_chu_nhiem, tab_chuyen_mon, tab_ke_hoach, tab_admin_nh = st.tabs([
         "🏛️ Trung Tâm Điều Hành Tổng Thể",
         "👥 Đội Ngũ - Học Sinh",
-        "👨‍🏫 Công Tác Chủ Nhiệm",
+        "📋 Công Tác Chủ Nhiệm",
         "📚 Công Tác Chuyên Môn",
-        "🎯 Kế Hoạch Năm Học",
-        "👑 Quản Trị & Niên Khóa"
+        "📅 Kế Hoạch Năm Học",
+        tab_admin_title
     ])
 
     # =========================================================================
@@ -913,601 +968,696 @@ def render_phan_he_quan_ly_chung(df_tai_khoan, role_curr, nam_hoc, BASE_DIR, THU
     # TAB 7: QUẢN TRỊ TÀI KHOẢN, NIÊN KHÓA & ĐÁM MÂY
     # =========================================================================
     with tab_admin_nh:
-        if not la_bgh_admin:
-            st.warning("🔒 **GIỚI HẠN PHÂN QUYỀN:** Chức năng Quản trị Tài khoản, Niên khóa & Đám mây chỉ dành riêng cho Ban Giám Hiệu nhà trường. Tài khoản của bạn không có quyền truy cập khu vực này.")
+        if not duoc_quyen_quan_tri:
+            st.markdown(f"""
+            <div style="background:#FEF2F2; border:2px solid #DC2626; border-radius:12px; padding:28px 20px; text-align:center; margin:15px 0; box-shadow:0 4px 6px rgba(0,0,0,0.05);">
+                <div style="font-size:52px; margin-bottom:8px;">🔒</div>
+                <h3 style="color:#B91C1C; margin:0 0 10px 0; font-weight:800; font-size:22px;">KHU VỰC BẢO MẬT CAO - TRUY CẬP BỊ TỪ CHỐI</h3>
+                <p style="font-size:15px; color:#374151; max-width:680px; margin:0 auto 15px auto; line-height:1.6;">
+                    Tab <b>Quản Trị & Niên Khóa</b> chứa các thông tin bảo mật cốt lõi và thẩm quyền điều hành cao nhất của nhà trường (Phân quyền 1.339 tài khoản toàn trường, cấu hình niên khóa, phê duyệt cấp quyền và đồng bộ đám mây).
+                </p>
+                <div style="background:white; border:1px solid #FECACA; border-radius:8px; padding:14px 22px; display:inline-block; text-align:left; font-size:14px; color:#1F2937; margin-bottom:15px;">
+                    <b style="color:#991B1B;">QUY ĐỊNH PHÂN QUYỀN TRUY CẬP:</b><br>
+                    🛡️ <b>Quản trị viên hệ thống (Admin)</b><br>
+                    🏛️ <b>Thầy Hiệu trưởng & các Thầy/Cô Phó Hiệu trưởng (PHT)</b><br>
+                    ✍️ <b>Giáo viên được Ban Giám Hiệu phân quyền quản trị</b>
+                </div>
+                <p style="margin:10px 0 0 0; font-size:13.5px; color:#6B7280;">
+                    Tài khoản của bạn: <code style="color:#DC2626; font-size:14px; font-weight:bold;">{u_username}</code> ({u_curr.get('fullname', 'Người dùng')} - Vai trò: <b>{role_curr}</b>)<br>
+                    <i>Không có quyền mở hoặc xem nội dung của khu vực này để đảm bảo an toàn thông tin nhà trường.</i>
+                </p>
+            </div>
+            """, unsafe_allow_html=True)
+            st.info("💡 Nếu Thầy/Cô có nhiệm vụ công tác cần sử dụng tab này, vui lòng liên hệ Ban Giám Hiệu (Thầy Hiệu trưởng hoặc Thầy/Cô PHT) để được phân quyền quản trị.")
         else:
-            st.subheader("👑 Quản Trị Tài Khoản, Niên Khóa & Đồng Bộ Đám Mây")
-        
-        sub_ad1, sub_ad2, sub_ad3, sub_ad4 = st.tabs([
-            "👑 PHÂN QUYỀN & 447 TÀI KHOẢN",
-            "🗃️ CẤU HÌNH NIÊN KHÓA LÀM VIỆC",
-            "📬 PHÊ DUYỆT ĐỀ XUẤT CẤP QUYỀN",
-            "☁️ ĐỒNG BỘ GOOGLE DRIVE & SHEETS"
-        ])
-
-        with sub_ad1:
-            st.markdown("#### 👑 **Danh Sách & Phân Quyền Tài Khoản Toàn Trường**")
-            st.dataframe(df_tk_live, use_container_width=True, hide_index=True)
-            csv_tk_bytes = df_tk_live.to_csv(index=False, encoding='utf-8-sig').encode('utf-8-sig')
-            st.download_button("💾 XUẤT FILE DANH SÁCH TÀI KHOẢN (.CSV)", data=csv_tk_bytes, file_name="Tai_Khoan_Nguoi_Dung_THPT2_BaoYen.csv", mime="text/csv")
-
-        with sub_ad2:
-            st.markdown("#### 🗃️ **Chuyển Đổi Niên Khóa Làm Việc**")
-            st.write(f"Niên khóa hiện tại: **{nam_hoc}**")
-            chon_nh_m = st.selectbox("Chọn niên khóa kích hoạt:", danh_sach_nam_hoc, index=danh_sach_nam_hoc.index(nam_hoc) if nam_hoc in danh_sach_nam_hoc else 0, key="sb_cfg_nh_ad")
-            if chon_nh_m != nam_hoc:
-                if st.button("Chuyển niên khóa này ngay", key="btn_apply_nh"):
-                    st.session_state.nam_hoc_hien_tai = chon_nh_m
-                    st.rerun()
-
-        with sub_ad3:
-            st.markdown("#### 📬 **Phê Duyệt Đề Xuất Cấp Quyền Người Dùng**")
-            f_req = os.path.join(BASE_DIR, "de_xuat_cap_quyen.csv")
-            if os.path.exists(f_req):
-                df_req_ad = pd.read_csv(f_req, encoding='utf-8-sig').fillna("")
-                st.dataframe(df_req_ad, use_container_width=True, hide_index=True)
-            else:
-                st.success("✨ Hiện không có đề xuất cấp quyền nào đang chờ duyệt!")
-
-        with sub_ad4:
-            st.markdown("### ☁️ TRUNG TÂM ĐỒNG BỘ ĐÁM MÂY GOOGLE DRIVE & GOOGLE SHEETS")
-            st.caption("Kết nối trực tiếp với Google Drive & Google Sheets của Trường THPT số 2 Bảo Yên để lưu trữ vĩnh viễn, sao lưu định kỳ toàn bộ phần mềm và chia sẻ báo cáo liên thông.")
-
-            f_cfg_gs = os.path.join(BASE_DIR, "cau_hinh_google_sheets.json")
-            cfg_gs = {
-                "web_app_url": "",
-                "spreadsheet_url": "",
-                "drive_folder_url": "",
-                "local_drive_path": "D:/Google_Drive_THPT2_BaoYen",
-                "last_sync_drive": "Chưa đồng bộ",
-                "last_sync_sheets": "Chưa đồng bộ",
-                "status": "Chưa cấu hình"
-            }
-            if os.path.exists(f_cfg_gs):
-                try:
-                    with open(f_cfg_gs, "r", encoding="utf-8") as f_cfg:
-                        cfg_gs.update(json.load(f_cfg))
-                except Exception:
-                    pass
-
-            # Thẻ trạng thái kết nối trên cùng
-            is_connected = bool(cfg_gs.get("web_app_url", "").strip())
-            c_st1, c_st2, c_st3, c_st4 = st.columns([1.3, 1.1, 1.1, 1.1])
-            with c_st1:
-                if is_connected:
-                    st.success("🟢 **API ĐÁM MÂY: ĐÃ KẾT NỐI**")
-                else:
-                    st.warning("🟡 **API ĐÁM MÂY: CHƯA CẤU HÌNH**")
-            with c_st2:
-                st.info(f"📁 **Google Drive:** {cfg_gs.get('last_sync_drive', 'Chưa có')}")
-            with c_st3:
-                st.info(f"📊 **Google Sheets:** {cfg_gs.get('last_sync_sheets', 'Chưa có')}")
-            with c_st4:
-                d_url = cfg_gs.get("drive_folder_url", "").strip() or "https://drive.google.com/drive/my-drive"
-                st.link_button("📂 MỞ GOOGLE DRIVE", d_url, use_container_width=True)
-
-            # Chỉ số dữ liệu toàn trường sẵn sàng đồng bộ (Thời gian thực)
-            so_xe_now = len(pd.read_csv(os.path.join(BASE_DIR, 'quan_ly_phuong_tien.csv'), encoding='utf-8-sig')) if os.path.exists(os.path.join(BASE_DIR, 'quan_ly_phuong_tien.csv')) else 549
-            so_gv_now = len(pd.read_csv(f_gv_db, encoding='utf-8-sig')) if os.path.exists(f_gv_db) else 42
-            so_doan_now = len(pd.read_csv(os.path.join(BASE_DIR, 'thi_dua_dtn_20_lop.csv'), encoding='utf-8-sig')) if os.path.exists(os.path.join(BASE_DIR, 'thi_dua_dtn_20_lop.csv')) else 21
-
-            m_gs1, m_gs2, m_gs3, m_gs4, m_gs5 = st.columns(5)
-            m_gs1.metric("👨‍🎓 Học sinh", f"{tong_hs} HS", "21 Lớp")
-            m_gs2.metric("🛵 Phương tiện", f"{so_xe_now} Xe", "Mã QR")
-            m_gs3.metric("📋 CBGV-NV", f"{so_gv_now} Người", "4 Tổ")
-            m_gs4.metric("🛏️ Bán trú", f"{so_ban_tru} HS", "19 Phòng")
-            m_gs5.metric("🏆 Thi đua", f"{so_doan_now} Chi đoàn", "Nề nếp Live")
-
-            st.markdown("---")
-
-            tab_auto_sync, tab_sync_github, tab_sync_drive, tab_sync_sheets, tab_sync_cfg, tab_sync_guide = st.tabs([
-                "🤖 TỰ ĐỘNG ĐỒNG BỘ (AUTO-SYNC 24/7)",
-                "🐙 ĐỒNG BỘ GITHUB (WEB CLOUD)",
-                "📁 ĐỒNG BỘ LÊN GOOGLE DRIVE (LƯU TRỮ VĨNH VIỄN)",
-                "📊 ĐỒNG BỘ LÊN GOOGLE SHEETS (BẢNG TÍNH THỜI GIAN THỰC)",
-                "⚙️ CẤU HÌNH LIÊN KẾT & TEST PING",
-                "📖 HƯỚNG DẪN CÀI ĐẶT 3 BƯỚC (APPS SCRIPT)"
+            st.subheader("⚙️ Quản Trị Tài Khoản, Niên Khóa & Đồng Bộ Đám Mây")
+            sub_ad1, sub_ad2, sub_ad3, sub_ad4 = st.tabs([
+                "👑 PHÂN QUYỀN & TÀI KHOẢN TOÀN TRƯỜNG",
+                "🗃️ CẤU HÌNH NIÊN KHÓA LÀM VIỆC",
+                "📬 PHÊ DUYỆT ĐỀ XUẤT CẤP QUYỀN",
+                "☁️ ĐỒNG BỘ GOOGLE DRIVE & SHEETS"
             ])
 
-            # -------------------------------------------------------------
-            # 0. TỰ ĐỘNG ĐỒNG BỘ ĐỊNH KỲ (AUTO-SYNC)
-            # -------------------------------------------------------------
-            with tab_auto_sync:
-                st.markdown("#### 🤖 **Chế Độ Tự Động Đồng Bộ Dữ Liệu Lên Đám Mây (Chạy Ngầm 24/7)**")
-                st.caption("Hệ thống tự động đồng bộ ngầm toàn bộ dữ liệu phần mềm lên Google Drive và Google Sheets mà Thầy/Cô không cần phải bấm nút thủ công mỗi ngày.")
+            with sub_ad1:
+                st.markdown("#### 👥 **Danh Sách & Phân Quyền Tài Khoản Toàn Trường**")
                 
-                import dich_vu_tu_dong_dong_bo
-                cfg_auto = dich_vu_tu_dong_dong_bo.load_config()
-                
-                col_at1, col_at2 = st.columns([1.5, 1.2])
-                with col_at1:
-                    st.markdown("##### ⚙️ **Thiết Lập Lịch Tự Động:**")
-                    en_auto = st.toggle("🔘 **BẬT CHẾ ĐỘ TỰ ĐỘNG ĐỒNG BỘ NGẦM (24/7)**", value=cfg_auto.get("auto_sync_enabled", True), key="tog_auto_sync")
+                # KHU VỰC ỦY QUYỀN GIÁO VIÊN MỞ TAB QUẢN TRỊ & NIÊN KHÓA
+                with st.expander("🔑 **ỦY QUYỀN GIÁO VIÊN ĐƯỢC MỞ TAB QUẢN TRỊ & NIÊN KHÓA**", expanded=True):
+                    st.caption("Ban Giám Hiệu (Hiệu trưởng & PHT) có thể phân quyền cho Giáo viên được phép mở và thao tác tại Tab Quản trị & Niên khóa.")
                     
-                    c_p1, c_p2 = st.columns(2)
-                    with c_p1:
-                        chu_ky = st.selectbox(
-                            "Chu kỳ lặp lại:",
-                            options=[15, 30, 60, 120],
-                            format_func=lambda x: f"Mỗi {x} phút một lần",
-                            index=[15, 30, 60, 120].index(cfg_auto.get("auto_sync_interval_mins", 30)) if cfg_auto.get("auto_sync_interval_mins", 30) in [15, 30, 60, 120] else 1,
-                            key="sb_chu_ky_sync"
-                        )
-                    with c_p2:
-                        st.write("Khung giờ vàng tự động đồng bộ:")
-                        st.info("🕒 **09:00** (Chốt cơm bán trú)\n🕒 **11:30** (Kiểm thực trưa)\n🕒 **17:00** (Kết thúc ngày)")
+                    f_gv_auth_cfg = os.path.join(BASE_DIR, "cau_hinh_giao_vien_quan_tri.json")
+                    ds_uy_quyen_curr = []
+                    if os.path.exists(f_gv_auth_cfg):
+                        try:
+                            with open(f_gv_auth_cfg, "r", encoding="utf-8") as f_u:
+                                ds_uy_quyen_curr = json.load(f_u).get("danh_sach_uy_quyen", [])
+                        except Exception:
+                            pass
+                    
+                    # Lấy danh sách Giáo viên / Nhân viên
+                    df_gv_candidates = df_tk_live[df_tk_live["Vai trò"].isin(["Giáo viên quản lý", "Nhân viên", "Ban Chấp hành Đoàn"])]
+                    if not df_gv_candidates.empty:
+                        opt_gv_map = {f"{r['Họ và tên']} ({r['Tên đăng nhập']} - {r['Chức danh']})": r['Tên đăng nhập'] for _, r in df_gv_candidates.iterrows()}
+                        c_uq1, c_uq2 = st.columns([2, 1])
+                        with c_uq1:
+                            gv_chon_str = st.selectbox("Chọn Giáo viên / Nhân viên cần phân quyền quản trị:", list(opt_gv_map.keys()), key="sb_chon_gv_uq")
+                        with c_uq2:
+                            st.write("")
+                            st.write("")
+                            if st.button("➕ PHÂN QUYỀN CHO GV NÀY", type="primary", use_container_width=True, key="btn_add_gv_uq"):
+                                user_to_add = opt_gv_map[gv_chon_str]
+                                if user_to_add not in ds_uy_quyen_curr:
+                                    ds_uy_quyen_curr.append(user_to_add)
+                                    for p_json in [f_gv_auth_cfg, os.path.join("D:/phan_mem_ban_tru_cloud", "cau_hinh_giao_vien_quan_tri.json")]:
+                                        try:
+                                            with open(p_json, "w", encoding="utf-8") as f_out:
+                                                json.dump({"danh_sach_uy_quyen": ds_uy_quyen_curr}, f_out, ensure_ascii=False, indent=2)
+                                        except Exception:
+                                            pass
+                                    m_tk_gv = (df_tk_live["Tên đăng nhập"] == user_to_add)
+                                    if m_tk_gv.any():
+                                        df_tk_live.loc[m_tk_gv, "Quyền quản lý"] = "Quản trị & niên khóa"
+                                        for p_tk in [file_tai_khoan_csv, "D:/tai_khoan_nguoi_dung.csv", "D:/phan_mem_ban_tru_cloud/tai_khoan_nguoi_dung.csv"]:
+                                            try:
+                                                df_tk_live.to_csv(p_tk, index=False, encoding='utf-8-sig')
+                                            except Exception:
+                                                pass
+                                    st.success(f"✅ Đã phân quyền mở Tab Quản trị & Niên khóa cho Thầy/Cô: {gv_chon_str}")
+                                    st.rerun()
 
-                    st.markdown("##### 🎯 **Thành phần tự động:**")
-                    c_tg1, c_tg2 = st.columns(2)
-                    with c_tg1:
-                        tg_drv = st.checkbox("📁 Tự động đồng bộ Google Drive", value=cfg_auto.get("auto_sync_drive", True), key="ck_at_drv")
-                    with c_tg2:
-                        tg_sht = st.checkbox("📊 Tự động đồng bộ Google Sheets", value=cfg_auto.get("auto_sync_sheets", True), key="ck_at_sht")
+                    # Hiển thị danh sách đang được ủy quyền
+                    st.markdown("---")
+                    st.markdown("##### 📋 Giáo Viên Hiện Đang Được Phân Quyền Quản Trị:")
+                    if ds_uy_quyen_curr:
+                        for u_gvuq in ds_uy_quyen_curr:
+                            r_match = df_tk_live[df_tk_live["Tên đăng nhập"] == u_gvuq]
+                            ten_hien = r_match["Họ và tên"].values[0] if not r_match.empty else u_gvuq
+                            chuc_vu_hien = r_match["Chức danh"].values[0] if not r_match.empty else "Giáo viên"
+                            col_uq_a, col_uq_b = st.columns([3, 1])
+                            col_uq_a.markdown(f"🟢 **{ten_hien}** (`{u_gvuq}`) - *{chuc_vu_hien}* — `Được phép mở Tab Quản trị`")
+                            if col_uq_b.button(f"❌ Thu hồi quyền", key=f"btn_del_uq_{u_gvuq}"):
+                                ds_uy_quyen_curr.remove(u_gvuq)
+                                for p_json in [f_gv_auth_cfg, os.path.join("D:/phan_mem_ban_tru_cloud", "cau_hinh_giao_vien_quan_tri.json")]:
+                                    try:
+                                        with open(p_json, "w", encoding="utf-8") as f_out:
+                                            json.dump({"danh_sach_uy_quyen": ds_uy_quyen_curr}, f_out, ensure_ascii=False, indent=2)
+                                    except Exception:
+                                        pass
+                                m_tk_gv = (df_tk_live["Tên đăng nhập"] == u_gvuq)
+                                if m_tk_gv.any():
+                                    df_tk_live.loc[m_tk_gv, "Quyền quản lý"] = "Cá nhân"
+                                    for p_tk in [file_tai_khoan_csv, "D:/tai_khoan_nguoi_dung.csv", "D:/phan_mem_ban_tru_cloud/tai_khoan_nguoi_dung.csv"]:
+                                        try:
+                                            df_tk_live.to_csv(p_tk, index=False, encoding='utf-8-sig')
+                                        except Exception:
+                                            pass
+                                st.warning(f"Đã thu hồi quyền quản trị của tài khoản {u_gvuq}")
+                                st.rerun()
+                    else:
+                        st.info("ℹ️ Hiện tại ngoài Ban Giám Hiệu và Admin, chưa có giáo viên nào được phân quyền quản trị.")
 
-                    if st.button("💾 LƯU CẤU HÌNH TỰ ĐỘNG ĐỒNG BỘ", type="primary", use_container_width=True, key="btn_save_auto_cfg"):
-                        cfg_auto["auto_sync_enabled"] = en_auto
-                        cfg_auto["auto_sync_interval_mins"] = chu_ky
-                        cfg_auto["auto_sync_drive"] = tg_drv
-                        cfg_auto["auto_sync_sheets"] = tg_sht
-                        dich_vu_tu_dong_dong_bo.save_config(cfg_auto)
-                        dich_vu_tu_dong_dong_bo.khoi_chay_dich_vu_tu_dong()
-                        st.success("✅ Đã kích hoạt và lưu cấu hình Tự Động Đồng Bộ thành công!")
+                st.markdown("---")
+                st.dataframe(df_tk_live, use_container_width=True, hide_index=True)
+                csv_tk_bytes = df_tk_live.to_csv(index=False, encoding='utf-8-sig').encode('utf-8-sig')
+                st.download_button("📥 XUẤT FILE DANH SÁCH TÀI KHOẢN (.CSV)", data=csv_tk_bytes, file_name="Tai_Khoan_Nguoi_Dung_THPT2_BaoYen.csv", mime="text/csv")
+
+            with sub_ad2:
+                st.markdown("#### 🗃️ **Chuyển Đổi Niên Khóa Làm Việc**")
+                st.write(f"Niên khóa hiện tại: **{nam_hoc}**")
+                chon_nh_m = st.selectbox("Chọn niên khóa kích hoạt:", danh_sach_nam_hoc, index=danh_sach_nam_hoc.index(nam_hoc) if nam_hoc in danh_sach_nam_hoc else 0, key="sb_cfg_nh_ad")
+                if chon_nh_m != nam_hoc:
+                    if st.button("Chuyển niên khóa này ngay", key="btn_apply_nh"):
+                        st.session_state.nam_hoc_hien_tai = chon_nh_m
                         st.rerun()
 
-                with col_at2:
-                    st.markdown("##### ⚡ **Kích Hoạt Tức Thì & Kiểm Tra:**")
-                    st.write(f"⏰ **Lần tự động chạy gần nhất:** `{cfg_auto.get('last_auto_sync', 'Chưa có')}`")
-                    if cfg_auto.get("auto_sync_enabled", False):
-                        st.success("🟢 **DỊCH VỤ NGẦM: ĐANG HOẠT ĐỘNG 24/7**")
-                    else:
-                        st.warning("⚪ **DỊCH VỤ NGẦM: ĐANG TẠM DỪNG**")
+            with sub_ad3:
+                st.markdown("#### 📬 **Phê Duyệt Đề Xuất Cấp Quyền Người Dùng**")
+                f_req = os.path.join(BASE_DIR, "de_xuat_cap_quyen.csv")
+                if os.path.exists(f_req):
+                    df_req_ad = pd.read_csv(f_req, encoding='utf-8-sig').fillna("")
+                    st.dataframe(df_req_ad, use_container_width=True, hide_index=True)
+                else:
+                    st.success("✨ Hiện không có đề xuất cấp quyền nào đang chờ duyệt!")
 
-                    if st.button("⚡ KÍCH HOẠT ĐỒNG BỘ NGAY BÂY GIỜ", use_container_width=True, key="btn_run_now"):
-                        with st.spinner("Đang thực hiện chu trình đồng bộ ngầm toàn trường..."):
-                            kq = dich_vu_tu_dong_dong_bo.thuc_hien_dong_bo(trigger="Thủ công tức thì")
-                            st.success("🎉 Đã thực hiện đồng bộ toàn diện thành công!")
-                            for d in kq.get("details", []):
-                                st.caption(f"• {d}")
+            with sub_ad4:
+                st.markdown("### ☁️ TRUNG TÂM ĐỒNG BỘ ĐÁM MÂY GOOGLE DRIVE & GOOGLE SHEETS")
+                st.caption("Kết nối trực tiếp với Google Drive & Google Sheets của Trường THPT số 2 Bảo Yên để lưu trữ vĩnh viễn, sao lưu định kỳ toàn bộ phần mềm và chia sẻ báo cáo liên thông.")
+
+                f_cfg_gs = os.path.join(BASE_DIR, "cau_hinh_google_sheets.json")
+                cfg_gs = {
+                    "web_app_url": "",
+                    "spreadsheet_url": "",
+                    "drive_folder_url": "",
+                    "local_drive_path": "D:/Google_Drive_THPT2_BaoYen",
+                    "last_sync_drive": "Chưa đồng bộ",
+                    "last_sync_sheets": "Chưa đồng bộ",
+                    "status": "Chưa cấu hình"
+                }
+                if os.path.exists(f_cfg_gs):
+                    try:
+                        with open(f_cfg_gs, "r", encoding="utf-8") as f_cfg:
+                            cfg_gs.update(json.load(f_cfg))
+                    except Exception:
+                        pass
+
+                # Thẻ trạng thái kết nối trên cùng
+                is_connected = bool(cfg_gs.get("web_app_url", "").strip())
+                c_st1, c_st2, c_st3, c_st4 = st.columns([1.3, 1.1, 1.1, 1.1])
+                with c_st1:
+                    if is_connected:
+                        st.success("🟢 **API ĐÁM MÂY: ĐÃ KẾT NỐI**")
+                    else:
+                        st.warning("🟡 **API ĐÁM MÂY: CHƯA CẤU HÌNH**")
+                with c_st2:
+                    st.info(f"📁 **Google Drive:** {cfg_gs.get('last_sync_drive', 'Chưa có')}")
+                with c_st3:
+                    st.info(f"📊 **Google Sheets:** {cfg_gs.get('last_sync_sheets', 'Chưa có')}")
+                with c_st4:
+                    d_url = cfg_gs.get("drive_folder_url", "").strip() or "https://drive.google.com/drive/my-drive"
+                    st.link_button("📂 MỞ GOOGLE DRIVE", d_url, use_container_width=True)
+
+                # Chỉ số dữ liệu toàn trường sẵn sàng đồng bộ (Thời gian thực)
+                so_xe_now = len(pd.read_csv(os.path.join(BASE_DIR, 'quan_ly_phuong_tien.csv'), encoding='utf-8-sig')) if os.path.exists(os.path.join(BASE_DIR, 'quan_ly_phuong_tien.csv')) else 549
+                so_gv_now = len(pd.read_csv(f_gv_db, encoding='utf-8-sig')) if os.path.exists(f_gv_db) else 42
+                so_doan_now = len(pd.read_csv(os.path.join(BASE_DIR, 'thi_dua_dtn_20_lop.csv'), encoding='utf-8-sig')) if os.path.exists(os.path.join(BASE_DIR, 'thi_dua_dtn_20_lop.csv')) else 21
+
+                m_gs1, m_gs2, m_gs3, m_gs4, m_gs5 = st.columns(5)
+                m_gs1.metric("👨‍🎓 Học sinh", f"{tong_hs} HS", "21 Lớp")
+                m_gs2.metric("🛵 Phương tiện", f"{so_xe_now} Xe", "Mã QR")
+                m_gs3.metric("📋 CBGV-NV", f"{so_gv_now} Người", "4 Tổ")
+                m_gs4.metric("🛏️ Bán trú", f"{so_ban_tru} HS", "19 Phòng")
+                m_gs5.metric("🏆 Thi đua", f"{so_doan_now} Chi đoàn", "Nề nếp Live")
+
+                st.markdown("---")
+
+                tab_auto_sync, tab_sync_github, tab_sync_drive, tab_sync_sheets, tab_sync_cfg, tab_sync_guide = st.tabs([
+                    "🤖 TỰ ĐỘNG ĐỒNG BỘ (AUTO-SYNC 24/7)",
+                    "🐙 ĐỒNG BỘ GITHUB (WEB CLOUD)",
+                    "📁 ĐỒNG BỘ LÊN GOOGLE DRIVE (LƯU TRỮ VĨNH VIỄN)",
+                    "📊 ĐỒNG BỘ LÊN GOOGLE SHEETS (BẢNG TÍNH THỜI GIAN THỰC)",
+                    "⚙️ CẤU HÌNH LIÊN KẾT & TEST PING",
+                    "📖 HƯỚNG DẪN CÀI ĐẶT 3 BƯỚC (APPS SCRIPT)"
+                ])
+
+                # -------------------------------------------------------------
+                # 0. TỰ ĐỘNG ĐỒNG BỘ ĐỊNH KỲ (AUTO-SYNC)
+                # -------------------------------------------------------------
+                with tab_auto_sync:
+                    st.markdown("#### 🤖 **Chế Độ Tự Động Đồng Bộ Dữ Liệu Lên Đám Mây (Chạy Ngầm 24/7)**")
+                    st.caption("Hệ thống tự động đồng bộ ngầm toàn bộ dữ liệu phần mềm lên Google Drive và Google Sheets mà Thầy/Cô không cần phải bấm nút thủ công mỗi ngày.")
+                
+                    import dich_vu_tu_dong_dong_bo
+                    cfg_auto = dich_vu_tu_dong_dong_bo.load_config()
+                
+                    col_at1, col_at2 = st.columns([1.5, 1.2])
+                    with col_at1:
+                        st.markdown("##### ⚙️ **Thiết Lập Lịch Tự Động:**")
+                        en_auto = st.toggle("🔘 **BẬT CHẾ ĐỘ TỰ ĐỘNG ĐỒNG BỘ NGẦM (24/7)**", value=cfg_auto.get("auto_sync_enabled", True), key="tog_auto_sync")
+                    
+                        c_p1, c_p2 = st.columns(2)
+                        with c_p1:
+                            chu_ky = st.selectbox(
+                                "Chu kỳ lặp lại:",
+                                options=[15, 30, 60, 120],
+                                format_func=lambda x: f"Mỗi {x} phút một lần",
+                                index=[15, 30, 60, 120].index(cfg_auto.get("auto_sync_interval_mins", 30)) if cfg_auto.get("auto_sync_interval_mins", 30) in [15, 30, 60, 120] else 1,
+                                key="sb_chu_ky_sync"
+                            )
+                        with c_p2:
+                            st.write("Khung giờ vàng tự động đồng bộ:")
+                            st.info("🕒 **09:00** (Chốt cơm bán trú)\n🕒 **11:30** (Kiểm thực trưa)\n🕒 **17:00** (Kết thúc ngày)")
+
+                        st.markdown("##### 🎯 **Thành phần tự động:**")
+                        c_tg1, c_tg2 = st.columns(2)
+                        with c_tg1:
+                            tg_drv = st.checkbox("📁 Tự động đồng bộ Google Drive", value=cfg_auto.get("auto_sync_drive", True), key="ck_at_drv")
+                        with c_tg2:
+                            tg_sht = st.checkbox("📊 Tự động đồng bộ Google Sheets", value=cfg_auto.get("auto_sync_sheets", True), key="ck_at_sht")
+
+                        if st.button("💾 LƯU CẤU HÌNH TỰ ĐỘNG ĐỒNG BỘ", type="primary", use_container_width=True, key="btn_save_auto_cfg"):
+                            cfg_auto["auto_sync_enabled"] = en_auto
+                            cfg_auto["auto_sync_interval_mins"] = chu_ky
+                            cfg_auto["auto_sync_drive"] = tg_drv
+                            cfg_auto["auto_sync_sheets"] = tg_sht
+                            dich_vu_tu_dong_dong_bo.save_config(cfg_auto)
+                            dich_vu_tu_dong_dong_bo.khoi_chay_dich_vu_tu_dong()
+                            st.success("✅ Đã kích hoạt và lưu cấu hình Tự Động Đồng Bộ thành công!")
                             st.rerun()
 
-                st.markdown("---")
-                st.markdown("##### 📜 **Nhật Ký Tự Động Đồng Bộ Gần Nhất (Live Audit Log):**")
-                logs = cfg_auto.get("sync_log", [])
-                if logs:
-                    for item in logs[:8]:
-                        st.markdown(f"• **{item.get('timestamp')}** [{item.get('trigger')}]: " + " | ".join(item.get("details", [])))
-                else:
-                    st.info("💡 Chưa có nhật ký đồng bộ tự động. Hệ thống sẽ ghi nhận lịch sử sau mỗi chu kỳ.")
-
-            # Helper tạo gói sao lưu zip
-            import base64
-            def tao_goi_sao_luu_zip(bao_gom_ma_nguon=True):
-                buf = io.BytesIO()
-                with zipfile.ZipFile(buf, 'w', zipfile.ZIP_DEFLATED) as z:
-                    # Ghi tất cả file CSDL CSV & JSON
-                    for f in os.listdir(BASE_DIR):
-                        if f.endswith('.csv') or f.endswith('.json'):
-                            p = os.path.join(BASE_DIR, f)
-                            z.write(p, arcname=f"co_so_du_lieu/{f}")
-                    # Ghi file Excel đa sheet tổng hợp
-                    buf_xlsx_temp = io.BytesIO()
-                    with pd.ExcelWriter(buf_xlsx_temp, engine='openpyxl') as wr:
-                        for s_n, f_p in [
-                            ('Hoc_Sinh_829', f_hs_tt),
-                            ('Phuong_Tien_549', os.path.join(BASE_DIR, 'quan_ly_phuong_tien.csv')),
-                            ('Can_Bo_42', f_gv_db),
-                            ('Ban_Tru_KTX', f_bt_ktx),
-                            ('Thi_Dua_21_Lop', os.path.join(BASE_DIR, 'thi_dua_dtn_20_lop.csv'))
-                        ]:
-                            if os.path.exists(f_p):
-                                pd.read_csv(f_p, encoding='utf-8-sig').to_excel(wr, sheet_name=s_n, index=False)
-                    z.writestr("tong_hop_excel/Du_Lieu_Toan_Truong_THPT2_BaoYen.xlsx", buf_xlsx_temp.getvalue())
-                    # Ghi mã nguồn phần mềm nếu chọn
-                    if bao_gom_ma_nguon:
-                        for py_f in ['app_ban_tru.py', 'phan_he_quan_ly_chung.py', 'phan_he_doan_thanh_nien.py']:
-                            p_py = os.path.join(BASE_DIR, py_f)
-                            if os.path.exists(p_py):
-                                z.write(p_py, arcname=f"ma_nguon_phan_mem/{py_f}")
-                return buf.getvalue()
-
-            # -------------------------------------------------------------
-
-            # -------------------------------------------------------------
-            # 0.1. ĐỒNG BỘ GITHUB (WEB CLOUD)
-            # -------------------------------------------------------------
-            with tab_sync_github:
-                st.markdown("#### 🐙 **Đồng Bộ Mã Nguồn Lên GitHub & Cập Nhật Web Cloud**")
-                st.caption("Cập nhật toàn bộ mã nguồn, cấu hình biểu tượng màn hình chính và dữ liệu lên kho GitHub của trường. Trang web [thpt2baoyen.streamlit.app](https://thpt2baoyen.streamlit.app) sẽ tự động cập nhật ngay sau khi đẩy.")
-                
-                try:
-                    import tu_dong_day_len_github
-                    gh_cfg = tu_dong_day_len_github.load_github_cfg()
-                except Exception:
-                    gh_cfg = {"repo": "buivantien20/ban-tru-thpt2-baoyen", "branch": "main", "token": "", "last_push": "Chưa đồng bộ"}
-                
-                col_gh1, col_gh2 = st.columns([1.4, 1.2])
-                with col_gh1:
-                    st.markdown("##### ⚙️ **Thông Tin Kết Nối GitHub:**")
-                    st.write(f"• **Kho lưu trữ (Repository):** `https://github.com/{gh_cfg.get('repo', 'buivantien20/ban-tru-thpt2-baoyen')}`")
-                    st.write(f"• **Nhánh chính (Branch):** `{gh_cfg.get('branch', 'main')}`")
-                    st.write("• **Trang Web Cloud chính thức:** [thpt2baoyen.streamlit.app](https://thpt2baoyen.streamlit.app)")
-                    
-                    token_ht = gh_cfg.get("token", "")
-                    tok_inp = st.text_input(
-                        "Mã GitHub Personal Access Token (PAT):",
-                        value=token_ht,
-                        type="password",
-                        help="Mã truy cập cá nhân bắt đầu bằng ghp_...",
-                        key="input_gh_pat_token"
-                    )
-                    if st.button("💾 LƯU CẤU HÌNH GITHUB", use_container_width=True, key="btn_save_gh_cfg"):
-                        gh_cfg["token"] = tok_inp.strip()
-                        tu_dong_day_len_github.save_github_cfg(gh_cfg)
-                        st.success("✅ Đã lưu cấu hình GitHub Token thành công!")
-                        st.rerun()
-
-                with col_gh2:
-                    st.markdown("##### 🚀 **Thao Tác Đồng Bộ Tức Thì:**")
-                    st.write(f"⏰ **Lần đồng bộ gần nhất:** `{gh_cfg.get('last_push', 'Chưa đồng bộ')}`")
-                    if token_ht:
-                        st.success("🟢 **TOKEN: ĐÃ SẴN SÀNG ĐỒNG BỘ**")
-                    else:
-                        st.warning("🟡 **CHƯA CẤU HÌNH MÃ TOKEN**")
-                    
-                    if st.button("🚀 ĐẨY MÃ NGUỒN LÊN GITHUB NGAY", type="primary", use_container_width=True, key="btn_push_to_gh_now"):
-                        with st.spinner("Đang đóng gói và tự động đẩy toàn bộ dữ liệu & mã nguồn lên GitHub..."):
-                            tok_to_use = tok_inp.strip() if tok_inp.strip() else token_ht
-                            ok_push, msg_push = tu_dong_day_len_github.push_to_github_api(tok_to_use)
-                            if ok_push:
-                                st.success(msg_push)
-                                st.balloons()
-                            else:
-                                st.error(msg_push)
-
-            # 1. ĐỒNG BỘ LÊN GOOGLE DRIVE
-            # -------------------------------------------------------------
-            with tab_sync_drive:
-                st.markdown("#### 📁 **Đồng Bộ & Lưu Trữ Dữ Liệu Phần Mềm Lên Google Drive**")
-                st.caption("Sao lưu toàn bộ cơ sở dữ liệu (829 HS, 549 Xe, 42 CBGV, 207 Bán trú, 21 Chi đoàn) và mã nguồn phần mềm thành gói nén (.zip) an toàn tuyệt đối trên Google Drive.")
-
-                c_drv1, c_drv2 = st.columns([1.4, 1.2])
-
-                with c_drv1:
-                    st.markdown("##### 🚀 **Cách 1: Đẩy Gói Dữ Liệu Lên Google Drive Qua Cloud API (1 Chạm)**")
-                    opt_src = st.checkbox("Bao gồm toàn bộ mã nguồn phần mềm (.py)", value=True, key="cb_drv_src")
-                    opt_db = st.checkbox("Bao gồm toàn bộ Cơ sở dữ liệu (.csv, .json) & Excel (.xlsx)", value=True, disabled=True, key="cb_drv_db")
-
-                    if st.button("🚀 ĐẨY GÓI DỮ LIỆU LÊN GOOGLE DRIVE NGAY", type="primary", use_container_width=True, key="btn_push_gdrive"):
-                        web_url = cfg_gs.get("web_app_url", "").strip()
-                        if not web_url:
-                            st.error("⚠️ Bạn chưa cấu hình Google Apps Script Web App URL! Vui lòng sang tab **'⚙️ CẤU HÌNH LIÊN KẾT'** để nhập link hoặc xem tab **'📖 HƯỚNG DẪN'**.")
+                    with col_at2:
+                        st.markdown("##### ⚡ **Kích Hoạt Tức Thì & Kiểm Tra:**")
+                        st.write(f"⏰ **Lần tự động chạy gần nhất:** `{cfg_auto.get('last_auto_sync', 'Chưa có')}`")
+                        if cfg_auto.get("auto_sync_enabled", False):
+                            st.success("🟢 **DỊCH VỤ NGẦM: ĐANG HOẠT ĐỘNG 24/7**")
                         else:
-                            with st.spinner("Đang đóng gói và truyền tải dữ liệu lên thư mục Google Drive của trường..."):
-                                try:
-                                    import requests
-                                    zip_bytes = tao_goi_sao_luu_zip(bao_gom_ma_nguon=opt_src)
-                                    b64_zip = base64.b64encode(zip_bytes).decode('utf-8')
-                                    f_name_zip = f"Goi_Sao_Luu_THPT2_BaoYen_{datetime.now().strftime('%Y%m%d_%H%M%S')}.zip"
-                                    
-                                    payload = {
-                                        "action": "upload_drive",
-                                        "folder_name": "Sao_Luu_Phan_Mem_THPT2_BaoYen",
-                                        "file_name": f_name_zip,
-                                        "file_base64": b64_zip,
-                                        "mime_type": "application/zip"
-                                    }
-                                    
-                                    res = requests.post(web_url, json=payload, timeout=60)
-                                    if res.status_code == 200:
-                                        res_data = res.json() if res.headers.get('content-type', '').startswith('application/json') else {}
-                                        now_str = datetime.now().strftime("%d/%m/%Y %H:%M:%S")
-                                        cfg_gs["last_sync_drive"] = now_str
-                                        if res_data.get("folder_url"):
-                                            cfg_gs["drive_folder_url"] = res_data["folder_url"]
-                                        with open(f_cfg_gs, "w", encoding="utf-8") as f_out:
-                                            json.dump(cfg_gs, f_out, ensure_ascii=False, indent=2)
-                                        st.balloons()
-                                        st.success(f"🎉 **ĐỒNG BỘ LÊN GOOGLE DRIVE THÀNH CÔNG RỰC RỠ!** Gói sao lưu `{f_name_zip}` ({len(zip_bytes):,} bytes) đã được lưu vĩnh viễn vào thư mục Google Drive của trường lúc {now_str}.")
-                                        if res_data.get("file_url"):
-                                            st.link_button("🔗 Xem File Vừa Tải Lên Trên Google Drive", res_data["file_url"])
-                                    else:
-                                        st.error(f"❌ Google Apps Script phản hồi mã lỗi {res.status_code}: {res.text[:200]}")
-                                except Exception as err:
-                                    st.error(f"❌ Lỗi kết nối Google Drive: {str(err)}")
+                            st.warning("⚪ **DỊCH VỤ NGẦM: ĐANG TẠM DỪNG**")
 
-                with c_drv2:
-                    st.markdown("##### 💻 **Cách 2: Đồng Bộ Vào Thư Mục Google Drive Trên Máy Tính**")
-                    st.caption("Dành cho máy tính đã cài đặt ứng dụng **Google Drive for Desktop**:")
-                    local_drv = st.text_input("Đường dẫn thư mục Google Drive cục bộ:", value=cfg_gs.get("local_drive_path", "D:/Google_Drive_THPT2_BaoYen"), key="inp_local_drv")
-                    if st.button("💾 SAO CHÉP DỮ LIỆU VÀO THƯ MỤC NÀY", use_container_width=True, key="btn_local_drv"):
-                        try:
-                            os.makedirs(local_drv, exist_ok=True)
-                            count_copied = 0
-                            for f in os.listdir(BASE_DIR):
-                                if f.endswith('.csv') or f.endswith('.json'):
-                                    shutil.copy2(os.path.join(BASE_DIR, f), os.path.join(local_drv, f))
-                                    count_copied += 1
-                            now_str = datetime.now().strftime("%d/%m/%Y %H:%M:%S")
-                            cfg_gs["last_sync_drive"] = f"{now_str} (Cục bộ)"
-                            cfg_gs["local_drive_path"] = local_drv
+                        if st.button("⚡ KÍCH HOẠT ĐỒNG BỘ NGAY BÂY GIỜ", use_container_width=True, key="btn_run_now"):
+                            with st.spinner("Đang thực hiện chu trình đồng bộ ngầm toàn trường..."):
+                                kq = dich_vu_tu_dong_dong_bo.thuc_hien_dong_bo(trigger="Thủ công tức thì")
+                                st.success("🎉 Đã thực hiện đồng bộ toàn diện thành công!")
+                                for d in kq.get("details", []):
+                                    st.caption(f"• {d}")
+                                st.rerun()
+
+                    st.markdown("---")
+                    st.markdown("##### 📜 **Nhật Ký Tự Động Đồng Bộ Gần Nhất (Live Audit Log):**")
+                    logs = cfg_auto.get("sync_log", [])
+                    if logs:
+                        for item in logs[:8]:
+                            st.markdown(f"• **{item.get('timestamp')}** [{item.get('trigger')}]: " + " | ".join(item.get("details", [])))
+                    else:
+                        st.info("💡 Chưa có nhật ký đồng bộ tự động. Hệ thống sẽ ghi nhận lịch sử sau mỗi chu kỳ.")
+
+                # Helper tạo gói sao lưu zip
+                import base64
+                def tao_goi_sao_luu_zip(bao_gom_ma_nguon=True):
+                    buf = io.BytesIO()
+                    with zipfile.ZipFile(buf, 'w', zipfile.ZIP_DEFLATED) as z:
+                        # Ghi tất cả file CSDL CSV & JSON
+                        for f in os.listdir(BASE_DIR):
+                            if f.endswith('.csv') or f.endswith('.json'):
+                                p = os.path.join(BASE_DIR, f)
+                                z.write(p, arcname=f"co_so_du_lieu/{f}")
+                        # Ghi file Excel đa sheet tổng hợp
+                        buf_xlsx_temp = io.BytesIO()
+                        with pd.ExcelWriter(buf_xlsx_temp, engine='openpyxl') as wr:
+                            for s_n, f_p in [
+                                ('Hoc_Sinh_829', f_hs_tt),
+                                ('Phuong_Tien_549', os.path.join(BASE_DIR, 'quan_ly_phuong_tien.csv')),
+                                ('Can_Bo_42', f_gv_db),
+                                ('Ban_Tru_KTX', f_bt_ktx),
+                                ('Thi_Dua_21_Lop', os.path.join(BASE_DIR, 'thi_dua_dtn_20_lop.csv'))
+                            ]:
+                                if os.path.exists(f_p):
+                                    pd.read_csv(f_p, encoding='utf-8-sig').to_excel(wr, sheet_name=s_n, index=False)
+                        z.writestr("tong_hop_excel/Du_Lieu_Toan_Truong_THPT2_BaoYen.xlsx", buf_xlsx_temp.getvalue())
+                        # Ghi mã nguồn phần mềm nếu chọn
+                        if bao_gom_ma_nguon:
+                            for py_f in ['app_ban_tru.py', 'phan_he_quan_ly_chung.py', 'phan_he_doan_thanh_nien.py']:
+                                p_py = os.path.join(BASE_DIR, py_f)
+                                if os.path.exists(p_py):
+                                    z.write(p_py, arcname=f"ma_nguon_phan_mem/{py_f}")
+                    return buf.getvalue()
+
+                # -------------------------------------------------------------
+
+                # -------------------------------------------------------------
+                # 0.1. ĐỒNG BỘ GITHUB (WEB CLOUD)
+                # -------------------------------------------------------------
+                with tab_sync_github:
+                    st.markdown("#### 🐙 **Đồng Bộ Mã Nguồn Lên GitHub & Cập Nhật Web Cloud**")
+                    st.caption("Cập nhật toàn bộ mã nguồn, cấu hình biểu tượng màn hình chính và dữ liệu lên kho GitHub của trường. Trang web [thpt2baoyen.streamlit.app](https://thpt2baoyen.streamlit.app) sẽ tự động cập nhật ngay sau khi đẩy.")
+                
+                    try:
+                        import tu_dong_day_len_github
+                        gh_cfg = tu_dong_day_len_github.load_github_cfg()
+                    except Exception:
+                        gh_cfg = {"repo": "buivantien20/ban-tru-thpt2-baoyen", "branch": "main", "token": "", "last_push": "Chưa đồng bộ"}
+                
+                    col_gh1, col_gh2 = st.columns([1.4, 1.2])
+                    with col_gh1:
+                        st.markdown("##### ⚙️ **Thông Tin Kết Nối GitHub:**")
+                        st.write(f"• **Kho lưu trữ (Repository):** `https://github.com/{gh_cfg.get('repo', 'buivantien20/ban-tru-thpt2-baoyen')}`")
+                        st.write(f"• **Nhánh chính (Branch):** `{gh_cfg.get('branch', 'main')}`")
+                        st.write("• **Trang Web Cloud chính thức:** [thpt2baoyen.streamlit.app](https://thpt2baoyen.streamlit.app)")
+                    
+                        token_ht = gh_cfg.get("token", "")
+                        tok_inp = st.text_input(
+                            "Mã GitHub Personal Access Token (PAT):",
+                            value=token_ht,
+                            type="password",
+                            help="Mã truy cập cá nhân bắt đầu bằng ghp_...",
+                            key="input_gh_pat_token"
+                        )
+                        if st.button("💾 LƯU CẤU HÌNH GITHUB", use_container_width=True, key="btn_save_gh_cfg"):
+                            gh_cfg["token"] = tok_inp.strip()
+                            tu_dong_day_len_github.save_github_cfg(gh_cfg)
+                            st.success("✅ Đã lưu cấu hình GitHub Token thành công!")
+                            st.rerun()
+
+                    with col_gh2:
+                        st.markdown("##### 🚀 **Thao Tác Đồng Bộ Tức Thì:**")
+                        st.write(f"⏰ **Lần đồng bộ gần nhất:** `{gh_cfg.get('last_push', 'Chưa đồng bộ')}`")
+                        if token_ht:
+                            st.success("🟢 **TOKEN: ĐÃ SẴN SÀNG ĐỒNG BỘ**")
+                        else:
+                            st.warning("🟡 **CHƯA CẤU HÌNH MÃ TOKEN**")
+                    
+                        if st.button("🚀 ĐẨY MÃ NGUỒN LÊN GITHUB NGAY", type="primary", use_container_width=True, key="btn_push_to_gh_now"):
+                            with st.spinner("Đang đóng gói và tự động đẩy toàn bộ dữ liệu & mã nguồn lên GitHub..."):
+                                tok_to_use = tok_inp.strip() if tok_inp.strip() else token_ht
+                                ok_push, msg_push = tu_dong_day_len_github.push_to_github_api(tok_to_use)
+                                if ok_push:
+                                    st.success(msg_push)
+                                    st.balloons()
+                                else:
+                                    st.error(msg_push)
+
+                # 1. ĐỒNG BỘ LÊN GOOGLE DRIVE
+                # -------------------------------------------------------------
+                with tab_sync_drive:
+                    st.markdown("#### 📁 **Đồng Bộ & Lưu Trữ Dữ Liệu Phần Mềm Lên Google Drive**")
+                    st.caption("Sao lưu toàn bộ cơ sở dữ liệu (829 HS, 549 Xe, 42 CBGV, 207 Bán trú, 21 Chi đoàn) và mã nguồn phần mềm thành gói nén (.zip) an toàn tuyệt đối trên Google Drive.")
+
+                    c_drv1, c_drv2 = st.columns([1.4, 1.2])
+
+                    with c_drv1:
+                        st.markdown("##### 🚀 **Cách 1: Đẩy Gói Dữ Liệu Lên Google Drive Qua Cloud API (1 Chạm)**")
+                        opt_src = st.checkbox("Bao gồm toàn bộ mã nguồn phần mềm (.py)", value=True, key="cb_drv_src")
+                        opt_db = st.checkbox("Bao gồm toàn bộ Cơ sở dữ liệu (.csv, .json) & Excel (.xlsx)", value=True, disabled=True, key="cb_drv_db")
+
+                        if st.button("🚀 ĐẨY GÓI DỮ LIỆU LÊN GOOGLE DRIVE NGAY", type="primary", use_container_width=True, key="btn_push_gdrive"):
+                            web_url = cfg_gs.get("web_app_url", "").strip()
+                            if not web_url:
+                                st.error("⚠️ Bạn chưa cấu hình Google Apps Script Web App URL! Vui lòng sang tab **'⚙️ CẤU HÌNH LIÊN KẾT'** để nhập link hoặc xem tab **'📖 HƯỚNG DẪN'**.")
+                            else:
+                                with st.spinner("Đang đóng gói và truyền tải dữ liệu lên thư mục Google Drive của trường..."):
+                                    try:
+                                        import requests
+                                        zip_bytes = tao_goi_sao_luu_zip(bao_gom_ma_nguon=opt_src)
+                                        b64_zip = base64.b64encode(zip_bytes).decode('utf-8')
+                                        f_name_zip = f"Goi_Sao_Luu_THPT2_BaoYen_{datetime.now().strftime('%Y%m%d_%H%M%S')}.zip"
+                                    
+                                        payload = {
+                                            "action": "upload_drive",
+                                            "folder_name": "Sao_Luu_Phan_Mem_THPT2_BaoYen",
+                                            "file_name": f_name_zip,
+                                            "file_base64": b64_zip,
+                                            "mime_type": "application/zip"
+                                        }
+                                    
+                                        res = requests.post(web_url, json=payload, timeout=60)
+                                        if res.status_code == 200:
+                                            res_data = res.json() if res.headers.get('content-type', '').startswith('application/json') else {}
+                                            now_str = datetime.now().strftime("%d/%m/%Y %H:%M:%S")
+                                            cfg_gs["last_sync_drive"] = now_str
+                                            if res_data.get("folder_url"):
+                                                cfg_gs["drive_folder_url"] = res_data["folder_url"]
+                                            with open(f_cfg_gs, "w", encoding="utf-8") as f_out:
+                                                json.dump(cfg_gs, f_out, ensure_ascii=False, indent=2)
+                                            st.balloons()
+                                            st.success(f"🎉 **ĐỒNG BỘ LÊN GOOGLE DRIVE THÀNH CÔNG RỰC RỠ!** Gói sao lưu `{f_name_zip}` ({len(zip_bytes):,} bytes) đã được lưu vĩnh viễn vào thư mục Google Drive của trường lúc {now_str}.")
+                                            if res_data.get("file_url"):
+                                                st.link_button("🔗 Xem File Vừa Tải Lên Trên Google Drive", res_data["file_url"])
+                                        else:
+                                            st.error(f"❌ Google Apps Script phản hồi mã lỗi {res.status_code}: {res.text[:200]}")
+                                    except Exception as err:
+                                        st.error(f"❌ Lỗi kết nối Google Drive: {str(err)}")
+
+                    with c_drv2:
+                        st.markdown("##### 💻 **Cách 2: Đồng Bộ Vào Thư Mục Google Drive Trên Máy Tính**")
+                        st.caption("Dành cho máy tính đã cài đặt ứng dụng **Google Drive for Desktop**:")
+                        local_drv = st.text_input("Đường dẫn thư mục Google Drive cục bộ:", value=cfg_gs.get("local_drive_path", "D:/Google_Drive_THPT2_BaoYen"), key="inp_local_drv")
+                        if st.button("💾 SAO CHÉP DỮ LIỆU VÀO THƯ MỤC NÀY", use_container_width=True, key="btn_local_drv"):
+                            try:
+                                os.makedirs(local_drv, exist_ok=True)
+                                count_copied = 0
+                                for f in os.listdir(BASE_DIR):
+                                    if f.endswith('.csv') or f.endswith('.json'):
+                                        shutil.copy2(os.path.join(BASE_DIR, f), os.path.join(local_drv, f))
+                                        count_copied += 1
+                                now_str = datetime.now().strftime("%d/%m/%Y %H:%M:%S")
+                                cfg_gs["last_sync_drive"] = f"{now_str} (Cục bộ)"
+                                cfg_gs["local_drive_path"] = local_drv
+                                with open(f_cfg_gs, "w", encoding="utf-8") as f_out:
+                                    json.dump(cfg_gs, f_out, ensure_ascii=False, indent=2)
+                                st.success(f"✅ Đã sao chép {count_copied} file dữ liệu vào `{local_drv}`! Ứng dụng Google Drive trên máy tính sẽ tự động đẩy lên đám mây.")
+                            except Exception as e_loc:
+                                st.error(f"❌ Lỗi sao chép: {str(e_loc)}")
+
+                    st.markdown("---")
+                    st.markdown("##### 📥 **Cách 3: Tải Gói Dữ Liệu Thủ Công (.ZIP) & Kéo Thả Lên Google Drive**")
+                    c_dl1, c_dl2 = st.columns([1.5, 1.2])
+                    with c_dl1:
+                        zip_data_offline = tao_goi_sao_luu_zip(bao_gom_ma_nguon=True)
+                        st.download_button(
+                            label="📥 TẢI GÓI SAO LƯU DỮ LIỆU TOÀN PHẦN MỀM (.ZIP)",
+                            data=zip_data_offline,
+                            file_name=f"Goi_Sao_Luu_THPT2_BaoYen_{date.today().strftime('%d_%m_%Y')}.zip",
+                            mime="application/zip",
+                            use_container_width=True
+                        )
+                    with c_dl2:
+                        st.link_button(
+                            label="📂 MỞ GOOGLE DRIVE ĐỂ KÉO THẢ TẢI LÊN",
+                            url=cfg_gs.get("drive_folder_url", "").strip() or "https://drive.google.com/drive/my-drive",
+                            use_container_width=True
+                        )
+                    st.caption("💡 Thầy/Cô chỉ cần bấm tải gói .ZIP về máy, sau đó bấm mở Google Drive và kéo thả file vào là hoàn tất việc lưu trữ an toàn 100%.")
+
+                # -------------------------------------------------------------
+                # 2. ĐỒNG BỘ LÊN GOOGLE SHEETS
+                # -------------------------------------------------------------
+                with tab_sync_sheets:
+                    st.markdown("#### 📊 **Đồng Bộ Dữ Liệu Thời Gian Thực Lên Google Sheets**")
+                    st.caption("Chọn các bảng dữ liệu muốn cập nhật vào trang tính Google Sheets của nhà trường:")
+
+                    c_ck1, c_ck2 = st.columns(2)
+                    with c_ck1:
+                        sync_hs = st.checkbox(f"👨‍🎓 1. Danh sách {tong_hs} Học sinh toàn trường", value=True, key="ck_s_hs")
+                        sync_xe = st.checkbox("🛵 2. Danh sách Phương tiện & Mã QR định danh", value=True, key="ck_s_xe")
+                        sync_gv = st.checkbox("📋 3. Danh bạ Cán bộ Giáo viên Nhân viên & Phân công", value=True, key="ck_s_gv")
+                    with c_ck2:
+                        sync_bt = st.checkbox(f"🛏️ 4. Hồ sơ {so_ban_tru} Học sinh Bán trú KTX & Quân số ăn", value=True, key="ck_s_bt")
+                        sync_td = st.checkbox("🏆 5. Bảng điểm thi đua Chi đoàn & Nhật ký nề nếp", value=True, key="ck_s_td")
+
+                    c_act1, c_act2 = st.columns([1.5, 1.2])
+                    with c_act1:
+                        if st.button("🚀 ĐỒNG BỘ CÁC BẢNG ĐÃ CHỌN LÊN GOOGLE SHEETS", type="primary", use_container_width=True, key="btn_sync_sheets"):
+                            web_url = cfg_gs.get("web_app_url", "").strip()
+                            if not web_url:
+                                st.error("⚠️ Bạn chưa cấu hình Google Apps Script Web App URL! Vui lòng sang tab **'⚙️ CẤU HÌNH LIÊN KẾT'** để nhập link hoặc xem tab **'📖 HƯỚNG DẪN'**.")
+                            else:
+                                with st.spinner("Đang đóng gói và truyền tải dữ liệu lên Google Sheets..."):
+                                    try:
+                                        import requests
+                                        sheets_dict = {}
+                                        if sync_hs and os.path.exists(f_hs_tt):
+                                            sheets_dict["Hoc_Sinh_829"] = pd.read_csv(f_hs_tt, encoding='utf-8-sig').fillna("").to_dict(orient="records")
+                                        if sync_xe and os.path.exists(os.path.join(BASE_DIR, "quan_ly_phuong_tien.csv")):
+                                            sheets_dict["Phuong_Tien_549"] = pd.read_csv(os.path.join(BASE_DIR, "quan_ly_phuong_tien.csv"), encoding='utf-8-sig').fillna("").to_dict(orient="records")
+                                        if sync_gv and os.path.exists(f_gv_db):
+                                            sheets_dict["Can_Bo_42"] = pd.read_csv(f_gv_db, encoding='utf-8-sig').fillna("").to_dict(orient="records")
+                                        if sync_bt and os.path.exists(f_bt_ktx):
+                                            sheets_dict["Ban_Tru_KTX"] = pd.read_csv(f_bt_ktx, encoding='utf-8-sig').fillna("").to_dict(orient="records")
+                                        if sync_td and os.path.exists(os.path.join(BASE_DIR, "thi_dua_dtn_20_lop.csv")):
+                                            sheets_dict["Thi_Dua_21_Lop"] = pd.read_csv(os.path.join(BASE_DIR, "thi_dua_dtn_20_lop.csv"), encoding='utf-8-sig').fillna("").to_dict(orient="records")
+
+                                        payload = {
+                                            "action": "sync_sheets",
+                                            "sheets": sheets_dict
+                                        }
+                                        res = requests.post(web_url, json=payload, timeout=30)
+                                        if res.status_code == 200:
+                                            now_str = datetime.now().strftime("%d/%m/%Y %H:%M:%S")
+                                            cfg_gs["last_sync_sheets"] = now_str
+                                            cfg_gs["status"] = "Đồng bộ thành công"
+                                            with open(f_cfg_gs, "w", encoding="utf-8") as f_out:
+                                                json.dump(cfg_gs, f_out, ensure_ascii=False, indent=2)
+                                            st.balloons()
+                                            st.success(f"🎉 **ĐỒNG BỘ THÀNH CÔNG RỰC RỠ!** Toàn bộ dữ liệu ({len(sheets_dict)} bảng) đã được cập nhật trực tiếp lên Google Sheets của trường lúc {now_str}.")
+                                        else:
+                                            st.error(f"❌ Google Apps Script phản hồi mã lỗi {res.status_code}: {res.text[:200]}")
+                                    except Exception as err:
+                                        st.error(f"❌ Lỗi kết nối khi đồng bộ: {str(err)}")
+
+                    with c_act2:
+                        # Xuất file Excel đa sheet tải về trực tiếp
+                        buf_xlsx = io.BytesIO()
+                        with pd.ExcelWriter(buf_xlsx, engine='openpyxl') as writer:
+                            for s_name, f_path in [
+                                ('Hoc_Sinh_829', f_hs_tt),
+                                ('Phuong_Tien_549', os.path.join(BASE_DIR, 'quan_ly_phuong_tien.csv')),
+                                ('Can_Bo_42', f_gv_db),
+                                ('Ban_Tru_KTX', f_bt_ktx),
+                                ('Thi_Dua_21_Lop', os.path.join(BASE_DIR, 'thi_dua_dtn_20_lop.csv'))
+                            ]:
+                                if os.path.exists(f_path):
+                                    pd.read_csv(f_path, encoding='utf-8-sig').to_excel(writer, sheet_name=s_name, index=False)
+                    
+                        st.download_button(
+                            label="📥 XUẤT FILE EXCEL ĐA SHEET (.XLSX) SAO LƯU",
+                            data=buf_xlsx.getvalue(),
+                            file_name=f"Sao_Luu_Toan_Truong_THPT2_BaoYen_{date.today().strftime('%d_%m_%Y')}.xlsx",
+                            mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+                            use_container_width=True
+                        )
+                        st.caption("💡 Mở trực tiếp trên máy hoặc kéo thả vào Google Drive để tạo Google Sheets tức thì.")
+
+                # -------------------------------------------------------------
+                # 3. CẤU HÌNH LIÊN KẾT & TEST PING
+                # -------------------------------------------------------------
+                with tab_sync_cfg:
+                    st.markdown("#### ⚙️ **Cấu Hình Đường Link API Google Apps Script, Google Drive & Google Sheets**")
+                
+                    with st.form("form_cfg_gsheets"):
+                        inp_web_url = st.text_input(
+                            "🔗 Google Apps Script Web App URL (Dùng chung cho cả Google Drive & Google Sheets):",
+                            value=cfg_gs.get("web_app_url", ""),
+                            placeholder="https://script.google.com/macros/s/AKfycbx.../exec"
+                        )
+                        inp_drive_url = st.text_input(
+                            "📁 Đường link Thư mục Google Drive của trường (Để mở xem và đối soát sao lưu):",
+                            value=cfg_gs.get("drive_folder_url", ""),
+                            placeholder="https://drive.google.com/drive/folders/1BxiMVs0XRA5nFMdKvBdB..."
+                        )
+                        inp_sheet_url = st.text_input(
+                            "📊 Đường link Trang tính Google Sheets của trường (Để xem trực tiếp bảng số liệu):",
+                            value=cfg_gs.get("spreadsheet_url", ""),
+                            placeholder="https://docs.google.com/spreadsheets/d/1BxiMVs0XRA5nFMdKvBdB.../edit"
+                        )
+                        inp_local_path = st.text_input(
+                            "💻 Đường dẫn thư mục Google Drive cục bộ trên máy tính (Google Drive Desktop):",
+                            value=cfg_gs.get("local_drive_path", "D:/Google_Drive_THPT2_BaoYen")
+                        )
+                        btn_save_cfg_gs = st.form_submit_button("💾 LƯU CẤU HÌNH ĐÁM MÂY", type="primary")
+                        if btn_save_cfg_gs:
+                            cfg_gs["web_app_url"] = inp_web_url.strip()
+                            cfg_gs["drive_folder_url"] = inp_drive_url.strip()
+                            cfg_gs["spreadsheet_url"] = inp_sheet_url.strip()
+                            cfg_gs["local_drive_path"] = inp_local_path.strip()
                             with open(f_cfg_gs, "w", encoding="utf-8") as f_out:
                                 json.dump(cfg_gs, f_out, ensure_ascii=False, indent=2)
-                            st.success(f"✅ Đã sao chép {count_copied} file dữ liệu vào `{local_drv}`! Ứng dụng Google Drive trên máy tính sẽ tự động đẩy lên đám mây.")
-                        except Exception as e_loc:
-                            st.error(f"❌ Lỗi sao chép: {str(e_loc)}")
+                            st.success("✅ Đã lưu cấu hình liên kết Google Drive & Google Sheets thành công!")
+                            st.rerun()
 
-                st.markdown("---")
-                st.markdown("##### 📥 **Cách 3: Tải Gói Dữ Liệu Thủ Công (.ZIP) & Kéo Thả Lên Google Drive**")
-                c_dl1, c_dl2 = st.columns([1.5, 1.2])
-                with c_dl1:
-                    zip_data_offline = tao_goi_sao_luu_zip(bao_gom_ma_nguon=True)
-                    st.download_button(
-                        label="📥 TẢI GÓI SAO LƯU DỮ LIỆU TOÀN PHẦN MỀM (.ZIP)",
-                        data=zip_data_offline,
-                        file_name=f"Goi_Sao_Luu_THPT2_BaoYen_{date.today().strftime('%d_%m_%Y')}.zip",
-                        mime="application/zip",
-                        use_container_width=True
-                    )
-                with c_dl2:
-                    st.link_button(
-                        label="📂 MỞ GOOGLE DRIVE ĐỂ KÉO THẢ TẢI LÊN",
-                        url=cfg_gs.get("drive_folder_url", "").strip() or "https://drive.google.com/drive/my-drive",
-                        use_container_width=True
-                    )
-                st.caption("💡 Thầy/Cô chỉ cần bấm tải gói .ZIP về máy, sau đó bấm mở Google Drive và kéo thả file vào là hoàn tất việc lưu trữ an toàn 100%.")
-
-            # -------------------------------------------------------------
-            # 2. ĐỒNG BỘ LÊN GOOGLE SHEETS
-            # -------------------------------------------------------------
-            with tab_sync_sheets:
-                st.markdown("#### 📊 **Đồng Bộ Dữ Liệu Thời Gian Thực Lên Google Sheets**")
-                st.caption("Chọn các bảng dữ liệu muốn cập nhật vào trang tính Google Sheets của nhà trường:")
-
-                c_ck1, c_ck2 = st.columns(2)
-                with c_ck1:
-                    sync_hs = st.checkbox(f"👨‍🎓 1. Danh sách {tong_hs} Học sinh toàn trường", value=True, key="ck_s_hs")
-                    sync_xe = st.checkbox("🛵 2. Danh sách Phương tiện & Mã QR định danh", value=True, key="ck_s_xe")
-                    sync_gv = st.checkbox("📋 3. Danh bạ Cán bộ Giáo viên Nhân viên & Phân công", value=True, key="ck_s_gv")
-                with c_ck2:
-                    sync_bt = st.checkbox(f"🛏️ 4. Hồ sơ {so_ban_tru} Học sinh Bán trú KTX & Quân số ăn", value=True, key="ck_s_bt")
-                    sync_td = st.checkbox("🏆 5. Bảng điểm thi đua Chi đoàn & Nhật ký nề nếp", value=True, key="ck_s_td")
-
-                c_act1, c_act2 = st.columns([1.5, 1.2])
-                with c_act1:
-                    if st.button("🚀 ĐỒNG BỘ CÁC BẢNG ĐÃ CHỌN LÊN GOOGLE SHEETS", type="primary", use_container_width=True, key="btn_sync_sheets"):
-                        web_url = cfg_gs.get("web_app_url", "").strip()
-                        if not web_url:
-                            st.error("⚠️ Bạn chưa cấu hình Google Apps Script Web App URL! Vui lòng sang tab **'⚙️ CẤU HÌNH LIÊN KẾT'** để nhập link hoặc xem tab **'📖 HƯỚNG DẪN'**.")
+                    st.markdown("---")
+                    st.markdown("##### 🔍 **Kiểm Tra Trạng Thái Kết Nối (Ping Test):**")
+                    if st.button("📡 KIỂM TRA ĐƯỜNG TRUYỀN API NGAY"):
+                        test_url = cfg_gs.get("web_app_url", "").strip()
+                        if not test_url:
+                            st.warning("⚠️ Vui lòng nhập và lưu Web App URL ở trên trước khi kiểm tra.")
                         else:
-                            with st.spinner("Đang đóng gói và truyền tải dữ liệu lên Google Sheets..."):
-                                try:
-                                    import requests
-                                    sheets_dict = {}
-                                    if sync_hs and os.path.exists(f_hs_tt):
-                                        sheets_dict["Hoc_Sinh_829"] = pd.read_csv(f_hs_tt, encoding='utf-8-sig').fillna("").to_dict(orient="records")
-                                    if sync_xe and os.path.exists(os.path.join(BASE_DIR, "quan_ly_phuong_tien.csv")):
-                                        sheets_dict["Phuong_Tien_549"] = pd.read_csv(os.path.join(BASE_DIR, "quan_ly_phuong_tien.csv"), encoding='utf-8-sig').fillna("").to_dict(orient="records")
-                                    if sync_gv and os.path.exists(f_gv_db):
-                                        sheets_dict["Can_Bo_42"] = pd.read_csv(f_gv_db, encoding='utf-8-sig').fillna("").to_dict(orient="records")
-                                    if sync_bt and os.path.exists(f_bt_ktx):
-                                        sheets_dict["Ban_Tru_KTX"] = pd.read_csv(f_bt_ktx, encoding='utf-8-sig').fillna("").to_dict(orient="records")
-                                    if sync_td and os.path.exists(os.path.join(BASE_DIR, "thi_dua_dtn_20_lop.csv")):
-                                        sheets_dict["Thi_Dua_21_Lop"] = pd.read_csv(os.path.join(BASE_DIR, "thi_dua_dtn_20_lop.csv"), encoding='utf-8-sig').fillna("").to_dict(orient="records")
+                            try:
+                                import requests
+                                t_start = datetime.now()
+                                r_test = requests.get(test_url, timeout=10)
+                                latency = (datetime.now() - t_start).total_seconds() * 1000
+                                if r_test.status_code == 200:
+                                    st.success(f"🟢 **KẾT NỐI XUẤT SẮC!** Máy chủ Google Apps Script (Drive & Sheets) phản hồi tốt (Độ trễ: {latency:.0f}ms).")
+                                    st.caption(f"Nội dung phản hồi: `{r_test.text[:150]}`")
+                                else:
+                                    st.warning(f"🟡 Phản hồi mã HTTP {r_test.status_code}. Vui lòng kiểm tra quyền truy cập 'Bất kỳ ai' trên Google Apps Script.")
+                            except Exception as e_test:
+                                st.error(f"🔴 Không thể kết nối đến Web App: {str(e_test)}")
 
-                                    payload = {
-                                        "action": "sync_sheets",
-                                        "sheets": sheets_dict
-                                    }
-                                    res = requests.post(web_url, json=payload, timeout=30)
-                                    if res.status_code == 200:
-                                        now_str = datetime.now().strftime("%d/%m/%Y %H:%M:%S")
-                                        cfg_gs["last_sync_sheets"] = now_str
-                                        cfg_gs["status"] = "Đồng bộ thành công"
-                                        with open(f_cfg_gs, "w", encoding="utf-8") as f_out:
-                                            json.dump(cfg_gs, f_out, ensure_ascii=False, indent=2)
-                                        st.balloons()
-                                        st.success(f"🎉 **ĐỒNG BỘ THÀNH CÔNG RỰC RỠ!** Toàn bộ dữ liệu ({len(sheets_dict)} bảng) đã được cập nhật trực tiếp lên Google Sheets của trường lúc {now_str}.")
-                                    else:
-                                        st.error(f"❌ Google Apps Script phản hồi mã lỗi {res.status_code}: {res.text[:200]}")
-                                except Exception as err:
-                                    st.error(f"❌ Lỗi kết nối khi đồng bộ: {str(err)}")
+                # -------------------------------------------------------------
+                # 4. HƯỚNG DẪN CÀI ĐẶT 3 BƯỚC
+                # -------------------------------------------------------------
+                with tab_sync_guide:
+                    st.markdown("#### 📖 **Hướng Dẫn Cài Đặt Google Drive & Sheets API (Chỉ 3 Phút - Cực Dễ!)**")
+                    st.markdown("""
+                    Chỉ cần làm theo đúng 3 bước đơn giản dưới đây, Thầy/Cô sẽ có một máy chủ đám mây riêng biệt trên Google Drive của trường để vừa nhận file sao lưu phần mềm, vừa tự động cập nhật Google Sheets:
 
-                with c_act2:
-                    # Xuất file Excel đa sheet tải về trực tiếp
-                    buf_xlsx = io.BytesIO()
-                    with pd.ExcelWriter(buf_xlsx, engine='openpyxl') as writer:
-                        for s_name, f_path in [
-                            ('Hoc_Sinh_829', f_hs_tt),
-                            ('Phuong_Tien_549', os.path.join(BASE_DIR, 'quan_ly_phuong_tien.csv')),
-                            ('Can_Bo_42', f_gv_db),
-                            ('Ban_Tru_KTX', f_bt_ktx),
-                            ('Thi_Dua_21_Lop', os.path.join(BASE_DIR, 'thi_dua_dtn_20_lop.csv'))
-                        ]:
-                            if os.path.exists(f_path):
-                                pd.read_csv(f_path, encoding='utf-8-sig').to_excel(writer, sheet_name=s_name, index=False)
-                    
-                    st.download_button(
-                        label="📥 XUẤT FILE EXCEL ĐA SHEET (.XLSX) SAO LƯU",
-                        data=buf_xlsx.getvalue(),
-                        file_name=f"Sao_Luu_Toan_Truong_THPT2_BaoYen_{date.today().strftime('%d_%m_%Y')}.xlsx",
-                        mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
-                        use_container_width=True
-                    )
-                    st.caption("💡 Mở trực tiếp trên máy hoặc kéo thả vào Google Drive để tạo Google Sheets tức thì.")
+                    ##### 🔹 Bước 1: Mở Google Drive của trường & Tạo file Google Sheets
+                    1. Truy cập [Google Drive](https://drive.google.com) bằng tài khoản Gmail hoặc Google Workspace của trường.
+                    2. Bấm nút **Mới (+) -> Google Trang tính** (Google Sheets) và đặt tên file là: `He_Thong_THPT2_BaoYen`.
 
-            # -------------------------------------------------------------
-            # 3. CẤU HÌNH LIÊN KẾT & TEST PING
-            # -------------------------------------------------------------
-            with tab_sync_cfg:
-                st.markdown("#### ⚙️ **Cấu Hình Đường Link API Google Apps Script, Google Drive & Google Sheets**")
-                
-                with st.form("form_cfg_gsheets"):
-                    inp_web_url = st.text_input(
-                        "🔗 Google Apps Script Web App URL (Dùng chung cho cả Google Drive & Google Sheets):",
-                        value=cfg_gs.get("web_app_url", ""),
-                        placeholder="https://script.google.com/macros/s/AKfycbx.../exec"
-                    )
-                    inp_drive_url = st.text_input(
-                        "📁 Đường link Thư mục Google Drive của trường (Để mở xem và đối soát sao lưu):",
-                        value=cfg_gs.get("drive_folder_url", ""),
-                        placeholder="https://drive.google.com/drive/folders/1BxiMVs0XRA5nFMdKvBdB..."
-                    )
-                    inp_sheet_url = st.text_input(
-                        "📊 Đường link Trang tính Google Sheets của trường (Để xem trực tiếp bảng số liệu):",
-                        value=cfg_gs.get("spreadsheet_url", ""),
-                        placeholder="https://docs.google.com/spreadsheets/d/1BxiMVs0XRA5nFMdKvBdB.../edit"
-                    )
-                    inp_local_path = st.text_input(
-                        "💻 Đường dẫn thư mục Google Drive cục bộ trên máy tính (Google Drive Desktop):",
-                        value=cfg_gs.get("local_drive_path", "D:/Google_Drive_THPT2_BaoYen")
-                    )
-                    btn_save_cfg_gs = st.form_submit_button("💾 LƯU CẤU HÌNH ĐÁM MÂY", type="primary")
-                    if btn_save_cfg_gs:
-                        cfg_gs["web_app_url"] = inp_web_url.strip()
-                        cfg_gs["drive_folder_url"] = inp_drive_url.strip()
-                        cfg_gs["spreadsheet_url"] = inp_sheet_url.strip()
-                        cfg_gs["local_drive_path"] = inp_local_path.strip()
-                        with open(f_cfg_gs, "w", encoding="utf-8") as f_out:
-                            json.dump(cfg_gs, f_out, ensure_ascii=False, indent=2)
-                        st.success("✅ Đã lưu cấu hình liên kết Google Drive & Google Sheets thành công!")
-                        st.rerun()
+                    ##### 🔹 Bước 2: Dán mã Google Apps Script tự động (Xử lý cả Drive & Sheets)
+                    1. Trên thanh menu của Google Sheets, chọn: **Tiện ích mở rộng (Extensions) -> Apps Script**.
+                    2. Xóa sạch đoạn mã cũ `function myFunction() {...}` có sẵn.
+                    3. Sao chép và dán toàn bộ đoạn mã Javascript chuẩn mực bên dưới vào rồi bấm biểu tượng **Lưu (Ctrl + S)**:
+                    """)
 
-                st.markdown("---")
-                st.markdown("##### 🔍 **Kiểm Tra Trạng Thái Kết Nối (Ping Test):**")
-                if st.button("📡 KIỂM TRA ĐƯỜNG TRUYỀN API NGAY"):
-                    test_url = cfg_gs.get("web_app_url", "").strip()
-                    if not test_url:
-                        st.warning("⚠️ Vui lòng nhập và lưu Web App URL ở trên trước khi kiểm tra.")
-                    else:
-                        try:
-                            import requests
-                            t_start = datetime.now()
-                            r_test = requests.get(test_url, timeout=10)
-                            latency = (datetime.now() - t_start).total_seconds() * 1000
-                            if r_test.status_code == 200:
-                                st.success(f"🟢 **KẾT NỐI XUẤT SẮC!** Máy chủ Google Apps Script (Drive & Sheets) phản hồi tốt (Độ trễ: {latency:.0f}ms).")
-                                st.caption(f"Nội dung phản hồi: `{r_test.text[:150]}`")
-                            else:
-                                st.warning(f"🟡 Phản hồi mã HTTP {r_test.status_code}. Vui lòng kiểm tra quyền truy cập 'Bất kỳ ai' trên Google Apps Script.")
-                        except Exception as e_test:
-                            st.error(f"🔴 Không thể kết nối đến Web App: {str(e_test)}")
+                    script_code = """function doPost(e) {
+      try {
+        var data = JSON.parse(e.postData.contents);
+        var action = data.action || "sync_sheets";
 
-            # -------------------------------------------------------------
-            # 4. HƯỚNG DẪN CÀI ĐẶT 3 BƯỚC
-            # -------------------------------------------------------------
-            with tab_sync_guide:
-                st.markdown("#### 📖 **Hướng Dẫn Cài Đặt Google Drive & Sheets API (Chỉ 3 Phút - Cực Dễ!)**")
-                st.markdown("""
-                Chỉ cần làm theo đúng 3 bước đơn giản dưới đây, Thầy/Cô sẽ có một máy chủ đám mây riêng biệt trên Google Drive của trường để vừa nhận file sao lưu phần mềm, vừa tự động cập nhật Google Sheets:
-
-                ##### 🔹 Bước 1: Mở Google Drive của trường & Tạo file Google Sheets
-                1. Truy cập [Google Drive](https://drive.google.com) bằng tài khoản Gmail hoặc Google Workspace của trường.
-                2. Bấm nút **Mới (+) -> Google Trang tính** (Google Sheets) và đặt tên file là: `He_Thong_THPT2_BaoYen`.
-
-                ##### 🔹 Bước 2: Dán mã Google Apps Script tự động (Xử lý cả Drive & Sheets)
-                1. Trên thanh menu của Google Sheets, chọn: **Tiện ích mở rộng (Extensions) -> Apps Script**.
-                2. Xóa sạch đoạn mã cũ `function myFunction() {...}` có sẵn.
-                3. Sao chép và dán toàn bộ đoạn mã Javascript chuẩn mực bên dưới vào rồi bấm biểu tượng **Lưu (Ctrl + S)**:
-                """)
-
-                script_code = """function doPost(e) {
-  try {
-    var data = JSON.parse(e.postData.contents);
-    var action = data.action || "sync_sheets";
-
-    // 1. NẾU LÀ ĐỒNG BỘ LÊN GOOGLE DRIVE (LƯU GÓI PHẦN MỀM / DATABASE ZIP)
-    if (action === "upload_drive" || data.file_base64) {
-      var folderName = data.folder_name || "Sao_Luu_Phan_Mem_THPT2_BaoYen";
-      var folders = DriveApp.getFoldersByName(folderName);
-      var folder = folders.hasNext() ? folders.next() : DriveApp.createFolder(folderName);
+        // 1. NẾU LÀ ĐỒNG BỘ LÊN GOOGLE DRIVE (LƯU GÓI PHẦN MỀM / DATABASE ZIP)
+        if (action === "upload_drive" || data.file_base64) {
+          var folderName = data.folder_name || "Sao_Luu_Phan_Mem_THPT2_BaoYen";
+          var folders = DriveApp.getFoldersByName(folderName);
+          var folder = folders.hasNext() ? folders.next() : DriveApp.createFolder(folderName);
       
-      var fileName = data.file_name || ("Sao_Luu_" + Utilities.formatDate(new Date(), "GMT+7", "yyyyMMdd_HHmmss") + ".zip");
-      var fileBytes = Utilities.base64Decode(data.file_base64);
-      var blob = Utilities.newBlob(fileBytes, data.mime_type || "application/zip", fileName);
-      var newFile = folder.createFile(blob);
+          var fileName = data.file_name || ("Sao_Luu_" + Utilities.formatDate(new Date(), "GMT+7", "yyyyMMdd_HHmmss") + ".zip");
+          var fileBytes = Utilities.base64Decode(data.file_base64);
+          var blob = Utilities.newBlob(fileBytes, data.mime_type || "application/zip", fileName);
+          var newFile = folder.createFile(blob);
       
-      return ContentService.createTextOutput(JSON.stringify({
-        status: "success",
-        message: "Đã lưu trữ thành công file '" + fileName + "' vào thư mục Google Drive: " + folderName,
-        file_url: newFile.getUrl(),
-        file_id: newFile.getId(),
-        folder_url: folder.getUrl(),
-        timestamp: new Date().toISOString()
-      })).setMimeType(ContentService.MimeType.JSON);
-    }
-
-    // 2. NẾU LÀ ĐỒNG BỘ DỮ LIỆU ĐỘNG VÀO TRANG TÍNH GOOGLE SHEETS
-    var ss = SpreadsheetApp.getActiveSpreadsheet();
-    var sheetsData = data.sheets || data;
-    var count = 0;
-    
-    for (var sheetName in sheetsData) {
-      if (sheetName === "action" || sheetName === "folder_name") continue;
-      var rows = sheetsData[sheetName];
-      if (!rows || rows.length === 0) continue;
-      
-      var sheet = ss.getSheetByName(sheetName);
-      if (!sheet) {
-        sheet = ss.insertSheet(sheetName);
-      } else {
-        sheet.clear();
-      }
-      
-      var headers = Object.keys(rows[0]);
-      var values = [headers];
-      for (var i = 0; i < rows.length; i++) {
-        var rowValues = [];
-        for (var j = 0; j < headers.length; j++) {
-          rowValues.push(rows[i][headers[j]] || "");
+          return ContentService.createTextOutput(JSON.stringify({
+            status: "success",
+            message: "Đã lưu trữ thành công file '" + fileName + "' vào thư mục Google Drive: " + folderName,
+            file_url: newFile.getUrl(),
+            file_id: newFile.getId(),
+            folder_url: folder.getUrl(),
+            timestamp: new Date().toISOString()
+          })).setMimeType(ContentService.MimeType.JSON);
         }
-        values.push(rowValues);
-      }
-      
-      sheet.getRange(1, 1, values.length, headers.length).setValues(values);
-      sheet.getRange(1, 1, 1, headers.length)
-           .setBackground("#1E3A8A")
-           .setFontColor("#FFFFFF")
-           .setFontWeight("bold");
-      sheet.autoResizeColumns(1, headers.length);
-      count++;
-    }
+
+        // 2. NẾU LÀ ĐỒNG BỘ DỮ LIỆU ĐỘNG VÀO TRANG TÍNH GOOGLE SHEETS
+        var ss = SpreadsheetApp.getActiveSpreadsheet();
+        var sheetsData = data.sheets || data;
+        var count = 0;
     
-    return ContentService.createTextOutput(JSON.stringify({
-      status: "success",
-      message: "Đã cập nhật " + count + " bảng dữ liệu lên Google Sheets thành công!",
-      timestamp: new Date().toISOString()
-    })).setMimeType(ContentService.MimeType.JSON);
+        for (var sheetName in sheetsData) {
+          if (sheetName === "action" || sheetName === "folder_name") continue;
+          var rows = sheetsData[sheetName];
+          if (!rows || rows.length === 0) continue;
+      
+          var sheet = ss.getSheetByName(sheetName);
+          if (!sheet) {
+            sheet = ss.insertSheet(sheetName);
+          } else {
+            sheet.clear();
+          }
+      
+          var headers = Object.keys(rows[0]);
+          var values = [headers];
+          for (var i = 0; i < rows.length; i++) {
+            var rowValues = [];
+            for (var j = 0; j < headers.length; j++) {
+              rowValues.push(rows[i][headers[j]] || "");
+            }
+            values.push(rowValues);
+          }
+      
+          sheet.getRange(1, 1, values.length, headers.length).setValues(values);
+          sheet.getRange(1, 1, 1, headers.length)
+               .setBackground("#1E3A8A")
+               .setFontColor("#FFFFFF")
+               .setFontWeight("bold");
+          sheet.autoResizeColumns(1, headers.length);
+          count++;
+        }
+    
+        return ContentService.createTextOutput(JSON.stringify({
+          status: "success",
+          message: "Đã cập nhật " + count + " bảng dữ liệu lên Google Sheets thành công!",
+          timestamp: new Date().toISOString()
+        })).setMimeType(ContentService.MimeType.JSON);
 
-  } catch (error) {
-    return ContentService.createTextOutput(JSON.stringify({
-      status: "error",
-      message: error.toString()
-    })).setMimeType(ContentService.MimeType.JSON);
-  }
-}
+      } catch (error) {
+        return ContentService.createTextOutput(JSON.stringify({
+          status: "error",
+          message: error.toString()
+        })).setMimeType(ContentService.MimeType.JSON);
+      }
+    }
 
-function doGet(e) {
-  return ContentService.createTextOutput(JSON.stringify({
-    status: "online",
-    school: "Trường THPT số 2 Bảo Yên",
-    services: ["Google Drive", "Google Sheets"],
-    message: "Google Apps Script API (Drive & Sheets) đang hoạt động bình thường!"
-  })).setMimeType(ContentService.MimeType.JSON);
-}"""
+    function doGet(e) {
+      return ContentService.createTextOutput(JSON.stringify({
+        status: "online",
+        school: "Trường THPT số 2 Bảo Yên",
+        services: ["Google Drive", "Google Sheets"],
+        message: "Google Apps Script API (Drive & Sheets) đang hoạt động bình thường!"
+      })).setMimeType(ContentService.MimeType.JSON);
+    }"""
 
-                st.code(script_code, language="javascript")
+                    st.code(script_code, language="javascript")
 
-                st.markdown("""
-                ##### 🔹 Bước 3: Triển khai thành Web App & Dán link vào phần mềm
-                1. Tại giao diện Apps Script, bấm nút màu xanh **Triển khai (Deploy) -> Tùy chọn triển khai mới (New deployment)** ở góc trên bên phải.
-                2. Bấm vào biểu tượng bánh răng **Chọn loại -> Ứng dụng web (Web app)**.
-                3. Đặt cấu hình:
-                   - **Mô tả:** `THPT 2 Bao Yen Drive & Sheets API`
-                   - **Thực thi dưới dạng:** *Tôi (địa chỉ email của bạn)*
-                   - **Người có quyền truy cập:** **Bất kỳ ai (Anyone)** *(Rất quan trọng để phần mềm gửi được dữ liệu sang)*.
-                4. Bấm **Triển khai** -> Bấm **Cấp quyền truy cập** (Authorize access) -> Chọn tài khoản Google của bạn -> Bấm **Nâng cao (Advanced)** -> Bấm **Đi tới... (không an toàn)** -> Bấm **Cho phép (Allow)**.
-                5. Sao chép dòng **URL của ứng dụng web** (có dạng `https://script.google.com/macros/s/.../exec`).
-                6. Quay lại phần mềm, sang tab **'⚙️ CẤU HÌNH LIÊN KẾT'** ở trên dán link vào và bấm **Lưu cấu hình**.
+                    st.markdown("""
+                    ##### 🔹 Bước 3: Triển khai thành Web App & Dán link vào phần mềm
+                    1. Tại giao diện Apps Script, bấm nút màu xanh **Triển khai (Deploy) -> Tùy chọn triển khai mới (New deployment)** ở góc trên bên phải.
+                    2. Bấm vào biểu tượng bánh răng **Chọn loại -> Ứng dụng web (Web app)**.
+                    3. Đặt cấu hình:
+                       - **Mô tả:** `THPT 2 Bao Yen Drive & Sheets API`
+                       - **Thực thi dưới dạng:** *Tôi (địa chỉ email của bạn)*
+                       - **Người có quyền truy cập:** **Bất kỳ ai (Anyone)** *(Rất quan trọng để phần mềm gửi được dữ liệu sang)*.
+                    4. Bấm **Triển khai** -> Bấm **Cấp quyền truy cập** (Authorize access) -> Chọn tài khoản Google của bạn -> Bấm **Nâng cao (Advanced)** -> Bấm **Đi tới... (không an toàn)** -> Bấm **Cho phép (Allow)**.
+                    5. Sao chép dòng **URL của ứng dụng web** (có dạng `https://script.google.com/macros/s/.../exec`).
+                    6. Quay lại phần mềm, sang tab **'⚙️ CẤU HÌNH LIÊN KẾT'** ở trên dán link vào và bấm **Lưu cấu hình**.
                 
-                🎉 **Chúc mừng Thầy/Cô!** Từ lúc này, Thầy/Cô có thể vừa đẩy toàn bộ file sao lưu phần mềm lên **Google Drive**, vừa đồng bộ trực tiếp các bảng tính lên **Google Sheets** tự động 100%!
-                """)
+                    🎉 **Chúc mừng Thầy/Cô!** Từ lúc này, Thầy/Cô có thể vừa đẩy toàn bộ file sao lưu phần mềm lên **Google Drive**, vừa đồng bộ trực tiếp các bảng tính lên **Google Sheets** tự động 100%!
+                    """)
