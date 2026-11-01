@@ -82,7 +82,7 @@ def tao_goi_sao_luu_zip_bytes(base_dir=BASE_DIR, bao_gom_ma_nguon=True):
         z.writestr("tong_hop_excel/Du_Lieu_Toan_Truong_THPT2_BaoYen.xlsx", buf_xlsx.getvalue())
         # 3. Mã nguồn
         if bao_gom_ma_nguon:
-            for py_f in ['app_ban_tru.py', 'phan_he_quan_ly_chung.py', 'phan_he_doan_thanh_nien.py']:
+            for py_f in ['app_ban_tru.py', 'phan_he_quan_ly_chung.py', 'phan_he_doan_thanh_nien.py', 'phan_he_hoc_sinh_phu_huynh.py', 'tao_tai_khoan_chuan_toan_truong.py']:
                 p_py = os.path.join(base_dir, py_f)
                 if os.path.exists(p_py):
                     z.write(p_py, arcname=f"ma_nguon_phan_mem/{py_f}")

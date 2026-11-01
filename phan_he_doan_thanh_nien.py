@@ -359,10 +359,12 @@ def render_phan_he_doan_thanh_nien(df_tai_khoan, role_curr, nam_hoc, BASE_DIR, T
     u_curr = st.session_state.get("user_login", {})
     u_username = u_curr.get("username", "")
     
-    # Kiểm tra quyền quản lý phương tiện: Admin, BGH, Đoàn trường, Cờ đỏ hoặc được cấp quyền
+    # Kiểm tra quyền quản lý phương tiện: Admin, BGH, Đoàn trường, Cờ đỏ, Ban Cán sự (Lớp trưởng, Bí thư)
     quyen_ql = str(u_curr.get("quyen_quan_ly", "")).strip()
-    la_quan_tri_xe = (role_curr in ["Ban Giám hiệu", "Ban Chấp hành Đoàn", "Đội Cờ đỏ"]) or ("Quản lý phương tiện" in quyen_ql) or ("Toàn quyền" in quyen_ql) or u_curr.get("quyen_quan_ly_xe", False)
-    is_ph_hs = (role_curr in ["Phụ huynh học sinh", "Học sinh"])
+    chuc_danh_str = str(u_curr.get("chuc_danh", "")).lower()
+    is_bcs = ("ban cán sự" in quyen_ql.lower()) or ("cờ đỏ" in quyen_ql.lower()) or ("lớp trưởng" in chuc_danh_str) or ("bí thư" in chuc_danh_str)
+    la_quan_tri_xe = (role_curr in ["Ban Giám hiệu", "Ban Chấp hành Đoàn", "Đội Cờ đỏ"]) or ("Quản lý phương tiện" in quyen_ql) or ("Toàn quyền" in quyen_ql) or u_curr.get("quyen_quan_ly_xe", False) or is_bcs
+    is_ph_hs = (role_curr in ["Phụ huynh học sinh", "Học sinh"]) and not is_bcs
 
     tab_bang_vang, tab_cham_diem, tab_phuong_tien, tab_phong_trao_dv = st.tabs([
         "🏆 Bảng Vàng Thi Đua 21 Lớp",

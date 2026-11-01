@@ -137,103 +137,16 @@ FILE_TUNNEL = os.path.join(BASE_DIR, "current_tunnel_url.txt") if os.path.exists
 
 # Hàm khởi tạo và cấp tài khoản đồng loạt cho toàn trường
 def tao_tai_khoan_dong_loat_full(df_hs):
-    accounts = []
-    
-    # 1. BGH & Cán bộ nhân viên quản lý
-    staff = [
-        ('admin', 'bgh123', 'Ban Giám Hiệu (Admin)', 'Ban Giám hiệu', 'Hiệu trưởng / Admin tối cao', 'Toàn trường', '0988123001'),
-        ('bithudoan', 'dtn123', 'Bí Thư Đoàn Trường', 'Ban Chấp hành Đoàn', 'Bí thư Đoàn TNCS Hồ Chí Minh', 'Toàn trường', '0988123456'),
-        ('codo', 'codo123', 'Đội Cờ Đỏ Chấm Nề Nếp', 'Đội Cờ đỏ', 'Đội viên Cờ đỏ thanh niên xung kích', 'Toàn trường', '0988654321'),
-        ('hieutruong', 'ht123', 'Thầy Hiệu Trưởng', 'Ban Giám hiệu', 'Hiệu trưởng nhà trường', 'Toàn trường', '0988123002'),
-        ('phohieutruong1', 'pht123', 'Phó Hiệu Trưởng 1', 'Ban Giám hiệu', 'Phó Hiệu trưởng PT Bán trú', 'Toàn trường', '0988123003'),
-        ('phohieutruong2', 'pht123', 'Phó Hiệu Trưởng 2', 'Ban Giám hiệu', 'Phó Hiệu trưởng PT Chuyên môn', 'Toàn trường', '0988123004'),
-        ('quannhiem', 'qn123', 'Thầy Quản Nhiệm Bán Trú', 'Giáo viên quản lý', 'Tổ trưởng Quản nhiệm ký túc xá', 'Toàn trường', '0988123005'),
-        ('gvtruc01', 'truc123', 'Giáo Viên Trực Ca 1', 'Giáo viên quản lý', 'Giáo viên trực ký túc xá', 'Toàn trường', '0988123006'),
-        ('gvtruc02', 'truc123', 'Giáo Viên Trực Ca 2', 'Giáo viên quản lý', 'Giáo viên trực ký túc xá', 'Toàn trường', '0988123007'),
-        ('beptruong', 'bep123', 'Bếp Trưởng Nhà Ăn', 'Nhà bếp / Cấp dưỡng', 'Bếp trưởng phụ trách dinh dưỡng', 'Toàn trường', '0988123008'),
-        ('capduong', 'bep123', 'Tổ Cấp Dưỡng Bán Trú', 'Nhà bếp / Cấp dưỡng', 'Nhân viên cấp dưỡng', 'Toàn trường', '0988123009'),
-        ('nhabep', 'bep123', 'Tổ Cấp Dưỡng Nhà Bếp', 'Nhà bếp / Cấp dưỡng', 'Nhân viên cấp dưỡng', 'Toàn trường', '0988123010'),
-        ('ketoan', 'kt123', 'Kế Toán Bán Trú', 'Kế toán bán trú', 'Kế toán quản lý thu chi', 'Toàn trường', '0988123011'),
-        ('phuhuynh', 'ph123', 'Tài Khoản Phụ Huynh Mẫu', 'Phụ huynh học sinh', 'Phụ huynh học sinh chung', 'Toàn trường', '0988123012'),
-        ('hocsinh', 'hs123', 'Tài Khoản Học Sinh Mẫu', 'Học sinh', 'Học sinh bán trú chung', 'Toàn trường', '0988123013'),
-    ]
-    for u, p, fn, r, title, ref, phone in staff:
-        accounts.append({
-            'Tên đăng nhập': u,
-            'Mật khẩu': p,
-            'Họ và tên': fn,
-            'Vai trò': r,
-            'Chức danh': title,
-            'Mã liên kết': ref,
-            'Số điện thoại': phone,
-            'Ghi chú': f"{title} - {fn}",
-            'Trạng thái': 'Hoạt động'
-        })
-
-    # 2. GVCN 21 lớp
-    classes = [f'10A{i}' for i in range(1, 8)] + [f'11A{i}' for i in range(1, 8)] + [f'12A{i}' for i in range(1, 8)]
-    for c in classes:
-        so_hs_lop = len(df_hs[df_hs['Lớp'] == c])
-        accounts.append({
-            'Tên đăng nhập': f"gvcn_{c.lower()}",
-            'Mật khẩu': 'gvcn123',
-            'Họ và tên': f"Thầy/Cô Chủ Nhiệm {c}",
-            'Vai trò': 'Giáo viên quản lý',
-            'Chức danh': f"Giáo viên chủ nhiệm lớp {c}",
-            'Mã liên kết': c,
-            'Số điện thoại': '',
-            'Ghi chú': f"GVCN Lớp {c} ({so_hs_lop} học sinh bán trú)",
-            'Trạng thái': 'Hoạt động'
-        })
-
-    # 3. Học sinh bán trú (Cập nhật Trưởng phòng & SĐT Học sinh)
-    for idx, row in df_hs.iterrows():
-        ma_hs = str(row['Mã HS']).strip()
-        u_hs = ma_hs.lower().replace('-', '')
-        phone_hs = str(row.get('SĐT Học sinh', '')).replace('.0', '').strip()
-        if phone_hs and not phone_hs.startswith('0') and len(phone_hs) == 9:
-            phone_hs = '0' + phone_hs
-        cv = str(row.get('Chức vụ phòng', 'Thành viên')).strip()
-        phong_val = str(row.get('Phòng', '')).strip()
-        title_hs = f"Trưởng phòng ({phong_val})" if cv == "Trưởng phòng" else "Học sinh bán trú"
-        accounts.append({
-            'Tên đăng nhập': u_hs,
-            'Mật khẩu': 'hs123',
-            'Họ và tên': row['Họ và tên'],
-            'Vai trò': 'Học sinh',
-            'Chức danh': title_hs,
-            'Mã liên kết': ma_hs,
-            'Số điện thoại': phone_hs,
-            'Ghi chú': f"Lớp {row.get('Lớp', '')} - {phong_val} - {row.get('Giường', '')} ({cv})",
-            'Trạng thái': 'Hoạt động'
-        })
-
-    # 4. 207 Phụ huynh học sinh
-    for idx, row in df_hs.iterrows():
-        ma_hs = str(row['Mã HS']).strip()
-        u_ph = 'ph_' + ma_hs.lower().replace('-', '')
-        phone_ph = str(row.get('SĐT Phụ huynh', '')).replace('.0', '').strip()
-        if phone_ph and not phone_ph.startswith('0') and len(phone_ph) == 9:
-            phone_ph = '0' + phone_ph
-            
-        ten_ph = f"PH em {row['Họ và tên']}"
-        bo = str(row.get('Họ tên Bố', '')).strip()
-        me = str(row.get('Họ tên Mẹ', '')).strip()
-        ten_bo_me = bo if bo and bo != 'nan' else (me if me and me != 'nan' else ten_ph)
-        
-        accounts.append({
-            'Tên đăng nhập': u_ph,
-            'Mật khẩu': 'ph123',
-            'Họ và tên': f"{ten_bo_me} (PH {row['Họ và tên']})",
-            'Vai trò': 'Phụ huynh học sinh',
-            'Chức danh': f"Phụ huynh học sinh {row['Họ và tên']}",
-            'Mã liên kết': ma_hs,
-            'Số điện thoại': phone_ph,
-            'Ghi chú': f"Phụ huynh em {row['Họ và tên']} (Lớp {row.get('Lớp', '')})",
-            'Trạng thái': 'Hoạt động'
-        })
-        
-    return pd.DataFrame(accounts)
+    try:
+        import tao_tai_khoan_chuan_toan_truong
+        import importlib
+        importlib.reload(tao_tai_khoan_chuan_toan_truong)
+        tao_tai_khoan_chuan_toan_truong.tao_tai_khoan()
+        if os.path.exists(FILE_TAI_KHOAN):
+            return pd.read_csv(FILE_TAI_KHOAN, encoding='utf-8-sig', dtype=str).fillna("")
+    except Exception as e:
+        print("Lỗi tao_tai_khoan_dong_loat_full:", e)
+    return pd.DataFrame()
 
 # Hàm lấy IP chuẩn xác
 def lay_ip_may_tinh():
@@ -2235,250 +2148,29 @@ elif role_curr == "Kế toán bán trú":
         st.markdown(f"**Tổng tiền dự thu toàn trường ({len(df_ds)} học sinh):** `{df_ds['Tiền phải nộp (VNĐ)'].sum():,.0f} VNĐ`")
 
 # --------------------------------------------------------
-# VAI TRÒ 5: PHỤ HUYNH HỌC SINH
+# --------------------------------------------------------
+# VAI TRÒ 5: PHỤ HUYNH HỌC SINH (CHỈ XEM & SỬA THÔNG TIN CON EM MÌNH)
 # --------------------------------------------------------
 elif role_curr == "Phụ huynh học sinh":
-    st.subheader("👨‍👩‍👧 CỔNG THÔNG TIN PHỤ HUYNH BÁN TRÚ")
-    st.caption("Theo dõi tình hình ăn, ngủ, học tập của con tại ký túc xá và thanh toán tiền bán trú thuận tiện.")
-    
-    # Xác định con em của phụ huynh (tự động theo mã liên kết nếu đăng nhập cá nhân)
-    ma_lk_curr = u_curr.get("ma_lien_ket", "")
-    if ma_lk_curr and ma_lk_curr in df_current["Mã HS"].values:
-        row_con = df_current[df_current["Mã HS"] == ma_lk_curr].iloc[0]
-        con_em = row_con["Họ và tên"]
-        st.success(f"👋 Kính chào Quý Phụ huynh em: **{con_em}** - Lớp **{row_con['Lớp']}** - Phòng **{row_con['Phòng']}** (Giường **{row_con['Giường']}**)")
-    else:
-        con_em = st.selectbox("Chọn con em của quý phụ huynh:", df_current["Họ và tên"].tolist())
-        row_con = df_current[df_current["Họ và tên"] == con_em].iloc[0]
-    
-    # Thẻ thông tin nhanh của con
-    c_ph1, c_ph2 = st.columns([1, 1])
-    with c_ph1:
-        st.markdown(f"""
-        <div style="background:#F3E8FF; border-left:5px solid #7C3AED; padding:15px; border-radius:10px;">
-            <h3 style="margin-top:0; color:#6B21A8;">🎓 {row_con['Họ và tên']}</h3>
-            <p><b>Lớp:</b> {row_con['Lớp']} | <b>Phòng ở:</b> <b>{row_con['Phòng']}</b> (Giường: {row_con['Giường']})</p>
-            <p><b>Dãy:</b> {row_con['Dãy nhà']} | <b>Chính sách NĐ 116:</b> {row_con['Chính sách NĐ116']}</p>
-            <p><b>Cán bộ quản nhiệm trực:</b> Thầy Quản Nhiệm (SĐT: <a href="tel:0988123456">0988.123.456</a>)</p>
-        </div>
-        """, unsafe_allow_html=True)
-        
-    with c_ph2:
-        an_trang_thai = "🟢 Đã vào ăn cơm trưa" if row_con["GĐ1: Ăn trưa"] else "🔴 Vắng ăn / Cắt cơm"
-        nghi_trang_thai = "🟢 Có mặt tại phòng ngủ" if row_con["GĐ2: Phòng nghỉ"] else "🔴 Vắng mặt tại phòng"
-        st.markdown(f"""
-        <div style="background:#ECFDF5; border-left:5px solid #059669; padding:15px; border-radius:10px;">
-            <h4 style="margin-top:0; color:#065F46;">📍 ĐIỂM DANH HÔM NAY ({ngay_lam_viec.strftime('%d/%m/%Y')}):</h4>
-            <p>1. Bữa ăn trưa (GĐ1): <b>{an_trang_thai}</b></p>
-            <p>2. Nghỉ trưa tại phòng (GĐ2): <b>{nghi_trang_thai}</b></p>
-            <p>Trạng thái: <span style="color:#2563EB; font-weight:bold;">{row_con['Trạng thái']}</span></p>
-        </div>
-        """, unsafe_allow_html=True)
-        
-    st.markdown("---")
-    
-    tab_ph_cat, tab_ph_ve, tab_ph_qr, tab_ph_td = st.tabs([
-        "🥣 BÁO CẮT CƠM (TRƯỚC 08:00)",
-        "🚗 BÁO CON XIN VỀ / XUỐNG TRƯỜNG",
-        "💳 ĐÓNG TIỀN ĂN QUA MÃ VIETQR",
-        "🥗 THỰC ĐƠN BỮA ĂN CỦA CON"
-    ])
-    
-    with tab_ph_cat:
-        st.markdown("#### 🥣 Báo Cắt Cơm Bán Trú Cho Con")
-        st.info("⏰ **Quy định:** Phụ huynh vui lòng gửi yêu cầu cắt cơm **trước 08:00 sáng**. Hệ thống sẽ tự động trừ tiền ăn và báo nhà bếp giảm nấu.")
-        with st.form("form_ph_cat_com"):
-            ngay_cat = st.date_input("Ngày xin cắt cơm:", date.today())
-            bua_cat = st.selectbox("Bữa cắt:", ["Bữa trưa hôm nay", "Cả ngày hôm nay", "Từ ngày mai"])
-            ly_do_cat = st.text_input("Lý do:", "Gia đình có việc đón cháu về ăn cơm")
-            btn_ph_cat = st.form_submit_button("Gửi Yêu Cầu Cắt Cơm Xuống Bếp", type="primary")
-            
-            if btn_ph_cat:
-                # Ghi đơn vào lịch sử xin về để Thầy/Cô duyệt
-                dong_cat_ph = {
-                    "Thời gian": datetime.now().strftime("%d/%m/%Y %H:%M"),
-                    "Mã HS": row_con.get("Mã HS", ""), "Họ và tên": con_em, "Lớp": row_con.get("Lớp", ""),
-                    "Phòng": row_con.get("Phòng", ""), "Hình thức": f"Báo cắt cơm ({bua_cat})",
-                    "Lý do": ly_do_cat, "Người đón / SĐT": u_curr.get("fullname", "Phụ huynh"),
-                    "Người duyệt": "Chờ duyệt", "Trạng thái": "Chờ duyệt ⏳"
-                }
-                df_xv_cur = pd.read_csv(FILE_XIN_VE, encoding='utf-8-sig') if os.path.exists(FILE_XIN_VE) else pd.DataFrame()
-                df_xv_cur = pd.concat([df_xv_cur, pd.DataFrame([dong_cat_ph])], ignore_index=True)
-                df_xv_cur.to_csv(FILE_XIN_VE, index=False, encoding='utf-8-sig')
-                
-                st.success(f"✅ Đã gửi đơn báo cắt cơm cho cháu {con_em} ngày {ngay_cat.strftime('%d/%m/%Y')}! Thầy Quản Nhiệm sẽ phê duyệt và báo nhà bếp khấu trừ ngay.")
-                st.balloons()
-                st.rerun()
-
-    with tab_ph_ve:
-        st.markdown("#### 🚗 Báo Xin Cho Con Về Nhà / Báo Đã Xuống Trường")
-        c_v1, c_v2 = st.columns(2)
-        with c_v1:
-            st.markdown("##### 1. Xin Cho Con Về:")
-            nguoi_don = st.text_input("Họ tên phụ huynh đón:")
-            gio_don = st.time_input("Dự kiến giờ đón:")
-            if st.button("Xác Nhận Đón Con Về", type="secondary"):
-                st.success(f"Đã gửi thông báo đến Thầy Quản Nhiệm: Bố/Mẹ sẽ đón cháu {con_em} lúc {gio_don.strftime('%H:%M')}.")
-        with c_v2:
-            st.markdown("##### 2. Báo Con Đã Xuống Trường:")
-            if st.button("✅ Báo Cháu Đã Lên Đến Trường An Toàn", type="primary"):
-                st.success(f"Cảm ơn phụ huynh đã thông báo. Quản nhiệm đã tiếp nhận cháu {con_em} tại trường!")
-
-    with tab_ph_qr:
-        st.markdown("#### 💳 Nộp Tiền Bán Trú Qua Mã VietQR Ngân Hàng")
-        tien_phai_dong = 21 * 30000
-        st.markdown(f"Số tiền cần đóng tháng 10: <span style='font-size:22px;color:#DC2626;font-weight:bold;'>{tien_phai_dong:,.0f} VNĐ</span>", unsafe_allow_html=True)
-        noi_dung_ck = f"THPT2BY {row_con['Mã HS']} {row_con['Họ và tên']} Dong tien an thang 10"
-        noi_dung_url = urllib.parse.quote(noi_dung_ck)
-        vietqr_img_url = f"https://img.vietqr.io/image/agribank-8800205123456-compact2.png?amount={tien_phai_dong}&addInfo={noi_dung_url}&accountName=THPT%20SO%202%20BAO%20YEN"
-        st.image(vietqr_img_url, width=300)
-        st.caption("Quý phụ huynh mở app Agribank/Vietinbank/BIDV... và quét mã để nộp tiền tự động.")
-
-    with tab_ph_td:
-        st.markdown("#### 🥗 Thực Đơn Tuần Này Của Con Tại Trường")
-        if os.path.exists(FILE_THUC_DON):
-            st.dataframe(pd.read_csv(FILE_THUC_DON, encoding='utf-8-sig'), use_container_width=True, hide_index=True)
+    import phan_he_hoc_sinh_phu_huynh
+    import importlib
+    importlib.reload(phan_he_hoc_sinh_phu_huynh)
+    phan_he_hoc_sinh_phu_huynh.render_cong_phu_huynh(
+        u_curr, df_current, ngay_lam_viec, BASE_DIR, 
+        FILE_DU_LIEU_THUC_TE, FILE_THI_DUA, FILE_KIEM_THUC, 
+        FILE_THUC_DON, FILE_XIN_VE, FILE_TAI_KHOAN
+    )
 
 # --------------------------------------------------------
-# VAI TRÒ 6: HỌC SINH BÁN TRÚ
+# VAI TRÒ 6: HỌC SINH BÁN TRÚ, TRƯỞNG PHÒNG & BAN CÁN SỰ (LỚP TRƯỞNG, BÍ THƯ)
 # --------------------------------------------------------
 elif role_curr == "Học sinh":
-    st.subheader("🎒 CỔNG THÔNG TIN HỌC SINH BÁN TRÚ")
-    
-    # Xác định danh tính học sinh (tự động theo mã liên kết nếu đăng nhập cá nhân)
-    ma_lk_curr = u_curr.get("ma_lien_ket", "")
-    if ma_lk_curr and ma_lk_curr in df_current["Mã HS"].values:
-        row_hs_self = df_current[df_current["Mã HS"] == ma_lk_curr].iloc[0]
-        hs_ten = row_hs_self["Họ và tên"]
-        st.success(f"👋 Chào mừng em: **{hs_ten}** - Lớp **{row_hs_self['Lớp']}** - Phòng **{row_hs_self['Phòng']}** (Giường **{row_hs_self['Giường']}**)")
-    else:
-        hs_ten = st.selectbox("Chọn tên em (để đăng nhập / xác nhận):", df_current["Họ và tên"].tolist())
-        row_hs_self = df_current[df_current["Họ và tên"] == hs_ten].iloc[0]
-    
-    trang_thai_hien_tai = row_hs_self["Trạng thái"]
-    if "về" in trang_thai_hien_tai.lower() or "nhà" in trang_thai_hien_tai.lower():
-        badge_tt = "<span style='background:#DC2626; color:white; padding:4px 12px; border-radius:15px; font-weight:bold;'>🏠 Em đang ở nhà</span>"
-    else:
-        badge_tt = "<span style='background:#16A34A; color:white; padding:4px 12px; border-radius:15px; font-weight:bold;'>🟢 Em đang tại trường</span>"
-    
-    st.markdown(f"""
-    <div style="background:#E0F2FE; border-left:5px solid #0284C7; padding:15px; border-radius:10px; margin-bottom:15px;">
-        <h3 style="margin-top:0; color:#0369A1;">👋 Xin chào: {row_hs_self['Họ và tên']}</h3>
-        <p><b>Lớp:</b> {row_hs_self['Lớp']} | <b>Phòng ở:</b> <span style="font-size:18px; font-weight:bold; color:#DC2626;">{row_hs_self['Phòng']}</span> (Giường: <b>{row_hs_self['Giường']}</b>) | <b>Dãy:</b> {row_hs_self['Dãy nhà']}</p>
-        <p><b>Dân tộc:</b> {row_hs_self['Dân tộc']} | <b>Chính sách NĐ 116:</b> {row_hs_self['Chính sách NĐ116']} | <b>Hiện tại:</b> {badge_tt}</p>
-    </div>
-    """, unsafe_allow_html=True)
-    
-    tab_hs_baove, tab_hs_ban, tab_hs_td, tab_hs_com = st.tabs([
-        "🚗 BÁO VỀ NHÀ / XUỐNG TRƯỜNG",
-        "👥 CÁC BẠN CÙNG PHÒNG",
-        "🏆 BẢNG XẾP HẠNG THI ĐUA PHÒNG EM",
-        "🥗 HÔM NAY ĂN MÓN GÌ?"
-    ])
-    
-    with tab_hs_baove:
-        st.markdown("### 🚗 Xác Nhận Tác Nghiệp: Đã Về Nhà Hoặc Đã Xuống Trường")
-        st.caption("Các em học sinh bấm nút dưới đây để thông báo cho Thầy Cô Quản nhiệm và Ban Giám Hiệu biết em đã về nhà an toàn hoặc đã quay lại trường.")
-        
-        c_hs_ve, c_hs_xuong = st.columns([1, 1])
-        
-        with c_hs_ve:
-            st.markdown("""
-            <div style="background:#FEF2F2; border:2px solid #DC2626; padding:18px; border-radius:12px; text-align:center;">
-                <h4 style="color:#B91C1C; margin-top:0;">🏠 1. BÁO ĐÃ VỀ ĐẾN NHÀ AN TOÀN</h4>
-                <p style="font-size:13px; color:#4B5563;">Dùng khi em rời ký túc xá về nhà (cuối tuần, nghỉ lễ hoặc ốm về nhà).</p>
-            </div>
-            """, unsafe_allow_html=True)
-            
-            with st.form("form_hs_bao_ve"):
-                ly_do_ve = st.selectbox("Lý do về nhà:", ["Về cuối tuần", "Về nghỉ lễ", "Việc gia đình có việc bận", "Ốm về nhà điều trị"])
-                phuong_tien_ve = st.text_input("Ai đón / Đi bằng gì:", placeholder="VD: Bố đón xe máy / Xe khách Bảo Hà")
-                btn_hs_ve = st.form_submit_button("🏡 XÁC NHẬN: EM ĐÃ VỀ ĐẾN NHÀ AN TOÀN", type="primary", use_container_width=True)
-                
-                if btn_hs_ve:
-                    gio_str = datetime.now().strftime("%d/%m/%Y %H:%M")
-                    # Ghi lịch sử
-                    dong_xv = {
-                        "Thời gian": gio_str,
-                        "Mã HS": row_hs_self["Mã HS"], "Họ và tên": hs_ten, "Lớp": row_hs_self["Lớp"],
-                        "Phòng": row_hs_self["Phòng"], "Hình thức": "Học sinh báo về nhà",
-                        "Lý do": ly_do_ve, "Người đón / SĐT": phuong_tien_ve if phuong_tien_ve else "Tự về",
-                        "Người duyệt": "Học sinh tự báo qua App", "Trạng thái": "Đã về nhà an toàn"
-                    }
-                    df_xv_old = pd.read_csv(FILE_XIN_VE, encoding='utf-8-sig') if os.path.exists(FILE_XIN_VE) else pd.DataFrame()
-                    df_xv_new = pd.concat([df_xv_old, pd.DataFrame([dong_xv])], ignore_index=True)
-                    df_xv_new.to_csv(FILE_XIN_VE, index=False, encoding='utf-8-sig')
-                    
-                    # Cập nhật danh sách học sinh live
-                    df_up_hs = pd.DataFrame(st.session_state.ds_hoc_sinh_live)
-                    df_up_hs.loc[df_up_hs["Họ và tên"] == hs_ten, "Trạng thái"] = "Đã về nhà an toàn"
-                    df_up_hs.loc[df_up_hs["Họ và tên"] == hs_ten, "GĐ1: Ăn trưa"] = False
-                    df_up_hs.loc[df_up_hs["Họ và tên"] == hs_ten, "GĐ2: Phòng nghỉ"] = False
-                    st.session_state.ds_hoc_sinh_live = df_up_hs.to_dict('records')
-                    df_up_hs.to_csv(FILE_DU_LIEU_THUC_TE, index=False, encoding='utf-8-sig')
-                    
-                    st.success(f"🎉 Cảm ơn em {hs_ten}! Thầy Cô Quản nhiệm đã nhận được tin báo em về đến nhà an toàn.")
-                    st.rerun()
-
-        with c_hs_xuong:
-            st.markdown("""
-            <div style="background:#F0FDF4; border:2px solid #16A34A; padding:18px; border-radius:12px; text-align:center;">
-                <h4 style="color:#15803D; margin-top:0;">🏫 2. BÁO ĐÃ XUỐNG TRƯỜNG AN TOÀN</h4>
-                <p style="font-size:13px; color:#4B5563;">Dùng khi em từ nhà đã quay trở lại ký túc xá trường học.</p>
-            </div>
-            """, unsafe_allow_html=True)
-            
-            with st.form("form_hs_bao_xuong"):
-                phuong_tien_xuong = st.text_input("Phương tiện di chuyển:", placeholder="VD: Bố mẹ chở xuống / Đi xe buýt")
-                btn_hs_xuong = st.form_submit_button("🎒 XÁC NHẬN: EM ĐÃ XUỐNG TRƯỜNG AN TOÀN", type="primary", use_container_width=True)
-                
-                if btn_hs_xuong:
-                    gio_str = datetime.now().strftime("%d/%m/%Y %H:%M")
-                    # Ghi lịch sử
-                    dong_xv = {
-                        "Thời gian": gio_str,
-                        "Mã HS": row_hs_self["Mã HS"], "Họ và tên": hs_ten, "Lớp": row_hs_self["Lớp"],
-                        "Phòng": row_hs_self["Phòng"], "Hình thức": "Học sinh báo xuống trường",
-                        "Lý do": "Trở lại trường học tập", "Người đón / SĐT": phuong_tien_xuong if phuong_tien_xuong else "Tự đi",
-                        "Người duyệt": "Học sinh tự báo qua App", "Trạng thái": "Tại trường"
-                    }
-                    df_xv_old = pd.read_csv(FILE_XIN_VE, encoding='utf-8-sig') if os.path.exists(FILE_XIN_VE) else pd.DataFrame()
-                    df_xv_new = pd.concat([df_xv_old, pd.DataFrame([dong_xv])], ignore_index=True)
-                    df_xv_new.to_csv(FILE_XIN_VE, index=False, encoding='utf-8-sig')
-                    
-                    # Cập nhật danh sách học sinh live
-                    df_up_hs = pd.DataFrame(st.session_state.ds_hoc_sinh_live)
-                    df_up_hs.loc[df_up_hs["Họ và tên"] == hs_ten, "Trạng thái"] = "Tại trường"
-                    df_up_hs.loc[df_up_hs["Họ và tên"] == hs_ten, "GĐ1: Ăn trưa"] = True
-                    df_up_hs.loc[df_up_hs["Họ và tên"] == hs_ten, "GĐ2: Phòng nghỉ"] = True
-                    st.session_state.ds_hoc_sinh_live = df_up_hs.to_dict('records')
-                    df_up_hs.to_csv(FILE_DU_LIEU_THUC_TE, index=False, encoding='utf-8-sig')
-                    
-                    st.success(f"🎉 Chào mừng em {hs_ten} đã trở lại trường! Suất cơm và giường nghỉ của em đã sẵn sàng.")
-                    st.rerun()
-
-        st.markdown("---")
-        st.markdown(f"#### 📜 Lịch Sử Ra / Vào Của Riêng Em ({hs_ten}):")
-        if os.path.exists(FILE_XIN_VE):
-            df_lich_su_full = pd.read_csv(FILE_XIN_VE, encoding='utf-8-sig')
-            df_lich_su_em = df_lich_su_full[df_lich_su_full["Họ và tên"] == hs_ten]
-            if not df_lich_su_em.empty:
-                st.dataframe(df_lich_su_em, use_container_width=True, hide_index=True)
-            else:
-                st.info("Chưa có lượt ghi nhận ra/vào nào trước đây.")
-                
-    with tab_hs_ban:
-        st.markdown(f"#### 🚪 Danh Sách Thành Viên {row_hs_self['Phòng']}:")
-        ban_cung_phong = df_current[df_current["Phòng"] == row_hs_self["Phòng"]][["Giường", "Họ và tên", "Lớp", "Dân tộc", "Trạng thái"]]
-        st.dataframe(ban_cung_phong, use_container_width=True, hide_index=True)
-        
-    with tab_hs_td:
-        st.markdown("#### 🏆 Kết Quả Thi Đua Phòng Em So Với Toàn Trường:")
-        if os.path.exists(FILE_THI_DUA):
-            df_td_hs = pd.read_csv(FILE_THI_DUA, encoding='utf-8-sig')
-            st.dataframe(df_td_hs.sort_values(by="Tổng điểm", ascending=False), use_container_width=True, hide_index=True)
-            
-    with tab_hs_com:
-        st.markdown("#### 🍲 Thực Đơn Bữa Cơm Hôm Nay:")
-        if os.path.exists(FILE_THUC_DON):
-            st.dataframe(pd.read_csv(FILE_THUC_DON, encoding='utf-8-sig'), use_container_width=True, hide_index=True)
+    import phan_he_hoc_sinh_phu_huynh
+    import importlib
+    importlib.reload(phan_he_hoc_sinh_phu_huynh)
+    phan_he_hoc_sinh_phu_huynh.render_cong_hoc_sinh(
+        u_curr, df_current, ngay_lam_viec, BASE_DIR, 
+        FILE_DU_LIEU_THUC_TE, FILE_THI_DUA, FILE_KIEM_THUC, 
+        FILE_THUC_DON, FILE_XIN_VE, FILE_TAI_KHOAN, 
+        THU_MUC_NAM_HOC, st.session_state.nam_hoc_hien_tai
+    )
