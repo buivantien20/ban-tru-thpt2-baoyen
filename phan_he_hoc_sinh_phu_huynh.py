@@ -82,14 +82,22 @@ def render_cong_phu_huynh(u_curr, df_current, ngay_lam_viec, BASE_DIR, FILE_DU_L
         """, unsafe_allow_html=True)
 
     with c_ph2:
-        an_trang_thai = "🟢 Đã vào ăn cơm trưa" if row_con.get("GĐ1: Ăn trưa", True) else "🔴 Vắng ăn trưa / Cắt cơm"
-        nghi_trang_thai = "🟢 Có mặt tại phòng nghỉ" if row_con.get("GĐ2: Phòng nghỉ", True) else "🔴 Vắng mặt tại phòng"
+        da_dd_con = bool(row_con.get("Đã điểm danh", False))
+        if not da_dd_con and not row_con.get("GĐ1: Ăn trưa", False):
+            an_trang_thai = "⏳ Chờ quản nhiệm điểm danh (08:00 - 08:30)"
+            nghi_trang_thai = "⏳ Chờ quản nhiệm điểm danh trưa (11:30 - 12:30)"
+            tt_live_ph = "Chờ điểm danh ⏳"
+        else:
+            an_trang_thai = "🟢 Đã vào ăn cơm trưa" if row_con.get("GĐ1: Ăn trưa", False) else "🔴 Vắng ăn trưa / Cắt cơm"
+            nghi_trang_thai = "🟢 Có mặt tại phòng nghỉ" if row_con.get("GĐ2: Phòng nghỉ", False) else "🔴 Vắng mặt tại phòng"
+            tt_live_ph = row_con.get('Trạng thái', 'Tại trường')
+
         st.markdown(f"""
         <div style="background:#ECFDF5; border-left:5px solid #059669; padding:15px; border-radius:10px;">
             <h4 style="margin-top:0; color:#065F46;">📍 ĐIỂM DANH HÔM NAY ({ngay_lam_viec.strftime('%d/%m/%Y')}):</h4>
             <p>1. Bữa ăn trưa (GĐ1): <b>{an_trang_thai}</b></p>
             <p>2. Nghỉ trưa tại phòng (GĐ2): <b>{nghi_trang_thai}</b></p>
-            <p>Trạng thái hiện tại: <span style="color:#2563EB; font-weight:bold;">{row_con['Trạng thái']}</span></p>
+            <p>Trạng thái hiện tại: <span style="color:#2563EB; font-weight:bold;">{tt_live_ph}</span></p>
         </div>
         """, unsafe_allow_html=True)
 
@@ -300,8 +308,11 @@ def render_cong_hoc_sinh(u_curr, df_current, ngay_lam_viec, BASE_DIR, FILE_DU_LI
 
     # Hiển thị thẻ thông tin nhanh
     if row_hs_self is not None:
-        trang_thai_hien_tai = row_hs_self.get("Trạng thái", "Tại trường")
-        if "về" in trang_thai_hien_tai.lower() or "nhà" in trang_thai_hien_tai.lower():
+        da_dd_self = bool(row_hs_self.get("Đã điểm danh", False))
+        trang_thai_hien_tai = str(row_hs_self.get("Trạng thái", "Chờ điểm danh ⏳"))
+        if not da_dd_self and not row_hs_self.get("GĐ1: Ăn trưa", False):
+            badge_tt = "<span style='background:#6B7280; color:white; padding:3px 10px; border-radius:15px; font-weight:bold;'>⏳ Chờ điểm danh</span>"
+        elif "về" in trang_thai_hien_tai.lower() or "nhà" in trang_thai_hien_tai.lower():
             badge_tt = "<span style='background:#DC2626; color:white; padding:3px 10px; border-radius:15px; font-weight:bold;'>🏠 Em đang ở nhà</span>"
         else:
             badge_tt = "<span style='background:#16A34A; color:white; padding:3px 10px; border-radius:15px; font-weight:bold;'>🟢 Em đang tại trường</span>"
@@ -478,7 +489,7 @@ def render_cong_hoc_sinh(u_curr, df_current, ngay_lam_viec, BASE_DIR, FILE_DU_LI
 
                 so_vang = len(danh_sach_vang)
                 st.markdown("---")
-                st.markdown(f"📊 **TỔNG KẾT NHANH:** Sĩ số phòng: **{si_so}** | Có mặt: <b style='color:#16A34A;'>{co_mat_count}</b> | Vắng mặt: <b style='color:#DC2626;'>{so_vang}</b>", unsafe_allow_html=True)
+                st.info("ℹ️ **Lưu ý:** Số liệu quân số có mặt và vắng mặt chính thức sẽ được hệ thống tính toán và ghi nhận sau khi Trưởng phòng bấm nút Gửi bên dưới (không hiển thị ngầm định trước).")
                 ghi_chu_chung = st.text_input("Ghi chú thêm của người điểm danh (nếu có):", placeholder="VD: Phòng trực nhật sạch sẽ; các bạn có mặt đúng giờ...")
 
                 btn_gui_dd = st.form_submit_button("📤 GỬI BÁO CÁO ĐIỂM DANH CHO THẦY QUẢN NHIỆM & NHÀ BẾP", type="primary", use_container_width=True)
