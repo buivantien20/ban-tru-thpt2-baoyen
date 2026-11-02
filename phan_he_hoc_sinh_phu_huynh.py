@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*-
+﻿# -*- coding: utf-8 -*-
 """
 PHÂN HỆ CỔNG THÔNG TIN HỌC SINH & PHỤ HUYNH
 Trường THPT số 2 Bảo Yên - Năm học chuẩn
@@ -337,10 +337,7 @@ def render_cong_hoc_sinh(u_curr, df_current, ngay_lam_viec, BASE_DIR, FILE_DU_LI
         list_tab_names.append("🏢 ĐIỂM DANH & TÍCH VẮNG PHÒNG KTX")
         list_tab_names.append("🏆 CHẤM ĐIỂM THI ĐUA PHÒNG 5S")
 
-    # Nhiệm vụ Báo sĩ số lớp & Đánh giá xe (Dành cho Lớp trưởng, Bí thư & Ban cán sự)
-    if is_bcs:
-        list_tab_names.append("📊 LỚP TRƯỞNG: BÁO SĨ SỐ LỚP (SÁNG / CHIỀU / CẢ NGÀY)")
-        list_tab_names.append("🛵 BAN CÁN SỰ: ĐÁNH GIÁ VI PHẠM PHƯƠNG TIỆN")
+    # (Chức năng Báo sĩ số lớp và Đánh giá phương tiện đã chuyển sang kênh 🚩 ĐOÀN THANH NIÊN & NỀ NẾP)
 
     # Tab cá nhân hóa
     list_tab_names.append("👤 CHỈNH SỬA THÔNG TIN CÁ NHÂN CỦA EM")
@@ -543,49 +540,7 @@ def render_cong_hoc_sinh(u_curr, df_current, ngay_lam_viec, BASE_DIR, FILE_DU_LI
                 else:
                     st.info(f"Chưa có bản ghi điểm danh nào cho {phong_dd}.")
 
-        # =========================================================================
-    # TAB: BÁO SĨ SỐ LỚP HỌC (DÀNH CHO LỚP TRƯỞNG & BAN CÁN SỰ)
-    # =========================================================================
-    if "📊 LỚP TRƯỞNG: BÁO SĨ SỐ LỚP (SÁNG / CHIỀU / CẢ NGÀY)" in tab_map:
-        with tab_map["📊 LỚP TRƯỞNG: BÁO SĨ SỐ LỚP (SÁNG / CHIỀU / CẢ NGÀY)"]:
-            import quan_ly_si_so_lop
-            quan_ly_si_so_lop.render_giao_dien_bao_si_so(
-                u_curr=u_curr,
-                role_curr=role_curr if 'role_curr' in locals() else "Học sinh",
-                base_dir=BASE_DIR,
-                is_bcs=True,
-                is_gvcn=False,
-                is_admin=False
-            )
 
-    # =========================================================================
-    # TAB: BAN CÁN SỰ: ĐÁNH GIÁ VI PHẠM PHƯƠNG TIỆN
-    # =========================================================================
-    if "🛵 BAN CÁN SỰ: ĐÁNH GIÁ VI PHẠM PHƯƠNG TIỆN" in tab_map:
-        with tab_map["🛵 BAN CÁN SỰ: ĐÁNH GIÁ VI PHẠM PHƯƠNG TIỆN"]:
-            st.markdown("#### 🛵 Ban Cán Sự: Kiểm Tra & Ghi Nhận Vi Phạm Phương Tiện")
-            st.caption("Dành cho Lớp trưởng, Bí thư chi đoàn và Đội Cờ đỏ ghi nhận các trường hợp vi phạm nề nếp phương tiện xe.")
-            f_xe_bcs = os.path.join(BASE_DIR, "quan_ly_phuong_tien.csv") if os.path.exists(os.path.join(BASE_DIR, "quan_ly_phuong_tien.csv")) else "D:/quan_ly_phuong_tien.csv"
-            df_xe_bcs = pd.read_csv(f_xe_bcs, encoding='utf-8-sig', dtype=str).fillna("") if os.path.exists(f_xe_bcs) else pd.DataFrame()
-            if not df_xe_bcs.empty:
-                ds_lop_list = ["Tất cả các lớp", "10A1", "10A2", "10A3", "10A4", "10A5", "10A6", "10A7", "11A1", "11A2", "11A3", "11A4", "11A5", "11A6", "11A7", "12A1", "12A2", "12A3", "12A4", "12A5", "12A6", "12A7"]
-                col_bcs_x1, col_bcs_x2 = st.columns([1, 2])
-                with col_bcs_x1:
-                    lop_loc_xe = st.selectbox("Lọc xe theo lớp:", ds_lop_list, key="sb_loc_xe_bcs")
-                with col_bcs_x2:
-                    tim_kw_xe = st.text_input("🔍 Tìm kiếm xe (Mã xe / Biển số / Tên HS):", placeholder="VD: 24-AA, Lê Văn...", key="txt_kw_xe_bcs")
-
-                df_xe_show_bcs = df_xe_bcs.copy()
-                if lop_loc_xe != "Tất cả các lớp":
-                    df_xe_show_bcs = df_xe_show_bcs[df_xe_show_bcs["Lớp"] == lop_loc_xe]
-                if tim_kw_xe.strip():
-                    kw = tim_kw_xe.strip().lower()
-                    df_xe_show_bcs = df_xe_show_bcs[
-                        df_xe_show_bcs["Mã xe"].str.lower().str.contains(kw) |
-                        df_xe_show_bcs["Biển số xe"].str.lower().str.contains(kw) |
-                        df_xe_show_bcs["Họ và tên"].str.lower().str.contains(kw)
-                    ]
-                st.dataframe(df_xe_show_bcs[["Mã xe", "Họ và tên", "Lớp", "Biển số xe", "Loại xe", "Màu xe", "Nơi gửi xe", "Số lần vi phạm"]], use_container_width=True, hide_index=True)
 
     # =========================================================================
     # TAB: CHỈNH SỬA THÔNG TIN CÁ NHÂN CỦA EM & ĐỀ XUẤT CẤP QUYỀN
