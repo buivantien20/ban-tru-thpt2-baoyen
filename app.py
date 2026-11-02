@@ -250,6 +250,25 @@ st.markdown("""
         margin-bottom: 4px !important;
     }
 
+    /* 4. Đảm bảo toàn bộ các nút bấm và nút tải file không bị cắt chữ '...', tự xuống dòng đẹp mắt */
+    div[data-testid="stButton"] > button,
+    div[data-testid="stDownloadButton"] > button {
+        white-space: normal !important;
+        word-break: normal !important;
+        min-height: 42px !important;
+        height: auto !important;
+        padding: 6px 10px !important;
+        font-size: 13px !important;
+        font-weight: 700 !important;
+        line-height: 1.25 !important;
+        text-align: center !important;
+    }
+    div[data-testid="stCheckbox"] {
+        display: flex;
+        align-items: center;
+        min-height: 42px;
+    }
+
     @media (max-width: 768px) {
         .main-header { font-size: 19px !important; }
         .stMetric { padding: 3px !important; }
@@ -1796,41 +1815,40 @@ if role_curr == "Ban Giám hiệu":
             # ========================================================
             st.markdown("#### ☀️ **LỆNH BÁO CƠM NHÀ BẾP (08:00 - 08:30) & PHIẾU BÁO CƠM 3 BÊN**")
             st.caption("Khung giờ vàng 08:00 - 08:30: Quản nhiệm bấm nút 1-chạm '🟢 ĐIỂM DANH ĐỦ 100%' hoặc loại trừ học sinh vắng/nghỉ; xuất Phiếu Báo Cơm ký nhận 3 bên (Nhà bếp nhận - Quản nhiệm lập - BGH ký duyệt).")
-            col_act1, col_act2, col_act3 = st.columns([1.6, 1.8, 1.6])
+            col_act1, col_act2, col_act3, col_act4 = st.columns([1.35, 1.25, 1.4, 1.25])
             
             with col_act1:
                 lbl_all_btn = f"🟢 ĐIỂM DANH ĐỦ 100% ({len(df_hien_thi)} HS)"
-                c_btn_a, c_btn_b = st.columns([1.2, 1])
-                with c_btn_a:
-                    if st.button(lbl_all_btn, type="primary", use_container_width=True, help="Tự động tích có mặt ăn trưa, ăn tối, nghỉ trưa cho toàn bộ học sinh đang lọc"):
-                        df_cap_nhat = pd.DataFrame(st.session_state.ds_hoc_sinh_live)
-                        ds_ma_hien_thi = df_hien_thi["Mã HS"].tolist()
-                        for ma_hs in ds_ma_hien_thi:
-                            df_cap_nhat.loc[df_cap_nhat["Mã HS"] == ma_hs, "Đã điểm danh"] = True
-                            df_cap_nhat.loc[df_cap_nhat["Mã HS"] == ma_hs, "GĐ1: Ăn trưa"] = True
-                            df_cap_nhat.loc[df_cap_nhat["Mã HS"] == ma_hs, "Ăn tối"] = True
-                            df_cap_nhat.loc[df_cap_nhat["Mã HS"] == ma_hs, "GĐ2: Phòng nghỉ"] = True
-                            df_cap_nhat.loc[df_cap_nhat["Mã HS"] == ma_hs, "Trạng thái"] = "Tại trường"
-                        st.session_state.ds_hoc_sinh_live = df_cap_nhat.to_dict('records')
-                        df_cap_nhat.to_csv(FILE_DU_LIEU_THUC_TE, index=False, encoding='utf-8-sig')
-                        st.success(f"🎉 Đã điểm danh CÓ MẶT 100% cho {len(ds_ma_hien_thi)} học sinh thành công! Các số liệu đã được hiển thị.")
-                        st.rerun()
-                with c_btn_b:
-                    if st.button("🔄 ĐẶT LẠI CHỜ ĐIỂM DANH", type="secondary", use_container_width=True, help="Đặt lại trạng thái chưa điểm danh đầu ngày, ẩn toàn bộ số liệu"):
-                        df_cap_nhat = pd.DataFrame(st.session_state.ds_hoc_sinh_live)
-                        ds_ma_hien_thi = df_hien_thi["Mã HS"].tolist()
-                        for ma_hs in ds_ma_hien_thi:
-                            df_cap_nhat.loc[df_cap_nhat["Mã HS"] == ma_hs, "Đã điểm danh"] = False
-                            df_cap_nhat.loc[df_cap_nhat["Mã HS"] == ma_hs, "GĐ1: Ăn trưa"] = False
-                            df_cap_nhat.loc[df_cap_nhat["Mã HS"] == ma_hs, "Ăn tối"] = False
-                            df_cap_nhat.loc[df_cap_nhat["Mã HS"] == ma_hs, "GĐ2: Phòng nghỉ"] = False
-                            df_cap_nhat.loc[df_cap_nhat["Mã HS"] == ma_hs, "Trạng thái"] = "Chờ điểm danh ⏳"
-                        st.session_state.ds_hoc_sinh_live = df_cap_nhat.to_dict('records')
-                        df_cap_nhat.to_csv(FILE_DU_LIEU_THUC_TE, index=False, encoding='utf-8-sig')
-                        st.info("🔄 Đã đặt lại trạng thái chờ điểm danh đầu ngày! Toàn bộ số liệu đã được ẩn.")
-                        st.rerun()
+                if st.button(lbl_all_btn, type="primary", use_container_width=True, help="Tự động tích có mặt ăn trưa, ăn tối, nghỉ trưa cho toàn bộ học sinh đang lọc"):
+                    df_cap_nhat = pd.DataFrame(st.session_state.ds_hoc_sinh_live)
+                    ds_ma_hien_thi = df_hien_thi["Mã HS"].tolist()
+                    for ma_hs in ds_ma_hien_thi:
+                        df_cap_nhat.loc[df_cap_nhat["Mã HS"] == ma_hs, "Đã điểm danh"] = True
+                        df_cap_nhat.loc[df_cap_nhat["Mã HS"] == ma_hs, "GĐ1: Ăn trưa"] = True
+                        df_cap_nhat.loc[df_cap_nhat["Mã HS"] == ma_hs, "Ăn tối"] = True
+                        df_cap_nhat.loc[df_cap_nhat["Mã HS"] == ma_hs, "GĐ2: Phòng nghỉ"] = True
+                        df_cap_nhat.loc[df_cap_nhat["Mã HS"] == ma_hs, "Trạng thái"] = "Tại trường"
+                    st.session_state.ds_hoc_sinh_live = df_cap_nhat.to_dict('records')
+                    df_cap_nhat.to_csv(FILE_DU_LIEU_THUC_TE, index=False, encoding='utf-8-sig')
+                    st.success(f"🎉 Đã điểm danh CÓ MẶT 100% cho {len(ds_ma_hien_thi)} học sinh thành công! Các số liệu đã được hiển thị.")
+                    st.rerun()
 
             with col_act2:
+                if st.button("🔄 ĐẶT LẠI CHỜ ĐIỂM DANH", type="secondary", use_container_width=True, help="Đặt lại trạng thái chưa điểm danh đầu ngày, ẩn toàn bộ số liệu"):
+                    df_cap_nhat = pd.DataFrame(st.session_state.ds_hoc_sinh_live)
+                    ds_ma_hien_thi = df_hien_thi["Mã HS"].tolist()
+                    for ma_hs in ds_ma_hien_thi:
+                        df_cap_nhat.loc[df_cap_nhat["Mã HS"] == ma_hs, "Đã điểm danh"] = False
+                        df_cap_nhat.loc[df_cap_nhat["Mã HS"] == ma_hs, "GĐ1: Ăn trưa"] = False
+                        df_cap_nhat.loc[df_cap_nhat["Mã HS"] == ma_hs, "Ăn tối"] = False
+                        df_cap_nhat.loc[df_cap_nhat["Mã HS"] == ma_hs, "GĐ2: Phòng nghỉ"] = False
+                        df_cap_nhat.loc[df_cap_nhat["Mã HS"] == ma_hs, "Trạng thái"] = "Chờ điểm danh ⏳"
+                    st.session_state.ds_hoc_sinh_live = df_cap_nhat.to_dict('records')
+                    df_cap_nhat.to_csv(FILE_DU_LIEU_THUC_TE, index=False, encoding='utf-8-sig')
+                    st.info("🔄 Đã đặt lại trạng thái chờ điểm danh đầu ngày! Toàn bộ số liệu đã được ẩn.")
+                    st.rerun()
+
+            with col_act3:
                 # Nút xuất file Excel báo cơm trực tiếp
                 excel_bytes = tao_excel_phieu_bao_com(df_current, ngay_lam_viec)
                 ten_file_excel = f"Phieu_Bao_Com_THPT2_BaoYen_{ngay_lam_viec.strftime('%Y%m%d')}.xlsx"
@@ -1843,7 +1861,7 @@ if role_curr == "Ban Giám hiệu":
                     help="Tải file Excel đầy đủ 3 sheet để gửi Zalo cho Nhà bếp hoặc lưu trữ kế toán"
                 )
 
-            with col_act3:
+            with col_act4:
                 mo_phieu_in = st.checkbox("📄 XEM MẪU IN PHIẾU BÁO CƠM (A4)", value=False, key="ck_mo_phieu_a4")
 
             # MẪU IN PHIẾU BÁO CƠM CHUẨN A4
