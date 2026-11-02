@@ -220,6 +220,35 @@ st.markdown("""
         border-bottom: 3px solid #1E3A8A !important;
     }
 
+    /* 3. Thu gọn tối đa khoảng trống thanh công cụ bên trái (Sidebar) */
+    section[data-testid="stSidebar"] {
+        width: 295px !important;
+    }
+    section[data-testid="stSidebar"] > div:first-child {
+        padding-top: 0.8rem !important;
+        padding-left: 0.75rem !important;
+        padding-right: 0.75rem !important;
+        padding-bottom: 1rem !important;
+    }
+    section[data-testid="stSidebar"] [data-testid="stVerticalBlock"] {
+        gap: 0.3rem !important;
+    }
+    section[data-testid="stSidebar"] hr {
+        margin-top: 0.3rem !important;
+        margin-bottom: 0.3rem !important;
+        border-color: #E2E8F0 !important;
+    }
+    section[data-testid="stSidebar"] .stMarkdown p,
+    section[data-testid="stSidebar"] .stCaption {
+        margin-top: 0.1rem !important;
+        margin-bottom: 0.15rem !important;
+    }
+    section[data-testid="stSidebar"] .stSelectbox,
+    section[data-testid="stSidebar"] .stRadio {
+        margin-top: 0 !important;
+        margin-bottom: 0.2rem !important;
+    }
+
     @media (max-width: 768px) {
         .main-header { font-size: 19px !important; }
         .stMetric { padding: 3px !important; }
@@ -659,20 +688,27 @@ if not st.session_state.user_login.get("logged_in", False):
 # 3. THANH BÊN (SIDEBAR): KHI ĐÃ ĐĂNG NHẬP THÀNH CÔNG
 # ========================================================
 with st.sidebar:
-    if os.path.exists(FILE_LOGO):
-        st.image(FILE_LOGO, width=95)
-    else:
-        st.image("https://cdn-icons-png.flaticon.com/512/2997/2997295.png", width=65)
-    st.markdown("### **THPT SỐ 2 BẢO YÊN**")
-    st.caption(f"Trường THPT số 2 Bảo Yên - Lào Cai ({st.session_state.nam_hoc_hien_tai})")
-    
-    st.markdown("---")
-    st.markdown("#### 📅 **NĂM HỌC**")
+    # 1. Header Thương hiệu & Logo tinh gọn hàng ngang
+    c_sb_logo, c_sb_info = st.columns([1, 2.5], vertical_alignment="center")
+    with c_sb_logo:
+        if os.path.exists(FILE_LOGO):
+            st.image(FILE_LOGO, width=62)
+        else:
+            st.image("https://cdn-icons-png.flaticon.com/512/2997/2997295.png", width=50)
+    with c_sb_info:
+        st.markdown("<div style='font-size:15px; font-weight:800; color:#1E3A8A; line-height:1.2; margin-top:2px;'>THPT SỐ 2 BẢO YÊN</div>", unsafe_allow_html=True)
+        st.caption(f"Lào Cai ({st.session_state.nam_hoc_hien_tai})")
+
+    st.markdown("<div style='border-top:1px solid #E2E8F0; margin:5px 0 3px 0;'></div>", unsafe_allow_html=True)
+
+    # 2. Chọn năm học (Thu gọn tối đa, bỏ hoàn toàn dòng chữ: 'Năm học làm việc')
+    st.markdown("<div style='font-size:12.5px; font-weight:700; color:#334155; margin:1px 0 2px 0;'>📅 NĂM HỌC:</div>", unsafe_allow_html=True)
     chon_nh_sb = st.selectbox(
-        "Năm học làm việc:",
+        "Năm học:",
         options=danh_sach_nam_hoc,
         index=danh_sach_nam_hoc.index(st.session_state.nam_hoc_hien_tai) if st.session_state.nam_hoc_hien_tai in danh_sach_nam_hoc else 0,
-        key="sb_select_nam_hoc"
+        key="sb_select_nam_hoc",
+        label_visibility="collapsed"
     )
     if chon_nh_sb != st.session_state.nam_hoc_hien_tai:
         st.session_state.nam_hoc_hien_tai = chon_nh_sb
@@ -684,8 +720,8 @@ with st.sidebar:
     u_curr = st.session_state.user_login
     role_curr = u_curr.get("role", "")
 
-    st.markdown("---")
-    st.markdown("#### 🏛️ **PHÂN HỆ HỆ THỐNG**")
+    st.markdown("<div style='border-top:1px solid #E2E8F0; margin:5px 0 3px 0;'></div>", unsafe_allow_html=True)
+    st.markdown("<div style='font-size:12.5px; font-weight:700; color:#334155; margin:1px 0 2px 0;'>🏛️ PHÂN HỆ HỆ THỐNG:</div>", unsafe_allow_html=True)
     
     # Phân quyền danh sách phân hệ theo vai trò (RBAC nghiêm ngặt):
     # 1. Phụ huynh: CHỈ ĐƯỢC xem thông tin tại duy nhất kênh 🛏️ QUẢN LÝ BÁN TRÚ & KTX
@@ -716,7 +752,8 @@ with st.sidebar:
             "Chọn phân hệ:",
             ds_phan_he,
             index=ds_phan_he.index(st.session_state.phan_he_hien_tai),
-            key="radio_chon_phan_he"
+            key="radio_chon_phan_he",
+            label_visibility="collapsed"
         )
         if chon_phan_he_sb != st.session_state.phan_he_hien_tai:
             st.session_state.phan_he_hien_tai = chon_phan_he_sb
@@ -724,12 +761,12 @@ with st.sidebar:
     else:
         st.session_state.phan_he_hien_tai = ds_phan_he[0]
         st.markdown(
-            f"<div style='background:#F5F3FF; border:1px solid #C4B5FD; color:#6D28D9; padding:8px 12px; border-radius:8px; font-weight:bold; font-size:13px; text-align:center;'>🛏️ QUẢN LÝ BÁN TRÚ & KTX</div>",
+            f"<div style='background:#F5F3FF; border:1px solid #C4B5FD; color:#6D28D9; padding:6px 10px; border-radius:6px; font-weight:bold; font-size:12px; text-align:center;'>🛏️ QUẢN LÝ BÁN TRÚ & KTX</div>",
             unsafe_allow_html=True
         )
 
-    st.markdown("---")
-    st.markdown("#### 🔐 **THÔNG TIN ĐĂNG NHẬP**")
+    st.markdown("<div style='border-top:1px solid #E2E8F0; margin:5px 0 3px 0;'></div>", unsafe_allow_html=True)
+    st.markdown("<div style='font-size:12.5px; font-weight:700; color:#334155; margin:1px 0 2px 0;'>🔐 THÔNG TIN ĐĂNG NHẬP:</div>", unsafe_allow_html=True)
     
     # Hiển thị huy hiệu vai trò
     badge_color = {
@@ -746,11 +783,15 @@ with st.sidebar:
     chuc_danh_hien = u_curr.get("chuc_danh", role_curr)
     ma_lk_hien = u_curr.get("ma_lien_ket", "")
     
-    st.markdown(f"👤 Người dùng: **{u_curr['fullname']}**")
-    st.markdown(f"📌 Chức danh: **{chuc_danh_hien}**")
-    if ma_lk_hien and ma_lk_hien != "Toàn trường":
-        st.markdown(f"🔗 Liên kết: `{ma_lk_hien}`")
-    st.markdown(f"Vai trò: <span class='{badge_color}'>{role_curr}</span>", unsafe_allow_html=True)
+    lk_badge_html = f"<div style='color:#0284C7; font-size:11.5px; margin-top:1px;'>🔗 Liên kết: <code>{ma_lk_hien}</code></div>" if (ma_lk_hien and ma_lk_hien != "Toàn trường") else ""
+    st.markdown(f"""
+    <div style="background:#F8FAFC; border:1px solid #E2E8F0; padding:7px 10px; border-radius:8px; font-size:12.5px; line-height:1.45;">
+        <div>👤 <b>{u_curr['fullname']}</b></div>
+        <div style="color:#64748B;">📌 {chuc_danh_hien}</div>
+        {lk_badge_html}
+        <div style="margin-top:3px;">Vai trò: <span class='{badge_color}'>{role_curr}</span></div>
+    </div>
+    """, unsafe_allow_html=True)
     
     # ⚙️ CHỨC NĂNG CÁ NHÂN HÓA & ĐỔI MẬT KHẨU DÀNH CHO MỌI TÀI KHOẢN (BGH, GVCN, BẾP, PHỤ HUYNH, HỌC SINH)
     u_username = u_curr["username"]
