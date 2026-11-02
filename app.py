@@ -2095,9 +2095,10 @@ if role_curr == "Ban Giám hiệu":
 
     # --- CỤM 3: BẾP ĂN & KIỂM THỰC ---
     with tab_cluster3:
-        sub_c3_kt, sub_c3_td = st.tabs([
+        sub_c3_kt, sub_c3_td, sub_c3_dg = st.tabs([
             "🍳 Báo Cáo Bếp Ăn & Kiểm Thực Ba Bước ATTP",
-            "🥗 Phê Duyệt Thực Đơn Tuần Chuẩn Dinh Dưỡng"
+            "🥗 Phê Duyệt Thực Đơn Tuần Chuẩn Dinh Dưỡng",
+            "⭐ Đánh Giá Bữa Ăn (Live HS & PH)"
         ])
         with sub_c3_kt:
             st.subheader("🍳 Báo Cáo Bếp Ăn & Kiểm Thực Ba Bước")
@@ -2107,7 +2108,6 @@ if role_curr == "Ban Giám hiệu":
                 df_kt_load = pd.read_csv(FILE_KIEM_THUC, encoding='utf-8-sig')
                 st.dataframe(df_kt_load, use_container_width=True, hide_index=True)
 
-
         with sub_c3_td:
             st.subheader("🥗 Phê Duyệt Thực Đơn Tuần Chuẩn Dinh Dưỡng THPT")
             if os.path.exists(FILE_THUC_DON):
@@ -2115,6 +2115,10 @@ if role_curr == "Ban Giám hiệu":
                 st.dataframe(df_td_view, use_container_width=True, hide_index=True)
                 if st.button("✅ BAN GIÁM HIỆU PHÊ DUYỆT THỰC ĐƠN NÀY", type="primary"):
                     st.success("🎉 Đã phê duyệt thực đơn tuần! Thực đơn đã công khai trên App của phụ huynh và học sinh.")
+
+        with sub_c3_dg:
+            import quan_ly_danh_gia_bua_an
+            quan_ly_danh_gia_bua_an.render_dashboard_danh_gia_live(BASE_DIR, role_curr)
 
 
 
@@ -2259,10 +2263,11 @@ elif role_curr == "Giáo viên quản lý":
             
     else:
         # Giao diện Tổ trực quản nhiệm KTX (19 phòng)
-        tab_dd, tab_thi_dua, tab_xin_ve, tab_tra_cuu, tab_cai_dat = st.tabs([
+        tab_dd, tab_thi_dua, tab_xin_ve, tab_dg_live, tab_tra_cuu, tab_cai_dat = st.tabs([
             "📋 ĐIỂM DANH 2 GIAI ĐOẠN",
             "🏆 CHẤM THI ĐUA NỀ NẾP 19 PHÒNG",
             "🚗 QUẢN LÝ XIN VỀ / XUỐNG TRƯỜNG",
+            "⭐ ĐÁNH GIÁ BỮA ĂN (LIVE)",
             "🔎 TRA CỨU HỒ SƠ & GỌI BỐ MẸ",
             "📱 CÀI ĐẶT APP DI ĐỘNG"
         ])
@@ -2531,6 +2536,10 @@ elif role_curr == "Giáo viên quản lý":
                 if os.path.exists(FILE_XIN_VE):
                     st.dataframe(pd.read_csv(FILE_XIN_VE, encoding='utf-8-sig'), use_container_width=True, hide_index=True)
 
+        with tab_dg_live:
+            import quan_ly_danh_gia_bua_an
+            quan_ly_danh_gia_bua_an.render_dashboard_danh_gia_live(BASE_DIR, role_curr)
+
         with tab_tra_cuu:
             st.subheader("🔎 Tra Cứu Hồ Sơ & Thông Tin Liên Hệ Bố / Mẹ")
             hs_duoc_chon = st.selectbox("Chọn hoặc gõ tên học sinh để xem hồ sơ liên hệ:", df_current["Họ và tên"].tolist(), key="qn_search")
@@ -2566,10 +2575,11 @@ elif role_curr == "Giáo viên quản lý":
 # VAI TRÒ 3: NHÀ BẾP / TỔ CẤP DƯỠNG
 # --------------------------------------------------------
 elif role_curr == "Nhà bếp / Cấp dưỡng":
-    tab_suat_an, tab_kiem_thuc, tab_thuc_don, tab_mua_tp = st.tabs([
+    tab_suat_an, tab_kiem_thuc, tab_thuc_don, tab_dg_bep, tab_mua_tp = st.tabs([
         "🍳 CHỐT SUẤT ĂN HÀNG NGÀY",
         "🥩 KIỂM THỰC BA BƯỚC & LƯU MẪU 24H",
         "🥗 THỰC ĐƠN BÁN TRÚ",
+        "⭐ Ý KIẾN ĐÁNH GIÁ CỦA HS & PH (LIVE)",
         "📝 ĐỀ XUẤT NGUYÊN LIỆU THỰC PHẨM"
     ])
     
@@ -2651,6 +2661,10 @@ elif role_curr == "Nhà bếp / Cấp dưỡng":
         st.subheader("🥗 Thực Đơn Bán Trú Tuần")
         if os.path.exists(FILE_THUC_DON):
             st.dataframe(pd.read_csv(FILE_THUC_DON, encoding='utf-8-sig'), use_container_width=True, hide_index=True)
+
+    with tab_dg_bep:
+        import quan_ly_danh_gia_bua_an
+        quan_ly_danh_gia_bua_an.render_dashboard_danh_gia_live(BASE_DIR, role_curr)
 
     with tab_mua_tp:
         st.subheader("📝 Đề Xuất Nguyên Liệu Thực Phẩm Ngày Mai")

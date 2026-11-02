@@ -104,11 +104,12 @@ def render_cong_phu_huynh(u_curr, df_current, ngay_lam_viec, BASE_DIR, FILE_DU_L
     st.markdown("---")
 
     # 1.3. CÁC TÁC NGHIỆP PHỤ HUYNH (ĐÚNG QUY CHUẨN: CHỈ CÓ CHỨC NĂNG XIN NGHỈ HỌC & BÁO CẮT CƠM)
-    tab_ph_cat, tab_ph_ve, tab_ph_ls, tab_ph_td, tab_ph_qr = st.tabs([
+    tab_ph_cat, tab_ph_ve, tab_ph_ls, tab_ph_td, tab_ph_dg, tab_ph_qr = st.tabs([
         "🥣 BÁO CẮT CƠM CHO CON (06:30 - 07:30)",
         "📝 ĐƠN XIN NGHỈ HỌC & BÁO VỀ NHÀ / XUỐNG TRƯỜNG",
         "📋 LỊCH SỬ ĐƠN BÁO CẮT CƠM & XIN NGHỈ ĐÃ GỬI",
         "🥗 THỰC ĐƠN BỮA ĂN CỦA CON (XEM THÔNG TIN)",
+        "⭐ ĐÁNH GIÁ BỮA ĂN CON (TRƯA / TỐI)",
         "💳 ĐỐI SOÁT TIỀN ĂN BÁN TRÚ (VIETQR)"
     ])
 
@@ -218,6 +219,15 @@ def render_cong_phu_huynh(u_curr, df_current, ngay_lam_viec, BASE_DIR, FILE_DU_L
             df_td_v = pd.read_csv(FILE_THUC_DON, encoding='utf-8-sig')
             st.dataframe(df_td_v, use_container_width=True, hide_index=True)
 
+    with tab_ph_dg:
+        import quan_ly_danh_gia_bua_an
+        quan_ly_danh_gia_bua_an.render_form_danh_gia(
+            u_curr=u_curr,
+            row_hs=row_con,
+            vai_tro_nguoi_gui="Phụ huynh bán trú",
+            base_dir=BASE_DIR
+        )
+
 
 # =============================================================================
 # 2. CỔNG DÀNH CHO HỌC SINH (RBAC + TRƯỞNG PHÒNG + BAN CÁN SỰ LỚP TRƯỞNG & BÍ THƯ)
@@ -310,7 +320,8 @@ def render_cong_hoc_sinh(u_curr, df_current, ngay_lam_viec, BASE_DIR, FILE_DU_LI
 
     # (Chức năng Báo sĩ số lớp và Đánh giá phương tiện đã chuyển sang kênh 🚩 ĐOÀN THANH NIÊN & NỀ NẾP)
 
-    # Tab cá nhân hóa
+    # Tab cá nhân hóa & Đánh giá bữa ăn
+    list_tab_names.append("⭐ ĐÁNH GIÁ BỮA ĂN (TRƯA / TỐI)")
     list_tab_names.append("👤 CHỈNH SỬA THÔNG TIN CÁ NHÂN CỦA EM")
     list_tab_names.append("🥗 THỰC ĐƠN HÔM NAY")
 
@@ -908,7 +919,21 @@ def render_cong_hoc_sinh(u_curr, df_current, ngay_lam_viec, BASE_DIR, FILE_DU_LI
                             st.balloons()
                             st.rerun()
 
-        # TAB: THỰC ĐƠN HÔM NAY
+    # =========================================================================
+    # TAB: ĐÁNH GIÁ BỮA ĂN (TRƯA / TỐI)
+    # =========================================================================
+    if "⭐ ĐÁNH GIÁ BỮA ĂN (TRƯA / TỐI)" in tab_map:
+        with tab_map["⭐ ĐÁNH GIÁ BỮA ĂN (TRƯA / TỐI)"]:
+            import quan_ly_danh_gia_bua_an
+            quan_ly_danh_gia_bua_an.render_form_danh_gia(
+                u_curr=u_curr,
+                row_hs=row_hs_self if row_hs_self is not None else {},
+                vai_tro_nguoi_gui="Học sinh bán trú",
+                base_dir=BASE_DIR
+            )
+
+    # =========================================================================
+    # TAB: THỰC ĐƠN HÔM NAY
     # =========================================================================
     if "🥗 THỰC ĐƠN HÔM NAY" in tab_map:
         with tab_map["🥗 THỰC ĐƠN HÔM NAY"]:
