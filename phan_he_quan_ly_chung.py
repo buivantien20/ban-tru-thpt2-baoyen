@@ -846,11 +846,42 @@ def render_phan_he_quan_ly_chung(df_tai_khoan, role_curr, nam_hoc, BASE_DIR, THU
             df_khcn = pd.read_csv(f_khcn, encoding='utf-8-sig') if os.path.exists(f_khcn) else pd.DataFrame()
             if not df_khcn.empty:
                 st.dataframe(df_khcn, use_container_width=True, hide_index=True)
+            else:
+                st.info("Chưa có kế hoạch công tác chủ nhiệm được cập nhật.")
 
         with sub_cn3:
             st.markdown("#### 📱 **Sổ Liên Lạc Điện Tử Với Phụ Huynh Lớp**")
+            st.caption("Tra cứu nhanh số điện thoại Bố/Mẹ và thông tin gia đình học sinh để kết nối giáo dục giữa Nhà trường và Gia đình.")
+            
+            # Nạp danh sách học sinh toàn trường
+            df_hs_toan_truong = pd.read_csv(f_hs_tt, encoding='utf-8-sig').fillna("") if os.path.exists(f_hs_tt) else pd.DataFrame()
+            
+            ds_21_lop = [
+                '10A1', '10A2', '10A3', '10A4', '10A5', '10A6', '10A7',
+                '11A1', '11A2', '11A3', '11A4', '11A5', '11A6', '11A7',
+                '12A1', '12A2', '12A3', '12A4', '12A5', '12A6', '12A7'
+            ]
+            ma_lk_curr = str(u_curr.get("ma_lien_ket", "")).strip()
+            lop_mac_dinh = ma_lk_curr if ma_lk_curr in ds_21_lop else "10A1"
+            
+            if la_bgh_admin or ma_lk_curr not in ds_21_lop:
+                idx_sel = ds_21_lop.index(lop_mac_dinh) if lop_mac_dinh in ds_21_lop else 0
+                chon_lop_sll = st.selectbox("🔍 Chọn lớp xem Sổ liên lạc:", ds_21_lop, index=idx_sel, key="sb_lop_sll_ph")
+            else:
+                chon_lop_sll = lop_mac_dinh
+                st.info(f"👨‍🏫 Bạn đang xem Sổ liên lạc điện tử học sinh lớp **{chon_lop_sll}**")
+
+            if not df_hs_toan_truong.empty and "Lớp" in df_hs_toan_truong.columns:
+                df_hs_lop = df_hs_toan_truong[df_hs_toan_truong["Lớp"] == chon_lop_sll].copy()
+            else:
+                df_hs_lop = pd.DataFrame()
+
             if not df_hs_lop.empty:
-                st.dataframe(df_hs_lop[['STT', 'Họ và tên', 'Tên cha', 'SĐT Bố', 'Tên mẹ', 'SĐT Mẹ', 'Thôn', 'Xã']], use_container_width=True, hide_index=True)
+                cols_sll = [c for c in ['STT', 'Mã học sinh', 'Họ và tên', 'Ngày sinh', 'Giới tính', 'Tên cha', 'SĐT Bố', 'Tên mẹ', 'SĐT Mẹ', 'Thôn', 'Xã'] if c in df_hs_lop.columns]
+                st.dataframe(df_hs_lop[cols_sll], use_container_width=True, hide_index=True)
+                st.caption(f"👥 Tổng sĩ số: {len(df_hs_lop)} học sinh lớp {chon_lop_sll}.")
+            else:
+                st.info(f"Chưa có dữ liệu danh sách học sinh của lớp {chon_lop_sll}.")
 
     # =========================================================================
     # TAB 5: TIẾN ĐỘ CHƯƠNG TRÌNH & CHUYÊN MÔN
