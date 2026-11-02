@@ -53,7 +53,7 @@ def push_to_github_api(token, repo="buivantien20/ban-tru-thpt2-baoyen", branch="
         # Tự động cập nhật file lõi từ D:\ sang D:\phan_mem_ban_tru_cloud trước khi đẩy
         import shutil
         if os.path.exists(r"D:\app_ban_tru.py") and os.path.exists(folder):
-            for fn in ["app_ban_tru.py", "phan_he_quan_ly_chung.py", "phan_he_doan_thanh_nien.py", "phan_he_hoc_sinh_phu_huynh.py", "tao_tai_khoan_chuan_toan_truong.py", "dich_vu_tu_dong_dong_bo.py", "dong_bo_google_sheets.py", "nap_du_lieu.py"]:
+            for fn in ["app_ban_tru.py", "phan_he_quan_ly_chung.py", "phan_he_doan_thanh_nien.py", "phan_he_hoc_sinh_phu_huynh.py", "quan_ly_si_so_lop.py", "tao_tai_khoan_chuan_toan_truong.py", "dich_vu_tu_dong_dong_bo.py", "dong_bo_google_sheets.py", "nap_du_lieu.py"]:
                 sp = os.path.join(r"D:\\", fn)
                 if os.path.exists(sp):
                     shutil.copy2(sp, os.path.join(folder, fn))
