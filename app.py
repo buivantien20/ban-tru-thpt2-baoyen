@@ -220,33 +220,34 @@ st.markdown("""
         border-bottom: 3px solid #1E3A8A !important;
     }
 
-    /* 3. Thu gọn tối đa khoảng trống thanh công cụ bên trái (Sidebar) */
-    section[data-testid="stSidebar"] {
-        width: 295px !important;
-    }
+    /* 3. Căn đều khoảng cách thanh bên (Sidebar) khoa học, rõ ràng, không bị chồng đè */
     section[data-testid="stSidebar"] > div:first-child {
-        padding-top: 0.8rem !important;
-        padding-left: 0.75rem !important;
-        padding-right: 0.75rem !important;
-        padding-bottom: 1rem !important;
+        padding-top: 1.2rem !important;
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+        padding-bottom: 1.5rem !important;
     }
-    section[data-testid="stSidebar"] [data-testid="stVerticalBlock"] {
-        gap: 0.3rem !important;
+    /* Đảm bảo các tùy chọn radio trong sidebar có độ giãn cách chuẩn, dễ bấm, không dính chữ */
+    section[data-testid="stSidebar"] div[role="radiogroup"] {
+        gap: 6px !important;
     }
-    section[data-testid="stSidebar"] hr {
-        margin-top: 0.3rem !important;
-        margin-bottom: 0.3rem !important;
-        border-color: #E2E8F0 !important;
+    section[data-testid="stSidebar"] div[role="radiogroup"] > label {
+        padding: 5px 8px !important;
+        border-radius: 6px !important;
+        margin-bottom: 2px !important;
+        transition: background-color 0.15s ease !important;
     }
-    section[data-testid="stSidebar"] .stMarkdown p,
-    section[data-testid="stSidebar"] .stCaption {
-        margin-top: 0.1rem !important;
-        margin-bottom: 0.15rem !important;
+    section[data-testid="stSidebar"] div[role="radiogroup"] > label:hover {
+        background-color: #F1F5F9 !important;
     }
-    section[data-testid="stSidebar"] .stSelectbox,
-    section[data-testid="stSidebar"] .stRadio {
-        margin-top: 0 !important;
-        margin-bottom: 0.2rem !important;
+    section[data-testid="stSidebar"] div[role="radiogroup"] label p {
+        font-size: 13.5px !important;
+        line-height: 1.45 !important;
+        margin: 0 !important;
+    }
+    /* Selectbox dropdown trong sidebar chuẩn đẹp, thoáng đãng */
+    section[data-testid="stSidebar"] .stSelectbox {
+        margin-bottom: 4px !important;
     }
 
     @media (max-width: 768px) {
@@ -688,21 +689,32 @@ if not st.session_state.user_login.get("logged_in", False):
 # 3. THANH BÊN (SIDEBAR): KHI ĐÃ ĐĂNG NHẬP THÀNH CÔNG
 # ========================================================
 with st.sidebar:
-    # 1. Header Thương hiệu & Logo tinh gọn hàng ngang
-    c_sb_logo, c_sb_info = st.columns([1, 2.5], vertical_alignment="center")
-    with c_sb_logo:
+    # 1. Header Thương hiệu: Logo căn giữa trang trọng, tên trường và phụ đề rõ ràng
+    if logo_data_uri:
+        st.markdown(f"""
+        <div style="text-align: center; padding: 4px 0 10px 0;">
+            <img src="{logo_data_uri}" width="70" style="display: block; margin: 0 auto 6px auto; border-radius: 8px;">
+            <div style="font-size: 16px; font-weight: 800; color: #1E3A8A; line-height: 1.35; letter-spacing: 0.2px;">THPT SỐ 2 BẢO YÊN</div>
+            <div style="font-size: 12px; color: #64748B; margin-top: 3px;">Trường THPT số 2 Bảo Yên - Lào Cai</div>
+        </div>
+        """, unsafe_allow_html=True)
+    else:
         if os.path.exists(FILE_LOGO):
-            st.image(FILE_LOGO, width=62)
+            st.image(FILE_LOGO, width=70)
         else:
-            st.image("https://cdn-icons-png.flaticon.com/512/2997/2997295.png", width=50)
-    with c_sb_info:
-        st.markdown("<div style='font-size:15px; font-weight:800; color:#1E3A8A; line-height:1.2; margin-top:2px;'>THPT SỐ 2 BẢO YÊN</div>", unsafe_allow_html=True)
-        st.caption(f"Lào Cai ({st.session_state.nam_hoc_hien_tai})")
+            st.image("https://cdn-icons-png.flaticon.com/512/2997/2997295.png", width=60)
+        st.markdown(f"""
+        <div style="text-align: center; margin-bottom: 8px;">
+            <div style="font-size: 16px; font-weight: 800; color: #1E3A8A; line-height: 1.35;">THPT SỐ 2 BẢO YÊN</div>
+            <div style="font-size: 12px; color: #64748B; margin-top: 3px;">Trường THPT số 2 Bảo Yên - Lào Cai</div>
+        </div>
+        """, unsafe_allow_html=True)
 
-    st.markdown("<div style='border-top:1px solid #E2E8F0; margin:5px 0 3px 0;'></div>", unsafe_allow_html=True)
+    # Đường phân cách đều đặn, chuẩn thị giác
+    st.markdown("<div style='border-top: 1px solid #E2E8F0; margin: 10px 0 12px 0;'></div>", unsafe_allow_html=True)
 
-    # 2. Chọn năm học (Thu gọn tối đa, bỏ hoàn toàn dòng chữ: 'Năm học làm việc')
-    st.markdown("<div style='font-size:12.5px; font-weight:700; color:#334155; margin:1px 0 2px 0;'>📅 NĂM HỌC:</div>", unsafe_allow_html=True)
+    # 2. Mục Năm học: Bỏ hoàn toàn dòng chữ 'Năm học làm việc', tiêu đề rõ ràng
+    st.markdown("<div style='font-size: 12px; font-weight: 700; color: #475569; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px;'>📅 NĂM HỌC</div>", unsafe_allow_html=True)
     chon_nh_sb = st.selectbox(
         "Năm học:",
         options=danh_sach_nam_hoc,
@@ -720,13 +732,13 @@ with st.sidebar:
     u_curr = st.session_state.user_login
     role_curr = u_curr.get("role", "")
 
-    st.markdown("<div style='border-top:1px solid #E2E8F0; margin:5px 0 3px 0;'></div>", unsafe_allow_html=True)
-    st.markdown("<div style='font-size:12.5px; font-weight:700; color:#334155; margin:1px 0 2px 0;'>🏛️ PHÂN HỆ HỆ THỐNG:</div>", unsafe_allow_html=True)
+    # Đường phân cách đều đặn
+    st.markdown("<div style='border-top: 1px solid #E2E8F0; margin: 12px 0;'></div>", unsafe_allow_html=True)
+
+    # 3. Mục Phân hệ hệ thống: Tiêu đề chuẩn, các tùy chọn giãn cách tự nhiên
+    st.markdown("<div style='font-size: 12px; font-weight: 700; color: #475569; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px;'>🏛️ PHÂN HỆ HỆ THỐNG</div>", unsafe_allow_html=True)
     
     # Phân quyền danh sách phân hệ theo vai trò (RBAC nghiêm ngặt):
-    # 1. Phụ huynh: CHỈ ĐƯỢC xem thông tin tại duy nhất kênh 🛏️ QUẢN LÝ BÁN TRÚ & KTX
-    # 2. Học sinh: CHỈ ĐƯỢC vào 2 kênh 🛏️ QUẢN LÝ BÁN TRÚ & KTX và 🚩 ĐOÀN THANH NIÊN (ĐTN)
-    # 3. Các vai trò quản lý khác (BGH, GVCN, Quản nhiệm, Kế toán, Bếp, Cờ đỏ...): Toàn quyền cả 3 phân hệ
     if role_curr == "Phụ huynh học sinh":
         ds_phan_he = [
             "🛏️ QUẢN LÝ BÁN TRÚ & KTX"
@@ -761,12 +773,15 @@ with st.sidebar:
     else:
         st.session_state.phan_he_hien_tai = ds_phan_he[0]
         st.markdown(
-            f"<div style='background:#F5F3FF; border:1px solid #C4B5FD; color:#6D28D9; padding:6px 10px; border-radius:6px; font-weight:bold; font-size:12px; text-align:center;'>🛏️ QUẢN LÝ BÁN TRÚ & KTX</div>",
+            f"<div style='background:#F5F3FF; border:1px solid #C4B5FD; color:#6D28D9; padding:8px 12px; border-radius:8px; font-weight:bold; font-size:12.5px; text-align:center;'>🛏️ QUẢN LÝ BÁN TRÚ & KTX</div>",
             unsafe_allow_html=True
         )
 
-    st.markdown("<div style='border-top:1px solid #E2E8F0; margin:5px 0 3px 0;'></div>", unsafe_allow_html=True)
-    st.markdown("<div style='font-size:12.5px; font-weight:700; color:#334155; margin:1px 0 2px 0;'>🔐 THÔNG TIN ĐĂNG NHẬP:</div>", unsafe_allow_html=True)
+    # Đường phân cách đều đặn
+    st.markdown("<div style='border-top: 1px solid #E2E8F0; margin: 12px 0;'></div>", unsafe_allow_html=True)
+
+    # 4. Mục Thông tin đăng nhập: Thẻ hồ sơ chuyên nghiệp, dòng chữ cách đều, không chồng lấn
+    st.markdown("<div style='font-size: 12px; font-weight: 700; color: #475569; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px;'>🔐 THÔNG TIN ĐĂNG NHẬP</div>", unsafe_allow_html=True)
     
     # Hiển thị huy hiệu vai trò
     badge_color = {
@@ -783,13 +798,13 @@ with st.sidebar:
     chuc_danh_hien = u_curr.get("chuc_danh", role_curr)
     ma_lk_hien = u_curr.get("ma_lien_ket", "")
     
-    lk_badge_html = f"<div style='color:#0284C7; font-size:11.5px; margin-top:1px;'>🔗 Liên kết: <code>{ma_lk_hien}</code></div>" if (ma_lk_hien and ma_lk_hien != "Toàn trường") else ""
+    lk_badge_html = f"<div style='margin-bottom: 5px;'><span style='color: #64748B;'>🔗 Liên kết:</span> <code style='color: #0369A1; font-weight: bold;'>{ma_lk_hien}</code></div>" if (ma_lk_hien and ma_lk_hien != "Toàn trường") else ""
     st.markdown(f"""
-    <div style="background:#F8FAFC; border:1px solid #E2E8F0; padding:7px 10px; border-radius:8px; font-size:12.5px; line-height:1.45;">
-        <div>👤 <b>{u_curr['fullname']}</b></div>
-        <div style="color:#64748B;">📌 {chuc_danh_hien}</div>
+    <div style="background: #F8FAFC; border: 1px solid #E2E8F0; padding: 10px 12px; border-radius: 8px; font-size: 13px; line-height: 1.5; box-shadow: 0 1px 2px rgba(0,0,0,0.03);">
+        <div style="margin-bottom: 5px;"><span style="color: #64748B;">👤 Người dùng:</span> <b style="color: #0F172A;">{u_curr['fullname']}</b></div>
+        <div style="margin-bottom: 5px;"><span style="color: #64748B;">📌 Chức danh:</span> <b style="color: #334155;">{chuc_danh_hien}</b></div>
         {lk_badge_html}
-        <div style="margin-top:3px;">Vai trò: <span class='{badge_color}'>{role_curr}</span></div>
+        <div style="margin-top: 6px;"><span style="color: #64748B;">Vai trò:</span> <span class='{badge_color}'>{role_curr}</span></div>
     </div>
     """, unsafe_allow_html=True)
     
