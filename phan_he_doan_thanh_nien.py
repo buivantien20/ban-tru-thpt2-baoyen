@@ -686,6 +686,8 @@ def render_phan_he_doan_thanh_nien(df_tai_khoan, role_curr, nam_hoc, BASE_DIR, T
                                     il = idx_lop_m[0]
                                     c_tru = int(pd.to_numeric(df_td_curr.loc[il, 'Điểm trừ'], errors='coerce') or 0)
                                     c_tong = int(pd.to_numeric(df_td_curr.loc[il, 'Tổng điểm'], errors='coerce') or 100)
+                                    df_td_curr['Điểm trừ'] = pd.to_numeric(df_td_curr['Điểm trừ'], errors='coerce').fillna(0).astype(int)
+                                    df_td_curr['Tổng điểm'] = pd.to_numeric(df_td_curr['Tổng điểm'], errors='coerce').fillna(100).astype(int)
                                     df_td_curr.loc[il, 'Điểm trừ'] = c_tru + diem_tru_val
                                     df_td_curr.loc[il, 'Tổng điểm'] = c_tong - diem_tru_val
                                     df_td_curr.loc[il, 'Ghi chú'] = str(df_td_curr.loc[il, 'Ghi chú']) + f"; Ban cán sự báo vi phạm xe: {r_x['Họ và tên']} ({r_x['Biển số xe']})"
@@ -696,7 +698,8 @@ def render_phan_he_doan_thanh_nien(df_tai_khoan, role_curr, nam_hoc, BASE_DIR, T
                             if not idx_x_all.empty:
                                 ix = idx_x_all[0]
                                 cur_lan = int(pd.to_numeric(df_xe_bcs.loc[ix, 'Số lần vi phạm'], errors='coerce') or 0)
-                                df_xe_bcs.loc[ix, 'Số lần vi phạm'] = cur_lan + 1
+                                df_xe_bcs['Số lần vi phạm'] = df_xe_bcs['Số lần vi phạm'].astype(str)
+                                df_xe_bcs.loc[ix, 'Số lần vi phạm'] = str(cur_lan + 1)
                                 df_xe_bcs.loc[ix, 'Tình trạng'] = 'Nhắc nhở nề nếp'
                                 for d_save in [f_xe, os.path.join(BASE_DIR, 'quan_ly_phuong_tien.csv'), os.path.join('D:/phan_mem_ban_tru_cloud', 'quan_ly_phuong_tien.csv')]:
                                     try:
@@ -832,12 +835,13 @@ def render_phan_he_doan_thanh_nien(df_tai_khoan, role_curr, nam_hoc, BASE_DIR, T
                             
                             if st.form_submit_button("💾 LƯU THAY ĐỔI THÔNG TIN XE", type="primary", use_container_width=True):
                                 idx_xe = df_xe_all[df_xe_all['Mã xe'] == xe_chon_edit].index[0]
-                                df_xe_all.loc[idx_xe, 'Biển số xe'] = edit_bs.strip()
-                                df_xe_all.loc[idx_xe, 'Loại xe'] = edit_loai
-                                df_xe_all.loc[idx_xe, 'Màu xe'] = edit_mau.strip()
-                                df_xe_all.loc[idx_xe, 'Nơi gửi xe'] = edit_noigui
-                                df_xe_all.loc[idx_xe, 'Tình trạng'] = edit_tinhtrang
-                                df_xe_all.loc[idx_xe, 'Số lần vi phạm'] = edit_solan_vp
+                                df_xe_all['Số lần vi phạm'] = df_xe_all['Số lần vi phạm'].astype(str)
+                                df_xe_all.loc[idx_xe, 'Biển số xe'] = str(edit_bs).strip()
+                                df_xe_all.loc[idx_xe, 'Loại xe'] = str(edit_loai)
+                                df_xe_all.loc[idx_xe, 'Màu xe'] = str(edit_mau).strip()
+                                df_xe_all.loc[idx_xe, 'Nơi gửi xe'] = str(edit_noigui)
+                                df_xe_all.loc[idx_xe, 'Tình trạng'] = str(edit_tinhtrang)
+                                df_xe_all.loc[idx_xe, 'Số lần vi phạm'] = str(edit_solan_vp)
                                 
                                 for d_save in [f_xe, os.path.join(BASE_DIR, 'quan_ly_phuong_tien.csv'), os.path.join('D:/phan_mem_ban_tru_cloud', 'quan_ly_phuong_tien.csv'), os.path.join('d:/OneDrive/Hô sơ cá nhan/Học AI', 'quan_ly_phuong_tien.csv')]:
                                     try:
@@ -1017,6 +1021,8 @@ def render_phan_he_doan_thanh_nien(df_tai_khoan, role_curr, nam_hoc, BASE_DIR, T
                                         curr_tru = int(pd.to_numeric(df_td_curr.loc[i_l, 'Điểm trừ'], errors='coerce') or 0)
                                         curr_tong = int(pd.to_numeric(df_td_curr.loc[i_l, 'Tổng điểm'], errors='coerce') or 100)
                                     
+                                        df_td_curr['Điểm trừ'] = pd.to_numeric(df_td_curr['Điểm trừ'], errors='coerce').fillna(0).astype(int)
+                                        df_td_curr['Tổng điểm'] = pd.to_numeric(df_td_curr['Tổng điểm'], errors='coerce').fillna(100).astype(int)
                                         df_td_curr.loc[i_l, 'Điểm trừ'] = curr_tru + diem_tru_val
                                         df_td_curr.loc[i_l, 'Tổng điểm'] = curr_tong - diem_tru_val
                                         df_td_curr.loc[i_l, 'Ghi chú'] = str(df_td_curr.loc[i_l, 'Ghi chú']) + f"; Trừ {diem_tru_val}đ lỗi xe: {row_xe_tra['Họ và tên']} ({row_xe_tra['Biển số xe']})"
@@ -1027,7 +1033,8 @@ def render_phan_he_doan_thanh_nien(df_tai_khoan, role_curr, nam_hoc, BASE_DIR, T
                                 if not match_idxs.empty:
                                     idx_xe_vp = match_idxs[0]
                                     cur_lan = int(pd.to_numeric(df_xe_all.loc[idx_xe_vp, 'Số lần vi phạm'], errors='coerce') or 0)
-                                    df_xe_all.loc[idx_xe_vp, 'Số lần vi phạm'] = cur_lan + 1
+                                    df_xe_all['Số lần vi phạm'] = df_xe_all['Số lần vi phạm'].astype(str)
+                                    df_xe_all.loc[idx_xe_vp, 'Số lần vi phạm'] = str(cur_lan + 1)
                                     df_xe_all.loc[idx_xe_vp, 'Tình trạng'] = 'Nhắc nhở nề nếp'
                                     df_xe_all.to_csv(f_xe, index=False, encoding='utf-8-sig')
     
