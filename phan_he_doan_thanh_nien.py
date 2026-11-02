@@ -359,11 +359,21 @@ def render_phan_he_doan_thanh_nien(df_tai_khoan, role_curr, nam_hoc, BASE_DIR, T
     u_curr = st.session_state.get("user_login", {})
     u_username = u_curr.get("username", "")
     
-    # Kiểm tra quyền quản lý phương tiện: Admin, BGH, Đoàn trường, Cờ đỏ, Ban Cán sự (Lớp trưởng, Bí thư)
-    quyen_ql = str(u_curr.get("quyen_quan_ly", "")).strip()
+    # Kiểm tra quyền quản lý phương tiện & nề nếp RBAC
+    quyen_ql = str(u_curr.get("quyen_quan_ly", "")).strip().lower()
     chuc_danh_str = str(u_curr.get("chuc_danh", "")).lower()
-    is_bcs = ("ban cán sự" in quyen_ql.lower()) or ("cờ đỏ" in quyen_ql.lower()) or ("lớp trưởng" in chuc_danh_str) or ("bí thư" in chuc_danh_str)
-    la_quan_tri_xe = (role_curr in ["Ban Giám hiệu", "Ban Chấp hành Đoàn", "Đội Cờ đỏ"]) or ("Quản lý phương tiện" in quyen_ql) or ("Toàn quyền" in quyen_ql) or u_curr.get("quyen_quan_ly_xe", False) or is_bcs
+    role_str = str(role_curr).lower()
+
+    # Nhận diện đặc thù: Trưởng phòng KTX chỉ có quyền trên kênh Bán trú, không có quyền cán sự ĐTN
+    is_truong_phong_ktx = ("trưởng phòng" in chuc_danh_str) or ("trưởng phòng" in quyen_ql)
+    is_lop_truong = ("lớp trưởng" in chuc_danh_str) or ("bí thư" in chuc_danh_str) or ("cán sự" in chuc_danh_str)
+    is_co_do = ("cờ đỏ" in quyen_ql) or ("cờ đỏ" in role_str) or ("đoàn trường" in quyen_ql) or ("bch đoàn" in role_str)
+    is_gvcn = ("chủ nhiệm" in chuc_danh_str) or (role_curr == "Giáo viên quản lý")
+    la_bgh_admin = (role_curr in ["Ban Giám hiệu", "Ban Chấp hành Đoàn", "Đội Cờ đỏ"]) or ("toàn quyền" in quyen_ql) or (u_username == "admin")
+
+    # Chỉ Lớp trưởng, Bí thư, Cờ đỏ hoặc Quản trị mới là Ban cán sự ĐTN
+    is_bcs = is_lop_truong or is_co_do or la_bgh_admin
+    la_quan_tri_xe = la_bgh_admin or is_bcs or u_curr.get("quyen_quan_ly_xe", False)
     is_ph_hs = (role_curr in ["Phụ huynh học sinh", "Học sinh"]) and not is_bcs
 
     tab_bang_vang, tab_cham_diem, tab_bcs_si_so, tab_bcs_xe, tab_phuong_tien, tab_phong_trao_dv = st.tabs([
@@ -568,15 +578,29 @@ def render_phan_he_doan_thanh_nien(df_tai_khoan, role_curr, nam_hoc, BASE_DIR, T
     with tab_bcs_si_so:
         st.subheader("📊 Báo Cáo Sĩ Số Lớp (Sáng / Chiều / Cả Ngày) - Dành Cho Lớp Trưởng & Ban Cán Sự")
         st.caption("Cập nhật sĩ số lớp học theo thời gian thực gửi trực tiếp về Ban Giám Hiệu, Đoàn Trường và Giáo viên chủ nhiệm.")
-        import quan_ly_si_so_lop
-        quan_ly_si_so_lop.render_giao_dien_bao_si_so(
-            u_curr=u_curr,
-            role_curr=role_curr if 'role_curr' in locals() else "Ban Chấp hành Đoàn",
-            base_dir=BASE_DIR,
-            is_bcs=is_bcs,
-            is_gvcn=("chủ nhiệm" in chuc_danh_str),
-            is_admin=la_quan_tri_xe
-        )
+        if not (is_lop_truong or is_gvcn or la_bgh_admin):
+            if is_truong_phong_ktx:
+                st.info("ℹ️ **Quy định phân quyền:** Học sinh là **Trưởng phòng Bán trú** thực hiện nhiệm vụ điểm danh và chấm thi đua phòng tại kênh **🛏️ QUẢN LÝ BÁN TRÚ & KTX**.\n\nChức năng **Báo cáo sĩ số lớp** tại kênh Đoàn Thanh Niên chỉ dành riêng cho **Lớp trưởng, Bí thư chi đoàn** và **Giáo viên chủ nhiệm**.")
+            else:
+                st.info("ℹ️ **Quy định phân quyền:** Chức năng **Báo cáo sĩ số lớp** trực tuyến chỉ dành riêng cho **Lớp trưởng, Bí thư chi đoàn** và **Giáo viên chủ nhiệm**.")
+            
+            import quan_ly_si_so_lop
+            df_ss_hom_nay = quan_ly_si_so_lop.lay_du_lieu_si_so(BASE_DIR)
+            if not df_ss_hom_nay.empty:
+                st.markdown("##### 📊 Bảng tổng hợp sĩ số các lớp hôm nay (Chế độ xem):")
+                st.dataframe(df_ss_hom_nay[["Ngày", "Buổi", "Lớp", "Tổng sĩ số", "Có mặt", "Vắng", "Danh sách vắng", "Người báo cáo", "Thời gian cập nhật"]], use_container_width=True, hide_index=True)
+            else:
+                st.info("Hôm nay chưa có dữ liệu báo cáo sĩ số lớp nào được gửi lên.")
+        else:
+            import quan_ly_si_so_lop
+            quan_ly_si_so_lop.render_giao_dien_bao_si_so(
+                u_curr=u_curr,
+                role_curr=role_curr if 'role_curr' in locals() else "Ban Chấp hành Đoàn",
+                base_dir=BASE_DIR,
+                is_bcs=is_bcs,
+                is_gvcn=is_gvcn,
+                is_admin=la_quan_tri_xe
+            )
 
     # -------------------------------------------------------------------------
     # TAB 4: BAN CÁN SỰ: ĐÁNH GIÁ VI PHẠM PHƯƠNG TIỆN
@@ -608,89 +632,95 @@ def render_phan_he_doan_thanh_nien(df_tai_khoan, role_curr, nam_hoc, BASE_DIR, T
                 ]
             st.dataframe(df_xe_show_bcs[["Mã xe", "Họ và tên", "Lớp", "Biển số xe", "Loại xe", "Màu xe", "Nơi gửi xe", "Số lần vi phạm"]], use_container_width=True, hide_index=True)
 
-            # Form đánh giá và ghi nhận vi phạm xe
+            # Form đánh giá và ghi nhận vi phạm xe (Kiểm soát phân quyền chặt chẽ)
             st.markdown("---")
-            st.markdown("##### 🚨 Ghi nhận lỗi vi phạm xe & Chuyển trừ điểm thi đua chi đoàn:")
-            with st.form("form_bcs_danh_gia_xe_dtn"):
-                c_vp1, c_vp2 = st.columns([1.5, 1])
-                with c_vp1:
-                    ds_xe_opt = [f"{r['Mã xe']} - {r['Biển số xe']} - {r['Họ và tên']} ({r['Lớp']})" for idx, r in df_xe_show_bcs.iterrows()] if not df_xe_show_bcs.empty else []
-                    if not ds_xe_opt:
-                        ds_xe_opt = [f"{r['Mã xe']} - {r['Biển số xe']} - {r['Họ và tên']} ({r['Lớp']})" for idx, r in df_xe_bcs.iterrows()]
-                    xe_vp_sel = st.selectbox("Chọn xe vi phạm:", ds_xe_opt, key="sb_xe_vp_bcs_dtn")
-                with c_vp2:
-                    loi_bcs_vp = st.selectbox("Hành vi vi phạm:", [
-                        "Không đội mũ bảo hiểm (-5đ)",
-                        "Đi xe máy phân khối lớn (>50cc) khi chưa đủ tuổi (-20đ)",
-                        "Chở quá số người quy định (-5đ)",
-                        "Đi xe dàn hàng ngang / Lạng lách (-10đ)",
-                        "Không có gương chiếu hậu (-2đ)",
-                        "Gửi xe sai nơi quy định / Không dán tem xe (-3đ)",
-                        "Vi phạm trật tự an toàn giao thông khác (-5đ)"
-                    ], key="sb_loi_bcs_dtn")
-                
-                ghi_chu_bcs = st.text_input("Ghi chú chi tiết (thời điểm, địa điểm vi phạm):", placeholder="VD: Gửi xe sai vị trí quy định tại nhà xe học sinh sáng nay...", key="txt_gc_bcs_dtn")
-                btn_submit_bcs_vp = st.form_submit_button("🚨 XÁC NHẬN ĐÁNH GIÁ VI PHẠM & TRỪ ĐIỂM CHI ĐOÀN", type="primary", use_container_width=True)
-                
-                if btn_submit_bcs_vp and xe_vp_sel:
-                    ma_xe_sel = xe_vp_sel.split(" - ")[0].strip()
-                    r_xe_match = df_xe_bcs[df_xe_bcs['Mã xe'] == ma_xe_sel]
-                    if not r_xe_match.empty:
-                        r_x = r_xe_match.iloc[0]
-                        lop_x = r_x['Lớp']
-                        diem_tru_val = 5
-                        if "(-20đ)" in loi_bcs_vp:
-                            diem_tru_val = 20
-                        elif "(-10đ)" in loi_bcs_vp:
-                            diem_tru_val = 10
-                        elif "(-3đ)" in loi_bcs_vp:
-                            diem_tru_val = 3
-                        elif "(-2đ)" in loi_bcs_vp:
-                            diem_tru_val = 2
-                        
-                        # 1. Trừ điểm thi đua chi đoàn
-                        if os.path.exists(f_dtn_td):
-                            df_td_curr = pd.read_csv(f_dtn_td, encoding='utf-8-sig').fillna("")
-                            idx_lop_m = df_td_curr[df_td_curr['Chi đoàn'] == lop_x].index
-                            if not idx_lop_m.empty:
-                                il = idx_lop_m[0]
-                                c_tru = int(pd.to_numeric(df_td_curr.loc[il, 'Điểm trừ'], errors='coerce') or 0)
-                                c_tong = int(pd.to_numeric(df_td_curr.loc[il, 'Tổng điểm'], errors='coerce') or 100)
-                                df_td_curr.loc[il, 'Điểm trừ'] = c_tru + diem_tru_val
-                                df_td_curr.loc[il, 'Tổng điểm'] = c_tong - diem_tru_val
-                                df_td_curr.loc[il, 'Ghi chú'] = str(df_td_curr.loc[il, 'Ghi chú']) + f"; Ban cán sự báo vi phạm xe: {r_x['Họ và tên']} ({r_x['Biển số xe']})"
-                                df_td_curr.to_csv(f_dtn_td, index=False, encoding='utf-8-sig')
-
-                        # 2. Tăng số lần vi phạm xe
-                        idx_x_all = df_xe_bcs[df_xe_bcs['Mã xe'] == ma_xe_sel].index
-                        if not idx_x_all.empty:
-                            ix = idx_x_all[0]
-                            cur_lan = int(pd.to_numeric(df_xe_bcs.loc[ix, 'Số lần vi phạm'], errors='coerce') or 0)
-                            df_xe_bcs.loc[ix, 'Số lần vi phạm'] = cur_lan + 1
-                            df_xe_bcs.loc[ix, 'Tình trạng'] = 'Nhắc nhở nề nếp'
-                            for d_save in [f_xe, os.path.join(BASE_DIR, 'quan_ly_phuong_tien.csv'), os.path.join('D:/phan_mem_ban_tru_cloud', 'quan_ly_phuong_tien.csv')]:
-                                try:
-                                    df_xe_bcs.to_csv(d_save, index=False, encoding='utf-8-sig')
-                                except Exception:
-                                    pass
-
-                        # 3. Ghi vào lịch sử vi phạm
-                        df_vp_new = pd.DataFrame([{
-                            'Ngày': date.today().strftime('%d/%m/%Y'),
-                            'Mã xe': ma_xe_sel,
-                            'Họ và tên': r_x['Họ và tên'],
-                            'Lớp': lop_x,
-                            'Biển số xe': r_x['Biển số xe'],
-                            'Lỗi vi phạm': loi_bcs_vp,
-                            'Điểm trừ': diem_tru_val,
-                            'Người lập biên bản': u_curr.get('fullname', 'Ban Cán Sự'),
-                            'Ghi chú': ghi_chu_bcs,
-                            'Trạng thái': 'Đã trừ điểm ĐTN'
-                        }])
-                        df_vp_all = pd.concat([pd.read_csv(f_vp, encoding='utf-8-sig'), df_vp_new], ignore_index=True) if os.path.exists(f_vp) else df_vp_new
-                        df_vp_all.to_csv(f_vp, index=False, encoding='utf-8-sig')
-                        st.success(f"🎉 Đã ghi nhận vi phạm thành công cho xe {r_x['Biển số xe']} ({r_x['Họ và tên']} - Lớp {lop_x})! Chi đoàn đã bị trừ {diem_tru_val} điểm.")
-                        st.rerun()
+            if not (is_bcs or la_quan_tri_xe):
+                if is_truong_phong_ktx:
+                    st.info("ℹ️ **Quy định phân quyền:** Học sinh là **Trưởng phòng Bán trú** chỉ thực hiện thao tác quyền quản lý phòng KTX tại kênh **🛏️ QUẢN LÝ BÁN TRÚ & KTX**.\n\nChức năng **Đánh giá vi phạm phương tiện & trừ điểm thi đua chi đoàn** chỉ dành cho **Ban Cán sự lớp (Lớp trưởng, Bí thư)** và **Đội Cờ đỏ**.")
+                else:
+                    st.info("ℹ️ **Quy định phân quyền:** Chức năng Đánh giá vi phạm xe và trừ điểm thi đua chỉ dành cho Ban Cán sự lớp, Đội Cờ đỏ và Ban Chấp hành Đoàn trường.")
+            else:
+                st.markdown("##### 🚨 Ghi nhận lỗi vi phạm xe & Chuyển trừ điểm thi đua chi đoàn:")
+                with st.form("form_bcs_danh_gia_xe_dtn"):
+                    c_vp1, c_vp2 = st.columns([1.5, 1])
+                    with c_vp1:
+                        ds_xe_opt = [f"{r['Mã xe']} - {r['Biển số xe']} - {r['Họ và tên']} ({r['Lớp']})" for idx, r in df_xe_show_bcs.iterrows()] if not df_xe_show_bcs.empty else []
+                        if not ds_xe_opt:
+                            ds_xe_opt = [f"{r['Mã xe']} - {r['Biển số xe']} - {r['Họ và tên']} ({r['Lớp']})" for idx, r in df_xe_bcs.iterrows()]
+                        xe_vp_sel = st.selectbox("Chọn xe vi phạm:", ds_xe_opt, key="sb_xe_vp_bcs_dtn")
+                    with c_vp2:
+                        loi_bcs_vp = st.selectbox("Hành vi vi phạm:", [
+                            "Không đội mũ bảo hiểm (-5đ)",
+                            "Đi xe máy phân khối lớn (>50cc) khi chưa đủ tuổi (-20đ)",
+                            "Chở quá số người quy định (-5đ)",
+                            "Đi xe dàn hàng ngang / Lạng lách (-10đ)",
+                            "Không có gương chiếu hậu (-2đ)",
+                            "Gửi xe sai nơi quy định / Không dán tem xe (-3đ)",
+                            "Vi phạm trật tự an toàn giao thông khác (-5đ)"
+                        ], key="sb_loi_bcs_dtn")
+                    
+                    ghi_chu_bcs = st.text_input("Ghi chú chi tiết (thời điểm, địa điểm vi phạm):", placeholder="VD: Gửi xe sai vị trí quy định tại nhà xe học sinh sáng nay...", key="txt_gc_bcs_dtn")
+                    btn_submit_bcs_vp = st.form_submit_button("🚨 XÁC NHẬN ĐÁNH GIÁ VI PHẠM & TRỪ ĐIỂM CHI ĐOÀN", type="primary", use_container_width=True)
+                    
+                    if btn_submit_bcs_vp and xe_vp_sel:
+                        ma_xe_sel = xe_vp_sel.split(" - ")[0].strip()
+                        r_xe_match = df_xe_bcs[df_xe_bcs['Mã xe'] == ma_xe_sel]
+                        if not r_xe_match.empty:
+                            r_x = r_xe_match.iloc[0]
+                            lop_x = r_x['Lớp']
+                            diem_tru_val = 5
+                            if "(-20đ)" in loi_bcs_vp:
+                                diem_tru_val = 20
+                            elif "(-10đ)" in loi_bcs_vp:
+                                diem_tru_val = 10
+                            elif "(-3đ)" in loi_bcs_vp:
+                                diem_tru_val = 3
+                            elif "(-2đ)" in loi_bcs_vp:
+                                diem_tru_val = 2
+                            
+                            # 1. Trừ điểm thi đua chi đoàn
+                            if os.path.exists(f_dtn_td):
+                                df_td_curr = pd.read_csv(f_dtn_td, encoding='utf-8-sig').fillna("")
+                                idx_lop_m = df_td_curr[df_td_curr['Chi đoàn'] == lop_x].index
+                                if not idx_lop_m.empty:
+                                    il = idx_lop_m[0]
+                                    c_tru = int(pd.to_numeric(df_td_curr.loc[il, 'Điểm trừ'], errors='coerce') or 0)
+                                    c_tong = int(pd.to_numeric(df_td_curr.loc[il, 'Tổng điểm'], errors='coerce') or 100)
+                                    df_td_curr.loc[il, 'Điểm trừ'] = c_tru + diem_tru_val
+                                    df_td_curr.loc[il, 'Tổng điểm'] = c_tong - diem_tru_val
+                                    df_td_curr.loc[il, 'Ghi chú'] = str(df_td_curr.loc[il, 'Ghi chú']) + f"; Ban cán sự báo vi phạm xe: {r_x['Họ và tên']} ({r_x['Biển số xe']})"
+                                    df_td_curr.to_csv(f_dtn_td, index=False, encoding='utf-8-sig')
+    
+                            # 2. Tăng số lần vi phạm xe
+                            idx_x_all = df_xe_bcs[df_xe_bcs['Mã xe'] == ma_xe_sel].index
+                            if not idx_x_all.empty:
+                                ix = idx_x_all[0]
+                                cur_lan = int(pd.to_numeric(df_xe_bcs.loc[ix, 'Số lần vi phạm'], errors='coerce') or 0)
+                                df_xe_bcs.loc[ix, 'Số lần vi phạm'] = cur_lan + 1
+                                df_xe_bcs.loc[ix, 'Tình trạng'] = 'Nhắc nhở nề nếp'
+                                for d_save in [f_xe, os.path.join(BASE_DIR, 'quan_ly_phuong_tien.csv'), os.path.join('D:/phan_mem_ban_tru_cloud', 'quan_ly_phuong_tien.csv')]:
+                                    try:
+                                        df_xe_bcs.to_csv(d_save, index=False, encoding='utf-8-sig')
+                                    except Exception:
+                                        pass
+    
+                            # 3. Ghi vào lịch sử vi phạm
+                            df_vp_new = pd.DataFrame([{
+                                'Ngày': date.today().strftime('%d/%m/%Y'),
+                                'Mã xe': ma_xe_sel,
+                                'Họ và tên': r_x['Họ và tên'],
+                                'Lớp': lop_x,
+                                'Biển số xe': r_x['Biển số xe'],
+                                'Lỗi vi phạm': loi_bcs_vp,
+                                'Điểm trừ': diem_tru_val,
+                                'Người lập biên bản': u_curr.get('fullname', 'Ban Cán Sự'),
+                                'Ghi chú': ghi_chu_bcs,
+                                'Trạng thái': 'Đã trừ điểm ĐTN'
+                            }])
+                            df_vp_all = pd.concat([pd.read_csv(f_vp, encoding='utf-8-sig'), df_vp_new], ignore_index=True) if os.path.exists(f_vp) else df_vp_new
+                            df_vp_all.to_csv(f_vp, index=False, encoding='utf-8-sig')
+                            st.success(f"🎉 Đã ghi nhận vi phạm thành công cho xe {r_x['Biển số xe']} ({r_x['Họ và tên']} - Lớp {lop_x})! Chi đoàn đã bị trừ {diem_tru_val} điểm.")
+                            st.rerun()
         else:
             st.info("💡 Chưa có dữ liệu phương tiện xe trong cơ sở dữ liệu.")
 

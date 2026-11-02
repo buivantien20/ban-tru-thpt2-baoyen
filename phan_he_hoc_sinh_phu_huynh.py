@@ -103,13 +103,13 @@ def render_cong_phu_huynh(u_curr, df_current, ngay_lam_viec, BASE_DIR, FILE_DU_L
 
     st.markdown("---")
 
-    # 1.3. CÁC TÁC NGHIỆP PHỤ HUYNH
-    tab_ph_cat, tab_ph_ve, tab_ph_qr, tab_ph_td, tab_ph_edit = st.tabs([
-        "🥣 BÁO CẮT CƠM (06:30 - 07:30)",
-        "🚗 BÁO CON XIN VỀ / XUỐNG TRƯỜNG",
-        "💳 ĐÓNG TIỀN ĂN QUA MÃ VIETQR",
-        "🥗 THỰC ĐƠN BỮA ĂN CỦA CON",
-        "👤 CHỈNH SỬA THÔNG TIN PHỤ HUYNH & HỌC SINH"
+    # 1.3. CÁC TÁC NGHIỆP PHỤ HUYNH (ĐÚNG QUY CHUẨN: CHỈ CÓ CHỨC NĂNG XIN NGHỈ HỌC & BÁO CẮT CƠM)
+    tab_ph_cat, tab_ph_ve, tab_ph_ls, tab_ph_td, tab_ph_qr = st.tabs([
+        "🥣 BÁO CẮT CƠM CHO CON (06:30 - 07:30)",
+        "📝 ĐƠN XIN NGHỈ HỌC & BÁO VỀ NHÀ / XUỐNG TRƯỜNG",
+        "📋 LỊCH SỬ ĐƠN BÁO CẮT CƠM & XIN NGHỈ ĐÃ GỬI",
+        "🥗 THỰC ĐƠN BỮA ĂN CỦA CON (XEM THÔNG TIN)",
+        "💳 ĐỐI SOÁT TIỀN ĂN BÁN TRÚ (VIETQR)"
     ])
 
     with tab_ph_cat:
@@ -198,54 +198,25 @@ def render_cong_phu_huynh(u_curr, df_current, ngay_lam_viec, BASE_DIR, FILE_DU_L
         st.image(vietqr_img_url, width=300)
         st.caption("Quý phụ huynh mở app Ngân hàng (Agribank, BIDV, VietinBank...) quét mã QR để chuyển khoản nhanh, không cần gõ số tài khoản.")
 
+    with tab_ph_ls:
+        st.markdown("#### 📋 Lịch Sử Đơn Báo Cắt Cơm & Xin Nghỉ Của Con")
+        st.caption("Quý phụ huynh theo dõi trạng thái tiếp nhận và phê duyệt của Thầy Quản nhiệm KTX và Ban Giám Hiệu:")
+        if os.path.exists(FILE_XIN_VE):
+            df_ls_xv = pd.read_csv(FILE_XIN_VE, encoding='utf-8-sig', dtype=str).fillna("")
+            df_con_ls = df_ls_xv[df_ls_xv["Mã HS"] == row_con.get("Mã HS", "")].copy()
+            if not df_con_ls.empty:
+                st.dataframe(df_con_ls[["Thời gian", "Hình thức", "Lý do", "Người đón / SĐT", "Người duyệt", "Trạng thái"]], use_container_width=True, hide_index=True)
+            else:
+                st.info("ℹ️ Hiện gia đình chưa gửi đơn báo cắt cơm hoặc xin nghỉ nào cho cháu.")
+        else:
+            st.info("ℹ️ Hiện chưa có dữ liệu lịch sử đơn.")
+
     with tab_ph_td:
         st.markdown("#### 🥗 Thực Đơn Tuần Này Của Con Tại Nhà Ăn Trường")
+        st.caption("Thực đơn dinh dưỡng đảm bảo tiêu chuẩn vệ sinh an toàn thực phẩm của trường THPT số 2 Bảo Yên:")
         if os.path.exists(FILE_THUC_DON):
             df_td_v = pd.read_csv(FILE_THUC_DON, encoding='utf-8-sig')
             st.dataframe(df_td_v, use_container_width=True, hide_index=True)
-
-    with tab_ph_edit:
-        st.markdown("#### 👤 Chỉnh Sửa & Cập Nhật Hồ Sơ Của Quý Phụ Huynh")
-        st.info("🔒 **Quyền riêng tư:** Quý phụ huynh chỉ có quyền xem và cập nhật thông tin của chính mình và con em mình. Thông tin sẽ được đồng bộ trực tiếp vào cơ sở dữ liệu nhà trường.")
-        with st.form("form_edit_phuhuynh_profile"):
-            c_e1, c_e2 = st.columns(2)
-            with c_e1:
-                ten_bo_moi = st.text_input("Họ tên Bố:", value=str(row_con.get("Họ tên Bố", "")).replace("nan", ""))
-                ten_me_moi = st.text_input("Họ tên Mẹ:", value=str(row_con.get("Họ tên Mẹ", "")).replace("nan", ""))
-                sdt_ph_moi = st.text_input("Số điện thoại Phụ huynh liên hệ:", value=clean_phone_str(row_con.get("SĐT Phụ huynh", "")))
-            with c_e2:
-                thon_moi = st.text_input("Thôn / Bản:", value=str(row_con.get("Thôn", "")).replace("nan", ""))
-                xa_moi = st.text_input("Xã / Thị trấn:", value=str(row_con.get("Xã", "")).replace("nan", ""))
-                pw_ph_moi = st.text_input("Đổi mật khẩu mới (bỏ trống nếu giữ nguyên):", type="password")
-
-            if st.form_submit_button("💾 LƯU THAY ĐỔI THÔNG TIN HỒ SƠ", type="primary", use_container_width=True):
-                idx_con = df_current[df_current["Mã HS"] == row_con["Mã HS"]].index[0]
-                if ten_bo_moi.strip():
-                    df_current.loc[idx_con, "Họ tên Bố"] = ten_bo_moi.strip()
-                if ten_me_moi.strip():
-                    df_current.loc[idx_con, "Họ tên Mẹ"] = ten_me_moi.strip()
-                if sdt_ph_moi.strip():
-                    df_current.loc[idx_con, "SĐT Phụ huynh"] = clean_phone_str(sdt_ph_moi)
-                if thon_moi.strip():
-                    df_current.loc[idx_con, "Thôn"] = thon_moi.strip()
-                if xa_moi.strip():
-                    df_current.loc[idx_con, "Xã"] = xa_moi.strip()
-
-                dong_bo_file_da_noi(df_current, [FILE_DU_LIEU_THUC_TE, "D:/danh_sach_hoc_sinh_thuc_te.csv", "D:/phan_mem_ban_tru_cloud/danh_sach_hoc_sinh_thuc_te.csv"])
-
-                # Cập nhật bảng tài khoản
-                if os.path.exists(FILE_TAI_KHOAN):
-                    df_tk = pd.read_csv(FILE_TAI_KHOAN, encoding='utf-8-sig', dtype=str).fillna("")
-                    m_tk = (df_tk["Tên đăng nhập"] == u_curr.get("username", "")) | (df_tk["Mã liên kết"] == row_con["Mã HS"])
-                    if m_tk.any():
-                        if sdt_ph_moi.strip():
-                            df_tk.loc[m_tk, "Số điện thoại"] = clean_phone_str(sdt_ph_moi)
-                        if pw_ph_moi.strip() and len(pw_ph_moi.strip()) >= 4:
-                            df_tk.loc[m_tk, "Mật khẩu"] = pw_ph_moi.strip()
-                        dong_bo_file_da_noi(df_tk, [FILE_TAI_KHOAN, "D:/tai_khoan_nguoi_dung.csv", "D:/phan_mem_ban_tru_cloud/tai_khoan_nguoi_dung.csv"])
-
-                st.success("🎉 Đã cập nhật thành công thông tin hồ sơ của gia đình! Cảm ơn quý phụ huynh.")
-                st.rerun()
 
 
 # =============================================================================

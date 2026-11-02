@@ -681,31 +681,55 @@ with st.sidebar:
     if st.session_state.nam_hoc_hien_tai != nam_hoc_mac_dinh:
         st.warning(f"📂 Hồ sơ lưu trữ: **{st.session_state.nam_hoc_hien_tai}**")
 
+    u_curr = st.session_state.user_login
+    role_curr = u_curr.get("role", "")
+
     st.markdown("---")
     st.markdown("#### 🏛️ **PHÂN HỆ HỆ THỐNG**")
-    ds_phan_he = [
-        "🏛️ HỆ THỐNG QUẢN TRỊ & ĐIỀU HÀNH NHÀ TRƯỜNG",
-        "🛏️ QUẢN LÝ BÁN TRÚ & KTX",
-        "🚩 ĐOÀN THANH NIÊN (ĐTN)"
-    ]
-    if "phan_he_hien_tai" not in st.session_state:
-        st.session_state.phan_he_hien_tai = "🛏️ QUẢN LÝ BÁN TRÚ & KTX"
-
-    chon_phan_he_sb = st.radio(
-        "Chọn phân hệ:",
-        ds_phan_he,
-        index=ds_phan_he.index(st.session_state.phan_he_hien_tai) if st.session_state.phan_he_hien_tai in ds_phan_he else 0,
-        key="radio_chon_phan_he"
-    )
-    if chon_phan_he_sb != st.session_state.phan_he_hien_tai:
-        st.session_state.phan_he_hien_tai = chon_phan_he_sb
-        st.rerun()
     
+    # Phân quyền danh sách phân hệ theo vai trò (RBAC nghiêm ngặt):
+    # 1. Phụ huynh: CHỈ ĐƯỢC xem thông tin tại duy nhất kênh 🛏️ QUẢN LÝ BÁN TRÚ & KTX
+    # 2. Học sinh: CHỈ ĐƯỢC vào 2 kênh 🛏️ QUẢN LÝ BÁN TRÚ & KTX và 🚩 ĐOÀN THANH NIÊN (ĐTN)
+    # 3. Các vai trò quản lý khác (BGH, GVCN, Quản nhiệm, Kế toán, Bếp, Cờ đỏ...): Toàn quyền cả 3 phân hệ
+    if role_curr == "Phụ huynh học sinh":
+        ds_phan_he = [
+            "🛏️ QUẢN LÝ BÁN TRÚ & KTX"
+        ]
+    elif role_curr == "Học sinh":
+        ds_phan_he = [
+            "🛏️ QUẢN LÝ BÁN TRÚ & KTX",
+            "🚩 ĐOÀN THANH NIÊN (ĐTN)"
+        ]
+    else:
+        ds_phan_he = [
+            "🏛️ HỆ THỐNG QUẢN TRỊ & ĐIỀU HÀNH NHÀ TRƯỜNG",
+            "🛏️ QUẢN LÝ BÁN TRÚ & KTX",
+            "🚩 ĐOÀN THANH NIÊN (ĐTN)"
+        ]
+
+    # Kiểm tra an toàn bảo mật: Nếu phân hệ hiện tại không nằm trong danh sách được phép thì gán lại
+    if ("phan_he_hien_tai" not in st.session_state) or (st.session_state.phan_he_hien_tai not in ds_phan_he):
+        st.session_state.phan_he_hien_tai = ds_phan_he[0]
+
+    if len(ds_phan_he) > 1:
+        chon_phan_he_sb = st.radio(
+            "Chọn phân hệ:",
+            ds_phan_he,
+            index=ds_phan_he.index(st.session_state.phan_he_hien_tai),
+            key="radio_chon_phan_he"
+        )
+        if chon_phan_he_sb != st.session_state.phan_he_hien_tai:
+            st.session_state.phan_he_hien_tai = chon_phan_he_sb
+            st.rerun()
+    else:
+        st.session_state.phan_he_hien_tai = ds_phan_he[0]
+        st.markdown(
+            f"<div style='background:#F5F3FF; border:1px solid #C4B5FD; color:#6D28D9; padding:8px 12px; border-radius:8px; font-weight:bold; font-size:13px; text-align:center;'>🛏️ QUẢN LÝ BÁN TRÚ & KTX</div>",
+            unsafe_allow_html=True
+        )
+
     st.markdown("---")
     st.markdown("#### 🔐 **THÔNG TIN ĐĂNG NHẬP**")
-    
-    u_curr = st.session_state.user_login
-    role_curr = u_curr["role"]
     
     # Hiển thị huy hiệu vai trò
     badge_color = {
@@ -1075,8 +1099,19 @@ if st.session_state.get("is_admin_mode", False) and role_curr != "Ban Giám hi�
             }
             st.rerun()
 
-# 4. ĐIỀU HƯỚNG THEO PHÂN HỆ HỆ THỐNG
+# 4. ĐIỀU HƯỚNG THEO PHÂN HỆ HỆ THỐNG (KIỂM SOÁT BẢO MẬT RBAC)
 # ========================================================
+# Chặn tuyệt đối Học sinh và Phụ huynh vào Phân hệ Quản trị nhà trường
+if role_curr in ["Học sinh", "Phụ huynh học sinh"] and any(kw in st.session_state.phan_he_hien_tai for kw in ["QUẢN TRỊ", "QUẢN LÝ CHUNG", "ĐIỀU HÀNH"]):
+    st.session_state.phan_he_hien_tai = "🛏️ QUẢN LÝ BÁN TRÚ & KTX"
+    st.warning("⚠️ Tài khoản của bạn không được phân quyền truy cập Phân hệ Quản trị nhà trường.")
+    st.rerun()
+
+# Chặn Phụ huynh vào Phân hệ Đoàn Thanh Niên
+if role_curr == "Phụ huynh học sinh" and "ĐOÀN THANH NIÊN" in st.session_state.phan_he_hien_tai:
+    st.session_state.phan_he_hien_tai = "🛏️ QUẢN LÝ BÁN TRÚ & KTX"
+    st.rerun()
+
 if "QUẢN TRỊ" in st.session_state.phan_he_hien_tai or "QUẢN LÝ CHUNG" in st.session_state.phan_he_hien_tai or "ĐIỀU HÀNH" in st.session_state.phan_he_hien_tai:
     import phan_he_quan_ly_chung
     import importlib
