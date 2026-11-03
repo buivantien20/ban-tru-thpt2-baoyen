@@ -240,6 +240,26 @@ URL_PWA_MOBILE = "https://buivantien20.github.io/ban-tru-thpt2-baoyen/"
 duong_dan_online = URL_APP_CHINH_THUC
 duong_dan_app_mobile = URL_PWA_MOBILE
 
+# Tự động điều hướng trên di động sang Cổng PWA chuẩn có Logo trường THPT số 2 Bảo Yên
+st.html("""
+<script>
+(function() {
+    try {
+        var isEmbedded = (window.self !== window.top);
+        var isStreamlitCloud = window.location.hostname.indexOf("streamlit.app") !== -1;
+        var hasNoRedirect = window.location.search.indexOf("no_redirect=1") !== -1 || window.location.search.indexOf("embed=true") !== -1;
+        var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+        
+        if (!isEmbedded && isStreamlitCloud && !hasNoRedirect && isMobile) {
+            window.location.replace("https://buivantien20.github.io/ban-tru-thpt2-baoyen/");
+        }
+    } catch(e) {
+        console.error("Redirect check:", e);
+    }
+})();
+</script>
+""", unsafe_allow_javascript=True)
+
 # CSS giao diện tối ưu di động và thẻ trực quan kèm biểu tượng App
 st.markdown("""
 <style>
@@ -743,20 +763,23 @@ if not st.session_state.user_login.get("logged_in", False):
         st.markdown(f"""
         <div style="border: 2px solid #16A34A; padding: 18px; border-radius: 14px; background: #F0FDF4; box-shadow: 0 4px 12px rgba(22, 163, 74, 0.12); text-align: center;">
             <div style="background:#16A34A; color:white; display:inline-block; padding:4px 14px; border-radius:20px; font-weight:bold; font-size:12px; margin-bottom:8px;">
-                📱 CÀI ĐẶT APP LÊN ĐIỆN THOẠI
+                📱 CÀI ĐẶT APP LÊN ĐIỆN THOẠI (CÓ LOGO TRƯỜNG)
             </div>
             <h4 style="color:#15803D; margin:4px 0 8px 0;">DÙNG CAMERA ĐIỆN THOẠI QUÉT MÃ</h4>
             <div style="background:white; padding:10px; border-radius:10px; display:inline-block; border:1px solid #BBF7D0;">
                 <img src="https://api.qrserver.com/v1/create-qr-code/?size=280x280&data={link_qr_cai_app}" width="210" style="display:block; border-radius:6px;">
             </div>
             <p style="margin-top:8px; font-size:13px; font-weight:bold; color:#166534; margin-bottom:4px;">
-                Địa chỉ đám mây 24/7 (4G / Wi-Fi toàn cầu):<br>
-                <a href="{link_qr_cai_app}" target="_blank" style="color:#2563EB; font-size:14px; word-break:break-all; text-decoration:underline;">{link_qr_cai_app}</a>
+                Cổng cài đặt App Logo Trường:<br>
+                <a href="{link_qr_cai_app}" target="_blank" style="color:#2563EB; font-size:13.5px; word-break:break-all; text-decoration:underline;">{link_qr_cai_app}</a>
             </p>
+            <div style="text-align: left; background: #FEF3C7; border: 1px solid #F59E0B; padding: 8px 12px; border-radius: 8px; font-size: 11.5px; line-height: 1.45; color: #92400E; margin-top: 8px;">
+                ⚠️ <b>LƯU Ý QUAN TRỌNG:</b> Nếu máy Thầy/Cô đang có biểu tượng cũ hình vương miện đỏ, vui lòng <b>nhấn giữ & xóa biểu tượng cũ đó đi</b> trước khi cài lại để hiển thị chuẩn Logo trường!
+            </div>
             <div style="text-align: left; background: white; padding: 10px 14px; border-radius: 8px; border: 1px solid #E2E8F0; font-size: 12px; line-height: 1.5; color: #1E293B; margin-top: 8px;">
-                <b>📲 CÁCH CÀI THÀNH APP MÀN HÌNH CHÍNH (30s):</b><br>
-                🍏 <b>iPhone (Safari):</b> Quét mã ➜ Bấm nút <b>Chia sẻ</b> ⬆️ ở đáy ➜ Chọn <b>"Thêm vào MH chính"</b>.<br>
-                🤖 <b>Android (Chrome):</b> Quét mã ➜ Bấm <b>3 chấm ⋮</b> góc trên ➜ Chọn <b>"Cài đặt ứng dụng"</b>.
+                <b>📲 CÁCH CÀI THÀNH APP MÀN HÌNH CHÍNH:</b><br>
+                🍏 <b>iPhone (Safari):</b> Mở link cổng trên ➜ Bấm nút <b>Chia sẻ</b> ⬆️ ở đáy Safari ➜ Chọn <b>"Thêm vào MH chính"</b>.<br>
+                🤖 <b>Android (Chrome):</b> Mở link cổng trên ➜ Bấm <b>3 chấm ⋮</b> ➜ Chọn <b>"Cài đặt ứng dụng"</b>.
             </div>
         </div>
         """, unsafe_allow_html=True)
