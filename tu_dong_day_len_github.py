@@ -62,6 +62,29 @@ def push_to_github_api(token, repo="buivantien20/ban-tru-thpt2-baoyen", branch="
             for fn in os.listdir(r"D:\\"):
                 if fn.endswith('.csv') and os.path.isfile(os.path.join(r"D:\\", fn)):
                     shutil.copy2(os.path.join(r"D:\\", fn), os.path.join(folder, fn))
+            # Copy các file icon, manifest, logo
+            icon_exts = ('.png', '.ico', '.jpg', '.jpeg', '.webmanifest', '.json')
+            for fn in os.listdir(r"D:\\"):
+                if fn.endswith(icon_exts) and os.path.isfile(os.path.join(r"D:\\", fn)):
+                    shutil.copy2(os.path.join(r"D:\\", fn), os.path.join(folder, fn))
+            # Copy thư mục static
+            src_static = r"D:\static"
+            dst_static = os.path.join(folder, "static")
+            if os.path.exists(src_static):
+                os.makedirs(dst_static, exist_ok=True)
+                for sfn in os.listdir(src_static):
+                    sfp = os.path.join(src_static, sfn)
+                    if os.path.isfile(sfp):
+                        shutil.copy2(sfp, os.path.join(dst_static, sfn))
+            # Copy thư mục .streamlit
+            src_st_cfg = r"D:\.streamlit"
+            dst_st_cfg = os.path.join(folder, ".streamlit")
+            if os.path.exists(src_st_cfg):
+                os.makedirs(dst_st_cfg, exist_ok=True)
+                for cfn in os.listdir(src_st_cfg):
+                    cfp = os.path.join(src_st_cfg, cfn)
+                    if os.path.isfile(cfp):
+                        shutil.copy2(cfp, os.path.join(dst_st_cfg, cfn))
 
         # 1. Lấy SHA của commit mới nhất trên nhánh branch
         ref_url = f"https://api.github.com/repos/{repo}/git/refs/heads/{branch}"

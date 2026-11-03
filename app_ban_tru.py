@@ -44,6 +44,71 @@ def lay_logo_base64(duong_dan):
 logo_b64 = lay_logo_base64(FILE_LOGO)
 logo_data_uri = f"data:image/png;base64,{logo_b64}" if logo_b64 else ""
 
+def thiet_lap_bieu_tuong_pwa():
+    """
+    Tự động thiết lập biểu tượng Logo trường làm Apple Touch Icon & PWA Manifest
+    cho điện thoại (iPhone Safari & Android Chrome) trên cả Local và Streamlit Cloud.
+    """
+    import shutil
+    try:
+        import streamlit
+        st_static = os.path.join(os.path.dirname(streamlit.__file__), "static")
+        if os.path.exists(st_static):
+            files_to_copy = [
+                'apple-touch-icon.png', 'apple-touch-icon-precomposed.png',
+                'favicon.png', 'logo_192.png', 'logo_512.png',
+                'site.webmanifest', 'manifest.json'
+            ]
+            for fn in files_to_copy:
+                for src_dir in [os.path.join(CUR_DIR, "static"), os.path.join(BASE_DIR, "static"), CUR_DIR, BASE_DIR]:
+                    src_f = os.path.join(src_dir, fn)
+                    if os.path.exists(src_f):
+                        dst_f = os.path.join(st_static, fn)
+                        if not os.path.exists(dst_f) or os.path.getsize(dst_f) != os.path.getsize(src_f):
+                            shutil.copy2(src_f, dst_f)
+                        break
+
+            idx_file = os.path.join(st_static, "index.html")
+            if os.path.exists(idx_file):
+                with open(idx_file, "r", encoding="utf-8") as f:
+                    idx_html = f.read()
+                
+                the_chuan = (
+                    '    <link rel="shortcut icon" href="/favicon.png" />\n'
+                    '    <link rel="icon" type="image/png" sizes="192x192" href="/logo_192.png" />\n'
+                    '    <link rel="icon" type="image/png" sizes="512x512" href="/logo_512.png" />\n'
+                    '    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />\n'
+                    '    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />\n'
+                    '    <link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png" />\n'
+                    '    <link rel="apple-touch-icon" sizes="192x192" href="/logo_192.png" />\n'
+                    '    <link rel="apple-touch-icon" sizes="512x512" href="/logo_512.png" />\n'
+                    '    <link rel="manifest" href="/site.webmanifest" />\n'
+                    '    <meta name="apple-mobile-web-app-capable" content="yes" />\n'
+                    '    <meta name="apple-mobile-web-app-status-bar-style" content="default" />\n'
+                    '    <meta name="apple-mobile-web-app-title" content="THPT 2 Bảo Yên" />\n'
+                    '    <meta name="application-name" content="THPT 2 Bảo Yên" />\n'
+                    '    <meta name="theme-color" content="#1E3A8A" />\n'
+                )
+
+                needs_update = False
+                if 'rel="apple-touch-icon"' not in idx_html or 'apple-mobile-web-app-title' not in idx_html:
+                    if '<head>' in idx_html:
+                        idx_html = idx_html.replace('<head>', f'<head>\n{the_chuan}', 1)
+                        needs_update = True
+                
+                if '<title>Streamlit</title>' in idx_html:
+                    idx_html = idx_html.replace('<title>Streamlit</title>', '<title>THPT 2 Bảo Yên</title>')
+                    needs_update = True
+
+                if needs_update:
+                    with open(idx_file, "w", encoding="utf-8") as f:
+                        f.write(idx_html)
+    except Exception:
+        pass
+
+thiet_lap_bieu_tuong_pwa()
+
+
 # ========================================================
 # 1. CẤU HÌNH HỆ THỐNG QUẢN LÝ BÁN TRÚ THPT SỐ 2 BẢO YÊN
 # ========================================================
@@ -286,72 +351,75 @@ st.markdown("""
     .badge-ph { background-color: #7C3AED; color: white; padding: 3px 10px; border-radius: 12px; font-weight: bold; font-size: 13px; }
     .badge-hs { background-color: #0284C7; color: white; padding: 3px 10px; border-radius: 12px; font-weight: bold; font-size: 13px; }
 </style>
+""", unsafe_allow_html=True)
+
+# Kích hoạt cập nhật biểu tượng Logo trường trực tiếp trong trình duyệt qua iframe component
+import streamlit.components.v1 as components
+components.html("""
 <script>
 (function() {
-    try {
-        const head = window.parent.document.head;
-        const logoUri = "/app/static/apple-touch-icon.png";
-        const logoFallback = "/apple-touch-icon.png";
+    function capNhatIcon() {
+        try {
+            var doc = window.parent.document || window.top.document || document;
+            var head = doc.head;
+            if (!head) return;
 
-        // 1. Apple Touch Icon cho iPhone Safari khi Thêm vào Màn hình chính
-        let appleIcon = head.querySelector('link[rel="apple-touch-icon"]');
-        if (!appleIcon) {
-            appleIcon = window.parent.document.createElement('link');
-            appleIcon.rel = 'apple-touch-icon';
-            appleIcon.setAttribute('sizes', '192x192');
-            head.appendChild(appleIcon);
-        }
-        appleIcon.href = logoUri;
+            // 1. Đặt Tiêu đề chuẩn khi lưu màn hình chính
+            if (!doc.title || doc.title === "Streamlit" || doc.title.indexOf("THPT") === -1) {
+                doc.title = "THPT 2 Bảo Yên";
+            }
 
-        let appleIconPre = head.querySelector('link[rel="apple-touch-icon-precomposed"]');
-        if (!appleIconPre) {
-            appleIconPre = window.parent.document.createElement('link');
-            appleIconPre.rel = 'apple-touch-icon-precomposed';
-            head.appendChild(appleIconPre);
-        }
-        appleIconPre.href = logoUri;
+            // 2. Thẻ Apple Touch Icon & Favicon cho điện thoại (iPhone Safari & Android Chrome)
+            var dsThe = [
+                { rel: "apple-touch-icon", href: "/apple-touch-icon.png", sizes: "180x180" },
+                { rel: "apple-touch-icon", href: "/logo_192.png", sizes: "192x192" },
+                { rel: "apple-touch-icon-precomposed", href: "/apple-touch-icon.png" },
+                { rel: "icon", href: "/logo_192.png", type: "image/png", sizes: "192x192" },
+                { rel: "icon", href: "/logo_512.png", type: "image/png", sizes: "512x512" },
+                { rel: "shortcut icon", href: "/favicon.png" },
+                { rel: "manifest", href: "/site.webmanifest" }
+            ];
 
-        // 2. Favicon logo truong tren trinh duyet
-        let favIcon = head.querySelector('link[rel="icon"]');
-        if (!favIcon) {
-            favIcon = window.parent.document.createElement('link');
-            favIcon.rel = 'icon';
-            head.appendChild(favIcon);
-        }
-        favIcon.href = logoUri;
-        favIcon.setAttribute('type', 'image/png');
+            dsThe.forEach(function(t) {
+                var selector = 'link[rel="' + t.rel + '"]' + (t.sizes ? '[sizes="' + t.sizes + '"]' : '');
+                var el = head.querySelector(selector);
+                if (!el) {
+                    el = doc.createElement('link');
+                    el.rel = t.rel;
+                    if (t.sizes) el.setAttribute('sizes', t.sizes);
+                    if (t.type) el.setAttribute('type', t.type);
+                    head.appendChild(el);
+                }
+                el.href = t.href;
+            });
 
-        // 3. PWA Web Manifest cho Android & may tinh
-        let manifestLink = head.querySelector('link[rel="manifest"]');
-        if (!manifestLink) {
-            manifestLink = window.parent.document.createElement('link');
-            manifestLink.rel = 'manifest';
-            head.appendChild(manifestLink);
+            // 3. Các thẻ Meta PWA chuẩn hóa
+            var dsMeta = [
+                { name: "apple-mobile-web-app-capable", content: "yes" },
+                { name: "apple-mobile-web-app-status-bar-style", content: "default" },
+                { name: "apple-mobile-web-app-title", content: "THPT 2 Bảo Yên" },
+                { name: "application-name", content: "THPT 2 Bảo Yên" },
+                { name: "theme-color", content: "#1E3A8A" }
+            ];
+            dsMeta.forEach(function(m) {
+                var el = head.querySelector('meta[name="' + m.name + '"]');
+                if (!el) {
+                    el = doc.createElement('meta');
+                    el.name = m.name;
+                    head.appendChild(el);
+                }
+                el.content = m.content;
+            });
+        } catch(e) {
+            console.log("PWA Icon injection:", e);
         }
-        manifestLink.href = '/app/static/site.webmanifest';
-
-        // 4. Apple Web App Title
-        let appCapable = head.querySelector('meta[name="apple-mobile-web-app-capable"]');
-        if (!appCapable) {
-            appCapable = window.parent.document.createElement('meta');
-            appCapable.name = 'apple-mobile-web-app-capable';
-            head.appendChild(appCapable);
-        }
-        appCapable.content = 'yes';
-
-        let appTitle = head.querySelector('meta[name="apple-mobile-web-app-title"]');
-        if (!appTitle) {
-            appTitle = window.parent.document.createElement('meta');
-            appTitle.name = 'apple-mobile-web-app-title';
-            head.appendChild(appTitle);
-        }
-        appTitle.content = "THPT 2 Bảo Yên";
-    } catch(e) {
-        console.error(e);
     }
+    capNhatIcon();
+    setTimeout(capNhatIcon, 500);
+    setTimeout(capNhatIcon, 1500);
 })();
 </script>
-""", unsafe_allow_html=True)
+""", height=0, width=0)
 
 # ========================================================
 # 2. KHỞI TẠO VÀ ĐỒNG BỘ DỮ LIỆU
