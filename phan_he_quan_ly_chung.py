@@ -346,7 +346,7 @@ def render_phan_he_quan_ly_chung(df_tai_khoan, role_curr, nam_hoc, BASE_DIR, THU
 
     # Tải dữ liệu quy mô toàn trường
     df_hs_all = pd.read_csv(f_hs_tt, encoding='utf-8-sig') if os.path.exists(f_hs_tt) else pd.DataFrame()
-    tong_hs = len(df_hs_all) if not df_hs_all.empty else 829
+    tong_hs = len(df_hs_all) if not df_hs_all.empty else 929
     so_nam = len(df_hs_all[df_hs_all['Giới tính'] == 'Nam']) if not df_hs_all.empty else 400
     so_nu = tong_hs - so_nam
     so_dtts = len(df_hs_all[df_hs_all['Dân tộc'] != 'Kinh']) if not df_hs_all.empty else 495
@@ -454,7 +454,7 @@ def render_phan_he_quan_ly_chung(df_tai_khoan, role_curr, nam_hoc, BASE_DIR, THU
                     <h6 style='color:#334155; margin:0 0 4px 0;'>👨‍🎓 5. Sĩ Số & Chuyên Cần</h6>
                     <p style='font-size:11.5px; color:#4B5563; margin:0;'>Tình hình 21 lớp hôm nay:</p>
                     <ul style='font-size:11.5px; color:#1F2937; padding-left:14px; margin:4px 0 0 0;'>
-                        <li><b>Hiện diện:</b> 826 / 829 HS (99.6%)</li>
+                        <li><b>Hiện diện:</b> 926 / 929 HS (99.7%)</li>
                         <li><b>Vắng phép:</b> 3 em (Nghỉ ốm)</li>
                         <li><b>Không phép:</b> 0 em 🚨</li>
                     </ul>
@@ -660,20 +660,20 @@ def render_phan_he_quan_ly_chung(df_tai_khoan, role_curr, nam_hoc, BASE_DIR, THU
 
     # =========================================================================
     # TAB 2: ĐỘI NGŨ - HỌC SINH
-    # (Hợp nhất Danh bạ 42 CBGV-NV & Tra cứu Bộ lọc 829 Học sinh)
+    # (Hợp nhất Danh bạ 42 CBGV-NV & Tra cứu Bộ lọc 929 Học sinh)
     # =========================================================================
     with tab_doi_ngu_hs:
         st.subheader("👥 Đội Ngũ Cán Bộ - Giáo Viên & Học Sinh Toàn Trường")
-        st.caption("Quản lý toàn diện dữ liệu con người Trường THPT số 2 Bảo Yên: 42 Cán bộ Giáo viên Nhân viên & 829 Học sinh 21 Lớp.")
+        st.caption(f"Quản lý toàn diện dữ liệu con người Trường THPT số 2 Bảo Yên: 42 Cán bộ Giáo viên Nhân viên & {tong_hs} Học sinh 21 Lớp.")
 
         sub_dn1, sub_dn2 = st.tabs([
-            "👨‍🎓 829 HỌC SINH & BỘ LỌC TOÀN TRƯỜNG",
+            f"👨‍🎓 {tong_hs} HỌC SINH & BỘ LỌC TOÀN TRƯỜNG",
             "📋 42 CÁN BỘ - GIÁO VIÊN - NHÂN VIÊN & PHÂN CÔNG"
         ])
 
         # SUB-TAB 1: HỌC SINH & BỘ LỌC TOÀN TRƯỜNG
         with sub_dn1:
-            st.markdown("#### 🔍 **Tra Cứu & Bộ Lọc Học Sinh Toàn Trường (829 Học Sinh • 21 Lớp)**")
+            st.markdown(f"#### 🔍 **Tra Cứu & Bộ Lọc Học Sinh Toàn Trường ({tong_hs} Học Sinh • 21 Lớp)**")
             
             # Chỉ số học sinh nhanh
             c_hs1, c_hs2, c_hs3, c_hs4 = st.columns(4)
