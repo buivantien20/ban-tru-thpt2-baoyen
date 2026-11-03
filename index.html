@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <title>THPT 2 Bảo Yên - Quản Lý Bán Trú & Điều Hành</title>
+  <meta name="description" content="Hệ thống Quản lý Bán trú & Điều hành Trường THPT số 2 Bảo Yên - Lào Cai">
+  
+  <!-- Apple Touch Icon cho iPhone / iPad (Logo chính thức của trường) -->
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="apple-touch-icon-precomposed" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="apple-touch-icon" href="https://buivantien20.github.io/ban-tru-thpt2-baoyen/apple-touch-icon.png">
+  
+  <!-- Favicon cho trình duyệt máy tính & điện thoại -->
+  <link rel="icon" type="image/png" sizes="192x192" href="logo_192.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="logo_512.png">
+  <link rel="shortcut icon" href="favicon.png">
+  
+  <!-- PWA Web Manifest cho Android & máy tính -->
+  <link rel="manifest" href="site.webmanifest">
+  
+  <!-- Cấu hình chạy toàn màn hình (Standalone PWA) -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="THPT 2 Bảo Yên">
+  <meta name="application-name" content="THPT 2 Bảo Yên">
+  <meta name="theme-color" content="#1E3A8A">
+  <meta name="mobile-web-app-capable" content="yes">
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background-color: #F8FAFC;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+    #loading {
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: #FFFFFF;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+      transition: opacity 0.4s ease;
+    }
+    .logo-img {
+      width: 95px;
+      height: 95px;
+      border-radius: 16px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      margin-bottom: 16px;
+      animation: pulse 1.8s infinite ease-in-out;
+    }
+    .school-title {
+      font-size: 16px;
+      font-weight: 800;
+      color: #1E3A8A;
+      letter-spacing: 0.3px;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+    .sub-title {
+      font-size: 12.5px;
+      color: #64748B;
+      margin-bottom: 20px;
+    }
+    .spinner {
+      width: 32px;
+      height: 32px;
+      border: 3.5px solid #E2E8F0;
+      border-top-color: #1E3A8A;
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+    }
+    #fallback-link {
+      display: none;
+      margin-top: 25px;
+      font-size: 13px;
+      color: #2563EB;
+      text-decoration: underline;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    @keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.05); } }
+    #app-frame {
+      width: 100%;
+      height: 100%;
+      border: none;
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <div id="loading">
+    <img src="apple-touch-icon.png" alt="Logo THPT số 2 Bảo Yên" class="logo-img">
+    <div class="school-title">THPT SỐ 2 BẢO YÊN</div>
+    <div class="sub-title">Đang kết nối hệ thống điều hành...</div>
+    <div class="spinner"></div>
+    <a id="fallback-link" href="https://thpt2baoyen.streamlit.app">Bấm vào đây nếu muốn mở trực tiếp</a>
+  </div>
+
+  <iframe
+    id="app-frame"
+    src="https://thpt2baoyen.streamlit.app/?embed=true"
+    allow="geolocation; camera; microphone; clipboard-read; clipboard-write;"
+    onload="hideLoading();">
+  </iframe>
+
+  <script>
+    function hideLoading() {
+      var loader = document.getElementById('loading');
+      if (loader) {
+        loader.style.opacity = '0';
+        setTimeout(function() {
+          loader.style.display = 'none';
+        }, 400);
+      }
+    }
+    // Sau 8 giây nếu chưa xong thì hiện fallback link
+    setTimeout(function() {
+      var fl = document.getElementById('fallback-link');
+      if (fl) fl.style.display = 'block';
+    }, 8000);
+  </script>
+</body>
+</html>

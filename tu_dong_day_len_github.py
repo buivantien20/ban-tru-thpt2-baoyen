@@ -1,4 +1,4 @@
-﻿# -*- coding: utf-8 -*-
+# -*- coding: utf-8 -*-
 """
 Module Tu Dong Day Ma Nguon Len GitHub Khong Can Git CLI
 Dành cho Trường THPT số 2 Bảo Yên
@@ -63,7 +63,7 @@ def push_to_github_api(token, repo="buivantien20/ban-tru-thpt2-baoyen", branch="
                 if fn.endswith('.csv') and os.path.isfile(os.path.join(r"D:\\", fn)):
                     shutil.copy2(os.path.join(r"D:\\", fn), os.path.join(folder, fn))
             # Copy các file icon, manifest, logo
-            icon_exts = ('.png', '.ico', '.jpg', '.jpeg', '.webmanifest', '.json')
+            icon_exts = ('.png', '.ico', '.jpg', '.jpeg', '.webmanifest', '.json', '.html')
             for fn in os.listdir(r"D:\\"):
                 if fn.endswith(icon_exts) and os.path.isfile(os.path.join(r"D:\\", fn)):
                     shutil.copy2(os.path.join(r"D:\\", fn), os.path.join(folder, fn))

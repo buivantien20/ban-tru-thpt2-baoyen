@@ -236,8 +236,9 @@ def lay_ip_may_tinh():
 
 # Địa chỉ chính thức duy nhất trên đám mây (Cloud 24/7 toàn cầu - Khóa link cố định)
 URL_APP_CHINH_THUC = "https://thpt2baoyen.streamlit.app"
+URL_PWA_MOBILE = "https://buivantien20.github.io/ban-tru-thpt2-baoyen/"
 duong_dan_online = URL_APP_CHINH_THUC
-duong_dan_app_mobile = URL_APP_CHINH_THUC
+duong_dan_app_mobile = URL_PWA_MOBILE
 
 # CSS giao diện tối ưu di động và thẻ trực quan kèm biểu tượng App
 st.markdown("""
@@ -738,7 +739,7 @@ if not st.session_state.user_login.get("logged_in", False):
             """)
 
     with col_l2:
-        link_qr_cai_app = duong_dan_online.split('?')[0] if duong_dan_online else duong_dan_app_mobile
+        link_qr_cai_app = duong_dan_app_mobile if duong_dan_app_mobile else duong_dan_online
         st.markdown(f"""
         <div style="border: 2px solid #16A34A; padding: 18px; border-radius: 14px; background: #F0FDF4; box-shadow: 0 4px 12px rgba(22, 163, 74, 0.12); text-align: center;">
             <div style="background:#16A34A; color:white; display:inline-block; padding:4px 14px; border-radius:20px; font-weight:bold; font-size:12px; margin-bottom:8px;">
@@ -1282,10 +1283,15 @@ def hien_thi_tab_cai_dat_app(duong_dan_online, duong_dan_app_mobile):
             </div>
             <h4 style="color:#15803D; margin:5px 0 10px 0;">DÙNG CAMERA ĐIỆN THOẠI QUÉT MÃ</h4>
             <div style="background:white; padding:12px; border-radius:12px; display:inline-block; border:1px solid #BBF7D0;">
-                <img src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data={duong_dan_online}" width="230" style="display:block; border-radius:6px;">
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data={duong_dan_app_mobile}" width="230" style="display:block; border-radius:6px;">
             </div>
-            <p style="margin-top:10px; font-size:14px; font-weight:bold; color:#166534;">Địa chỉ trực tuyến chính thức:<br>
-            <a href="{duong_dan_online}" target="_blank" style="color:#2563EB; font-size:16px; word-break:break-all; text-decoration:underline;">{duong_dan_online}</a></p>
+            <p style="margin-top:10px; font-size:14px; font-weight:bold; color:#166534; margin-bottom: 4px;">
+                📲 Link cài App điện thoại (có Logo trường):<br>
+                <a href="{duong_dan_app_mobile}" target="_blank" style="color:#2563EB; font-size:15px; word-break:break-all; text-decoration:underline;">{duong_dan_app_mobile}</a>
+            </p>
+            <p style="margin-top:6px; font-size:13px; color:#475569; margin-bottom:0;">
+                💻 Link Web trực tiếp (Máy tính): <a href="{duong_dan_online}" target="_blank" style="color:#0284C7; text-decoration:underline;">{duong_dan_online}</a>
+            </p>
             <p style="font-size:12px; color:#4B5563; margin-bottom:0;">(Mở được trên mọi mạng 4G/5G hoặc Wi-Fi bất kỳ, không phụ thuộc máy tính)</p>
         </div>
         """, unsafe_allow_html=True)
