@@ -755,6 +755,40 @@ def render_phan_he_doan_thanh_nien(df_tai_khoan, role_curr, nam_hoc, BASE_DIR, T
             if col not in df_xe_all.columns:
                 df_xe_all[col] = ""
 
+        def _luu_toan_bo_phuong_tien(df_save_input):
+            order_cols = [
+                'Mã xe', 'Họ và tên', 'Lớp', 'SĐT Học sinh', 'Loại xe', 'Biển số xe', 'Màu xe', 
+                'Nơi gửi xe', 'GVCN', 'SĐT GVCN', 'Họ tên Phụ huynh', 'SĐT Phụ huynh', 'Địa chỉ', 
+                'Tình trạng', 'Số lần vi phạm', 'Ghi chú'
+            ]
+            for oc in order_cols:
+                if oc not in df_save_input.columns:
+                    df_save_input[oc] = ""
+            df_out = df_save_input[order_cols].copy()
+            
+            all_sync_dirs = [
+                f_xe,
+                os.path.join(BASE_DIR, 'quan_ly_phuong_tien.csv'),
+                os.path.join(THU_MUC_NAM_HOC, folder_nam, 'quan_ly_phuong_tien.csv'),
+                os.path.join('D:/phan_mem_ban_tru_cloud', 'quan_ly_phuong_tien.csv'),
+                os.path.join('d:/OneDrive/Hô sơ cá nhan/Học AI', 'quan_ly_phuong_tien.csv'),
+                r"C:\Users\Bui Van Tien\Desktop\THU_MUC_TAI_LEN_GITHUB\quan_ly_phuong_tien.csv"
+            ]
+            for p_save in all_sync_dirs:
+                if p_save and os.path.exists(os.path.dirname(p_save)):
+                    try:
+                        df_out.to_csv(p_save, index=False, encoding='utf-8-sig')
+                    except Exception:
+                        pass
+            try:
+                import tu_dong_day_len_github
+                cfg_gh = tu_dong_day_len_github.load_github_cfg()
+                if cfg_gh.get("token"):
+                    tu_dong_day_len_github.push_to_github_api(cfg_gh["token"])
+            except Exception:
+                pass
+            return df_out
+
         sub_xe1, sub_xe2, sub_xe3, sub_xe4 = st.tabs([
             "📋 Danh sách phương tiện",
             "🔍 Quét mã QR & Xử lý vi phạm",
@@ -816,41 +850,164 @@ def render_phan_he_doan_thanh_nien(df_tai_khoan, role_curr, nam_hoc, BASE_DIR, T
                 hide_index=True
             )
 
-            # Chỉnh sửa thông tin xe
+            # Quản trị viên: Chỉnh sửa & Xóa phương tiện
             if la_quan_tri_xe:
-                with st.expander("✏️ **Quản Trị Viên: Chỉnh sửa thông tin phương tiện toàn trường:**", expanded=False):
+                st.markdown("---")
+                st.markdown("#### ⚙️ QUẢN TRỊ VIÊN: CHỈNH SỬA & XÓA PHƯƠNG TIỆN TOÀN TRƯỜNG")
+                tab_ad_edit, tab_ad_del_single, tab_ad_del_batch = st.tabs([
+                    "✏️ Chỉnh sửa thông tin xe",
+                    "🗑️ Xóa từng phương tiện",
+                    "📑 Xóa nhiều phương tiện (Hàng loạt theo Lớp)"
+                ])
+
+                # --- TAB 1: CHỈNH SỬA THÔNG TIN XE ---
+                with tab_ad_edit:
                     ds_ma_xe = df_xe_all['Mã xe'].tolist() if not df_xe_all.empty else []
-                    xe_chon_edit = st.selectbox("Chọn xe cần chỉnh sửa thông tin:", ds_ma_xe)
+                    def _fmt_opt_xe_admin(m):
+                        try:
+                            rw = df_xe_all.loc[df_xe_all['Mã xe'] == m].iloc[0]
+                            return f"[{m}] {rw['Họ và tên']} - Lớp {rw['Lớp']} (Biển: {rw['Biển số xe']})"
+                        except Exception:
+                            return m
+
+                    c_ed_loc1, c_ed_loc2 = st.columns([1, 2])
+                    with c_ed_loc1:
+                        ds_lop_edit = ["Tất cả các lớp"] + sorted([x for x in df_xe_all['Lớp'].unique() if x])
+                        lop_filter_edit = st.selectbox("Lọc xe theo lớp để sửa:", ds_lop_edit, key="sb_lop_filter_edit")
+                    df_pool_edit = df_xe_all if lop_filter_edit == "Tất cả các lớp" else df_xe_all[df_xe_all['Lớp'] == lop_filter_edit]
+
+                    with c_ed_loc2:
+                        xe_chon_edit = st.selectbox(
+                            "Chọn xe cần chỉnh sửa thông tin:", 
+                            df_pool_edit['Mã xe'].tolist() if not df_pool_edit.empty else [],
+                            format_func=_fmt_opt_xe_admin,
+                            key="sb_edit_xe_admin"
+                        )
+
                     if xe_chon_edit:
                         row_xe = df_xe_all[df_xe_all['Mã xe'] == xe_chon_edit].iloc[0]
                         with st.form("form_edit_xe_admin"):
-                            ce1, ce2 = st.columns(2)
+                            ce1, ce2, ce3 = st.columns(3)
                             with ce1:
-                                edit_bs = st.text_input("Biển số xe:", value=str(row_xe['Biển số xe']))
-                                edit_loai = st.selectbox("Loại xe:", ["Xe máy điện", "Xe đạp điện", "Xe máy <50cc", "Xe đạp"], index=["Xe máy điện", "Xe đạp điện", "Xe máy <50cc", "Xe đạp"].index(row_xe['Loại xe']) if row_xe['Loại xe'] in ["Xe máy điện", "Xe đạp điện", "Xe máy <50cc", "Xe đạp"] else 0)
-                                edit_mau = st.text_input("Màu xe / Nhãn hiệu:", value=str(row_xe['Màu xe']))
+                                edit_ten = st.text_input("Họ và tên học sinh:", value=str(row_xe['Họ và tên']))
+                                edit_lop = st.text_input("Lớp:", value=str(row_xe['Lớp']))
+                                edit_sdt_hs = st.text_input("SĐT Học sinh:", value=str(row_xe.get('SĐT Học sinh', '')))
+                                edit_dia_chi = st.text_input("Địa chỉ cư trú:", value=str(row_xe.get('Địa chỉ', '')))
                             with ce2:
-                                edit_noigui = st.selectbox("Nơi gửi xe:", ["Nhà xe KTX Bán trú", "Nhà xe Học sinh Khu A", "Nhà xe Học sinh Khu B"], index=0)
-                                edit_tinhtrang = st.selectbox("Tình trạng lưu hành:", ["Đủ điều kiện lưu hành", "Đang tạm giữ", "Nhắc nhở nề nếp"], index=0)
-                                edit_solan_vp = st.number_input("Số lần vi phạm:", min_value=0, max_value=20, value=int(row_xe.get('Số lần vi phạm', 0)))
+                                edit_bs = st.text_input("Biển số xe:", value=str(row_xe['Biển số xe']))
+                                loai_opts = ["Xe máy điện", "Xe đạp điện", "Xe máy <50cc", "Xe máy >50cc", "Xe đạp", "Khác"]
+                                cur_loai = str(row_xe['Loại xe'])
+                                idx_loai = loai_opts.index(cur_loai) if cur_loai in loai_opts else 0
+                                edit_loai = st.selectbox("Loại xe:", loai_opts, index=idx_loai)
+                                edit_mau = st.text_input("Màu xe / Nhãn hiệu:", value=str(row_xe['Màu xe']))
+                                edit_noigui = st.selectbox("Nơi gửi xe:", ["Nhà xe Học sinh Khu A", "Nhà xe Học sinh Khu B", "Nhà xe KTX Bán trú", "Trong trường", "Gửi ngoài trường"], index=0)
+                            with ce3:
+                                edit_tinhtrang = st.selectbox("Tình trạng lưu hành:", ["Đủ điều kiện lưu hành", "Đang tạm giữ", "Nhắc nhở nề nếp", "Không đủ điều kiện"], index=0)
+                                try:
+                                    cur_vp_int = int(float(str(row_xe.get('Số lần vi phạm', 0)).replace('nan', '0') or 0))
+                                except Exception:
+                                    cur_vp_int = 0
+                                edit_solan_vp = st.number_input("Số lần vi phạm:", min_value=0, max_value=50, value=cur_vp_int)
+                                edit_ten_ph = st.text_input("Họ tên Phụ huynh:", value=str(row_xe.get('Họ tên Phụ huynh', '')))
+                                edit_sdt_ph = st.text_input("SĐT Phụ huynh:", value=str(row_xe.get('SĐT Phụ huynh', '')))
                             
-                            if st.form_submit_button("💾 LƯU THAY ĐỔI THÔNG TIN XE", type="primary", use_container_width=True):
+                            edit_ghi_chu = st.text_input("Ghi chú bổ sung:", value=str(row_xe.get('Ghi chú', '')))
+
+                            btn_save_col1, btn_save_col2 = st.columns([2, 1])
+                            with btn_save_col1:
+                                submit_edit = st.form_submit_button("💾 LƯU THAY ĐỔI THÔNG TIN XE", type="primary", use_container_width=True)
+
+                            if submit_edit:
                                 idx_xe = df_xe_all[df_xe_all['Mã xe'] == xe_chon_edit].index[0]
-                                df_xe_all['Số lần vi phạm'] = df_xe_all['Số lần vi phạm'].astype(str)
+                                df_xe_all.loc[idx_xe, 'Họ và tên'] = str(edit_ten).strip()
+                                df_xe_all.loc[idx_xe, 'Lớp'] = str(edit_lop).strip().upper()
+                                df_xe_all.loc[idx_xe, 'SĐT Học sinh'] = str(edit_sdt_hs).strip()
+                                df_xe_all.loc[idx_xe, 'Địa chỉ'] = str(edit_dia_chi).strip()
                                 df_xe_all.loc[idx_xe, 'Biển số xe'] = str(edit_bs).strip()
                                 df_xe_all.loc[idx_xe, 'Loại xe'] = str(edit_loai)
                                 df_xe_all.loc[idx_xe, 'Màu xe'] = str(edit_mau).strip()
                                 df_xe_all.loc[idx_xe, 'Nơi gửi xe'] = str(edit_noigui)
                                 df_xe_all.loc[idx_xe, 'Tình trạng'] = str(edit_tinhtrang)
                                 df_xe_all.loc[idx_xe, 'Số lần vi phạm'] = str(edit_solan_vp)
-                                
-                                for d_save in [f_xe, os.path.join(BASE_DIR, 'quan_ly_phuong_tien.csv'), os.path.join('D:/phan_mem_ban_tru_cloud', 'quan_ly_phuong_tien.csv'), os.path.join('d:/OneDrive/Hô sơ cá nhan/Học AI', 'quan_ly_phuong_tien.csv')]:
-                                    try:
-                                        df_xe_all.to_csv(d_save, index=False, encoding='utf-8-sig')
-                                    except Exception:
-                                        pass
-                                st.success(f"🎉 Đã cập nhật thành công thông tin xe {xe_chon_edit} ({edit_bs})!")
+                                df_xe_all.loc[idx_xe, 'Họ tên Phụ huynh'] = str(edit_ten_ph).strip()
+                                df_xe_all.loc[idx_xe, 'SĐT Phụ huynh'] = str(edit_sdt_ph).strip()
+                                df_xe_all.loc[idx_xe, 'Ghi chú'] = str(edit_ghi_chu).strip()
+
+                                _luu_toan_bo_phuong_tien(df_xe_all)
+                                st.success(f"🎉 Đã cập nhật thành công thông tin xe {xe_chon_edit} ({edit_bs} - {edit_ten})!")
                                 st.rerun()
+
+                # --- TAB 2: XÓA TỪNG PHƯƠNG TIỆN ---
+                with tab_ad_del_single:
+                    st.markdown("##### 🗑️ Xóa 01 phương tiện khỏi hệ thống")
+                    st.caption("Chọn phương tiện cần xóa vĩnh viễn khỏi cơ sở dữ liệu trường học.")
+                    
+                    c_del1, c_del2 = st.columns([1, 2])
+                    with c_del1:
+                        ds_lop_loc_del = ["Tất cả các lớp"] + sorted([x for x in df_xe_all['Lớp'].unique() if x])
+                        lop_del_filter = st.selectbox("Lọc nhanh theo lớp:", ds_lop_loc_del, key="sb_lop_filter_del_1")
+                    
+                    df_sub_del = df_xe_all if lop_del_filter == "Tất cả các lớp" else df_xe_all[df_xe_all['Lớp'] == lop_del_filter]
+                    
+                    with c_del2:
+                        xe_chon_xoa = st.selectbox(
+                            "Chọn phương tiện muốn xóa:",
+                            options=df_sub_del['Mã xe'].tolist() if not df_sub_del.empty else [],
+                            format_func=lambda m: f"[{m}] {df_xe_all.loc[df_xe_all['Mã xe']==m, 'Họ và tên'].values[0]} - Lớp {df_xe_all.loc[df_xe_all['Mã xe']==m, 'Lớp'].values[0]} (Biển: {df_xe_all.loc[df_xe_all['Mã xe']==m, 'Biển số xe'].values[0]})",
+                            key="sb_xe_chon_xoa_1"
+                        )
+                    
+                    if xe_chon_xoa:
+                        r_del = df_xe_all[df_xe_all['Mã xe'] == xe_chon_xoa].iloc[0]
+                        st.info(f"📌 **Thông tin xe được chọn để xóa:**\n- **Mã xe:** `{r_del['Mã xe']}` | **Học sinh:** **{r_del['Họ và tên']}** (Lớp **{r_del['Lớp']}**)\n- **Biển số xe:** **{r_del['Biển số xe']}** | **Loại xe:** {r_del['Loại xe']} ({r_del['Màu xe']})\n- **Nơi gửi:** {r_del['Nơi gửi xe']} | **Phụ huynh:** {r_del.get('Họ tên Phụ huynh', 'N/A')} ({r_del.get('SĐT Phụ huynh', 'N/A')})")
+                        
+                        st.warning("⚠️ **Cảnh báo:** Thao tác này sẽ xóa vĩnh viễn phương tiện khỏi danh sách và tem mã QR tương ứng sẽ không còn hiệu lực.")
+                        xac_nhan_xoa_1 = st.checkbox(f"Xác nhận: Tôi đồng ý xóa vĩnh viễn phương tiện `{r_del['Mã xe']}` của học sinh {r_del['Họ và tên']} (Lớp {r_del['Lớp']}).", key="ck_del_single_confirm")
+                        
+                        if st.button("🗑️ XÁC NHẬN XÓA PHƯƠNG TIỆN NÀY", type="primary", use_container_width=True, disabled=not xac_nhan_xoa_1):
+                            df_xe_all = df_xe_all[df_xe_all['Mã xe'] != xe_chon_xoa].reset_index(drop=True)
+                            _luu_toan_bo_phuong_tien(df_xe_all)
+                            st.success(f"🎉 Đã xóa thành công phương tiện {xe_chon_xoa} ({r_del['Biển số xe']} - {r_del['Họ và tên']}) khỏi hệ thống!")
+                            st.rerun()
+
+                # --- TAB 3: XÓA NHIỀU PHƯƠNG TIỆN HÀNG LOẠT ---
+                with tab_ad_del_batch:
+                    st.markdown("##### 📑 Xóa nhiều phương tiện cùng lúc (Xóa theo Lớp hoặc Danh sách chọn)")
+                    st.caption("Thích hợp khi học sinh ra trường, chuyển lớp hoặc dọn dẹp danh sách phương tiện.")
+                    
+                    c_bdel1, c_bdel2 = st.columns([1, 2])
+                    with c_bdel1:
+                        ds_lop_bdel = ["Tất cả các lớp"] + sorted([x for x in df_xe_all['Lớp'].unique() if x])
+                        lop_bdel_filter = st.selectbox("Lọc xe theo lớp cần dọn dẹp:", ds_lop_bdel, key="sb_lop_bdel_filter")
+                    
+                    df_bdel_candidates = df_xe_all if lop_bdel_filter == "Tất cả các lớp" else df_xe_all[df_xe_all['Lớp'] == lop_bdel_filter]
+                    
+                    with c_bdel2:
+                        chon_tat_ca_lop = st.checkbox(f"⚡ Chọn TẤT CẢ {len(df_bdel_candidates)} xe thuộc nhóm lọc trên", key="ck_sel_all_lop")
+                    
+                    default_bdel = df_bdel_candidates['Mã xe'].tolist() if chon_tat_ca_lop else []
+                        
+                    ds_ma_xe_xoa_multi = st.multiselect(
+                        "Chọn danh sách các xe cần xóa:",
+                        options=df_bdel_candidates['Mã xe'].tolist() if not df_bdel_candidates.empty else [],
+                        default=default_bdel,
+                        format_func=lambda m: f"[{m}] {df_xe_all.loc[df_xe_all['Mã xe']==m, 'Họ và tên'].values[0]} - Lớp {df_xe_all.loc[df_xe_all['Mã xe']==m, 'Lớp'].values[0]} ({df_xe_all.loc[df_xe_all['Mã xe']==m, 'Biển số xe'].values[0]})",
+                        key="ms_bdel_xe"
+                    )
+                    
+                    if ds_ma_xe_xoa_multi:
+                        st.markdown(f"**Danh sách {len(ds_ma_xe_xoa_multi)} phương tiện đã chọn để xóa:**")
+                        df_preview_bdel = df_xe_all[df_xe_all['Mã xe'].isin(ds_ma_xe_xoa_multi)][['Mã xe', 'Biển số xe', 'Họ và tên', 'Lớp', 'Loại xe', 'Nơi gửi xe']]
+                        st.dataframe(df_preview_bdel, use_container_width=True, hide_index=True)
+                        
+                        st.error(f"⚠️ **CẢNH BÁO QUAN TRỌNG:** Bạn đang chọn xóa **{len(ds_ma_xe_xoa_multi)}** phương tiện. Thao tác này sẽ loại bỏ vĩnh viễn các xe đã chọn!")
+                        xac_nhan_bdel = st.checkbox(f"Xác nhận: Tôi đồng ý xóa vĩnh viễn toàn bộ {len(ds_ma_xe_xoa_multi)} phương tiện trên.", key="ck_bdel_confirm")
+                        
+                        if st.button(f"🗑️ XÁC NHẬN XÓA VĨNH VIỄN {len(ds_ma_xe_xoa_multi)} PHƯƠNG TIỆN ĐÃ CHỌN", type="primary", use_container_width=True, disabled=not xac_nhan_bdel):
+                            df_xe_all = df_xe_all[~df_xe_all['Mã xe'].isin(ds_ma_xe_xoa_multi)].reset_index(drop=True)
+                            _luu_toan_bo_phuong_tien(df_xe_all)
+                            st.success(f"🎉 Đã xóa thành công {len(ds_ma_xe_xoa_multi)} phương tiện khỏi cơ sở dữ liệu!")
+                            st.rerun()
             else:
                 # Cá nhân chỉ được chỉnh sửa phương tiện của chính mình
                 st.info("🔒 **Phân quyền cá nhân:** Bạn chỉ có quyền xem và chỉnh sửa thông tin phương tiện của **CHÍNH MÌNH**. Để chỉnh sửa thông tin phương tiện của người khác, bạn cần được Admin / Ban Giám Hiệu cấp quyền quản lý phương tiện.")
@@ -885,13 +1042,18 @@ def render_phan_he_doan_thanh_nien(df_tai_khoan, role_curr, nam_hoc, BASE_DIR, T
                                 df_xe_all.loc[idx_my_xe, 'Nơi gửi xe'] = my_noigui
                                 df_xe_all.loc[idx_my_xe, 'SĐT Học sinh'] = my_sdt.strip()
                                 
-                                for d_save in [f_xe, os.path.join(BASE_DIR, 'quan_ly_phuong_tien.csv'), os.path.join('D:/phan_mem_ban_tru_cloud', 'quan_ly_phuong_tien.csv'), os.path.join('d:/OneDrive/Hô sơ cá nhan/Học AI', 'quan_ly_phuong_tien.csv')]:
-                                    try:
-                                        df_xe_all.to_csv(d_save, index=False, encoding='utf-8-sig')
-                                    except Exception:
-                                        pass
+                                _luu_toan_bo_phuong_tien(df_xe_all)
                                 st.success(f"🎉 Đã cập nhật thành công thông tin xe của bạn ({my_bs})!")
                                 st.rerun()
+
+                    with st.expander("🗑️ Hủy đăng ký phương tiện của bạn:", expanded=False):
+                        st.caption("Nếu bạn không còn đi phương tiện này tới trường hoặc thông tin đăng ký sai sót, bạn có thể xóa bản đăng ký này.")
+                        xac_nhan_my_del = st.checkbox(f"Tôi xác nhận muốn xóa phương tiện {xe_my_row['Biển số xe']} của tôi khỏi hệ thống.", key="ck_del_my_xe_confirm")
+                        if st.button("🗑️ XÁC NHẬN HỦY ĐĂNG KÝ PHƯƠNG TIỆN CỦA TÔI", type="primary", disabled=not xac_nhan_my_del):
+                            df_xe_all = df_xe_all[df_xe_all['Mã xe'] != xe_my_row['Mã xe']].reset_index(drop=True)
+                            _luu_toan_bo_phuong_tien(df_xe_all)
+                            st.success("🎉 Đã hủy đăng ký phương tiện thành công!")
+                            st.rerun()
                 else:
                     st.info("💡 Bạn chưa có phương tiện nào liên kết với tài khoản này. Bạn có thể đăng ký tại mục **'Xe của tôi'** trong menu tài khoản cá nhân ở thanh bên trái!")
 
@@ -1477,91 +1639,183 @@ def render_phan_he_doan_thanh_nien(df_tai_khoan, role_curr, nam_hoc, BASE_DIR, T
                             st.warning("⚠️ Không tìm thấy dòng dữ liệu phương tiện hợp lệ trong file tải lên. Vui lòng kiểm tra lại cấu trúc cột hoặc tải file mẫu!")
                         else:
                             st.markdown("---")
-                            # 3. Lựa chọn phương thức nhập: BỔ SUNG hoặc GHI ĐÈ
+                            # 3. Lựa chọn phương thức nhập: BỔ SUNG & CẬP NHẬT hoặc GHI ĐÈ
                             st.markdown("#### ⚙️ LỰA CHỌN PHƯƠNG THỨC NHẬP DỮ LIỆU")
-                            c_mode1, c_mode2 = st.columns([1.5, 1])
+                            c_mode1, c_mode2 = st.columns([1.2, 1.8])
                             with c_mode1:
                                 che_do_nhap = st.radio(
-                                    "Chọn chế độ xử lý:",
+                                    "1. Chế độ xử lý danh sách:",
                                     options=[
-                                        "➕ NHẬP BỔ SUNG (Chỉ thêm xe mới vào danh sách, GIỮ NGUYÊN xe đã có)",
-                                        "🔄 GHI ĐÈ TOÀN BỘ (Thay thế hoàn toàn danh sách hiện có bằng file mới)"
+                                        "➕ NHẬP BỔ SUNG & CẬP NHẬT (Khuyên dùng)",
+                                        "🔄 GHI ĐÈ TOÀN BỘ (Thay thế hoàn toàn danh sách cũ bằng file mới)"
                                     ],
                                     index=0,
                                     key="radio_che_do_nhap_xe"
                                 )
-                            with c_mode2:
-                                bo_qua_trung = st.checkbox(
-                                    "🛡️ Bỏ qua xe đã tồn tại (Chống trùng lặp)",
-                                    value=True,
-                                    help="Tự động kiểm tra theo Biển số xe hoặc (Họ tên + Lớp). Nếu xe đã có trong hệ thống thì không thêm lại."
-                                )
-
-                            # Đánh giá trùng lặp
                             is_bo_sung = "BỔ SUNG" in che_do_nhap
+
+                            if is_bo_sung:
+                                with c_mode2:
+                                    xu_ly_trung = st.radio(
+                                        "2. Khi phương tiện ĐÃ TỒN TẠI (trùng Biển số hoặc Họ tên + Lớp):",
+                                        options=[
+                                            "🔄 CẬP NHẬT & BỔ SUNG THÔNG TIN MỚI (Giữ Mã xe cũ, tự động điền thêm thông tin mới từ file)",
+                                            "🛡️ BỎ QUA XE ĐÃ CÓ (Giữ nguyên toàn bộ dữ liệu xe cũ)",
+                                            "➕ THÊM TẤT CẢ (Cho phép trùng lặp, cấp mã XE mới)"
+                                        ],
+                                        index=0,
+                                        key="radio_xu_ly_trung_xe"
+                                    )
+                            else:
+                                xu_ly_trung = None
+
+                            # Đánh giá trùng lặp và phân tách luồng xử lý
                             list_them_moi = []
-                            list_trung_lap = []
+                            list_cap_nhat = []
+                            list_bo_qua = []
                             
                             if is_bo_sung and not df_xe_all.empty:
-                                set_bien_so_cu = set(df_xe_all['Biển số xe'].astype(str).str.strip().str.upper())
-                                set_bien_so_cu.discard("")
-                                set_bien_so_cu.discard("CHƯA ĐĂNG KÝ BIỂN")
-                                set_bien_so_cu.discard("CHƯA ĐĂNG KÝ")
-                                
-                                set_hs_lop_cu = set(zip(
-                                    df_xe_all['Họ và tên'].astype(str).str.strip().str.lower(),
-                                    df_xe_all['Lớp'].astype(str).str.strip().str.upper()
-                                ))
+                                # Tạo từ điển tra cứu nhanh từ dữ liệu hiện có
+                                dict_bien_so_cu = {}
+                                for idx_r, r_all in df_xe_all.iterrows():
+                                    b_val = str(r_all['Biển số xe']).strip().upper()
+                                    if b_val and b_val not in ['', 'NAN', 'CHƯA ĐĂNG KÝ BIỂN', 'CHƯA ĐĂNG KÝ', 'KHÔNG CÓ', 'KO CÓ', 'XE KHÔNG CẦN BIỂN SỐ']:
+                                        dict_bien_so_cu[b_val] = idx_r
+
+                                dict_hs_lop_cu = {}
+                                for idx_r, r_all in df_xe_all.iterrows():
+                                    t_val = str(r_all['Họ và tên']).strip().lower()
+                                    l_val = str(r_all['Lớp']).strip().upper()
+                                    if t_val and l_val:
+                                        dict_hs_lop_cu[(t_val, l_val)] = idx_r
 
                                 for _, row_imp in df_imp_xe.iterrows():
                                     bs_k = str(row_imp['Biển số xe']).strip().upper()
                                     t_k = str(row_imp['Họ và tên']).strip().lower()
                                     l_k = str(row_imp['Lớp']).strip().upper()
 
-                                    trung = False
-                                    if bs_k in set_bien_so_cu:
-                                        trung = True
-                                    elif (t_k, l_k) in set_hs_lop_cu:
-                                        trung = True
+                                    matched_idx = None
+                                    if bs_k and bs_k in dict_bien_so_cu:
+                                        matched_idx = dict_bien_so_cu[bs_k]
+                                    elif (t_k, l_k) in dict_hs_lop_cu:
+                                        matched_idx = dict_hs_lop_cu[(t_k, l_k)]
 
-                                    if trung and bo_qua_trung:
-                                        list_trung_lap.append(row_imp.to_dict())
+                                    if matched_idx is not None:
+                                        # Xe đã tồn tại trong hệ thống
+                                        if "CẬP NHẬT" in str(xu_ly_trung):
+                                            row_old = df_xe_all.loc[matched_idx].to_dict()
+                                            fields_to_update = {}
+                                            cols_check = [
+                                                'Biển số xe', 'Loại xe', 'Màu xe', 'Nơi gửi xe', 'SĐT Học sinh',
+                                                'GVCN', 'SĐT GVCN', 'Họ tên Phụ huynh', 'SĐT Phụ huynh', 'Địa chỉ', 'Ghi chú'
+                                            ]
+                                            for col in cols_check:
+                                                new_v = str(row_imp.get(col, '')).strip()
+                                                old_v = str(row_old.get(col, '')).strip()
+                                                if not new_v or new_v.lower() in ['nan', 'none', 'chưa cập nhật']:
+                                                    continue
+                                                if col == 'Biển số xe' and new_v == 'Chưa đăng ký biển':
+                                                    if old_v and old_v != 'Chưa đăng ký biển':
+                                                        continue
+                                                if not old_v or old_v in ['nan', 'none', 'Chưa cập nhật', 'Chưa đăng ký biển'] or old_v != new_v:
+                                                    fields_to_update[col] = new_v
+
+                                            list_cap_nhat.append({
+                                                'idx_old': matched_idx,
+                                                'ma_xe': row_old['Mã xe'],
+                                                'ho_ten': row_old['Họ và tên'],
+                                                'lop': row_old['Lớp'],
+                                                'fields_to_update': fields_to_update,
+                                                'row_imp': row_imp.to_dict()
+                                            })
+                                        elif "BỎ QUA" in str(xu_ly_trung):
+                                            list_bo_qua.append(row_imp.to_dict())
+                                        else:
+                                            list_them_moi.append(row_imp.to_dict())
                                     else:
                                         list_them_moi.append(row_imp.to_dict())
                             else:
                                 list_them_moi = df_imp_xe.to_dict('records')
 
-                            # Hiển thị thông báo định lượng
+                            # Hiển thị thông báo định lượng kết quả phân tích
+                            st.markdown("---")
                             if is_bo_sung:
-                                st.success(f"📌 **Kết quả phân tích file:** Đọc được **{len(df_imp_xe)}** phương tiện. Trong đó: "
-                                           f"🟢 **{len(list_them_moi)} xe MỚI** sẽ được bổ sung tiếp vào danh sách; "
-                                           f"🟡 **{len(list_trung_lap)} xe ĐÃ CÓ** trong hệ thống (bỏ qua để không trùng lặp).")
+                                c_st1, c_st2, c_st3 = st.columns(3)
+                                with c_st1:
+                                    st.metric("🟢 Xe MỚI sẽ thêm", f"{len(list_them_moi)} Xe", "Cấp mã XE mới")
+                                with c_st2:
+                                    if "CẬP NHẬT" in str(xu_ly_trung):
+                                        st.metric("🔄 Xe TRÙNG sẽ cập nhật", f"{len(list_cap_nhat)} Xe", "Bổ sung thông tin mới")
+                                    else:
+                                        st.metric("🟡 Xe TRÙNG bỏ qua", f"{len(list_bo_qua)} Xe", "Giữ nguyên xe cũ")
+                                with c_st3:
+                                    st.metric("📊 Tổng xe đọc từ file", f"{len(df_imp_xe)} Xe")
+
+                                # Tabs xem trước chi tiết
+                                tab_pv_new, tab_pv_update = st.tabs([
+                                    f"🟢 Danh sách xe MỚI sẽ nạp ({len(list_them_moi)} xe)",
+                                    f"🔄 Danh sách xe ĐÃ CÓ sẽ được CẬP NHẬT ({len(list_cap_nhat)} xe)"
+                                ])
+                                with tab_pv_new:
+                                    if list_them_moi:
+                                        st.dataframe(pd.DataFrame(list_them_moi), use_container_width=True, hide_index=True)
+                                    else:
+                                        st.info("💡 Không có xe mới nào cần thêm (tất cả xe trong file đều đã có trong trường).")
+                                
+                                with tab_pv_update:
+                                    if list_cap_nhat:
+                                        list_pv_up = []
+                                        for it in list_cap_nhat:
+                                            thay_doi_txt = ", ".join([f"{k}: {v}" for k, v in it['fields_to_update'].items()]) if it['fields_to_update'] else "Dữ liệu trùng khớp hoàn toàn (không thay đổi)"
+                                            list_pv_up.append({
+                                                'Mã xe': it['ma_xe'],
+                                                'Họ và tên': it['ho_ten'],
+                                                'Lớp': it['lop'],
+                                                'Thông tin mới bổ sung / cập nhật': thay_doi_txt
+                                            })
+                                        st.dataframe(pd.DataFrame(list_pv_up), use_container_width=True, hide_index=True)
+                                    else:
+                                        st.info("💡 Không có xe nào cần cập nhật thông tin.")
                             else:
                                 st.warning(f"⚠️ **Cảnh báo ghi đè:** Hệ thống sẽ thay thế toàn bộ `{len(df_xe_all)}` phương tiện hiện có bằng **{len(df_imp_xe)}** phương tiện từ file mới tải lên!")
-
-                            # Xem trước danh sách xe mới sẽ thêm
-                            st.markdown(f"##### 👀 Danh sách phương tiện sẽ nạp vào ({len(list_them_moi)} xe):")
-                            df_preview = pd.DataFrame(list_them_moi)
-                            st.dataframe(df_preview, use_container_width=True, hide_index=True)
+                                st.dataframe(pd.DataFrame(list_them_moi), use_container_width=True, hide_index=True)
 
                             # Nút bấm hành động
                             if is_bo_sung:
-                                btn_label = f"➕ XÁC NHẬN BỔ SUNG {len(list_them_moi)} XE MỚI VÀO DANH SÁCH (GIỮ NGUYÊN XE CŨ)"
+                                if len(list_them_moi) > 0 and len(list_cap_nhat) > 0:
+                                    btn_label = f"🚀 XÁC NHẬN NẠP VÀO: BỔ SUNG {len(list_them_moi)} XE MỚI & CẬP NHẬT {len(list_cap_nhat)} XE TRÙNG LẶP"
+                                elif len(list_them_moi) > 0:
+                                    btn_label = f"➕ XÁC NHẬN BỔ SUNG {len(list_them_moi)} XE MỚI VÀO DANH SÁCH (GIỮ NGUYÊN XE CŨ)"
+                                elif len(list_cap_nhat) > 0:
+                                    btn_label = f"🔄 XÁC NHẬN CẬP NHẬT THÔNG TIN MỚI CHO {len(list_cap_nhat)} XE ĐÃ CÓ"
+                                else:
+                                    btn_label = "✅ TẤT CẢ DỮ LIỆU ĐÃ TRÙNG KHỚP - KHÔNG CÓ THÔNG TIN MỚI CẦN CẬP NHẬT"
                             else:
                                 btn_label = f"⚠️ XÁC NHẬN GHI ĐÈ TOÀN BỘ BẰNG {len(list_them_moi)} XE MỚI"
 
-                            if st.button(btn_label, type="primary", use_container_width=True, disabled=(len(list_them_moi) == 0)):
-                                with st.spinner("Đang xử lý cấp mã xe và đồng bộ dữ liệu..."):
+                            co_du_lieu_nap = (len(list_them_moi) > 0 or len(list_cap_nhat) > 0) if is_bo_sung else (len(list_them_moi) > 0)
+
+                            if st.button(btn_label, type="primary", use_container_width=True, disabled=not co_du_lieu_nap):
+                                with st.spinner("Đang xử lý cấp mã xe, cập nhật thông tin và đồng bộ dữ liệu..."):
                                     if is_bo_sung:
-                                        # Tìm số thứ tự lớn nhất trong danh sách hiện tại
+                                        # 1. Cập nhật thông tin cho các xe trùng lặp
+                                        so_xe_cap_nhat_thanh_cong = 0
+                                        for it in list_cap_nhat:
+                                            idx_old = it['idx_old']
+                                            f_ups = it['fields_to_update']
+                                            if f_ups:
+                                                for col_u, val_u in f_ups.items():
+                                                    df_xe_all.at[idx_old, col_u] = val_u
+                                                so_xe_cap_nhat_thanh_cong += 1
+
+                                        # 2. Cấp mã nối tiếp cho các xe mới
                                         max_code = 0
                                         if not df_xe_all.empty and 'Mã xe' in df_xe_all.columns:
                                             for c_val in df_xe_all['Mã xe'].astype(str):
                                                 nums = re.findall(r'\d+', c_val)
                                                 if nums:
                                                     max_code = max(max_code, int(nums[-1]))
-                                        
-                                        # Cấp mã nối tiếp cho xe mới
+
                                         for idx_item, item in enumerate(list_them_moi):
                                             next_num = max_code + idx_item + 1
                                             item['Mã xe'] = f"XE-{next_num:03d}"
@@ -1570,8 +1824,11 @@ def render_phan_he_doan_thanh_nien(df_tai_khoan, role_curr, nam_hoc, BASE_DIR, T
                                             if 'Tình trạng' not in item or not item['Tình trạng']:
                                                 item['Tình trạng'] = 'Đủ điều kiện lưu hành'
 
-                                        df_new_to_add = pd.DataFrame(list_them_moi)
-                                        df_final_save = pd.concat([df_xe_all, df_new_to_add], ignore_index=True)
+                                        if list_them_moi:
+                                            df_new_to_add = pd.DataFrame(list_them_moi)
+                                            df_final_save = pd.concat([df_xe_all, df_new_to_add], ignore_index=True)
+                                        else:
+                                            df_final_save = df_xe_all.copy()
                                     else:
                                         # Ghi đè: đánh lại mã từ XE-001
                                         for idx_item, item in enumerate(list_them_moi):
@@ -1582,43 +1839,12 @@ def render_phan_he_doan_thanh_nien(df_tai_khoan, role_curr, nam_hoc, BASE_DIR, T
                                                 item['Tình trạng'] = 'Đủ điều kiện lưu hành'
                                         df_final_save = pd.DataFrame(list_them_moi)
 
-                                    # Đảm bảo đúng thứ tự cột
-                                    order_cols = [
-                                        'Mã xe', 'Họ và tên', 'Lớp', 'SĐT Học sinh', 'Loại xe', 'Biển số xe', 'Màu xe', 
-                                        'Nơi gửi xe', 'GVCN', 'SĐT GVCN', 'Họ tên Phụ huynh', 'SĐT Phụ huynh', 'Địa chỉ', 
-                                        'Tình trạng', 'Số lần vi phạm', 'Ghi chú'
-                                    ]
-                                    for oc in order_cols:
-                                        if oc not in df_final_save.columns:
-                                            df_final_save[oc] = ""
-                                    df_final_save = df_final_save[order_cols]
+                                    _luu_toan_bo_phuong_tien(df_final_save)
 
-                                    # Lưu vào tất cả các đích
-                                    all_sync_dirs = [
-                                        f_xe,
-                                        os.path.join(BASE_DIR, 'quan_ly_phuong_tien.csv'),
-                                        os.path.join(THU_MUC_NAM_HOC, folder_nam, 'quan_ly_phuong_tien.csv'),
-                                        os.path.join('D:/phan_mem_ban_tru_cloud', 'quan_ly_phuong_tien.csv'),
-                                        os.path.join('d:/OneDrive/Hô sơ cá nhan/Học AI', 'quan_ly_phuong_tien.csv'),
-                                        r"C:\Users\Bui Van Tien\Desktop\THU_MUC_TAI_LEN_GITHUB\quan_ly_phuong_tien.csv"
-                                    ]
-                                    for p_save in all_sync_dirs:
-                                        if os.path.exists(os.path.dirname(p_save)):
-                                            try:
-                                                df_final_save.to_csv(p_save, index=False, encoding='utf-8-sig')
-                                            except Exception:
-                                                pass
-
-                                    # Tự động đẩy lên GitHub nền nếu có token
-                                    try:
-                                        import tu_dong_day_len_github
-                                        cfg_gh = tu_dong_day_len_github.load_github_cfg()
-                                        if cfg_gh.get("token"):
-                                            tu_dong_day_len_github.push_to_github_api(cfg_gh["token"])
-                                    except Exception:
-                                        pass
-
-                                    st.success(f"🎉 **Thành công!** Đã lưu dữ liệu. Tổng số phương tiện hiện tại là **{len(df_final_save)} xe**.")
+                                    if is_bo_sung:
+                                        st.success(f"🎉 **Hoàn tất xử lý!** Đã bổ sung thành công **{len(list_them_moi)} xe mới** và Cập nhật thông tin cho **{len(list_cap_nhat)} xe đã có**. Tổng số phương tiện hiện tại là **{len(df_final_save)} xe**.")
+                                    else:
+                                        st.success(f"🎉 **Ghi đè thành công!** Đã thay thế toàn bộ bằng **{len(df_final_save)} xe mới**.")
                                     st.rerun()
 
                     except Exception as e:
