@@ -6,6 +6,7 @@ Trường THPT số 2 Bảo Yên - Xã Bảo Hà, Huyện Bảo Yên, Tỉnh Là
 
 import os
 import io
+import re
 import base64
 import streamlit as st
 import pandas as pd
@@ -1282,11 +1283,11 @@ def render_phan_he_doan_thanh_nien(df_tai_khoan, role_curr, nam_hoc, BASE_DIR, T
                                 )
                                 if chon_sheet == "⭐ Nhập tất cả các Sheet":
                                     for s_name in xl_file.sheet_names:
-                                        raw_sheets_dict[s_name] = pd.read_excel(uploaded_xe_file, sheet_name=s_name, dtype=str).fillna("")
+                                        raw_sheets_dict[s_name] = pd.read_excel(xl_file, sheet_name=s_name, dtype=str).fillna("")
                                 else:
-                                    raw_sheets_dict[chon_sheet] = pd.read_excel(uploaded_xe_file, sheet_name=chon_sheet, dtype=str).fillna("")
+                                    raw_sheets_dict[chon_sheet] = pd.read_excel(xl_file, sheet_name=chon_sheet, dtype=str).fillna("")
                             else:
-                                raw_sheets_dict[xl_file.sheet_names[0]] = pd.read_excel(uploaded_xe_file, sheet_name=xl_file.sheet_names[0], dtype=str).fillna("")
+                                raw_sheets_dict[xl_file.sheet_names[0]] = pd.read_excel(xl_file, sheet_name=xl_file.sheet_names[0], dtype=str).fillna("")
 
                         # 2. Chuẩn hóa các cột và trích xuất danh sách phương tiện
                         parsed_new_records = []
@@ -1325,38 +1326,51 @@ def render_phan_he_doan_thanh_nien(df_tai_khoan, role_curr, nam_hoc, BASE_DIR, T
                         for s_name, df_sh in raw_sheets_dict.items():
                             default_class = s_name.upper().strip()
                             
-                            # Chuẩn hóa tên cột
-                            col_map = {}
-                            for c in df_sh.columns:
-                                cl = str(c).strip().lower()
-                                if any(k in cl for k in ['họ và tên', 'họ tên', 'tên hs', 'tên học sinh']):
-                                    col_map['ten'] = c
-                                elif cl == 'lớp' or 'lớp' in cl:
-                                    col_map['lop'] = c
-                                elif any(k in cl for k in ['loại phương tiện', 'loại xe']):
-                                    col_map['loai_xe'] = c
-                                elif any(k in cl for k in ['hãng xe', 'model']):
-                                    col_map['hang_xe'] = c
-                                elif 'màu' in cl:
-                                    col_map['mau_xe'] = c
-                                elif any(k in cl for k in ['biển số', 'biển']):
-                                    col_map['bien_so'] = c
-                                elif any(k in cl for k in ['phụ huynh', 'sđt ph', 'sdt ph']):
-                                    col_map['sdt_ph'] = c
-                                elif any(k in cl for k in ['sđt hs', 'sdt hs', 'sđt học sinh']):
-                                    col_map['sdt_hs'] = c
-                                elif any(k in cl for k in ['nơi để', 'nơi gửi', 'gửi xe']):
-                                    col_map['noi_gui'] = c
-                                elif 'gvcn' in cl and 'sđt' not in cl and 'sdt' not in cl:
-                                    col_map['gvcn'] = c
-                                elif any(k in cl for k in ['sđt gvcn', 'sdt gvcn']):
-                                    col_map['sdt_gvcn'] = c
-                                elif any(k in cl for k in ['họ tên phụ huynh', 'tên phụ huynh', 'tên cha', 'tên mẹ']):
-                                    col_map['ten_ph'] = c
-                                elif 'địa chỉ' in cl:
-                                    col_map['dia_chi'] = c
-                                elif 'ghi chú' in cl:
-                                    col_map['ghi_chu'] = c
+                            # Hàm trích xuất col_map thông minh
+                            def _tim_col_map(df_inp):
+                                cmap = {}
+                                for c in df_inp.columns:
+                                    cl = str(c).strip().lower()
+                                    if any(k in cl for k in ['sđt ph', 'sdt ph', 'số điện thoại ph', 'đt phụ huynh', 'đt ph', 'sđt phụ huynh']):
+                                        cmap['sdt_ph'] = c
+                                    elif any(k in cl for k in ['sđt gvcn', 'sdt gvcn', 'đt gvcn']):
+                                        cmap['sdt_gvcn'] = c
+                                    elif any(k in cl for k in ['sđt hs', 'sdt hs', 'sđt học sinh', 'đt hs']):
+                                        cmap['sdt_hs'] = c
+                                    elif any(k in cl for k in ['họ tên phụ huynh', 'tên phụ huynh', 'tên cha', 'tên mẹ', 'phụ huynh', 'người giám hộ']):
+                                        cmap['ten_ph'] = c
+                                    elif 'gvcn' in cl or 'giáo viên chủ nhiệm' in cl:
+                                        cmap['gvcn'] = c
+                                    elif any(k in cl for k in ['họ và tên', 'họ tên', 'tên hs', 'tên học sinh', 'học sinh']) and 'phụ huynh' not in cl and 'gvcn' not in cl:
+                                        cmap['ten'] = c
+                                    elif cl == 'lớp' or 'lớp' in cl:
+                                        cmap['lop'] = c
+                                    elif any(k in cl for k in ['loại phương tiện', 'loại xe', 'loại']):
+                                        cmap['loai_xe'] = c
+                                    elif any(k in cl for k in ['hãng xe', 'hãng sx', 'model', 'nhãn hiệu']):
+                                        cmap['hang_xe'] = c
+                                    elif 'màu' in cl:
+                                        cmap['mau_xe'] = c
+                                    elif any(k in cl for k in ['biển số', 'biển']):
+                                        cmap['bien_so'] = c
+                                    elif any(k in cl for k in ['nơi để', 'nơi gửi', 'gửi xe', 'vị trí để']):
+                                        cmap['noi_gui'] = c
+                                    elif 'địa chỉ' in cl or 'thường trú' in cl or 'nơi ở' in cl:
+                                        cmap['dia_chi'] = c
+                                    elif 'ghi chú' in cl:
+                                        cmap['ghi_chu'] = c
+                                return cmap
+
+                            col_map = _tim_col_map(df_sh)
+                            if 'ten' not in col_map:
+                                # Thử dò trong 10 dòng đầu xem dòng nào chứa tiêu đề cột
+                                for r_idx in range(min(10, len(df_sh))):
+                                    row_vals = [str(x).strip().lower() for x in df_sh.iloc[r_idx].values if pd.notna(x)]
+                                    if any(any(k in v for k in ['họ và tên', 'họ tên', 'tên hs', 'tên học sinh']) for v in row_vals):
+                                        df_sh.columns = [str(x).strip() for x in df_sh.iloc[r_idx].values]
+                                        df_sh = df_sh.iloc[r_idx + 1:].reset_index(drop=True)
+                                        col_map = _tim_col_map(df_sh)
+                                        break
 
                             if 'ten' not in col_map:
                                 continue
@@ -1400,6 +1414,7 @@ def render_phan_he_doan_thanh_nien(df_tai_khoan, role_curr, nam_hoc, BASE_DIR, T
 
                                 # SĐT Phone helper
                                 def _fmt_phone(p_str):
+                                    import re
                                     if not p_str or p_str.lower() in ['nan', 'none']:
                                         return ""
                                     clean = re.sub(r'[^0-9]', '', str(p_str))

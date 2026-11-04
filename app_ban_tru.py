@@ -390,29 +390,59 @@ components.html("""
                 doc.title = "THPT 2 Bảo Yên";
             }
 
-            // 2. Thẻ Apple Touch Icon & Favicon cho điện thoại (iPhone Safari & Android Chrome)
+            // Xóa sạch các favicon mặc định hình thuyền giấy đỏ của Streamlit
+            try {
+                var oldFavicons = doc.querySelectorAll('link[rel*="icon"]');
+                oldFavicons.forEach(function(el) {
+                    if (el.href && el.href.indexOf('buivantien20') === -1 && el.href.indexOf('data:image') === -1) {
+                        el.remove();
+                    }
+                });
+            } catch(err) {}
+
+            // 2. Thẻ Apple Touch Icon & Favicon chuẩn hóa dẫn thẳng tới CDN Logo trường
+            var cdnLogo = "https://buivantien20.github.io/ban-tru-thpt2-baoyen/";
             var dsThe = [
-                { rel: "apple-touch-icon", href: "/apple-touch-icon.png", sizes: "180x180" },
-                { rel: "apple-touch-icon", href: "/logo_192.png", sizes: "192x192" },
-                { rel: "apple-touch-icon-precomposed", href: "/apple-touch-icon.png" },
-                { rel: "icon", href: "/logo_192.png", type: "image/png", sizes: "192x192" },
-                { rel: "icon", href: "/logo_512.png", type: "image/png", sizes: "512x512" },
-                { rel: "shortcut icon", href: "/favicon.png" },
-                { rel: "manifest", href: "/site.webmanifest" }
+                { rel: "apple-touch-icon", href: cdnLogo + "apple-touch-icon.png", sizes: "180x180" },
+                { rel: "apple-touch-icon", href: cdnLogo + "logo_192.png", sizes: "192x192" },
+                { rel: "apple-touch-icon-precomposed", href: cdnLogo + "apple-touch-icon.png" },
+                { rel: "icon", href: cdnLogo + "logo_192.png", type: "image/png", sizes: "192x192" },
+                { rel: "icon", href: cdnLogo + "logo_512.png", type: "image/png", sizes: "512x512" },
+                { rel: "shortcut icon", href: cdnLogo + "apple-touch-icon.png" }
             ];
 
             dsThe.forEach(function(t) {
-                var selector = 'link[rel="' + t.rel + '"]' + (t.sizes ? '[sizes="' + t.sizes + '"]' : '');
-                var el = head.querySelector(selector);
-                if (!el) {
-                    el = doc.createElement('link');
-                    el.rel = t.rel;
-                    if (t.sizes) el.setAttribute('sizes', t.sizes);
-                    if (t.type) el.setAttribute('type', t.type);
-                    head.appendChild(el);
-                }
+                var el = doc.createElement('link');
+                el.rel = t.rel;
+                if (t.sizes) el.setAttribute('sizes', t.sizes);
+                if (t.type) el.setAttribute('type', t.type);
                 el.href = t.href;
+                head.appendChild(el);
             });
+
+            // Tạo Web Manifest Blob động để Chrome/Android nạp Logo trường làm biểu tượng cài đặt
+            try {
+                var oldMans = doc.querySelectorAll('link[rel="manifest"]');
+                oldMans.forEach(function(m){ m.remove(); });
+                var mObj = {
+                    name: "Trường THPT số 2 Bảo Yên",
+                    short_name: "THPT 2 Bảo Yên",
+                    start_url: window.location.href,
+                    display: "standalone",
+                    background_color: "#FFFFFF",
+                    theme_color: "#1E3A8A",
+                    icons: [
+                        { src: cdnLogo + "apple-touch-icon.png", sizes: "180x180", type: "image/png", purpose: "any" },
+                        { src: cdnLogo + "logo_192.png", sizes: "192x192", type: "image/png", purpose: "any maskable" },
+                        { src: cdnLogo + "logo_512.png", sizes: "512x512", type: "image/png", purpose: "any maskable" }
+                    ]
+                };
+                var mBlob = new Blob([JSON.stringify(mObj)], {type: "application/manifest+json"});
+                var mLink = doc.createElement('link');
+                mLink.rel = 'manifest';
+                mLink.href = URL.createObjectURL(mBlob);
+                head.appendChild(mLink);
+            } catch(eManifest) {}
 
             // 3. Các thẻ Meta PWA chuẩn hóa
             var dsMeta = [
