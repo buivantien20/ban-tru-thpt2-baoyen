@@ -1,28 +1,29 @@
 ﻿Mã xe,Họ và tên,Lớp,SĐT Học sinh,Loại xe,Biển số xe,Màu xe,Nơi gửi xe,GVCN,SĐT GVCN,Họ tên Phụ huynh,SĐT Phụ huynh,Địa chỉ,Tình trạng,Số lần vi phạm,Ghi chú
-XE-001,Chướng Ngọc Ánh,10A1,0963327920,YADEA,24-AA 083.37,Không rõ,Trong trường,Trần Văn Đoàn,0947157111,Chướng Văn Thành,0392565091,"Ngầm Thỉn, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
-XE-002,Dương yến vi,10A1,0376910527,Kazuki,Chưa đăng ký,Không rõ,Trong trường,Trần Văn Đoàn,0947157111,Dương Văn Thích,0348289574,"Tân An, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-001,Chướng Ngọc Ánh,10A1,0963327920,Xe đạp điện,24Â-083.37,Màu đen,Trong trường,Thầy/Cô GVCN 10A1,0947157111,Chướng Văn Thành,0964060387,Ngầm Thỉn - Bảo Hà - Lào Cai,Đủ điều kiện lưu hành,0,
+XE-002,Dương yến vi,10A1,0376910527,xe điện,Chưa đăng ký,xanh tím,Trong trường,Thầy/Cô GVCN 10A1,0947157111,Dương Văn Thích,0348289574,Tân An - Bảo Hà - Lào Cai,Đủ điều kiện lưu hành,0,
 XE-003,Hoàng Thùy Linh - 10A1 / Lý Thị Anh Đào - 10A2,10A1,0368337636,yadea,Chưa đăng ký,Không rõ,Trong trường,Trần Văn Đoàn,0947157111,Hoàng Văn Hình,0364809283,"Tân Sơn, Xã Bảo Hà",Đủ điều kiện lưu hành,0,Lý Thị Anh Đào đi cùng
-XE-004,Kim Ánh Ngọc,10A1,0356619420,Th36 Bike,Chưa đăng ký,Không rõ,Trong trường,Trần Văn Đoàn,0947157111,Kim Văn Dương,0971085416,"Tân An, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
-XE-005,Lý Lan Phương - 10A1 / Đặng Thị Vân Anh - 12A3,10A1,0369080231,50cc,24-AB 030.64,Không rõ,Trong trường,Trần Văn Đoàn,0947157111,Lý Văn Chúi,0336675404,"Tân Thành, Xã Bảo Hà",Đủ điều kiện lưu hành,0,"đi xe cùng chị lớp Anh 12a3 chủ 
+XE-004,Kim Ánh Ngọc,10A1,0356619420,xe đạp điện,Chưa đăng ký,xanh than,Trong trường,Thầy/Cô GVCN 10A1,0947157111,Kim Văn Dương,0972147516,Tân An - Bảo Hà - Lào Cai,Đủ điều kiện lưu hành,0,
+XE-005,Lý Lan Phương - 10A1 / Đặng Thị Vân Anh - 12A3,10A1,0369080231,xe máy,24-AB 030.64,màu trắng,Trong trường,Thầy/Cô GVCN 10A1,0947157111,Lý Văn Chúi,0344010097,Tân Thành - Bảo Hà - Lào Cai,Đủ điều kiện lưu hành,0,"đi xe cùng chị lớp Anh 12a3 chủ 
 phương tiện"
-XE-006,Lý Quỳnh Anh,10A1,0359664844,M133,Chưa đăng ký,Không rõ,Trong trường,Trần Văn Đoàn,0947157111,Lý Văn Minh,0356376088,"Thùng, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
-XE-007,Mai Ánh Nhi,10A1,0915904228,vekoo,24- AA 214.50,Không rõ,Trong trường,Trần Văn Đoàn,0947157111,Mai Văn Triệu,0839327313,"Liên Hải, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
-XE-008,Nguyễn Hà Vy - 10A1 / Vũ Đình Hùng - 12A2,10A1,0327146067,Dibao,21-MĐ4 002.35,Không rõ,Trong trường,Trần Văn Đoàn,0947157111,Nguyễn Văn Nam,0379220861,"Ngầm Thỉn, Xã Bảo Hà",Đủ điều kiện lưu hành,0,Đi xe cùng anh Hùng lớp 12A3 chủ phương tiện
-XE-009,Nguyễn Quỳnh Chi,10A1,0354901511,Honda,68-H1 7396,Không rõ,Trong trường,Trần Văn Đoàn,0947157111,Nguyễn Bá Quỳnh,0378314989,"An Khánh, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
-XE-010,Nguyễn Thị Khánh  Ly,10A1,0343294783,Santosar,Chưa đăng ký,Không rõ,Trong trường,Trần Văn Đoàn,0947157111,Phụ huynh,0916677096,"Bảo Hà, Bảo Yên",Đủ điều kiện lưu hành,0,
-XE-011,Nguyễn Thị Thanh Thảo,10A1,0327330743,YAEDEA,Chưa đăng ký,Không rõ,Trong trường,Trần Văn Đoàn,0947157111,Nguyễn DĐức Minh,0388086180,"Ngòi Lẫu, Xã Châu Quế",Đủ điều kiện lưu hành,0,
+XE-006,Lý Quỳnh Anh,10A1,0359664844,Xe đạp điện,Chưa đăng ký,Màu đen,Trong trường,Thầy/Cô GVCN 10A1,0947157111,Lý Văn Minh,0356453083,Thùng  - Bảo Hà - Lào Cai,Đủ điều kiện lưu hành,0,
+XE-007,Mai Ánh Nhi,10A1,0915904228,xe  điện,24- AA 214.50,màu đen,Trong trường,Thầy/Cô GVCN 10A1,0947157111,Mai Văn Triệu,0839327313,Liên Hải - Bảo Hà - Lào Cai,Đủ điều kiện lưu hành,0,
+XE-008,Nguyễn Hà Vy - 10A1 / Vũ Đình Hùng - 12A2,10A1,0327146067,Xe máy điện,21-MĐ4 002.35,Màu xanh than,Trong trường,Thầy/Cô GVCN 10A1,0947157111,Nguyễn Văn Nam,0352910649,Ngầm Thỉn - Bảo Hà - Lào Cai,Đủ điều kiện lưu hành,0,Đi xe cùng anh Hùng lớp 12A3 chủ phương tiện
+XE-009,Nguyễn Quỳnh Chi,10A1,0354901511,xe điện,68-H1 7396,Xanh lá,Ngoài trường - Nhà Bà Hà gần ủy ban xã,Thầy/Cô GVCN 10A1,0947157111,Nguyễn Bá Quỳnh,0976231380,An Khánh - Bảo Hà - Lào Cai,Đủ điều kiện lưu hành,0,
+XE-010,Nguyễn Thị Khánh  Ly,10A1,0343294783,xe đạp điện,Chưa đăng ký,Màu đen,Trong trường,Thầy/Cô GVCN 10A1,0947157111,Nguyễn Duy Hưng,0916677096,Lúc - Bảo Hà - Lào Cai,Đủ điều kiện lưu hành,0,
+XE-011,Nguyễn Thị Thanh Thảo,10A1,0327330743,xe đạp điện,Chưa đăng ký,Màu xám đen,Trong trường,Thầy/Cô GVCN 10A1,0947157111,Nguyễn Đức Minh,0983986862,Ngòi Lẫu - Châu Quế - Lào Cai,Đủ điều kiện lưu hành,0,
 XE-012,Phùng Thị Khách,10A1,0394515961,rsx,24-AA151.46,Không rõ,Trong trường,Trần Văn Đoàn,0947157111,Phùng Thị Liều,0377536147,"Khe Bàn, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
-XE-013,Phạm Khánh Thi,10A1,0866987957,Xe máy điện,Chưa đăng ký,Không rõ,Trong trường,Trần Văn Đoàn,0947157111,Phạm Văn Duẩn,0974881183,"Bảo Vinh, Xã Bảo Hà",Đủ điều kiện lưu hành,0,"Để xe cô Trang bán xe đạp đối 
+XE-013,Phạm Khánh Thi,10A1,0866987957,Xe đạp,Chưa đăng ký,màu đen,"Ngoài trường (Để xe cô Trang bán xe đạp đối 
+diện trường cấp 2)",Thầy/Cô GVCN 10A1,0947157111,Phạm Thị Sen,0974881183,Bảo Vinh - Bảo Hà - Lào Cai,Đủ điều kiện lưu hành,0,"Để xe cô Trang bán xe đạp đối 
 diện trường cấp 2"
 XE-014,Triệu Thu Yến,10A1,0395423735,rsx,24-AA 507.48,Không rõ,Trong trường,Trần Văn Đoàn,0947157111,Triệu Tòn Chản,0375109274,"Khe Bàn, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
-XE-015,Triệu Thị Hiền - 10A1 / Triệu Kim Ngân - 11A3,10A1,0978083718,50cc,24-AA 636.27,Không rõ,Trong trường,Trần Văn Đoàn,0947157111,Triệu Văn Hai,0983990102,"Tân Thành, Xã Bảo Hà",Đủ điều kiện lưu hành,0,"đi xe cùng với anh Ngân lớp 11a3
+XE-015,Triệu Thị Hiền - 10A1 / Triệu Kim Ngân - 11A3,10A1,0978083718,xe  máy,24-AA 636.27,mầu trắng,Trong trường,Thầy/Cô GVCN 10A1,0947157111,Triệu Văn Hai,0983990102,Tân Thành - Bảo Hà - Lào Cai,Đủ điều kiện lưu hành,0,"đi xe cùng với anh Ngân lớp 11a3
 chủ phương tiện"
-XE-016,Trướng Thị Ngọc Ánh - 10A1 / Nguyễn Đức Tâm - 12A3,10A1,0961149697,YAEDEA,24-AA-764.82,Không rõ,Trong trường,Trần Văn Đoàn,0947157111,Trướng Văn Phong,0982472281,"Mai Ù, Xã Bảo Hà",Đủ điều kiện lưu hành,0,đi cùng chị học sinh lớp Tâm 12a3 chủ phương tiện
+XE-016,Trướng Thị Ngọc Ánh - 10A1 / Nguyễn Đức Tâm - 12A3,10A1,0961149697,xe điện,24-AA-764.82,màu đen,Ngoài trường,Thầy/Cô GVCN 10A1,0947157111,Trướng Văn Phong,0342066084,Mai Ù - Bảo Hà - Lào Cai,Đủ điều kiện lưu hành,0,đi cùng chị học sinh lớp Tâm 12a3 chủ phương tiện
 XE-017,Vàng Thị Hoàng Diệp - 10A1 / Vàng Thị Ngọc Bích - 12A5,10A1,0337057910,Xe máy điện,Chưa đăng ký,Không rõ,Trong trường,Trần Văn Đoàn,0947157111,Hoàng Văn Bảy,0338954557,"Tân Văn, Xã Bảo Hà",Đủ điều kiện lưu hành,0,"đi xe với cùng chị lớp Bích 12a5
 chủ phương tiện"
-XE-018,Đặng Ngọc Dũng,10A1,0396266335,Xe máy điện,Chưa đăng ký,Không rõ,Trong trường,Trần Văn Đoàn,0947157111,Đặng Ngọc Phương,0966668507,"Bảo Vinh, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
-XE-019,Đặng Nhất Chi Mai,10A1,0354870885,yadea,24-AB 048.03,Không rõ,Trong trường,Trần Văn Đoàn,0947157111,Đặng Văn Thanh,0399459275,"Ngầm Thỉn, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
-XE-020,Đặng Thị Quỳnh Anh,10A1,0978490351,AZUKI,Chưa đăng ký,Không rõ,Trong trường,Trần Văn Đoàn,0947157111,Đặng Văn Hương,0962698738,Xã Bảo Hà,Đủ điều kiện lưu hành,0,
+XE-018,Đặng Ngọc Dũng,10A1,0396266335,xe đạp,Chưa đăng ký,trắng,Trong trường,Thầy/Cô GVCN 10A1,0947157111,Đặng Ngọc Phương,0966669507,Bảo Vinh - Bảo Hà - Lào Cai,Đủ điều kiện lưu hành,0,
+XE-019,Đặng Nhất Chi Mai,10A1,0354870885,xe  điện,24-AB 048.03,màu đen,Trong trường,Thầy/Cô GVCN 10A1,0947157111,phạm thị hợp,0399459275,Ngầm Thỉn - Bảo Hà - Lào Cai,Đủ điều kiện lưu hành,0,
+XE-020,Đặng Thị Quỳnh Anh,10A1,0978490351,xe  điện,Chưa đăng ký,Màu Xanh,Trong trường,Thầy/Cô GVCN 10A1,0947157111,Đặng Văn Hương,0338345168,Tân Sơn - Bảo Hà - Lào Cai,Đủ điều kiện lưu hành,0,
 XE-021,Bàn Thị Trang,10A2,0356787621,Xe đạp điện (M133),Chưa đăng ký,Đỏ,Trong trường,Hoàng Thị Oanh,0356656712,Bàn Phúc Thắng,0385967950,"Thôn Thùng, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
 XE-022,Bàn Tuấn Hưng,10A2,0325867290,Xe đạp điện (Yadea),24-AA 253.92,Đen,Trong trường,Hoàng Thị Oanh,0356656712,Bàn Văn Thương,0346469644,"Thôn Khe Dài, Xã Bảo Hà",Đủ điều kiện lưu hành,0,Đi cùng Cường 12A2
 XE-023,Chu Chí Sơn,10A2,0913536392,Xe máy điện (Gogo Espero),Chưa đăng ký,Đen,Bãi gần đồn công an,Hoàng Thị Oanh,0356656712,Chu Chí Hiếu,0399544238,"Thôn Tắp 4, Xã Bảo Hà",Đủ điều kiện lưu hành,0,Đi cùng Lương Gia Huy 11A4
@@ -58,7 +59,7 @@ XE-052,Nguyễn Quyết Tiến,10A3,0344416927,Xe đạp điện (yadea xbull),C
 XE-053,Nguyễn Thị Ngọc,10A3,0326278340,Xe đạp điện (Kazuki),Chưa đăng ký,đen,Ngoài trường,Trần Thị Hiền,0974657769,Nguyễn Thành Tiếp,0377571772,"Bản Liên Hải, Xã Bảo Hà",Đủ điều kiện lưu hành,0,Đi 1 mình
 XE-054,Nguyễn Đức Vượng,10A3,0979105883,xe đạp (Borki),Chưa đăng ký,Trắng,Ngoài trường,Trần Thị Hiền,0974657769,Nguyễn Văn Tâm,0966970175,"Thôn Bảo Vinh, Xã Bảo Hà",Đủ điều kiện lưu hành,0,đi một mình
 XE-055,Nông Đức Hiệp,10A3,0347478320,xe đạp điện,Chưa đăng ký,xanh nhám,Trong trường,Trần Thị Hiền,0974657769,Nông Văn Noọng,0987679240,"Thôn Mai Hồng, Xã Bảo Hà",Đủ điều kiện lưu hành,0,đi 1 mình
-XE-056,Phan Thị Phương Thảo,10A3,0866568730,xe máy điện (GoGo),Chưa đăng ký biển,Xám ghi,Ngoài trường,Trần Thị Hiền,0974657769,Phan Văn Huy,0985224393,"Thôn Kim Quang, Xã Bảo Hà",Đủ điều kiện lưu hành,0,đi hai người
+XE-056,Phan Thị Phương Thảo,10A3,0866568730,Xe máy điện,24-AA 246.56,Ghi xám,Ngoài trường,Trần Thị Hiền GVCN 10A3,0974657769,Phan Văn Huy,0985224393,Kim Quang - Bảo Hà,Đủ điều kiện lưu hành,0,đi hai người
 XE-057,Thái Thanh Hà,10A3,0972305594,Xe đạp điện (Osakar),Chưa đăng ký,đen,Trong trường,Trần Thị Hiền,0974657769,Phụ huynh,0982502273,"Bảo Hà, Bảo Yên",Đủ điều kiện lưu hành,0,đi một minh
 XE-058,Triệu Long Quý,10A3,0869086275,xe máy 50cc (hb),Chưa đăng ký,xanh,Trong trường,Trần Thị Hiền,0974657769,Triệu Văn Phấy,0364884404,"Thôn Bông, Xã Bảo Hà",Đủ điều kiện lưu hành,0,đi cùng chị 11a3
 XE-059,Trần Mạnh Hùng,10A3,0789109425,xe máy điện (YAKA),24AA-352.05,xám,ngoài trường,Trần Thị Hiền,0974657769,Trần Văn Man,0336556700,"Bản Mai, Xã Bảo Hà",Đủ điều kiện lưu hành,0,đi với chị 12a4
@@ -66,34 +67,34 @@ XE-060,Trần Thị Khuyên,10A3,,xe đạp điện (kazuki),Chưa đăng ký,tr
 XE-061,Trần Đình Quang,10A3,0961402983,xe đạp điện (AIMA-X86),Chưa đăng ký,đỏ đen,Trong trường,Trần Thị Hiền,0974657769,Trần Đình Tùng,0968948756,"Thôn Ngầm Thỉn, Xã Bảo Hà",Đủ điều kiện lưu hành,0,đi vs Thiện 10a3
 XE-062,Vi Đức Thiện,10A3,0866562450,xe đạp điện (AIMA-X86),Chưa đăng ký,đỏ đen,Trong trường,Trần Thị Hiền,0974657769,Vi Văn Mong,0393011365,"Thôn Ngầm Thỉn, Xã Bảo Hà",Đủ điều kiện lưu hành,0,chở quang 10a3
 XE-063,Đặng Mai Phương,10A3,0363620950,xe đạp điện (weezee240w),Chưa đăng ký biển,xám,Trong trường,Trần Thị Hiền,0974657769,Đặng Văn Phín,0962176970,"Thôn Tân Trúc, Xã Bảo Hà",Đủ điều kiện lưu hành,0,đi 1 mình
-XE-064,Bàn Hiểu Thuần,10A4,0395685771,Xe đạp điên (Yadea),Chưa đăng ký biển,Đen xám,Trong trường,Phạm Đức Hưng,0359220000,Bàn Văn Tiếp,0329073046,"Thôn Ly, Xã Lâm Giang",Đủ điều kiện lưu hành,0,Đi một mình
+XE-064,Bàn Hiểu Thuần,10A4,0395685771,Xe đạp điên,Chưa đăng ký biển,Đen xám,Nhà xe học sinh,Thầy/Cô GVCN 10A4,0359220000,Bàn Văn Tiếp,0329073046,Ly - Lâm Giang,Đủ điều kiện lưu hành,0,Đi một mình
 XE-065,Bàn Thị Hoa,10A4,0868654376,xe máy (50cc),Chưa đăng ký biển,Xanh than,Trong trường,Phạm Đức Hưng,0359220000,Bàn Tuấn Anh,0974216321,"1 Nhai Tẻn, Xã Bảo Hà",Đủ điều kiện lưu hành,0,đi với anh Bàn Thanh Chung 12a5
-XE-066,Hoàng Thị Phương Vy,10A4,0377749422,Xe đạp điên (Lc bike),Chưa đăng ký biển,Đen,Trong trường,Phạm Đức Hưng,0359220000,Vũ Quốc Minh,0373114614,"Thôn Hồng Sơn, Xã Bảo Hà",Đủ điều kiện lưu hành,0,đi một mình
-XE-067,Lý Thị Thơm,10A4,0788016131,Xe máy điện (JVC),24-AA513.71,Xanh,Trong trường,Phạm Đức Hưng,0359220000,Lý Văn Phúc,0368251355,"Tân Trúc, Xã Bảo Hà",Đủ điều kiện lưu hành,0,Đi một mình
+XE-066,Hoàng Thị Phương Vy,10A4,0377749422,Xe đạp điên,Chưa đăng ký biển,Đen,Nhà xe học sinh,Thầy/Cô GVCN 10A4,0359220000,Long Thị Hoài,0373114614,Hồng Sơn - Bảo Hà,Đủ điều kiện lưu hành,0,đi một mình
+XE-067,Lý Thị Thơm,10A4,0788016131,Xe máy điện,24-AA513.71,Xanh,Nhà xe học sinh,Thầy/Cô GVCN 10A4,0359220000,Lý Văn Phúc,0368251355,Tân Thượng - Bảo Hà,Đủ điều kiện lưu hành,0,Đi một mình
 XE-068,Lương Ngọc Khuê,10A4,0967046589,Xe điện,Chưa đăng ký biển,Đen,Trong trường,Phạm Đức Hưng,0359220000,Lương Văn Nhất,0325667281,"Tắp 2, Xã Bảo Hà",Đủ điều kiện lưu hành,0,đi với chị Lương nguyễn thuỳ trâm lớp 11a6
-XE-069,Ma Thị Ngọc Diễm,10A4,0899418738,Xe máy điện (133),Chưa đăng ký biển,Xám,Trong trường,Phạm Đức Hưng,0359220000,Ma văn Chúng,0383229114,"Bản Hồng bùn, Xã Bảo Hà",Đủ điều kiện lưu hành,0,Đi với chị Hoàng AnhVân lớp 11A3
-XE-070,Nguyễn Duy Mạnh,10A4,0396963631,Xe đạp điên (133),Chưa đăng ký biển,Đen,Trong trường,Phạm Đức Hưng,0359220000,Nguyễn Đức Hải,0339193502,"Tắp 1, Xã Bảo Hà",Đủ điều kiện lưu hành,0,đi 1 mình
-XE-071,Nguyễn Duy Quyết,10A4,0396217802,Xe đạp điện (Karuki),Chưa đăng ký biển,Xanh nhạt,Trong trường,Phạm Đức Hưng,0359220000,Nguyễn Bá Cương,0974889612,"Thôn Hồng Sang, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
-XE-072,Nguyễn Kim Oanh,10A4,0975282644,Xe đạp điên (yadea i8),Chưa đăng ký biển,Xám,Trong trường,Phạm Đức Hưng,0359220000,Nguyễn Đức Tấn,0338383786,"Bông 1, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-069,Ma Thị Ngọc Diễm,10A4,0866592914,Xe máy điện,Chưa đăng ký biển,Xám,Nhà xe học sinh,Thầy/Cô GVCN 10A4,0359220000,Ma Văn Chúng,0383229114,Hồng Bùn - Bảo Hà,Đủ điều kiện lưu hành,0,Đi với chị Hoàng AnhVân lớp 11A3
+XE-070,Nguyễn Duy Mạnh,10A4,0396963631,Xe đạp điên,Chưa đăng ký biển,Đen,Nhà xe học sinh,Thầy/Cô GVCN 10A4,0359220000,Nguyễn Đức Hải,0339193502,Tắp 1 - Bảo Hà,Đủ điều kiện lưu hành,0,đi 1 mình
+XE-071,Nguyễn Duy Quyết,10A4,0339961083,Xe đạp điện,24AA-24724,Xanh nhạt,Nhà xe học sinh,Thầy/Cô GVCN 10A4,0359220000,Nông Thị Vân,0974889612,Hồng Sang - Bảo Hà,Đủ điều kiện lưu hành,0,
+XE-072,Nguyễn Kim Oanh,10A4,0975282644,Xe đạp điên,Chưa đăng ký biển,Xám,Nhà xe học sinh,Thầy/Cô GVCN 10A4,0359220000,Nguyễn Đức Tấn,0338383786,Bông - Bảo Ha,Đủ điều kiện lưu hành,0,
 XE-073,Nguyễn Mỹ Phương,10A4,0377649104,Xe máy điện (xmen),Chưa đăng ký biển,Đen,Ngoài trường nhà dũng toan,Phạm Đức Hưng,0359220000,Nguyễn Minh Hoạt,0325614586,"Thôn Thống Nhất, Xã Bảo Hà",Đủ điều kiện lưu hành,0,đi cùng anh trai 12a7
 XE-074,Nguyễn Thị Anh Thư,10A4,0397267729,xe máy điện (Nịna),24-HD1 092.57,đen xám,Trong trường,Phạm Đức Hưng,0359220000,Nguyễn Văn Chính,0974996874,"Thôn Thống Nhất, Xã Bảo Hà",Đủ điều kiện lưu hành,0,đi cùng chị 11a2
-XE-075,Nguyễn Thị Hải Yến,10A4,0366165608,Xe đạp điện (ZBiKe),Chưa đăng ký biển,Đen tím,Ngoài trường (ở nha khoa Hà Nội ),Phạm Đức Hưng,0359220000,Nguyễn Đức Khôi,0967656736,"Thôn thống nhất, Xã Bảo Hà",Đủ điều kiện lưu hành,0,Để nhà chú ruột
-XE-076,Ngô Thị Khánh Ngân,10A4,0812448855,Xe máy điện (Yadea),24MĐ1-237.74,Đen,Trong trường,Phạm Đức Hưng,0359220000,Ngô Hồng việt,0975333606,"Thôn Bảo vinh, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
-XE-077,Ngô Đỗ Khánh Nhi,10A4,0862136504,Xe máy điện (Aima M1 Sport),Chưa đăng ký biển,Đen,Trong trường,Phạm Đức Hưng,0359220000,Ngô Tân Xuân,0364958344,"Mai Ù, Xã Bảo Hà",Đủ điều kiện lưu hành,0,đi một mình
+XE-075,Nguyễn Thị Hải Yến,10A4,0366165608,Xe đạp điện,Chưa đăng ký biển,Đen tím,Ngoài trường (ở nha khoa Hà Nội ),Thầy/Cô GVCN 10A4,0359220000,Phạm Thị Tuyết,0967656736,Thống Nhất - Bảo Hà,Đủ điều kiện lưu hành,0,Để nhà chú ruột
+XE-076,Ngô Thị Khánh Ngân,10A4,0812448855,Xe máy điện,24MĐ1-237.74,Đen,Nhà xe học sinh,Thầy/Cô GVCN 10A4,0359220000,Đặng Thị Thơm,0975333606,Bảo Vinh - Bảo Hà,Đủ điều kiện lưu hành,0,
+XE-077,Ngô Đỗ Khánh Nhi,10A4,0862136504,Xe máy điện,Chưa đăng ký biển,Đen,Nhà xe học sinh,Thầy/Cô GVCN 10A4,0359220000,Ngô Tân Xuân,0364958344,Mai Ù - Bảo Hà,Đủ điều kiện lưu hành,0,đi một mình
 XE-078,Nông Văn Viên,10A4,0372408341,Xe máy điện (Gogo),24-AA 152.15,Trắng,Trong trường,Phạm Đức Hưng,0359220000,Nông Văn Cu,0979574451,"Thôn Mai Ù, Xã Bảo Hà",Đủ điều kiện lưu hành,0,đi cùng chị 11a4
-XE-079,Phan Thị Thu Thương,10A4,0344405347,xe đạp điện (kazuki),Chưa đăng ký biển,Đen,Trong trường,Phạm Đức Hưng,0359220000,Phan Văn Thể,0395450798,"Thôn Liên Hải, Xã Bảo Hà",Đủ điều kiện lưu hành,0,đi một mình
-XE-080,Phạm Khánh Huyền,10A4,0363194592,Xe máy điện (kazuki),Chưa đăng ký biển,Đỏ,Trong trường,Phạm Đức Hưng,0359220000,Phạm Ngọc Hậu,0386056717,"Hồng Sơn, Xã Bảo Hà",Đủ điều kiện lưu hành,0,đi 1 mình
-XE-081,Phạm Thu Hiền,10A4,0966252632,Xe đạp,Chưa đăng ký biển,Đen,Trong trường,Phạm Đức Hưng,0359220000,Phạm Đức Vượng,0977680259,"Bảo Vinh, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
-XE-082,Phạm Tuấn Tú,10A4,0393024271,Xe đạp điện (Kazuki),Chưa đăng ký biển,Đỏ,Trong trường,Phạm Đức Hưng,0359220000,Phạm Thanh Tâm,0398797952,"Thôn Liên Hải, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
-XE-083,Triệu Quỳnh Như,10A4,,Xe máy điện (Azuki),Chưa đăng ký biển,Đỏ,Trong trường,Phạm Đức Hưng,0359220000,Triệu Văn Bình,0966266963,"Thôn Hồng Sơn, Xã Bảo Hà",Đủ điều kiện lưu hành,0,Đi 1 mình
-XE-084,Triệu Thị Thuý,10A4,0978200965,Xe đạp điên (st lotus),Chưa đăng ký biển,đen,Trong trường,Phạm Đức Hưng,0359220000,Triệu Văn Chản,0382182220,"Thôn Khe Dài, Xã Bảo Hà",Đủ điều kiện lưu hành,0,đi một mình
+XE-079,Phan Thị Thu Thương,10A4,0344405347,xe đạp điện,Chưa đăng ký biển,Đen,Nhà xe học sinh,Thầy/Cô GVCN 10A4,0359220000,Phan Văn Thể,0395450798,Liên Hải - Bảo Hà,Đủ điều kiện lưu hành,0,đi một mình
+XE-080,Phạm Khánh Huyền,10A4,0363194592,Xe máy điện,Chưa đăng ký biển,Đỏ,Nhà xe học sinh,Thầy/Cô GVCN 10A4,0359220000,Phạm Ngọc Hậu,0386056717,Hồng Sơn - Bảo Hà,Đủ điều kiện lưu hành,0,đi 1 mình
+XE-081,Phạm Thu Hiền,10A4,0966252632,Xe đạp,Chưa đăng ký biển,Trắng,Nhà xe học sinh,Thầy/Cô GVCN 10A4,0359220000,Phạm Đức Vượng,0977680259,Bảo Vinh - Bảo Hà,Đủ điều kiện lưu hành,0,
+XE-082,Phạm Tuấn Tú,10A4,0397024271,Xe đạp điện,Chưa đăng ký biển,Đỏ,Nhà xe học sinh,Thầy/Cô GVCN 10A4,0359220000,Phạm Thanh Tâm,0398797952,Liên Hải - Bảo Hà,Đủ điều kiện lưu hành,0,
+XE-083,Triệu Quỳnh Như,10A4,,Xe máy điện,Chưa đăng ký biển,Đỏ,Nhà xe học sinh,Thầy/Cô GVCN 10A4,0359220000,Lương Thị Ví,0966266963,Hồng Bùn - Bảo Hà,Đủ điều kiện lưu hành,0,Đi 1 mình
+XE-084,Triệu Thị Thuý,10A4,0377136284,Xe đạp điên,Chưa đăng ký biển,Đỏ,Nhà xe học sinh,Thầy/Cô GVCN 10A4,0359220000,Triệu Văn Chản,0382182220,Khe Dài - Bảo Hà,Đủ điều kiện lưu hành,0,đi một mình
 XE-085,Triệu Thị Ánh,10A4,,xe điện,Chưa đăng ký biển,Đỏ,Trong trường,Phạm Đức Hưng,0359220000,Triệu Văn Ngọ,0336945002,"Cam 2, Xã Bảo Hà",Đủ điều kiện lưu hành,0,đi với chị Đặng Thị Vân 11a4
-XE-086,Trương Minh Anh,10A4,0344126802,Xe máy điện (espero),Chưa đăng ký biển,Đen,Trong trường,Phạm Đức Hưng,0359220000,Trương Ngọc Đệ,0376723746,"Bản Hồng bùn, Xã Bảo Hà",Đủ điều kiện lưu hành,0,đi 1 mình
-XE-087,Trương Văn Tường,10A4,0364006574,Xe đạp điên (133),Chưa đăng ký biển,Xanh,Trong trường,Phạm Đức Hưng,0359220000,Trương văn Diêu,0869353722,"Ngầm Thỉn, Xã Bảo Hà",Đủ điều kiện lưu hành,0,đi một mình
+XE-086,Trương Minh Anh,10A4,0344126802,Xe máy điện,Chưa đăng ký biển,Đen,Nhà xe học sinh,Thầy/Cô GVCN 10A4,0359220000,Trương Ngọc Đệ,0376723746,Hồng Sơn - Bảo Hà,Đủ điều kiện lưu hành,0,đi 1 mình
+XE-087,Trương Văn Tường,10A4,0364006574,Xe đạp điên,Chưa đăng ký biển,Xanh,Nhà xe học sinh,Thầy/Cô GVCN 10A4,0359220000,Trương văn Diêu,0869353722,Tân Thượng - Bảo Hà,Đủ điều kiện lưu hành,0,đi một mình
 XE-088,Trướng Thị Khánh Linh,10A4,0973174125,Xe máy điện (SONCO BUN),24AA-488.63,Xám,Trong trường,Phạm Đức Hưng,0359220000,Trướng Văn Tế,0964043728,"Tân Sơn, Xã Bảo Hà",Đủ điều kiện lưu hành,0,đi cùng bạn Triệu Thị Thảo lớp 10a2
-XE-089,Trần Diệu Linh,10A4,0393135802,xe đạp,Chưa đăng ký biển,Nâu,Trong trường,Phạm Đức Hưng,0359220000,Trần Duy Hưng,0776471552,"An Khánh, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-089,Trần Diệu Linh,10A4,0393135802,Xe máy điện,Chưa đăng ký biển,Đen,Nhà xe học sinh,Thầy/Cô GVCN 10A4,0359220000,Trịnh Thị Thảo,0776471552,An Khánh - Bảo Hà,Đủ điều kiện lưu hành,0,
 XE-090,Đinh Thị Thúy Bình,10A4,0326097011,xe máy (Detech),24AA-247.16,Đen,Trong trường,Phạm Đức Hưng,0359220000,Đinh Văn Nông,0326117584,"7AB, Xã Bảo Hà",Đủ điều kiện lưu hành,0,đi với chị lớp 12A3
-XE-091,Đặng Phúc Thắng,10A4,0348049460,Xe đạp điên (Yadea xbull),Chưa đăng ký biển,Đen,Trong trường,Phạm Đức Hưng,0359220000,Đặng Văn Chản,0325332451,"Khe Dài, Xã Bảo Hà",Đủ điều kiện lưu hành,0,Đi một mình
+XE-091,Đặng Phúc Thắng,10A4,0348049460,Xe đạp điên,Chưa đăng ký biển,Đen,Nhà xe học sinh,Thầy/Cô GVCN 10A4,0359220000,Đặng Văn Chản,0325332451,Khe Dài - Bảo Hà,Đủ điều kiện lưu hành,0,Đi một mình
 XE-092,Lã anh khôi,10A5,0372266102,xe đạp điện (kazuki),"xe động cơ 
 dưới 250w",đen,Trong trường,Nguyễn Nhật Hà,0342361644,Lã Văn Duyến,0349901842,"Hồng Sang, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
 XE-093,Lê Anh Đức,10A5,0362290389,xe đạp điện (gians),Chưa đăng ký biển,đen,Trong trường,Nguyễn Nhật Hà,0342361644,Lê Văn Thái,0388289806,"Tân An 1, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
@@ -147,11 +148,11 @@ XE-139,Hoàng Hải Anh,10A7,0865352429,Xe máy điện (Dibao),24MĐ1 04708,Cam
 XE-140,Lý Ngọc Tiến,10A7,0358332409,Xe máy điện (yadea icandy),Chưa đăng ký biển,Xám nhám,Trong trường,Trần Thị Dòng,0337117336,Lý Xuân Đàm,0354268806,"Thôn Ly, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
 XE-141,Lý Thị Huyền Trang,10A7,0338871062,xe máy điện (Yakat1),Chưa đăng ký biển,Đen,Trong trường,Trần Thị Dòng,0337117336,Lý Đức Thiên,0977602837,"Thôn Ly, Xã Lâm Giang",Đủ điều kiện lưu hành,0,
 XE-142,Lại Thị Thanh Chúc,10A7,0396340724,xe máy điện (Kazuki),24AA 25393,Đen,Trong trường,Trần Thị Dòng,0337117336,Lại Văn Trường,0359261250,"Thôn Liên Hải, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
-XE-143,Lự Thị Hồng Khuê,10A7,,xe máy điện (YADEA),Chưa đăng ký biển,Vàng,Trong trường,Trần Thị Dòng,0337117336,Lự Văn Công,0886515097,"Thôn Tắp 1, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-143,Lự Thị Hồng Khuê,10A7,0364684471,xe đạp điện,Chưa đăng ký biển,Vàng,Ngoài Trường,Trần Thị Dòng,0337117336,Lự Văn Công,0848697488,Tắp 1- Bảo Hà,Đủ điều kiện lưu hành,0,
 XE-144,Nguyễn Chí Dũng,10A7,0944345569,xe máy điện (YADAE),24AA  15449,Đen,Trong trường,Trần Thị Dòng,0337117336,Nguyễn Mạnh Hà,0981141569,"Thôn Tân Trúc, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
 XE-145,Nguyễn Thi Trà My,10A7,0348331513,xe máy điện,Chưa đăng ký biển,Đen,Trong trường,Trần Thị Dòng,0337117336,Phụ huynh,0838653120,"Bảo Hà, Bảo Yên",Đủ điều kiện lưu hành,0,
 XE-146,Nguyễn Thị Hồng Quyên,10A7,0372122704,xe đạp điện (xbull),24AB 060024,Xám,Trong trường,Trần Thị Dòng,0337117336,Nguyễn Văn Đằng,0398078054,"Thôn Bảo Ân, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
-XE-147,Nguyễn Trà My,10A7,0327490394,Xe máy điện (Yađea),Chưa đăng ký biển,Xám,Nhà chị ( gần cầu),Trần Thị Dòng,0337117336,Nguyễn Ngọc Thắng,0967709863,"Thôn Thống Nhất, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-147,Nguyễn Trà My,10A7,0327490494,xe đạp điện,Chưa đăng ký biển,Màu xám,Trong trường,Trần Thị Dòng,0337117336,Nguyễn Ngọc Thắng,0972313203,Thống Nhất - Bảo Hà,Đủ điều kiện lưu hành,0,
 XE-148,Trương Thị Hoa,10A7,0357446384,xe máy điện (VEKOO),24AA 44854,Xám,Trong trường,Trần Thị Dòng,0337117336,Trương Văn Tó,0835555085,"Thôn Thống Nhất, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
 XE-149,Trần Phương Linh,10A7,0973708931,Xe máy điện (113),Chưa đăng ký biển,Đen,Trong trường,Trần Thị Dòng,0337117336,Trần Gia Nam,0985846971,"Thôn Nghĩa Dũng, Xã Lâm Giang",Đủ điều kiện lưu hành,0,
 XE-150,Trần Thị Hương Giang,10A7,0327422846,xe máy điện (YADEA),Chưa đăng ký biển,Xám nhám,Trong trường,Trần Thị Dòng,0337117336,Trần Văn Toàn,0983085703,"Thôn Bảo Ân, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
@@ -162,7 +163,7 @@ XE-154,Đặng Thị Nhi,10A7,0395088320,Xe máy điện (Yadea),Chưa đăng k�
 XE-155,Bàn Thị Ngân,11A1,0342303364,Xe điện (Espero),24AA-636.33,Xám xanh,Trong trường,Bàn Thị Thu Hương,0961727636,Bàn Văn Các,0333540944,"Ba Xã, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
 XE-156,Bàn Đình Thiên,11A1,0372800403,xe máy điện (Wave),38.AK.029-32,Sám,Trong trường,Bàn Thị Thu Hương,0961727636,Bàn Văn An,0971909561,"Ba Soi, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
 XE-157,Hoàng Quốc Tỷ,11A1,0352106882,Xe máy (Honda),24-HB 13593,Đen,Trong trường,Bàn Thị Thu Hương,0961727636,Hoàng Văn Phú,0326824340,"Bản 6AB, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
-XE-158,Hoàng Thị Mỹ Duyên,11A1,0337207413,Xe máy (Victoria),24 - HB 148.71,Xanh than,Trong trường,Bàn Thị Thu Hương,0961727636,Hoàng Văn Canh,0373950683,"Thôn 7AB, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-158,Hoàng Thị Mỹ Duyên,11A1,0337207413,Xe máy điện,24 - HB 148.71,Xanh than,Đổi chỗ để xe Tạp hóa Tân Nhung,Bàn Thị Thu Hương GVCN 11A1,0961727637,Hoàng Văn Canh,0373950683,7AB - Bảo Hà,Đủ điều kiện lưu hành,0,
 XE-159,Hoàng Thị Vui,11A1,0329907189,Xe máy (Hon da),24-HB138.71,Trắng,Bà Hà (đường rẽ vào ủy ban),Bàn Thị Thu Hương,0961727636,Hoàng Văn Thành,0376084739,"Bản 4AB, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
 XE-160,Hoàng Đình Khải,11A1,0357508650,Xe máy điện (50cc),24-HB 10829,Đen xám,Trong trường,Bàn Thị Thu Hương,0961727636,Hoàng Văn Nhu,0362013615,"Bản 2AB, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
 XE-161,Lý Thị Phương Trinh,11A1,0879618719,xe điện (m133),Chưa đăng ký biển,Xanh đen,Trong trường,Bàn Thị Thu Hương,0961727636,Lý Đức Thanh,0878266718,"Thôn Ly, Xã Lâm Giang",Đủ điều kiện lưu hành,0,
@@ -181,13 +182,13 @@ XE-173,Triệu Văn Long,11A1,0866083829,xe máy điện (Gogo),24AA-08529,Trắ
 XE-174,Trương Thuỷ Hoàn,11A1,0372604095,Xe máy điện (49cc),23AÂ-043.24,Màu đen,Trong trường,Bàn Thị Thu Hương,0961727636,Phụ huynh,0384566897,"Bảo Hà, Bảo Yên",Đủ điều kiện lưu hành,0,
 XE-175,Trần Anh Tú,11A1,0364833220,xe đạp điện (KAWASI),Chưa đăng ký biển,Đen,Trong trường,Bàn Thị Thu Hương,0961727636,Trần Văn Thành,0983276709,"Thôn Ù Sóc, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
 XE-176,Trần Thị Khánh Ly,11A1,0868956673,xe điện (kazuki),24-MĐ1 145.81,xanh rêu,Trong trường,Bàn Thị Thu Hương,0961727636,Trần Văn Tuấn,0975614408,"Liên Hà 5, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
-XE-177,Trần Trà My,11A1,0335982116,Xe điện (kazuki),Chưa đăng ký biển,Đen,Trong trường,Bàn Thị Thu Hương,0961727636,Trần Văn Toàn,0397125363,"Ngầm Thìn, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-177,Trần Trà My,11A1,0356286451,Xe máy điện,23 MD185002,đen,Nhà xe đầu nhà B,Bàn Thị Thu Hương GVCN 11A1,0961727638,Trần Văn Toàn,0866900260,Ngầm Thỉn - Bảo Hà,Đủ điều kiện lưu hành,0,
 XE-178,Tống Khánh Linh,11A1,0813848421,xe điện (kazuki),24-AA 081.96,Hồng ánh tím,Bà Hà (đường rẽ vào ủy ban),Bàn Thị Thu Hương,0961727636,Tống Văn Quyết,0854513266,"Ngòi Lèn, Xã Châu Quế",Đủ điều kiện lưu hành,0,
 XE-179,Đào Hà Ngọc Anh,11A1,0868547152,xe điện (133),Chưa đăng ký biển,Đen,Trong trường,Bàn Thị Thu Hương,0961727636,Đào Trọng Huấn,0368094941,"Thôn Nghĩa Giang, Xã Lâm Giang",Đủ điều kiện lưu hành,0,
 XE-180,Đăng Ánh nguyệt,11A1,0352308452,Xe điện (Victory),Chưa đăng ký biển,Màu đỏ,Trong trường,Bàn Thị Thu Hương,0961727636,Phụ huynh,0329029210,"Bảo Hà, Bảo Yên",Đủ điều kiện lưu hành,0,
-XE-181,Đặng Tuấn Anh,11A1,0333785199,Xe máy (Detech),24-HB 099.65,Trắng bạc,Trong trường,Bàn Thị Thu Hương,0961727636,Đặng Quang Lợi,0968391620,"Nhai Tẻn, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-181,Đặng Tuấn Anh,11A1,0348228572,Xe máy điện,24 -HB 106.17,Xám,Nhà xe KTX Bán trú,Bàn Thị Thu Hương GVCN 11A1,0961727642,Đặng Thị Hà,0986391620,Nhai Tẻn - Bảo Hà,Đủ điều kiện lưu hành,0,
 XE-182,Đỗ Ngọc Diệp,11A1,0978292125,xe điện (Dibao),24-MĐ1 188.84,Xanh rêu,Trong trường,Bàn Thị Thu Hương,0961727636,Đỗ Đắc Đạt,0947568000,"Tân An, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
-XE-183,Đỗ Yến Phương,11A1,0968020032,xe máy (Honda),Chưa đăng ký biển,Xanh xám,Trong trường,Bàn Thị Thu Hương,0961727636,Đỗ Văn Triệu,0374569454,"Lỵ 2,3, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-183,Đỗ Yến Phương,11A1,0968020032,Xe HB,24-A215:39,Xanh xám,Nhà xe đầu nhà B,Bàn Thị Thu Hương GVCN 11A1,0961727639,Đỗ Văn Triệu,0374569454,Thống Nhất - Bảo Hà,Đủ điều kiện lưu hành,0,
 XE-184,Hoàng Trai Ngọc,11A2,0333612934,Xe máy điện (YADEA),24-MD1 238 88,Màu xanh,Trong trường,Trần Thị Dung,0388639750,Nguyễn Văn Minh,0393317043,"Bản 7AB, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
 XE-185,Lê Mạnh Tâm,11A2,0332069225,Xe máy 50cc (DETECH),24-HB 142.94,Không rõ,Nhà bà Hà,Trần Thị Dung,0388639750,Lê Văn Thi,0368653044,"Kim Quang, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
 XE-186,Lê Quỳnh Anh,11A2,0368379148,xe máy điện (kazuki),24-AA-248.24,Màu đen,Trong trường,Trần Thị Dung,0388639750,Lê Xuân Hữu,0982283221,"Liên Hà 7, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
@@ -236,7 +237,7 @@ XE-228,Bàn Thị Thúy Hân,11A4,0961208223,xe đạp điện (M133),Chưa đă
 XE-229,Bùi Thị Khánh Linh,11A4,0332870973,xe máy điện (ébego),24-MD1145.58,Không rõ,Bà Hà lùn,Nguyễn Thị Hương Giang,0943438550,Bùi Văn Trọng,0379269003,"Bản Liên Hà 6, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
 XE-230,Bùi Thị Phương Thảo,11A4,0346596287,Xe đạp điện (M133),Chưa đăng ký,Không rõ,Bà Hà lùn,Nguyễn Thị Hương Giang,0943438550,Bùi Xuân Hiển,0352298269,"Bản Bông 1, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
 XE-231,Hoàng Thị Hồng Mai,11A4,0348393184,xe máy (50cc),24-HB 081.48,Không rõ,Trong trường,Nguyễn Thị Hương Giang,0943438550,Hoàng Văn Lưng,0862175022,"Bản Khoai 2, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
-XE-232,Hoàng Tố vân,11A4,0327083645,Xe hb (Wave 50cc),21hb-028.32,Không rõ,Trong trường,Nguyễn Thị Hương Giang,0943438550,Hoàng Văn Tú,,"Bản 3AB, Xã Bảo Hà",Đủ điều kiện lưu hành,0,Ở bán trú
+XE-232,Hoàng Tố vân,11A4,0327083645,HP,21-FA 028.32,Trắng,Trong trường,Thầy/Cô GVCN 11A4,0943438550,Lương Thị Bình,0396141165,Thôn 3 AB,Đủ điều kiện lưu hành,0,Ở bán trú
 XE-233,Hoàng Văn Quyến,11A4,0358991055,xe máy (50cc),24-HB 097.66,Không rõ,Trong trường,Nguyễn Thị Hương Giang,0943438550,Hoàng Văn Nghề,0335125170,"Bản 4AB, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
 XE-234,Lê Tiến Dũng,11A4,0979166214,xe máy (50cc),24-HB 010.30,Không rõ,Trong trường,Nguyễn Thị Hương Giang,0943438550,Lê Văn Quý,0869256493,"Bản 1 Nhai Tẻn, Xã Bảo Hà",Đủ điều kiện lưu hành,0,Ở bán trú
 XE-235,Lương Gia Bảo,11A4,0395514023,Xe đạp điện (kazuki),Chưa đăng ký,Không rõ,Quán Tuấn,Nguyễn Thị Hương Giang,0943438550,Lương Văn Cương,0366425341,"Bản Bùn 2, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
@@ -250,7 +251,7 @@ XE-242,Trịnh Thị Hường,11A4,0334262138,xe máy điện (kazuki),24-AA 082
 XE-243,Vũ Huy Hoàng,11A4,0339716473,xe máy (wave 50cc),24-AA 059.53,Không rõ,Bà Hà lùn,Nguyễn Thị Hương Giang,0943438550,Vũ Văn Hài,0339997797,"Bản 1 Tân Văn, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
 XE-244,Đặng Hoài Anh,11A4,0969194956,Xe đạp điện (M133),Chưa đăng ký,Không rõ,Trong trường,Nguyễn Thị Hương Giang,0943438550,Đặng Hữu Lý,0339987455,"Bông 3, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
 XE-245,Bàn Thị Hà,11A5,0364594310,Xe máy điện (yadea),Chưa đăng ký biển,Xám,Bác Dũng,Trịnh Văn Thể,0918099828,Bàn Ton Chản,0847036572,"Bông 3, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
-XE-246,Hoàng Diệu Linh,11A5,0912559577,Xe máy điện (Gogo),24MD114595,Xanh,Bà Hà,Trịnh Văn Thể,0918099828,Hoàng Văn Trường,0919108361,"Bản Lúc, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-246,Hoàng Diệu Linh,11A5,0976756781,Xe máy điện,24MD114595,Xanh,Ngoài trường,Trịnh Văn Thể GVCN 11A5,0918099828,Hoàng Văn Trường,0976656781,Bản Lúc,Đủ điều kiện lưu hành,0,
 XE-247,Lê Hà Vi,11A5,0325783905,Xe máy điện (Oxaka),21FA13182,Đen,Trong trường,Trịnh Văn Thể,0918099828,Lê Văn Thịnh,0773315060,"Thôn Nghĩa Dũng, Xã Lâm Giang",Đủ điều kiện lưu hành,0,
 XE-248,Lê Khánh Huyền,11A5,0358454071,Xe máy điện (Gogo),21MD412160,Đen,Bà Hà,Trịnh Văn Thể,0918099828,Lê Công Thế,0865885115,"Bản bùn 4, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
 XE-249,Lê Thị Hồng Anh,11A5,0374853730,Xe máy điện (Gogo),24MD108842,Xanh,Trong trường,Trịnh Văn Thể,0918099828,Lê Xuân Hợi,0784263325,"Bản Kim Quang, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
@@ -334,8 +335,8 @@ XE-312,Lý Thị Lan,11A7,0329041865,Xe đạp điện (Kazuki),Chưa đăng ký
 XE-313,Lý Việt Quân,11A7,0976189590,Xe máy điện (Xmen),Chưa đăng ký,Trắng,Trong trường,Ngô Thị Thùy,0334668132,Lý Văn An,0379129116,"Ngầm Thỉn, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
 XE-314,Lương Công Nguyên,11A7,0335511893,Xe điện (Kazuki),3396,Sữa,Trong trường,Ngô Thị Thùy,0334668132,Lương Công Trình,0339603662,"Tắp 1, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
 XE-315,Mai Quỳnh Nhi,11A7,0965026933,Xe đạp điện (133),Chưa đăng ký,Đen,Trong trường,Ngô Thị Thùy,0334668132,Mai Văn Nam,0966784209,"Tiền Phong, Xã Lâm Giang",Đủ điều kiện lưu hành,0,
-XE-316,Nguyễn Bá Minh Tuấn,11A7,0382857383,Xe đạp điện (Nijja),Chưa đăng ký,Đen,Trong trường,Ngô Thị Thùy,0334668132,Nguyễn Tiến Sỹ,0357100738,"Nghĩa Giang, Xã Lâm Giang",Đủ điều kiện lưu hành,0,
-XE-317,Nguyễn Minh Tiến,11A7,0326520332,Xe điện (Kazuki),Chưa đăng ký,Xanh lục,Trong trường,Ngô Thị Thùy,0334668132,Nguyễn Đức Điệp,0337340984,"Liên Hà 1, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-316,Nguyễn Bá Minh Tuấn,11A7,0382857383,Xe máy điện,24AB-25259,Đen,Trong trường,Thầy/Cô GVCN 11A7,0357100738,Tạ Thị Phương Thúy,0357100738,Nghĩa Giang - Lâm Giang,Đủ điều kiện lưu hành,0,
+XE-317,Nguyễn Minh Tiến,11A7,0385334150,Xe gắn máy,24AA-215.33,Đen nhám,Trong trường,Thầy/Cô GVCN 11A7,0334668132,Trần Thị Hiền,0337340984,Liên Hà 1- Bảo Hà,Đủ điều kiện lưu hành,0,
 XE-318,Nguyễn Trường Giang,11A7,0967979173,Xe máy (wave 50cc),24 HB- 14866,bạc,"Bà Hà - Bản Bảo Vinh, Xã Bảo Hà",Ngô Thị Thùy,0334668132,Nguyễn Thanh Sơn,0962124226,"Tân Văn, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
 XE-319,Nguyễn Uyển Nhi,11A7,0862421987,Xe máy điện (Vioor),24-MĐ1145.92,Xanh đậm,Trong trường,Ngô Thị Thùy,0334668132,Nguyễn Văn Chung,0973978483,"Bảo Vinh, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
 XE-320,Phạm Huy Hoàng,11A7,0827983961,Xe máy điện (Gogo),24-AA 02614,Xám,Trong trường,Ngô Thị Thùy,0334668132,Nguyễn Thị Mai,0968868924,"Ngầm Thỉn, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
@@ -351,7 +352,7 @@ XE-329,Vũ Tiến Đang,11A7,0364728707,Xe máy điện (cub 50cc),24HB-043.99,m
 XE-330,Đặng Kim Phượng,11A7,0983832687,Xe máy điện (Vespa),Chưa đăng ký,Đen,Trong trường,Ngô Thị Thùy,0334668132,Đặng Văn Cường,0962651661,"Tân Sơn, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
 XE-331,Bàn Thị Dư,12A1,0344627103,xe đạp điện (kazuki),Chưa đăng ký,Xanh đen,Trong trường,Phạm Thị Thu,0988346058,Bàn Văn Lợi,0386311038,"Thôn Bản Mai, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
 XE-332,Bùi Quang Minh,12A1,0328689160,xe máy (wave 50cc),24-HB-074.05,xanh,Trong trường,Phạm Thị Thu,0988346058,Bùi Huy Thân,0336382724,"Thôn Ù Sóc, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
-XE-333,Bùi Thị Hải Anh,12A1,,xe máy điện (xe điện 133),Chưa đăng ký,đen,Ngoài trường,Phạm Thị Thu,0988346058,Bùi Văn Duy,0974630295,"Bảo Vinh, Xã Bảo Hà",Đủ điều kiện lưu hành,0,nhà bác hà bản lâm sản bảo hà
+XE-333,Bùi Thị Hải Anh,12A1,0334085091,Xe máy 50cc wave,24AB18371,Trắng,Ngoài trường,Phạm Thị Thu GVCN 12A1,0988346058,Phạm Thị Dương,0974630295,Bảo Vinh - Bảo Hà,Đủ điều kiện lưu hành,0,nhà bác hà bản lâm sản bảo hà
 XE-334,Hoàng Thị Khánh Ly,12A1,,xe máy điện (YADEA),24-MĐ1 23712,đen,Ngoài trường,Phạm Thị Thu,0988346058,Hoàng Trung Dũng,0962992969,"Tắp 2, Xã Bảo Hà",Đủ điều kiện lưu hành,0,nhà bà hà bản lâm sản bảo hà
 XE-335,Hoàng Thị Quỳnh Nhân,12A1,0347092491,Xe máy (Wave 50cc),24-HB-101.27,Xanh,Trông trường,Phạm Thị Thu,0988346058,Hoàng Văn Tuấn,0396928392,"Thôn 3 AB, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
 XE-336,Hoàng Trọng Khôi,12A1,0974630324,Xe máy (50cc),21-FA -006.11,Đỏ,Trong trường,Phạm Thị Thu,0988346058,Hoàng Văn Lực,0377080237,"Bản 3AB, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
@@ -369,7 +370,7 @@ XE-347,Nguyễn Minh Thư,12A1,0386098871,xe máy điện (Kảu ki),24MD1237.19
 XE-348,Nông Thị Ánh Nguyệt,12A1,0389071452,xe máy điện (xe điện Yadea),24AA635.32,đen,Trong trường,Phạm Thị Thu,0988346058,Nông Ton Pham,0366675523,"Bông 3, Xã Bảo Hà",Đủ điều kiện lưu hành,0,Xe mới lấy chưa có biển
 XE-349,Trương việt anh,12A1,0369824929,Xe máy điện (Gogo),24md1 14590,Xanh,Trong trường,Phạm Thị Thu,0988346058,Trương Quyết Thắng,0964299686,"Bùn 2, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
 XE-350,Trần Thu Nga,12A1,0978327361,Xe máy (Wave 50cc),21-FA 028.42,Xanh đen,Trong trường,Phạm Thị Thu,0988346058,Trần Xuân Sinh,0354293196,"Thôn Tân An 1, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
-XE-351,Trần Thị Tuyết Minh,12A1,0378814578,Xe máy điện (Gogo),90-MĐ145136,Đỏ,Trong trường,Phạm Thị Thu,0988346058,Trần Tuấn Anh,0342381985,"Bản Lúc, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-351,Trần Thị Tuyết Minh,12A1,0378814578,Xe máy 50 cc,24-HB067.00,Đỏ,Trong trường,Phạm Thị Thu GVCN 12A1,0988346058,Phạm Tuấn Anh,0342381985,Lúc - Bảo Hà,Đủ điều kiện lưu hành,0,
 XE-352,phan thị huyền trang,12A1,,xe đạp điện (xe điện 133),Chưa đăng ký,đen đỏ,Ngoài trường,Phạm Thị Thu,0988346058,Phan Văn Toàn,0399129647,"Khoai 3, Xã Bảo Hà",Đủ điều kiện lưu hành,0,nhà bác mơ bản liên hà3 bảo hà
 XE-353,vi duy hoàng,12A1,0328848962,Xe máy (50cc),24HB-158-16,xanh,Trong trường,Phạm Thị Thu,0988346058,Phụ huynh,0866721046,"Bảo Hà, Bảo Yên",Đủ điều kiện lưu hành,0,
 XE-354,vũ hoàng quân,12A1,0349264435,Xe máy điện (Xe điện 133),Chưa đăng ký,Đen,Trong trường,Phạm Thị Thu,0988346058,Vũ Đình Tuấn,0359844377,"Liên Hà 5, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
@@ -391,15 +392,15 @@ XE-369,Hoàng Đình Tập,12A2,0971110758,Xe  HB (50CC),24-HB 148.19,Đen,Trong
 XE-370,Lý Thị Nga,12A2,0345955260,Xe HB (wave),24-HB-14891,Xanh lá,Trong trường,Lê Minh Huệ,0983711402,Lý Văn Thành,0985125102,"Bản 1 Nhai Tẻn, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
 XE-371,Lương Anh Hiển,12A2,0347011951,Xe đạp điện (133S),Chưa đăng ký biển,Xanh,Để khu cầu sắt,Lê Minh Huệ,0983711402,Lương Văn Tuân,0373450197,"Bản Bùn 2, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
 XE-372,Lự Anh Khoa,12A2,0385816290,Xe điện (133S),Chưa đăng ký biển,Đen,Trong trường,Lê Minh Huệ,0983711402,Lự Khắc Duy,0334236553,"Bản Tắp 2, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
-XE-373,Nguyễn Huyền Ngọc,12A2,0823340524,Xe điện (Dibao),24AA-24990,Xám,Trong trường,Lê Minh Huệ,0983711402,Nguyễn Đình Vượng,0329079276,"Thôn Ngầm Thỉn, Xã Bảo Hà",Đủ điều kiện lưu hành,0,Đi cùng M.Trang 12A2
+XE-373,Nguyễn Huyền Ngọc,12A2,0823340524,Xe đạp điện,24AA-24990,Đen,Trong trường,Thầy/Cô GVCN 12A2,0983711402,Nguyễn Đình Vượng,0329079276,Ngầm Thỉn- Bảo Hà,Đủ điều kiện lưu hành,0,Đi cùng M.Trang 12A2
 XE-374,Nguyễn Mai Trang,12A2,0335650652,Xe điện (Dibao),24AA-24990,Xám,Trong trường,Lê Minh Huệ,0983711402,Nguyễn Đình Dương,0335650652,"Thôn Ngầm Thỉn, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
 XE-375,Nguyễn Thuỳ Trâm,12A2,0362521400,HB (50CC),24-AA-25324,Trắng,Trong trường,Lê Minh Huệ,0983711402,Phụ huynh,0379378649,"Bảo Hà, Bảo Yên",Đủ điều kiện lưu hành,0,
 XE-376,Nguyễn Thảo My,12A2,0343589106,Đi nhờ (wave),24-AA-08345,xanh đen,Nhà bác Mai Bảo,Lê Minh Huệ,0983711402,Nguyễn Đình Hạ,0357107599,"Bản Liên Hà 7, Xã Bảo Hà",Đủ điều kiện lưu hành,0,Đi xe cùng Hoài 10a6
 XE-377,Nguyễn Trần Khánh Duy,12A2,0968033282,Đạp điện (133S),Chưa đăng ký biển,Đen,Trong trường,Lê Minh Huệ,0983711402,Nguyễn Văn Lợi,0869256820,"Thôn Tân Văn 2, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
 XE-378,Nông Ngọc Chuyên,12A2,0349359125,Xe điện (YADEA),24MĐ1-09603,Đỏ,Trong trường,Lê Minh Huệ,0983711402,Nông Ngọc Tưởng,0393697130,"Thôn Ù Sóc, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
 XE-379,Phùng Đức Nhật,12A2,0339419224,xe HB (50cc),24-AA-73414,xanh,Trong trường,Lê Minh Huệ,0983711402,Phùng Đức tài,0352384351,"Thôn 1 Nhai Tẻn, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
-XE-380,Triệu Thị Hường,12A2,0354984067,Xe máy điện (kazuki),Chưa đăng ký,Xám ánh kim,Trong trường,Lê Minh Huệ,0983711402,Triệu Văn Dốt,0912343317,"Thôn Mai Hồng 3, Xã Bảo Hà",Đủ điều kiện lưu hành,0,Mới mua đang đăng ký biển
-XE-381,Triệu Thị Linh,12A2,0865113809,Xe máy điện (Espero),24MĐ1-09940,Hồng,Trong trường,Lê Minh Huệ,0983711402,Triệu Văn Toán,0388626584,"Thôn Ngầm Thỉn, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-380,Triệu Thị Hường,12A2,0354984067,Xe máy điện,24AA-21408,Xám ánh kim,Trong trường,Thầy/Cô GVCN 12A2,0983711402,Triệu Văn Dốt,0912343317,Mai Hồng- Bảo Hà,Đủ điều kiện lưu hành,0,Mới mua đang đăng ký biển
+XE-381,Triệu Thị Linh,12A2,0865113809,Xe máy điện,24MĐ1-09940,Trắng viền xám,Trong trường,Thầy/Cô GVCN 12A2,0983711402,Hà Thị Thim,0388626584,Ngầm Thỉn- Bảo Hà,Đủ điều kiện lưu hành,0,
 XE-382,Triệu Thị Thanh Huyên,12A2,0976871507,Xe HB,24-HB 21379,Đen,Trong trường,Lê Minh Huệ,0983711402,Triệu Văn Hoàng,0348846980,Khoai- Bảo Hà,Đủ điều kiện lưu hành,0,
 XE-383,Trướng Thị Luyến,12A2,0866360411,Xe máy điện (Dibao),15MĐ- 131524,Tím,Trong trường,Lê Minh Huệ,0983711402,Trướng Văn Nguyên,0776412566,"Thôn Mai Hồng 2, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
 XE-384,Trần Hà My,12A2,0987548905,Xe điện (Kazuki),24AA-24715,Đen,Trong trường,Lê Minh Huệ,0983711402,Trần Văn Thành,0983276709,"Thôn Ù Sóc, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
@@ -414,52 +415,52 @@ XE-392,Vũ Thế Bảo,12A2,0853766027,Xe điện (133S),Chưa đăng ký biển
 XE-393,Vũ Thị Quỳnh Vân,12A2,0396713061,Đạp điện (133S),Chưa đăng ký biển,Đỏ,Trong trường,Lê Minh Huệ,0983711402,vũ Xuân Liên,0334175007,"Bản Liên Hà 6, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
 XE-394,Đinh Lê Kim Huệ,12A2,0383261027,Máy điện (gogo),24MĐ- 118912,Xanh,Trong trường,Lê Minh Huệ,0983711402,Đinh Duy Quyết,0981240160,"Thôn Xuân Sang, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
 XE-395,Đinh Thùy Phương,12A2,0344808742,Xe máy điện (Espero),24AA-08511,Xám,Trong trường,Lê Minh Huệ,0983711402,Đinh Văn Dũng,0343521337,"Thôn Đồng Tâm, Xã Châu Quế",Đủ điều kiện lưu hành,0,
-XE-396,Đặng Thị Bình,12A2,0337098402,đi nhờ (Espero),Chưa đăng ký biển,Đen,Đối diện trường cấp1,Lê Minh Huệ,0983711402,Đặng Văn An,0366178807,"Bản Bông 4, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-396,Đặng Thị Bình,12A2,0337098402,Xe máy điện,Đang đăng ký biển,Đen,Trong trường,Thầy/Cô GVCN 12A2,0983711402,Đặng Văn An,0366178807,Tắp 2- Bảo Hà,Đủ điều kiện lưu hành,0,
 XE-397,Đặng Trần Danh Thái,12A2,0329380743,Xe điện (133S),Chưa đăng ký biển,Đen,Để nhà ông Thân Thảo,Lê Minh Huệ,0983711402,Đặng Thế Huỳnh,0392663991,"Bản Liên Hà 4, Xã Bảo Hà",Đủ điều kiện lưu hành,0,Đi cùng Dương 12A2
 XE-398,Bàn Thị Kim,12A3,0362645325,xe điện,Chưa đăng ký,đen,trong trường,Lò Văn Giáp,0986374248,Bàn Văn Cường,0982944594,"Bản Mai, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
 XE-399,Bàn Thị Thanh Lam,12A3,0356792109,xe điện,Chưa đăng ký,đỏ,trong trường,Lò Văn Giáp,0986374248,Bàn Văn Chiến,0965838106,"Thôn Ba Soi, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
-XE-400,Hoàng Thị Tâm Như,12A3,0344713214,wave HB,24-HB10720,cam,trong trường,Lò Văn Giáp,0986374248,Hoàng Văn Trình,0339236790,"Bản 5AB, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-400,Hoàng Thị Tâm Như,12A3,0364386771,wave HB,24-HB10720,trắng,Trong trường,Thầy/Cô GVCN 12A3,0986374248,Lý Văn Chúi,0344010097,Tân Thành-Bảo Hà,Đủ điều kiện lưu hành,0,
 XE-401,Hoàng Trung Kiên,12A3,0868543627,wave HB,24-HB10144,trắng,nhà bà Hà,Lò Văn Giáp,0986374248,Hoàng Trung Học,0984333917,"Bản Liên Hà 7, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
 XE-402,Hoàng Trần Hiệp,12A3,0327711651,Drem,24B2-842.86,Nâu,Ngoài trường,Lò Văn Giáp,0986374248,Hoàng Thị Thảo,0374684251,"Bản 3 Nhai Thổ, Xã Bảo Hà",Đủ điều kiện lưu hành,0,Mẹ đưa đi thứ 2 đến bán trú thứ 7 đón về
-XE-403,Lý Thị Lan Anh,12A3,0364386771,wave HB,24-AB03064,trắng,trong trường,Lò Văn Giáp,0986374248,Lý Văn Chúi,0344010097,"Thôn Bỗng 2, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
-XE-404,Lương  Văn trâm,12A3,0377123582,XE Máy điện,24MĐ1-237.07 0374375134,xám,trong trường,Lò Văn Giáp,0986374248,Phụ huynh,,"Bảo Hà, Bảo Yên",Đủ điều kiện lưu hành,0,
-XE-405,Lương Thế Dân,12A3,0345094104,xe máy điện,đang đăng kí,đen,nhà bà Hà,GVCN NGOAI TRUONG,0986374248,Phụ huynh,0949766125,"Bảo Hà, Bảo Yên",Đủ điều kiện lưu hành,0,
-XE-406,Lương Thị Huyên,12A3,0865291552,wave HB,21-FA,xanh,nhà bà Hà,GVCN NGOAI TRUONG,0986374248,Phụ huynh,0334208202,"Bảo Hà, Bảo Yên",Đủ điều kiện lưu hành,0,đi chung với Bảo Ngọc
-XE-407,Lương Thị Khánh Hưng,12A3,0392735824,wave HB,24-AA05594,đen,trong trường,Lò Văn Giáp,0986374248,Lương Văn Thảnh,0374359429,"Bản 3AB, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
-XE-408,Lương Văn Tài,12A3,0985689354,xe điện,Chưa đăng ký,đỏ,nhà cô Thủy,Lò Văn Giáp,0986374248,Lương Văn Tuân,0365636783,"Bản Bùn 4, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
-XE-409,Lự Thúy Lành,12A3,0349919548,XE máy điện,24MĐ 1-237.42 0328416800,xanh đậm,trong trường,Lò Văn Giáp,0986374248,Phụ huynh,,"Bảo Hà, Bảo Yên",Đủ điều kiện lưu hành,0,
-XE-410,Nguyễn Ngọc Lan,12A3,0366457253,xe điện,Chưa đăng ký,đỏ,trong trường,Lò Văn Giáp,0986374248,Nguyễn Văn Kiên,0335070850,"Thôn Tân Trúc, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
-XE-411,Nguyễn Thiên Toàn,12A3,0364205320,xe máy điện,24-MĐ1-146.15,xám,trong trường,Lò Văn Giáp,0986374248,Nguyễn Thiên Cường,0343296661,"Thôn Tân An 2, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
-XE-412,Nguyễn Thị Ngọc Ánh,12A3,0328837237,xe máy điện,24-MĐ1-092.33,trắng,trong trường,Lò Văn Giáp,0986374248,Nguyễn Văn Duyên,0976760325,"Bản Bùn 4, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
-XE-413,Nguyễn Thị Yến Nhi,12A3,0352508869,xe máy điện,24MĐ1-237.66 0335267432,xám,trong trường,Lò Văn Giáp,0986374248,Nguyễn Văn Nghị,,"Bản Bùn 2, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
-XE-414,Nguyễn Văn Tiến,12A3,0392951477,xe điện,Chưa đăng ký,đỏ,trong trường,Lò Văn Giáp,0986374248,Nguyễn Thành Tiếp,0328902784,"Thôn Liên Hải, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
-XE-415,Phan Hữu Thắng,12A3,0345585361,xe đạp,Chưa đăng ký,xanh,trong trường,Lò Văn Giáp,0986374248,Phan Văn Bộ,0973953577,"Bản Liên Hà 1, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-403,Lý Thị Lan Anh,12A3,0392735824,wave HB,24-AB03064,đen,Trong trường,Thầy/Cô GVCN 12A3,0986374248,Lương Văn Thảnh,0374359429,Kim Sơn - Bảo Hà,Đủ điều kiện lưu hành,0,
+XE-404,Lương  Văn trâm,12A3,0349919548,XE máy điện,24MĐ1-237.07 0374375134,xanh đậm,Trong trường,Thầy/Cô GVCN 12A3,0986374248,Lự Văn Chúc,0328416800,Bông-Bảo Hà,Đủ điều kiện lưu hành,0,
+XE-405,Lương Thế Dân,12A3,0345094104,xe máy điện,24AA24869,đen,Ngoài trường,Thầy/Cô GVCN 12A3,0986374248,Hoàng Thị Kiều,0949766125,Hồng Bùn-Bào Hà,Đủ điều kiện lưu hành,0,
+XE-406,Lương Thị Huyên,12A3,0865291552,wave HB,21-FA,xanh,Ngoài trường,Thầy/Cô GVCN 12A3,0986374248,Lương Văn Chuyên,0334208202,Tắp 1-Bảo Hà,Đủ điều kiện lưu hành,0,đi chung với Bảo Ngọc
+XE-407,Lương Thị Khánh Hưng,12A3,0356792109,xe điện,24-AA05594,đỏ,Trong trường,Thầy/Cô GVCN 12A3,0986374248,Bàn Văn Chiến,0965838106,Tân Sơn-Bảo HÀ,Đủ điều kiện lưu hành,0,
+XE-408,Lương Văn Tài,12A3,0985689354,xe điện,Chưa đăng ký,đỏ,Ngoài trường,Thầy/Cô GVCN 12A3,0986374248,Lương Văn Tuân,0365636783,Hồng Bùn-Bào Hà,Đủ điều kiện lưu hành,0,
+XE-409,Lự Thúy Lành,12A3,0334069220,wae HB,24MĐ 1-237.42 0328416800,trắng,Trong trường,Thầy/Cô GVCN 12A3,0986374248,Hà Văn Gu,0983276592,Tân Thượng - Bảo Hà,Đủ điều kiện lưu hành,0,
+XE-410,Nguyễn Ngọc Lan,12A3,0366457253,xe điện,Chưa đăng ký,đỏ,Trong trường,Thầy/Cô GVCN 12A3,0986374248,Nguyễn Văn Kiên,0335070850,Mai Ù-Bảo Hà,Đủ điều kiện lưu hành,0,
+XE-411,Nguyễn Thiên Toàn,12A3,0943275350,xe điện,24-MĐ1-146.15,đỏ,Trong trường,Thầy/Cô GVCN 12A3,0986374248,Đỗ Văn Long,0366351418,Mai Ù-Bảo Hà,Đủ điều kiện lưu hành,0,
+XE-412,Nguyễn Thị Ngọc Ánh,12A3,0334301722,xe máy điện,24-MĐ1-092.33,xanh than,Trong trường,Thầy/Cô GVCN 12A3,0986374248,Trần Văn Tuyên,0379843439,Thống Nhất - Bảo Hà,Đủ điều kiện lưu hành,0,
+XE-413,Nguyễn Thị Yến Nhi,12A3,0377123582,XE Máy điện,24MĐ1-237.66 0335267432,xám,Trong trường,Thầy/Cô GVCN 12A3,0986374248,Lương Văn Chinh,0374375134,Hồng Bùn-Bào Hà,Đủ điều kiện lưu hành,0,
+XE-414,Nguyễn Văn Tiến,12A3,0392951477,xe điện,Chưa đăng ký,đỏ,Trong trường,Thầy/Cô GVCN 12A3,0986374248,Nguyễn Thành Tiếp,0328902784,Liên Hải-Bảo Hà,Đủ điều kiện lưu hành,0,
+XE-415,Phan Hữu Thắng,12A3,0345585361,xe đạp,Chưa đăng ký,xanh,Trong trường,Thầy/Cô GVCN 12A3,0986374248,Phan Văn Bộ,0973953577,Liên Hà 1- Bảo Hà,Đủ điều kiện lưu hành,0,
 XE-416,Phạm Thị Thùy Uyên,12A3,0343945475,xe điện,Chưa đăng ký,xanh,trong trường,Lò Văn Giáp,0986374248,Phụ huynh,0333597804,"Bảo Hà, Bảo Yên",Đủ điều kiện lưu hành,0,
-XE-417,Trương Thị Hường,12A3,0787181708,xe điện,Chưa đăng ký,đỏ,nhà cô Thủy,Lò Văn Giáp,0986374248,Trương Văn Dũng,0788083073,"Bản Bùn 2, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
-XE-418,Trướng Thị Thanh Tâm,12A3,0822688632,xe máy điện,24-AA76482,trắng,trong trường,Lò Văn Giáp,0986374248,Trướng Văn Còi,0362076675,"Thôn Ngầm Thỉn, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
-XE-419,Trần Bảo Ngọc,12A3,0868543627,wave HB,24-HB10144,trắng,nhà bà Hà,GVCN NGOAI TRUONG,0986374248,Phụ huynh,0984333917,"Bảo Hà, Bảo Yên",Đủ điều kiện lưu hành,0,đi chung với Kiên
-XE-420,Trần Bảo Như Quỳnh,12A3,0372824697,HB,24-AD05671,xám,trong trường,Lò Văn Giáp,0986374248,Trần Khắc Phong,0333286710,"Thôn Mai Hồng 1, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
-XE-421,Trần Thanh Trúc,12A3,0334301722,xe máy điện,24-MĐ1-189.85,xanh than,trong trường,Lò Văn Giáp,0986374248,Trần Văn Tuyên,0379843439,"Thôn Lỵ 2-3, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
-XE-422,Trần Văn Thanh,12A3,0381474096,xe máy điện,24-MD1,hồng,xe điện Thanh Thanh,GVCN NGOAI TRUONG,0986374248,Phụ huynh,0346838230,"Bảo Hà, Bảo Yên",Đủ điều kiện lưu hành,0,
-XE-423,Trịnh  Văn Hùng,12A3,0364339540,xe máy điện,24-MĐ1-238.20,trắng,nhà bà Hà,GVCN NGOAI TRUONG,0986374248,Phụ huynh,0373264822,"Bảo Hà, Bảo Yên",Đủ điều kiện lưu hành,0,
+XE-417,Trương Thị Hường,12A3,0787181708,xe điện,Chưa đăng ký,đỏ,Ngoài trường,Thầy/Cô GVCN 12A3,0986374248,Trương Văn Dũng,0788083073,Hồng Bùn-Bào Hà,Đủ điều kiện lưu hành,0,
+XE-418,Trướng Thị Thanh Tâm,12A3,0384872584,wave HB,24-AA76482,đen,Trong trường,Thầy/Cô GVCN 12A3,0986374248,Đinh Văn Ánh,0326117584,Kim Sơn - Bảo Hà,Đủ điều kiện lưu hành,0,
+XE-419,Trần Bảo Ngọc,12A3,0385659397,wave HB,24-HB10144,trắng,Ngoài trường,Thầy/Cô GVCN 12A3,0986374248,Trần Văn Hiệp,0372352951,Liên Hải-Bảo Hà,Đủ điều kiện lưu hành,0,đi chung với Kiên
+XE-420,Trần Bảo Như Quỳnh,12A3,0343945475,xe điện,24-AD05671,xanh,Trong trường,Thầy/Cô GVCN 12A3,0986374248,Nguyễn Thị Quyên,0333597804,Liên Hải-Bảo Hà,Đủ điều kiện lưu hành,0,
+XE-421,Trần Thanh Trúc,12A3,0362645325,xe điện,24-MĐ1-189.85,đen,Trong trường,Thầy/Cô GVCN 12A3,0986374248,Bàn Văn Cường,0982944594,Mai Ù-Bảo Hà,Đủ điều kiện lưu hành,0,
+XE-422,Trần Văn Thanh,12A3,0381474096,xe máy điện,24-MD1,hồng,Ngoài trường,Thầy/Cô GVCN 12A3,0986374248,Trần Văn Minh,0346838230,Khe Dài-Bảo HÀ,Đủ điều kiện lưu hành,0,
+XE-423,Trịnh  Văn Hùng,12A3,0364339540,xe máy điện,24-MĐ1-238.20,trắng,Ngoài trường,Thầy/Cô GVCN 12A3,0986374248,Trịnh Văn Quyến,0373264822,Kim Quang-Bảo Hà,Đủ điều kiện lưu hành,0,
 XE-424,Trịnh  Văn Phúc,12A3,0352874060,xe điện,Chưa đăng ký,đỏ,nhà Trịnh Tân,Lò Văn Giáp,0986374248,Phụ huynh,0372600870,"Bảo Hà, Bảo Yên",Đủ điều kiện lưu hành,0,
-XE-425,Vũ Đình Hùng,12A3,0975019735,xe máy điện,21-MĐ4-002.35,xanh,nhà Cương Tấm,GVCN NGOAI TRUONG,0986374248,Phụ huynh,0373410378,"Bảo Hà, Bảo Yên",Đủ điều kiện lưu hành,0,
-XE-426,chu thị hải yến,12A3,62481095,wave HB,24-HB09885,xanh than,trong trường,Lò Văn Giáp,0986374248,Chu Văn Chang,0366383983,"Bản 3AB, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
-XE-427,chu thị linh,12A3,0332186098,ware HB,24-HB15518,trắng,trong trường,Lò Văn Giáp,0986374248,Chu Văn Ninh,0369039498,"Thôn 6AB, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
-XE-428,hà thị hiên,12A3,0334069220,wae HB,24-HB12855,trắng,trong trường,Lò Văn Giáp,0986374248,Hà Văn Gu,0983276592,"Thôn Khe Bàn, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
-XE-429,Đinh Thị Thùy Ngân,12A3,0384872584,wave HB,24-AA24716,đen,trong trường,Lò Văn Giáp,0986374248,Phụ huynh,0326117584,"Bảo Hà, Bảo Yên",Đủ điều kiện lưu hành,0,
-XE-430,Đặng Hữu Thắng,12A3,0328017359,wave HB,24-HB09977,xanh,nhà bà Hà,GVCN NGOAI TRUONG,0986374248,Phụ huynh,0339946498,"Bảo Hà, Bảo Yên",Đủ điều kiện lưu hành,0,
+XE-425,Vũ Đình Hùng,12A3,0975019735,xe máy điện,21-MĐ4-002.35,xanh,Ngoài trường,Thầy/Cô GVCN 12A3,0986374248,Vũ Đình Yên,0373410378,Ngẩm Thỉn-Bảo Hà,Đủ điều kiện lưu hành,0,
+XE-426,chu thị hải yến,12A3,0344713214,wave HB,24-HB09885,cam,Trong trường,Thầy/Cô GVCN 12A3,0986374248,Hoàng Văn Trình,0339236790,Kim Sơn - Bảo Hà,Đủ điều kiện lưu hành,0,
+XE-427,chu thị linh,12A3,62481095,wave HB,24-HB15518,xanh than,Trong trường,Thầy/Cô GVCN 12A3,0986374248,Chu Văn Chang,0366383983,Kim Sơn - Bảo Hà,Đủ điều kiện lưu hành,0,
+XE-428,hà thị hiên,12A3,0332186098,ware HB,24-HB12855,trắng,Trong trường,Thầy/Cô GVCN 12A3,0986374248,Chu Văn Ninh,0369039498,Kim Sơn - Bảo Hà,Đủ điều kiện lưu hành,0,
+XE-429,Đinh Thị Thùy Ngân,12A3,0372824697,HB,24-AA24716,xám,Trong trường,Thầy/Cô GVCN 12A3,0986374248,Trần Khắc Phong,0333286710,Hồng Sang-Bảo Hà,Đủ điều kiện lưu hành,0,
+XE-430,Đặng Hữu Thắng,12A3,0328017359,wave HB,24-HB09977,xanh,Ngoài trường,Thầy/Cô GVCN 12A3,0986374248,Lý Thị Chung,0339946498,Bông-Bảo Hà,Đủ điều kiện lưu hành,0,
 XE-431,Đỗ Khánh Huyền,12A3,0943275350,xe điện,Chưa đăng ký,đỏ,trong trường,Lò Văn Giáp,0986374248,Đỗ Văn Long,0366351418,"Thôn Ù Sóc, Xã Bảo Hà",Đủ điều kiện lưu hành,0,Huyền đi chung với Ngọc
-XE-432,Đỗ Khánh Ngọc,12A3,0943275350,xe điện,Chưa đăng ký,đỏ,trong trường,Lò Văn Giáp,0986374248,Đỗ Văn Long,0366351418,"Thôn Ù Sóc, Xã Bảo Hà",Đủ điều kiện lưu hành,0,Ngọc đi chung với Huyền
+XE-432,Đỗ Khánh Ngọc,12A3,0943275350,xe điện,Chưa đăng ký,đỏ,Trong trường,Thầy/Cô GVCN 12A3,0986374248,Đỗ Văn Long,0366351418,Mai Ù-Bảo Hà,Đủ điều kiện lưu hành,0,Ngọc đi chung với Huyền
 XE-433,Bàn Thị Loan,12A4,0362754907,Yadea,24-MĐ1-18824,Đen nhám,Trong trường,Bùi Thị Xuân Thùy,0919728372,Bàn Văn Cường,0983492417,"Thôn Tân Sơn, Xã Bảo Hà",Đủ điều kiện lưu hành,0,Đi một mình
 XE-434,Hoàng Thị Phương Oanh,12A4,0383207751,50cc,24HB-160.95,Đen,Trong trường,Bùi Thị Xuân Thùy,0919728372,Hoàng Văn Tường,0364668915,"7AB, Xã Bảo Hà",Đủ điều kiện lưu hành,0,Đi 1 mình
-XE-435,Lâm Văn Đức,12A4,0866578167,Detech 50cc,24AA-081.98,"Trắng ,đen","Ngoài trường,nhà để xe bà Hà",Bùi Thị Xuân Thùy,0919728372,Lâm Văn Đạt,0338179372,"Kim Sơn, Xã Bảo Hà",Đủ điều kiện lưu hành,0,"có em Lâm Văn Nhật
+XE-435,Lâm Văn Đức,12A4,0866578167,Xe điện Detech 50cc,24AA-081.98,"Trắng ,đen",Ngoài trường,Thầy/Cô GVCN 12A4,0334903966,Lâm Văn Đạt,0338179372,Kim Sơn - Bảo Hà,Đủ điều kiện lưu hành,0,"có em Lâm Văn Nhật
  lớp 10a6 đi cùng"
 XE-436,Lý Văn Hùng,12A4,0932280664,Kazuki,24-AA 21343,Xám đen,Trong trường,Bùi Thị Xuân Thùy,0919728372,Lý Văn Vàng,0389525264,"Thôn Khe Dài, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
 XE-437,Lương Phong Vũ,12A4,0877948925,50cc,88AB-408.52,Xanh than,Trong trường,Bùi Thị Xuân Thùy,0919728372,Lương Văn Mười,0988783881,"Thôn  Kim Sơn, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
 XE-438,Lương Phong Vũ,12A4,0877948925,50cc,88AB-408.52,Xanh than,Ngoài trường để xe bà Hà,Bùi Thị Xuân Thùy,0919728372,Lương Văn Mười,0988783881,"Thôn  Kim Sơn, Xã Bảo Hà",Đủ điều kiện lưu hành,0,có em Lương Vũ Phong ở 10a3 đi cùng
 XE-439,Lương Phong Vũ,12A4,0877948925,50cc,88AB-408.52,Xanh than,Ngoài trường để xe bà Hà,Bùi Thị Xuân Thùy,0919728372,Lương Văn Mười,0988783881,"Thôn  Kim Sơn, Xã Bảo Hà",Đủ điều kiện lưu hành,0,có em ở 10a3 đi cùng
-XE-440,Nguyễn Hoài Nam,12A4,0981429280,wave 49.5cc,24HB-05555,Xám,Ngoài trường để xe nhà Dũng quảng cáo,Bùi Thị Xuân Thùy,0919728372,Nguyễn Đức Hoài,,"Thôn Bảo Ân, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
+XE-440,Nguyễn Hoài Nam,12A4,98142928,Xe HB,24HB.9378,Xanh,Ngoài trường,Thầy/Cô GVCN 12A4,0334903966,Nguyễn Thị Hồng Nhung,0354660754,Bảo Ân - Bảo Hà,Đủ điều kiện lưu hành,0,
 XE-441,Nguyễn Nhật Hạ,12A4,0967400645,gogo,24-MĐ1 171.52,Đỏ,Trong trường,Bùi Thị Xuân Thùy,0919728372,Nguyễn Xuân Nhiên,0398677825,"Bảo Vinh, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
 XE-442,Nguyễn Tùng Dương,12A4,0364691502,wave 49.5cc,24-AA 247.45,Trắng,Trong trường,Bùi Thị Xuân Thùy,0919728372,Nguyễn Ngọc Nam,0356893689,"Kim Quang, Xã Bảo Hà",Đủ điều kiện lưu hành,0,đi 1 mình
 XE-443,Phạm Văn thắng,12A4,0869299874,Canely,24-AC 039.77,Đen,Ngoài trường để xe bà Hà,Bùi Thị Xuân Thùy,0919728372,Phạm Văn Điệp,0789176188,"Liên Hà 2, Xã Bảo Hà",Đủ điều kiện lưu hành,0,Đi 1 mình
@@ -532,7 +533,7 @@ XE-509,Nguyễn Đình Tú,12A6,0961940691,Xe máy điện (Kazuki),24AA23279,X�
 XE-510,Nguyễn Đức Thắng,12A6,0367005737,xe máy điện (xmen),29MD123429,"trắng , đen",Trong trường,Phạm Lệ Thu,0354626005,Nguyễn Văn Thi,0362391361,"Thôn Tân An 2, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
 XE-511,Phạm Hoàng Nam,12A6,0827369389,Xe máy điện (Yadea),24AA08317,Xanh,Trong trường,Phạm Lệ Thu,0354626005,Phạm Duy Thanh,0915095449,"Liên Hà 3, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
 XE-512,Phạm Hà Hải Đăng,12A6,,xe máy điện (yadea),24AA08217,đen,Trong trường,Phạm Lệ Thu,0354626005,Thào A Sơn,0985596811,"Lâm Sản, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
-XE-513,Phạm Thuỳ Linh,12A6,0826343014,xe máy 50cc (Detech),24-AA 21325,đen,Nhà bà Hồng,Phạm Lệ Thu,0354626005,Phụ huynh,0981147040,"Bảo Hà, Bảo Yên",Đủ điều kiện lưu hành,0,
+XE-513,Phạm Thuỳ Linh,12A6,0826343014,Xe máy 50cc,24-AA 21325,Đen,Trong trường,Phạm Lệ Thu GVCN 12A6,0354626005,Tô Thị Loan,0981147040,"Thống nhất, Bảo Hà, Lào Cai",Đủ điều kiện lưu hành,0,
 XE-514,Phạm Tiến phong,12A6,0369934104,xe đạp điện,Chưa đăng ký,xanh,Trong trường,Phạm Lệ Thu,0354626005,Phạm Anh Tuấn,0916447632,"Liên Hà 1, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
 XE-515,Sầm Thị Xuân Hảo,12A6,0833579398,xe HB (honda/50cc),24-HB 07940,xanh,Trong trường,Phạm Lệ Thu,0354626005,Phụ huynh,0377625033,"Bảo Hà, Bảo Yên",Đủ điều kiện lưu hành,0,
 XE-516,TRẦN HOÀN THIỆN,12A6,0335245813,Xe máy điện (Xmen),24 MD109320,Đen,Trong trường,Phạm Lệ Thu,0354626005,Trần Xuân Cương,0373192975,"Bùn 3, Xã Bảo Hà",Đủ điều kiện lưu hành,0,
@@ -595,7 +596,7 @@ XE-571,Trần Thị Thu,11A7,0364201038,Xe máy,24AA-24679,Xanh than,Trong trư�
 XE-572,Sùng A Phong,11A7,0822086471,Xe máy,21FA-02220,Đen,Trong trường,Thầy/Cô GVCN 11A7,0334668132,Hạng Thị Chấu,0867058874,Thíp Dạo - Lâm Giang,Đủ điều kiện lưu hành,0,HS đổi biển số xe
 XE-573,Hà Duy Lợi,11A7,0356663914,Xe máy,24-AC019.93,Xanh dương,Trong trường,Thầy/Cô GVCN 11A7,0334668132,Hoàng Thị Đậm,0345526774,Kim Sơn - Bảo Hà,Đủ điều kiện lưu hành,0,
 XE-574,Vũ Duy Hưng,11A7,0862047165,Xe máy,21FA-035.90,Trắng,Trong trường,Thầy/Cô GVCN 11A7,0334668132,Hoàng Thị Vân Hường,0365410906,Nghĩa Dũng - Lâm Giang,Đủ điều kiện lưu hành,0,
-XE-575,Phan Thị Yến Nhi,12A1,0358448932,Xe máy điện Detech,24AA63980,Đen,Trong trường,Thầy/Cô GVCN 12A1,0988346058,Phan Thị Tam,0385535964,Bông - Bảo Hà,Đủ điều kiện lưu hành,0,
+XE-575,Phan Thị Yến Nhi,12A1,0358448932,Xe máy điện Detech,24-AA639.80,Đen,Trong trường,Phạm Thị Thu GVCN 12A1,0988346058,Phan Thị Tam,0385535964,Bông - Bảo Hà,Đủ điều kiện lưu hành,0,
 XE-576,Trần Thị Thuý Hằng,11A3,0822289610,Xe máy diện đỏ,24MD123781,Đỏ,Trong trường,Thầy/Cô GVCN 11A3,0919662825,Trần Văn Minh,0978297662,Thôn Bảo Vinh,Đủ điều kiện lưu hành,0,
 XE-577,Nguyễn Thị Kim Phượng,11A3,0353174102,Xe máy diện Xám,24AA24896,Xám,Trong trường,Thầy/Cô GVCN 11A3,0919662825,Trần Thị Hái,0327136525,Thôn Hồng Bùn,Đủ điều kiện lưu hành,0,
 XE-578,Vũ Ngọc Diệp,11A3,0349665417,Xe Máy,24HB16721,Đỏ mận,Trong trường,Thầy/Cô GVCN 11A3,0919662825,Vũ Văn Hảo,0354811243,Thôn Tân Thành,Đủ điều kiện lưu hành,0,
@@ -617,3 +618,58 @@ XE-593,Lâm Tú Tài,10A6,0974453280,Xe đạp điện Espero,Chưa đăng ký b
 XE-594,Trương Văn Bảo,10A6,0963217058,Xe đạp điện,Chưa đăng ký biển,Đen,Trong trường,Thầy/Cô GVCN 10A6,0347769860,Trương Văn Giới,0345555786,Mai Ù- Bảo Hà,Đủ điều kiện lưu hành,0,
 XE-595,Lý Thành Long,10A6,0963494418,Xe đạp điện,Chưa đăng ký biển,Đen,Trong trường,Thầy/Cô GVCN 10A6,0354852891,Lý Văn Khoa,0963494418,Khe Bàn- Bảo Hà,Đủ điều kiện lưu hành,0,
 XE-596,Vũ Minh Hiếu,10A6,0365803935,Xe đạp,Chưa đăng ký biển,Đen,Trong trường,Thầy/Cô GVCN 10A6,0332010379,Vũ Văn Mạnh,0365803935,Liên Hà 5- Bảo Hà,Đủ điều kiện lưu hành,0,
+XE-597,Lý Thị Mai Anh,12A2,0382081034,Xe đạp,Chưa đăng ký biển,Hồng,Tại nhà trọ (Thịnh Hường),Thầy/Cô GVCN 12A2,0983711402,Lý Văn Cầu,0364027122,Tân Thành - Bảo Hà,Đủ điều kiện lưu hành,0,
+XE-598,Nguyễn Thị Hồng Tuyết,12A4,0374252009,Xe HB,24HB.06531,Trắng,Ngoài trường,Thầy/Cô GVCN 12A4,0334903966,Trần Thị Hạnh,0326373109,Bông - Bảo Hà,Đủ điều kiện lưu hành,0,
+XE-599,Lương Anh Khoa,12A4,0349716120,Xe máy điện,Xe không biển,Đen,Ngoài trường,Thầy/Cô GVCN 12A4,0334903966,Trương Thị Quỳnh,0366425341,Hồng Sơn - Bảo Hà,Đủ điều kiện lưu hành,0,
+XE-600,Đỗ Thị Thảo Mây,12A4,0397879261,Xe HB,24AA. 24940,Trắng,Trong trường,Thầy/Cô GVCN 12A4,0334903966,Nguyễn Thị Huế,0944520135,Thống Nhất- Bảo Hà,Đủ điều kiện lưu hành,0,
+XE-601,Lê Bảo Nghĩa,12A4,0383058557,Xe HB,24AC01933,Trắng,Trong trường,Thầy/Cô GVCN 12A4,0334903966,Lê Thái Đình,0342136204,Nhai Tẻn - Bảo Hà,Đủ điều kiện lưu hành,0,
+XE-602,Bàn Ngọc Thanh,12A4,0786437820,Xe điện,Chưa có biển,Xám,Trong trường,Thầy/Cô GVCN 12A4,0334903966,Lý Thị Linh,0386214783,Mai Ù - Bảo Hà,Đủ điều kiện lưu hành,0,
+XE-603,Bàn Xuân Quyết,12A4,0372733804,Xe điện,21MD4. 01954,Trắng,Trong trường,Thầy/Cô GVCN 12A4,0334903966,Bàn Văn Tâm,0983276804,Tân Sơn - Bảo Hà,Đủ điều kiện lưu hành,0,
+XE-604,Vàng Thị Mai,12A4,0379255364,Xe Drem HB,24HB.13932,Trắng,Trong trường,Thầy/Cô GVCN 12A4,0334903966,Vàng Seo Giấy,0399564413,Làng Đam - Lâm Giang,Đủ điều kiện lưu hành,0,
+XE-605,Hoàng Quốc Dân,11A4,0337092110,HP,24HP.115.07,Trắng,Bà Hà lùn,Thầy/Cô GVCN 11A4,0943438550,Hoàng Văn Định,0374381468,Thôn 3 AB,Đủ điều kiện lưu hành,0,
+XE-606,Trương Lương Anh Tuấn,11A4,0357523940,Máy điện,24 MĐ 123777,Trắng,Trong trường,Thầy/Cô GVCN 11A4,0943438550,Trương Văn Hội,0963584787,Thôn Hồng Sơn,Đủ điều kiện lưu hành,0,
+XE-607,Đặng Thị Vân,11A4,0862908820,Máy điện,24 A A 97167,Trắng,Trong trường,Thầy/Cô GVCN 11A4,0943438550,Đặng Văn Thức,0973794980,Thôn Cam cọn 2,Đủ điều kiện lưu hành,0,
+XE-608,Nguyễn Xuân Quyền,11A4,0352885074,Máy điện,24MĐ 114575,Xanh dêu,Bà Hà lùn,Thầy/Cô GVCN 11A4,0943438550,Nguyễn Văn Giang,0979590361,Thôn An khánh,Đủ điều kiện lưu hành,0,
+XE-609,Trần Thị Hải,10A4,0929902011,Xe máy điện,Chưa đăng ký biển,Xanh tím,Nhà xe học sinh,Thầy/Cô GVCN 10A4,0359220000,Nguyễn Thị Kim Anh,0911077029,Hồng Bùn - Bảo Hà,Đủ điều kiện lưu hành,0,
+XE-610,Trịnh Văn Phúc,12A3,0352874060,xe điện,Chưa đăng ký biển,đỏ,Ngoài trường,Thầy/Cô GVCN 12A3,0986374248,Nguyễn Thị Hương,0372600870,Kim Quang-Bảo Hà,Đủ điều kiện lưu hành,0,
+XE-611,Lý Minh Thái,12A1,0969523855,Xe máy điện Kaka,24AC01747,Đen,Trong trường,Phạm Thị Thu GVCN 12A1,0988346058,Lý Thị Chanh,0965417032,Cam cọn 2 - Bảo Hà,Đủ điều kiện lưu hành,0,
+XE-612,Trịnh Đức Anh,12A1,0382902655,Xe máy điện kazuki,24MD123773,Trắng,Trong trường,Phạm Thị Thu GVCN 12A1,0988346058,Bùi Thị Liên,0762390177,Hồng Sơn - Bảo Hà,Đủ điều kiện lưu hành,0,
+XE-613,Đặng Minh Thuân,12A1,0346673037,Xe máy 50cc dream50 cc,24HP12809,tím,Trong trường,Phạm Thị Thu GVCN 12A1,0988346058,Trần Thị Thực,0337312505,Tân Sơn - Bảo Hà,Đủ điều kiện lưu hành,0,
+XE-614,Nguyễn Trung Kiên,12A1,0969942548,Xe máy điện Dibao,24MD122086,xanh lá,Trong trường,Phạm Thị Thu GVCN 12A1,0988346058,Phạm Thị Cần,0367076082,Nghĩa Dũng - Lâm Giang,Đủ điều kiện lưu hành,0,
+XE-615,Lã Thị Vi,12A1,0347346542,Xe máy 50cc wave,24HB10457,Trắng,Ngoài trường,Phạm Thị Thu GVCN 12A1,0988346058,Phạm Thị Thương,0347346542,Hồng Sơn - Bảo Hà,Đủ điều kiện lưu hành,0,
+XE-616,Lương Quốc Uy,12A1,0344513497,Xe máy điện gogo,24-MĐ237.89,Xám xanh,Ngoài trường,Phạm Thị Thu GVCN 12A1,0988346058,Vi Thị Nguyệt,0347814805,Hồng Sơn - Bảo Hà,Đủ điều kiện lưu hành,0,
+XE-617,Triệu Phương Thảo,10A3,0799711470,Xe đạp điện,Chưa đăng ký biển,Đỏ,Trong trường,Trần Thị Hiền GVCN 10A3,0974657769,Triệu Nguyên Bình,0868884083,Khe Dài - Bảo Hà,Đủ điều kiện lưu hành,0,
+XE-618,Đào Quang Duy,10A7,0818945666,xe đạp,Chưa đăng ký biển,màu xanh,Trong trường,Trần Thị Dòng,0337117336,Đào Quang Quyền,0972263662,Lâm Sản - Bảo Hà,Đủ điều kiện lưu hành,0,
+XE-619,Triệu Công Mạnh,10A7,,xe đạp điện,Chưa đăng ký biển,Đỏ,Trong trường,Trần Thị Dòng,0337117336,Lý Thị Múi,0392776700,Ba Xã - Bảo Hà,Đủ điều kiện lưu hành,0,
+XE-620,Trương Thị Uyên,10A2,0985907164,Xe đạp điện,Chưa đăng ký biển,Xanh ngọc,Trong trường,Thầy/Cô GVCN 10A2,0356656712,Đặng Thị Mai,0985907164,Hồng Sang - Bảo Hà,Đủ điều kiện lưu hành,0,
+XE-621,Lương Gia Huy,10A2,0397128046,Xe đạp điện,Chưa đăng ký biển,Đen,Trong trường,Thầy/Cô GVCN 10A2,0356656712,Nguyễn Thị Thu,0397128046,Hồng Sang - Bảo Hà,Đủ điều kiện lưu hành,0,
+XE-622,Lê Đức Duy,10A2,0394518328,Xe đạp điện,Chưa đăng ký biển,Đen,Trong trường,Thầy/Cô GVCN 10A2,0356656712,Hoàng Thị Thủy,0394518328,Hồng Sang - Bảo Hà,Đủ điều kiện lưu hành,0,
+XE-623,Lý Quỳnh Anh,10A2,0365134102,Xe đạp điện,Chưa đăng ký biển,Đỏ,Trong trường,Thầy/Cô GVCN 10A2,0356656712,Lý Văn Sêm,0365134102,Thống Nhất - Bảo Hà,Đủ điều kiện lưu hành,0,
+XE-624,Nguyễn Hải Đăng,10A2,0868682132,Xe đạp điện,Chưa đăng ký biển,Đen,Trong trường,Thầy/Cô GVCN 10A2,0356656712,Đặng Thị Chiều,0868682132,Mai Hồng - Bảo Hà,Đủ điều kiện lưu hành,0,
+XE-625,Hoàng Đức Lương,10A2,0328037793,Xe đạp điện,Chưa đăng ký biển,Đen,Trong trường,Thầy/Cô GVCN 10A2,0356656712,Lương Thị Hiền,0328037793,Lúc - Bảo Hà,Đủ điều kiện lưu hành,0,
+XE-626,Nguyễn Thị Ngọc Ánh,10A2,0982873438,Xe đạp,Chưa đăng ký biển,Đen,Trong trường,Thầy/Cô GVCN 10A2,0356656712,Nguyễn Thị Khánh Hà,0389239750,Liên Hà 5 - Bảo Hà,Đủ điều kiện lưu hành,0,
+XE-627,Sầm Đức Trinh,11A5,0337625321,Xe đạp điện,Chưa đăng ký biển,Đen,Ngoài trường,Trịnh Văn Thể GVCN 11A5,0918099828,Sầm Văn Chung,0382957638,Bản Lúc,Đủ điều kiện lưu hành,0,
+XE-628,Phạm Bảo Nam,11A5,0385675665,Máy điện,24MD114631,Xanh,Ngoài trường,Trịnh Văn Thể GVCN 11A5,0918099828,Phạm Hiếu Thảo,0385675665,BẢO VINH,Đủ điều kiện lưu hành,0,
+XE-629,Đào Đăng Dương,11A5,,Xe máy điện,24A82921,Xanh,Ngoài trường,Trịnh Văn Thể GVCN 11A5,0918099828,La Thị Bền,0382894986,HỒNG SANG,Đủ điều kiện lưu hành,0,
+XE-630,Nguyễn Hoàng Việt,11A5,,Xe máy điện,24AA21410,Đen,Ngoài trường,Trịnh Văn Thể GVCN 11A5,0918099828,Nguyễn Hoàng Dũng,0979901259,Liên Hà 5,Đủ điều kiện lưu hành,0,
+XE-631,Lự Quang Dũng,11A5,0386427990,Xe máy điện,24AA21406,Xám,Ngoài trường,Trịnh Văn Thể GVCN 11A5,0918099828,Lự Quang Thùy,0386427990,Tắp 1,Đủ điều kiện lưu hành,0,
+XE-632,Lương Tấn Dũng,11A5,,Xe máy điện,24AA67307,Xanh,Ngoài trường,Trịnh Văn Thể GVCN 11A5,0918099828,Lương Mạnh Thành,0384681236,BẢO VINH,Đủ điều kiện lưu hành,0,
+XE-633,Đỗ Thị Hồng Thiện,11A1,0346087346,Xe máy điện,Chưa đăng ký biển,Đen,Nhà xe đầu nhà B,Bàn Thị Thu Hương GVCN 11A1,0961727636,Sầm Thị Thủy,0329591574,Lúc- Bảo Hà,Đủ điều kiện lưu hành,0,
+XE-634,Trần Thị Mỹ Hạnh,11A1,0399957370,Xe máy điện,24-AB18357,Xám,Nhà xe đầu nhà B,Bàn Thị Thu Hương GVCN 11A1,0961727640,Trần Quang Sáng,0335244337,Tân Sơn - Bảo Hà,Đủ điều kiện lưu hành,0,
+XE-635,Trần Tuấn Phong,11A1,0349740390,Xe máy điện,Chưa đăng ký biển,đen,Nhà xe đầu nhà B,Bàn Thị Thu Hương GVCN 11A1,0961727641,Nguyễn Thị Hồng Phương,0356209078,Liên Hà 1- Bảo Hà,Đủ điều kiện lưu hành,0,
+XE-636,Chu Văn Linh,11A1,0357903484,Xe máy điện,21-FA034.29,Xanh than,Nhà bà Hà cạnh ủy ban,Bàn Thị Thu Hương GVCN 11A1,0961727643,Chu Văn Việt,0353938202,3AB - Bảo Hà,Đủ điều kiện lưu hành,0,
+XE-637,Hoàng Thị Bích Hảo,11A1,0359979182,Xe máy điện,21-GA 202.18,Trắng,Nhà bà Hà cạnh ủy ban,Bàn Thị Thu Hương GVCN 11A1,0961727644,Hoàng Văn Hiêm,0364206455,7AB - Bảo Hà,Đủ điều kiện lưu hành,0,
+XE-638,Lê Phương Thảo,12A6,0338005680,Xe đạp,Chưa đăng ký biển,Xanh lá cây,Trong trường,Phạm Lệ Thu GVCN 12A6,0354626005,Lê Công Thuận,0987462688,"Liên Hà 5, Bảo Hà, Lào Cai",Đủ điều kiện lưu hành,0,
+XE-639,Hà Phúc Lâm,12A5,037660827,Detech,24HB 037.15,xanh cốm,Trong trường,Phạm Thị Tuyết GVCN 12A5,0944533302,Lý Thị Chắc,0357954496,Nhai thổ 3-Bảo Hà,Đủ điều kiện lưu hành,0,
+XE-640,Vàng Thị Hoàng Diệp / Vàng Thị Ngọc Bích,"10A1
+12A5",0337057910,xe máy điện,Chưa đăng ký biển,màu hồng,Trong trường,Thầy/Cô GVCN 10A1,0947157111,Vàng Thị Vơ,0338954621,Tân Văn - Bảo Hà - Lào Cai,Đủ điều kiện lưu hành,0,
+XE-641,Hoàng Thùy Linh / Lý Thị Anh Đào,"10A1
+10A2",0368337636,xe  điện,Chưa đăng ký biển,trắng hồng,Trong trường,Thầy/Cô GVCN 10A1,0947157111,Hoàng Văn Hình,0394626860,Tân Sơn - Bảo Hà - Lào Cai,Đủ điều kiện lưu hành,0,
+XE-642,Hồ Khánh Linh,10A1,0487044097,xe điện,Chưa đăng ký biển,Màu đen,Trong trường,Thầy/Cô GVCN 10A1,0947157111,Nguyễn Thị Hồng Nhung,0946645825,Liên Hà 5 - Bảo Hà - Lào Cai,Đủ điều kiện lưu hành,0,
+XE-643,Nông Đức Duy / Nông Thị Ánh Nguyệt,"10A1
+12A1",0325242301,xe điện,24Â-63532,Màu đen nhám,Trong trường,Thầy/Cô GVCN 10A1,0947157111,Nông Ton Pham,036675523,Bông - Bảo Hà - Lào Cai,Đủ điều kiện lưu hành,0,
+XE-644,Hoàng Mỹ Lệ / Hoàng Quốc Tỷ,"10A1
+11A1",0328958260,xe máy,24HB-135.93,Màu đen,Trong trường,Thầy/Cô GVCN 10A1,0947157111,Hoàng Văn Phú,0326824340,Kim Sơn - Bảo Hà - Lào Cai,Đủ điều kiện lưu hành,0,
+XE-645,Đặng Thùy Châm,10A1,0358679337,xe điện,Chưa đăng ký biển,Màu xám đen,Trong trường,Thầy/Cô GVCN 10A1,0947157111,Đặng Văn Lai,0943634480,Thùng  - Bảo Hà - Lào Cai,Đủ điều kiện lưu hành,0,
+XE-646,Đặng Hữu Đức,10A1,0355152150,Xe máy,24HB-13367,Mầu trắng,Trong trường,Thầy/Cô GVCN 10A1,0947157111,Đặng Văn Tôn,0327632343,Mai Ù - Bảo Hà - Lào Cai,Đủ điều kiện lưu hành,0,
+XE-647,Trần Bảo Nam,10A1,0961342978,xe đạp điện,Chưa đăng ký biển,Màu đen,Trong trường,Thầy/Cô GVCN 10A1,0947157111,Trần Quyết Thắng,0860721708,Kim Quang - Bảo Hà - Lào Cai,Đủ điều kiện lưu hành,0,

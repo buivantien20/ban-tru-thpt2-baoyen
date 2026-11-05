@@ -14,9 +14,44 @@
   ],
   "last_sync_drive": "30/10/2026 19:55:41 (Cục bộ)",
   "last_sync_sheets": "Chưa đồng bộ",
-  "last_auto_sync": "04/11/2026 10:00:30",
+  "last_auto_sync": "06/11/2026 02:28:49",
   "status": "Chưa cấu hình",
   "sync_log": [
+    {
+      "timestamp": "06/11/2026 02:28:49",
+      "trigger": "Định kỳ 30 phút",
+      "details": [
+        "Drive Cục Bộ: Sao chép 32 file vào D:/Google_Drive_THPT2_BaoYen"
+      ]
+    },
+    {
+      "timestamp": "04/11/2026 11:00:30",
+      "trigger": "Định kỳ 30 phút",
+      "details": [
+        "Drive Cục Bộ: Sao chép 32 file vào D:/Google_Drive_THPT2_BaoYen"
+      ]
+    },
+    {
+      "timestamp": "04/11/2026 11:00:24",
+      "trigger": "Định kỳ 30 phút",
+      "details": [
+        "Drive Cục Bộ: Sao chép 32 file vào D:/Google_Drive_THPT2_BaoYen"
+      ]
+    },
+    {
+      "timestamp": "04/11/2026 10:30:30",
+      "trigger": "Định kỳ 30 phút",
+      "details": [
+        "Drive Cục Bộ: Sao chép 32 file vào D:/Google_Drive_THPT2_BaoYen"
+      ]
+    },
+    {
+      "timestamp": "04/11/2026 10:30:23",
+      "trigger": "Định kỳ 30 phút",
+      "details": [
+        "Drive Cục Bộ: Sao chép 32 file vào D:/Google_Drive_THPT2_BaoYen"
+      ]
+    },
     {
       "timestamp": "04/11/2026 10:00:30",
       "trigger": "Định kỳ 30 phút",
@@ -187,41 +222,6 @@
     },
     {
       "timestamp": "02/11/2026 11:00:09",
-      "trigger": "Định kỳ 30 phút",
-      "details": [
-        "Drive Cục Bộ: Sao chép 30 file vào D:/Google_Drive_THPT2_BaoYen"
-      ]
-    },
-    {
-      "timestamp": "02/11/2026 11:00:05",
-      "trigger": "Định kỳ 30 phút",
-      "details": [
-        "Drive Cục Bộ: Sao chép 30 file vào D:/Google_Drive_THPT2_BaoYen"
-      ]
-    },
-    {
-      "timestamp": "02/11/2026 10:47:06",
-      "trigger": "Định kỳ 30 phút",
-      "details": [
-        "Drive Cục Bộ: Sao chép 30 file vào D:/Google_Drive_THPT2_BaoYen"
-      ]
-    },
-    {
-      "timestamp": "02/11/2026 10:30:09",
-      "trigger": "Định kỳ 30 phút",
-      "details": [
-        "Drive Cục Bộ: Sao chép 30 file vào D:/Google_Drive_THPT2_BaoYen"
-      ]
-    },
-    {
-      "timestamp": "02/11/2026 10:30:04",
-      "trigger": "Định kỳ 30 phút",
-      "details": [
-        "Drive Cục Bộ: Sao chép 30 file vào D:/Google_Drive_THPT2_BaoYen"
-      ]
-    },
-    {
-      "timestamp": "02/11/2026 10:17:06",
       "trigger": "Định kỳ 30 phút",
       "details": [
         "Drive Cục Bộ: Sao chép 30 file vào D:/Google_Drive_THPT2_BaoYen"
