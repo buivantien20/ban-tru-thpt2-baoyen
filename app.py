@@ -595,23 +595,50 @@ if "user_login" not in st.session_state:
     }
 
 # ========================================================
-# 2.1. MÀN HÌNH ĐĂNG NHẬP BẮT BUỘC (NẾU CHƯA ĐĂNG NHẬP)
+# 2.1. CỔNG THÔNG TIN ĐIỀU HÀNH & MÀN HÌNH ĐĂNG NHẬP (NẾU CHƯA ĐĂNG NHẬP)
 # ========================================================
 if not st.session_state.user_login.get("logged_in", False):
+    import cong_dieu_hanh_trang_chu
+    import importlib
+    importlib.reload(cong_dieu_hanh_trang_chu)
+
+    # 1. Hero Banner Thương Hiệu Đẳng Cấp & Trạng Thái Hệ Thống 24/7
+    cong_dieu_hanh_trang_chu.render_hero_banner(
+        nam_hoc=st.session_state.nam_hoc_hien_tai,
+        logo_data_uri=logo_data_uri,
+        is_logged_in=False
+    )
+
+    # 2. Trung Tâm Chỉ Huy Tác Nghiệp Trực Tuyến Trong Ngày (Live Operations)
+    cong_dieu_hanh_trang_chu.render_trung_tam_chi_huy_live(
+        BASE_DIR=BASE_DIR,
+        THU_MUC_NAM_HOC=THU_MUC_NAM_HOC,
+        nam_hoc_hien_tai=st.session_state.nam_hoc_hien_tai
+    )
+
+    # 3. Tiện Ích Giáo Dục Số Mở Nhanh (8 Dịch Vụ Thiết Yếu)
+    cong_dieu_hanh_trang_chu.render_tien_ich_giao_duc_so()
+
+    cong_dieu_hanh_trang_chu.st_html("<hr style='border: 0; height: 1.5px; background: linear-gradient(to right, rgba(30, 58, 138, 0.05), rgba(30, 58, 138, 0.4), rgba(30, 58, 138, 0.05)); margin: 30px 0 20px 0;'>")
+
+    cong_dieu_hanh_trang_chu.st_html("""
+        <div style="background: linear-gradient(135deg, #1E3A8A 0%, #0F172A 100%); color: white; padding: 14px 20px; border-radius: 12px; margin-bottom: 20px; box-shadow: 0 4px 12px rgba(15, 23, 42, 0.15); display: flex; align-items: center; justify-content: space-between;">
+            <div>
+                <h4 style="color: white; margin: 0; font-size: 16px; font-weight: 800; display: flex; align-items: center; gap: 8px;">
+                    <span>🔐</span> KHU VỰC ĐĂNG NHẬP HỆ THỐNG & CÀI ĐẶT ỨNG DỤNG DI ĐỘNG
+                </h4>
+                <div style="color: #94A3B8; font-size: 12.5px; margin-top: 3px;">
+                    Dành cho Ban Giám Hiệu, Thầy Cô giáo, Nhân viên, Học sinh và Phụ huynh trường THPT số 2 Bảo Yên
+                </div>
+            </div>
+            <span style="background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.25); padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 600;">
+                🔒 Bảo mật 256-bit
+            </span>
+        </div>
+    """)
+
     col_l1, col_l2 = st.columns([1.15, 1], gap="medium")
     with col_l1:
-        c_head1, c_head2 = st.columns([1, 4])
-        with c_head1:
-            if os.path.exists(FILE_LOGO):
-                st.image(FILE_LOGO, width=85)
-        with c_head2:
-            st.markdown(f"""
-                <h3 style='color:#1E3A8A; margin:0;'>TRƯỜNG THPT SỐ 2 BẢO YÊN</h3>
-                <h5 style='color:#DC2626; margin:2px 0 0 0;'>HỆ THỐNG QUẢN TRỊ TRƯỜNG HỌC TOÀN DIỆN ({st.session_state.nam_hoc_hien_tai})</h5>
-                <p style='color:#6B7280; font-size:13px; margin:0;'>Cổng tích hợp: Quản lý chung • Bán trú & KTX • Đoàn Thanh Niên</p>
-            """, unsafe_allow_html=True)
-        st.markdown("<hr style='margin: 10px 0;'>", unsafe_allow_html=True)
-        
         # Cho phép chọn năm học ngay tại màn hình đăng nhập
         c_nh_l1, c_nh_l2 = st.columns([1, 1])
         with c_nh_l1:
@@ -882,16 +909,19 @@ with st.sidebar:
     # Phân quyền danh sách phân hệ theo vai trò (RBAC nghiêm ngặt):
     if role_curr == "Phụ huynh học sinh":
         ds_phan_he = [
+            "🏛️ CỔNG THÔNG TIN ĐIỀU HÀNH TỔNG QUAN",
             "🛏️ QUẢN LÝ BÁN TRÚ & KTX"
         ]
     elif role_curr == "Học sinh":
         ds_phan_he = [
+            "🏛️ CỔNG THÔNG TIN ĐIỀU HÀNH TỔNG QUAN",
             "🛏️ QUẢN LÝ BÁN TRÚ & KTX",
             "🚩 ĐOÀN THANH NIÊN (ĐTN)"
         ]
     else:
         ds_phan_he = [
-            "🏛️ HỆ THỐNG QUẢN TRỊ & ĐIỀU HÀNH NHÀ TRƯỜNG",
+            "🏛️ CỔNG THÔNG TIN ĐIỀU HÀNH TỔNG QUAN",
+            "🏛️ QUẢN TRỊ CHUYÊN MÔN & TÁC NGHIỆP NHÀ TRƯỜNG",
             "🛏️ QUẢN LÝ BÁN TRÚ & KTX",
             "🚩 ĐOÀN THANH NIÊN (ĐTN)"
         ]
@@ -940,14 +970,14 @@ with st.sidebar:
     ma_lk_hien = u_curr.get("ma_lien_ket", "")
     
     lk_badge_html = f"<div style='margin-bottom: 5px;'><span style='color: #64748B;'>🔗 Liên kết:</span> <code style='color: #0369A1; font-weight: bold;'>{ma_lk_hien}</code></div>" if (ma_lk_hien and ma_lk_hien != "Toàn trường") else ""
-    st.markdown(f"""
+    cong_dieu_hanh_trang_chu.st_html(f"""
     <div style="background: #F8FAFC; border: 1px solid #E2E8F0; padding: 10px 12px; border-radius: 8px; font-size: 13px; line-height: 1.5; box-shadow: 0 1px 2px rgba(0,0,0,0.03);">
         <div style="margin-bottom: 5px;"><span style="color: #64748B;">👤 Người dùng:</span> <b style="color: #0F172A;">{u_curr['fullname']}</b></div>
         <div style="margin-bottom: 5px;"><span style="color: #64748B;">📌 Chức danh:</span> <b style="color: #334155;">{chuc_danh_hien}</b></div>
         {lk_badge_html}
         <div style="margin-top: 6px;"><span style="color: #64748B;">Vai trò:</span> <span class='{badge_color}'>{role_curr}</span></div>
     </div>
-    """, unsafe_allow_html=True)
+    """)
     
     # ⚙️ CHỨC NĂNG CÁ NHÂN HÓA & ĐỔI MẬT KHẨU DÀNH CHO MỌI TÀI KHOẢN (BGH, GVCN, BẾP, PHỤ HUYNH, HỌC SINH)
     u_username = u_curr["username"]
@@ -1298,18 +1328,31 @@ if st.session_state.get("is_admin_mode", False) and role_curr != "Ban Giám hi�
 
 # 4. ĐIỀU HƯỚNG THEO PHÂN HỆ HỆ THỐNG (KIỂM SOÁT BẢO MẬT RBAC)
 # ========================================================
-# Chặn tuyệt đối Học sinh và Phụ huynh vào Phân hệ Quản trị nhà trường
-if role_curr in ["Học sinh", "Phụ huynh học sinh"] and any(kw in st.session_state.phan_he_hien_tai for kw in ["QUẢN TRỊ", "QUẢN LÝ CHUNG", "ĐIỀU HÀNH"]):
-    st.session_state.phan_he_hien_tai = "🛏️ QUẢN LÝ BÁN TRÚ & KTX"
-    st.warning("⚠️ Tài khoản của bạn không được phân quyền truy cập Phân hệ Quản trị nhà trường.")
+# Chặn tuyệt đối Học sinh và Phụ huynh vào Phân hệ Quản trị chuyên môn
+if role_curr in ["Học sinh", "Phụ huynh học sinh"] and any(kw in st.session_state.phan_he_hien_tai for kw in ["QUẢN TRỊ CHUYÊN MÔN", "QUẢN LÝ CHUNG"]):
+    st.session_state.phan_he_hien_tai = "🏛️ CỔNG THÔNG TIN ĐIỀU HÀNH TỔNG QUAN"
+    st.warning("⚠️ Tài khoản của bạn không được phân quyền truy cập Phân hệ Quản trị chuyên môn.")
     st.rerun()
 
 # Chặn Phụ huynh vào Phân hệ Đoàn Thanh Niên
 if role_curr == "Phụ huynh học sinh" and "ĐOÀN THANH NIÊN" in st.session_state.phan_he_hien_tai:
-    st.session_state.phan_he_hien_tai = "🛏️ QUẢN LÝ BÁN TRÚ & KTX"
+    st.session_state.phan_he_hien_tai = "🏛️ CỔNG THÔNG TIN ĐIỀU HÀNH TỔNG QUAN"
     st.rerun()
 
-if "QUẢN TRỊ" in st.session_state.phan_he_hien_tai or "QUẢN LÝ CHUNG" in st.session_state.phan_he_hien_tai or "ĐIỀU HÀNH" in st.session_state.phan_he_hien_tai:
+# ROUTING CÁC PHÂN HỆ
+if st.session_state.phan_he_hien_tai == "🏛️ CỔNG THÔNG TIN ĐIỀU HÀNH TỔNG QUAN":
+    import cong_dieu_hanh_trang_chu
+    import importlib
+    importlib.reload(cong_dieu_hanh_trang_chu)
+    cong_dieu_hanh_trang_chu.render_trang_chu_dieu_hanh_da_dang_nhap(
+        BASE_DIR=BASE_DIR,
+        THU_MUC_NAM_HOC=THU_MUC_NAM_HOC,
+        nam_hoc_hien_tai=st.session_state.nam_hoc_hien_tai,
+        logo_data_uri=logo_data_uri,
+        u_info=st.session_state.user_login
+    )
+    st.stop()
+elif "QUẢN TRỊ" in st.session_state.phan_he_hien_tai or "QUẢN LÝ CHUNG" in st.session_state.phan_he_hien_tai:
     import phan_he_quan_ly_chung
     import importlib
     importlib.reload(phan_he_quan_ly_chung)
@@ -2311,11 +2354,11 @@ if role_curr == "Ban Giám hiệu":
         c_nav1, c_nav2 = st.columns(2)
         with c_nav1:
             if st.button("👉 Xem Hướng Dẫn Cài Đặt App Tại Trung Tâm Điều Hành", key="btn_goto_app_guide", use_container_width=True):
-                st.session_state.phan_he_hien_tai = "🏛️ HỆ THỐNG QUẢN TRỊ & ĐIỀU HÀNH NHÀ TRƯỜNG"
+                st.session_state.phan_he_hien_tai = "🏛️ QUẢN TRỊ CHUYÊN MÔN & TÁC NGHIỆP NHÀ TRƯỜNG"
                 st.rerun()
         with c_nav2:
             if st.button("👉 Mở Trung Tâm Đồng Bộ Đám Mây Google Sheets (Kênh 1)", key="btn_goto_gsheets_k1", use_container_width=True):
-                st.session_state.phan_he_hien_tai = "🏛️ HỆ THỐNG QUẢN TRỊ & ĐIỀU HÀNH NHÀ TRƯỜNG"
+                st.session_state.phan_he_hien_tai = "🏛️ QUẢN TRỊ CHUYÊN MÔN & TÁC NGHIỆP NHÀ TRƯỜNG"
                 st.rerun()
 
 
