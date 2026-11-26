@@ -341,14 +341,14 @@ def render_sticky_nav_bar(active_id=None):
             </div>
 
             <div class="shortcut-group">
-                <a class="shortcut-parent {get_cls('6')}" href="#nen-nep-ren-luyen">
+                <a class="shortcut-parent {get_cls('6')}" href="#bang-vang-thi-dua">
                     <span>NỀN NẾP – RÈN LUYỆN ▾</span>
                 </a>
                 <div class="shortcut-submenu">
-                    <a href="#nen-nep-ren-luyen">🏆 Bảng vàng thi đua 21 Chi đoàn</a>
-                    <a href="#nen-nep-ren-luyen">⚖️ Chấm nề nếp hàng ngày & Vi phạm</a>
-                    <a href="#nen-nep-ren-luyen">🛵 Quản lý 648 Xe gắn mã QR</a>
-                    <a href="#nen-nep-ren-luyen">📜 Sổ đoàn viên điện tử</a>
+                    <a href="#bang-vang-thi-dua">🏆 Bảng vàng thi đua 21 Chi đoàn</a>
+                    <a href="#cham-ne-nep-vi-pham">⚖️ Chấm nề nếp hàng ngày & Vi phạm</a>
+                    <a href="#quan-ly-xe-qr">🛵 Quản lý 648 Xe gắn mã QR</a>
+                    <a href="#so-doan-vien">📜 Sổ đoàn viên điện tử</a>
                 </div>
             </div>
 
@@ -822,7 +822,13 @@ def render_section_day_va_hoc(BASE_DIR, THU_MUC_NAM_HOC, nam_hoc_hien_tai):
 # 8. SECTION 5: NỀN NẾP - RÈN LUYỆN (THI ĐUA 21 LỚP & XE)
 # =============================================================================
 def render_section_nen_nep(BASE_DIR, THU_MUC_NAM_HOC, nam_hoc_hien_tai, u_info=None):
-    """Khối Nền nếp, Thi đua 21 Chi đoàn và Quản lý 648 phương tiện xe máy/xe đạp điện - Đầy đủ 4 Tab tác nghiệp mở rộng tại chỗ"""
+    """
+    KÊNH 6: NỀN NẾP – RÈN LUYỆN (GỒM 4 THƯ MỤC TÁC NGHIỆP TÁCH RỜI CHUẨN ĐIỀU HÀNH)
+    1. 🏆 Bảng vàng thi đua 21 Chi đoàn (#bang-vang-thi-dua)
+    2. ⚖️ Chấm nề nếp hàng ngày & Vi phạm theo Quy chế 10 nhóm tiêu chí (#cham-ne-nep-vi-pham)
+    3. 🛵 Quản lý 648 Xe gắn mã QR & An toàn giao thông (#quan-ly-xe-qr)
+    4. 📜 Sổ đoàn viên điện tử & Công tác Đoàn (#so-doan-vien)
+    """
     # 1. Đường dẫn các file dữ liệu
     f_thi_dua = os.path.join(BASE_DIR, "thi_dua_dtn_20_lop.csv")
     f_xe = os.path.join(BASE_DIR, "quan_ly_phuong_tien.csv")
@@ -830,7 +836,15 @@ def render_section_nen_nep(BASE_DIR, THU_MUC_NAM_HOC, nam_hoc_hien_tai, u_info=N
     f_vi_pham_hs = os.path.join(BASE_DIR, "nhat_ky_vi_pham_hoc_sinh.csv")
     f_vi_pham_xe = os.path.join(BASE_DIR, "lich_su_vi_pham_xe.csv")
     f_so_doan = os.path.join(BASE_DIR, "doan_thanh_nien_so_doan.csv")
-    f_ds_doan = os.path.join(BASE_DIR, "danh_sach_doan_vien.csv")
+
+    u_curr = u_info if isinstance(u_info, dict) else st.session_state.get("user_login", {})
+    fullname_curr = u_curr.get("fullname", "Cán bộ Cờ đỏ / Đoàn trường")
+
+    ds_lop_all = [
+        "10A1", "10A2", "10A3", "10A4", "10A5", "10A6", "10A7",
+        "11A1", "11A2", "11A3", "11A4", "11A5", "11A6", "11A7",
+        "12A1", "12A2", "12A3", "12A4", "12A5", "12A6", "12A7"
+    ]
 
     # Đọc dữ liệu xe
     df_xe = pd.DataFrame()
@@ -870,656 +884,674 @@ def render_section_nen_nep(BASE_DIR, THU_MUC_NAM_HOC, nam_hoc_hien_tai, u_info=N
         except Exception:
             pass
 
-    # Banner tiêu đề khối 6
+    # =========================================================================
+    # THƯ MỤC 1: 🏆 BẢNG VÀNG THI ĐUA 21 CHI ĐOÀN (#bang-vang-thi-dua)
+    # =========================================================================
     st_html("""
-    <div id="nen-nep-ren-luyen" class="section-banner-title">
-        <h3><span>🚩</span> NỀN NẾP – RÈN LUYỆN & PHƯƠNG TIỆN XE HỌC SINH</h3>
-        <span class="section-banner-subtitle">Đoàn Thanh Niên · Đội Cờ Đỏ · Ban Cán Sự 21 Chi Đoàn · Năm học 2026 - 2027</span>
+    <div id="nen-nep-ren-luyen"></div>
+    <div id="bang-vang-thi-dua" class="section-banner-title">
+        <h3><span>🏆</span> BẢNG VÀNG THI ĐUA NỀ NẾP 21 CHI ĐOÀN</h3>
+        <span class="section-banner-subtitle">Bảng Xếp Hạng Hàng Tuần · Cờ Luân Lưu Thi Đua · Năm học 2026 - 2027</span>
     </div>
     """)
 
-    # 2 Thẻ tổng quan
-    c_nn1, c_nn2 = st.columns(2)
-    with c_nn1:
+    # Metrics hàng trên
+    m_bv1, m_bv2, m_bv3, m_bv4 = st.columns(4)
+    so_lop_tot = len(df_td[df_td['Xếp loại'].astype(str).str.contains('Tốt|Xuất sắc', case=False, na=False)]) if not df_td.empty and 'Xếp loại' in df_td.columns else 18
+    m_bv1.metric("🥇 Dẫn đầu tuần", f"Chi đoàn {top_lop}", f"{top_diem} điểm (Cờ Nhất)")
+    m_bv2.metric("🥈 Hạng Nhì", f"Chi đoàn {top_2_lop}", f"{top_2_diem} điểm (Cờ Nhì)")
+    m_bv3.metric("🥉 Hạng Ba", f"Chi đoàn {top_3_lop}", f"{top_3_diem} điểm (Cờ Ba)")
+    m_bv4.metric("🌟 Chi đoàn xếp loại Tốt", f"{so_lop_tot}/21 Lớp", "Tỷ lệ 85.7%")
+
+    # 3 Thẻ Vinh danh Cờ Luân Lưu
+    st_html(f"""
+    <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap:12px; margin: 12px 0 16px 0;">
+        <div style="background:linear-gradient(135deg, #FEF3C7 0%, #FDE68A 100%); border:1.5px solid #F59E0B; border-radius:10px; padding:12px 14px;">
+            <div style="font-size:12px; font-weight:800; color:#B45309;">🥇 GIẢI NHẤT — CỜ ĐỎ XUẤT SẮC TUẦN 12</div>
+            <div style="font-size:20px; font-weight:900; color:#78350F; margin:4px 0;">Chi đoàn {top_lop}</div>
+            <div style="font-size:12px; color:#92400E;">Tổng điểm: <b>{top_diem}đ</b> · Chuyên cần 100% · Vệ sinh sạch xuất sắc · Hoa điểm tốt</div>
+        </div>
+        <div style="background:linear-gradient(135deg, #F1F5F9 0%, #E2E8F0 100%); border:1.5px solid #94A3B8; border-radius:10px; padding:12px 14px;">
+            <div style="font-size:12px; font-weight:800; color:#475569;">🥈 GIẢI NHÌ — CỜ XANH TIÊN TIẾN</div>
+            <div style="font-size:20px; font-weight:900; color:#1E293B; margin:4px 0;">Chi đoàn {top_2_lop}</div>
+            <div style="font-size:12px; color:#475569;">Tổng điểm: <b>{top_2_diem}đ</b> · Đồng phục chuẩn mực · Xếp hàng ra vào lớp nghiêm túc</div>
+        </div>
+        <div style="background:linear-gradient(135deg, #FFEDD5 0%, #FED7AA 100%); border:1.5px solid #F97316; border-radius:10px; padding:12px 14px;">
+            <div style="font-size:12px; font-weight:800; color:#C2410C;">🥉 GIẢI BA — CỜ VÀNG NỖ LỰC</div>
+            <div style="font-size:20px; font-weight:900; color:#9A3412; margin:4px 0;">Chi đoàn {top_3_lop}</div>
+            <div style="font-size:12px; color:#C2410C;">Tổng điểm: <b>{top_3_diem}đ</b> · 15 phút truy bài nghiêm túc · Không vi phạm ATGT</div>
+        </div>
+    </div>
+    """)
+
+    # Bộ lọc bảng vàng
+    c_fl1, c_fl2, c_fl3 = st.columns([1, 1, 2])
+    with c_fl1:
+        khoi_filter = st.selectbox("Lọc theo Khối:", ["Tất cả khối", "Khối 10", "Khối 11", "Khối 12"], key="fl_td_khoi_sec")
+    with c_fl2:
+        tuan_filter = st.selectbox("Chọn Tuần thi đua:", ["Tuần 12 (Hiện tại)", "Tuần 11", "Tuần 10", "Tuần 9"], key="fl_td_tuan_sec")
+    with c_fl3:
+        tim_lop = st.text_input("🔍 Tìm kiếm Chi đoàn (ví dụ: 10A1, 12A3):", "", key="fl_td_search_sec")
+
+    df_td_show = df_td.copy()
+    if not df_td_show.empty:
+        if khoi_filter != "Tất cả khối":
+            k_num = khoi_filter.replace("Khối ", "").strip()
+            if "Khối" in df_td_show.columns:
+                df_td_show = df_td_show[df_td_show["Khối"].astype(str).str.contains(k_num, na=False)]
+        if tim_lop.strip():
+            df_td_show = df_td_show[df_td_show["Chi đoàn"].astype(str).str.contains(tim_lop.strip(), case=False, na=False)]
+
+        st.dataframe(
+            df_td_show,
+            use_container_width=True,
+            height=320,
+            column_config={
+                "Xếp hạng": st.column_config.NumberColumn("Hạng", format="%d 🏅"),
+                "Chi đoàn": st.column_config.TextColumn("Chi đoàn", width="medium"),
+                "Khối": st.column_config.TextColumn("Khối", width="small"),
+                "Tổng điểm": st.column_config.NumberColumn("Tổng Điểm", format="%.1f đ"),
+                "Xếp loại": st.column_config.TextColumn("Xếp loại"),
+            }
+        )
+
+        c_d_td, _ = st.columns([2, 3])
+        with c_d_td:
+            csv_td = df_td_show.to_csv(index=False, encoding='utf-8-sig').encode('utf-8-sig')
+            st.download_button(
+                label="📥 Xuất Bảng vàng thi đua 21 Chi đoàn (CSV/Excel)",
+                data=csv_td,
+                file_name=f"bang_vang_thi_dua_21_chi_doan_{datetime.now().strftime('%Y%m%d')}.csv",
+                mime="text/csv",
+                key="btn_dl_thi_dua_csv_sec"
+            )
+
+    # =========================================================================
+    # THƯ MỤC 2: ⚖️ CHẤM NỀ NẾP HÀNG NGÀY & VI PHẠM (QUY CHẾ 10 NHÓM TIÊU CHÍ)
+    # =========================================================================
+    st.markdown("<div style='margin-top: 32px;'></div>", unsafe_allow_html=True)
+    st_html("""
+    <div id="cham-ne-nep-vi-pham" class="section-banner-title">
+        <h3><span>⚖️</span> CHẤM NỀ NẾP HÀNG NGÀY & XỬ LÝ VI PHẠM</h3>
+        <span class="section-banner-subtitle">Hệ Thống Chấm Điểm Thi Đua Chuẩn 10 Nhóm Tiêu Chí (Đoàn Trường & Chi Ủy Phê Duyệt)</span>
+    </div>
+    """)
+
+    c_cham1, c_cham2 = st.columns([6.2, 3.8])
+    with c_cham1:
+        st.markdown("#### 📝 Phiếu Chấm Điểm Thi Đua Chi Đoàn")
+        
+        c_ch_a, c_ch_b, c_ch_c = st.columns(3)
+        with c_ch_a:
+            lop_cham = st.selectbox("Chọn Chi đoàn:", ds_lop_all, key="cham_lop_sec_val")
+        with c_ch_b:
+            ngay_cham = st.date_input("Ngày chấm:", datetime.now().date(), key="cham_ngay_sec_val")
+        with c_ch_c:
+            buoi_cham = st.selectbox("Buổi học:", ["Buổi Sáng", "Buổi Chiều"], key="cham_buoi_sec_val")
+
+        c_ch_d, c_ch_e = st.columns(2)
+        with c_ch_d:
+            nguoi_cham = st.text_input("Người chấm:", value=fullname_curr, key="cham_nguoi_sec_val")
+        with c_ch_e:
+            chuc_vu_cham = st.selectbox("Đơn vị trực:", [
+                "Đội Cờ đỏ Khối 12", "Đội Cờ đỏ Khối 11", "Đội Cờ đỏ Khối 10", 
+                "BCH Đoàn Trường", "Giáo viên Trực ban", "GVCN kiểm tra chéo"
+            ], key="cham_chucvu_sec_val")
+
+        # 4 HỘP TIÊU CHÍ THI ĐUA (10 NHÓM TIÊU CHÍ CHÍNH THỨC)
+        with st.expander("🔴 1. Chuyên Cần & Trang Phục, Tác Phong (Nhóm 1 & 2)", expanded=True):
+            st.markdown("**Nhóm 1: Chuyên cần & Nề nếp thời gian**")
+            c_g1_1, c_g1_2, c_g1_3 = st.columns(3)
+            with c_g1_1:
+                c1_muon = st.number_input("Đi muộn (-0.5đ/lượt):", min_value=0, max_value=50, value=0, step=1, key="c1_muon")
+            with c_g1_2:
+                c1_nghi_phep = st.number_input("Nghỉ có phép chính đáng (-1đ/hs):", min_value=0, max_value=50, value=0, step=1, key="c1_nghi_phep")
+            with c_g1_3:
+                c1_nghi_kp = st.number_input("Nghỉ không phép/bỏ tiết (-5đ/lượt):", min_value=0, max_value=50, value=0, step=1, key="c1_nghi_kp")
+
+            st.markdown("**Nhóm 2: Trang phục, đầu tóc, tác phong, văn hóa học đường**")
+            c_g2_1, c_g2_2 = st.columns(2)
+            with c_g2_1:
+                c2_so_vin = st.number_input("Nam sinh không sơ vin (-0.5đ/lượt):", min_value=0, max_value=50, value=0, step=1, key="c2_so_vin")
+                c2_sai_dp = st.number_input("Sai đồng phục/dép lê, không quai hậu (-1đ/buổi):", min_value=0, max_value=50, value=0, step=1, key="c2_sai_dp")
+                c2_trang_diem = st.number_input("Trang điểm đậm, sơn móng, móng nhọn (-2đ/lượt):", min_value=0, max_value=50, value=0, step=1, key="c2_trang_diem")
+            with c_g2_2:
+                c2_phan_cam = st.number_input("Trang phục phản cảm/nhuộm tóc/cạo trọc (-3đ/buổi):", min_value=0, max_value=50, value=0, step=1, key="c2_phan_cam")
+                c2_xam_hinh = st.number_input("Xăm hình/nói tục/thiếu tôn trọng/yêu đương (-5đ/lượt):", min_value=0, max_value=50, value=0, step=1, key="c2_xam_hinh")
+
+        with st.expander("📱 2. Thiết Bị Điện Tử, An Ninh Mạng & ATGT (Nhóm 3 & 4)", expanded=False):
+            st.markdown("**Nhóm 3: Thiết bị điện tử & An ninh mạng**")
+            c_g3_1, c_g3_2 = st.columns(2)
+            with c_g3_1:
+                c3_dien_thoai = st.number_input("Dùng ĐT, tai nghe trong giờ không phép (-5đ/lượt):", min_value=0, max_value=20, value=0, step=1, key="c3_dt")
+                c3_thi_cu = st.number_input("Dùng ĐT/công nghệ trong thi cử, kiểm tra (-10đ/lượt):", min_value=0, max_value=10, value=0, step=1, key="c3_thi_cu")
+            with c_g3_2:
+                c3_mxh = st.number_input("Vi phạm MXH/tin giả xúc phạm/AI clip (-20đ/lượt):", min_value=0, max_value=10, value=0, step=1, key="c3_mxh")
+
+            st.markdown("**Nhóm 4: Trật tự an toàn giao thông (ATGT)**")
+            c_g4_1, c_g4_2 = st.columns(2)
+            with c_g4_1:
+                c4_de_xe = st.number_input("Để xe sai quy định (-5đ/lớp):", min_value=0, max_value=10, value=0, step=1, key="c4_de_xe")
+                c4_vi_pham_nhe = st.number_input("Mũ sai quy cách/chở quá/dàn hàng 3 (-10đ/lượt):", min_value=0, max_value=20, value=0, step=1, key="c4_vp_nhe")
+                c4_khong_qr = st.number_input("Đi xe không khai báo / không dán tem QR (-20đ/lượt):", min_value=0, max_value=20, value=0, step=1, key="c4_khong_qr")
+            with c_g4_2:
+                c4_khong_mu = st.number_input("Không đội mũ BH/pô to/chưa đủ tuổi (-30đ/lượt):", min_value=0, max_value=10, value=0, step=1, key="c4_khong_mu")
+                c4_lang_lach = st.number_input("Lạng lách/vượt đèn đỏ/độ xe/Công an báo (-50đ/lượt):", min_value=0, max_value=10, value=0, step=1, key="c4_lang_lach")
+                c4_tai_nan = st.number_input("Vi phạm ATGT gây tai nạn giao thông (-60đ/vụ):", min_value=0, max_value=5, value=0, step=1, key="c4_tai_nan")
+
+        with st.expander("🛡️ 3. An Toàn Học Đường, Vệ Sinh, Nước RO, Giờ Học & Nhiệm Vụ (Nhóm 5 - 9)", expanded=False):
+            st.markdown("**Nhóm 5: Phòng chống bạo lực học đường & Tệ nạn**")
+            c_g5_1, c_g5_2, c_g5_3 = st.columns(3)
+            with c_g5_1:
+                c5_thuoc_la = st.number_input("Thuốc lá, rượu bia, nồng độ cồn (-20đ/lượt):", min_value=0, max_value=10, value=0, step=1, key="c5_thuoc_la")
+            with c_g5_2:
+                c5_hung_khi = st.number_input("Mang hung khí/trộm cắp/cờ bạc (-30đ/lượt):", min_value=0, max_value=10, value=0, step=1, key="c5_hung_khi")
+            with c_g5_3:
+                c5_danh_nhau = st.number_input("Đánh nhau/kéo người ngoài/pháo nổ (-50đ/lượt):", min_value=0, max_value=10, value=0, step=1, key="c5_danh_nhau")
+
+            st.markdown("**Nhóm 6: Cơ sở vật chất, vệ sinh & Lao động**")
+            c_g6_1, c_g6_2 = st.columns(2)
+            with c_g6_1:
+                c6_thieu_ghe = st.number_input("Thiếu ghế/mang ghế sai giờ tập thể (-1đ/lượt):", min_value=0, max_value=30, value=0, step=1, key="c6_thieu_ghe")
+                c6_ve_sinh_ban = st.number_input("Vệ sinh lớp bẩn/chưa đổ rác (-2đ/buổi):", min_value=0, max_value=10, value=0, step=1, key="c6_vs_ban")
+                c6_ve_bay = st.number_input("Vẽ bậy/mang đồ ăn vào lớp/hỏng đồ (-5đ/lượt):", min_value=0, max_value=10, value=0, step=1, key="c6_ve_bay")
+            with c_g6_2:
+                c6_quen_tat_dien = st.number_input("Không đóng cửa/không tắt điện (-5đ/lần):", min_value=0, max_value=10, value=0, step=1, key="c6_quen_dien")
+                c6_bo_lao_dong = st.number_input("Bỏ lao động/không chăm sóc cây hoa (-10đ/lần):", min_value=0, max_value=5, value=0, step=1, key="c6_bo_ld")
+
+            st.markdown("**Nhóm 7: Tiết kiệm tài nguyên & Nước RO**")
+            c_g7_1, c_g7_2 = st.columns(2)
+            with c_g7_1:
+                c7_uong_ro = st.number_input("Uống trực tiếp vòi RO/quên khóa vòi tràn (-2đ/lần):", min_value=0, max_value=10, value=0, step=1, key="c7_uong_ro")
+                c7_lang_phi_nuoc = st.number_input("Lãng phí nước khu vệ sinh/xả tràn (-5đ/lần):", min_value=0, max_value=10, value=0, step=1, key="c7_lp_nuoc")
+            with c_g7_2:
+                c7_ro_sai_muc_dich = st.number_input("Dùng nước RO giặt khăn/phá hỏng máy RO (-20đ/lần):", min_value=0, max_value=5, value=0, step=1, key="c7_ro_sai_md")
+
+            st.markdown("**Nhóm 8 & 9: Đánh giá giờ học & Hồ sơ nhiệm vụ**")
+            c_g8_1, c_g8_2 = st.columns(2)
+            with c_g8_1:
+                c8_gio_kha = st.number_input("Giờ học Khá sổ đầu bài (-2đ/tiết):", min_value=0, max_value=30, value=0, step=1, key="c8_gio_kha")
+                c8_gio_tb = st.number_input("Giờ học Trung bình (-4đ/tiết):", min_value=0, max_value=20, value=0, step=1, key="c8_gio_tb")
+                c8_gio_yeu = st.number_input("Giờ học Yếu / Kém (-6đ/tiết):", min_value=0, max_value=10, value=0, step=1, key="c8_gio_yeu")
+            with c_g8_2:
+                c9_nop_sai = st.number_input("Nộp hồ sơ báo cáo thiếu/sai (-2đ/ngày):", min_value=0, max_value=10, value=0, step=1, key="c9_nop_sai")
+                c9_nop_muon = st.number_input("Nộp báo cáo/quỹ Đoàn muộn (-5đ/lần):", min_value=0, max_value=10, value=0, step=1, key="c9_nop_muon")
+                c9_khong_nv = st.number_input("Không thực hiện nhiệm vụ nhà trường (-10đ/lần):", min_value=0, max_value=5, value=0, step=1, key="c9_khong_nv")
+                c9_khong_so_truc = st.checkbox("Không nộp sổ trực tuần (Trừ 100đ - Tính 0đ tuần)", key="c9_so_truc")
+
+        with st.expander("🌟 4. Điểm Cộng Khuyến Khích & Phong Trào (Nhóm 10)", expanded=True):
+            c_g10_1, c_g10_2 = st.columns(2)
+            with c_g10_1:
+                c10_van_nghe = st.number_input("Tham gia tập văn nghệ của trường (+3đ/HS):", min_value=0, max_value=30, value=0, step=1, key="c10_vn")
+                c10_trang_phuc_dt = st.number_input("Mặc trang phục dân tộc dịp Lễ / Nhặt của rơi (+3đ/HS):", min_value=0, max_value=20, value=0, step=1, key="c10_dt_cua_roi")
+                c10_xuat_sac = st.number_input("Tập thể xuất sắc đột xuất được biểu dương (+20đ/lần):", min_value=0, max_value=5, value=0, step=1, key="c10_xs")
+            with c_g10_2:
+                c10_dung_cam = st.number_input("Dũng cảm tố giác bạo lực/thuốc lá/pháo (+20đ/lần):", min_value=0, max_value=5, value=0, step=1, key="c10_dc")
+                c10_giai_phong_trao = st.selectbox("Tập thể đạt giải phong trào:", [
+                    "Không có giải", "Giải Nhất (+20đ)", "Giải Nhì (+15đ)", "Giải Ba (+10đ)", "Giải Khuyến khích (+5đ)"
+                ], key="c10_giai")
+
+        # TÍNH TOÁN ĐIỂM THEO 10 TIÊU CHÍ
+        tong_tru = float(
+            c1_muon * 0.5 + c1_nghi_phep * 1.0 + c1_nghi_kp * 5.0 +
+            c2_so_vin * 0.5 + c2_sai_dp * 1.0 + c2_trang_diem * 2.0 + c2_phan_cam * 3.0 + c2_xam_hinh * 5.0 +
+            c3_dien_thoai * 5.0 + c3_thi_cu * 10.0 + c3_mxh * 20.0 +
+            c4_de_xe * 5.0 + c4_vi_pham_nhe * 10.0 + c4_khong_qr * 20.0 + c4_khong_mu * 30.0 + c4_lang_lach * 50.0 + c4_tai_nan * 60.0 +
+            c5_thuoc_la * 20.0 + c5_hung_khi * 30.0 + c5_danh_nhau * 50.0 +
+            c6_thieu_ghe * 1.0 + c6_ve_sinh_ban * 2.0 + c6_ve_bay * 5.0 + c6_quen_tat_dien * 5.0 + c6_bo_lao_dong * 10.0 +
+            c7_uong_ro * 2.0 + c7_lang_phi_nuoc * 5.0 + c7_ro_sai_muc_dich * 20.0 +
+            c8_gio_kha * 2.0 + c8_gio_tb * 4.0 + c8_gio_yeu * 6.0 +
+            c9_nop_sai * 2.0 + c9_nop_muon * 5.0 + c9_khong_nv * 10.0 + (100.0 if c9_khong_so_truc else 0.0)
+        )
+
+        giai_map = {"Giải Nhất (+20đ)": 20.0, "Giải Nhì (+15đ)": 15.0, "Giải Ba (+10đ)": 10.0, "Giải Khuyến khích (+5đ)": 5.0}
+        cong_giai = giai_map.get(c10_giai_phong_trao, 0.0)
+        tong_cong = float(c10_van_nghe * 3.0 + c10_trang_phuc_dt * 3.0 + c10_xuat_sac * 20.0 + c10_dung_cam * 20.0 + cong_giai)
+        diem_ngay = max(0.0, 100.0 - tong_tru + tong_cong)
+
         st_html(f"""
-        <div style="background:white; border:1px solid #E2E8F0; border-radius:12px; padding:16px; box-shadow:0 2px 6px rgba(0,0,0,0.03);">
-            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">
-                <span style="font-size:13px; font-weight:800; color:#0D5C75; text-transform:uppercase;">🏆 BẢNG VÀNG THI ĐUA NỀ NẾP (TUẦN 12)</span>
-                <span style="background:#FEF3C7; color:#B45309; font-size:11px; font-weight:bold; padding:2px 8px; border-radius:10px;">21 Chi đoàn</span>
-            </div>
-            <div style="font-size:12.5px; line-height:1.6; color:#1E293B;">
-                🥇 <b>Hạng 1:</b> Chi đoàn <b>{top_lop}</b> ({top_diem} điểm) — Cờ đỏ xuất sắc tuần.<br>
-                🥈 <b>Hạng 2:</b> Chi đoàn <b>{top_2_lop}</b> ({top_2_diem} điểm) — Chuyên cần 100%, đồng phục chuẩn.<br>
-                🥉 <b>Hạng 3:</b> Chi đoàn <b>{top_3_lop}</b> ({top_3_diem} điểm) — Truy bài 15p nghiêm túc.<br>
-                ⚠️ <b>Cần nhắc nhở:</b> Chi đoàn 10A5 (-3đ do quên thẻ HS thứ 3).
+        <div style="background:#F0FDF4; border:1.5px solid #22C55E; border-radius:10px; padding:12px 16px; margin: 12px 0;">
+            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap;">
+                <div>
+                    <span style="font-size:13px; font-weight:700; color:#15803D;">TỔNG KẾT ĐIỂM CHẤM CHI ĐOÀN {lop_cham}</span><br>
+                    <span style="font-size:12px; color:#475569;">Điểm gốc: 100.0đ · Tổng trừ: <b>-{tong_tru:.1f}đ</b> · Tổng cộng: <b>+{tong_cong:.1f}đ</b></span>
+                </div>
+                <div style="font-size:26px; font-weight:900; color:#15803D;">
+                    {diem_ngay:.1f} <span style="font-size:14px; font-weight:600;">/ 100 điểm</span>
+                </div>
             </div>
         </div>
         """)
 
-    with c_nn2:
-        st_html(f"""
-        <div style="background:white; border:1px solid #E2E8F0; border-radius:12px; padding:16px; box-shadow:0 2px 6px rgba(0,0,0,0.03);">
-            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">
-                <span style="font-size:13px; font-weight:800; color:#B45309; text-transform:uppercase;">🛵 QUẢN LÝ PHƯƠNG TIỆN XE & AN TOÀN GT</span>
-                <span style="background:#FFFBEB; color:#D97706; font-size:11px; font-weight:bold; padding:2px 8px; border-radius:10px;">Tem Mã QR</span>
-            </div>
-            <div style="font-size:24px; font-weight:900; color:#B45309; margin:4px 0;">
-                {so_xe} <span style="font-size:13px; font-weight:600; color:#64748B;">Xe học sinh đăng ký</span>
-            </div>
-            <div style="font-size:12px; color:#16A34A; font-weight:600; margin-bottom:6px;">
-                🛡️ 100% phương tiện đã dán tem mã QR định danh và cam kết ATGT.
-            </div>
-            <div style="font-size:11.5px; color:#475569;">
-                Nhà xe học sinh phân theo 3 khu vực khối 10, 11, 12 có bảo vệ trực 24/24.
-            </div>
-        </div>
-        """)
+        hs_vi_pham_ten = st.text_input("Tên học sinh vi phạm (nếu có, để lưu sổ cá nhân):", placeholder="Ví dụ: Nguyễn Văn Nam (Đi muộn), Hoàng Thị Mai (Không đội mũ BH)...", key="hs_vp_sec_ten")
+        hs_khen_thuong_ten = st.text_input("Tên học sinh được khen thưởng (nếu có):", placeholder="Ví dụ: Trần Văn C (Nhặt được 200k trả lại)...", key="hs_kt_sec_ten")
+        ghi_chu_cham = st.text_area("Ghi chú nề nếp buổi học:", placeholder="Chi đoàn chấp hành tốt, 1 trường hợp quên thẻ HS...", height=60, key="cham_gc_sec")
 
-    # =========================================================================
-    # KHÔNG GIAN TÁC NGHIỆP NỀN NẾP & ĐOÀN THANH NIÊN (MỞ RỘNG TẠI CHỖ)
-    # =========================================================================
-    u_curr = u_info if isinstance(u_info, dict) else st.session_state.get("user_login", {})
-    fullname_curr = u_curr.get("fullname", "Cán bộ Cờ đỏ / Đoàn trường")
-    role_curr = u_curr.get("role", "")
-    chuc_danh_curr = u_curr.get("chuc_danh", "BCH Đoàn trường")
-
-    st.markdown("<div style='margin-top: 16px;'></div>", unsafe_allow_html=True)
-    with st.expander("🛠️ KHÔNG GIAN TÁC NGHIỆP NỀN NẾP & ĐOÀN THANH NIÊN (MỞ RỘNG TẠI CHỖ)", expanded=True):
-        tab_bv, tab_cham, tab_xe, tab_doan = st.tabs([
-            "🏆 1. Bảng vàng thi đua 21 Chi đoàn",
-            "⚖️ 2. Chấm nề nếp hàng ngày & Vi phạm",
-            "🛵 3. Quản lý 648 Xe gắn mã QR",
-            "📜 4. Sổ đoàn viên điện tử"
-        ])
-
-        # ---------------------------------------------------------------------
-        # TAB 1: 🏆 BẢNG VÀNG THI ĐUA 21 CHI ĐOÀN
-        # ---------------------------------------------------------------------
-        with tab_bv:
-            st.markdown("#### 🏆 Bảng Vàng Xếp Hạng Thi Đua Nề Nếp 21 Chi Đoàn Toàn Trường")
-            
-            # Metrics hàng trên
-            m_bv1, m_bv2, m_bv3, m_bv4 = st.columns(4)
-            so_lop_tot = len(df_td[df_td['Xếp loại'].astype(str).str.contains('Tốt|Xuất sắc', case=False, na=False)]) if not df_td.empty and 'Xếp loại' in df_td.columns else 18
-            m_bv1.metric("🥇 Dẫn đầu tuần", f"Chi đoàn {top_lop}", f"{top_diem} điểm (Cờ Nhất)")
-            m_bv2.metric("🥈 Hạng Nhì", f"Chi đoàn {top_2_lop}", f"{top_2_diem} điểm (Cờ Nhì)")
-            m_bv3.metric("🥉 Hạng Ba", f"Chi đoàn {top_3_lop}", f"{top_3_diem} điểm (Cờ Ba)")
-            m_bv4.metric("🌟 Chi đoàn xếp loại Tốt", f"{so_lop_tot}/21 Lớp", "Tỷ lệ 85.7%")
-
-            # 3 Thẻ Vinh danh Cờ Luân Lưu
-            st_html(f"""
-            <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap:12px; margin: 12px 0 16px 0;">
-                <div style="background:linear-gradient(135deg, #FEF3C7 0%, #FDE68A 100%); border:1.5px solid #F59E0B; border-radius:10px; padding:12px 14px;">
-                    <div style="font-size:12px; font-weight:800; color:#B45309;">🥇 GIẢI NHẤT — CỜ ĐỎ XUẤT SẮC TUẦN 12</div>
-                    <div style="font-size:20px; font-weight:900; color:#78350F; margin:4px 0;">Chi đoàn {top_lop}</div>
-                    <div style="font-size:12px; color:#92400E;">Tổng điểm: <b>{top_diem}đ</b> · Chuyên cần 100% · Vệ sinh sạch xuất sắc · Hoa điểm tốt +5đ</div>
-                </div>
-                <div style="background:linear-gradient(135deg, #F1F5F9 0%, #E2E8F0 100%); border:1.5px solid #94A3B8; border-radius:10px; padding:12px 14px;">
-                    <div style="font-size:12px; font-weight:800; color:#475569;">🥈 GIẢI NHÌ — CỜ XANH TIÊN TIẾN</div>
-                    <div style="font-size:20px; font-weight:900; color:#1E293B; margin:4px 0;">Chi đoàn {top_2_lop}</div>
-                    <div style="font-size:12px; color:#475569;">Tổng điểm: <b>{top_2_diem}đ</b> · Đồng phục chuẩn mực · Xếp hàng ra vào lớp nghiêm túc</div>
-                </div>
-                <div style="background:linear-gradient(135deg, #FFEDD5 0%, #FED7AA 100%); border:1.5px solid #F97316; border-radius:10px; padding:12px 14px;">
-                    <div style="font-size:12px; font-weight:800; color:#C2410C;">🥉 GIẢI BA — CỜ VÀNG NỖ LỰC</div>
-                    <div style="font-size:20px; font-weight:900; color:#9A3412; margin:4px 0;">Chi đoàn {top_3_lop}</div>
-                    <div style="font-size:12px; color:#C2410C;">Tổng điểm: <b>{top_3_diem}đ</b> · 15 phút truy bài nghiêm túc · Không vi phạm ATGT</div>
-                </div>
-            </div>
-            """)
-
-            # Bộ lọc bảng vàng
-            c_fl1, c_fl2, c_fl3 = st.columns([1, 1, 2])
-            with c_fl1:
-                khoi_filter = st.selectbox("Lọc theo Khối:", ["Tất cả khối", "Khối 10", "Khối 11", "Khối 12"], key="fl_td_khoi")
-            with c_fl2:
-                tuan_filter = st.selectbox("Chọn Tuần thi đua:", ["Tuần 12 (Hiện tại)", "Tuần 11", "Tuần 10", "Tuần 9"], key="fl_td_tuan")
-            with c_fl3:
-                tim_lop = st.text_input("🔍 Tìm kiếm Chi đoàn (ví dụ: 10A1, 12A3):", "", key="fl_td_search")
-
-            df_td_show = df_td.copy()
-            if not df_td_show.empty:
-                if khoi_filter != "Tất cả khối":
-                    k_num = khoi_filter.replace("Khối ", "").strip()
-                    if "Khối" in df_td_show.columns:
-                        df_td_show = df_td_show[df_td_show["Khối"].astype(str).str.contains(k_num, na=False)]
-                if tim_lop.strip():
-                    df_td_show = df_td_show[df_td_show["Chi đoàn"].astype(str).str.contains(tim_lop.strip(), case=False, na=False)]
-
-                st.dataframe(
-                    df_td_show,
-                    use_container_width=True,
-                    height=350,
-                    column_config={
-                        "Xếp hạng": st.column_config.NumberColumn("Hạng", format="%d 🏅"),
-                        "Chi đoàn": st.column_config.TextColumn("Chi đoàn", width="medium"),
-                        "Khối": st.column_config.TextColumn("Khối", width="small"),
-                        "Tổng điểm": st.column_config.NumberColumn("Tổng Điểm", format="%.1f đ"),
-                        "Xếp loại": st.column_config.TextColumn("Xếp loại"),
-                    }
-                )
-
-                # Nút tải bảng vàng
-                c_d_td, _ = st.columns([2, 3])
-                with c_d_td:
-                    csv_td = df_td_show.to_csv(index=False, encoding='utf-8-sig').encode('utf-8-sig')
-                    st.download_button(
-                        label="📥 Xuất Bảng vàng thi đua 21 Chi đoàn (CSV/Excel)",
-                        data=csv_td,
-                        file_name=f"bang_vang_thi_dua_21_chi_doan_{datetime.now().strftime('%Y%m%d')}.csv",
-                        mime="text/csv",
-                        key="btn_dl_thi_dua_csv"
-                    )
+        if st.button("💾 Lưu Kết Quả Chấm Nề Nếp Hôm Nay", type="primary", use_container_width=True, key="btn_save_cham_sec"):
+            row_cham = {
+                "Thời gian gửi": datetime.now().strftime("%d/%m/%Y %H:%M:%S"),
+                "Ngày chấm": ngay_cham.strftime("%d/%m/%Y"),
+                "Buổi": buoi_cham,
+                "Lớp": lop_cham,
+                "Người chấm": nguoi_cham,
+                "Chức vụ": chuc_vu_cham,
+                "Tổng trừ": tong_tru,
+                "Tổng cộng": tong_cong,
+                "Tổng điểm ngày": diem_ngay,
+                "Học sinh vi phạm": hs_vi_pham_ten.strip(),
+                "Học sinh tuyên dương": hs_khen_thuong_ten.strip(),
+                "Ghi chú": ghi_chu_cham.strip()
+            }
+            df_new_cham = pd.DataFrame([row_cham])
+            if os.path.exists(f_nk_thi_dua):
+                df_new_cham.to_csv(f_nk_thi_dua, mode='a', header=False, index=False, encoding='utf-8-sig')
             else:
-                st.info("Chưa có dữ liệu thi đua chi tiết. Hệ thống đang đồng bộ từ sổ theo dõi ĐTN.")
+                df_new_cham.to_csv(f_nk_thi_dua, index=False, encoding='utf-8-sig')
 
-        # ---------------------------------------------------------------------
-        # TAB 2: ⚖️ CHẤM NỀ NẾP HÀNG NGÀY & VI PHẠM
-        # ---------------------------------------------------------------------
-        with tab_cham:
-            c_cham1, c_cham2 = st.columns([6, 4])
-            
-            with c_cham1:
-                st.markdown("#### 📝 Phiếu Chấm Nề Nếp & Thi Đua Lớp Hàng Ngày")
-                st.info("ℹ️ Đội Cờ đỏ & Ban Thi đua chấm theo thang điểm 100 chuẩn quy chế THPT số 2 Bảo Yên. Điểm lưu trực tiếp vào Sổ nề nếp nhà trường.")
+            if hs_vi_pham_ten.strip():
+                row_vp_hs = {
+                    "Ngày": ngay_cham.strftime("%d/%m/%Y"),
+                    "Học sinh": hs_vi_pham_ten.strip(),
+                    "Lớp": lop_cham,
+                    "Lỗi vi phạm": f"Trừ {tong_tru:.1f}đ nề nếp ({buoi_cham})",
+                    "Người phát hiện": f"{nguoi_cham} ({chuc_vu_cham})",
+                    "Điểm trừ Chi đoàn": -tong_tru,
+                    "Trạng thái": "Đã lưu sổ thi đua",
+                    "Ghi chú": ghi_chu_cham.strip()
+                }
+                df_save_vp = pd.DataFrame([row_vp_hs])
+                if os.path.exists(f_vi_pham_hs):
+                    df_save_vp.to_csv(f_vi_pham_hs, mode='a', header=False, index=False, encoding='utf-8-sig')
+                else:
+                    df_save_vp.to_csv(f_vi_pham_hs, index=False, encoding='utf-8-sig')
 
-                ds_lop_all = [
-                    "10A1", "10A2", "10A3", "10A4", "10A5", "10A6", "10A7",
-                    "11A1", "11A2", "11A3", "11A4", "11A5", "11A6", "11A7",
-                    "12A1", "12A2", "12A3", "12A4", "12A5", "12A6", "12A7"
-                ]
+            st.success(f"🎉 Đã lưu thành công kết quả chấm nề nếp Chi đoàn **{lop_cham}**: **{diem_ngay:.1f}/100 điểm** theo đúng 10 nhóm tiêu chí của trường!")
+            time.sleep(1)
+            st.rerun()
 
-                c_ch_a, c_ch_b, c_ch_c = st.columns(3)
-                with c_ch_a:
-                    lop_cham = st.selectbox("Chọn Chi đoàn:", ds_lop_all, key="cham_lop_sel")
-                with c_ch_b:
-                    ngay_cham = st.date_input("Ngày chấm:", datetime.now().date(), key="cham_ngay_val")
-                with c_ch_c:
-                    buoi_cham = st.selectbox("Buổi học:", ["Buổi Sáng", "Buổi Chiều"], key="cham_buoi_val")
+    with c_cham2:
+        st.markdown("#### 📜 Nhật Ký Chấm Nề Nếp Gần Đây")
+        df_nk_td = pd.DataFrame()
+        if os.path.exists(f_nk_thi_dua):
+            try:
+                df_nk_td = pd.read_csv(f_nk_thi_dua, encoding='utf-8-sig').fillna("")
+            except Exception:
+                pass
 
-                c_ch_d, c_ch_e = st.columns(2)
-                with c_ch_d:
-                    nguoi_cham = st.text_input("Người chấm:", value=fullname_curr, key="cham_nguoi_val")
-                with c_ch_e:
-                    chuc_vu_cham = st.selectbox("Chức vụ / Đơn vị trực:", [
-                        "Đội Cờ đỏ Khối 12", "Đội Cờ đỏ Khối 11", "Đội Cờ đỏ Khối 10", 
-                        "BCH Đoàn Trường", "Giáo viên Trực ban", "GVCN kiểm tra chéo"
-                    ], key="cham_chucvu_val")
+        if not df_nk_td.empty:
+            st.dataframe(
+                df_nk_td.tail(8).iloc[::-1],
+                use_container_width=True,
+                height=260,
+                column_config={
+                    "Ngày chấm": st.column_config.TextColumn("Ngày"),
+                    "Lớp": st.column_config.TextColumn("Lớp", width="small"),
+                    "Tổng điểm ngày": st.column_config.NumberColumn("Điểm", format="%.1f đ"),
+                    "Người chấm": st.column_config.TextColumn("Cờ đỏ / Trực"),
+                }
+            )
+        else:
+            st.info("Chưa có lượt chấm nề nếp mới trong hôm nay. Hãy sử dụng form bên trái để ghi nhận.")
 
-                # KHỐI CÁC LỖI VI PHẠM TRỪ ĐIỂM
-                st.markdown("##### 🔴 Các Lỗi Vi Phạm Nề Nếp (Trừ điểm)")
-                c_vp1, c_vp2 = st.columns(2)
-                with c_vp1:
-                    v_muon = st.number_input("🚶 Đi học muộn (-2đ/lượt):", min_value=0, max_value=20, value=0, step=1, key="v_muon")
-                    v_dongphuc = st.number_input("👔 Sai đồng phục / dép lê (-2đ/lượt):", min_value=0, max_value=20, value=0, step=1, key="v_dp")
-                    v_the = st.number_input("🏷️ Quên thẻ học sinh (-1đ/lượt):", min_value=0, max_value=20, value=0, step=1, key="v_the")
-                    v_dienthoai = st.number_input("📱 Dùng điện thoại sai quy định (-5đ/lượt):", min_value=0, max_value=10, value=0, step=1, key="v_dt")
-                with c_vp2:
-                    v_truybai = st.checkbox("📖 Không thực hiện 15p truy bài (-3đ)", key="v_truy_bai")
-                    v_vesinh = st.checkbox("🗑️ Vệ sinh lớp / hành lang bẩn (-3đ)", key="v_ve_sinh")
-                    v_xe_gt = st.number_input("🛵 Vi phạm ATGT / Không mũ BH (-5đ/lượt):", min_value=0, max_value=10, value=0, step=1, key="v_xe_gt")
-                    v_mat_tt = st.checkbox("🗣️ Mất trật tự trong giờ / sổ đầu bài điểm C (-5đ)", key="v_mat_tt")
+        st.markdown("#### ⚠️ Sổ Theo Dõi Học Sinh Vi Phạm")
+        df_vp_live = pd.DataFrame()
+        if os.path.exists(f_vi_pham_hs):
+            try:
+                df_vp_live = pd.read_csv(f_vi_pham_hs, encoding='utf-8-sig').fillna("")
+            except Exception:
+                pass
 
-                # KHỐI ĐIỂM CỘNG KHEN THƯỞNG
-                st.markdown("##### 🟢 Điểm Cộng Thi Đua & Gương Tốt (Cộng điểm)")
-                c_cg1, c_cg2 = st.columns(2)
-                with c_cg1:
-                    c_hoa_diem = st.number_input("🌸 Hoa điểm 9, 10 (+2đ/bông):", min_value=0, max_value=30, value=0, step=1, key="c_hoa")
-                    c_tiet_tot = st.number_input("🌟 Tiết học Tốt - Giờ A (+5đ/tiết):", min_value=0, max_value=10, value=0, step=1, key="c_tiet")
-                with c_cg2:
-                    c_viec_tot = st.checkbox("🎖️ Nhặt được của rơi / Việc tốt (+5đ)", key="c_viec_tot")
-                    c_phong_trao = st.checkbox("🚩 Tích cực tham gia hoạt động Đoàn (+5đ)", key="c_phong_trao")
+        if not df_vp_live.empty:
+            st.dataframe(
+                df_vp_live.tail(6).iloc[::-1],
+                use_container_width=True,
+                height=240,
+                column_config={
+                    "Ngày": st.column_config.TextColumn("Ngày"),
+                    "Học sinh": st.column_config.TextColumn("Họ và tên"),
+                    "Lớp": st.column_config.TextColumn("Lớp", width="small"),
+                    "Lỗi vi phạm": st.column_config.TextColumn("Hành vi vi phạm"),
+                    "Trạng thái": st.column_config.TextColumn("Trạng thái"),
+                }
+            )
+        else:
+            st.success("🟢 Toàn trường duy trì nề nếp tốt, không có hồ sơ vi phạm nghiêm trọng tồn đọng.")
 
-                # THÔNG TIN HỌC SINH CÁ NHÂN VI PHẠM (NẾU CÓ)
-                st.markdown("##### 👤 Ghi Nhận Học Sinh Vi Phạm / Khen Thưởng Cá Nhân (Nếu có)")
-                hs_vi_pham_ten = st.text_input("Tên học sinh vi phạm (nếu có, để lưu hồ sơ):", placeholder="Ví dụ: Nguyễn Văn A (Đi muộn 15p)", key="hs_vp_ten")
-                hs_khen_thuong_ten = st.text_input("Tên học sinh được khen thưởng (nếu có):", placeholder="Ví dụ: Trần Thị B (Nhặt được 200k trả lại)", key="hs_kt_ten")
-                ghi_chu_cham = st.text_area("Ghi chú nề nếp buổi học:", placeholder="Chi đoàn duy trì tốt nề nếp xếp hàng, 1 bạn quên thẻ...", height=60, key="cham_gc")
+    # =========================================================================
+    # THƯ MỤC 3: 🛵 QUẢN LÝ 648 XE GẮN MÃ QR & AN TOÀN GIAO THÔNG (#quan-ly-xe-qr)
+    # =========================================================================
+    st.markdown("<div style='margin-top: 32px;'></div>", unsafe_allow_html=True)
+    st_html("""
+    <div id="quan-ly-xe-qr" class="section-banner-title">
+        <h3><span>🛵</span> QUẢN LÝ 648 XE GẮN MÃ QR & AN TOÀN GIAO THÔNG</h3>
+        <span class="section-banner-subtitle">Hệ Thống Định Danh Phương Tiện Bằng Mã QR · Giám Sát Cổng Trường 24/7</span>
+    </div>
+    """)
 
-                # TÍNH TOÁN ĐIỂM
-                tong_tru = (v_muon * 2) + (v_dongphuc * 2) + (v_the * 1) + (v_dienthoai * 5) + (3 if v_truybai else 0) + (3 if v_vesinh else 0) + (v_xe_gt * 5) + (5 if v_mat_tt else 0)
-                tong_cong = (c_hoa_diem * 2) + (c_tiet_tot * 5) + (5 if c_viec_tot else 0) + (5 if c_phong_trao else 0)
-                diem_ngay = max(0, 100 - tong_tru + tong_cong)
+    m_xe1, m_xe2, m_xe3, m_xe4 = st.columns(4)
+    so_xe_dien = len(df_xe[df_xe["Loại xe"].astype(str).str.contains("điện", case=False, na=False)]) if not df_xe.empty and "Loại xe" in df_xe.columns else 540
+    so_xe_50 = len(df_xe[df_xe["Loại xe"].astype(str).str.contains("50|xăng", case=False, na=False)]) if not df_xe.empty and "Loại xe" in df_xe.columns else 108
+    if so_xe_dien + so_xe_50 == 0:
+        so_xe_dien = 540
+        so_xe_50 = 108
+
+    df_vp_xe = pd.DataFrame()
+    if os.path.exists(f_vi_pham_xe):
+        try:
+            df_vp_xe = pd.read_csv(f_vi_pham_xe, encoding='utf-8-sig').fillna("")
+        except Exception:
+            pass
+    so_vp_xe = len(df_vp_xe)
+
+    m_xe1.metric("🛵 Tổng Xe Đã Định Danh", f"{so_xe} Xe", "100% Cấp mã QR")
+    m_xe2.metric("⚡ Xe Máy Điện & Xe Đạp Điện", f"{so_xe_dien} Xe", "Chiếm 83.3%")
+    m_xe3.metric("🏍️ Xe Máy Dưới 50cc", f"{so_xe_50} Xe", "Chiếm 16.7%")
+    m_xe4.metric("🚨 Lượt Vi Phạm Giao Thông", f"{so_vp_xe} Lượt", "Đã lập biên bản" if so_vp_xe > 0 else "An toàn tuyệt đối")
+
+    st.markdown("##### 🔍 Tra Cứu Thông Tin Xe & Quét Thẻ Mã QR Học Sinh")
+    c_xf1, c_xf2, c_xf3 = st.columns([2, 1, 1])
+    with c_xf1:
+        search_xe = st.text_input("Nhập Biển số, Họ tên HS, Mã xe (XE-001...) hoặc SĐT Phụ huynh:", "", key="search_xe_sec_in")
+    with c_xf2:
+        lop_xe_filter = st.selectbox("Lọc theo Chi đoàn:", ["Tất cả các lớp"] + ds_lop_all, key="sel_lop_xe_sec")
+    with c_xf3:
+        loai_xe_filter = st.selectbox("Lọc theo Loại xe:", ["Tất cả loại xe", "Xe đạp điện", "Xe điện", "Xe máy điện", "Xe 50cc"], key="sel_loai_xe_sec")
+
+    df_xe_show = df_xe.copy() if not df_xe.empty else pd.DataFrame()
+    if not df_xe_show.empty:
+        if lop_xe_filter != "Tất cả các lớp":
+            df_xe_show = df_xe_show[df_xe_show["Lớp"].astype(str).str.contains(lop_xe_filter, case=False, na=False)]
+        if loai_xe_filter != "Tất cả loại xe":
+            df_xe_show = df_xe_show[df_xe_show["Loại xe"].astype(str).str.contains(loai_xe_filter, case=False, na=False)]
+        if search_xe.strip():
+            kw = search_xe.strip().lower()
+            cond = (
+                df_xe_show["Biển số xe"].astype(str).str.lower().str.contains(kw) |
+                df_xe_show["Họ và tên"].astype(str).str.lower().str.contains(kw) |
+                df_xe_show["Mã xe"].astype(str).str.lower().str.contains(kw) |
+                df_xe_show["Lớp"].astype(str).str.lower().str.contains(kw) |
+                df_xe_show["SĐT Phụ huynh"].astype(str).str.lower().str.contains(kw)
+            )
+            df_xe_show = df_xe_show[cond]
+
+        if search_xe.strip() and len(df_xe_show) > 0 and len(df_xe_show) <= 2:
+            for _, rx in df_xe_show.iterrows():
+                ma_xe_val = rx.get("Mã xe", "XE-000")
+                ten_hs_val = rx.get("Họ và tên", "Học sinh")
+                lop_val = rx.get("Lớp", "")
+                bien_so_val = rx.get("Biển số xe", "Chưa cấp biển")
+                loai_val = rx.get("Loại xe", "Xe điện")
+                mau_val = rx.get("Màu xe", "Đen")
+                gvcn_val = rx.get("GVCN", "Thầy/Cô GVCN")
+                ph_val = rx.get("Họ tên Phụ huynh", "Phụ huynh")
+                sdt_ph_val = str(rx.get("SĐT Phụ huynh", "")).replace(".0", "")
+                noi_gui_val = rx.get("Nơi gửi xe", "Trong trường")
+                dia_chi_val = rx.get("Địa chỉ", "Bảo Hà - Lào Cai")
 
                 st_html(f"""
-                <div style="background:#F0FDF4; border:1.5px solid #22C55E; border-radius:10px; padding:12px 16px; margin: 12px 0;">
-                    <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap;">
-                        <div>
-                            <span style="font-size:13px; font-weight:700; color:#15803D;">TỔNG KẾT ĐIỂM CHẤM CHI ĐOÀN {lop_cham}</span><br>
-                            <span style="font-size:12px; color:#475569;">Điểm gốc: 100đ · Điểm trừ: -{tong_tru}đ · Điểm cộng: +{tong_cong}đ</span>
+                <div style="background:white; border:2px solid #0D5C75; border-radius:12px; padding:16px 20px; margin:12px 0; box-shadow:0 4px 12px rgba(13,92,117,0.1); display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px;">
+                    <div style="flex:1; min-width:280px;">
+                        <div style="display:flex; align-items:center; gap:10px; margin-bottom:6px;">
+                            <span style="background:#0D5C75; color:white; font-size:12px; font-weight:800; padding:3px 10px; border-radius:6px;">MÃ ĐỊNH DANH: {ma_xe_val}</span>
+                            <span style="background:#DCFCE7; color:#15803D; font-size:12px; font-weight:700; padding:3px 8px; border-radius:6px;">🟢 ĐỦ ĐIỀU KIỆN LƯU HÀNH</span>
                         </div>
-                        <div style="font-size:26px; font-weight:900; color:#15803D;">
-                            {diem_ngay} <span style="font-size:14px; font-weight:600;">/ 100 điểm</span>
+                        <div style="font-size:18px; font-weight:900; color:#0F172A; margin:4px 0;">{ten_hs_val} — Chi đoàn {lop_val}</div>
+                        <div style="font-size:13px; color:#334155; line-height:1.6;">
+                            🛵 <b>Biển số:</b> <span style="background:#FEF08A; padding:2px 8px; border-radius:4px; font-weight:800; color:#854D0E;">{bien_so_val}</span> · <b>Loại xe:</b> {loai_val} ({mau_val})<br>
+                            🏫 <b>Nơi gửi:</b> {noi_gui_val} · <b>GVCN:</b> {gvcn_val}<br>
+                            👨‍👩‍👧 <b>Phụ huynh:</b> {ph_val} (☎️ <b>{sdt_ph_val}</b>) · <b>Địa chỉ:</b> {dia_chi_val}
                         </div>
+                    </div>
+                    <div style="text-align:center; background:#F8FAFC; border:1.5px dashed #0D5C75; border-radius:10px; padding:12px 16px;">
+                        <div style="font-size:32px;">📱</div>
+                        <div style="font-size:11px; font-weight:800; color:#0D5C75;">TEM QR CHÍNH HÃNG</div>
+                        <div style="font-size:10px; color:#64748B;">THPT Số 2 Bảo Yên</div>
                     </div>
                 </div>
                 """)
 
-                if st.button("💾 Lưu Kết Quả Chấm Nề Nếp Hôm Nay", type="primary", use_container_width=True, key="btn_save_cham_nn"):
-                    row_cham = {
-                        "Thời gian gửi": datetime.now().strftime("%d/%m/%Y %H:%M:%S"),
-                        "Ngày chấm": ngay_cham.strftime("%d/%m/%Y"),
-                        "Buổi": buoi_cham,
-                        "Lớp": lop_cham,
-                        "Người chấm": nguoi_cham,
-                        "Chức vụ": chuc_vu_cham,
-                        "Tổng trừ": tong_tru,
-                        "Tổng cộng": tong_cong,
-                        "Tổng điểm ngày": diem_ngay,
-                        "Học sinh vi phạm": hs_vi_pham_ten.strip(),
-                        "Học sinh tuyên dương": hs_khen_thuong_ten.strip(),
-                        "Ghi chú": ghi_chu_cham.strip()
+        st.dataframe(
+            df_xe_show,
+            use_container_width=True,
+            height=300,
+            column_config={
+                "Mã xe": st.column_config.TextColumn("Mã xe", width="small"),
+                "Họ và tên": st.column_config.TextColumn("Học sinh", width="medium"),
+                "Lớp": st.column_config.TextColumn("Lớp", width="small"),
+                "Biển số xe": st.column_config.TextColumn("Biển số xe"),
+                "Loại xe": st.column_config.TextColumn("Loại xe"),
+                "Màu xe": st.column_config.TextColumn("Màu xe"),
+                "Nơi gửi xe": st.column_config.TextColumn("Nơi gửi"),
+                "GVCN": st.column_config.TextColumn("GVCN"),
+                "Họ tên Phụ huynh": st.column_config.TextColumn("Phụ huynh"),
+                "SĐT Phụ huynh": st.column_config.TextColumn("SĐT Phụ huynh"),
+            }
+        )
+
+        c_dl_xe, _ = st.columns([2, 3])
+        with c_dl_xe:
+            csv_xe = df_xe_show.to_csv(index=False, encoding='utf-8-sig').encode('utf-8-sig')
+            st.download_button(
+                label="📥 Xuất Danh Sách 648 Phương Tiện Xe (CSV/Excel)",
+                data=csv_xe,
+                file_name=f"danh_sach_xe_hoc_sinh_{datetime.now().strftime('%Y%m%d')}.csv",
+                mime="text/csv",
+                key="btn_dl_xe_csv_sec"
+            )
+
+    c_xe_act1, c_xe_act2 = st.columns(2)
+    with c_xe_act1:
+        with st.expander("🚨 Lập Biên Bản Vi Phạm Trật Tự ATGT (Theo Quy Chế Nhà Trường)", expanded=False):
+            ds_xe_sel = [f"{r.get('Mã xe', '')} - {r.get('Họ và tên', '')} ({r.get('Lớp', '')}) - {r.get('Biển số xe', '')}" for _, r in df_xe.head(60).iterrows()] if not df_xe.empty else ["XE-001 - Học sinh 10A1"]
+            xe_vp_selected = st.selectbox("Chọn Xe / Học sinh vi phạm:", ds_xe_sel, key="sel_xe_vp_sec")
+            loi_vp_xe = st.selectbox("Hành vi vi phạm giao thông:", [
+                "Không đội mũ bảo hiểm; pô nổ to; che biển số (-30đ)",
+                "Đi xe nhưng không khai báo, không dán mã QR cho xe (-20đ)",
+                "Đội mũ sai quy cách; chở quá số người; dàn hàng ngang từ 3 xe (-10đ)",
+                "Để xe sai quy định trong nhà xe (-5đ)",
+                "Phóng nhanh, vượt ẩu, lạng lách, đánh võng, vượt đèn đỏ, độ xe (-50đ)",
+                "Vi phạm ATGT gây tai nạn giao thông (-60đ)"
+            ], key="loi_vp_xe_sec")
+            nguoi_lap_bb = st.text_input("Người lập biên bản:", value=f"{fullname_curr} (Đội Cờ đỏ / Trực ban)", key="nguoi_lap_bb_sec")
+
+            if st.button("🚨 Lưu Biên Bản & Trừ Điểm Thi Đua Chi Đoàn", type="primary", use_container_width=True, key="btn_save_vp_xe_sec"):
+                parts = xe_vp_selected.split(" - ")
+                mx_val = parts[0].strip() if len(parts) > 0 else "XE-000"
+                ten_val = parts[1].split("(")[0].strip() if len(parts) > 1 else ""
+                lop_val = parts[1].split("(")[1].replace(")", "").strip() if len(parts) > 1 and "(" in parts[1] else "10A1"
+                bs_val = parts[2].strip() if len(parts) > 2 else ""
+
+                tru_val = 30
+                if "20đ" in loi_vp_xe: tru_val = 20
+                elif "10đ" in loi_vp_xe: tru_val = 10
+                elif "5đ" in loi_vp_xe: tru_val = 5
+                elif "50đ" in loi_vp_xe: tru_val = 50
+                elif "60đ" in loi_vp_xe: tru_val = 60
+
+                row_bb = {
+                    "Ngày": datetime.now().strftime("%d/%m/%Y"),
+                    "Mã xe": mx_val,
+                    "Họ và tên": ten_val,
+                    "Lớp": lop_val,
+                    "Biển số xe": bs_val,
+                    "Lỗi vi phạm": loi_vp_xe,
+                    "Điểm trừ": tru_val,
+                    "Người lập biên bản": nguoi_lap_bb,
+                    "Trạng thái": "Đã trừ điểm ĐTN"
+                }
+                df_new_bb = pd.DataFrame([row_bb])
+                if os.path.exists(f_vi_pham_xe):
+                    df_new_bb.to_csv(f_vi_pham_xe, mode='a', header=False, index=False, encoding='utf-8-sig')
+                else:
+                    df_new_bb.to_csv(f_vi_pham_xe, index=False, encoding='utf-8-sig')
+                st.success(f"✅ Đã lập biên bản vi phạm cho xe **{mx_val}** ({ten_val} - {lop_val}) và ghi nhận trừ {tru_val}đ thi đua Chi đoàn!")
+                time.sleep(1)
+                st.rerun()
+
+    with c_xe_act2:
+        with st.expander("➕ Đăng Ký Cấp Mới Tem Mã QR Xe Cho Học Sinh", expanded=False):
+            c_nxe1, c_nxe2 = st.columns(2)
+            with c_nxe1:
+                new_ten_hs = st.text_input("Họ và tên học sinh:", key="new_xe_ten_sec")
+                new_lop_hs = st.selectbox("Chi đoàn:", ds_lop_all, key="new_xe_lop_sec")
+                new_loai_xe = st.selectbox("Loại phương tiện:", ["Xe đạp điện", "Xe máy điện", "Xe gắn máy 50cc", "Xe đạp thể thao"], key="new_xe_loai_sec")
+            with c_nxe2:
+                new_bien_so = st.text_input("Biển số xe (hoặc Chưa có biển):", value="24MD1-...", key="new_xe_bs_sec")
+                new_mau_xe = st.text_input("Màu sắc phương tiện:", value="Màu đen", key="new_xe_mau_sec")
+                new_sdt_ph = st.text_input("SĐT liên hệ Phụ huynh:", key="new_xe_sdt_ph_sec")
+
+            if st.button("🏷️ Cấp Tem Mã QR Mới & Lưu Hồ Sơ", use_container_width=True, key="btn_save_new_xe_sec"):
+                if new_ten_hs.strip():
+                    next_id_num = len(df_xe) + 1
+                    new_mx = f"XE-{next_id_num:03d}"
+                    row_new_xe = {
+                        "Mã xe": new_mx,
+                        "Họ và tên": new_ten_hs.strip(),
+                        "Lớp": new_lop_hs,
+                        "SĐT Học sinh": "",
+                        "Loại xe": new_loai_xe,
+                        "Biển số xe": new_bien_so.strip(),
+                        "Màu xe": new_mau_xe.strip(),
+                        "Nơi gửi xe": "Trong trường",
+                        "GVCN": f"Thầy/Cô GVCN {new_lop_hs}",
+                        "SĐT GVCN": "",
+                        "Họ tên Phụ huynh": "Phụ huynh HS",
+                        "SĐT Phụ huynh": new_sdt_ph.strip(),
+                        "Địa chỉ": "Bảo Hà - Lào Cai",
+                        "Tình trạng": "Đủ điều kiện lưu hành",
+                        "Số lần vi phạm": 0,
+                        "Ghi chú": "Cấp mới học kỳ 1"
                     }
-                    df_new_cham = pd.DataFrame([row_cham])
-                    if os.path.exists(f_nk_thi_dua):
-                        df_new_cham.to_csv(f_nk_thi_dua, mode='a', header=False, index=False, encoding='utf-8-sig')
+                    df_save_new_xe = pd.DataFrame([row_new_xe])
+                    if os.path.exists(f_xe):
+                        df_save_new_xe.to_csv(f_xe, mode='a', header=False, index=False, encoding='utf-8-sig')
                     else:
-                        df_new_cham.to_csv(f_nk_thi_dua, index=False, encoding='utf-8-sig')
-
-                    # Nếu có ghi tên học sinh vi phạm, tự động ghi vào Sổ vi phạm học sinh
-                    if hs_vi_pham_ten.strip():
-                        row_vp_hs = {
-                            "Ngày": ngay_cham.strftime("%d/%m/%Y"),
-                            "Học sinh": hs_vi_pham_ten.strip(),
-                            "Lớp": lop_cham,
-                            "Lỗi vi phạm": f"Trừ {tong_tru}đ nề nếp ({buoi_cham})",
-                            "Người phát hiện": f"{nguoi_cham} ({chuc_vu_cham})",
-                            "Điểm trừ Chi đoàn": -tong_tru,
-                            "Trạng thái": "Đã lưu sổ thi đua",
-                            "Ghi chú": ghi_chu_cham.strip()
-                        }
-                        df_save_vp = pd.DataFrame([row_vp_hs])
-                        if os.path.exists(f_vi_pham_hs):
-                            df_save_vp.to_csv(f_vi_pham_hs, mode='a', header=False, index=False, encoding='utf-8-sig')
-                        else:
-                            df_save_vp.to_csv(f_vi_pham_hs, index=False, encoding='utf-8-sig')
-
-                    st.success(f"🎉 Đã lưu thành công kết quả chấm nề nếp Chi đoàn **{lop_cham}**: **{diem_ngay}/100 điểm** vào Sổ nề nếp nhà trường!")
+                        df_save_new_xe.to_csv(f_xe, index=False, encoding='utf-8-sig')
+                    st.success(f"🎉 Đã cấp mã **{new_mx}** thành công cho học sinh **{new_ten_hs}** ({new_lop_hs})!")
                     time.sleep(1)
                     st.rerun()
-
-            with c_cham2:
-                st.markdown("#### 📜 Nhật Ký Chấm Nề Nếp Gần Đây")
-                df_nk_td = pd.DataFrame()
-                if os.path.exists(f_nk_thi_dua):
-                    try:
-                        df_nk_td = pd.read_csv(f_nk_thi_dua, encoding='utf-8-sig').fillna("")
-                    except Exception:
-                        pass
-
-                if not df_nk_td.empty:
-                    st.dataframe(
-                        df_nk_td.tail(8).iloc[::-1],
-                        use_container_width=True,
-                        height=260,
-                        column_config={
-                            "Ngày chấm": st.column_config.TextColumn("Ngày"),
-                            "Lớp": st.column_config.TextColumn("Lớp", width="small"),
-                            "Tổng điểm ngày": st.column_config.NumberColumn("Điểm", format="%.0f đ"),
-                            "Người chấm": st.column_config.TextColumn("Cờ đỏ / Trực"),
-                        }
-                    )
                 else:
-                    st.info("Chưa có lượt chấm nề nếp mới trong hôm nay. Hãy sử dụng form bên trái để ghi nhận.")
+                    st.warning("Vui lòng nhập Họ tên học sinh để cấp tem mã QR.")
 
-                st.markdown("#### ⚠️ Sổ Theo Dõi Học Sinh Vi Phạm")
-                df_vp_live = pd.DataFrame()
-                if os.path.exists(f_vi_pham_hs):
-                    try:
-                        df_vp_live = pd.read_csv(f_vi_pham_hs, encoding='utf-8-sig').fillna("")
-                    except Exception:
-                        pass
+    if not df_vp_xe.empty:
+        st.markdown("##### 📜 Lịch Sử Ghi Nhận Vi Phạm Giao Thông Gần Đây")
+        st.dataframe(
+            df_vp_xe.tail(5).iloc[::-1],
+            use_container_width=True,
+            height=160
+        )
 
-                if not df_vp_live.empty:
-                    st.dataframe(
-                        df_vp_live.tail(6).iloc[::-1],
-                        use_container_width=True,
-                        height=240,
-                        column_config={
-                            "Ngày": st.column_config.TextColumn("Ngày"),
-                            "Học sinh": st.column_config.TextColumn("Họ và tên"),
-                            "Lớp": st.column_config.TextColumn("Lớp", width="small"),
-                            "Lỗi vi phạm": st.column_config.TextColumn("Hành vi vi phạm"),
-                            "Trạng thái": st.column_config.TextColumn("Trạng thái"),
-                        }
-                    )
+    # =========================================================================
+    # THƯ MỤC 4: 📜 SỔ ĐOÀN VIÊN ĐIỆN TỬ & CÔNG TÁC ĐOÀN (#so-doan-vien)
+    # =========================================================================
+    st.markdown("<div style='margin-top: 32px;'></div>", unsafe_allow_html=True)
+    st_html("""
+    <div id="so-doan-vien" class="section-banner-title">
+        <h3><span>📜</span> SỔ ĐOÀN VIÊN ĐIỆN TỬ & CÔNG TÁC ĐOÀN THANH NIÊN</h3>
+        <span class="section-banner-subtitle">Quản Lý Hồ Sơ 21 Chi Đoàn · Bồi Dưỡng Cảm Tình Đoàn · Bàn Giao Sổ Đoàn</span>
+    </div>
+    """)
+
+    df_sd = pd.DataFrame()
+    if os.path.exists(f_so_doan):
+        try:
+            df_sd = pd.read_csv(f_so_doan, encoding='utf-8-sig').fillna("")
+        except Exception:
+            pass
+
+    m_sd1, m_sd2, m_sd3, m_sd4 = st.columns(4)
+    tong_hs_toan = 929
+    tong_doan_vien = 685
+    tong_tnut = 115
+    if not df_sd.empty and "Số Đoàn viên" in df_sd.columns:
+        try:
+            tong_doan_vien = int(pd.to_numeric(df_sd["Số Đoàn viên"], errors='coerce').fillna(0).sum())
+            tong_tnut = int(pd.to_numeric(df_sd["Thanh niên ưu tú"], errors='coerce').fillna(0).sum())
+            if "Tổng số HS" in df_sd.columns:
+                tong_hs_toan = int(pd.to_numeric(df_sd["Tổng số HS"], errors='coerce').fillna(0).sum())
+        except Exception:
+            pass
+
+    ty_le_dv = round((tong_doan_vien / tong_hs_toan) * 100, 1) if tong_hs_toan > 0 else 73.7
+
+    m_sd1.metric("👥 Tổng Số Học Sinh", f"{tong_hs_toan} HS", "21 Chi đoàn")
+    m_sd2.metric("🔴 Đoàn Viên Đã Kết Nạp", f"{tong_doan_vien} ĐV", f"Tỷ lệ {ty_le_dv}%")
+    m_sd3.metric("⭐ Thanh Niên Ưu Tú (Nguồn)", f"{tong_tnut} HS", "Bồi dưỡng kết nạp")
+    m_sd4.metric("📁 Quản Lý Sổ Đoàn", "100% Hoàn Thành", "Đã số hóa")
+
+    st.markdown("##### 🏛️ Danh Sách 21 Chi Đoàn Trực Thuộc Đoàn Trường THPT Số 2 Bảo Yên")
+    c_sdf1, c_sdf2 = st.columns([1, 2])
+    with c_sdf1:
+        k_sd_filter = st.selectbox("Lọc theo Khối:", ["Tất cả khối", "Khối 10", "Khối 11", "Khối 12"], key="sd_k_fl_sec")
+    with c_sdf2:
+        tim_sd = st.text_input("Tìm kiếm Chi đoàn / Bí thư:", "", key="tim_sd_kw_sec")
+
+    df_sd_show = df_sd.copy() if not df_sd.empty else pd.DataFrame()
+    if not df_sd_show.empty:
+        if k_sd_filter != "Tất cả khối":
+            df_sd_show = df_sd_show[df_sd_show["Khối"].astype(str).str.contains(k_sd_filter.replace("Khối ", ""), case=False, na=False)]
+        if tim_sd.strip():
+            df_sd_show = df_sd_show[
+                df_sd_show["Chi đoàn"].astype(str).str.contains(tim_sd.strip(), case=False, na=False) |
+                df_sd_show["Bí thư Chi đoàn"].astype(str).str.contains(tim_sd.strip(), case=False, na=False)
+            ]
+
+        st.dataframe(
+            df_sd_show,
+            use_container_width=True,
+            height=300,
+            column_config={
+                "Chi đoàn": st.column_config.TextColumn("Chi đoàn", width="medium"),
+                "Khối": st.column_config.TextColumn("Khối", width="small"),
+                "Bí thư Chi đoàn": st.column_config.TextColumn("Bí thư Chi đoàn"),
+                "Tổng số HS": st.column_config.NumberColumn("Sĩ số"),
+                "Số Đoàn viên": st.column_config.NumberColumn("Đoàn viên"),
+                "Thanh niên ưu tú": st.column_config.NumberColumn("TN Ưu tú"),
+                "Tình trạng Sổ Đoàn": st.column_config.TextColumn("Sổ Đoàn"),
+                "Đoàn phí": st.column_config.TextColumn("Đoàn phí"),
+                "Xếp loại Chi đoàn": st.column_config.TextColumn("Xếp loại"),
+            }
+        )
+
+        c_dl_sd, _ = st.columns([2, 3])
+        with c_dl_sd:
+            csv_sd = df_sd_show.to_csv(index=False, encoding='utf-8-sig').encode('utf-8-sig')
+            st.download_button(
+                label="📥 Xuất Dữ Liệu Sổ Đoàn 21 Chi Đoàn (CSV/Excel)",
+                data=csv_sd,
+                file_name=f"so_doan_vien_21_chi_doan_{datetime.now().strftime('%Y%m%d')}.csv",
+                mime="text/csv",
+                key="btn_dl_sd_csv_sec"
+            )
+
+    c_d_act1, c_d_act2 = st.columns(2)
+    with c_d_act1:
+        with st.expander("⭐ Giới Thiệu Thanh Niên Ưu Tú Học Cảm Tình Đoàn (Đợt 26/3)", expanded=False):
+            c_tn1, c_tn2 = st.columns(2)
+            with c_tn1:
+                tn_ten = st.text_input("Họ và tên thanh niên ưu tú:", key="tn_ten_sec_in")
+                tn_lop = st.selectbox("Thuộc Chi đoàn:", ds_lop_all, key="tn_lop_sec_in")
+            with c_tn2:
+                tn_hocluc = st.selectbox("Xếp loại học tập:", ["Tốt / Giỏi", "Khá"], key="tn_hl_sec_in")
+                tn_hanhkiem = st.selectbox("Xếp loại rèn luyện:", ["Tốt", "Khá"], key="tn_hk_sec_in")
+            tn_lydo = st.text_area("Thành tích & Lý do giới thiệu:", placeholder="Gương mẫu, tích cực tham gia phong trào...", height=60, key="tn_lydo_sec_in")
+
+            if st.button("🌟 Xác Nhận Giới Thiệu Học Lớp Cảm Tình Đoàn", type="primary", use_container_width=True, key="btn_save_tnut_sec"):
+                if tn_ten.strip():
+                    st.success(f"🎉 Đã ghi nhận thanh niên ưu tú **{tn_ten}** ({tn_lop}) vào danh sách tham gia lớp Cảm tình Đoàn đợt 26/3 sắp tới!")
                 else:
-                    st.success("🟢 Toàn trường duy trì nề nếp tốt, không có hồ sơ vi phạm nghiêm trọng tồn đọng.")
+                    st.warning("Vui lòng nhập Họ tên thanh niên ưu tú.")
 
-        # ---------------------------------------------------------------------
-        # TAB 3: 🛵 QUẢN LÝ 648 XE GẮN MÃ QR & AN TOÀN GIAO THÔNG
-        # ---------------------------------------------------------------------
-        with tab_xe:
-            st.markdown("#### 🛵 Hệ Thống Quản Lý 648 Xe Gắn Mã QR & Giám Sát An Toàn Giao Thông")
-            
-            # Metrics xe
-            m_xe1, m_xe2, m_xe3, m_xe4 = st.columns(4)
-            so_xe_dien = 0
-            so_xe_50 = 0
-            if not df_xe.empty and "Loại xe" in df_xe.columns:
-                so_xe_dien = len(df_xe[df_xe["Loại xe"].astype(str).str.contains("điện", case=False, na=False)])
-                so_xe_50 = len(df_xe[df_xe["Loại xe"].astype(str).str.contains("50|xăng", case=False, na=False)])
-                if so_xe_dien + so_xe_50 == 0:
-                    so_xe_dien = 540
-                    so_xe_50 = 108
-            else:
-                so_xe_dien = 540
-                so_xe_50 = 108
-
-            df_vp_xe = pd.DataFrame()
-            if os.path.exists(f_vi_pham_xe):
-                try:
-                    df_vp_xe = pd.read_csv(f_vi_pham_xe, encoding='utf-8-sig').fillna("")
-                except Exception:
-                    pass
-            so_vp_xe = len(df_vp_xe)
-
-            m_xe1.metric("🛵 Tổng Xe Đã Định Danh", f"{so_xe} Xe", "100% Cấp mã QR")
-            m_xe2.metric("⚡ Xe Máy Điện & Xe Đạp Điện", f"{so_xe_dien} Xe", "Chiếm 83.3%")
-            m_xe3.metric("🏍️ Xe Máy Dưới 50cc", f"{so_xe_50} Xe", "Chiếm 16.7%")
-            m_xe4.metric("🚨 Lượt Vi Phạm Giao Thông", f"{so_vp_xe} Lượt", "Đã lập biên bản" if so_vp_xe > 0 else "An toàn tuyệt đối")
-
-            # Bộ lọc và Tra cứu nhanh xe
-            st.markdown("##### 🔍 Tra Cứu Thông Tin Xe & Quét Thẻ Mã QR Học Sinh")
-            c_xf1, c_xf2, c_xf3 = st.columns([2, 1, 1])
-            with c_xf1:
-                search_xe = st.text_input("Nhập Biển số, Họ tên HS, Mã xe (XE-001...) hoặc SĐT Phụ huynh:", "", key="search_xe_input")
-            with c_xf2:
-                lop_xe_filter = st.selectbox("Lọc theo Chi đoàn:", ["Tất cả các lớp"] + ds_lop_all, key="sel_lop_xe")
-            with c_xf3:
-                loai_xe_filter = st.selectbox("Lọc theo Loại xe:", ["Tất cả loại xe", "Xe đạp điện", "Xe điện", "Xe máy điện", "Xe 50cc"], key="sel_loai_xe")
-
-            df_xe_show = df_xe.copy() if not df_xe.empty else pd.DataFrame()
-            if not df_xe_show.empty:
-                if lop_xe_filter != "Tất cả các lớp":
-                    df_xe_show = df_xe_show[df_xe_show["Lớp"].astype(str).str.contains(lop_xe_filter, case=False, na=False)]
-                if loai_xe_filter != "Tất cả loại xe":
-                    df_xe_show = df_xe_show[df_xe_show["Loại xe"].astype(str).str.contains(loai_xe_filter, case=False, na=False)]
-                if search_xe.strip():
-                    kw = search_xe.strip().lower()
-                    cond = (
-                        df_xe_show["Biển số xe"].astype(str).str.lower().str.contains(kw) |
-                        df_xe_show["Họ và tên"].astype(str).str.lower().str.contains(kw) |
-                        df_xe_show["Mã xe"].astype(str).str.lower().str.contains(kw) |
-                        df_xe_show["Lớp"].astype(str).str.lower().str.contains(kw) |
-                        df_xe_show["SĐT Phụ huynh"].astype(str).str.lower().str.contains(kw)
-                    )
-                    df_xe_show = df_xe_show[cond]
-
-                # Nếu tìm thấy 1 hoặc số ít kết quả, hiển thị THẺ ĐỊNH DANH QR THÔNG MINH
-                if search_xe.strip() and len(df_xe_show) > 0 and len(df_xe_show) <= 2:
-                    for _, rx in df_xe_show.iterrows():
-                        ma_xe_val = rx.get("Mã xe", "XE-000")
-                        ten_hs_val = rx.get("Họ và tên", "Học sinh")
-                        lop_val = rx.get("Lớp", "")
-                        bien_so_val = rx.get("Biển số xe", "Chưa cấp biển")
-                        loai_val = rx.get("Loại xe", "Xe điện")
-                        mau_val = rx.get("Màu xe", "Đen")
-                        gvcn_val = rx.get("GVCN", "Thầy/Cô GVCN")
-                        ph_val = rx.get("Họ tên Phụ huynh", "Phụ huynh")
-                        sdt_ph_val = str(rx.get("SĐT Phụ huynh", "")).replace(".0", "")
-                        noi_gui_val = rx.get("Nơi gửi xe", "Trong trường")
-                        dia_chi_val = rx.get("Địa chỉ", "Bảo Hà - Lào Cai")
-
-                        st_html(f"""
-                        <div style="background:white; border:2px solid #0D5C75; border-radius:12px; padding:16px 20px; margin:12px 0; box-shadow:0 4px 12px rgba(13,92,117,0.1); display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px;">
-                            <div style="flex:1; min-width:280px;">
-                                <div style="display:flex; align-items:center; gap:10px; margin-bottom:6px;">
-                                    <span style="background:#0D5C75; color:white; font-size:12px; font-weight:800; padding:3px 10px; border-radius:6px;">MÃ ĐỊNH DANH: {ma_xe_val}</span>
-                                    <span style="background:#DCFCE7; color:#15803D; font-size:12px; font-weight:700; padding:3px 8px; border-radius:6px;">🟢 ĐỦ ĐIỀU KIỆN LƯU HÀNH</span>
-                                </div>
-                                <div style="font-size:18px; font-weight:900; color:#0F172A; margin:4px 0;">{ten_hs_val} — Chi đoàn {lop_val}</div>
-                                <div style="font-size:13px; color:#334155; line-height:1.6;">
-                                    🛵 <b>Biển số:</b> <span style="background:#FEF08A; padding:2px 8px; border-radius:4px; font-weight:800; color:#854D0E;">{bien_so_val}</span> · <b>Loại xe:</b> {loai_val} ({mau_val})<br>
-                                    🏫 <b>Nơi gửi:</b> {noi_gui_val} · <b>GVCN:</b> {gvcn_val}<br>
-                                    👨‍👩‍👧 <b>Phụ huynh:</b> {ph_val} (☎️ <b>{sdt_ph_val}</b>) · <b>Địa chỉ:</b> {dia_chi_val}
-                                </div>
-                            </div>
-                            <div style="text-align:center; background:#F8FAFC; border:1.5px dashed #0D5C75; border-radius:10px; padding:12px 16px;">
-                                <div style="font-size:32px;">📱</div>
-                                <div style="font-size:11px; font-weight:800; color:#0D5C75;">TEM QR CHÍNH HÃNG</div>
-                                <div style="font-size:10px; color:#64748B;">THPT Số 2 Bảo Yên</div>
-                            </div>
-                        </div>
-                        """)
-
-                st.dataframe(
-                    df_xe_show,
-                    use_container_width=True,
-                    height=320,
-                    column_config={
-                        "Mã xe": st.column_config.TextColumn("Mã xe", width="small"),
-                        "Họ và tên": st.column_config.TextColumn("Học sinh", width="medium"),
-                        "Lớp": st.column_config.TextColumn("Lớp", width="small"),
-                        "Biển số xe": st.column_config.TextColumn("Biển số xe"),
-                        "Loại xe": st.column_config.TextColumn("Loại xe"),
-                        "Màu xe": st.column_config.TextColumn("Màu xe"),
-                        "Nơi gửi xe": st.column_config.TextColumn("Nơi gửi"),
-                        "GVCN": st.column_config.TextColumn("GVCN"),
-                        "Họ tên Phụ huynh": st.column_config.TextColumn("Phụ huynh"),
-                        "SĐT Phụ huynh": st.column_config.TextColumn("SĐT Phụ huynh"),
-                    }
-                )
-
-                # Nút tải danh sách xe
-                c_dl_xe, _ = st.columns([2, 3])
-                with c_dl_xe:
-                    csv_xe = df_xe_show.to_csv(index=False, encoding='utf-8-sig').encode('utf-8-sig')
-                    st.download_button(
-                        label="📥 Xuất Danh Sách 648 Phương Tiện Xe (CSV/Excel)",
-                        data=csv_xe,
-                        file_name=f"danh_sach_xe_hoc_sinh_{datetime.now().strftime('%Y%m%d')}.csv",
-                        mime="text/csv",
-                        key="btn_dl_xe_csv"
-                    )
-
-            # 2 TÁC NGHIỆP: LẬP BIÊN BẢN VI PHẠM & ĐĂNG KÝ CẤP MỚI TEM
-            c_xe_act1, c_xe_act2 = st.columns(2)
-            with c_xe_act1:
-                with st.expander("🚨 Lập Biên Bản Vi Phạm Trật Tự ATGT (Trừ điểm thi đua)", expanded=False):
-                    ds_xe_sel = [f"{r.get('Mã xe', '')} - {r.get('Họ và tên', '')} ({r.get('Lớp', '')}) - {r.get('Biển số xe', '')}" for _, r in df_xe.head(60).iterrows()] if not df_xe.empty else ["XE-001 - Học sinh 10A1"]
-                    xe_vp_selected = st.selectbox("Chọn Xe / Học sinh vi phạm:", ds_xe_sel, key="sel_xe_vp_act")
-                    loi_vp_xe = st.selectbox("Hành vi vi phạm giao thông:", [
-                        "Không đội mũ bảo hiểm khi đi xe máy điện / xe đạp điện (-5đ)",
-                        "Chở quá số người quy định / Chở 3 (-5đ)",
-                        "Điều khiển xe mô tô có dung tích xi lanh trên 50cc (-10đ)",
-                        "Đi xe dàn hàng ba trở lên / lạng lách trên đường (-5đ)",
-                        "Gửi xe ngoài trường trái quy định (-5đ)",
-                        "Xe không có gương chiếu hậu bên trái (-3đ)"
-                    ], key="loi_vp_xe_act")
-                    nguoi_lap_bb = st.text_input("Người lập biên bản:", value=f"{fullname_curr} (Đội Cờ đỏ / Trực ban)", key="nguoi_lap_bb_xe")
-
-                    if st.button("🚨 Lưu Biên Bản & Trừ Điểm Thi Đua Lớp", type="primary", use_container_width=True, key="btn_save_vp_xe"):
-                        # Trích xuất mã xe, tên, lớp
-                        parts = xe_vp_selected.split(" - ")
-                        mx_val = parts[0].strip() if len(parts) > 0 else "XE-000"
-                        ten_val = parts[1].split("(")[0].strip() if len(parts) > 1 else ""
-                        lop_val = parts[1].split("(")[1].replace(")", "").strip() if len(parts) > 1 and "(" in parts[1] else "10A1"
-                        bs_val = parts[2].strip() if len(parts) > 2 else ""
-
-                        row_bb = {
-                            "Ngày": datetime.now().strftime("%d/%m/%Y"),
-                            "Mã xe": mx_val,
-                            "Họ và tên": ten_val,
-                            "Lớp": lop_val,
-                            "Biển số xe": bs_val,
-                            "Lỗi vi phạm": loi_vp_xe,
-                            "Điểm trừ": 5 if "5đ" in loi_vp_xe else (10 if "10đ" in loi_vp_xe else 3),
-                            "Người lập biên bản": nguoi_lap_bb,
-                            "Trạng thái": "Đã trừ điểm ĐTN"
-                        }
-                        df_new_bb = pd.DataFrame([row_bb])
-                        if os.path.exists(f_vi_pham_xe):
-                            df_new_bb.to_csv(f_vi_pham_xe, mode='a', header=False, index=False, encoding='utf-8-sig')
-                        else:
-                            df_new_bb.to_csv(f_vi_pham_xe, index=False, encoding='utf-8-sig')
-                        st.success(f"✅ Đã lập biên bản vi phạm cho xe **{mx_val}** ({ten_val} - {lop_val}) và ghi nhận trừ điểm thi đua Chi đoàn!")
-                        time.sleep(1)
-                        st.rerun()
-
-            with c_xe_act2:
-                with st.expander("➕ Đăng Ký Cấp Mới Tem Mã QR Xe Cho Học Sinh", expanded=False):
-                    c_nxe1, c_nxe2 = st.columns(2)
-                    with c_nxe1:
-                        new_ten_hs = st.text_input("Họ và tên học sinh:", key="new_xe_ten")
-                        new_lop_hs = st.selectbox("Chi đoàn:", ds_lop_all, key="new_xe_lop")
-                        new_loai_xe = st.selectbox("Loại phương tiện:", ["Xe đạp điện", "Xe máy điện", "Xe gắn máy 50cc", "Xe đạp thể thao"], key="new_xe_loai")
-                    with c_nxe2:
-                        new_bien_so = st.text_input("Biển số xe (hoặc Chưa có biển):", value="24MD1-...", key="new_xe_bs")
-                        new_mau_xe = st.text_input("Màu sắc phương tiện:", value="Màu đen", key="new_xe_mau")
-                        new_sdt_ph = st.text_input("SĐT liên hệ Phụ huynh:", key="new_xe_sdt_ph")
-
-                    if st.button("🏷️ Cấp Tem Mã QR Mới & Lưu Hồ Sơ", use_container_width=True, key="btn_save_new_xe"):
-                        if new_ten_hs.strip():
-                            next_id_num = len(df_xe) + 1
-                            new_mx = f"XE-{next_id_num:03d}"
-                            row_new_xe = {
-                                "Mã xe": new_mx,
-                                "Họ và tên": new_ten_hs.strip(),
-                                "Lớp": new_lop_hs,
-                                "SĐT Học sinh": "",
-                                "Loại xe": new_loai_xe,
-                                "Biển số xe": new_bien_so.strip(),
-                                "Màu xe": new_mau_xe.strip(),
-                                "Nơi gửi xe": "Trong trường",
-                                "GVCN": f"Thầy/Cô GVCN {new_lop_hs}",
-                                "SĐT GVCN": "",
-                                "Họ tên Phụ huynh": "Phụ huynh HS",
-                                "SĐT Phụ huynh": new_sdt_ph.strip(),
-                                "Địa chỉ": "Bảo Hà - Lào Cai",
-                                "Tình trạng": "Đủ điều kiện lưu hành",
-                                "Số lần vi phạm": 0,
-                                "Ghi chú": "Cấp mới học kỳ 1"
-                            }
-                            df_save_new_xe = pd.DataFrame([row_new_xe])
-                            if os.path.exists(f_xe):
-                                df_save_new_xe.to_csv(f_xe, mode='a', header=False, index=False, encoding='utf-8-sig')
-                            else:
-                                df_save_new_xe.to_csv(f_xe, index=False, encoding='utf-8-sig')
-                            st.success(f"🎉 Đã cấp mã **{new_mx}** thành công cho học sinh **{new_ten_hs}** ({new_lop_hs})!")
-                            time.sleep(1)
-                            st.rerun()
-                        else:
-                            st.warning("Vui lòng nhập Họ tên học sinh để cấp tem mã QR.")
-
-            # Bảng Lịch sử Vi phạm giao thông gần đây
-            if not df_vp_xe.empty:
-                st.markdown("##### 📜 Lịch Sử Ghi Nhận Vi Phạm Giao Thông Gần Đây")
-                st.dataframe(
-                    df_vp_xe.tail(5).iloc[::-1],
-                    use_container_width=True,
-                    height=180
-                )
-
-        # ---------------------------------------------------------------------
-        # TAB 4: 📜 SỔ ĐOÀN VIÊN ĐIỆN TỬ & CÔNG TÁC ĐOÀN
-        # ---------------------------------------------------------------------
-        with tab_doan:
-            st.markdown("#### 📜 Quản Lý Sổ Đoàn Viên Điện Tử & Công Tác Đoàn Thanh Niên")
-            
-            df_sd = pd.DataFrame()
-            if os.path.exists(f_so_doan):
-                try:
-                    df_sd = pd.read_csv(f_so_doan, encoding='utf-8-sig').fillna("")
-                except Exception:
-                    pass
-
-            # Metrics Đoàn Thanh Niên
-            m_sd1, m_sd2, m_sd3, m_sd4 = st.columns(4)
-            tong_hs_toan = 929
-            tong_doan_vien = 685
-            tong_tnut = 115
-            if not df_sd.empty and "Số Đoàn viên" in df_sd.columns:
-                try:
-                    tong_doan_vien = int(pd.to_numeric(df_sd["Số Đoàn viên"], errors='coerce').fillna(0).sum())
-                    tong_tnut = int(pd.to_numeric(df_sd["Thanh niên ưu tú"], errors='coerce').fillna(0).sum())
-                    if "Tổng số HS" in df_sd.columns:
-                        tong_hs_toan = int(pd.to_numeric(df_sd["Tổng số HS"], errors='coerce').fillna(0).sum())
-                except Exception:
-                    pass
-
-            ty_le_dv = round((tong_doan_vien / tong_hs_toan) * 100, 1) if tong_hs_toan > 0 else 73.7
-
-            m_sd1.metric("👥 Tổng Số Học Sinh", f"{tong_hs_toan} HS", "21 Chi đoàn")
-            m_sd2.metric("🔴 Đoàn Viên Đã Kết Nạp", f"{tong_doan_vien} ĐV", f"Tỷ lệ {ty_le_dv}%")
-            m_sd3.metric("⭐ Thanh Niên Ưu Tú (Nguồn)", f"{tong_tnut} HS", "Bồi dưỡng kết nạp")
-            m_sd4.metric("📁 Quản Lý Sổ Đoàn", "100% Hoàn Thành", "Đã số hóa")
-
-            # Bảng danh sách 21 Chi đoàn
-            st.markdown("##### 🏛️ Danh Sách 21 Chi Đoàn Trực Thuộc Đoàn Trường THPT Số 2 Bảo Yên")
-            c_sdf1, c_sdf2 = st.columns([1, 2])
-            with c_sdf1:
-                k_sd_filter = st.selectbox("Lọc theo Khối:", ["Tất cả khối", "Khối 10", "Khối 11", "Khối 12"], key="sd_k_fl")
-            with c_sdf2:
-                tim_sd = st.text_input("Tìm kiếm Chi đoàn / Bí thư:", "", key="tim_sd_kw")
-
-            df_sd_show = df_sd.copy() if not df_sd.empty else pd.DataFrame()
-            if not df_sd_show.empty:
-                if k_sd_filter != "Tất cả khối":
-                    df_sd_show = df_sd_show[df_sd_show["Khối"].astype(str).str.contains(k_sd_filter.replace("Khối ", ""), case=False, na=False)]
-                if tim_sd.strip():
-                    df_sd_show = df_sd_show[
-                        df_sd_show["Chi đoàn"].astype(str).str.contains(tim_sd.strip(), case=False, na=False) |
-                        df_sd_show["Bí thư Chi đoàn"].astype(str).str.contains(tim_sd.strip(), case=False, na=False)
-                    ]
-
-                st.dataframe(
-                    df_sd_show,
-                    use_container_width=True,
-                    height=320,
-                    column_config={
-                        "Chi đoàn": st.column_config.TextColumn("Chi đoàn", width="medium"),
-                        "Khối": st.column_config.TextColumn("Khối", width="small"),
-                        "Bí thư Chi đoàn": st.column_config.TextColumn("Bí thư Chi đoàn"),
-                        "Tổng số HS": st.column_config.NumberColumn("Sĩ số"),
-                        "Số Đoàn viên": st.column_config.NumberColumn("Đoàn viên"),
-                        "Thanh niên ưu tú": st.column_config.NumberColumn("TN Ưu tú"),
-                        "Tình trạng Sổ Đoàn": st.column_config.TextColumn("Sổ Đoàn"),
-                        "Đoàn phí": st.column_config.TextColumn("Đoàn phí"),
-                        "Xếp loại Chi đoàn": st.column_config.TextColumn("Xếp loại"),
-                    }
-                )
-
-                # Nút tải danh sách
-                c_dl_sd, _ = st.columns([2, 3])
-                with c_dl_sd:
-                    csv_sd = df_sd_show.to_csv(index=False, encoding='utf-8-sig').encode('utf-8-sig')
-                    st.download_button(
-                        label="📥 Xuất Dữ Liệu Sổ Đoàn 21 Chi Đoàn (CSV/Excel)",
-                        data=csv_sd,
-                        file_name=f"so_doan_vien_21_chi_doan_{datetime.now().strftime('%Y%m%d')}.csv",
-                        mime="text/csv",
-                        key="btn_dl_sd_csv"
-                    )
-
-            # 2 KHỐI TÁC NGHIỆP ĐOÀN VIÊN: BỒI DƯỠNG CẢM TÌNH ĐOÀN & BÀN GIAO SỔ ĐOÀN
-            c_d_act1, c_d_act2 = st.columns(2)
-            with c_d_act1:
-                with st.expander("⭐ Giới Thiệu Thanh Niên Ưu Tú Học Cảm Tình Đoàn (Đợt 26/3)", expanded=False):
-                    c_tn1, c_tn2 = st.columns(2)
-                    with c_tn1:
-                        tn_ten = st.text_input("Họ và tên thanh niên ưu tú:", key="tn_ten_in")
-                        tn_lop = st.selectbox("Thuộc Chi đoàn:", ds_lop_all, key="tn_lop_in")
-                    with c_tn2:
-                        tn_hocluc = st.selectbox("Xếp loại học tập:", ["Tốt / Giỏi", "Khá"], key="tn_hl_in")
-                        tn_hanhkiem = st.selectbox("Xếp loại rèn luyện:", ["Tốt", "Khá"], key="tn_hk_in")
-                    tn_lydo = st.text_area("Thành tích & Lý do giới thiệu:", placeholder="Gương mẫu, tích cực tham gia văn nghệ thể thao, chấp hành nghiêm quy chế...", height=60, key="tn_lydo_in")
-
-                    if st.button("🌟 Xác Nhận Giới Thiệu Học Lớp Cảm Tình Đoàn", type="primary", use_container_width=True, key="btn_save_tnut"):
-                        if tn_ten.strip():
-                            st.success(f"🎉 Đã ghi nhận thanh niên ưu tú **{tn_ten}** ({tn_lop}) vào danh sách tham gia lớp Cảm tình Đoàn đợt 26/3 sắp tới!")
-                        else:
-                            st.warning("Vui lòng nhập Họ tên thanh niên ưu tú.")
-
-            with c_d_act2:
-                with st.expander("📥 Quản Lý Sổ Đoàn Viên & Bàn Giao Khi Ra Trường", expanded=False):
-                    st_html("""
-                    <div style="font-size:12.5px; line-height:1.6; color:#334155;">
-                        • <b>Sổ Đoàn viên:</b> 100% học sinh đã nộp sổ khi vào lớp 10, được lưu trữ niêm phong tại Văn phòng Đoàn.<br>
-                        • <b>Rút sổ chuyển sinh hoạt hè:</b> BCH Đoàn trường bàn giao giấy giới thiệu sinh hoạt hè về Đoàn cơ sở xã Bảo Hà theo kế hoạch Huyện Đoàn.<br>
-                        • <b>Rút sổ tốt nghiệp ra trường:</b> Bàn giao trực tiếp cho đoàn viên Khối 12 sau kỳ thi Tốt nghiệp THPT 2027.
-                    </div>
-                    """)
-                    st.button("📋 Kiểm Tra Niêm Phong Tủ Sổ Đoàn (21 Chi đoàn)", use_container_width=True, key="btn_check_so_doan")
+    with c_d_act2:
+        with st.expander("📥 Quản Lý Sổ Đoàn Viên & Bàn Giao Khi Ra Trường", expanded=False):
+            st_html("""
+            <div style="font-size:12.5px; line-height:1.6; color:#334155;">
+                • <b>Sổ Đoàn viên:</b> 100% học sinh đã nộp sổ khi vào lớp 10, được lưu trữ niêm phong tại Văn phòng Đoàn.<br>
+                • <b>Rút sổ chuyển sinh hoạt hè:</b> BCH Đoàn trường bàn giao giấy giới thiệu sinh hoạt hè về Đoàn cơ sở xã Bảo Hà theo kế hoạch Huyện Đoàn.<br>
+                • <b>Rút sổ tốt nghiệp ra trường:</b> Bàn giao trực tiếp cho đoàn viên Khối 12 sau kỳ thi Tốt nghiệp THPT 2027.
+            </div>
+            """)
+            st.button("📋 Kiểm Tra Niêm Phong Tủ Sổ Đoàn (21 Chi đoàn)", use_container_width=True, key="btn_check_so_doan_sec")
 
 # =============================================================================
 # 9. SECTION 6: BÁN TRÚ & KTX (6 THẺ TÁC NGHIỆP CHUẨN NGHĨA ĐÔ)
@@ -2119,14 +2151,10 @@ def render_cong_dieu_hanh_toan_dien(BASE_DIR, THU_MUC_NAM_HOC, nam_hoc_hien_tai,
     # KHỐI 5: KẾT QUẢ DẠY & HỌC (#day-va-hoc)
     render_section_day_va_hoc(BASE_DIR, THU_MUC_NAM_HOC, nam_hoc_hien_tai)
 
-    # KHỐI 6: NỀN NẾP – RÈN LUYỆN (#nen-nep-ren-luyen)
+    # KHỐI 6: NỀN NẾP – RÈN LUYỆN (Gồm 4 thư mục tác nghiệp: Bảng vàng, Chấm nề nếp 10 tiêu chí, 648 Xe QR, Sổ Đoàn)
     render_section_nen_nep(BASE_DIR, THU_MUC_NAM_HOC, nam_hoc_hien_tai, u_info=u_info)
 
-    # KHỐI 7: BÁN TRÚ & KTX (#ban-tru-ktx) - Đầy đủ 4 Tab tác nghiệp mở rộng tại chỗ
-    render_section_ban_tru(BASE_DIR, THU_MUC_NAM_HOC, nam_hoc_hien_tai, u_info=u_info)
-
-    # KHỐI 8: HỒ SƠ – ĐÁNH GIÁ (#ho-so-danh-gia)
-    render_section_ho_so_kpi(BASE_DIR, THU_MUC_NAM_HOC, nam_hoc_hien_tai)
+    # (Đã loại bỏ QUẢN LÝ BÁN TRÚ & KTX TOÀN DIỆN và TÀI LIỆU, HỒ SƠ ĐIỆN TỬ & ĐÁNH GIÁ KPI theo yêu cầu của Thầy)
 
     # KHỐI 9: TIỆN ÍCH GIÁO DỤC SỐ (#tien-ich-so)
     render_section_tien_ich_so()
