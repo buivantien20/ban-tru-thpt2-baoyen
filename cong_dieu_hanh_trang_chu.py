@@ -300,9 +300,10 @@ def render_sticky_nav_bar(active_id=None):
                     <span>CÔNG VIỆC CẦN HOÀN THÀNH ▾</span>
                 </a>
                 <div class="shortcut-submenu">
-                    <a href="?kenh=2#cong-viec" target="_self">📋 Sổ việc & Phân công nhiệm vụ</a>
-                    <a href="?kenh=2#cong-viec-qua-han" target="_self">🔴 Việc quá hạn & Việc hôm nay</a>
-                    <a href="?kenh=2#cong-viec-sap-den-han" target="_self">🟡 Việc sắp đến hạn tuần này</a>
+                    <a href="?kenh=2#bang-tien-do-nhiem-vu" target="_self">📊 Bảng chỉ huy & Tiến độ nhiệm vụ</a>
+                    <a href="?kenh=2#giao-nhiem-vu-moi" target="_self">➕ Giao việc & Phân công nhiệm vụ mới</a>
+                    <a href="?kenh=2#viec-khan-cap-tien-do" target="_self">🚨 Việc khẩn cấp, quá hạn & Báo cáo tiến độ</a>
+                    <a href="?kenh=2#so-theo-doi-to-kpi" target="_self">📁 Sổ theo dõi theo Tổ & Đánh giá KPI</a>
                 </div>
             </div>
 
@@ -548,14 +549,29 @@ def render_kpi_tong_quan_trang_chu(BASE_DIR, THU_MUC_NAM_HOC, nam_hoc_hien_tai):
     </div>
     """)
 
-def render_section_cong_viec(BASE_DIR, THU_MUC_NAM_HOC, nam_hoc_hien_tai):
-    """Khối Quản lý nhiệm vụ, việc quá hạn, việc hôm nay và sắp đến hạn"""
+def render_section_cong_viec(BASE_DIR, THU_MUC_NAM_HOC, nam_hoc_hien_tai, u_info=None):
+    """
+    KÊNH 2: CÔNG VIỆC CẦN HOÀN THÀNH (QUẢN TRỊ VÀ ĐIỀU HÀNH NHIỆM VỤ SỐ)
+    Gồm 4 Thư mục tác nghiệp chuẩn hóa:
+    1. 📊 Bảng chỉ huy & Tiến độ nhiệm vụ toàn trường (#bang-tien-do-nhiem-vu)
+    2. ➕ Giao việc & Phân công nhiệm vụ mới kèm tài liệu đính kèm (#giao-nhiem-vu-moi)
+    3. 🚨 Việc khẩn cấp, quá hạn & Cập nhật tiến độ trực tuyến (#viec-khan-cap-tien-do)
+    4. 📁 Sổ theo dõi theo Tổ & Đánh giá mức độ hoàn thành KPI (#so-theo-doi-to-kpi)
+    """
     folder_nam = nam_hoc_hien_tai.replace(" ", "")
     dir_nam = os.path.join(THU_MUC_NAM_HOC, folder_nam) if os.path.exists(THU_MUC_NAM_HOC) else BASE_DIR
     f_tasks = os.path.join(dir_nam, "nhiem_vu_nha_truong.csv")
     if not os.path.exists(f_tasks):
         f_tasks = os.path.join(BASE_DIR, "nhiem_vu_nha_truong.csv")
 
+    dir_tep = os.path.join(BASE_DIR, "tep_dinh_kem_nhiem_vu")
+    os.makedirs(dir_tep, exist_ok=True)
+
+    u_curr = u_info if isinstance(u_info, dict) else st.session_state.get("user_login", {})
+    fullname_curr = u_curr.get("fullname", "Cán bộ quản lý")
+    role_curr = u_curr.get("role", "")
+
+    # Đọc dữ liệu nhiệm vụ
     df_tasks = pd.DataFrame()
     if os.path.exists(f_tasks):
         try:
@@ -563,85 +579,356 @@ def render_section_cong_viec(BASE_DIR, THU_MUC_NAM_HOC, nam_hoc_hien_tai):
         except Exception:
             pass
 
-    tong_nv = len(df_tasks) if not df_tasks.empty else 6
-    nv_done = len(df_tasks[df_tasks['Trạng thái'].str.contains('hoàn thành|xong', case=False, na=False)]) if not df_tasks.empty else 4
-    nv_doing = tong_nv - nv_done
-    ty_le_done = int((nv_done / tong_nv) * 100) if tong_nv > 0 else 67
+    # Đảm bảo đầy đủ các cột bắt buộc tránh lỗi nếu đọc từ file cũ
+    required_cols = [
+        ("Mã NV", ""),
+        ("Tên công việc", ""),
+        ("Người chủ trì", ""),
+        ("Người thực hiện", ""),
+        ("Hạn hoàn thành", ""),
+        ("Mức độ", "Bình thường"),
+        ("Phân loại", "Khác"),
+        ("Trạng thái", "Chưa làm"),
+        ("Tiến độ (%)", 0),
+        ("Tệp đính kèm", ""),
+        ("Link tài liệu", ""),
+        ("Ghi chú", "")
+    ]
+    if not df_tasks.empty:
+        for col_name, def_val in required_cols:
+            if col_name not in df_tasks.columns:
+                df_tasks[col_name] = def_val
+    else:
+        df_tasks = pd.DataFrame(columns=[c[0] for c in required_cols])
 
+    tong_nv = len(df_tasks) if not df_tasks.empty else 0
+    nv_done = len(df_tasks[df_tasks['Trạng thái'].astype(str).str.contains('hoàn thành|xong|done', case=False, na=False)]) if not df_tasks.empty else 0
+    nv_doing = len(df_tasks[df_tasks['Trạng thái'].astype(str).str.contains('đang làm|tiến hành', case=False, na=False)]) if not df_tasks.empty else 0
+    nv_todo = tong_nv - nv_done - nv_doing
+    nv_khan_cap = len(df_tasks[df_tasks['Mức độ'].astype(str).str.contains('khẩn cấp|hỏa tốc', case=False, na=False)]) if not df_tasks.empty else 0
+    ty_le_done = int((nv_done / tong_nv) * 100) if tong_nv > 0 else 0
+
+    # =========================================================================
+    # THƯ MỤC 1: 📊 BẢNG CHỈ HUY & TIẾN ĐỘ NHIỆM VỤ TOÀN TRƯỜNG (#bang-tien-do-nhiem-vu)
+    # =========================================================================
     st_html("""
-    <div id="cong-viec" class="section-banner-title">
-        <h3><span>📋</span> CÔNG VIỆC CẦN HOÀN THÀNH</h3>
-        <span class="section-banner-subtitle">Cập nhật tự động từ Sổ công việc nhà trường</span>
+    <div id="cong-viec"></div>
+    <div id="bang-tien-do-nhiem-vu" class="section-banner-title">
+        <h3><span>📊</span> BẢNG CHỈ HUY & TIẾN ĐỘ NHIỆM VỤ TOÀN TRƯỜNG</h3>
+        <span class="section-banner-subtitle">Hệ Thống Quản Trị Phân Công Công Việc · Giám Sát Tiến Độ Thời Gian Thực 24/7</span>
     </div>
     """)
 
-    c_kpi1, c_kpi2, c_kpi3, c_kpi4 = st.columns([1, 1, 1, 1.3])
-    with c_kpi1:
-        st_html("""
-        <div style="background:white; border-left:4px solid #DC2626; border-radius:10px; padding:12px 14px; box-shadow:0 2px 6px rgba(0,0,0,0.03); border:1px solid #E2E8F0; border-left:4px solid #DC2626;">
-            <div style="font-size:11px; font-weight:700; color:#64748B; text-transform:uppercase;">VIỆC QUÁ HẠN</div>
-            <div style="font-size:24px; font-weight:900; color:#DC2626; margin:4px 0;">0 <span style="font-size:12px; font-weight:600; color:#64748B;">nhiệm vụ</span></div>
-            <div style="font-size:11px; color:#16A34A; font-weight:600;">🟢 Không có việc tồn đọng</div>
-        </div>
-        """)
-    with c_kpi2:
-        st_html("""
-        <div style="background:white; border-radius:10px; padding:12px 14px; box-shadow:0 2px 6px rgba(0,0,0,0.03); border:1px solid #E2E8F0; border-left:4px solid #F59E0B;">
-            <div style="font-size:11px; font-weight:700; color:#64748B; text-transform:uppercase;">HÔM NAY</div>
-            <div style="font-size:24px; font-weight:900; color:#D97706; margin:4px 0;">2 <span style="font-size:12px; font-weight:600; color:#64748B;">nhiệm vụ</span></div>
-            <div style="font-size:11px; color:#64748B;">Đang thực hiện trong ngày</div>
-        </div>
-        """)
-    with c_kpi3:
-        st_html(f"""
-        <div style="background:white; border-radius:10px; padding:12px 14px; box-shadow:0 2px 6px rgba(0,0,0,0.03); border:1px solid #E2E8F0; border-left:4px solid #0D5C75;">
-            <div style="font-size:11px; font-weight:700; color:#64748B; text-transform:uppercase;">SẮP ĐẾN HẠN</div>
-            <div style="font-size:24px; font-weight:900; color:#0D5C75; margin:4px 0;">{nv_doing} <span style="font-size:12px; font-weight:600; color:#64748B;">nhiệm vụ</span></div>
-            <div style="font-size:11px; color:#0D5C75; font-weight:600;">Hạn chót cuối tuần này</div>
-        </div>
-        """)
-    with c_kpi4:
-        st_html(f"""
-        <div style="background:#F0FDFA; border-radius:10px; padding:12px 16px; border:1px solid #CCFBF1; display:flex; justify-content:space-between; align-items:center;">
-            <div>
-                <div style="font-size:11px; font-weight:700; color:#0F766E; text-transform:uppercase;">TIẾN ĐỘ CHUNG</div>
-                <div style="font-size:20px; font-weight:900; color:#0D5C75; margin:2px 0;">{nv_done}/{tong_nv} <span style="font-size:12px; font-weight:600; color:#64748B;">hoàn thành</span></div>
-                <div style="font-size:11px; color:#0F766E;">Đạt <b>{ty_le_done}%</b> khối lượng giao</div>
-            </div>
-            <div style="width:52px; height:52px; border-radius:50%; background:conic-gradient(#0D5C75 {ty_le_done}%, #E2E8F0 0); display:flex; align-items:center; justify-content:center;">
-                <div style="width:40px; height:40px; border-radius:50%; background:white; display:flex; align-items:center; justify-content:center; font-size:11.5px; font-weight:800; color:#0D5C75;">
-                    {ty_le_done}%
-                </div>
-            </div>
-        </div>
-        """)
+    # 4 Thẻ chỉ số tổng quan
+    c_k1, c_k2, c_k3, c_k4 = st.columns(4)
+    c_k1.metric("📋 Tổng Số Nhiệm Vụ", f"{tong_nv} Việc", "Toàn trường 2026-2027")
+    c_k2.metric("🚨 Việc Khẩn Cấp (Hỏa tốc)", f"{nv_khan_cap} Việc", "Cần xử lý gấp" if nv_khan_cap > 0 else "Ổn định")
+    c_k3.metric("⚡ Đang Triển Khai", f"{nv_doing} Việc", "Đúng kế hoạch")
+    c_k4.metric("🟢 Đã Hoàn Thành", f"{nv_done}/{tong_nv} Việc", f"Đạt {ty_le_done}% chỉ tiêu")
 
-    # Hai cột việc: Việc quá hạn & Việc hôm nay/sắp đến hạn
-    c_list1, c_list2 = st.columns([1, 1.2])
-    with c_list1:
-        st_html("""
-        <div id="cong-viec-qua-han" style="background:#FEF2F2; border:1px solid #FECACA; border-radius:10px; padding:12px 14px; margin-top:12px;">
-            <div style="font-size:12.5px; font-weight:800; color:#991B1B; margin-bottom:6px; display:flex; align-items:center; gap:6px;">
-                <span>🔴</span> VIỆC QUÁ HẠN (0 NHIỆM VỤ)
-            </div>
-            <div style="font-size:12px; color:#6B7280; font-style:italic; padding:8px 0;">
-                🎉 Tuyệt vời! Hiện tại không có nhiệm vụ nào bị quá hạn. Toàn trường đang đảm bảo đúng tiến độ.
-            </div>
-        </div>
-        """)
-    with c_list2:
-        st_html(f"""
-        <div id="cong-viec-sap-den-han" style="background:#FFFBEB; border:1px solid #FDE68A; border-radius:10px; padding:12px 14px; margin-top:12px;">
-            <div style="font-size:12.5px; font-weight:800; color:#92400E; margin-bottom:8px; display:flex; align-items:center; gap:6px;">
-                <span>🟡</span> VIỆC HÔM NAY VÀ SẮP ĐẾN HẠN ({nv_doing} NHIỆM VỤ)
-            </div>
-            <div style="font-size:12px; line-height:1.6; color:#1E293B;">
-                • <b>Kiểm tra nề nếp KTX & phòng ở 5S:</b> Ban Quản nhiệm KTX (Hôm nay 21h30)<br>
-                • <b>Tổng hợp báo cáo sĩ số 21 lớp:</b> Văn phòng & Đội cờ đỏ (Hằng ngày 07h15 & 13h45)<br>
-                • <b>Cập nhật tiến độ dạy học tuần 12:</b> Các tổ chuyên môn (Hạn chót Thứ Bảy)
-            </div>
-        </div>
-        """)
+    # Bộ lọc danh sách nhiệm vụ
+    st.markdown("##### 🔍 Bộ Lọc & Tìm Kiếm Nhiệm Vụ")
+    c_fl_a, c_fl_b, c_fl_c, c_fl_d = st.columns([1.2, 1.2, 1, 2])
+    with c_fl_a:
+        ds_linhvuc = ["Tất cả lĩnh vực", "Bán trú & KTX", "Chuyên môn & Dạy học", "Đoàn Thanh niên", "An toàn giao thông", "Tài chính & Kế toán", "Khác"]
+        fl_linhvuc = st.selectbox("Lĩnh vực:", ds_linhvuc, key="fl_nv_linhvuc")
+    with c_fl_b:
+        fl_mucdo = st.selectbox("Mức độ ưu tiên:", ["Tất cả mức độ", "Khẩn cấp", "Ưu tiên cao", "Bình thường"], key="fl_nv_mucdo")
+    with c_fl_c:
+        fl_trangthai = st.selectbox("Trạng thái:", ["Tất cả trạng thái", "Chưa làm", "Đang làm", "Đã hoàn thành"], key="fl_nv_trangthai")
+    with c_fl_d:
+        fl_search = st.text_input("Nhập tên công việc, người thực hiện hoặc mã NV:", "", key="fl_nv_search")
+
+    df_filtered = df_tasks.copy() if not df_tasks.empty else pd.DataFrame()
+    if not df_filtered.empty:
+        if fl_linhvuc != "Tất cả lĩnh vực":
+            df_filtered = df_filtered[df_filtered["Phân loại"].astype(str).str.contains(fl_linhvuc, case=False, na=False)]
+        if fl_mucdo != "Tất cả mức độ":
+            df_filtered = df_filtered[df_filtered["Mức độ"].astype(str).str.contains(fl_mucdo, case=False, na=False)]
+        if fl_trangthai != "Tất cả trạng thái":
+            df_filtered = df_filtered[df_filtered["Trạng thái"].astype(str).str.contains(fl_trangthai, case=False, na=False)]
+        if fl_search.strip():
+            kw = fl_search.strip().lower()
+            cond = (
+                df_filtered["Tên công việc"].astype(str).str.lower().str.contains(kw) |
+                df_filtered["Người thực hiện"].astype(str).str.lower().str.contains(kw) |
+                df_filtered["Mã NV"].astype(str).str.lower().str.contains(kw) |
+                df_filtered["Người chủ trì"].astype(str).str.lower().str.contains(kw)
+            )
+            df_filtered = df_filtered[cond]
+
+    # Hiển thị bảng công việc chi tiết
+    if not df_filtered.empty:
+        st.dataframe(
+            df_filtered,
+            use_container_width=True,
+            height=300,
+            column_config={
+                "Mã NV": st.column_config.TextColumn("Mã", width="small"),
+                "Tên công việc": st.column_config.TextColumn("Tên công việc", width="large"),
+                "Người thực hiện": st.column_config.TextColumn("Người / Bộ phận thực hiện", width="medium"),
+                "Hạn hoàn thành": st.column_config.TextColumn("Hạn chót"),
+                "Mức độ": st.column_config.TextColumn("Mức độ"),
+                "Trạng thái": st.column_config.TextColumn("Trạng thái"),
+                "Tiến độ (%)": st.column_config.ProgressColumn("Tiến độ", format="%d%%", min_value=0, max_value=100),
+                "Tệp đính kèm": st.column_config.TextColumn("Tệp đính kèm"),
+                "Link tài liệu": st.column_config.LinkColumn("Link Drive"),
+            }
+        )
+
+        # Khu vực Tải nhanh tệp đính kèm của các việc có file
+        if "Tệp đính kèm" in df_filtered.columns:
+            tasks_with_files = df_filtered[df_filtered["Tệp đính kèm"].astype(str).str.strip() != ""]
+        else:
+            tasks_with_files = pd.DataFrame()
+        if not tasks_with_files.empty:
+            st.markdown("##### 📎 Tài Liệu Đính Kèm Của Các Nhiệm Vụ (Bấm Để Tải Về Mở Ngay)")
+            cols_files = st.columns(min(3, len(tasks_with_files)))
+            c_idx = 0
+            for _, r_file in tasks_with_files.head(6).iterrows():
+                fn_val = str(r_file.get("Tệp đính kèm", "")).strip()
+                ma_val = r_file.get("Mã NV", "")
+                ten_val = r_file.get("Tên công việc", "")[:35]
+                fp_val = os.path.join(dir_tep, fn_val)
+                with cols_files[c_idx % len(cols_files)]:
+                    if os.path.exists(fp_val):
+                        with open(fp_val, "rb") as f_down:
+                            st.download_button(
+                                label=f"📥 [{ma_val}] {fn_val}",
+                                data=f_down.read(),
+                                file_name=fn_val,
+                                key=f"down_btn_{ma_val}_{fn_val}"
+                            )
+                            st.caption(f"Việc: {ten_val}...")
+                    else:
+                        st.info(f"📄 [{ma_val}] {fn_val}")
+                c_idx += 1
+
+        # Nút xuất bảng nhiệm vụ
+        c_dl_nv, _ = st.columns([2, 3])
+        with c_dl_nv:
+            csv_nv = df_filtered.to_csv(index=False, encoding='utf-8-sig').encode('utf-8-sig')
+            st.download_button(
+                label="📥 Xuất Toàn Bộ Sổ Công Việc (Excel / CSV)",
+                data=csv_nv,
+                file_name=f"so_nhiem_vu_nha_truong_{datetime.now().strftime('%Y%m%d')}.csv",
+                mime="text/csv",
+                key="btn_dl_so_nv_csv"
+            )
+    else:
+        st.info("Không tìm thấy công việc nào phù hợp với bộ lọc.")
+
+    # =========================================================================
+    # THƯ MỤC 2: ➕ GIAO VIỆC & PHÂN CÔNG NHIỆM VỤ MỚI (#giao-nhiem-vu-moi)
+    # =========================================================================
+    st.markdown("<div style='margin-top: 32px;'></div>", unsafe_allow_html=True)
+    st_html("""
+    <div id="giao-nhiem-vu-moi" class="section-banner-title">
+        <h3><span>➕</span> GIAO VIỆC & PHÂN CÔNG NHIỆM VỤ MỚI</h3>
+        <span class="section-banner-subtitle">Dành Cho Ban Giám Hiệu & Tổ Trưởng Chuyên Môn · Hỗ Trợ Đính Kèm File & Link Drive</span>
+    </div>
+    """)
+
+    with st.expander("📝 Biểu Mẫu Giao Nhiệm Vụ Điện Tử (Mở rộng để phân công)", expanded=True):
+        c_gv1, c_gv2 = st.columns(2)
+        with c_gv1:
+            ten_nv_moi = st.text_input("Tên nhiệm vụ / Công việc cần làm (*):", placeholder="Ví dụ: Nộp báo cáo chuyên môn giữa kỳ I...", key="in_nv_ten")
+            linh_vuc_moi = st.selectbox("Lĩnh vực / Phân loại:", [
+                "Chuyên môn & Dạy học", "Bán trú & KTX", "Đoàn Thanh niên", 
+                "An toàn giao thông", "Cơ sở vật chất & Thiết bị", "Tài chính & Kế toán", "Báo cáo Sở GD&ĐT", "Khác"
+            ], key="in_nv_linhvuc")
+            chu_tri_moi = st.selectbox("Người chủ trì:", [
+                "Hiệu trưởng", "Phó Hiệu trưởng CM", "Phó Hiệu trưởng PT Bán trú", 
+                "Chủ tịch Công đoàn", "Bí Thư Đoàn Trường", "Tổ trưởng Chuyên môn", f"{fullname_curr}"
+            ], key="in_nv_chutri")
+
+        with c_gv2:
+            ds_nguoi_thuc_hien = [
+                "Tổ Tự nhiên & Tổ Xã hội", "Tổ Bán trú & Kế toán", "Đội Cờ đỏ Khối 12", 
+                "Toàn thể Giáo viên bộ môn (42 GV)", "Giáo viên chủ nhiệm 21 Chi đoàn", 
+                "Giáo viên trực KTX & Y tế", "Tổ Văn phòng & Kế toán", "Đội Xung kích ATGT & Bảo vệ"
+            ]
+            thuc_hien_moi = st.selectbox("Người / Bộ phận thực hiện (*):", ds_nguoi_thuc_hien, key="in_nv_thuchien")
+            
+            c_d_h1, c_d_h2 = st.columns(2)
+            with c_d_h1:
+                han_moi = st.date_input("Hạn hoàn thành:", datetime.now().date() + pd.Timedelta(days=5), key="in_nv_han")
+            with c_d_h2:
+                muc_do_moi = st.selectbox("Mức độ ưu tiên:", ["Bình thường", "Ưu tiên cao", "Khẩn cấp"], key="in_nv_mucdo")
+
+        ghi_chu_moi = st.text_area("Yêu cầu kết quả đầu ra & Hướng dẫn thực hiện:", placeholder="Nêu rõ sản phẩm đầu ra (Ví dụ: nộp file excel trước 17h, có xác nhận của tổ trưởng...)", height=65, key="in_nv_gc")
+
+        # 2 CÁCH ĐÍNH KÈM TÀI LIỆU (KHÔNG HỀ LÀM NẶNG PHẦN MỀM)
+        st.markdown("##### 📎 Đính Kèm Văn Bản Chỉ Đạo / Biểu Mẫu (Hỗ trợ 2 phương thức)")
+        c_att1, c_att2 = st.columns(2)
+        with c_att1:
+            uploaded_file = st.file_uploader("Cách 1: Tải lên file công văn / biểu mẫu (Word, Excel, PDF < 5MB):", type=['docx', 'doc', 'xlsx', 'xls', 'pdf', 'png', 'jpg'], key="in_nv_file")
+        with c_att2:
+            link_drive_moi = st.text_input("Cách 2: Hoặc dán đường Link Google Drive / OneDrive trường:", placeholder="https://drive.google.com/drive/folders/...", key="in_nv_link_drive")
+
+        if st.button("🚀 Giao Nhiệm Vụ & Lưu Vào Hệ Thống", type="primary", use_container_width=True, key="btn_save_nv_moi"):
+            if ten_nv_moi.strip():
+                # Tạo mã NV tự động
+                next_nv_id = f"NV-{len(df_tasks) + 1:03d}"
+                saved_filename = ""
+
+                # Lưu file nếu có upload
+                if uploaded_file is not None:
+                    safe_name = f"{next_nv_id}_{uploaded_file.name.replace(' ', '_')}"
+                    save_path = os.path.join(dir_tep, safe_name)
+                    with open(save_path, "wb") as f_out:
+                        f_out.write(uploaded_file.getbuffer())
+                    saved_filename = safe_name
+
+                row_nv_new = {
+                    "Mã NV": next_nv_id,
+                    "Tên công việc": ten_nv_moi.strip(),
+                    "Người chủ trì": chu_tri_moi,
+                    "Người thực hiện": thuc_hien_moi,
+                    "Hạn hoàn thành": han_moi.strftime("%Y-%m-%d"),
+                    "Mức độ": muc_do_moi,
+                    "Phân loại": linh_vuc_moi,
+                    "Trạng thái": "Chưa làm",
+                    "Tiến độ (%)": 0,
+                    "Tệp đính kèm": saved_filename,
+                    "Link tài liệu": link_drive_moi.strip(),
+                    "Ghi chú": ghi_chu_moi.strip()
+                }
+
+                df_add = pd.DataFrame([row_nv_new])
+                if os.path.exists(f_tasks):
+                    df_add.to_csv(f_tasks, mode='a', header=False, index=False, encoding='utf-8-sig')
+                else:
+                    df_add.to_csv(f_tasks, index=False, encoding='utf-8-sig')
+
+                st.success(f"🎉 Đã giao thành công nhiệm vụ **[{next_nv_id}] {ten_nv_moi}** cho **{thuc_hien_moi}** (Hạn: {han_moi.strftime('%d/%m/%Y')})!")
+                time.sleep(1)
+                st.rerun()
+            else:
+                st.warning("Vui lòng nhập Tên nhiệm vụ / công việc cần làm.")
+
+    # =========================================================================
+    # THƯ MỤC 3: 🚨 VIỆC KHẨN CẤP, QUÁ HẠN & BÁO CÁO TIẾN ĐỘ (#viec-khan-cap-tien-do)
+    # =========================================================================
+    st.markdown("<div style='margin-top: 32px;'></div>", unsafe_allow_html=True)
+    st_html("""
+    <div id="viec-khan-cap-tien-do" class="section-banner-title">
+        <h3><span>🚨</span> VIỆC KHẨN CẤP, QUÁ HẠN & BÁO CÁO TIẾN ĐỘ</h3>
+        <span class="section-banner-subtitle">Khu Vực Báo Cáo Tiến Độ Trực Tuyến Dành Cho Cán Bộ, Giáo Viên & Tổ Chuyên Môn</span>
+    </div>
+    """)
+
+    c_kc1, c_kc2 = st.columns([1, 1.2])
+    with c_kc1:
+        st.markdown("##### 🔴 Danh Sách Nhiệm Vụ Khẩn Cấp & Cần Xử Lý Ngay")
+        df_khan = df_tasks[df_tasks["Mức độ"].astype(str).str.contains("Khẩn cấp|Hỏa tốc", case=False, na=False)] if not df_tasks.empty else pd.DataFrame()
+        if not df_khan.empty:
+            for _, rk in df_khan.iterrows():
+                ma_k = rk.get("Mã NV", "")
+                ten_k = rk.get("Tên công việc", "")
+                th_k = rk.get("Người thực hiện", "")
+                han_k = rk.get("Hạn hoàn thành", "")
+                tt_k = rk.get("Trạng thái", "")
+                st_html(f"""
+                <div style="background:#FEF2F2; border-left:4px solid #DC2626; border-radius:8px; padding:10px 12px; margin-bottom:10px; border:1px solid #FECACA; border-left:4px solid #DC2626;">
+                    <div style="display:flex; justify-content:space-between; align-items:center;">
+                        <span style="background:#DC2626; color:white; font-size:10.5px; font-weight:800; padding:2px 6px; border-radius:4px;">{ma_k} · KHẨN CẤP</span>
+                        <span style="font-size:11px; font-weight:700; color:#991B1B;">⏰ Hạn: {han_k}</span>
+                    </div>
+                    <div style="font-size:13px; font-weight:800; color:#1E293B; margin:5px 0;">{ten_k}</div>
+                    <div style="font-size:11.5px; color:#64748B;">👤 <b>Người thực hiện:</b> {th_k} · <b>Trạng thái:</b> {tt_k}</div>
+                </div>
+                """)
+        else:
+            st.success("🟢 Tuyệt vời! Không có nhiệm vụ nào ở mức độ Khẩn cấp cần giải quyết gấp.")
+
+    with c_kc2:
+        st.markdown("##### 📝 Cập Nhật Tiến Độ & Báo Cáo Kết Quả Công Việc")
+        with st.expander("🔄 Mở form cập nhật tiến độ công việc của tôi", expanded=True):
+            if not df_tasks.empty:
+                ds_nv_capnhat = [f"{r.get('Mã NV', '')} - {r.get('Tên công việc', '')} ({r.get('Người thực hiện', '')})" for _, r in df_tasks.iterrows()]
+                sel_nv_update = st.selectbox("Chọn công việc cần báo cáo tiến độ:", ds_nv_capnhat, key="sel_nv_up_box")
+                
+                parts_nv = sel_nv_update.split(" - ")
+                ma_selected = parts_nv[0].strip() if len(parts_nv) > 0 else ""
+
+                c_up1, c_up2 = st.columns(2)
+                with c_up1:
+                    new_progress = st.slider("Cập nhật tiến độ hoàn thành (%):", min_value=0, max_value=100, value=80, step=5, key="nv_prog_slider")
+                with c_up2:
+                    new_status = st.selectbox("Cập nhật trạng thái:", ["Đang làm", "Đã hoàn thành", "Chưa làm"], key="nv_stat_sel")
+
+                ghi_chu_kq = st.text_area("Báo cáo kết quả đạt được & Nội dung đã làm:", placeholder="Ví dụ: Đã rà soát xong 196 hồ sơ, đã nộp biểu mẫu về kế toán...", height=60, key="nv_gc_up")
+                link_minh_chung = st.text_input("Link tài liệu minh chứng / file sản phẩm (Google Drive/Link):", placeholder="https://...", key="nv_link_mc")
+
+                if st.button("💾 Cập Nhật Tiến Độ & Ghi Nhận Kết Quả", type="primary", use_container_width=True, key="btn_save_up_nv"):
+                    # Cập nhật vào df_tasks
+                    idx_match = df_tasks[df_tasks["Mã NV"] == ma_selected].index
+                    if not idx_match.empty:
+                        df_tasks.loc[idx_match, "Tiến độ (%)"] = new_progress
+                        df_tasks.loc[idx_match, "Trạng thái"] = new_status
+                        if ghi_chu_kq.strip():
+                            old_gc = str(df_tasks.loc[idx_match, "Ghi chú"].values[0])
+                            df_tasks.loc[idx_match, "Ghi chú"] = f"{old_gc} | Báo cáo: {ghi_chu_kq.strip()}"
+                        if link_minh_chung.strip():
+                            df_tasks.loc[idx_match, "Link tài liệu"] = link_minh_chung.strip()
+
+                        df_tasks.to_csv(f_tasks, index=False, encoding='utf-8-sig')
+                        st.success(f"🎉 Đã cập nhật thành công tiến độ nhiệm vụ **[{ma_selected}]**: **{new_progress}% ({new_status})**!")
+                        time.sleep(1)
+                        st.rerun()
+            else:
+                st.info("Chưa có nhiệm vụ nào trong hệ thống để cập nhật.")
+
+    # =========================================================================
+    # THƯ MỤC 4: 📁 SỔ THEO DÕI THEO TỔ & ĐÁNH GIÁ KPI (#so-theo-doi-to-kpi)
+    # =========================================================================
+    st.markdown("<div style='margin-top: 32px;'></div>", unsafe_allow_html=True)
+    st_html("""
+    <div id="so-theo-doi-to-kpi" class="section-banner-title">
+        <h3><span>📁</span> SỔ THEO DÕI THEO TỔ & ĐÁNH GIÁ MỨC ĐỘ HOÀN THÀNH (KPI)</h3>
+        <span class="section-banner-subtitle">Bảng Tổng Hợp Đánh Giá Khối Lượng & Hiệu Quả Công Việc Của Các Bộ Phận</span>
+    </div>
+    """)
+
+    # Thống kê việc theo từng tổ
+    ds_to = ["Bán trú & KTX", "Tự nhiên", "Xã hội", "Đoàn", "Kế toán", "Giáo viên"]
+    stats_to = []
+    if not df_tasks.empty:
+        for to_name in ["Bán trú & KTX", "Tổ Tự nhiên & Tổ Xã hội", "Đoàn Thanh niên", "Kế toán", "Giáo viên"]:
+            sub_df = df_tasks[df_tasks["Người thực hiện"].astype(str).str.contains(to_name[:6], case=False, na=False)]
+            s_tong = len(sub_df)
+            s_xong = len(sub_df[sub_df["Trạng thái"].astype(str).str.contains("hoàn thành|xong", case=False, na=False)])
+            s_tl = int((s_xong / s_tong) * 100) if s_tong > 0 else 100
+            stats_to.append({"Bộ phận / Tổ": to_name, "Tổng việc giao": s_tong, "Đã hoàn thành": s_xong, "Tỷ lệ đúng hạn (%)": s_tl})
+    
+    if stats_to:
+        df_stats_to = pd.DataFrame(stats_to)
+        c_st1, c_st2 = st.columns([1.2, 1])
+        with c_st1:
+            st.markdown("##### 🏛️ Bảng Xếp Hạng Tiến Độ Công Việc Theo Các Tổ")
+            st.dataframe(
+                df_stats_to,
+                use_container_width=True,
+                height=220,
+                column_config={
+                    "Bộ phận / Tổ": st.column_config.TextColumn("Tổ / Bộ phận", width="medium"),
+                    "Tổng việc giao": st.column_config.NumberColumn("Việc giao"),
+                    "Đã hoàn thành": st.column_config.NumberColumn("Đã xong"),
+                    "Tỷ lệ đúng hạn (%)": st.column_config.ProgressColumn("Hiệu suất", format="%d%%", min_value=0, max_value=100),
+                }
+            )
+        with c_st2:
+            st.markdown("##### 📜 Lịch Sử Nhiệm Vụ Đã Hoàn Thành (Học kỳ I)")
+            df_done_all = df_tasks[df_tasks["Trạng thái"].astype(str).str.contains("hoàn thành|xong", case=False, na=False)] if not df_tasks.empty else pd.DataFrame()
+            if not df_done_all.empty:
+                st.dataframe(
+                    df_done_all[["Mã NV", "Tên công việc", "Người thực hiện", "Hạn hoàn thành"]],
+                    use_container_width=True,
+                    height=220
+                )
+            else:
+                st.info("Chưa có nhiệm vụ nào hoàn tất lưu vào kho lịch sử.")
 
 # =============================================================================
 # 5. SECTION 2: LỊCH LÀM VIỆC (HÔM NAY & NGÀY MAI)
@@ -2284,7 +2571,7 @@ def render_cong_dieu_hanh_toan_dien(BASE_DIR, THU_MUC_NAM_HOC, nam_hoc_hien_tai,
 
     elif kenh_hien_tai == "2":
         # KÊNH 2: CÔNG VIỆC CẦN HOÀN THÀNH
-        render_section_cong_viec(BASE_DIR, THU_MUC_NAM_HOC, nam_hoc_hien_tai)
+        render_section_cong_viec(BASE_DIR, THU_MUC_NAM_HOC, nam_hoc_hien_tai, u_info=u_info)
 
     elif kenh_hien_tai == "3":
         # KÊNH 3: LỊCH LÀM VIỆC TUẦN
