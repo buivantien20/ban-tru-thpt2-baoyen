@@ -119,8 +119,11 @@ def render_top_brand_bar(nam_hoc="2026 - 2027", logo_data_uri="", is_logged_in=F
 # =============================================================================
 def render_sticky_nav_bar(active_id=None):
     """
-    Thanh điều hướng lối tắt 9 Kênh tác nghiệp nổi (Sticky Navigation Bar)
-    Liên kết trực tiếp URL (?kenh=1..9) và đồng bộ trạng thái kênh đang hoạt động.
+    Thanh điều hướng 9 Kênh tác nghiệp nổi (Sticky Navigation Bar)
+    Chuẩn phong cách Cổng điều hành Nghĩa Đô:
+    - Ghim sát mép trên cùng tuyệt đối (top: 0), không hở khoảng trống khi cuộn.
+    - Thanh ngang phẳng, border-top 3.5px #087b82, viền dưới #c9dfdb.
+    - Tab active hiển thị dải màu nền #edf6f3 và thanh kẻ dưới chân inset 0 -3px #087b82.
     """
     if active_id is None:
         k_qp = str(st.query_params.get("kenh", "1")).strip().lower()
@@ -148,223 +151,243 @@ def render_sticky_nav_bar(active_id=None):
         active_str = str(active_id).strip()
 
     def get_cls(k_num):
-        return "portal-nav-link active" if active_str == str(k_num) else "portal-nav-link"
+        return "active" if active_str == str(k_num) else ""
 
     nav_html = f"""
     <style>
-    /* Cuộn trang mượt mà không giật lag */
-    html {{
-        scroll-behavior: smooth !important;
+    /* 1. Ẩn khoảng trống header mặc định của Streamlit để thanh nav dính sát mép trên */
+    header[data-testid="stHeader"] {{
+        background: transparent !important;
+        height: 0 !important;
+        min-height: 0 !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        z-index: 100 !important;
+        overflow: visible !important;
     }}
     div[data-testid="stMainBlockContainer"] {{
+        padding-top: 0.5rem !important;
+        padding-left: 1.25rem !important;
+        padding-right: 1.25rem !important;
         scroll-behavior: smooth !important;
     }}
+    html {{
+        scroll-behavior: smooth !important;
+        scroll-padding-top: 55px !important;
+    }}
     .section-banner-title {{
-        scroll-margin-top: 85px !important;
+        scroll-margin-top: 55px !important;
     }}
-    /* Ghim cố định thanh portal-nav-bar ở đỉnh cuộn của Streamlit */
-    div[data-testid="stVerticalBlock"] > div:has(.portal-nav-bar),
-    div[data-testid="stMarkdownContainer"]:has(.portal-nav-bar),
-    .element-container:has(.portal-nav-bar) {{
+
+    /* 2. Ghim dính sát mép trên cùng tuyệt đối khi cuộn (Top: 0px) */
+    div[data-testid="stVerticalBlock"] > div:has(.portal-shortcuts),
+    div[data-testid="stMarkdownContainer"]:has(.portal-shortcuts),
+    .element-container:has(.portal-shortcuts) {{
         position: sticky !important;
-        top: 2.875rem !important;
-        z-index: 999 !important;
+        top: 0px !important;
+        z-index: 9999 !important;
         background: transparent !important;
+        margin: 0 !important;
+        padding: 0 !important;
     }}
-    .portal-nav-bar {{
+    .portal-shortcuts {{
         position: sticky !important;
-        top: 2.875rem !important;
-        z-index: 999 !important;
-        background: rgba(255, 255, 255, 0.98) !important;
-        backdrop-filter: blur(12px) !important;
-        -webkit-backdrop-filter: blur(12px) !important;
-        border: 1px solid #CBD5E1 !important;
-        border-radius: 12px !important;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08) !important;
-        padding: 6px 12px !important;
-        margin: 8px 0 16px 0 !important;
+        top: 0px !important;
+        z-index: 9999 !important;
+        margin: 0 0 16px 0 !important;
+        padding: 0 8px !important;
+        border: 1px solid #c9dfdb !important;
+        border-top: 3.5px solid #087b82 !important;
+        border-radius: 0 0 8px 8px !important;
+        background: #ffffff !important;
+        box-shadow: 0 5px 16px rgba(23, 76, 76, 0.1) !important;
+    }}
+    .shortcut-links {{
+        display: flex !important;
+        flex-wrap: nowrap !important;
+        justify-content: space-between !important;
+        align-items: stretch !important;
+        gap: 0 !important;
+        width: 100% !important;
+        overflow-x: auto !important;
+        white-space: nowrap !important;
+    }}
+    .shortcut-group {{
+        position: relative !important;
+        flex: 0 1 auto !important;
+        min-width: 0 !important;
+    }}
+    .shortcut-parent, .shortcut-home {{
         display: flex !important;
         align-items: center !important;
-        justify-content: flex-start !important;
+        justify-content: center !important;
         gap: 5px !important;
-        flex-wrap: wrap !important;
+        white-space: nowrap !important;
+        min-height: 44px !important;
+        padding: 0 10px !important;
+        font-size: 11px !important;
+        font-weight: 700 !important;
+        text-transform: uppercase !important;
+        letter-spacing: 0.2px !important;
+        text-decoration: none !important;
+        color: #244d50 !important;
+        box-sizing: border-box !important;
+        transition: all 0.15s ease !important;
+        cursor: pointer !important;
     }}
-    .portal-nav-item {{
-        position: relative;
-        display: inline-block;
+    .shortcut-parent:hover,
+    .shortcut-home:hover,
+    .shortcut-group:hover > .shortcut-parent,
+    .shortcut-parent.active,
+    .shortcut-home.active {{
+        color: #087b82 !important;
+        background: #edf6f3 !important;
+        box-shadow: inset 0 -3px #087b82 !important;
     }}
-    .portal-nav-link {{
-        display: inline-flex;
-        align-items: center;
-        gap: 4px;
-        padding: 6px 10px;
-        border-radius: 8px;
-        text-decoration: none;
-        color: #1E293B;
-        font-size: 11.5px;
-        font-weight: 700;
-        text-transform: uppercase;
-        letter-spacing: 0.3px;
-        transition: all 0.2s ease;
-        border: 1px solid transparent;
-        cursor: pointer;
+    .shortcut-submenu {{
+        display: none !important;
+        position: absolute !important;
+        top: 100% !important;
+        left: 0 !important;
+        min-width: 260px !important;
+        padding: 6px !important;
+        background: #ffffff !important;
+        border: 1px solid #c9dfdb !important;
+        box-shadow: 0 8px 24px rgba(18, 61, 60, 0.16) !important;
+        border-radius: 0 0 8px 8px !important;
+        z-index: 10000 !important;
     }}
-    .portal-nav-link:hover {{
-        background: #F1F5F9;
-        color: #0D5C75;
-        border-color: #CBD5E1;
+    .shortcut-group:hover > .shortcut-submenu {{
+        display: block !important;
     }}
-    .portal-nav-link.active {{
-        background: #0D5C75;
-        color: #FFFFFF !important;
-        border-color: #0D5C75;
-        box-shadow: 0 2px 6px rgba(13, 92, 117, 0.25);
+    .shortcut-submenu a {{
+        display: flex !important;
+        align-items: center !important;
+        gap: 8px !important;
+        justify-content: flex-start !important;
+        white-space: normal !important;
+        text-align: left !important;
+        margin: 2px 0 !important;
+        padding: 8px 12px !important;
+        border-radius: 5px !important;
+        font-size: 11.5px !important;
+        font-weight: 600 !important;
+        color: #334155 !important;
+        text-decoration: none !important;
+        transition: background 0.15s ease !important;
     }}
-    .portal-nav-dropdown {{
-        display: none;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        min-width: 250px;
-        background: #FFFFFF;
-        border: 1px solid #CBD5E1;
-        border-radius: 8px;
-        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
-        padding: 6px 0;
-        z-index: 1000;
-        margin-top: 4px;
+    .shortcut-submenu a:hover {{
+        background: #eaf3f1 !important;
+        color: #075e65 !important;
+        padding-left: 16px !important;
     }}
-    .portal-nav-item:hover .portal-nav-dropdown {{
-        display: block;
-    }}
-    .portal-nav-sublink {{
-        display: flex;
-        align-items: center;
-        gap: 8px;
-        padding: 8px 14px;
-        color: #334155;
-        text-decoration: none;
-        font-size: 12px;
-        font-weight: 600;
-        transition: background 0.15s ease;
-    }}
-    .portal-nav-sublink:hover {{
-        background: #F0FDFA;
-        color: #0D5C75;
-        padding-left: 18px;
-    }}
-    .section-banner-title {{
-        background: #0D5C75;
-        border-left: 5px solid #F59E0B;
-        color: white;
-        padding: 10px 16px;
-        border-radius: 8px;
-        margin: 28px 0 16px 0;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        box-shadow: 0 2px 6px rgba(13, 92, 117, 0.15);
-    }}
-    .section-banner-title h3 {{
-        margin: 0;
-        font-size: 15.5px;
-        font-weight: 800;
-        letter-spacing: 0.4px;
-        text-transform: uppercase;
-        display: flex;
-        align-items: center;
-        gap: 8px;
-    }}
-    .section-banner-subtitle {{
-        font-size: 11.5px;
-        color: #E2E8F0;
-        font-weight: 500;
+    .shortcut-group:last-of-type .shortcut-submenu {{
+        left: auto !important;
+        right: 0 !important;
     }}
     </style>
 
-    <div class="portal-nav-bar">
-        <div class="portal-nav-item">
-            <a href="#trang-chu" target="_self" class="{get_cls('1')}">🏠 TRANG CHỦ</a>
-        </div>
-        
-        <div class="portal-nav-item">
-            <a href="#cong-viec" target="_self" class="{get_cls('2')}">📋 CÔNG VIỆC ▾</a>
-            <div class="portal-nav-dropdown">
-                <a href="#cong-viec" target="_self" class="portal-nav-sublink">📋 Sổ việc & Phân công nhiệm vụ</a>
-                <a href="#cong-viec-qua-han" target="_self" class="portal-nav-sublink">🔴 Việc quá hạn & Việc hôm nay</a>
-                <a href="#cong-viec-sap-den-han" target="_self" class="portal-nav-sublink">🟡 Việc sắp đến hạn tuần này</a>
+    <nav class="portal-shortcuts" aria-label="Thanh 9 Kênh điều hành nội bộ">
+        <div class="shortcut-links">
+            <a href="#trang-chu" class="shortcut-home {get_cls('1')}">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-5v-8H9v8H4a1 1 0 0 1-1-1Z"/></svg>
+                <span>TRANG CHỦ</span>
+            </a>
+            
+            <div class="shortcut-group">
+                <a class="shortcut-parent {get_cls('2')}" href="#cong-viec">
+                    <span>CÔNG VIỆC CẦN HOÀN THÀNH ▾</span>
+                </a>
+                <div class="shortcut-submenu">
+                    <a href="#cong-viec">📋 Sổ việc & Phân công nhiệm vụ</a>
+                    <a href="#cong-viec-qua-han">🔴 Việc quá hạn & Việc hôm nay</a>
+                    <a href="#cong-viec-sap-den-han">🟡 Việc sắp đến hạn tuần này</a>
+                </div>
             </div>
-        </div>
 
-        <div class="portal-nav-item">
-            <a href="#lich-lam-viec" target="_self" class="{get_cls('3')}">📅 LỊCH LÀM VIỆC ▾</a>
-            <div class="portal-nav-dropdown">
-                <a href="#lich-lam-viec" target="_self" class="portal-nav-sublink">📅 Lịch làm việc tuần tập trung</a>
-                <a href="#lich-hom-nay" target="_self" class="portal-nav-sublink">🗓️ Lịch công tác hôm nay & ngày mai</a>
-                <a href="#lich-truc-tuan" target="_self" class="portal-nav-sublink">📌 Lịch trực tuần & Đi cơ sở vắng mặt</a>
+            <div class="shortcut-group">
+                <a class="shortcut-parent {get_cls('3')}" href="#lich-lam-viec">
+                    <span>LỊCH LÀM VIỆC ▾</span>
+                </a>
+                <div class="shortcut-submenu">
+                    <a href="#lich-lam-viec">📅 Lịch làm việc tuần tập trung</a>
+                    <a href="#lich-hom-nay">🗓️ Lịch công tác hôm nay & ngày mai</a>
+                    <a href="#lich-truc-tuan">📌 Lịch trực tuần & Đi cơ sở</a>
+                </div>
             </div>
-        </div>
 
-        <div class="portal-nav-item">
-            <a href="#theo-doi-hang-ngay" target="_self" class="{get_cls('4')}">📊 THEO DÕI HẰNG NGÀY ▾</a>
-            <div class="portal-nav-dropdown">
-                <a href="#theo-doi-hang-ngay" target="_self" class="portal-nav-sublink">👥 Báo sĩ số 21 lớp & Chuyên cần live</a>
-                <a href="#theo-doi-tien-do" target="_self" class="portal-nav-sublink">📚 Tiến độ chương trình 21 lớp</a>
-                <a href="#theo-doi-thiet-bi" target="_self" class="portal-nav-sublink">🔬 Sử dụng thiết bị & Phòng bộ môn</a>
+            <div class="shortcut-group">
+                <a class="shortcut-parent {get_cls('4')}" href="#theo-doi-hang-ngay">
+                    <span>THEO DÕI HẰNG NGÀY ▾</span>
+                </a>
+                <div class="shortcut-submenu">
+                    <a href="#theo-doi-hang-ngay">👥 Báo sĩ số 21 lớp & Chuyên cần live</a>
+                    <a href="#theo-doi-tien-do">📚 Tiến độ chương trình 21 lớp</a>
+                    <a href="#theo-doi-thiet-bi">🔬 Sử dụng thiết bị & Phòng bộ môn</a>
+                </div>
             </div>
-        </div>
 
-        <div class="portal-nav-item">
-            <a href="#day-va-hoc" target="_self" class="{get_cls('5')}">📈 DẠY & HỌC ▾</a>
-            <div class="portal-nav-dropdown">
-                <a href="#day-va-hoc" target="_self" class="portal-nav-sublink">✏️ Sổ đầu bài điện tử (SĐB)</a>
-                <a href="#tkb-21-lop" target="_self" class="portal-nav-sublink">🕒 Thời khóa biểu 21 lớp (TKB)</a>
-                <a href="#chat-luong-day-hoc" target="_self" class="portal-nav-sublink">📊 Phân tích chất lượng & Bồi dưỡng</a>
-                <a href="#danh-ba-929-hs" target="_self" class="portal-nav-sublink">👨‍🎓 Danh bạ 929 Học sinh & 42 CBGV</a>
+            <div class="shortcut-group">
+                <a class="shortcut-parent {get_cls('5')}" href="#day-va-hoc">
+                    <span>DẠY VÀ HỌC ▾</span>
+                </a>
+                <div class="shortcut-submenu">
+                    <a href="#day-va-hoc">✏️ Sổ đầu bài điện tử (SĐB)</a>
+                    <a href="#tkb-21-lop">🕒 Thời khóa biểu 21 lớp (TKB)</a>
+                    <a href="#chat-luong-day-hoc">📊 Phân tích chất lượng & Bồi dưỡng</a>
+                    <a href="#danh-ba-929-hs">👨‍🎓 Danh bạ 929 Học sinh & 42 CBGV</a>
+                </div>
             </div>
-        </div>
 
-        <div class="portal-nav-item">
-            <a href="#nen-nep-ren-luyen" target="_self" class="{get_cls('6')}">🚩 NỀN NẾP – RÈN LUYỆN ▾</a>
-            <div class="portal-nav-dropdown">
-                <a href="#nen-nep-ren-luyen" target="_self" class="portal-nav-sublink">🏆 Bảng vàng thi đua 21 Chi đoàn</a>
-                <a href="#nen-nep-ren-luyen" target="_self" class="portal-nav-sublink">⚖️ Chấm nề nếp hàng ngày & Vi phạm</a>
-                <a href="#nen-nep-ren-luyen" target="_self" class="portal-nav-sublink">🛵 Quản lý 648 Xe gắn mã QR</a>
-                <a href="#nen-nep-ren-luyen" target="_self" class="portal-nav-sublink">📜 Sổ đoàn viên điện tử</a>
+            <div class="shortcut-group">
+                <a class="shortcut-parent {get_cls('6')}" href="#nen-nep-ren-luyen">
+                    <span>NỀN NẾP – RÈN LUYỆN ▾</span>
+                </a>
+                <div class="shortcut-submenu">
+                    <a href="#nen-nep-ren-luyen">🏆 Bảng vàng thi đua 21 Chi đoàn</a>
+                    <a href="#nen-nep-ren-luyen">⚖️ Chấm nề nếp hàng ngày & Vi phạm</a>
+                    <a href="#nen-nep-ren-luyen">🛵 Quản lý 648 Xe gắn mã QR</a>
+                    <a href="#nen-nep-ren-luyen">📜 Sổ đoàn viên điện tử</a>
+                </div>
             </div>
-        </div>
 
-        <div class="portal-nav-item">
-            <a href="#ban-tru-ktx" target="_self" class="{get_cls('7')}">🛏️ BÁN TRÚ ▾</a>
-            <div class="portal-nav-dropdown">
-                <a href="#ban-tru-ktx" target="_self" class="portal-nav-sublink">🛏️ Điểm danh KTX 196 học sinh</a>
-                <a href="#ban-tru-ktx" target="_self" class="portal-nav-sublink">🍲 Thực đơn & Kiểm thực an toàn bếp</a>
-                <a href="#ban-tru-ktx" target="_self" class="portal-nav-sublink">🏆 Chấm điểm thi đua phòng ở 5S</a>
-                <a href="#ban-tru-ktx" target="_self" class="portal-nav-sublink">💳 Thu tiền ăn tự động mã VietQR</a>
+            <div class="shortcut-group">
+                <a class="shortcut-parent {get_cls('7')}" href="#ban-tru-ktx">
+                    <span>BÁN TRÚ ▾</span>
+                </a>
+                <div class="shortcut-submenu">
+                    <a href="#ban-tru-ktx">🛏️ Điểm danh KTX 196 học sinh</a>
+                    <a href="#ban-tru-ktx">🍲 Thực đơn & Kiểm thực an toàn bếp</a>
+                    <a href="#ban-tru-ktx">🏆 Chấm điểm thi đua phòng ở 5S</a>
+                    <a href="#ban-tru-ktx">💳 Thu tiền ăn tự động mã VietQR</a>
+                </div>
             </div>
-        </div>
 
-        <div class="portal-nav-item">
-            <a href="#ho-so-danh-gia" target="_self" class="{get_cls('8')}">📁 HỒ SƠ – ĐÁNH GIÁ ▾</a>
-            <div class="portal-nav-dropdown">
-                <a href="#ho-so-danh-gia" target="_self" class="portal-nav-sublink">📁 4 Thư mục tài liệu Google Drive</a>
-                <a href="#ho-so-danh-gia" target="_self" class="portal-nav-sublink">🌟 Bảng tổng hợp đánh giá KPI 4 tổ</a>
-                <a href="#ho-so-danh-gia" target="_self" class="portal-nav-sublink">📅 Kế hoạch năm học & Kế hoạch tổ</a>
-                <a href="#ho-so-danh-gia" target="_self" class="portal-nav-sublink">⚙️ Quản trị hệ thống & Đồng bộ Cloud</a>
+            <div class="shortcut-group">
+                <a class="shortcut-parent {get_cls('8')}" href="#ho-so-danh-gia">
+                    <span>HỒ SƠ – ĐÁNH GIÁ ▾</span>
+                </a>
+                <div class="shortcut-submenu">
+                    <a href="#ho-so-danh-gia">📁 4 Thư mục tài liệu Google Drive</a>
+                    <a href="#ho-so-danh-gia">🌟 Bảng tổng hợp đánh giá KPI 4 tổ</a>
+                    <a href="#ho-so-danh-gia">📅 Kế hoạch năm học & Kế hoạch tổ</a>
+                    <a href="#ho-so-danh-gia">⚙️ Quản trị hệ thống & Đồng bộ Cloud</a>
+                </div>
             </div>
-        </div>
 
-        <div class="portal-nav-item">
-            <a href="#tien-ich-so" target="_self" class="{get_cls('9')}">🚀 TIỆN ÍCH ▾</a>
-            <div class="portal-nav-dropdown">
-                <a href="#tien-ich-so" target="_self" class="portal-nav-sublink">🚀 9 Nền tảng giáo dục số mở nhanh</a>
-                <a href="#tien-ich-so" target="_self" class="portal-nav-sublink">📱 Cài đặt App di động lên điện thoại</a>
+            <div class="shortcut-group">
+                <a class="shortcut-parent {get_cls('9')}" href="#tien-ich-so">
+                    <span>TIỆN ÍCH</span>
+                </a>
+                <div class="shortcut-submenu">
+                    <a href="#tien-ich-so">🚀 9 Nền tảng giáo dục số mở nhanh</a>
+                    <a href="#tien-ich-so">📱 Cài đặt App di động lên điện thoại</a>
+                </div>
             </div>
         </div>
-    </div>
+    </nav>
     """
     st_html(nav_html)
-
 # =============================================================================
 # 3. HERO BANNER
 # =============================================================================
