@@ -201,6 +201,7 @@ def render_sticky_nav_bar(active_id=None):
         border-radius: 0 0 8px 8px !important;
         background: #ffffff !important;
         box-shadow: 0 5px 16px rgba(23, 76, 76, 0.1) !important;
+        overflow: visible !important;
     }}
     .shortcut-links {{
         display: flex !important;
@@ -209,7 +210,7 @@ def render_sticky_nav_bar(active_id=None):
         align-items: stretch !important;
         gap: 0 !important;
         width: 100% !important;
-        overflow-x: auto !important;
+        overflow: visible !important;
         white-space: nowrap !important;
     }}
     .shortcut-group {{
