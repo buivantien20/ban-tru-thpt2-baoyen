@@ -290,99 +290,99 @@ def render_sticky_nav_bar(active_id=None):
 
     <nav class="portal-shortcuts" aria-label="Thanh 9 Kênh điều hành nội bộ">
         <div class="shortcut-links">
-            <a href="#trang-chu" class="shortcut-home {get_cls('1')}">
+            <a href="?kenh=1" target="_self" class="shortcut-home {get_cls('1')}">
                 <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-5v-8H9v8H4a1 1 0 0 1-1-1Z"/></svg>
                 <span>TRANG CHỦ</span>
             </a>
             
             <div class="shortcut-group">
-                <a class="shortcut-parent {get_cls('2')}" href="#cong-viec">
+                <a class="shortcut-parent {get_cls('2')}" href="?kenh=2" target="_self">
                     <span>CÔNG VIỆC CẦN HOÀN THÀNH ▾</span>
                 </a>
                 <div class="shortcut-submenu">
-                    <a href="#cong-viec">📋 Sổ việc & Phân công nhiệm vụ</a>
-                    <a href="#cong-viec-qua-han">🔴 Việc quá hạn & Việc hôm nay</a>
-                    <a href="#cong-viec-sap-den-han">🟡 Việc sắp đến hạn tuần này</a>
+                    <a href="?kenh=2#cong-viec" target="_self">📋 Sổ việc & Phân công nhiệm vụ</a>
+                    <a href="?kenh=2#cong-viec-qua-han" target="_self">🔴 Việc quá hạn & Việc hôm nay</a>
+                    <a href="?kenh=2#cong-viec-sap-den-han" target="_self">🟡 Việc sắp đến hạn tuần này</a>
                 </div>
             </div>
 
             <div class="shortcut-group">
-                <a class="shortcut-parent {get_cls('3')}" href="#lich-lam-viec">
+                <a class="shortcut-parent {get_cls('3')}" href="?kenh=3" target="_self">
                     <span>LỊCH LÀM VIỆC ▾</span>
                 </a>
                 <div class="shortcut-submenu">
-                    <a href="#lich-lam-viec">📅 Lịch làm việc tuần tập trung</a>
-                    <a href="#lich-hom-nay">🗓️ Lịch công tác hôm nay & ngày mai</a>
-                    <a href="#lich-truc-tuan">📌 Lịch trực tuần & Đi cơ sở</a>
+                    <a href="?kenh=3#lich-lam-viec" target="_self">📅 Lịch làm việc tuần tập trung</a>
+                    <a href="?kenh=3#lich-hom-nay" target="_self">🗓️ Lịch công tác hôm nay & ngày mai</a>
+                    <a href="?kenh=3#lich-truc-tuan" target="_self">📌 Lịch trực tuần & Đi cơ sở</a>
                 </div>
             </div>
 
             <div class="shortcut-group">
-                <a class="shortcut-parent {get_cls('4')}" href="#theo-doi-hang-ngay">
+                <a class="shortcut-parent {get_cls('4')}" href="?kenh=4" target="_self">
                     <span>THEO DÕI HẰNG NGÀY ▾</span>
                 </a>
                 <div class="shortcut-submenu">
-                    <a href="#theo-doi-hang-ngay">👥 Báo sĩ số 21 lớp & Chuyên cần live</a>
-                    <a href="#theo-doi-tien-do">📚 Tiến độ chương trình 21 lớp</a>
-                    <a href="#theo-doi-thiet-bi">🔬 Sử dụng thiết bị & Phòng bộ môn</a>
+                    <a href="?kenh=4#theo-doi-hang-ngay" target="_self">👥 Báo sĩ số 21 lớp & Chuyên cần live</a>
+                    <a href="?kenh=4#theo-doi-tien-do" target="_self">📚 Tiến độ chương trình 21 lớp</a>
+                    <a href="?kenh=4#theo-doi-thiet-bi" target="_self">🔬 Sử dụng thiết bị & Phòng bộ môn</a>
                 </div>
             </div>
 
             <div class="shortcut-group">
-                <a class="shortcut-parent {get_cls('5')}" href="#day-va-hoc">
+                <a class="shortcut-parent {get_cls('5')}" href="?kenh=5" target="_self">
                     <span>DẠY VÀ HỌC ▾</span>
                 </a>
                 <div class="shortcut-submenu">
-                    <a href="#day-va-hoc">✏️ Sổ đầu bài điện tử (SĐB)</a>
-                    <a href="#tkb-21-lop">🕒 Thời khóa biểu 21 lớp (TKB)</a>
-                    <a href="#chat-luong-day-hoc">📊 Phân tích chất lượng & Bồi dưỡng</a>
-                    <a href="#danh-ba-929-hs">👨‍🎓 Danh bạ 929 Học sinh & 42 CBGV</a>
+                    <a href="?kenh=5#day-va-hoc" target="_self">✏️ Sổ đầu bài điện tử (SĐB)</a>
+                    <a href="?kenh=5#tkb-21-lop" target="_self">🕒 Thời khóa biểu 21 lớp (TKB)</a>
+                    <a href="?kenh=5#chat-luong-day-hoc" target="_self">📊 Phân tích chất lượng & Bồi dưỡng</a>
+                    <a href="?kenh=5#danh-ba-929-hs" target="_self">👨‍🎓 Danh bạ 929 Học sinh & 42 CBGV</a>
                 </div>
             </div>
 
             <div class="shortcut-group">
-                <a class="shortcut-parent {get_cls('6')}" href="#bang-vang-thi-dua">
+                <a class="shortcut-parent {get_cls('6')}" href="?kenh=6" target="_self">
                     <span>NỀN NẾP – RÈN LUYỆN ▾</span>
                 </a>
                 <div class="shortcut-submenu">
-                    <a href="#bang-vang-thi-dua">🏆 Bảng vàng thi đua 21 Chi đoàn</a>
-                    <a href="#cham-ne-nep-vi-pham">⚖️ Chấm nề nếp hàng ngày & Vi phạm</a>
-                    <a href="#quan-ly-xe-qr">🛵 Quản lý 648 Xe gắn mã QR</a>
-                    <a href="#so-doan-vien">📜 Sổ đoàn viên điện tử</a>
+                    <a href="?kenh=6#bang-vang-thi-dua" target="_self">🏆 Bảng vàng thi đua 21 Chi đoàn</a>
+                    <a href="?kenh=6#cham-ne-nep-vi-pham" target="_self">⚖️ Chấm nề nếp hàng ngày & Vi phạm</a>
+                    <a href="?kenh=6#quan-ly-xe-qr" target="_self">🛵 Quản lý 648 Xe gắn mã QR</a>
+                    <a href="?kenh=6#so-doan-vien" target="_self">📜 Sổ đoàn viên điện tử</a>
                 </div>
             </div>
 
             <div class="shortcut-group">
-                <a class="shortcut-parent {get_cls('7')}" href="#ban-tru-ktx">
+                <a class="shortcut-parent {get_cls('7')}" href="?kenh=7" target="_self">
                     <span>BÁN TRÚ ▾</span>
                 </a>
                 <div class="shortcut-submenu">
-                    <a href="#ban-tru-ktx">🛏️ Điểm danh KTX 196 học sinh</a>
-                    <a href="#ban-tru-ktx">🍲 Thực đơn & Kiểm thực an toàn bếp</a>
-                    <a href="#ban-tru-ktx">🏆 Chấm điểm thi đua phòng ở 5S</a>
-                    <a href="#ban-tru-ktx">💳 Thu tiền ăn tự động mã VietQR</a>
+                    <a href="?kenh=7#ban-tru-ktx" target="_self">🛏️ Điểm danh KTX 196 học sinh</a>
+                    <a href="?kenh=7#ban-tru-ktx" target="_self">🍲 Thực đơn & Kiểm thực an toàn bếp</a>
+                    <a href="?kenh=7#ban-tru-ktx" target="_self">🏆 Chấm điểm thi đua phòng ở 5S</a>
+                    <a href="?kenh=7#ban-tru-ktx" target="_self">💳 Thu tiền ăn tự động mã VietQR</a>
                 </div>
             </div>
 
             <div class="shortcut-group">
-                <a class="shortcut-parent {get_cls('8')}" href="#ho-so-danh-gia">
+                <a class="shortcut-parent {get_cls('8')}" href="?kenh=8" target="_self">
                     <span>HỒ SƠ – ĐÁNH GIÁ ▾</span>
                 </a>
                 <div class="shortcut-submenu">
-                    <a href="#ho-so-danh-gia">📁 4 Thư mục tài liệu Google Drive</a>
-                    <a href="#ho-so-danh-gia">🌟 Bảng tổng hợp đánh giá KPI 4 tổ</a>
-                    <a href="#ho-so-danh-gia">📅 Kế hoạch năm học & Kế hoạch tổ</a>
-                    <a href="#ho-so-danh-gia">⚙️ Quản trị hệ thống & Đồng bộ Cloud</a>
+                    <a href="?kenh=8#ho-so-danh-gia" target="_self">📁 4 Thư mục tài liệu Google Drive</a>
+                    <a href="?kenh=8#ho-so-danh-gia" target="_self">🌟 Bảng tổng hợp đánh giá KPI 4 tổ</a>
+                    <a href="?kenh=8#ho-so-danh-gia" target="_self">📅 Kế hoạch năm học & Kế hoạch tổ</a>
+                    <a href="?kenh=8#ho-so-danh-gia" target="_self">⚙️ Quản trị hệ thống & Đồng bộ Cloud</a>
                 </div>
             </div>
 
             <div class="shortcut-group">
-                <a class="shortcut-parent {get_cls('9')}" href="#tien-ich-so">
+                <a class="shortcut-parent {get_cls('9')}" href="?kenh=9" target="_self">
                     <span>TIỆN ÍCH</span>
                 </a>
                 <div class="shortcut-submenu">
-                    <a href="#tien-ich-so">🚀 9 Nền tảng giáo dục số mở nhanh</a>
-                    <a href="#tien-ich-so">📱 Cài đặt App di động lên điện thoại</a>
+                    <a href="?kenh=9#tien-ich-so" target="_self">🚀 9 Nền tảng giáo dục số mở nhanh</a>
+                    <a href="?kenh=9#tien-ich-so" target="_self">📱 Cài đặt App di động lên điện thoại</a>
                 </div>
             </div>
         </div>
@@ -404,9 +404,16 @@ def render_hero_banner(nam_hoc=None, logo_data_uri="", is_logged_in=False, u_inf
 # 3.5. KHỐI CHỈ SỐ VÀNG ĐIỀU HÀNH TRANG CHỦ
 # =============================================================================
 def render_kpi_tong_quan_trang_chu(BASE_DIR, THU_MUC_NAM_HOC, nam_hoc_hien_tai):
-    """Khối 4 Chỉ Số Vàng Tổng Quan Cổng Điều Hành Nhà Trường"""
+    """Khối Chỉ Số Vàng & Trung Tâm Lối Tắt 8 Kênh Tác Nghiệp Trang Chủ"""
     st_html("""
-    <div style="background: white; border: 1px solid #E2E8F0; border-radius: 12px; padding: 14px 18px; margin: 16px 0 20px 0; box-shadow: 0 2px 8px rgba(13, 92, 117, 0.05);">
+    <div id="trang-chu" class="section-banner-title">
+        <h3><span>🏫</span> TRUNG TÂM ĐIỀU HÀNH SỐ NHÀ TRƯỜNG — TRANG CHỦ TỔNG QUAN</h3>
+        <span class="section-banner-subtitle">Hệ Thống Quản Trị Giáo Dục Toàn Diện 9 Kênh · Năm học 2026 - 2027</span>
+    </div>
+    """)
+
+    st_html("""
+    <div style="background: white; border: 1px solid #E2E8F0; border-radius: 12px; padding: 14px 18px; margin: 0 0 20px 0; box-shadow: 0 2px 8px rgba(13, 92, 117, 0.05);">
         <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 12px;">
             <div style="font-size: 13.5px; font-weight: 800; color: #0D5C75; text-transform: uppercase; letter-spacing: 0.5px; display:flex; align-items:center; gap: 8px;">
                 <span>✨</span> CHỈ SỐ VÀNG ĐIỀU HÀNH TOÀN TRƯỜNG HÔM NAY
@@ -416,27 +423,128 @@ def render_kpi_tong_quan_trang_chu(BASE_DIR, THU_MUC_NAM_HOC, nam_hoc_hien_tai):
             </span>
         </div>
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px;">
-            <div style="background: #F8FAFC; border: 1px solid #E2E8F0; border-left: 4px solid #0D5C75; border-radius: 8px; padding: 10px 14px;">
-                <div style="font-size: 11px; font-weight: 700; color: #64748B; text-transform: uppercase;">👥 SĨ SỐ TOÀN TRƯỜNG</div>
-                <div style="font-size: 22px; font-weight: 900; color: #0D5C75; margin: 2px 0;">929 <span style="font-size: 12px; font-weight: 600; color: #64748B;">học sinh</span></div>
-                <div style="font-size: 11px; color: #16A34A; font-weight: 600;">21 lớp · Chuyên cần 99.4%</div>
-            </div>
-            <div style="background: #F8FAFC; border: 1px solid #E2E8F0; border-left: 4px solid #059669; border-radius: 8px; padding: 10px 14px;">
-                <div style="font-size: 11px; font-weight: 700; color: #64748B; text-transform: uppercase;">🛏️ BÁN TRÚ & KTX</div>
-                <div style="font-size: 22px; font-weight: 900; color: #059669; margin: 2px 0;">196 <span style="font-size: 12px; font-weight: 600; color: #64748B;">học sinh</span></div>
-                <div style="font-size: 11px; color: #059669; font-weight: 600;">12 phòng ở KTX · 100% an toàn</div>
-            </div>
-            <div style="background: #F8FAFC; border: 1px solid #E2E8F0; border-left: 4px solid #D97706; border-radius: 8px; padding: 10px 14px;">
-                <div style="font-size: 11px; font-weight: 700; color: #64748B; text-transform: uppercase;">📋 NHIỆM VỤ TUẦN NÀY</div>
-                <div style="font-size: 22px; font-weight: 900; color: #D97706; margin: 2px 0;">6/6 <span style="font-size: 12px; font-weight: 600; color: #64748B;">hoàn thành</span></div>
-                <div style="font-size: 11px; color: #16A34A; font-weight: 600;">0 việc quá hạn · Đúng tiến độ</div>
-            </div>
-            <div style="background: #F8FAFC; border: 1px solid #E2E8F0; border-left: 4px solid #4338CA; border-radius: 8px; padding: 10px 14px;">
-                <div style="font-size: 11px; font-weight: 700; color: #64748B; text-transform: uppercase;">🛵 XE HỌC SINH MÃ QR</div>
-                <div style="font-size: 22px; font-weight: 900; color: #4338CA; margin: 2px 0;">648 <span style="font-size: 12px; font-weight: 600; color: #64748B;">xe định danh</span></div>
-                <div style="font-size: 11px; color: #4338CA; font-weight: 600;">100% dán tem QR · Cam kết ATGT</div>
-            </div>
+            <a href="?kenh=4" target="_self" style="text-decoration:none; color:inherit;">
+                <div style="background: #F8FAFC; border: 1px solid #E2E8F0; border-left: 4px solid #0D5C75; border-radius: 8px; padding: 10px 14px; transition:transform 0.15s ease;">
+                    <div style="font-size: 11px; font-weight: 700; color: #64748B; text-transform: uppercase;">👥 SĨ SỐ TOÀN TRƯỜNG</div>
+                    <div style="font-size: 22px; font-weight: 900; color: #0D5C75; margin: 2px 0;">929 <span style="font-size: 12px; font-weight: 600; color: #64748B;">học sinh</span></div>
+                    <div style="font-size: 11px; color: #16A34A; font-weight: 600;">21 lớp · Mở Kênh Sĩ Số ➜</div>
+                </div>
+            </a>
+            <a href="?kenh=7" target="_self" style="text-decoration:none; color:inherit;">
+                <div style="background: #F8FAFC; border: 1px solid #E2E8F0; border-left: 4px solid #059669; border-radius: 8px; padding: 10px 14px; transition:transform 0.15s ease;">
+                    <div style="font-size: 11px; font-weight: 700; color: #64748B; text-transform: uppercase;">🛏️ BÁN TRÚ & KTX</div>
+                    <div style="font-size: 22px; font-weight: 900; color: #059669; margin: 2px 0;">196 <span style="font-size: 12px; font-weight: 600; color: #64748B;">học sinh</span></div>
+                    <div style="font-size: 11px; color: #059669; font-weight: 600;">12 phòng KTX · Mở Bán Trú ➜</div>
+                </div>
+            </a>
+            <a href="?kenh=2" target="_self" style="text-decoration:none; color:inherit;">
+                <div style="background: #F8FAFC; border: 1px solid #E2E8F0; border-left: 4px solid #D97706; border-radius: 8px; padding: 10px 14px; transition:transform 0.15s ease;">
+                    <div style="font-size: 11px; font-weight: 700; color: #64748B; text-transform: uppercase;">📋 NHIỆM VỤ TUẦN NÀY</div>
+                    <div style="font-size: 22px; font-weight: 900; color: #D97706; margin: 2px 0;">6/6 <span style="font-size: 12px; font-weight: 600; color: #64748B;">hoàn thành</span></div>
+                    <div style="font-size: 11px; color: #16A34A; font-weight: 600;">0 việc quá hạn · Mở Sổ Việc ➜</div>
+                </div>
+            </a>
+            <a href="?kenh=6#quan-ly-xe-qr" target="_self" style="text-decoration:none; color:inherit;">
+                <div style="background: #F8FAFC; border: 1px solid #E2E8F0; border-left: 4px solid #4338CA; border-radius: 8px; padding: 10px 14px; transition:transform 0.15s ease;">
+                    <div style="font-size: 11px; font-weight: 700; color: #64748B; text-transform: uppercase;">🛵 XE HỌC SINH MÃ QR</div>
+                    <div style="font-size: 22px; font-weight: 900; color: #4338CA; margin: 2px 0;">648 <span style="font-size: 12px; font-weight: 600; color: #64748B;">xe định danh</span></div>
+                    <div style="font-size: 11px; color: #4338CA; font-weight: 600;">100% tem QR · Mở Kênh Xe ➜</div>
+                </div>
+            </a>
         </div>
+    </div>
+    """)
+
+    st.markdown("#### 🧭 Lối Tắt Truy Cập 8 Kênh Điều Hành Chuyên Biệt")
+    st_html("""
+    <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 14px; margin-bottom: 24px;">
+        <a href="?kenh=2" target="_self" style="text-decoration:none; color:inherit;">
+            <div style="background:white; border:1px solid #E2E8F0; border-radius:10px; padding:14px; box-shadow:0 2px 5px rgba(0,0,0,0.03); transition:all 0.15s ease;">
+                <div style="display:flex; align-items:center; gap:10px; margin-bottom:6px;">
+                    <span style="font-size:22px;">📋</span>
+                    <span style="font-weight:800; font-size:13.5px; color:#0D5C75;">KÊNH 2: CÔNG VIỆC CẦN LÀM</span>
+                </div>
+                <div style="font-size:12px; color:#64748B; line-height:1.5;">Quản trị phân công nhiệm vụ, việc quá hạn, việc hôm nay và sắp đến hạn.</div>
+                <div style="font-size:11.5px; font-weight:700; color:#087B82; margin-top:8px;">Bấm mở Kênh 2 riêng biệt ➜</div>
+            </div>
+        </a>
+
+        <a href="?kenh=3" target="_self" style="text-decoration:none; color:inherit;">
+            <div style="background:white; border:1px solid #E2E8F0; border-radius:10px; padding:14px; box-shadow:0 2px 5px rgba(0,0,0,0.03); transition:all 0.15s ease;">
+                <div style="display:flex; align-items:center; gap:10px; margin-bottom:6px;">
+                    <span style="font-size:22px;">📅</span>
+                    <span style="font-weight:800; font-size:13.5px; color:#0D5C75;">KÊNH 3: LỊCH LÀM VIỆC TUẦN</span>
+                </div>
+                <div style="font-size:12px; color:#64748B; line-height:1.5;">Lịch công tác Ban Giám hiệu, hội đồng sư phạm, lịch cơ sở và trực tuần.</div>
+                <div style="font-size:11.5px; font-weight:700; color:#087B82; margin-top:8px;">Bấm mở Kênh 3 riêng biệt ➜</div>
+            </div>
+        </a>
+
+        <a href="?kenh=4" target="_self" style="text-decoration:none; color:inherit;">
+            <div style="background:white; border:1px solid #E2E8F0; border-radius:10px; padding:14px; box-shadow:0 2px 5px rgba(0,0,0,0.03); transition:all 0.15s ease;">
+                <div style="display:flex; align-items:center; gap:10px; margin-bottom:6px;">
+                    <span style="font-size:22px;">📊</span>
+                    <span style="font-weight:800; font-size:13.5px; color:#0D5C75;">KÊNH 4: THEO DÕI HẰNG NGÀY</span>
+                </div>
+                <div style="font-size:12px; color:#64748B; line-height:1.5;">Giám sát sĩ số 21 lớp, chuyên cần, tiến độ chương trình và thiết bị dạy học.</div>
+                <div style="font-size:11.5px; font-weight:700; color:#087B82; margin-top:8px;">Bấm mở Kênh 4 riêng biệt ➜</div>
+            </div>
+        </a>
+
+        <a href="?kenh=5" target="_self" style="text-decoration:none; color:inherit;">
+            <div style="background:white; border:1px solid #E2E8F0; border-radius:10px; padding:14px; box-shadow:0 2px 5px rgba(0,0,0,0.03); transition:all 0.15s ease;">
+                <div style="display:flex; align-items:center; gap:10px; margin-bottom:6px;">
+                    <span style="font-size:22px;">📈</span>
+                    <span style="font-weight:800; font-size:13.5px; color:#0D5C75;">KÊNH 5: KẾT QUẢ DẠY VÀ HỌC</span>
+                </div>
+                <div style="font-size:12px; color:#64748B; line-height:1.5;">Sổ đầu bài điện tử (SĐB), thời khóa biểu 21 lớp, phân tích điểm và danh bạ.</div>
+                <div style="font-size:11.5px; font-weight:700; color:#087B82; margin-top:8px;">Bấm mở Kênh 5 riêng biệt ➜</div>
+            </div>
+        </a>
+
+        <a href="?kenh=6" target="_self" style="text-decoration:none; color:inherit;">
+            <div style="background:#F0FDF4; border:1.5px solid #22C55E; border-radius:10px; padding:14px; box-shadow:0 2px 8px rgba(34,197,94,0.1); transition:all 0.15s ease;">
+                <div style="display:flex; align-items:center; gap:10px; margin-bottom:6px;">
+                    <span style="font-size:22px;">🚩</span>
+                    <span style="font-weight:800; font-size:13.5px; color:#15803D;">KÊNH 6: NỀN NẾP – RÈN LUYỆN</span>
+                </div>
+                <div style="font-size:12px; color:#166534; line-height:1.5;">Bảng vàng 21 Chi đoàn, Chấm nề nếp 10 nhóm tiêu chí, 648 Xe QR và Sổ Đoàn.</div>
+                <div style="font-size:11.5px; font-weight:800; color:#15803D; margin-top:8px;">Bấm mở Kênh 6 riêng biệt ➜</div>
+            </div>
+        </a>
+
+        <a href="?kenh=7" target="_self" style="text-decoration:none; color:inherit;">
+            <div style="background:white; border:1px solid #E2E8F0; border-radius:10px; padding:14px; box-shadow:0 2px 5px rgba(0,0,0,0.03); transition:all 0.15s ease;">
+                <div style="display:flex; align-items:center; gap:10px; margin-bottom:6px;">
+                    <span style="font-size:22px;">🛏️</span>
+                    <span style="font-weight:800; font-size:13.5px; color:#0D5C75;">KÊNH 7: BÁN TRÚ & KÝ TÚC XÁ</span>
+                </div>
+                <div style="font-size:12px; color:#64748B; line-height:1.5;">Điểm danh 196 HS bán trú, kiểm thực ATTP 3 bước, thi đua 5S phòng ở và VietQR.</div>
+                <div style="font-size:11.5px; font-weight:700; color:#087B82; margin-top:8px;">Bấm mở Kênh 7 riêng biệt ➜</div>
+            </div>
+        </a>
+
+        <a href="?kenh=8" target="_self" style="text-decoration:none; color:inherit;">
+            <div style="background:white; border:1px solid #E2E8F0; border-radius:10px; padding:14px; box-shadow:0 2px 5px rgba(0,0,0,0.03); transition:all 0.15s ease;">
+                <div style="display:flex; align-items:center; gap:10px; margin-bottom:6px;">
+                    <span style="font-size:22px;">📁</span>
+                    <span style="font-weight:800; font-size:13.5px; color:#0D5C75;">KÊNH 8: HỒ SƠ – ĐÁNH GIÁ KPI</span>
+                </div>
+                <div style="font-size:12px; color:#64748B; line-height:1.5;">Kho 4 thư mục tài liệu điện tử và bảng tổng hợp đánh giá KPI 4 tổ chuyên môn.</div>
+                <div style="font-size:11.5px; font-weight:700; color:#087B82; margin-top:8px;">Bấm mở Kênh 8 riêng biệt ➜</div>
+            </div>
+        </a>
+
+        <a href="?kenh=9" target="_self" style="text-decoration:none; color:inherit;">
+            <div style="background:white; border:1px solid #E2E8F0; border-radius:10px; padding:14px; box-shadow:0 2px 5px rgba(0,0,0,0.03); transition:all 0.15s ease;">
+                <div style="display:flex; align-items:center; gap:10px; margin-bottom:6px;">
+                    <span style="font-size:22px;">🚀</span>
+                    <span style="font-weight:800; font-size:13.5px; color:#0D5C75;">KÊNH 9: TIỆN ÍCH GIÁO DỤC SỐ</span>
+                </div>
+                <div style="font-size:12px; color:#64748B; line-height:1.5;">9 ứng dụng giáo dục thiết yếu: VnEdu, Gmail, CSDL ngành, Zalo OA và Hướng dẫn App.</div>
+                <div style="font-size:11.5px; font-weight:700; color:#087B82; margin-top:8px;">Bấm mở Kênh 9 riêng biệt ➜</div>
+            </div>
+        </a>
     </div>
     """)
 
@@ -2124,43 +2232,94 @@ def render_portal_footer(nam_hoc="2026 - 2027"):
 # =============================================================================
 def render_cong_dieu_hanh_toan_dien(BASE_DIR, THU_MUC_NAM_HOC, nam_hoc_hien_tai, logo_data_uri="", is_logged_in=False, u_info=None):
     """
-    Render toàn bộ cấu trúc Cổng điều hành 9 Kênh & Thư mục tác nghiệp theo chuẩn Nghĩa Đô
-    Kiến trúc Single-Page liền mạch: Toàn bộ 9 khối nằm trên 1 trang duy nhất, cuộn mượt bằng Anchor links.
+    Render Cổng điều hành 9 Kênh tác nghiệp chuẩn hóa:
+    - Khi bấm vào một kênh, hệ thống CHỈ HIỂN THỊ RIÊNG NỘI DUNG KÊNH ĐÓ.
+    - Thanh điều hướng Top Nav ghim sát mép trên, sáng tab kênh đang mở.
     """
-    # 1. Thanh thương hiệu đầu trang
+    # 1. Thanh thương hiệu đầu trang (Top Brand Bar & Thông tin đăng nhập)
     render_top_brand_bar(nam_hoc=nam_hoc_hien_tai, logo_data_uri=logo_data_uri, is_logged_in=is_logged_in, u_info=u_info)
-    
-    # 2. Thanh 9 Kênh ngang ghim trên đỉnh (Sticky Top Nav Bar)
-    render_sticky_nav_bar()
 
-    # Anchor Trang Chủ
-    st_html('<div id="trang-chu"></div>')
+    # 2. Xác định kênh đang được chọn (ưu tiên query params -> session state -> mặc định "1")
+    kenh_param = st.query_params.get("kenh", None)
+    if kenh_param:
+        st.session_state["kenh_dieu_hanh_active"] = str(kenh_param)
+    elif "kenh_dieu_hanh_active" not in st.session_state:
+        st.session_state["kenh_dieu_hanh_active"] = "1"
 
-    # KHỐI 1: TỔNG QUAN CHỈ SỐ VÀNG TRANG CHỦ
-    render_kpi_tong_quan_trang_chu(BASE_DIR, THU_MUC_NAM_HOC, nam_hoc_hien_tai)
+    kenh_hien_tai = str(st.session_state.get("kenh_dieu_hanh_active", "1"))
 
-    # KHỐI 2: CÔNG VIỆC CẦN HOÀN THÀNH (#cong-viec)
-    render_section_cong_viec(BASE_DIR, THU_MUC_NAM_HOC, nam_hoc_hien_tai)
+    # 3. Thanh 9 Kênh ngang ghim trên đỉnh (Active tab sáng đèn tương ứng)
+    render_sticky_nav_bar(active_id=kenh_hien_tai)
 
-    # KHỐI 3: LỊCH LÀM VIỆC TUẦN (#lich-lam-viec)
-    render_section_lich_lam_viec(BASE_DIR, THU_MUC_NAM_HOC, nam_hoc_hien_tai)
+    # Breadcrumb điều hướng quay về Trang Chủ nếu đang mở kênh con
+    if kenh_hien_tai != "1":
+        ten_kenh_map = {
+            "2": "📋 KÊNH 2: CÔNG VIỆC CẦN HOÀN THÀNH",
+            "3": "📅 KÊNH 3: LỊCH LÀM VIỆC & CÔNG TÁC TUẦN",
+            "4": "📊 KÊNH 4: THEO DÕI HẰNG NGÀY (SĨ SỐ & TIẾN ĐỘ)",
+            "5": "📈 KÊNH 5: KẾT QUẢ DẠY VÀ HỌC",
+            "6": "🚩 KÊNH 6: NỀN NẾP – RÈN LUYỆN & XE HỌC SINH",
+            "7": "🛏️ KÊNH 7: QUẢN LÝ BÁN TRÚ & KÝ TÚC XÁ",
+            "8": "📁 KÊNH 8: TÀI LIỆU, HỒ SƠ ĐIỆN TỬ & ĐÁNH GIÁ KPI",
+            "9": "🚀 KÊNH 9: TIỆN ÍCH GIÁO DỤC SỐ"
+        }
+        ten_k = ten_kenh_map.get(kenh_hien_tai, f"KÊNH {kenh_hien_tai}")
+        st_html(f"""
+        <div style="display:flex; justify-content:space-between; align-items:center; background:#F8FAFC; border:1px solid #E2E8F0; border-radius:8px; padding:6px 14px; margin-bottom:14px; font-size:12px;">
+            <div style="color:#64748B;">
+                <a href="?kenh=1" target="_self" style="color:#0D5C75; text-decoration:none; font-weight:700;">🏠 Trang Chủ</a>
+                <span style="margin: 0 6px;">›</span>
+                <span style="color:#0F172A; font-weight:800;">{ten_k}</span>
+            </div>
+            <a href="?kenh=1" target="_self" style="background:#0D5C75; color:white; padding:4px 12px; border-radius:6px; text-decoration:none; font-weight:700; font-size:11.5px;">
+                ◀ Quay về Trang Chủ
+            </a>
+        </div>
+        """)
 
-    # KHỐI 4: THEO DÕI HẰNG NGÀY (#theo-doi-hang-ngay)
-    render_section_theo_doi_hang_ngay(BASE_DIR, THU_MUC_NAM_HOC, nam_hoc_hien_tai)
+    # 4. CHỈ HIỂN THỊ DUY NHẤT NỘI DUNG CỦA KÊNH ĐƯỢC CHỌN
+    if kenh_hien_tai == "1":
+        # KÊNH 1: TRANG CHỦ & TỔNG QUAN CHỈ SỐ VÀNG
+        render_kpi_tong_quan_trang_chu(BASE_DIR, THU_MUC_NAM_HOC, nam_hoc_hien_tai)
 
-    # KHỐI 5: KẾT QUẢ DẠY & HỌC (#day-va-hoc)
-    render_section_day_va_hoc(BASE_DIR, THU_MUC_NAM_HOC, nam_hoc_hien_tai)
+    elif kenh_hien_tai == "2":
+        # KÊNH 2: CÔNG VIỆC CẦN HOÀN THÀNH
+        render_section_cong_viec(BASE_DIR, THU_MUC_NAM_HOC, nam_hoc_hien_tai)
 
-    # KHỐI 6: NỀN NẾP – RÈN LUYỆN (Gồm 4 thư mục tác nghiệp: Bảng vàng, Chấm nề nếp 10 tiêu chí, 648 Xe QR, Sổ Đoàn)
-    render_section_nen_nep(BASE_DIR, THU_MUC_NAM_HOC, nam_hoc_hien_tai, u_info=u_info)
+    elif kenh_hien_tai == "3":
+        # KÊNH 3: LỊCH LÀM VIỆC TUẦN
+        render_section_lich_lam_viec(BASE_DIR, THU_MUC_NAM_HOC, nam_hoc_hien_tai)
 
-    # (Đã loại bỏ QUẢN LÝ BÁN TRÚ & KTX TOÀN DIỆN và TÀI LIỆU, HỒ SƠ ĐIỆN TỬ & ĐÁNH GIÁ KPI theo yêu cầu của Thầy)
+    elif kenh_hien_tai == "4":
+        # KÊNH 4: THEO DÕI HẰNG NGÀY
+        render_section_theo_doi_hang_ngay(BASE_DIR, THU_MUC_NAM_HOC, nam_hoc_hien_tai)
 
-    # KHỐI 9: TIỆN ÍCH GIÁO DỤC SỐ (#tien-ich-so)
-    render_section_tien_ich_so()
+    elif kenh_hien_tai == "5":
+        # KÊNH 5: KẾT QUẢ DẠY & HỌC
+        render_section_day_va_hoc(BASE_DIR, THU_MUC_NAM_HOC, nam_hoc_hien_tai)
 
-    # CHÂN TRANG CỔNG ĐIỀU HÀNH
+    elif kenh_hien_tai == "6":
+        # KÊNH 6: NỀN NẾP – RÈN LUYỆN
+        render_section_nen_nep(BASE_DIR, THU_MUC_NAM_HOC, nam_hoc_hien_tai, u_info=u_info)
+
+    elif kenh_hien_tai == "7":
+        # KÊNH 7: BÁN TRÚ & KTX
+        render_section_ban_tru(BASE_DIR, THU_MUC_NAM_HOC, nam_hoc_hien_tai, u_info=u_info)
+
+    elif kenh_hien_tai == "8":
+        # KÊNH 8: HỒ SƠ – ĐÁNH GIÁ KPI
+        render_section_ho_so_kpi(BASE_DIR, THU_MUC_NAM_HOC, nam_hoc_hien_tai)
+
+    elif kenh_hien_tai == "9":
+        # KÊNH 9: TIỆN ÍCH GIÁO DỤC SỐ
+        render_section_tien_ich_so()
+
+    else:
+        render_kpi_tong_quan_trang_chu(BASE_DIR, THU_MUC_NAM_HOC, nam_hoc_hien_tai)
+
+    # 5. Chân trang Cổng điều hành
     render_portal_footer(nam_hoc=nam_hoc_hien_tai)
+
 # =============================================================================
 # BACKWARDS COMPATIBILITY WRAPPERS
 # =============================================================================
