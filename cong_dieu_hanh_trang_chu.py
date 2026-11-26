@@ -39,7 +39,7 @@ def render_top_brand_bar(nam_hoc="2026 - 2027", logo_data_uri="", is_logged_in=F
     Tông màu: Xanh Ngọc Biển Sâu (Deep Teal #0D5C75) phối viền Vàng Kim Hoàng Gia (#E0A834).
     """
     ngay_str = lay_ngay_gio_hien_tai_str()
-    logo_tag = f'<img src="{logo_data_uri}" style="width:50px; height:50px; object-fit:contain; border-radius:50%; background:white; padding:2px; border:2px solid #E0A834;">' if logo_data_uri else '<span style="font-size:36px;">🏫</span>'
+    logo_tag = f'<img src="{logo_data_uri}" style="width:58px; height:58px; object-fit:contain; border-radius:50%; background:white; padding:3px; border:2.5px solid #E0A834; box-shadow:0 2px 8px rgba(0,0,0,0.2);">' if logo_data_uri else '<span style="font-size:42px;">🏫</span>'
 
     # Dải thông tin đăng nhập
     if is_logged_in and u_info:
@@ -79,16 +79,16 @@ def render_top_brand_bar(nam_hoc="2026 - 2027", logo_data_uri="", is_logged_in=F
     top_html = f"""
     <div id="trang-chu" style="background: linear-gradient(135deg, #0D5C75 0%, #103F75 100%); border-bottom: 3.5px solid #E0A834; padding: 12px 24px; color: white; box-shadow: 0 4px 12px rgba(13, 92, 117, 0.25);">
         <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;">
-            <div style="display:flex; align-items:center; gap:14px;">
+            <div style="display:flex; align-items:center; gap:16px;">
                 {logo_tag}
                 <div>
-                    <div style="font-size:11px; text-transform:uppercase; letter-spacing:1.2px; color:#A7F3D0; font-weight:700;">
-                        SỞ GD&ĐT LÀO CAI • HUYỆN BẢO YÊN
+                    <div style="font-size:13.5px; text-transform:uppercase; letter-spacing:1px; color:#A7F3D0; font-weight:800; margin-bottom:2px;">
+                        SỞ GD&ĐT LÀO CAI
                     </div>
-                    <div style="font-size:18.5px; font-weight:900; letter-spacing:0.5px; color:#FFFFFF; margin:1px 0;">
+                    <div style="font-size:22px; font-weight:900; letter-spacing:0.5px; color:#FFFFFF; margin:0 0 2px 0; text-shadow:0 1px 3px rgba(0,0,0,0.25);">
                         TRƯỜNG THPT SỐ 2 BẢO YÊN
                     </div>
-                    <div style="font-size:12px; color:#CBD5E1; font-weight:500;">
+                    <div style="font-size:13px; color:#E2E8F0; font-weight:500;">
                         Xã Bảo Hà, Tỉnh Lào Cai
                     </div>
                 </div>
@@ -1022,7 +1022,7 @@ def render_portal_footer(nam_hoc="2026 - 2027"):
     st_html(f"""
     <div style="background:#0D5C75; border-top:3px solid #E0A834; padding:24px 20px; color:white; border-radius:12px; margin-top:35px; text-align:center;">
         <div style="font-size:16px; font-weight:800; letter-spacing:0.5px; color:#FFFFFF;">
-            TRƯỜNG THPT SỐ 2 BẢO YÊN • HUYỆN BẢO YÊN • TỈNH LÀO CAI
+            TRƯỜNG THPT SỐ 2 BẢO YÊN • TỈNH LÀO CAI
         </div>
         <div style="font-size:12.5px; color:#CBD5E1; margin:4px 0;">
             CỔNG ĐIỀU HÀNH & QUẢN TRỊ TRƯỜNG HỌC TOÀN DIỆN (NĂM HỌC {nam_hoc})
