@@ -632,6 +632,67 @@ if not st.session_state.user_login.get("logged_in", False):
         </div>
     """)
 
+    st.markdown("""
+        <div style="background: #F8FAFC; border: 1px solid #CBD5E1; border-radius: 10px; padding: 10px 14px; margin-bottom: 12px;">
+            <div style="font-size: 12px; font-weight: 800; color: #0D5C75; text-transform: uppercase; margin-bottom: 6px;">
+                ⚡ TRẢI NGHIỆM NHANH HỆ THỐNG THEO VAI TRÒ (1-CLICK DEMO):
+            </div>
+        </div>
+    """, unsafe_allow_html=True)
+    c_dm1, c_dm2, c_dm3, c_dm4 = st.columns(4)
+    with c_dm1:
+        if st.button("👑 Ban Giám Hiệu", key="btn_quick_bgh", use_container_width=True, type="primary"):
+            st.session_state.is_admin_mode = True
+            st.session_state.user_login = {
+                "logged_in": True, "username": "admin", "fullname": "Ban Giám Hiệu",
+                "role": "Ban Giám hiệu", "chuc_danh": "Ban Giám Hiệu", "ma_lien_ket": "Toàn trường", "quyen_quan_ly": "Toàn quyền"
+            }
+            st.session_state.phan_he_hien_tai = "🏠 1. TRANG CHỦ ĐIỀU HÀNH"
+            st.session_state["radio_chon_phan_he"] = "🏠 1. TRANG CHỦ ĐIỀU HÀNH"
+            if "kenh" in st.query_params:
+                del st.query_params["kenh"]
+            st.session_state._last_processed_kenh_param = "1"
+            st.rerun()
+    with c_dm2:
+        if st.button("👨‍🏫 Giáo Viên Quản Nhiệm", key="btn_quick_qn", use_container_width=True):
+            st.session_state.is_admin_mode = False
+            st.session_state.user_login = {
+                "logged_in": True, "username": "quannhiem", "fullname": "Thầy Nguyễn Văn Quản Nhiệm",
+                "role": "Giáo viên quản lý", "chuc_danh": "Giáo viên Quản nhiệm KTX & GVCN", "ma_lien_ket": "10A1", "quyen_quan_ly": "Bộ phận"
+            }
+            st.session_state.phan_he_hien_tai = "🏠 1. TRANG CHỦ ĐIỀU HÀNH"
+            st.session_state["radio_chon_phan_he"] = "🏠 1. TRANG CHỦ ĐIỀU HÀNH"
+            if "kenh" in st.query_params:
+                del st.query_params["kenh"]
+            st.session_state._last_processed_kenh_param = "1"
+            st.rerun()
+    with c_dm3:
+        if st.button("🚩 Học Sinh Lớp Trưởng", key="btn_quick_hs", use_container_width=True):
+            st.session_state.is_admin_mode = False
+            st.session_state.user_login = {
+                "logged_in": True, "username": "hs0001", "fullname": "Em Nguyễn Thị Thanh Thảo",
+                "role": "Học sinh", "chuc_danh": "Lớp trưởng 10A1 & Trưởng phòng 301", "ma_lien_ket": "10A1", "quyen_quan_ly": "Cá nhân"
+            }
+            st.session_state.phan_he_hien_tai = "🏠 1. TRANG CHỦ ĐIỀU HÀNH"
+            st.session_state["radio_chon_phan_he"] = "🏠 1. TRANG CHỦ ĐIỀU HÀNH"
+            if "kenh" in st.query_params:
+                del st.query_params["kenh"]
+            st.session_state._last_processed_kenh_param = "1"
+            st.rerun()
+    with c_dm4:
+        if st.button("👨‍👩‍👧 Phụ Huynh Học Sinh", key="btn_quick_ph", use_container_width=True):
+            st.session_state.is_admin_mode = False
+            st.session_state.user_login = {
+                "logged_in": True, "username": "phuhuynh", "fullname": "Phụ Huynh Em Nguyễn Thị Thanh Thảo",
+                "role": "Phụ huynh học sinh", "chuc_danh": "Phụ huynh học sinh 10A1", "ma_lien_ket": "HS0001", "quyen_quan_ly": "Cá nhân"
+            }
+            st.session_state.phan_he_hien_tai = "🏠 1. TRANG CHỦ ĐIỀU HÀNH"
+            st.session_state["radio_chon_phan_he"] = "🏠 1. TRANG CHỦ ĐIỀU HÀNH"
+            if "kenh" in st.query_params:
+                del st.query_params["kenh"]
+            st.session_state._last_processed_kenh_param = "1"
+            st.rerun()
+
     col_l1, col_l2 = st.columns([1.15, 1], gap="medium")
     with col_l1:
         # Cho phép chọn năm học ngay tại màn hình đăng nhập
@@ -898,50 +959,88 @@ with st.sidebar:
     # Đường phân cách đều đặn
     st.markdown("<div style='border-top: 1px solid #E2E8F0; margin: 12px 0;'></div>", unsafe_allow_html=True)
 
-    # 3. Mục Phân hệ hệ thống: Tiêu đề chuẩn, các tùy chọn giãn cách tự nhiên
-    st.markdown("<div style='font-size: 12px; font-weight: 700; color: #475569; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px;'>🏛️ PHÂN HỆ HỆ THỐNG</div>", unsafe_allow_html=True)
+    # 3. Mục Kênh điều hành & Tác nghiệp: Chuẩn 9 Kênh tác nghiệp theo mô hình hiện đại
+    st.markdown("<div style='font-size: 12px; font-weight: 700; color: #0D5C75; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px;'>🏛️ KÊNH ĐIỀU HÀNH & TÁC NGHIỆP</div>", unsafe_allow_html=True)
     
-    # Phân quyền danh sách phân hệ theo vai trò (RBAC nghiêm ngặt):
+    # 9 Kênh điều hành & tác nghiệp chuẩn mực (không trùng lặp, tối ưu tiện ích)
+    KENH_1 = "🏠 1. TRANG CHỦ ĐIỀU HÀNH"
+    KENH_2 = "📋 2. CÔNG VIỆC & NHIỆM VỤ"
+    KENH_3 = "📅 3. LỊCH LÀM VIỆC TUẦN"
+    KENH_4 = "📊 4. THEO DÕI HẰNG NGÀY"
+    KENH_5 = "📈 5. KẾT QUẢ DẠY & HỌC"
+    KENH_6 = "🚩 6. NỀN NẾP – RÈN LUYỆN"
+    KENH_7 = "🛏️ 7. BÁN TRÚ & KTX"
+    KENH_8 = "📁 8. HỒ SƠ – ĐÁNH GIÁ"
+    KENH_9 = "🚀 9. TIỆN ÍCH GIÁO DỤC SỐ"
+
+    # Phân quyền danh sách kênh theo vai trò (RBAC nghiêm ngặt):
     if role_curr == "Phụ huynh học sinh":
-        ds_phan_he = [
-            "🏛️ CỔNG THÔNG TIN ĐIỀU HÀNH TỔNG QUAN",
-            "🛏️ QUẢN LÝ BÁN TRÚ & KTX"
-        ]
+        ds_phan_he = [KENH_1, KENH_3, KENH_7, KENH_9]
     elif role_curr == "Học sinh":
-        ds_phan_he = [
-            "🏛️ CỔNG THÔNG TIN ĐIỀU HÀNH TỔNG QUAN",
-            "🛏️ QUẢN LÝ BÁN TRÚ & KTX",
-            "🚩 ĐOÀN THANH NIÊN (ĐTN)"
-        ]
+        ds_phan_he = [KENH_1, KENH_3, KENH_6, KENH_7, KENH_9]
+    elif role_curr in ["Kế toán bán trú", "Nhà bếp / Cấp dưỡng"]:
+        ds_phan_he = [KENH_1, KENH_2, KENH_3, KENH_7, KENH_9]
     else:
+        # Ban Giám hiệu, Giáo viên quản lý, Cán bộ quản trị, Đoàn trường, Cờ đỏ...
         ds_phan_he = [
-            "🏛️ CỔNG THÔNG TIN ĐIỀU HÀNH TỔNG QUAN",
-            "🏛️ QUẢN TRỊ CHUYÊN MÔN & TÁC NGHIỆP NHÀ TRƯỜNG",
-            "🛏️ QUẢN LÝ BÁN TRÚ & KTX",
-            "🚩 ĐOÀN THANH NIÊN (ĐTN)"
+            KENH_1, KENH_2, KENH_3, KENH_4, KENH_5,
+            KENH_6, KENH_7, KENH_8, KENH_9
         ]
+
+    # Bản đồ ánh xạ giá trị phân hệ cũ (nếu có trong session) sang kênh mới
+    legacy_map = {
+        "🏛️ CỔNG THÔNG TIN ĐIỀU HÀNH TỔNG QUAN": KENH_1,
+        "🏛️ QUẢN TRỊ CHUYÊN MÔN & TÁC NGHIỆP NHÀ TRƯỜNG": KENH_4,
+        "🛏️ QUẢN LÝ BÁN TRÚ & KTX": KENH_7,
+        "🚩 ĐOÀN THANH NIÊN (ĐTN)": KENH_6
+    }
+    if st.session_state.get("phan_he_hien_tai") in legacy_map:
+        st.session_state.phan_he_hien_tai = legacy_map[st.session_state.phan_he_hien_tai]
+
+    # Đọc tham số URL ?kenh=... một cách thông minh (chỉ áp dụng khi URL thay đổi)
+    url_kenh_curr = str(st.query_params.get("kenh", "")).strip().lower()
+    if url_kenh_curr and st.session_state.get("_last_processed_kenh_param") != url_kenh_curr:
+        st.session_state._last_processed_kenh_param = url_kenh_curr
+        target_k = None
+        for k_item in ds_phan_he:
+            if url_kenh_curr.isdigit() and (k_item.startswith(f"{url_kenh_curr}.") or f" {url_kenh_curr}." in k_item):
+                target_k = k_item
+                break
+            elif (url_kenh_curr in ["1", "trang-chu", "home"] and "TRANG CHỦ" in k_item) or \
+                 (url_kenh_curr in ["2", "cong-viec", "viec", "task"] and "CÔNG VIỆC" in k_item) or \
+                 (url_kenh_curr in ["3", "lich", "lich-lam-viec", "calendar"] and "LỊCH" in k_item) or \
+                 (url_kenh_curr in ["4", "theo-doi", "theo-doi-hang-ngay", "si-so", "tien-do"] and "THEO DÕI" in k_item) or \
+                 (url_kenh_curr in ["5", "day-va-hoc", "day-hoc", "sdb", "tkb"] and "DẠY & HỌC" in k_item) or \
+                 (url_kenh_curr in ["6", "nen-nep", "doan-thanh-nien", "xe"] and "NỀN NẾP" in k_item) or \
+                 (url_kenh_curr in ["7", "ban-tru", "ktx"] and "BÁN TRÚ" in k_item) or \
+                 (url_kenh_curr in ["8", "ho-so", "danh-gia", "kpi", "quan-tri"] and "HỒ SƠ" in k_item) or \
+                 (url_kenh_curr in ["9", "tien-ich", "cai-dat", "app"] and "TIỆN ÍCH" in k_item):
+                target_k = k_item
+                break
+        if target_k and target_k in ds_phan_he:
+            st.session_state.phan_he_hien_tai = target_k
+            st.session_state["radio_chon_phan_he"] = target_k
 
     # Kiểm tra an toàn bảo mật: Nếu phân hệ hiện tại không nằm trong danh sách được phép thì gán lại
     if ("phan_he_hien_tai" not in st.session_state) or (st.session_state.phan_he_hien_tai not in ds_phan_he):
         st.session_state.phan_he_hien_tai = ds_phan_he[0]
 
-    if len(ds_phan_he) > 1:
-        chon_phan_he_sb = st.radio(
-            "Chọn phân hệ:",
-            ds_phan_he,
-            index=ds_phan_he.index(st.session_state.phan_he_hien_tai),
-            key="radio_chon_phan_he",
-            label_visibility="collapsed"
-        )
-        if chon_phan_he_sb != st.session_state.phan_he_hien_tai:
-            st.session_state.phan_he_hien_tai = chon_phan_he_sb
-            st.rerun()
-    else:
-        st.session_state.phan_he_hien_tai = ds_phan_he[0]
-        st.markdown(
-            f"<div style='background:#F5F3FF; border:1px solid #C4B5FD; color:#6D28D9; padding:8px 12px; border-radius:8px; font-weight:bold; font-size:12.5px; text-align:center;'>🛏️ QUẢN LÝ BÁN TRÚ & KTX</div>",
-            unsafe_allow_html=True
-        )
+    chon_phan_he_sb = st.radio(
+        "Chọn kênh điều hành:",
+        ds_phan_he,
+        index=ds_phan_he.index(st.session_state.phan_he_hien_tai),
+        key="radio_chon_phan_he",
+        label_visibility="collapsed"
+    )
+    if chon_phan_he_sb != st.session_state.phan_he_hien_tai:
+        st.session_state.phan_he_hien_tai = chon_phan_he_sb
+        # Đồng bộ lại query params với kênh vừa chọn trong sidebar
+        for num_str in ["1", "2", "3", "4", "5", "6", "7", "8", "9"]:
+            if f"{num_str}." in chon_phan_he_sb:
+                st.query_params["kenh"] = num_str
+                st.session_state._last_processed_kenh_param = num_str
+                break
+        st.rerun()
 
     # Đường phân cách đều đặn
     st.markdown("<div style='border-top: 1px solid #E2E8F0; margin: 12px 0;'></div>", unsafe_allow_html=True)
@@ -1321,21 +1420,18 @@ if st.session_state.get("is_admin_mode", False) and role_curr != "Ban Giám hi�
             }
             st.rerun()
 
-# 4. ĐIỀU HƯỚNG THEO PHÂN HỆ HỆ THỐNG (KIỂM SOÁT BẢO MẬT RBAC)
+# 4. ĐIỀU HƯỚNG THEO 9 KÊNH ĐIỀU HÀNH & TÁC NGHIỆP (KIỂM SOÁT BẢO MẬT RBAC)
 # ========================================================
-# Chặn tuyệt đối Học sinh và Phụ huynh vào Phân hệ Quản trị chuyên môn
-if role_curr in ["Học sinh", "Phụ huynh học sinh"] and any(kw in st.session_state.phan_he_hien_tai for kw in ["QUẢN TRỊ CHUYÊN MÔN", "QUẢN LÝ CHUNG"]):
-    st.session_state.phan_he_hien_tai = "🏛️ CỔNG THÔNG TIN ĐIỀU HÀNH TỔNG QUAN"
-    st.warning("⚠️ Tài khoản của bạn không được phân quyền truy cập Phân hệ Quản trị chuyên môn.")
+cur_ch = st.session_state.phan_he_hien_tai
+
+# Kiểm tra an toàn bảo mật RBAC: Nếu vai trò không được phép truy cập kênh đã chọn
+if cur_ch not in ds_phan_he:
+    st.session_state.phan_he_hien_tai = ds_phan_he[0]
+    st.warning("⚠️ Tài khoản của bạn không được phân quyền truy cập kênh này.")
     st.rerun()
 
-# Chặn Phụ huynh vào Phân hệ Đoàn Thanh Niên
-if role_curr == "Phụ huynh học sinh" and "ĐOÀN THANH NIÊN" in st.session_state.phan_he_hien_tai:
-    st.session_state.phan_he_hien_tai = "🏛️ CỔNG THÔNG TIN ĐIỀU HÀNH TỔNG QUAN"
-    st.rerun()
-
-# ROUTING CÁC PHÂN HỆ
-if st.session_state.phan_he_hien_tai == "🏛️ CỔNG THÔNG TIN ĐIỀU HÀNH TỔNG QUAN":
+# ROUTING 9 KÊNH ĐIỀU HÀNH
+if "TRANG CHỦ" in cur_ch or "1." in cur_ch:
     import cong_dieu_hanh_trang_chu
     import importlib
     importlib.reload(cong_dieu_hanh_trang_chu)
@@ -1347,17 +1443,91 @@ if st.session_state.phan_he_hien_tai == "🏛️ CỔNG THÔNG TIN ĐIỀU HÀNH
         u_info=st.session_state.user_login
     )
     st.stop()
-elif "QUẢN TRỊ" in st.session_state.phan_he_hien_tai or "QUẢN LÝ CHUNG" in st.session_state.phan_he_hien_tai:
-    import phan_he_quan_ly_chung
+elif "CÔNG VIỆC" in cur_ch or "2." in cur_ch:
+    import phan_he_cac_kenh_dieu_hanh
     import importlib
-    importlib.reload(phan_he_quan_ly_chung)
-    phan_he_quan_ly_chung.render_phan_he_quan_ly_chung(df_tai_khoan, role_curr, st.session_state.nam_hoc_hien_tai, BASE_DIR, THU_MUC_NAM_HOC)
+    importlib.reload(phan_he_cac_kenh_dieu_hanh)
+    phan_he_cac_kenh_dieu_hanh.render_kenh_cong_viec(
+        df_tai_khoan=df_tai_khoan,
+        role_curr=role_curr,
+        nam_hoc=st.session_state.nam_hoc_hien_tai,
+        BASE_DIR=BASE_DIR,
+        THU_MUC_NAM_HOC=THU_MUC_NAM_HOC
+    )
     st.stop()
-elif st.session_state.phan_he_hien_tai == "🚩 ĐOÀN THANH NIÊN (ĐTN)":
+elif "LỊCH LÀM VIỆC" in cur_ch or "3." in cur_ch:
+    import phan_he_cac_kenh_dieu_hanh
+    import importlib
+    importlib.reload(phan_he_cac_kenh_dieu_hanh)
+    phan_he_cac_kenh_dieu_hanh.render_kenh_lich_lam_viec(
+        df_tai_khoan=df_tai_khoan,
+        role_curr=role_curr,
+        nam_hoc=st.session_state.nam_hoc_hien_tai,
+        BASE_DIR=BASE_DIR,
+        THU_MUC_NAM_HOC=THU_MUC_NAM_HOC
+    )
+    st.stop()
+elif "THEO DÕI HẰNG NGÀY" in cur_ch or "4." in cur_ch:
+    import phan_he_cac_kenh_dieu_hanh
+    import importlib
+    importlib.reload(phan_he_cac_kenh_dieu_hanh)
+    phan_he_cac_kenh_dieu_hanh.render_kenh_theo_doi_hang_ngay(
+        df_tai_khoan=df_tai_khoan,
+        role_curr=role_curr,
+        nam_hoc=st.session_state.nam_hoc_hien_tai,
+        BASE_DIR=BASE_DIR,
+        THU_MUC_NAM_HOC=THU_MUC_NAM_HOC
+    )
+    st.stop()
+elif "KẾT QUẢ DẠY & HỌC" in cur_ch or "5." in cur_ch:
+    import phan_he_cac_kenh_dieu_hanh
+    import importlib
+    importlib.reload(phan_he_cac_kenh_dieu_hanh)
+    phan_he_cac_kenh_dieu_hanh.render_kenh_day_va_hoc(
+        df_tai_khoan=df_tai_khoan,
+        role_curr=role_curr,
+        nam_hoc=st.session_state.nam_hoc_hien_tai,
+        BASE_DIR=BASE_DIR,
+        THU_MUC_NAM_HOC=THU_MUC_NAM_HOC
+    )
+    st.stop()
+elif "NỀN NẾP" in cur_ch or "6." in cur_ch or "ĐOÀN THANH NIÊN" in cur_ch:
     import phan_he_doan_thanh_nien
     import importlib
     importlib.reload(phan_he_doan_thanh_nien)
-    phan_he_doan_thanh_nien.render_phan_he_doan_thanh_nien(df_tai_khoan, role_curr, st.session_state.nam_hoc_hien_tai, BASE_DIR, THU_MUC_NAM_HOC)
+    phan_he_doan_thanh_nien.render_phan_he_doan_thanh_nien(
+        df_tai_khoan=df_tai_khoan,
+        role_curr=role_curr,
+        nam_hoc=st.session_state.nam_hoc_hien_tai,
+        BASE_DIR=BASE_DIR,
+        THU_MUC_NAM_HOC=THU_MUC_NAM_HOC
+    )
+    st.stop()
+elif "HỒ SƠ" in cur_ch or "8." in cur_ch:
+    import phan_he_cac_kenh_dieu_hanh
+    import importlib
+    importlib.reload(phan_he_cac_kenh_dieu_hanh)
+    phan_he_cac_kenh_dieu_hanh.render_kenh_ho_so_danh_gia(
+        df_tai_khoan=df_tai_khoan,
+        role_curr=role_curr,
+        nam_hoc=st.session_state.nam_hoc_hien_tai,
+        BASE_DIR=BASE_DIR,
+        THU_MUC_NAM_HOC=THU_MUC_NAM_HOC
+    )
+    st.stop()
+elif "TIỆN ÍCH" in cur_ch or "9." in cur_ch:
+    import phan_he_cac_kenh_dieu_hanh
+    import importlib
+    importlib.reload(phan_he_cac_kenh_dieu_hanh)
+    duong_dan_online = "https://thpt2baoyen.streamlit.app"
+    duong_dan_app_mobile = f"{duong_dan_online}/?caidat=pwa"
+    phan_he_cac_kenh_dieu_hanh.render_kenh_tien_ich_va_cai_dat(
+        BASE_DIR=BASE_DIR,
+        THU_MUC_NAM_HOC=THU_MUC_NAM_HOC,
+        nam_hoc=st.session_state.nam_hoc_hien_tai,
+        duong_dan_online=duong_dan_online,
+        duong_dan_app_mobile=duong_dan_app_mobile
+    )
     st.stop()
 
 # ========================================================
@@ -1874,6 +2044,15 @@ def render_bo_cong_cu_bao_vang_va_danh_sach_realtime(df_all, df_view, da_diem_da
                             st.rerun()
     st.markdown("---")
 
+# ========================================================
+# KÊNH 7: QUẢN LÝ BÁN TRÚ & KÝ TÚC XÁ
+# ========================================================
+try:
+    from phan_he_cac_kenh_dieu_hanh import render_channel_header
+    render_channel_header("🛏️", "KÊNH 7: QUẢN LÝ BÁN TRÚ & KÝ TÚC XÁ", f"{len(df_current)} Học sinh bán trú, 12 phòng ở KTX, Điểm danh 4 khung giờ vàng, Tiêu chuẩn 5S & Bếp ăn an toàn", active_id="7")
+except Exception:
+    pass
+
 # --------------------------------------------------------
 # VAI TRÒ 1: BAN GIÁM HIỆU (ADMIN TỐI CAO)
 # --------------------------------------------------------
@@ -2348,12 +2527,14 @@ if role_curr == "Ban Giám hiệu":
         
         c_nav1, c_nav2 = st.columns(2)
         with c_nav1:
-            if st.button("👉 Xem Hướng Dẫn Cài Đặt App Tại Trung Tâm Điều Hành", key="btn_goto_app_guide", use_container_width=True):
-                st.session_state.phan_he_hien_tai = "🏛️ QUẢN TRỊ CHUYÊN MÔN & TÁC NGHIỆP NHÀ TRƯỜNG"
+            if st.button("👉 Xem Hướng Dẫn Cài Đặt App Tại Kênh 9", key="btn_goto_app_guide", use_container_width=True):
+                st.session_state.phan_he_hien_tai = "🚀 9. TIỆN ÍCH GIÁO DỤC SỐ"
+                st.session_state["radio_chon_phan_he"] = "🚀 9. TIỆN ÍCH GIÁO DỤC SỐ"
                 st.rerun()
         with c_nav2:
-            if st.button("👉 Mở Trung Tâm Đồng Bộ Đám Mây Google Sheets (Kênh 1)", key="btn_goto_gsheets_k1", use_container_width=True):
-                st.session_state.phan_he_hien_tai = "🏛️ QUẢN TRỊ CHUYÊN MÔN & TÁC NGHIỆP NHÀ TRƯỜNG"
+            if st.button("👉 Mở Trung Tâm Đồng Bộ Đám Mây Tại Kênh 8", key="btn_goto_gsheets_k1", use_container_width=True):
+                st.session_state.phan_he_hien_tai = "📁 8. HỒ SƠ – ĐÁNH GIÁ"
+                st.session_state["radio_chon_phan_he"] = "📁 8. HỒ SƠ – ĐÁNH GIÁ"
                 st.rerun()
 
 

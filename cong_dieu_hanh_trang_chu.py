@@ -116,35 +116,73 @@ def render_top_brand_bar(nam_hoc="2026 - 2027", logo_data_uri="", is_logged_in=F
 # =============================================================================
 # 2. STICKY SHORTCUT NAVIGATION BAR (9 KÊNH & THƯ MỤC CHUẨN NGHĨA ĐÔ)
 # =============================================================================
-def render_sticky_nav_bar():
+def render_sticky_nav_bar(active_id=None):
     """
     Thanh điều hướng lối tắt 9 Kênh tác nghiệp nổi (Sticky Navigation Bar)
-    Có dropdown menu đa cấp để nhảy nhanh đến đúng khối nội dung hoặc phân hệ.
+    Liên kết trực tiếp URL (?kenh=1..9) và đồng bộ trạng thái kênh đang hoạt động.
     """
-    nav_html = """
+    if active_id is None:
+        k_qp = str(st.query_params.get("kenh", "1")).strip().lower()
+        if k_qp.isdigit() and k_qp in ["1", "2", "3", "4", "5", "6", "7", "8", "9"]:
+            active_str = k_qp
+        elif k_qp in ["cong-viec", "viec", "task"]:
+            active_str = "2"
+        elif k_qp in ["lich", "lich-lam-viec", "calendar"]:
+            active_str = "3"
+        elif k_qp in ["theo-doi", "theo-doi-hang-ngay", "si-so", "tien-do"]:
+            active_str = "4"
+        elif k_qp in ["day-va-hoc", "day-hoc", "sdb", "tkb"]:
+            active_str = "5"
+        elif k_qp in ["nen-nep", "doan-thanh-nien", "xe"]:
+            active_str = "6"
+        elif k_qp in ["ban-tru", "ktx"]:
+            active_str = "7"
+        elif k_qp in ["ho-so", "danh-gia", "kpi"]:
+            active_str = "8"
+        elif k_qp in ["tien-ich", "cai-dat", "app"]:
+            active_str = "9"
+        else:
+            active_str = "1"
+    else:
+        active_str = str(active_id).strip()
+
+    def get_cls(k_num):
+        return "portal-nav-link active" if active_str == str(k_num) else "portal-nav-link"
+
+    nav_html = f"""
     <style>
-    .portal-nav-bar {
-        position: sticky;
-        top: 0;
-        z-index: 999;
-        background: rgba(255, 255, 255, 0.96);
-        backdrop-filter: blur(10px);
-        border: 1px solid #CBD5E1;
-        border-radius: 12px;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-        padding: 6px 12px;
-        margin: 12px 0 20px 0;
-        display: flex;
-        align-items: center;
-        justify-content: flex-start;
-        gap: 6px;
-        flex-wrap: wrap;
-    }
-    .portal-nav-item {
+    /* Ghim cố định thanh portal-nav-bar ở đỉnh cuộn của Streamlit */
+    div[data-testid="stVerticalBlock"] > div:has(.portal-nav-bar),
+    div[data-testid="stMarkdownContainer"]:has(.portal-nav-bar),
+    .element-container:has(.portal-nav-bar) {{
+        position: sticky !important;
+        top: 2.875rem !important;
+        z-index: 999 !important;
+        background: transparent !important;
+    }}
+    .portal-nav-bar {{
+        position: sticky !important;
+        top: 2.875rem !important;
+        z-index: 999 !important;
+        background: rgba(255, 255, 255, 0.98) !important;
+        backdrop-filter: blur(12px) !important;
+        -webkit-backdrop-filter: blur(12px) !important;
+        border: 1px solid #CBD5E1 !important;
+        border-radius: 12px !important;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08) !important;
+        padding: 6px 12px !important;
+        margin: 8px 0 16px 0 !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: flex-start !important;
+        gap: 5px !important;
+        flex-wrap: wrap !important;
+    }}
+    .portal-nav-item {{
         position: relative;
         display: inline-block;
-    }
-    .portal-nav-link {
+    }}
+    .portal-nav-link {{
         display: inline-flex;
         align-items: center;
         gap: 4px;
@@ -158,32 +196,35 @@ def render_sticky_nav_bar():
         letter-spacing: 0.3px;
         transition: all 0.2s ease;
         white-space: nowrap;
-    }
-    .portal-nav-link:hover {
+        border: 1px solid transparent;
+    }}
+    .portal-nav-link:hover {{
         background: #E6F4F1;
         color: #0D5C75;
-    }
-    .portal-nav-link.active {
-        background: #0D5C75;
-        color: white;
-    }
-    .portal-nav-dropdown {
+        border-color: #A7F3D0;
+    }}
+    .portal-nav-link.active {{
+        background: #0D5C75 !important;
+        color: white !important;
+        box-shadow: 0 2px 6px rgba(13, 92, 117, 0.35);
+    }}
+    .portal-nav-dropdown {{
         display: none;
         position: absolute;
         top: 100%;
         left: 0;
-        min-width: 220px;
+        min-width: 230px;
         background: white;
-        border: 1px solid #E2E8F0;
+        border: 1px solid #CBD5E1;
         border-radius: 10px;
         box-shadow: 0 10px 25px rgba(0,0,0,0.12);
         padding: 6px 0;
         z-index: 1000;
-    }
-    .portal-nav-item:hover .portal-nav-dropdown {
+    }}
+    .portal-nav-item:hover .portal-nav-dropdown {{
         display: block;
-    }
-    .portal-nav-sublink {
+    }}
+    .portal-nav-sublink {{
         display: block;
         padding: 7px 14px;
         color: #334155;
@@ -191,13 +232,13 @@ def render_sticky_nav_bar():
         font-size: 12px;
         font-weight: 600;
         transition: background 0.15s ease;
-    }
-    .portal-nav-sublink:hover {
+    }}
+    .portal-nav-sublink:hover {{
         background: #F0FDFA;
         color: #0D5C75;
         padding-left: 18px;
-    }
-    .section-banner-title {
+    }}
+    .section-banner-title {{
         background: #0D5C75;
         border-left: 5px solid #F59E0B;
         color: white;
@@ -208,8 +249,8 @@ def render_sticky_nav_bar():
         align-items: center;
         justify-content: space-between;
         box-shadow: 0 2px 6px rgba(13, 92, 117, 0.15);
-    }
-    .section-banner-title h3 {
+    }}
+    .section-banner-title h3 {{
         margin: 0;
         font-size: 15.5px;
         font-weight: 800;
@@ -218,87 +259,92 @@ def render_sticky_nav_bar():
         display: flex;
         align-items: center;
         gap: 8px;
-    }
-    .section-banner-subtitle {
+    }}
+    .section-banner-subtitle {{
         font-size: 11.5px;
         color: #E2E8F0;
         font-weight: 500;
-    }
+    }}
     </style>
 
     <div class="portal-nav-bar">
         <div class="portal-nav-item">
-            <a href="#trang-chu" class="portal-nav-link active">🏠 TRANG CHỦ</a>
+            <a href="?kenh=1" target="_self" class="{get_cls('1')}">🏠 TRANG CHỦ</a>
         </div>
         
         <div class="portal-nav-item">
-            <a href="#cong-viec" class="portal-nav-link">📋 CÔNG VIỆC ▾</a>
+            <a href="?kenh=2" target="_self" class="{get_cls('2')}">📋 CÔNG VIỆC ▾</a>
             <div class="portal-nav-dropdown">
-                <a href="#cong-viec" class="portal-nav-sublink">📊 Tổng quan công việc nhà trường</a>
-                <a href="#cong-viec-qua-han" class="portal-nav-sublink">🔴 Việc quá hạn cần xử lý gấp</a>
-                <a href="#cong-viec-sap-den-han" class="portal-nav-sublink">🟡 Việc hôm nay và sắp đến hạn</a>
+                <a href="?kenh=2" target="_self" class="portal-nav-sublink">📋 Sổ việc & Phân công nhiệm vụ</a>
+                <a href="?kenh=1#cong-viec" target="_self" class="portal-nav-sublink">📊 Tổng quan tiến độ trang chủ</a>
+                <a href="?kenh=2" target="_self" class="portal-nav-sublink">🔴 Việc quá hạn & Việc hôm nay</a>
             </div>
         </div>
 
         <div class="portal-nav-item">
-            <a href="#lich-lam-viec" class="portal-nav-link">📅 LỊCH LÀM VIỆC ▾</a>
+            <a href="?kenh=3" target="_self" class="{get_cls('3')}">📅 LỊCH LÀM VIỆC ▾</a>
             <div class="portal-nav-dropdown">
-                <a href="#lich-lam-viec" class="portal-nav-sublink">📅 Lịch công tác hôm nay</a>
-                <a href="#lich-lam-viec" class="portal-nav-sublink">🗓️ Lịch công tác ngày mai & tuần này</a>
-                <a href="#lich-lam-viec" class="portal-nav-sublink">📍 Lịch đi cơ sở, công tác vắng mặt</a>
+                <a href="?kenh=3" target="_self" class="portal-nav-sublink">📅 Lịch làm việc tuần tập trung</a>
+                <a href="?kenh=1#lich-lam-viec" target="_self" class="portal-nav-sublink">🗓️ Lịch công tác hôm nay & ngày mai</a>
+                <a href="?kenh=3" target="_self" class="portal-nav-sublink">📍 Lịch trực tuần & Đi cơ sở vắng mặt</a>
             </div>
         </div>
 
         <div class="portal-nav-item">
-            <a href="#theo-doi-hang-ngay" class="portal-nav-link">📊 THEO DÕI HẰNG NGÀY ▾</a>
+            <a href="?kenh=4" target="_self" class="{get_cls('4')}">📊 THEO DÕI HẰNG NGÀY ▾</a>
             <div class="portal-nav-dropdown">
-                <a href="#tien-do-chuong-trinh" class="portal-nav-sublink">📚 Tiến độ chương trình 21 lớp</a>
-                <a href="#si-so-hang-ngay" class="portal-nav-sublink">👥 Sĩ số & Chuyên cần trực tiếp</a>
-                <a href="#su-dung-thiet-bi" class="portal-nav-sublink">🔬 Sử dụng thiết bị & phòng bộ môn</a>
+                <a href="?kenh=4" target="_self" class="portal-nav-sublink">👥 Báo sĩ số 21 lớp & Chuyên cần live</a>
+                <a href="?kenh=4" target="_self" class="portal-nav-sublink">📚 Tiến độ chương trình 21 lớp</a>
+                <a href="?kenh=4" target="_self" class="portal-nav-sublink">🔬 Sử dụng thiết bị & Phòng bộ môn</a>
             </div>
         </div>
 
         <div class="portal-nav-item">
-            <a href="#day-va-hoc" class="portal-nav-link">📈 DẠY & HỌC ▾</a>
+            <a href="?kenh=5" target="_self" class="{get_cls('5')}">📈 DẠY & HỌC ▾</a>
             <div class="portal-nav-dropdown">
-                <a href="#day-va-hoc" class="portal-nav-sublink">📊 Phân bố điểm trung bình môn</a>
-                <a href="#day-va-hoc" class="portal-nav-sublink">📝 Môn đánh giá bằng nhận xét</a>
-                <a href="#day-va-hoc" class="portal-nav-sublink">🎯 Danh sách HS cần bồi dưỡng</a>
+                <a href="?kenh=5" target="_self" class="portal-nav-sublink">✍️ Sổ đầu bài điện tử (SĐB)</a>
+                <a href="?kenh=5" target="_self" class="portal-nav-sublink">🕒 Thời khóa biểu 21 lớp (TKB)</a>
+                <a href="?kenh=5" target="_self" class="portal-nav-sublink">📊 Phân tích chất lượng & Bồi dưỡng</a>
+                <a href="?kenh=5" target="_self" class="portal-nav-sublink">👨‍🎓 Danh bạ 929 Học sinh & 42 CBGV</a>
             </div>
         </div>
 
         <div class="portal-nav-item">
-            <a href="#nen-nep-ren-luyen" class="portal-nav-link">🚩 NỀN NẾP – RÈN LUYỆN ▾</a>
+            <a href="?kenh=6" target="_self" class="{get_cls('6')}">🚩 NỀN NẾP – RÈN LUYỆN ▾</a>
             <div class="portal-nav-dropdown">
-                <a href="#nen-nep-ren-luyen" class="portal-nav-sublink">🏆 Bảng vàng thi đua 21 Chi đoàn</a>
-                <a href="#nen-nep-ren-luyen" class="portal-nav-sublink">⚖️ Chấm nề nếp hàng ngày & vi phạm</a>
-                <a href="#nen-nep-ren-luyen" class="portal-nav-sublink">🛵 Quản lý 648 phương tiện xe (Mã QR)</a>
+                <a href="?kenh=6" target="_self" class="portal-nav-sublink">🏆 Bảng vàng thi đua 21 Chi đoàn</a>
+                <a href="?kenh=6" target="_self" class="portal-nav-sublink">⚖️ Chấm nề nếp hàng ngày & Vi phạm</a>
+                <a href="?kenh=6" target="_self" class="portal-nav-sublink">🛵 Quản lý 648 Xe gắn mã QR</a>
+                <a href="?kenh=6" target="_self" class="portal-nav-sublink">📑 Sổ đoàn viên điện tử</a>
             </div>
         </div>
 
         <div class="portal-nav-item">
-            <a href="#ban-tru-ktx" class="portal-nav-link">🛏️ BÁN TRÚ ▾</a>
+            <a href="?kenh=7" target="_self" class="{get_cls('7')}">🛏️ BÁN TRÚ ▾</a>
             <div class="portal-nav-dropdown">
-                <a href="#ban-tru-ktx" class="portal-nav-sublink">🍲 Bữa ăn & Thực đơn bán trú tuần</a>
-                <a href="#ban-tru-ktx" class="portal-nav-sublink">🛏️ Điểm danh KTX 196 học sinh</a>
-                <a href="#ban-tru-ktx" class="portal-nav-sublink">🏆 Chấm điểm thi đua phòng ở 5S</a>
-                <a href="#ban-tru-ktx" class="portal-nav-sublink">🔍 Giám sát kiểm thực & an toàn KTX</a>
+                <a href="?kenh=7" target="_self" class="portal-nav-sublink">🛏️ Điểm danh KTX 196 học sinh</a>
+                <a href="?kenh=7" target="_self" class="portal-nav-sublink">🍲 Thực đơn & Kiểm thực an toàn bếp</a>
+                <a href="?kenh=7" target="_self" class="portal-nav-sublink">🏆 Chấm điểm thi đua phòng ở 5S</a>
+                <a href="?kenh=7" target="_self" class="portal-nav-sublink">💳 Thu tiền ăn tự động mã VietQR</a>
             </div>
         </div>
 
         <div class="portal-nav-item">
-            <a href="#ho-so-danh-gia" class="portal-nav-link">📁 HỒ SƠ – ĐÁNH GIÁ ▾</a>
+            <a href="?kenh=8" target="_self" class="{get_cls('8')}">📁 HỒ SƠ – ĐÁNH GIÁ ▾</a>
             <div class="portal-nav-dropdown">
-                <a href="#ho-so-danh-gia" class="portal-nav-sublink">📁 01 · Hồ sơ - Văn bản quản lý</a>
-                <a href="#ho-so-danh-gia" class="portal-nav-sublink">📁 02 · Kế hoạch & Chuyên môn</a>
-                <a href="#ho-so-danh-gia" class="portal-nav-sublink">📁 03 · Công tác chủ nhiệm</a>
-                <a href="#ho-so-danh-gia" class="portal-nav-sublink">📁 04 · Cơ sở vật chất & Thiết bị</a>
-                <a href="#ho-so-danh-gia" class="portal-nav-sublink">🌟 Bảng tổng hợp đánh giá KPI 4 tổ</a>
+                <a href="?kenh=8" target="_self" class="portal-nav-sublink">📁 4 Thư mục tài liệu Google Drive</a>
+                <a href="?kenh=8" target="_self" class="portal-nav-sublink">🌟 Bảng tổng hợp đánh giá KPI 4 tổ</a>
+                <a href="?kenh=8" target="_self" class="portal-nav-sublink">📅 Kế hoạch năm học & Kế hoạch tổ</a>
+                <a href="?kenh=8" target="_self" class="portal-nav-sublink">⚙️ Quản trị hệ thống & Đồng bộ Cloud</a>
             </div>
         </div>
 
         <div class="portal-nav-item">
-            <a href="#tien-ich-so" class="portal-nav-link">🚀 TIỆN ÍCH</a>
+            <a href="?kenh=9" target="_self" class="{get_cls('9')}">🚀 TIỆN ÍCH ▾</a>
+            <div class="portal-nav-dropdown">
+                <a href="?kenh=9" target="_self" class="portal-nav-sublink">🚀 9 Nền tảng giáo dục số mở nhanh</a>
+                <a href="?kenh=9" target="_self" class="portal-nav-sublink">📱 Cài đặt App di động lên điện thoại</a>
+            </div>
         </div>
     </div>
     """
@@ -1043,23 +1089,67 @@ def render_cong_dieu_hanh_toan_dien(BASE_DIR, THU_MUC_NAM_HOC, nam_hoc_hien_tai,
     """
     Render toàn bộ cấu trúc Cổng điều hành 9 Kênh & Thư mục tác nghiệp theo chuẩn Nghĩa Đô
     """
-    render_top_brand_bar(nam_hoc=nam_hoc_hien_tai, logo_data_uri=logo_data_uri, is_logged_in=is_logged_in, u_info=u_info)
-    render_sticky_nav_bar()
+    k_qp = str(st.query_params.get("kenh", "1")).strip().lower()
+    active_id = "1"
+    if k_qp.isdigit() and k_qp in ["1", "2", "3", "4", "5", "6", "7", "8", "9"]:
+        active_id = k_qp
+    elif k_qp in ["cong-viec", "viec", "task"]:
+        active_id = "2"
+    elif k_qp in ["lich", "lich-lam-viec", "calendar"]:
+        active_id = "3"
+    elif k_qp in ["theo-doi", "theo-doi-hang-ngay", "si-so", "tien-do"]:
+        active_id = "4"
+    elif k_qp in ["day-va-hoc", "day-hoc", "sdb", "tkb"]:
+        active_id = "5"
+    elif k_qp in ["nen-nep", "doan-thanh-nien", "xe"]:
+        active_id = "6"
+    elif k_qp in ["ban-tru", "ktx"]:
+        active_id = "7"
+    elif k_qp in ["ho-so", "danh-gia", "kpi"]:
+        active_id = "8"
+    elif k_qp in ["tien-ich", "cai-dat", "app"]:
+        active_id = "9"
 
-    # Nếu đã đăng nhập: Cung cấp thanh nút chuyển nhanh sang các phân hệ chuyên sâu
+    render_top_brand_bar(nam_hoc=nam_hoc_hien_tai, logo_data_uri=logo_data_uri, is_logged_in=is_logged_in, u_info=u_info)
+    render_sticky_nav_bar(active_id=active_id)
+
+    # Nếu đã đăng nhập: Cung cấp thanh nút chuyển nhanh sang các Kênh tác nghiệp chuyên sâu
     if is_logged_in and u_info:
         role_u = u_info.get("role", "") if isinstance(u_info, dict) else ""
         available_btns = []
-        if role_u not in ["Học sinh", "Phụ huynh học sinh"]:
-            available_btns.append(("🏛️ Quản Trị Chuyên Môn & Kế Hoạch", "🏛️ QUẢN TRỊ CHUYÊN MÔN & TÁC NGHIỆP NHÀ TRƯỜNG", "primary"))
-        available_btns.append(("🛏️ Quản Lý Bán Trú & KTX Toàn Diện", "🛏️ QUẢN LÝ BÁN TRÚ & KTX", "secondary" if len(available_btns) > 0 else "primary"))
-        if role_u != "Phụ huynh học sinh":
-            available_btns.append(("🚩 Đoàn Thanh Niên & 648 Xe Học Sinh", "🚩 ĐOÀN THANH NIÊN (ĐTN)", "secondary"))
+        if role_u in ["Ban Giám hiệu", "Giáo viên quản lý", "Cán bộ quản trị"]:
+            available_btns = [
+                ("📋 2. Sổ Việc & Giao Việc", "📋 2. CÔNG VIỆC & NHIỆM VỤ", "secondary"),
+                ("📊 4. Sĩ Số & Tiến Độ Live", "📊 4. THEO DÕI HẰNG NGÀY", "primary"),
+                ("📈 5. Sổ Đầu Bài & TKB", "📈 5. KẾT QUẢ DẠY & HỌC", "secondary"),
+                ("🚩 6. Nề Nếp & 648 Xe QR", "🚩 6. NỀN NẾP – RÈN LUYỆN", "secondary"),
+                ("🛏️ 7. Bán Trú & KTX", "🛏️ 7. BÁN TRÚ & KTX", "secondary"),
+                ("📁 8. Hồ Sơ & Đồng Bộ Cloud", "📁 8. HỒ SƠ – ĐÁNH GIÁ", "secondary"),
+            ]
+        elif role_u == "Học sinh":
+            available_btns = [
+                ("🚩 6. Bảng Vàng & Thi Đua Chi Đoàn", "🚩 6. NỀN NẾP – RÈN LUYỆN", "primary"),
+                ("🛏️ 7. Điểm Danh & Thi Đua KTX", "🛏️ 7. BÁN TRÚ & KTX", "secondary"),
+                ("📅 3. Lịch Hoạt Động Tuần", "📅 3. LỊCH LÀM VIỆC TUẦN", "secondary"),
+                ("🚀 9. Tiện Ích Giáo Dục Số", "🚀 9. TIỆN ÍCH GIÁO DỤC SỐ", "secondary"),
+            ]
+        elif role_u == "Phụ huynh học sinh":
+            available_btns = [
+                ("🛏️ 7. Tra Cứu Bán Trú & Đóng Phí", "🛏️ 7. BÁN TRÚ & KTX", "primary"),
+                ("📅 3. Lịch Hoạt Động Nhà Trường", "📅 3. LỊCH LÀM VIỆC TUẦN", "secondary"),
+                ("🚀 9. Tiện Ích Giáo Dục Số", "🚀 9. TIỆN ÍCH GIÁO DỤC SỐ", "secondary"),
+            ]
+        else:
+            available_btns = [
+                ("🛏️ 7. Bán Trú & Suất Ăn", "🛏️ 7. BÁN TRÚ & KTX", "primary"),
+                ("📋 2. Công Việc & Nhiệm Vụ", "📋 2. CÔNG VIỆC & NHIỆM VỤ", "secondary"),
+                ("🚀 9. Tiện Ích Giáo Dục Số", "🚀 9. TIỆN ÍCH GIÁO DỤC SỐ", "secondary"),
+            ]
 
         st_html("""
             <div style="margin: 14px 0 10px 0;">
-                <h4 style="color:#0F172A; margin:0; font-size:16px; font-weight:800; display:flex; align-items:center; gap:8px;">
-                    <span>⚡</span> ĐIỀU HƯỚNG TÁC NGHIỆP CHUYÊN SÂU THEO VAI TRÒ
+                <h4 style="color:#0F172A; margin:0; font-size:15px; font-weight:800; display:flex; align-items:center; gap:8px;">
+                    <span>⚡</span> ĐIỀU HƯỚNG TÁC NGHIỆP 9 KÊNH THEO PHÂN QUYỀN
                 </h4>
             </div>
         """)
@@ -1070,17 +1160,49 @@ def render_cong_dieu_hanh_toan_dien(BASE_DIR, THU_MUC_NAM_HOC, nam_hoc_hien_tai,
                 if st.button(btn_label, key=f"quick_nav_btn_{i}", use_container_width=True, type=btn_type):
                     st.session_state.phan_he_hien_tai = ph_name
                     st.session_state["radio_chon_phan_he"] = ph_name
+                    for num_str in ["1", "2", "3", "4", "5", "6", "7", "8", "9"]:
+                        if f"{num_str}." in ph_name:
+                            st.query_params["kenh"] = num_str
+                            st.session_state._last_processed_kenh_param = num_str
+                            break
                     st.rerun()
 
-    # Render đầy đủ 8 Section nội dung
-    render_section_cong_viec(BASE_DIR, THU_MUC_NAM_HOC, nam_hoc_hien_tai)
-    render_section_lich_lam_viec(BASE_DIR, THU_MUC_NAM_HOC, nam_hoc_hien_tai)
-    render_section_theo_doi_hang_ngay(BASE_DIR, THU_MUC_NAM_HOC, nam_hoc_hien_tai)
-    render_section_day_va_hoc(BASE_DIR, THU_MUC_NAM_HOC, nam_hoc_hien_tai)
-    render_section_nen_nep(BASE_DIR, THU_MUC_NAM_HOC, nam_hoc_hien_tai)
-    render_section_ban_tru(BASE_DIR, THU_MUC_NAM_HOC, nam_hoc_hien_tai)
-    render_section_ho_so_kpi(BASE_DIR, THU_MUC_NAM_HOC, nam_hoc_hien_tai)
-    render_section_tien_ich_so()
+    # Phân phối nội dung theo kênh được chọn:
+    if active_id == "2":
+        render_section_cong_viec(BASE_DIR, THU_MUC_NAM_HOC, nam_hoc_hien_tai)
+    elif active_id == "3":
+        render_section_lich_lam_viec(BASE_DIR, THU_MUC_NAM_HOC, nam_hoc_hien_tai)
+    elif active_id == "4":
+        render_section_theo_doi_hang_ngay(BASE_DIR, THU_MUC_NAM_HOC, nam_hoc_hien_tai)
+    elif active_id == "5":
+        render_section_day_va_hoc(BASE_DIR, THU_MUC_NAM_HOC, nam_hoc_hien_tai)
+    elif active_id == "6":
+        render_section_nen_nep(BASE_DIR, THU_MUC_NAM_HOC, nam_hoc_hien_tai)
+    elif active_id == "7":
+        render_section_ban_tru(BASE_DIR, THU_MUC_NAM_HOC, nam_hoc_hien_tai)
+    elif active_id == "8":
+        render_section_ho_so_kpi(BASE_DIR, THU_MUC_NAM_HOC, nam_hoc_hien_tai)
+    elif active_id == "9":
+        render_section_tien_ich_so()
+    else:
+        # Mặc định: Kênh 1 - Trang chủ điều hành toàn diện
+        render_section_cong_viec(BASE_DIR, THU_MUC_NAM_HOC, nam_hoc_hien_tai)
+        render_section_lich_lam_viec(BASE_DIR, THU_MUC_NAM_HOC, nam_hoc_hien_tai)
+        render_section_theo_doi_hang_ngay(BASE_DIR, THU_MUC_NAM_HOC, nam_hoc_hien_tai)
+        render_section_day_va_hoc(BASE_DIR, THU_MUC_NAM_HOC, nam_hoc_hien_tai)
+        render_section_nen_nep(BASE_DIR, THU_MUC_NAM_HOC, nam_hoc_hien_tai)
+        render_section_ban_tru(BASE_DIR, THU_MUC_NAM_HOC, nam_hoc_hien_tai)
+        render_section_ho_so_kpi(BASE_DIR, THU_MUC_NAM_HOC, nam_hoc_hien_tai)
+        render_section_tien_ich_so()
+
+    if active_id != "1":
+        st_html("""
+            <div style="text-align: center; margin: 25px 0 10px 0;">
+                <a href="?kenh=1" target="_self" style="background:#0D5C75; color:white; padding:10px 24px; border-radius:10px; font-weight:800; text-decoration:none; display:inline-flex; align-items:center; gap:8px; box-shadow:0 3px 8px rgba(13,92,117,0.3);">
+                    <span>🏠</span> Xem Toàn Bộ Trang Chủ Điều Hành
+                </a>
+            </div>
+        """)
     render_portal_footer(nam_hoc=nam_hoc_hien_tai)
 
 # =============================================================================

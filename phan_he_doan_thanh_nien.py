@@ -339,14 +339,18 @@ def tao_html_in_tem_qr(df_in, tieu_de_pham_vi):
 """
 
 def render_phan_he_doan_thanh_nien(df_tai_khoan, role_curr, nam_hoc, BASE_DIR, THU_MUC_NAM_HOC):
-    st.markdown("""
-        <div style='background: linear-gradient(135deg, #DC2626, #B91C1C); padding: 10px 16px; border-radius: 8px; color: white; margin-bottom: 10px; box-shadow: 0 2px 4px rgba(0,0,0,0.08);'>
-            <h3 style='margin:0; font-size: 19px; color: white; font-weight:700;'>🚩 ĐOÀN THANH NIÊN (ĐTN) & NỀ NẾP HỌC SINH</h3>
-            <p style='margin: 4px 0 0 0; opacity: 0.95; font-size: 14px;'>
-                Đoàn TNCS Hồ Chí Minh - Trường THPT số 2 Bảo Yên • Năm học: <b>{}</b>
-            </p>
-        </div>
-    """.format(nam_hoc), unsafe_allow_html=True)
+    try:
+        from phan_he_cac_kenh_dieu_hanh import render_channel_header
+        render_channel_header("🚩", "KÊNH 6: NỀN NẾP – RÈN LUYỆN & ĐOÀN THANH NIÊN", "Bảng vàng thi đua 21 Chi đoàn, Chấm nề nếp vi phạm trực tiếp & Quản lý 648 Xe gắn mã QR", active_id="6")
+    except Exception:
+        st.markdown("""
+            <div style='background: linear-gradient(135deg, #0D5C75 0%, #103F75 100%); border-left: 6px solid #E0A834; padding: 14px 20px; border-radius: 12px; margin-bottom: 12px; color: white;'>
+                <h3 style='margin:0; font-size: 20px; color: white; font-weight:800;'>🚩 KÊNH 6: NỀN NẾP – RÈN LUYỆN & ĐOÀN THANH NIÊN</h3>
+                <p style='margin: 4px 0 0 0; opacity: 0.95; font-size: 13px;'>
+                    Đoàn TNCS Hồ Chí Minh - Trường THPT số 2 Bảo Yên • Năm học: <b>{}</b>
+                </p>
+            </div>
+        """.format(nam_hoc), unsafe_allow_html=True)
 
     folder_nam = nam_hoc.replace(" ", "")
     dir_nam = os.path.join(THU_MUC_NAM_HOC, folder_nam)
