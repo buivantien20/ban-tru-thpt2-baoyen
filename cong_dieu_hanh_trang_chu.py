@@ -364,6 +364,7 @@ def render_trang_chu_dieu_hanh_da_dang_nhap(BASE_DIR, THU_MUC_NAM_HOC, nam_hoc_h
         with cols_btn[i]:
             if st.button(btn_label, key=f"quick_nav_btn_{i}", use_container_width=True, type=btn_type):
                 st.session_state.phan_he_hien_tai = ph_name
+                st.session_state["radio_chon_phan_he"] = ph_name
                 st.rerun()
 
     # 2. Lịch công tác tuần & Bảng việc trong tuần

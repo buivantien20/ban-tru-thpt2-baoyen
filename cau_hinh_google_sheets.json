@@ -14,9 +14,16 @@
   ],
   "last_sync_drive": "30/10/2026 19:55:41 (Cục bộ)",
   "last_sync_sheets": "Chưa đồng bộ",
-  "last_auto_sync": "25/11/2026 16:17:41",
+  "last_auto_sync": "26/11/2026 07:56:33",
   "status": "Chưa cấu hình",
   "sync_log": [
+    {
+      "timestamp": "26/11/2026 07:56:33",
+      "trigger": "Định kỳ 30 phút",
+      "details": [
+        "Drive Cục Bộ: Sao chép 34 file vào D:/Google_Drive_THPT2_BaoYen"
+      ]
+    },
     {
       "timestamp": "25/11/2026 16:17:41",
       "trigger": "Định kỳ 30 phút",
@@ -216,13 +223,6 @@
     {
       "timestamp": "04/11/2026 09:00:23",
       "trigger": "Mốc giờ cố định 09:00",
-      "details": [
-        "Drive Cục Bộ: Sao chép 32 file vào D:/Google_Drive_THPT2_BaoYen"
-      ]
-    },
-    {
-      "timestamp": "04/11/2026 08:41:52",
-      "trigger": "Định kỳ 30 phút",
       "details": [
         "Drive Cục Bộ: Sao chép 32 file vào D:/Google_Drive_THPT2_BaoYen"
       ]

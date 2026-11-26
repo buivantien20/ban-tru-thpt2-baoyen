@@ -218,5 +218,15 @@
     "phone": "988400184.0",
     "quyen_quan_ly": "Toàn quyền quản trị",
     "saved_at": "25/11/2026 14:24:27"
+  },
+  "97a1a614622f62d743c9835568e07403": {
+    "username": "hsn008",
+    "fullname": "Hoàng Văn Ánh",
+    "role": "Học sinh",
+    "chuc_danh": "Trưởng phòng (Phòng 308)",
+    "ma_lien_ket": "HSN-008",
+    "phone": "334172984.0",
+    "quyen_quan_ly": "Trưởng phòng KTX",
+    "saved_at": "26/11/2026 07:56:46"
   }
 }

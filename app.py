@@ -1446,7 +1446,7 @@ with col_h1:
             st.image(FILE_LOGO, width=80)
     with col_tt:
         st.markdown("<h2 style='margin:0; padding:0; color:#1E3A8A;'>🏫 QUẢN LÝ BÁN TRÚ - THPT SỐ 2 BẢO YÊN</h2>", unsafe_allow_html=True)
-        st.markdown(f"**Năm học: {st.session_state.nam_hoc_hien_tai}** | Vai trò: `<span class='{badge_color}'>{role_curr}</span>`", unsafe_allow_html=True)
+        st.markdown(f"**Năm học: {st.session_state.nam_hoc_hien_tai}** | Vai trò: <span class='{badge_color}'>{role_curr}</span>", unsafe_allow_html=True)
 
 with col_h2:
     link_hien = duong_dan_online if duong_dan_online else duong_dan_app_mobile
