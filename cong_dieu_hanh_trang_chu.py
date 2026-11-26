@@ -153,25 +153,25 @@ def render_sticky_nav_bar(active_id=None):
     nav_html = f"""
     <style>
     /* Cuộn trang mượt mà không giật lag */
-    html {
+    html {{
         scroll-behavior: smooth !important;
-    }
-    div[data-testid="stMainBlockContainer"] {
+    }}
+    div[data-testid="stMainBlockContainer"] {{
         scroll-behavior: smooth !important;
-    }
-    .section-banner-title {
+    }}
+    .section-banner-title {{
         scroll-margin-top: 85px !important;
-    }
+    }}
     /* Ghim cố định thanh portal-nav-bar ở đỉnh cuộn của Streamlit */
     div[data-testid="stVerticalBlock"] > div:has(.portal-nav-bar),
     div[data-testid="stMarkdownContainer"]:has(.portal-nav-bar),
-    .element-container:has(.portal-nav-bar) {
+    .element-container:has(.portal-nav-bar) {{
         position: sticky !important;
         top: 2.875rem !important;
         z-index: 999 !important;
         background: transparent !important;
-    }
-    .portal-nav-bar {
+    }}
+    .portal-nav-bar {{
         position: sticky !important;
         top: 2.875rem !important;
         z-index: 999 !important;
@@ -188,12 +188,12 @@ def render_sticky_nav_bar(active_id=None):
         justify-content: flex-start !important;
         gap: 5px !important;
         flex-wrap: wrap !important;
-    }
-    .portal-nav-item {
+    }}
+    .portal-nav-item {{
         position: relative;
         display: inline-block;
-    }
-    .portal-nav-link {
+    }}
+    .portal-nav-link {{
         display: inline-flex;
         align-items: center;
         gap: 4px;
@@ -208,19 +208,19 @@ def render_sticky_nav_bar(active_id=None):
         transition: all 0.2s ease;
         border: 1px solid transparent;
         cursor: pointer;
-    }
-    .portal-nav-link:hover {
+    }}
+    .portal-nav-link:hover {{
         background: #F1F5F9;
         color: #0D5C75;
         border-color: #CBD5E1;
-    }
-    .portal-nav-link.active {
+    }}
+    .portal-nav-link.active {{
         background: #0D5C75;
         color: #FFFFFF !important;
         border-color: #0D5C75;
         box-shadow: 0 2px 6px rgba(13, 92, 117, 0.25);
-    }
-    .portal-nav-dropdown {
+    }}
+    .portal-nav-dropdown {{
         display: none;
         position: absolute;
         top: 100%;
@@ -233,11 +233,11 @@ def render_sticky_nav_bar(active_id=None):
         padding: 6px 0;
         z-index: 1000;
         margin-top: 4px;
-    }
-    .portal-nav-item:hover .portal-nav-dropdown {
+    }}
+    .portal-nav-item:hover .portal-nav-dropdown {{
         display: block;
-    }
-    .portal-nav-sublink {
+    }}
+    .portal-nav-sublink {{
         display: flex;
         align-items: center;
         gap: 8px;
@@ -247,13 +247,13 @@ def render_sticky_nav_bar(active_id=None):
         font-size: 12px;
         font-weight: 600;
         transition: background 0.15s ease;
-    }
-    .portal-nav-sublink:hover {
+    }}
+    .portal-nav-sublink:hover {{
         background: #F0FDFA;
         color: #0D5C75;
         padding-left: 18px;
-    }
-    .section-banner-title {
+    }}
+    .section-banner-title {{
         background: #0D5C75;
         border-left: 5px solid #F59E0B;
         color: white;
@@ -264,8 +264,8 @@ def render_sticky_nav_bar(active_id=None):
         align-items: center;
         justify-content: space-between;
         box-shadow: 0 2px 6px rgba(13, 92, 117, 0.15);
-    }
-    .section-banner-title h3 {
+    }}
+    .section-banner-title h3 {{
         margin: 0;
         font-size: 15.5px;
         font-weight: 800;
@@ -274,12 +274,12 @@ def render_sticky_nav_bar(active_id=None):
         display: flex;
         align-items: center;
         gap: 8px;
-    }
-    .section-banner-subtitle {
+    }}
+    .section-banner-subtitle {{
         font-size: 11.5px;
         color: #E2E8F0;
         font-weight: 500;
-    }
+    }}
     </style>
 
     <div class="portal-nav-bar">
