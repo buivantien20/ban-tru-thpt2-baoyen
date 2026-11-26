@@ -14,9 +14,37 @@
   ],
   "last_sync_drive": "30/10/2026 19:55:41 (Cục bộ)",
   "last_sync_sheets": "Chưa đồng bộ",
-  "last_auto_sync": "25/11/2026 14:17:39",
+  "last_auto_sync": "25/11/2026 16:17:41",
   "status": "Chưa cấu hình",
   "sync_log": [
+    {
+      "timestamp": "25/11/2026 16:17:41",
+      "trigger": "Định kỳ 30 phút",
+      "details": [
+        "Drive Cục Bộ: Sao chép 32 file vào D:/Google_Drive_THPT2_BaoYen"
+      ]
+    },
+    {
+      "timestamp": "25/11/2026 15:47:40",
+      "trigger": "Định kỳ 30 phút",
+      "details": [
+        "Drive Cục Bộ: Sao chép 32 file vào D:/Google_Drive_THPT2_BaoYen"
+      ]
+    },
+    {
+      "timestamp": "25/11/2026 15:17:40",
+      "trigger": "Định kỳ 30 phút",
+      "details": [
+        "Drive Cục Bộ: Sao chép 32 file vào D:/Google_Drive_THPT2_BaoYen"
+      ]
+    },
+    {
+      "timestamp": "25/11/2026 14:47:40",
+      "trigger": "Định kỳ 30 phút",
+      "details": [
+        "Drive Cục Bộ: Sao chép 32 file vào D:/Google_Drive_THPT2_BaoYen"
+      ]
+    },
     {
       "timestamp": "25/11/2026 14:17:39",
       "trigger": "Định kỳ 30 phút",
@@ -197,34 +225,6 @@
       "trigger": "Định kỳ 30 phút",
       "details": [
         "Drive Cục Bộ: Sao chép 32 file vào D:/Google_Drive_THPT2_BaoYen"
-      ]
-    },
-    {
-      "timestamp": "04/11/2026 08:41:29",
-      "trigger": "Định kỳ 30 phút",
-      "details": [
-        "Drive Cục Bộ: Sao chép 32 file vào D:/Google_Drive_THPT2_BaoYen"
-      ]
-    },
-    {
-      "timestamp": "04/11/2026 08:11:52",
-      "trigger": "Định kỳ 30 phút",
-      "details": [
-        "Drive Cục Bộ: Sao chép 32 file vào D:/Google_Drive_THPT2_BaoYen"
-      ]
-    },
-    {
-      "timestamp": "04/11/2026 08:11:28",
-      "trigger": "Định kỳ 30 phút",
-      "details": [
-        "Drive Cục Bộ: Sao chép 32 file vào D:/Google_Drive_THPT2_BaoYen"
-      ]
-    },
-    {
-      "timestamp": "04/11/2026 07:41:42",
-      "trigger": "Định kỳ 30 phút",
-      "details": [
-        "Drive Cục Bộ: Sao chép 31 file vào D:/Google_Drive_THPT2_BaoYen"
       ]
     }
   ]

@@ -481,10 +481,28 @@ def render_phan_he_doan_thanh_nien(df_tai_khoan, role_curr, nam_hoc, BASE_DIR, T
                     st.info("ℹ️ **Quy định phân quyền:** Chức năng chấm điểm thi đua nề nếp chỉ dành cho Ban Chấp Hành Đoàn Trường và Đội Cờ Đỏ. Học sinh và phụ huynh xem bảng nề nếp chi tiết bên dưới:")
                     st.dataframe(df_td_edit[['Chi đoàn', 'Khối', 'Tổng điểm', 'Xếp loại', 'Điểm trừ', 'Điểm cộng', 'Ghi chú']], use_container_width=True, hide_index=True)
                 else:
+                    # Phân quyền chặt chẽ RBAC:
+                    # Nếu là Lớp trưởng / Bí thư (và không phải Admin/Cờ đỏ): khóa cứng đúng Chi đoàn của mình
+                    lop_cua_bcs = str(u_curr.get("ma_lien_ket", "")).strip()
+                    if not lop_cua_bcs or lop_cua_bcs == "Toàn trường":
+                        import re
+                        m_l = re.search(r'1[0-2][Aa]\d+', chuc_danh_str + " " + u_username)
+                        if m_l:
+                            lop_cua_bcs = m_l.group(0).upper()
+
+                    chi_cham_lop_minh = is_lop_truong and not (la_bgh_admin or is_co_do) and bool(lop_cua_bcs)
+
+                    if chi_cham_lop_minh:
+                        st.info(f"🔒 **Phân quyền Ban Cán sự Lớp:** Em đang đăng nhập với quyền **{u_curr.get('chuc_danh', 'Lớp trưởng / Bí thư')}** - Chi đoàn **{lop_cua_bcs}**. Hệ thống tự động khóa quyền tác nghiệp chấm điểm cho đúng lớp của em để bảo đảm tính minh bạch, khách quan.")
+
                     with st.form("form_cham_diem_dtn"):
                         c_lop, c_tuan = st.columns([1, 1])
                         with c_lop:
-                            lop_duoc_chon = st.selectbox("Chọn Chi đoàn chấm điểm:", ds_lop)
+                            if chi_cham_lop_minh:
+                                ds_lop_chon = [lop_cua_bcs] if lop_cua_bcs in ds_lop else [lop_cua_bcs]
+                                lop_duoc_chon = st.selectbox("Chi đoàn của em (Đã khóa cứng):", ds_lop_chon, disabled=True)
+                            else:
+                                lop_duoc_chon = st.selectbox("Chọn Chi đoàn chấm điểm:", ds_lop)
                         with c_tuan:
                             tuan_cham = st.selectbox("Tuần thi đua:", [f"Tuần {i}" for i in range(1, 38)], index=8)
 
@@ -545,12 +563,16 @@ def render_phan_he_doan_thanh_nien(df_tai_khoan, role_curr, nam_hoc, BASE_DIR, T
             st.dataframe(df_hs_vp, use_container_width=True, hide_index=True)
 
             if not is_ph_hs:
-                with st.expander("➕ **Đội Cờ Đỏ Ghi Nhận Lỗi Vi Phạm Của Học Sinh Mới:**"):
+                tieu_de_expander = f"➕ **Ban Cán Sự Ghi Nhận Vi Phạm Học Sinh Lớp {lop_cua_bcs}:**" if chi_cham_lop_minh else "➕ **Đội Cờ Đỏ & BCH Đoàn Ghi Nhận Lỗi Vi Phạm Học Sinh:**"
+                with st.expander(tieu_de_expander):
                     with st.form("form_add_hs_vp"):
                         c_vp1, c_vp2 = st.columns(2)
                         with c_vp1:
                             hs_ten_vp = st.text_input("Họ và tên học sinh vi phạm:")
-                            hs_lop_vp = st.selectbox("Lớp học:", [f"10A{i}" for i in range(1, 8)] + [f"11A{i}" for i in range(1, 8)] + [f"12A{i}" for i in range(1, 8)])
+                            if chi_cham_lop_minh:
+                                hs_lop_vp = st.selectbox("Lớp học (Đã khóa):", [lop_cua_bcs], disabled=True)
+                            else:
+                                hs_lop_vp = st.selectbox("Lớp học:", [f"10A{i}" for i in range(1, 8)] + [f"11A{i}" for i in range(1, 8)] + [f"12A{i}" for i in range(1, 8)])
                             loi_vp = st.selectbox("Lỗi vi phạm:", ["Đi học muộn", "Không đội mũ bảo hiểm xe máy/xe đạp điện", "Không mặc đồng phục / quên thẻ", "Vệ sinh bẩn / vứt rác bừa bãi", "Sử dụng điện thoại trái phép", "Vi phạm khác"])
                         with c_vp2:
                             diem_tru_val = st.number_input("Điểm trừ thi đua Chi đoàn:", value=2, min_value=1, max_value=20)
