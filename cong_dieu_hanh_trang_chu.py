@@ -77,7 +77,7 @@ def render_top_brand_bar(nam_hoc="2026 - 2027", logo_data_uri="", is_logged_in=F
         """
 
     top_html = f"""
-    <div style="background: linear-gradient(135deg, #0D5C75 0%, #103F75 100%); border-bottom: 3.5px solid #E0A834; padding: 12px 24px; color: white; box-shadow: 0 4px 12px rgba(13, 92, 117, 0.25);">
+    <div id="trang-chu" style="background: linear-gradient(135deg, #0D5C75 0%, #103F75 100%); border-bottom: 3.5px solid #E0A834; padding: 12px 24px; color: white; box-shadow: 0 4px 12px rgba(13, 92, 117, 0.25);">
         <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;">
             <div style="display:flex; align-items:center; gap:14px;">
                 {logo_tag}
@@ -89,7 +89,7 @@ def render_top_brand_bar(nam_hoc="2026 - 2027", logo_data_uri="", is_logged_in=F
                         TRƯỜNG THPT SỐ 2 BẢO YÊN
                     </div>
                     <div style="font-size:12px; color:#CBD5E1; font-weight:500;">
-                        Xã Bảo Hà, Huyện Bảo Yên, Tỉnh Lào Cai
+                        Xã Bảo Hà, Tỉnh Lào Cai
                     </div>
                 </div>
             </div>
@@ -307,45 +307,9 @@ def render_sticky_nav_bar():
 # =============================================================================
 # 3. HERO BANNER
 # =============================================================================
-def render_hero_banner(nam_hoc, logo_data_uri="", is_logged_in=False, u_info=None):
-    """Hero Banner hình ảnh trường và thông điệp điều hành"""
-    ngay_hien_tai_str = lay_ngay_gio_hien_tai_str()
-    html_banner = f"""
-    <div id="trang-chu" style="
-        background: linear-gradient(135deg, rgba(13, 92, 117, 0.92) 0%, rgba(16, 63, 117, 0.95) 100%), url('https://images.unsplash.com/photo-1580582932707-520aed937b7b?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
-        border-radius: 14px;
-        padding: 24px 28px;
-        color: white;
-        box-shadow: 0 8px 20px rgba(13, 92, 117, 0.2);
-        margin-bottom: 16px;
-        position: relative;
-        overflow: hidden;
-    ">
-        <div style="display:flex; justify-content:space-between; align-items:flex-end; flex-wrap:wrap; gap:16px;">
-            <div style="max-width: 650px;">
-                <span style="background: rgba(224, 168, 52, 0.25); border: 1px solid #E0A834; color: #FEF08A; padding: 4px 12px; border-radius: 20px; font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px;">
-                    ✨ TRUNG TÂM ĐIỀU HÀNH SỐ NHÀ TRƯỜNG
-                </span>
-                <h2 style="margin: 8px 0 6px 0; font-size: 26px; font-weight: 900; letter-spacing: 0.3px; color: #FFFFFF;">
-                    Công Việc, Lịch Công Tác & Theo Dõi Tác Nghiệp
-                </h2>
-                <div style="font-size: 13.5px; color: #E2E8F0; line-height: 1.5;">
-                    Hệ thống tích hợp giám sát tiến độ giảng dạy, sĩ số 21 lớp, quản lý bán trú KTX, nề nếp đoàn thanh niên và đánh giá công tác giáo dục toàn diện.
-                </div>
-            </div>
-            
-            <div style="background: rgba(0, 0, 0, 0.3); backdrop-filter: blur(8px); border: 1px solid rgba(255,255,255,0.2); border-radius: 10px; padding: 10px 18px; text-align: right;">
-                <div style="font-size: 13px; font-weight: 800; color: #A7F3D0;">
-                    📅 {ngay_hien_tai_str}
-                </div>
-                <div style="font-size: 11px; color: #E2E8F0; margin-top: 3px;">
-                    Năm học {nam_hoc} · Kế hoạch Học kỳ I
-                </div>
-            </div>
-        </div>
-    </div>
-    """
-    st_html(html_banner)
+def render_hero_banner(nam_hoc=None, logo_data_uri="", is_logged_in=False, u_info=None):
+    """Đã lược bỏ khối banner tiêu đề theo yêu cầu của nhà trường để giao diện tinh gọn, không chiếm diện tích"""
+    pass
 
 # =============================================================================
 # 4. SECTION 1: CÔNG VIỆC CẦN HOÀN THÀNH (QUẢN TRỊ NHIỆM VỤ)
@@ -1064,7 +1028,7 @@ def render_portal_footer(nam_hoc="2026 - 2027"):
             CỔNG ĐIỀU HÀNH & QUẢN TRỊ TRƯỜNG HỌC TOÀN DIỆN (NĂM HỌC {nam_hoc})
         </div>
         <div style="font-size:11.5px; color:#94A3B8; margin-top:8px;">
-            📍 Địa chỉ: Xã Bảo Hà, Huyện Bảo Yên, Tỉnh Lào Cai | ☎️ Điện thoại BGH: 0214.387.6543 | ✉️ Email: c3baoyen2@laocai.edu.vn
+            📍 Địa chỉ: Xã Bảo Hà, Tỉnh Lào Cai | ☎️ Điện thoại BGH: 0214.879.241 | ✉️ Email: thptbaoyen2@laocai.edu.vn
         </div>
         <div style="font-size:11px; color:#A7F3D0; margin-top:12px; padding-top:8px; border-top:1px dashed rgba(255,255,255,0.2);">
             Hệ thống quản trị nội bộ tích hợp Bán trú KTX, Quản lý học sinh, Phương tiện xe và Hồ sơ giáo dục số.
@@ -1081,7 +1045,6 @@ def render_cong_dieu_hanh_toan_dien(BASE_DIR, THU_MUC_NAM_HOC, nam_hoc_hien_tai,
     """
     render_top_brand_bar(nam_hoc=nam_hoc_hien_tai, logo_data_uri=logo_data_uri, is_logged_in=is_logged_in, u_info=u_info)
     render_sticky_nav_bar()
-    render_hero_banner(nam_hoc=nam_hoc_hien_tai, logo_data_uri=logo_data_uri, is_logged_in=is_logged_in, u_info=u_info)
 
     # Nếu đã đăng nhập: Cung cấp thanh nút chuyển nhanh sang các phân hệ chuyên sâu
     if is_logged_in and u_info:
