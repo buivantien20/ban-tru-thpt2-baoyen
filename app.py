@@ -598,50 +598,26 @@ if "user_login" not in st.session_state:
     }
 
 # ========================================================
-# 2.1. CỔNG THÔNG TIN ĐIỀU HÀNH & MÀN HÌNH ĐĂNG NHẬP (NẾU CHƯA ĐĂNG NHẬP)
+# 2.1. HÀM ĐĂNG NHẬP HỆ THỐNG & TRẢI NGHIỆM 1-CLICK DEMO (SIDEBAR HOẶC DIALOG)
 # ========================================================
-if not st.session_state.user_login.get("logged_in", False):
-    import cong_dieu_hanh_trang_chu
-    import importlib
-    importlib.reload(cong_dieu_hanh_trang_chu)
-
-    # Render Cổng điều hành toàn diện theo chuẩn cấu trúc Nghĩa Đô (9 Kênh & Thư mục tác nghiệp)
-    cong_dieu_hanh_trang_chu.render_cong_dieu_hanh_toan_dien(
-        BASE_DIR=BASE_DIR,
-        THU_MUC_NAM_HOC=THU_MUC_NAM_HOC,
-        nam_hoc_hien_tai=st.session_state.nam_hoc_hien_tai,
-        logo_data_uri=logo_data_uri,
-        is_logged_in=False
-    )
-
-    cong_dieu_hanh_trang_chu.st_html("<hr style='border: 0; height: 2px; background: linear-gradient(to right, rgba(13, 92, 117, 0.05), rgba(13, 92, 117, 0.5), rgba(13, 92, 117, 0.05)); margin: 35px 0 20px 0;'>")
-
-    cong_dieu_hanh_trang_chu.st_html("""
-        <div id="khu-vuc-dang-nhap" style="background: linear-gradient(135deg, #0D5C75 0%, #103F75 100%); color: white; padding: 14px 20px; border-radius: 12px; margin-bottom: 20px; box-shadow: 0 4px 12px rgba(13, 92, 117, 0.2); display: flex; align-items: center; justify-content: space-between;">
-            <div>
-                <h4 style="color: white; margin: 0; font-size: 16px; font-weight: 800; display: flex; align-items: center; gap: 8px;">
-                    <span>🔐</span> KHU VỰC ĐĂNG NHẬP HỆ THỐNG & CÀI ĐẶT ỨNG DỤNG DI ĐỘNG
-                </h4>
-                <div style="color: #E2E8F0; font-size: 12.5px; margin-top: 3px;">
-                    Dành cho Ban Giám Hiệu, Thầy Cô giáo, Nhân viên, Học sinh và Phụ huynh trường THPT số 2 Bảo Yên
-                </div>
-            </div>
-            <span style="background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.25); padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 600;">
-                🔒 Bảo mật 256-bit
-            </span>
-        </div>
-    """)
-
+def render_khu_vuc_dang_nhap(key_prefix="sb_"):
+    """
+    Khu vực đăng nhập thông minh:
+    - 4 nút 1-Click Demo trải nghiệm nhanh theo vai trò
+    - Form đăng nhập tài khoản / SĐT + mật khẩu hoặc mã bảo vệ 4 số
+    - Expander hướng dẫn & QR cài đặt App điện thoại
+    """
     st.markdown("""
-        <div style="background: #F8FAFC; border: 1px solid #CBD5E1; border-radius: 10px; padding: 10px 14px; margin-bottom: 12px;">
-            <div style="font-size: 12px; font-weight: 800; color: #0D5C75; text-transform: uppercase; margin-bottom: 6px;">
-                ⚡ TRẢI NGHIỆM NHANH HỆ THỐNG THEO VAI TRÒ (1-CLICK DEMO):
+        <div style="background: #F8FAFC; border: 1px solid #CBD5E1; border-radius: 8px; padding: 6px 10px; margin-bottom: 8px;">
+            <div style="font-size: 11px; font-weight: 800; color: #0D5C75; text-transform: uppercase;">
+                ⚡ TRẢI NGHIỆM NHANH (1-CLICK DEMO):
             </div>
         </div>
     """, unsafe_allow_html=True)
-    c_dm1, c_dm2, c_dm3, c_dm4 = st.columns(4)
+    
+    c_dm1, c_dm2 = st.columns(2)
     with c_dm1:
-        if st.button("👑 Ban Giám Hiệu", key="btn_quick_bgh", use_container_width=True, type="primary"):
+        if st.button("👑 BGH", key=f"{key_prefix}btn_quick_bgh", use_container_width=True, type="primary"):
             st.session_state.is_admin_mode = True
             st.session_state.user_login = {
                 "logged_in": True, "username": "admin", "fullname": "Ban Giám Hiệu",
@@ -649,25 +625,10 @@ if not st.session_state.user_login.get("logged_in", False):
             }
             st.session_state.phan_he_hien_tai = "🏠 1. TRANG CHỦ ĐIỀU HÀNH"
             st.session_state["radio_chon_phan_he"] = "🏠 1. TRANG CHỦ ĐIỀU HÀNH"
-            if "kenh" in st.query_params:
-                del st.query_params["kenh"]
-            st.session_state._last_processed_kenh_param = "1"
+            if "dang_nhap" in st.query_params:
+                del st.query_params["dang_nhap"]
             st.rerun()
-    with c_dm2:
-        if st.button("👨‍🏫 Giáo Viên Quản Nhiệm", key="btn_quick_qn", use_container_width=True):
-            st.session_state.is_admin_mode = False
-            st.session_state.user_login = {
-                "logged_in": True, "username": "quannhiem", "fullname": "Thầy Nguyễn Văn Quản Nhiệm",
-                "role": "Giáo viên quản lý", "chuc_danh": "Giáo viên Quản nhiệm KTX & GVCN", "ma_lien_ket": "10A1", "quyen_quan_ly": "Bộ phận"
-            }
-            st.session_state.phan_he_hien_tai = "🏠 1. TRANG CHỦ ĐIỀU HÀNH"
-            st.session_state["radio_chon_phan_he"] = "🏠 1. TRANG CHỦ ĐIỀU HÀNH"
-            if "kenh" in st.query_params:
-                del st.query_params["kenh"]
-            st.session_state._last_processed_kenh_param = "1"
-            st.rerun()
-    with c_dm3:
-        if st.button("🚩 Học Sinh Lớp Trưởng", key="btn_quick_hs", use_container_width=True):
+        if st.button("🚩 Lớp trưởng", key=f"{key_prefix}btn_quick_hs", use_container_width=True):
             st.session_state.is_admin_mode = False
             st.session_state.user_login = {
                 "logged_in": True, "username": "hs0001", "fullname": "Em Nguyễn Thị Thanh Thảo",
@@ -675,12 +636,22 @@ if not st.session_state.user_login.get("logged_in", False):
             }
             st.session_state.phan_he_hien_tai = "🏠 1. TRANG CHỦ ĐIỀU HÀNH"
             st.session_state["radio_chon_phan_he"] = "🏠 1. TRANG CHỦ ĐIỀU HÀNH"
-            if "kenh" in st.query_params:
-                del st.query_params["kenh"]
-            st.session_state._last_processed_kenh_param = "1"
+            if "dang_nhap" in st.query_params:
+                del st.query_params["dang_nhap"]
             st.rerun()
-    with c_dm4:
-        if st.button("👨‍👩‍👧 Phụ Huynh Học Sinh", key="btn_quick_ph", use_container_width=True):
+    with c_dm2:
+        if st.button("👨‍🏫 Quản nhiệm", key=f"{key_prefix}btn_quick_qn", use_container_width=True):
+            st.session_state.is_admin_mode = False
+            st.session_state.user_login = {
+                "logged_in": True, "username": "quannhiem", "fullname": "Thầy Nguyễn Văn Quản Nhiệm",
+                "role": "Giáo viên quản lý", "chuc_danh": "Giáo viên Quản nhiệm KTX & GVCN", "ma_lien_ket": "10A1", "quyen_quan_ly": "Bộ phận"
+            }
+            st.session_state.phan_he_hien_tai = "🏠 1. TRANG CHỦ ĐIỀU HÀNH"
+            st.session_state["radio_chon_phan_he"] = "🏠 1. TRANG CHỦ ĐIỀU HÀNH"
+            if "dang_nhap" in st.query_params:
+                del st.query_params["dang_nhap"]
+            st.rerun()
+        if st.button("👨‍👩‍👧 Phụ huynh", key=f"{key_prefix}btn_quick_ph", use_container_width=True):
             st.session_state.is_admin_mode = False
             st.session_state.user_login = {
                 "logged_in": True, "username": "phuhuynh", "fullname": "Phụ Huynh Em Nguyễn Thị Thanh Thảo",
@@ -688,226 +659,119 @@ if not st.session_state.user_login.get("logged_in", False):
             }
             st.session_state.phan_he_hien_tai = "🏠 1. TRANG CHỦ ĐIỀU HÀNH"
             st.session_state["radio_chon_phan_he"] = "🏠 1. TRANG CHỦ ĐIỀU HÀNH"
-            if "kenh" in st.query_params:
-                del st.query_params["kenh"]
-            st.session_state._last_processed_kenh_param = "1"
+            if "dang_nhap" in st.query_params:
+                del st.query_params["dang_nhap"]
             st.rerun()
 
-    col_l1, col_l2 = st.columns([1.15, 1], gap="medium")
-    with col_l1:
-        # Cho phép chọn năm học ngay tại màn hình đăng nhập
-        c_nh_l1, c_nh_l2 = st.columns([1, 1])
-        with c_nh_l1:
-            st.caption("📅 **NĂM HỌC ĐANG TRUY CẬP:**")
-        with c_nh_l2:
-            chon_nh_login = st.selectbox(
-                "Chọn năm học:",
-                options=danh_sach_nam_hoc,
-                index=danh_sach_nam_hoc.index(st.session_state.nam_hoc_hien_tai) if st.session_state.nam_hoc_hien_tai in danh_sach_nam_hoc else 0,
-                key="login_select_nam_hoc",
-                label_visibility="collapsed"
-            )
-            if chon_nh_login != st.session_state.nam_hoc_hien_tai:
-                st.session_state.nam_hoc_hien_tai = chon_nh_login
-                st.rerun()
-        
-        if tai_khoan_ghi_nho is not None:
-            # Tạo mã bảo mật 4 chữ số ngẫu nhiên nếu chưa có
-            if "ma_captcha_xac_thuc" not in st.session_state:
-                st.session_state.ma_captcha_xac_thuc = str(random.randint(1000, 9999))
-            
-            st.markdown(f"""
-                <div style='background:#F0FDF4; border:2px solid #86EFAC; border-radius:12px; padding:15px; margin-bottom:15px;'>
-                    <div style='display:flex; align-items:center; gap:10px;'>
-                        <span style='font-size:28px;'>👋</span>
-                        <div>
-                            <h4 style='color:#15803D; margin:0;'>Chào mừng trở lại, {tai_khoan_ghi_nho['Họ và tên']}!</h4>
-                            <p style='color:#1E293B; font-size:13.5px; margin:2px 0 0 0;'>
-                                🏷️ Vai trò: <b>{tai_khoan_ghi_nho['Vai trò']}</b> | 👤 Tài khoản: <code>{tai_khoan_ghi_nho['Tên đăng nhập']}</code>
-                            </p>
-                        </div>
-                    </div>
-                    <div style='margin-top:8px; padding-top:8px; border-top:1px dashed #BBF7D0; font-size:12px; color:#166534;'>
-                        🔒 Tài khoản đã được ghi nhớ an toàn trên thiết bị này. Bạn không cần phải nhập lại mật khẩu.
-                    </div>
-                </div>
-            """, unsafe_allow_html=True)
-            
-            with st.form("form_xac_nhan_con_nguoi"):
-                st.markdown("#### 🛡️ XÁC THỰC BẢO MẬT (XÁC MINH CON NGƯỜI)")
-                st.caption("Để đảm bảo an toàn cho dữ liệu nhà trường, vui lòng nhập mã bảo vệ 4 chữ số hiển thị bên dưới để vào app:")
-                
-                # Hiển thị mã bảo mật 4 số to, rõ, đẹp
-                st.markdown(f"""
-                    <div style='text-align:center; padding:14px; background:#F8FAFC; border:1.5px dashed #94A3B8; border-radius:10px; margin:10px 0;'>
-                        <span style='font-size:12px; color:#64748B; font-weight:bold; letter-spacing:1px; display:block; margin-bottom:6px;'>MÃ XÁC THỰC CON NGƯỜI:</span>
-                        <div style='display:inline-block; background:linear-gradient(135deg, #1E3A8A, #059669); color:white; font-family:"Courier New", monospace; font-size:32px; font-weight:900; letter-spacing:12px; padding:8px 24px; border-radius:8px; box-shadow:0 3px 6px rgba(0,0,0,0.15);'>
-                            {st.session_state.ma_captcha_xac_thuc}
-                        </div>
-                    </div>
-                """, unsafe_allow_html=True)
-                
-                ma_nhap = st.text_input("🔢 Nhập 4 chữ số trên:", max_chars=4, placeholder="Nhập 4 số hiển thị ở trên...")
-                btn_xac_nhan = st.form_submit_button("🚀 XÁC NHẬN & VÀO ỨNG DỤNG NGAY", type="primary", use_container_width=True)
-                
-                if btn_xac_nhan:
-                    if ma_nhap.strip() == st.session_state.ma_captcha_xac_thuc:
-                        st.session_state.is_admin_mode = (tai_khoan_ghi_nho["Vai trò"] == "Ban Giám hiệu" or tai_khoan_ghi_nho["Tên đăng nhập"] == "admin" or "Toàn quyền" in str(tai_khoan_ghi_nho.get("Quyền quản lý", "")))
-                        st.session_state.user_login = {
-                            "logged_in": True,
-                            "username": tai_khoan_ghi_nho["Tên đăng nhập"],
-                            "fullname": tai_khoan_ghi_nho["Họ và tên"],
-                            "role": tai_khoan_ghi_nho["Vai trò"],
-                            "chuc_danh": tai_khoan_ghi_nho.get("Chức danh", tai_khoan_ghi_nho["Vai trò"]),
-                            "ma_lien_ket": str(tai_khoan_ghi_nho.get("Mã liên kết", "")).strip(),
-                            "phone": str(tai_khoan_ghi_nho.get("Số điện thoại", "")).strip(),
-                            "quyen_quan_ly": str(tai_khoan_ghi_nho.get("Quyền quản lý", "Cá nhân")).strip()
-                        }
-                        st.session_state.ma_captcha_xac_thuc = str(random.randint(1000, 9999))
-                        st.success(f"🎉 Xác thực thành công! Xin chào {tai_khoan_ghi_nho['Họ và tên']}.")
-                        st.rerun()
-                    else:
-                        st.error("❌ Mã xác thực chưa chính xác! Vui lòng nhập đúng 4 chữ số hiển thị ở trên.")
-                        st.session_state.ma_captcha_xac_thuc = str(random.randint(1000, 9999))
-            
-            c_sub1, c_sub2 = st.columns(2)
-            with c_sub1:
-                if st.button("🔄 Đổi mã bảo mật khác", use_container_width=True):
-                    st.session_state.ma_captcha_xac_thuc = str(random.randint(1000, 9999))
+    st.markdown("<div style='border-top: 1px solid #E2E8F0; margin: 8px 0;'></div>", unsafe_allow_html=True)
+    st.markdown("<div style='font-size: 11.5px; font-weight: 700; color: #475569; text-transform: uppercase; margin-bottom: 6px;'>🔐 ĐĂNG NHẬP TÀI KHOẢN</div>", unsafe_allow_html=True)
+
+    if tai_khoan_ghi_nho is not None:
+        if "ma_captcha_xac_thuc" not in st.session_state:
+            st.session_state.ma_captcha_xac_thuc = str(random.randint(1000, 9999))
+        st.markdown(f"""
+            <div style='background:#F0FDF4; border:1px solid #86EFAC; border-radius:8px; padding:8px 10px; margin-bottom:8px; font-size:12px;'>
+                👋 <b>{tai_khoan_ghi_nho['Họ và tên']}</b> ({tai_khoan_ghi_nho['Vai trò']})
+            </div>
+        """, unsafe_allow_html=True)
+        with st.form(f"{key_prefix}form_captcha_xac_thuc"):
+            st.caption(f"🛡️ Mã bảo mật: **{st.session_state.ma_captcha_xac_thuc}**")
+            ma_nhap = st.text_input("Nhập 4 số:", max_chars=4, placeholder="4 số hiển thị ở trên...", key=f"{key_prefix}in_cap_val")
+            btn_xc = st.form_submit_button("🚀 XÁC NHẬN VÀO APP", type="primary", use_container_width=True)
+            if btn_xc:
+                if ma_nhap.strip() == st.session_state.ma_captcha_xac_thuc:
+                    st.session_state.is_admin_mode = (tai_khoan_ghi_nho["Vai trò"] == "Ban Giám hiệu" or tai_khoan_ghi_nho["Tên đăng nhập"] == "admin" or "Toàn quyền" in str(tai_khoan_ghi_nho.get("Quyền quản lý", "")))
+                    st.session_state.user_login = {
+                        "logged_in": True,
+                        "username": tai_khoan_ghi_nho["Tên đăng nhập"],
+                        "fullname": tai_khoan_ghi_nho["Họ và tên"],
+                        "role": tai_khoan_ghi_nho["Vai trò"],
+                        "chuc_danh": tai_khoan_ghi_nho.get("Chức danh", tai_khoan_ghi_nho["Vai trò"]),
+                        "ma_lien_ket": str(tai_khoan_ghi_nho.get("Mã liên kết", "")).strip(),
+                        "phone": str(tai_khoan_ghi_nho.get("Số điện thoại", "")).strip(),
+                        "quyen_quan_ly": str(tai_khoan_ghi_nho.get("Quyền quản lý", "Cá nhân")).strip()
+                    }
+                    if "dang_nhap" in st.query_params:
+                        del st.query_params["dang_nhap"]
                     st.rerun()
-            with c_sub2:
-                if st.button("🚪 Đăng nhập tài khoản khác", type="secondary", use_container_width=True):
-                    xoa_phien_ghi_nho(token_curr)
-                    if "token" in st.query_params:
-                        del st.query_params["token"]
-                    st.components.v1.html("""
-                        <script>
-                            try { window.parent.localStorage.removeItem('thpt2_saved_token'); } catch(e) {}
-                            try { localStorage.removeItem('thpt2_saved_token'); } catch(e) {}
-                        </script>
-                    """, height=0, width=0)
-                    st.rerun()
-        else:
-            with st.form("form_dang_nhap_he_thong"):
-                st.markdown("#### 🔐 ĐĂNG NHẬP HỆ THỐNG")
-                ten_dn = st.text_input("👤 Tên đăng nhập:", placeholder="Nhập tên đăng nhập (VD: admin, quannhiem, phuhuynh...)")
-                mat_khau = st.text_input("🔑 Mật khẩu:", type="password", placeholder="Nhập mật khẩu được cấp...")
-                
-                ghi_nho_tk = st.checkbox(
-                    "💾 Ghi nhớ đăng nhập trên thiết bị này (Lần sau chỉ cần xác nhận mã)",
-                    value=True,
-                    help="Khi bật tính năng này, lần sau vào lại app bạn sẽ không cần phải gõ lại tên và mật khẩu."
-                )
-                
-                btn_login = st.form_submit_button("🚀 ĐĂNG NHẬP VÀO HỆ THỐNG", type="primary", use_container_width=True)
-                
-                if btn_login:
-                    ten_clean = ten_dn.strip().lower()
-                    mk_clean = mat_khau.strip()
-                    if not ten_clean or not mk_clean:
-                        st.warning("⚠️ Vui lòng nhập đầy đủ tên đăng nhập và mật khẩu.")
-                    else:
-                        df_tk_check = pd.read_csv(FILE_TAI_KHOAN, encoding='utf-8-sig').fillna("")
-                        sdt_clean = ten_clean.replace(".", "").replace(" ", "").replace("-", "")
-                        sdt_no_0 = sdt_clean.lstrip("0")
-                        sdt_with_0 = "0" + sdt_no_0
-                        mask_u = (df_tk_check["Tên đăng nhập"].str.lower() == ten_clean)
-                        if "Số điện thoại" in df_tk_check.columns:
-                            col_sdt_clean = df_tk_check["Số điện thoại"].astype(str).str.replace(".0", "").str.strip()
-                            mask_u = mask_u | col_sdt_clean.isin([sdt_clean, sdt_no_0, sdt_with_0])
-                        if "Mã liên kết" in df_tk_check.columns:
-                            mask_u = mask_u | (df_tk_check["Mã liên kết"].astype(str).str.lower().str.replace("-", "") == ten_clean.replace("-", ""))
-                        
-                        user_found = df_tk_check[mask_u]
-                        if not user_found.empty:
-                            row_u = user_found.iloc[0]
-                            if str(row_u["Mật khẩu"]).strip() == mk_clean:
-                                if str(row_u.get("Trạng thái", "")) == "Tạm khóa":
-                                    st.error("❌ Tài khoản này hiện đang bị tạm khóa. Vui lòng liên hệ Ban Giám Hiệu!")
-                                else:
-                                    if ghi_nho_tk:
-                                        new_token = secrets.token_hex(16)
-                                        luu_phien_ghi_nho(new_token, row_u)
-                                        st.query_params["token"] = new_token
-                                        st.components.v1.html(f"""
-                                            <script>
-                                                try {{ window.parent.localStorage.setItem('thpt2_saved_token', '{new_token}'); }} catch(e) {{}}
-                                                try {{ localStorage.setItem('thpt2_saved_token', '{new_token}'); }} catch(e) {{}}
-                                            </script>
-                                        """, height=0, width=0)
-                                    
-                                    st.session_state.is_admin_mode = (row_u["Vai trò"] == "Ban Giám hiệu" or row_u["Tên đăng nhập"] == "admin" or "Toàn quyền" in str(row_u.get("Quyền quản lý", "")))
-                                    st.session_state.user_login = {
-                                        "logged_in": True,
-                                        "username": row_u["Tên đăng nhập"],
-                                        "fullname": row_u["Họ và tên"],
-                                        "role": row_u["Vai trò"],
-                                        "chuc_danh": row_u.get("Chức danh", row_u["Vai trò"]),
-                                        "ma_lien_ket": str(row_u.get("Mã liên kết", "")).strip(),
-                                        "phone": str(row_u.get("Số điện thoại", "")).strip(),
-                                        "quyen_quan_ly": str(row_u.get("Quyền quản lý", "Cá nhân")).strip()
-                                    }
-                                    st.success(f"🎉 Đăng nhập thành công! Xin chào {row_u['Họ và tên']}.")
-                                    st.rerun()
+                else:
+                    st.error("❌ Mã xác thực chưa đúng!")
+        if st.button("🚪 Đăng nhập tài khoản khác", key=f"{key_prefix}btn_diff_acc", use_container_width=True):
+            xoa_phien_ghi_nho(token_curr)
+            if "token" in st.query_params:
+                del st.query_params["token"]
+            st.rerun()
+    else:
+        with st.form(f"{key_prefix}form_dang_nhap_tk"):
+            ten_dn = st.text_input("👤 Tên đăng nhập / SĐT:", placeholder="admin, quannhiem, SĐT...", key=f"{key_prefix}in_user_val")
+            mat_khau = st.text_input("🔑 Mật khẩu:", type="password", placeholder="Nhập mật khẩu...", key=f"{key_prefix}in_pwd_val")
+            ghi_nho_tk = st.checkbox("💾 Ghi nhớ trên thiết bị này", value=True, key=f"{key_prefix}in_rem_val")
+            btn_login = st.form_submit_button("🚀 ĐĂNG NHẬP VÀO HỆ THỐNG", type="primary", use_container_width=True)
+            if btn_login:
+                ten_clean = ten_dn.strip().lower()
+                mk_clean = mat_khau.strip()
+                if not ten_clean or not mk_clean:
+                    st.warning("⚠️ Vui lòng nhập tên đăng nhập và mật khẩu.")
+                else:
+                    df_tk_check = pd.read_csv(FILE_TAI_KHOAN, encoding='utf-8-sig').fillna("")
+                    sdt_clean = ten_clean.replace(".", "").replace(" ", "").replace("-", "")
+                    sdt_no_0 = sdt_clean.lstrip("0")
+                    sdt_with_0 = "0" + sdt_no_0
+                    mask_u = (df_tk_check["Tên đăng nhập"].str.lower() == ten_clean)
+                    if "Số điện thoại" in df_tk_check.columns:
+                        col_sdt_clean = df_tk_check["Số điện thoại"].astype(str).str.replace(".0", "").str.strip()
+                        mask_u = mask_u | col_sdt_clean.isin([sdt_clean, sdt_no_0, sdt_with_0])
+                    if "Mã liên kết" in df_tk_check.columns:
+                        mask_u = mask_u | (df_tk_check["Mã liên kết"].astype(str).str.lower().str.replace("-", "") == ten_clean.replace("-", ""))
+                    user_found = df_tk_check[mask_u]
+                    if not user_found.empty:
+                        row_u = user_found.iloc[0]
+                        if str(row_u["Mật khẩu"]).strip() == mk_clean:
+                            if str(row_u.get("Trạng thái", "")) == "Tạm khóa":
+                                st.error("❌ Tài khoản này hiện đang bị tạm khóa!")
                             else:
-                                st.error("❌ Mật khẩu không chính xác! Vui lòng kiểm tra lại.")
+                                if ghi_nho_tk:
+                                    new_token = secrets.token_hex(16)
+                                    luu_phien_ghi_nho(new_token, row_u)
+                                    st.query_params["token"] = new_token
+                                st.session_state.is_admin_mode = (row_u["Vai trò"] == "Ban Giám hiệu" or row_u["Tên đăng nhập"] == "admin" or "Toàn quyền" in str(row_u.get("Quyền quản lý", "")))
+                                st.session_state.user_login = {
+                                    "logged_in": True,
+                                    "username": row_u["Tên đăng nhập"],
+                                    "fullname": row_u["Họ và tên"],
+                                    "role": row_u["Vai trò"],
+                                    "chuc_danh": row_u.get("Chức danh", row_u["Vai trò"]),
+                                    "ma_lien_ket": str(row_u.get("Mã liên kết", "")).strip(),
+                                    "phone": str(row_u.get("Số điện thoại", "")).strip(),
+                                    "quyen_quan_ly": str(row_u.get("Quyền quản lý", "Cá nhân")).strip()
+                                }
+                                if "dang_nhap" in st.query_params:
+                                    del st.query_params["dang_nhap"]
+                                st.rerun()
                         else:
-                            st.error(f"❌ Tài khoản hoặc số điện thoại '{ten_dn}' không tồn tại. Vui lòng kiểm tra lại!")
+                            st.error("❌ Mật khẩu không chính xác!")
+                    else:
+                        st.error(f"❌ Tài khoản hoặc SĐT '{ten_dn}' không tồn tại!")
 
-
-        with st.expander("💡 **HƯỚNG DẪN TÀI KHOẢN ĐĂNG NHẬP THEO TỪNG VỊ TRÍ:**", expanded=False):
-            st.markdown("""
-            | Vị trí / Đối tượng | Tên đăng nhập mẫu | Mật khẩu ban đầu |
-            | :--- | :---: | :---: |
-            | **👑 Hiệu Trưởng / BGH** | `hieutruong` hoặc `admin` | `ht123` / `bgh123` |
-            | **👑 Phó Hiệu Trưởng (Bán trú / CM)** | `phohieutruong1` / `phohieutruong2` | `pht123` |
-            | **🚩 Bí Thư & Ban Chấp Hành Đoàn** | `bithudoan` | `dtn123` |
-            | **🚩 Đội Cờ Đỏ Chấm Nề Nếp** | `codo` | `codo123` |
-            | **👨‍🏫 Giáo viên Quản nhiệm / Trực KTX** | `quannhiem` / `gvtruc01` / `gvtruc02` | `qn123` / `truc123` |
-            | **👨‍🏫 Giáo viên Chủ nhiệm (21 Lớp)** | `gvcn_10a1`, `gvcn_10a2`, `gvcn_11a1`... | `gvcn123` |
-            | **🍳 Bếp Trưởng & Tổ Cấp Dưỡng** | `beptruong` / `capduong` / `nhabep` | `bep123` |
-            | **💰 Kế Toán Bán Trú** | `ketoan` | `kt123` |
-            | **🎒 Học sinh Bán trú KTX** | Mã HS (VD: `hsn001`, `hsu001`) hoặc SĐT HS | `hs123` |
-            | **👨‍👩‍👧 Phụ huynh Học sinh** | **Số điện thoại Bố/Mẹ** hoặc `ph_hsn001`... | `ph123` |
-            """)
-
-    with col_l2:
+    with st.expander("📱 Cài đặt App & Tài khoản mẫu"):
         link_qr_cai_app = duong_dan_app_mobile if duong_dan_app_mobile else duong_dan_online
         st.markdown(f"""
-        <div style="border: 2px solid #16A34A; padding: 18px; border-radius: 14px; background: #F0FDF4; box-shadow: 0 4px 12px rgba(22, 163, 74, 0.12); text-align: center;">
-            <div style="background:#16A34A; color:white; display:inline-block; padding:4px 14px; border-radius:20px; font-weight:bold; font-size:12px; margin-bottom:8px;">
-                📱 CÀI ĐẶT APP LÊN ĐIỆN THOẠI (CÓ LOGO TRƯỜNG)
-            </div>
-            <h4 style="color:#15803D; margin:4px 0 8px 0;">DÙNG CAMERA ĐIỆN THOẠI QUÉT MÃ</h4>
-            <div style="background:white; padding:10px; border-radius:10px; display:inline-block; border:1px solid #BBF7D0;">
-                <img src="https://api.qrserver.com/v1/create-qr-code/?size=280x280&data={link_qr_cai_app}" width="210" style="display:block; border-radius:6px;">
-            </div>
-            <p style="margin-top:8px; font-size:13px; font-weight:bold; color:#166534; margin-bottom:4px;">
-                Cổng cài đặt App Logo Trường:<br>
-                <a href="{link_qr_cai_app}" target="_blank" style="color:#2563EB; font-size:13.5px; word-break:break-all; text-decoration:underline;">{link_qr_cai_app}</a>
-            </p>
-            <div style="text-align: left; background: #FEF3C7; border: 1px solid #F59E0B; padding: 8px 12px; border-radius: 8px; font-size: 11.5px; line-height: 1.45; color: #92400E; margin-top: 8px;">
-                ⚠️ <b>LƯU Ý QUAN TRỌNG:</b> Nếu máy Thầy/Cô đang có biểu tượng cũ hình vương miện đỏ, vui lòng <b>nhấn giữ & xóa biểu tượng cũ đó đi</b> trước khi cài lại để hiển thị chuẩn Logo trường!
-            </div>
-            <div style="text-align: left; background: white; padding: 10px 14px; border-radius: 8px; border: 1px solid #E2E8F0; font-size: 12px; line-height: 1.5; color: #1E293B; margin-top: 8px;">
-                <b>📲 CÁCH CÀI THÀNH APP MÀN HÌNH CHÍNH:</b><br>
-                🍏 <b>iPhone (Safari):</b> Mở link cổng trên ➜ Bấm nút <b>Chia sẻ</b> ⬆️ ở đáy Safari ➜ Chọn <b>"Thêm vào MH chính"</b>.<br>
-                🤖 <b>Android (Chrome):</b> Mở link cổng trên ➜ Bấm <b>3 chấm ⋮</b> ➜ Chọn <b>"Cài đặt ứng dụng"</b>.
-            </div>
+        <div style="text-align:center; padding:8px; background:white; border-radius:8px; border:1px solid #E2E8F0; margin-bottom:8px;">
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=160x160&data={link_qr_cai_app}" width="120" style="display:block; margin:0 auto; border-radius:6px;">
+            <div style="font-size:11px; color:#166534; font-weight:bold; margin-top:4px;">Quét QR để cài App điện thoại</div>
         </div>
         """, unsafe_allow_html=True)
-        
-        file_qr_local = "D:\\QR_Cai_App_Ban_Tru.png"
-        if os.path.exists(file_qr_local):
-            with open(file_qr_local, "rb") as f_qr:
-                st.download_button(
-                    label="💾 Tải ảnh QR này về máy (gửi Zalo / In ấn)",
-                    data=f_qr.read(),
-                    file_name="QR_Cai_App_Ban_Tru_THPT2_BaoYen.png",
-                    mime="image/png",
-                    use_container_width=True
-                )
-    st.stop()
+        st.markdown("""
+        **Tài khoản mẫu:**
+        - **BGH / Admin:** `admin` (MK: `bgh123`)
+        - **Quản nhiệm:** `quannhiem` (MK: `qn123`)
+        - **Học sinh:** `hs0001` (MK: `hs123`)
+        - **Phụ huynh:** `phuhuynh` (MK: `ph123`)
+        """)
+
+@st.dialog("🔐 ĐĂNG NHẬP CỔNG ĐIỀU HÀNH THPT SỐ 2 BẢO YÊN")
+def dialog_dang_nhap_he_thong():
+    render_khu_vuc_dang_nhap(key_prefix="dlg_")
 
 # ========================================================
 # 3. THANH BÊN (SIDEBAR): KHI ĐÃ ĐĂNG NHẬP THÀNH CÔNG
@@ -964,83 +828,117 @@ with st.sidebar:
     ds_phan_he = [KENH_1]
     st.session_state.phan_he_hien_tai = KENH_1
 
-    # 3. Mục Thông tin đăng nhập: Thẻ hồ sơ chuyên nghiệp, dòng chữ cách đều, không chồng lấn
-    st.markdown("<div style='font-size: 12px; font-weight: 700; color: #475569; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px;'>🔐 THÔNG TIN ĐĂNG NHẬP</div>", unsafe_allow_html=True)
+    if st.session_state.user_login.get('logged_in', False):
+        # 3. Mục Thông tin đăng nhập: Thẻ hồ sơ chuyên nghiệp, dòng chữ cách đều, không chồng lấn
+        st.markdown("<div style='font-size: 12px; font-weight: 700; color: #475569; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px;'>🔐 THÔNG TIN ĐĂNG NHẬP</div>", unsafe_allow_html=True)
     
-    # Hiển thị huy hiệu vai trò
-    badge_color = {
-        "Ban Giám hiệu": "badge-bgh",
-        "Giáo viên quản lý": "badge-qn",
-        "Kế toán bán trú": "badge-kt",
-        "Nhà bếp / Cấp dưỡng": "badge-bep",
-        "Phụ huynh học sinh": "badge-ph",
-        "Học sinh": "badge-hs",
-        "Ban Chấp hành Đoàn": "badge-bep",
-        "Đội Cờ đỏ": "badge-bgh"
-    }.get(role_curr, "badge-bgh")
+        # Hiển thị huy hiệu vai trò
+        badge_color = {
+            "Ban Giám hiệu": "badge-bgh",
+            "Giáo viên quản lý": "badge-qn",
+            "Kế toán bán trú": "badge-kt",
+            "Nhà bếp / Cấp dưỡng": "badge-bep",
+            "Phụ huynh học sinh": "badge-ph",
+            "Học sinh": "badge-hs",
+            "Ban Chấp hành Đoàn": "badge-bep",
+            "Đội Cờ đỏ": "badge-bgh"
+        }.get(role_curr, "badge-bgh")
     
-    chuc_danh_hien = u_curr.get("chuc_danh", role_curr)
-    ma_lk_hien = u_curr.get("ma_lien_ket", "")
+        chuc_danh_hien = u_curr.get("chuc_danh", role_curr)
+        ma_lk_hien = u_curr.get("ma_lien_ket", "")
     
-    lk_badge_html = f"<div style='margin-bottom: 5px;'><span style='color: #64748B;'>🔗 Liên kết:</span> <code style='color: #0369A1; font-weight: bold;'>{ma_lk_hien}</code></div>" if (ma_lk_hien and ma_lk_hien != "Toàn trường") else ""
-    cong_dieu_hanh_trang_chu.st_html(f"""
-    <div style="background: #F8FAFC; border: 1px solid #E2E8F0; padding: 10px 12px; border-radius: 8px; font-size: 13px; line-height: 1.5; box-shadow: 0 1px 2px rgba(0,0,0,0.03);">
-        <div style="margin-bottom: 5px;"><span style="color: #64748B;">👤 Người dùng:</span> <b style="color: #0F172A;">{u_curr['fullname']}</b></div>
-        <div style="margin-bottom: 5px;"><span style="color: #64748B;">📌 Chức danh:</span> <b style="color: #334155;">{chuc_danh_hien}</b></div>
-        {lk_badge_html}
-        <div style="margin-top: 6px;"><span style="color: #64748B;">Vai trò:</span> <span class='{badge_color}'>{role_curr}</span></div>
-    </div>
-    """)
+        lk_badge_html = f"<div style='margin-bottom: 5px;'><span style='color: #64748B;'>🔗 Liên kết:</span> <code style='color: #0369A1; font-weight: bold;'>{ma_lk_hien}</code></div>" if (ma_lk_hien and ma_lk_hien != "Toàn trường") else ""
+        cong_dieu_hanh_trang_chu.st_html(f"""
+        <div style="background: #F8FAFC; border: 1px solid #E2E8F0; padding: 10px 12px; border-radius: 8px; font-size: 13px; line-height: 1.5; box-shadow: 0 1px 2px rgba(0,0,0,0.03);">
+            <div style="margin-bottom: 5px;"><span style="color: #64748B;">👤 Người dùng:</span> <b style="color: #0F172A;">{u_curr['fullname']}</b></div>
+            <div style="margin-bottom: 5px;"><span style="color: #64748B;">📌 Chức danh:</span> <b style="color: #334155;">{chuc_danh_hien}</b></div>
+            {lk_badge_html}
+            <div style="margin-top: 6px;"><span style="color: #64748B;">Vai trò:</span> <span class='{badge_color}'>{role_curr}</span></div>
+        </div>
+        """)
     
-    # ⚙️ CHỨC NĂNG CÁ NHÂN HÓA & ĐỔI MẬT KHẨU DÀNH CHO MỌI TÀI KHOẢN (BGH, GVCN, BẾP, PHỤ HUYNH, HỌC SINH)
-    u_username = u_curr["username"]
-    df_tk_pw_check = pd.read_csv(FILE_TAI_KHOAN, encoding='utf-8-sig', dtype=str).fillna("")
-    user_row_curr = df_tk_pw_check[df_tk_pw_check["Tên đăng nhập"] == u_username]
-    is_default_pw = False
-    curr_phone = u_curr.get("phone", "")
-    curr_fullname = u_curr.get("fullname", "")
+        # ⚙️ CHỨC NĂNG CÁ NHÂN HÓA & ĐỔI MẬT KHẨU DÀNH CHO MỌI TÀI KHOẢN (BGH, GVCN, BẾP, PHỤ HUYNH, HỌC SINH)
+        u_username = u_curr["username"]
+        df_tk_pw_check = pd.read_csv(FILE_TAI_KHOAN, encoding='utf-8-sig', dtype=str).fillna("")
+        user_row_curr = df_tk_pw_check[df_tk_pw_check["Tên đăng nhập"] == u_username]
+        is_default_pw = False
+        curr_phone = u_curr.get("phone", "")
+        curr_fullname = u_curr.get("fullname", "")
     
-    if not user_row_curr.empty:
-        pw_now = str(user_row_curr.iloc[0]["Mật khẩu"]).strip()
-        curr_phone = str(user_row_curr.iloc[0].get("Số điện thoại", "")).replace(".0", "").strip()
-        curr_fullname = str(user_row_curr.iloc[0].get("Họ và tên", curr_fullname)).strip()
-        default_list = ['bgh123', 'ht123', 'pht123', 'qn123', 'truc123', 'gvcn123', 'bep123', 'kt123', 'hs123', 'ph123']
-        if pw_now in default_list:
-            is_default_pw = True
+        if not user_row_curr.empty:
+            pw_now = str(user_row_curr.iloc[0]["Mật khẩu"]).strip()
+            curr_phone = str(user_row_curr.iloc[0].get("Số điện thoại", "")).replace(".0", "").strip()
+            curr_fullname = str(user_row_curr.iloc[0].get("Họ và tên", curr_fullname)).strip()
+            default_list = ['bgh123', 'ht123', 'pht123', 'qn123', 'truc123', 'gvcn123', 'bep123', 'kt123', 'hs123', 'ph123']
+            if pw_now in default_list:
+                is_default_pw = True
 
-    if is_default_pw:
-        st.warning("🔔 **Nhắc nhở an toàn:** Bạn đang dùng mật khẩu ban đầu. Hãy đổi mật khẩu bên dưới để cá nhân hóa và bảo vệ tài khoản nhé!")
+        if is_default_pw:
+            st.warning("🔔 **Nhắc nhở an toàn:** Bạn đang dùng mật khẩu ban đầu. Hãy đổi mật khẩu bên dưới để cá nhân hóa và bảo vệ tài khoản nhé!")
 
-    with st.expander("⚙️ **Cá Nhân Hóa & Tài Khoản Của Tôi:**", expanded=is_default_pw):
-        tab_pw, tab_prof, tab_req_role, tab_my_veh = st.tabs(["🔑 Đổi mật khẩu", "👤 Thông tin cá nhân", "📝 Đề xuất quyền", "🛵 Xe của tôi"])
-        with tab_pw:
-            st.caption("🔒 Tự đặt mật khẩu riêng để bảo vệ tài khoản cá nhân của bạn:")
-            with st.form("form_doi_mat_khau_ca_nhan"):
-                pw_cu = st.text_input("Mật khẩu hiện tại:", type="password", placeholder="Nhập mật khẩu đang dùng...")
-                pw_moi = st.text_input("Mật khẩu mới:", type="password", placeholder="Nhập mật khẩu mới (tối thiểu 4 ký tự)...")
-                pw_xac_nhan = st.text_input("Xác nhận mật khẩu mới:", type="password", placeholder="Nhập lại mật khẩu mới...")
-                btn_save_pw = st.form_submit_button("💾 LƯU MẬT KHẨU MỚI", type="primary", use_container_width=True)
+        with st.expander("⚙️ **Cá Nhân Hóa & Tài Khoản Của Tôi:**", expanded=is_default_pw):
+            tab_pw, tab_prof, tab_req_role, tab_my_veh = st.tabs(["🔑 Đổi mật khẩu", "👤 Thông tin cá nhân", "📝 Đề xuất quyền", "🛵 Xe của tôi"])
+            with tab_pw:
+                st.caption("🔒 Tự đặt mật khẩu riêng để bảo vệ tài khoản cá nhân của bạn:")
+                with st.form("form_doi_mat_khau_ca_nhan"):
+                    pw_cu = st.text_input("Mật khẩu hiện tại:", type="password", placeholder="Nhập mật khẩu đang dùng...")
+                    pw_moi = st.text_input("Mật khẩu mới:", type="password", placeholder="Nhập mật khẩu mới (tối thiểu 4 ký tự)...")
+                    pw_xac_nhan = st.text_input("Xác nhận mật khẩu mới:", type="password", placeholder="Nhập lại mật khẩu mới...")
+                    btn_save_pw = st.form_submit_button("💾 LƯU MẬT KHẨU MỚI", type="primary", use_container_width=True)
                 
-                if btn_save_pw:
-                    df_tk_pw = pd.read_csv(FILE_TAI_KHOAN, encoding='utf-8-sig', dtype=str).fillna("")
-                    idx_user = df_tk_pw[df_tk_pw["Tên đăng nhập"] == u_username].index
+                    if btn_save_pw:
+                        df_tk_pw = pd.read_csv(FILE_TAI_KHOAN, encoding='utf-8-sig', dtype=str).fillna("")
+                        idx_user = df_tk_pw[df_tk_pw["Tên đăng nhập"] == u_username].index
                     
-                    if idx_user.empty:
-                        st.error("❌ Không tìm thấy thông tin tài khoản để đổi mật khẩu!")
-                    else:
-                        curr_real_pw = str(df_tk_pw.loc[idx_user[0], "Mật khẩu"]).strip()
-                        if pw_cu.strip() != curr_real_pw:
-                            st.error("❌ Mật khẩu hiện tại không chính xác!")
-                        elif len(pw_moi.strip()) < 4:
-                            st.error("⚠️ Mật khẩu mới quá ngắn! Vui lòng nhập tối thiểu 4 ký tự.")
-                        elif pw_moi.strip() != pw_xac_nhan.strip():
-                            st.error("❌ Mật khẩu mới và mật khẩu xác nhận không trùng khớp!")
+                        if idx_user.empty:
+                            st.error("❌ Không tìm thấy thông tin tài khoản để đổi mật khẩu!")
                         else:
-                            new_pw_clean = pw_moi.strip()
-                            df_tk_pw.loc[idx_user[0], "Mật khẩu"] = new_pw_clean
-                            df_tk_pw.to_csv(FILE_TAI_KHOAN, index=False, encoding='utf-8-sig')
+                            curr_real_pw = str(df_tk_pw.loc[idx_user[0], "Mật khẩu"]).strip()
+                            if pw_cu.strip() != curr_real_pw:
+                                st.error("❌ Mật khẩu hiện tại không chính xác!")
+                            elif len(pw_moi.strip()) < 4:
+                                st.error("⚠️ Mật khẩu mới quá ngắn! Vui lòng nhập tối thiểu 4 ký tự.")
+                            elif pw_moi.strip() != pw_xac_nhan.strip():
+                                st.error("❌ Mật khẩu mới và mật khẩu xác nhận không trùng khớp!")
+                            else:
+                                new_pw_clean = pw_moi.strip()
+                                df_tk_pw.loc[idx_user[0], "Mật khẩu"] = new_pw_clean
+                                df_tk_pw.to_csv(FILE_TAI_KHOAN, index=False, encoding='utf-8-sig')
                             
-                            # Đồng bộ sang các vị trí khác
+                                # Đồng bộ sang các vị trí khác
+                                for dest_dir in ['D:/phan_mem_ban_tru_cloud', 'd:/OneDrive/Hô sơ cá nhan/Học AI']:
+                                    p_sync = os.path.join(dest_dir, 'tai_khoan_nguoi_dung.csv')
+                                    if os.path.exists(dest_dir):
+                                        try:
+                                            df_tk_pw.to_csv(p_sync, index=False, encoding='utf-8-sig')
+                                        except Exception:
+                                            pass
+                                        
+                                st.success("🎉 Đổi mật khẩu thành công! Mật khẩu mới đã được kích hoạt.")
+                                st.balloons()
+                                st.rerun()
+
+            with tab_prof:
+                st.caption("📱 Cập nhật số điện thoại & thông tin cá nhân của CHÍNH BẠN:")
+                st.info("🔒 **Quy tắc phân quyền:** Bạn chỉ có thể sửa thông tin của chính mình. Chỉ Ban Giám Hiệu hoặc người được Admin cấp quyền quản lý mới có quyền chỉnh sửa người khác.")
+                with st.form("form_cap_nhat_thong_tin"):
+                    sdt_moi = st.text_input("Số điện thoại liên hệ:", value=curr_phone, placeholder="VD: 0912345678")
+                    ten_moi = st.text_input("Họ và tên hiển thị:", value=curr_fullname)
+                    st.text_input("Tên đăng nhập:", value=u_username, disabled=True)
+                    st.text_input("Vai trò hiện tại:", value=role_curr, disabled=True)
+                    btn_save_prof = st.form_submit_button("💾 LƯU THÔNG TIN CỦA TÔI", use_container_width=True)
+                
+                    if btn_save_prof:
+                        df_tk_pw = pd.read_csv(FILE_TAI_KHOAN, encoding='utf-8-sig', dtype=str).fillna("")
+                        idx_user = df_tk_pw[df_tk_pw["Tên đăng nhập"] == u_username].index
+                        if not idx_user.empty:
+                            clean_sdt = sdt_moi.strip().replace(" ", "").replace(".", "")
+                            df_tk_pw.loc[idx_user[0], "Số điện thoại"] = clean_sdt
+                            if ten_moi.strip():
+                                df_tk_pw.loc[idx_user[0], "Họ và tên"] = ten_moi.strip()
+                                st.session_state.user_login["fullname"] = ten_moi.strip()
+                            st.session_state.user_login["phone"] = clean_sdt
+                            df_tk_pw.to_csv(FILE_TAI_KHOAN, index=False, encoding='utf-8-sig')
                             for dest_dir in ['D:/phan_mem_ban_tru_cloud', 'd:/OneDrive/Hô sơ cá nhan/Học AI']:
                                 p_sync = os.path.join(dest_dir, 'tai_khoan_nguoi_dung.csv')
                                 if os.path.exists(dest_dir):
@@ -1048,296 +946,266 @@ with st.sidebar:
                                         df_tk_pw.to_csv(p_sync, index=False, encoding='utf-8-sig')
                                     except Exception:
                                         pass
-                                        
-                            st.success("🎉 Đổi mật khẩu thành công! Mật khẩu mới đã được kích hoạt.")
-                            st.balloons()
+                            st.success("🎉 Cập nhật thông tin cá nhân thành công!")
                             st.rerun()
 
-        with tab_prof:
-            st.caption("📱 Cập nhật số điện thoại & thông tin cá nhân của CHÍNH BẠN:")
-            st.info("🔒 **Quy tắc phân quyền:** Bạn chỉ có thể sửa thông tin của chính mình. Chỉ Ban Giám Hiệu hoặc người được Admin cấp quyền quản lý mới có quyền chỉnh sửa người khác.")
-            with st.form("form_cap_nhat_thong_tin"):
-                sdt_moi = st.text_input("Số điện thoại liên hệ:", value=curr_phone, placeholder="VD: 0912345678")
-                ten_moi = st.text_input("Họ và tên hiển thị:", value=curr_fullname)
-                st.text_input("Tên đăng nhập:", value=u_username, disabled=True)
-                st.text_input("Vai trò hiện tại:", value=role_curr, disabled=True)
-                btn_save_prof = st.form_submit_button("💾 LƯU THÔNG TIN CỦA TÔI", use_container_width=True)
-                
-                if btn_save_prof:
-                    df_tk_pw = pd.read_csv(FILE_TAI_KHOAN, encoding='utf-8-sig', dtype=str).fillna("")
-                    idx_user = df_tk_pw[df_tk_pw["Tên đăng nhập"] == u_username].index
-                    if not idx_user.empty:
-                        clean_sdt = sdt_moi.strip().replace(" ", "").replace(".", "")
-                        df_tk_pw.loc[idx_user[0], "Số điện thoại"] = clean_sdt
-                        if ten_moi.strip():
-                            df_tk_pw.loc[idx_user[0], "Họ và tên"] = ten_moi.strip()
-                            st.session_state.user_login["fullname"] = ten_moi.strip()
-                        st.session_state.user_login["phone"] = clean_sdt
-                        df_tk_pw.to_csv(FILE_TAI_KHOAN, index=False, encoding='utf-8-sig')
-                        for dest_dir in ['D:/phan_mem_ban_tru_cloud', 'd:/OneDrive/Hô sơ cá nhan/Học AI']:
-                            p_sync = os.path.join(dest_dir, 'tai_khoan_nguoi_dung.csv')
-                            if os.path.exists(dest_dir):
+            with tab_req_role:
+                st.caption("📝 Gửi đề xuất cấp quyền tới Ban Giám Hiệu / Admin:")
+                f_req = os.path.join(BASE_DIR, "de_xuat_cap_quyen.csv")
+                if os.path.exists(f_req):
+                    df_req = pd.read_csv(f_req, encoding='utf-8-sig', dtype=str).fillna("")
+                else:
+                    df_req = pd.DataFrame(columns=["Mã yêu cầu", "Tên đăng nhập", "Họ và tên", "Quyền xin cấp", "Lý do", "Ngày gửi", "Trạng thái"])
+            
+                my_reqs = df_req[df_req["Tên đăng nhập"] == u_username]
+                if not my_reqs.empty:
+                    st.markdown("**Các đề xuất bạn đã gửi:**")
+                    for _, r_rq in my_reqs.iterrows():
+                        tt = r_rq['Trạng thái']
+                        c_tt = "🟢" if tt == "Đã duyệt" else ("🔴" if tt == "Từ chối" else "🟡")
+                        st.caption(f"{c_tt} **{r_rq['Mã yêu cầu']}**: {r_rq['Quyền xin cấp']} ({tt}) - Ngày gửi: {r_rq['Ngày gửi']}")
+                    st.markdown("---")
+
+                with st.form("form_de_xuat_cap_quyen_cb"):
+                    opt_quyen = [
+                        "Quản lý phương tiện & Xe cộ",
+                        "Đội Cờ đỏ / Ban Chấp hành Đoàn",
+                        "Quản lý công việc & Lịch công tác tuần",
+                        "Ban Quản lý KTX & Bán trú",
+                        "Quản lý bếp ăn & Suất ăn",
+                        "Toàn quyền quản trị (Admin)"
+                    ]
+                    quyen_muon_xin = st.selectbox("Quyền muốn đề xuất cấp:", opt_quyen)
+                    ly_do_xin = st.text_area("Lý do / Phân công nhiệm vụ:", placeholder="Nhập lý do hoặc phân công của nhà trường để BGH phê duyệt...")
+                    btn_gui_dx = st.form_submit_button("📤 GỬI ĐỀ XUẤT CẤP QUYỀN", type="primary", use_container_width=True)
+                    if btn_gui_dx:
+                        if not ly_do_xin.strip():
+                            st.warning("Vui lòng ghi rõ lý do xin cấp quyền.")
+                        else:
+                            ma_moi = f"YC-{len(df_req) + 1:03d}"
+                            ngay_nay = date.today().strftime("%d/%m/%Y")
+                            new_row_rq = pd.DataFrame([{
+                                "Mã yêu cầu": ma_moi,
+                                "Tên đăng nhập": u_username,
+                                "Họ và tên": u_curr.get("fullname", ""),
+                                "Quyền xin cấp": quyen_muon_xin,
+                                "Lý do": ly_do_xin.strip(),
+                                "Ngày gửi": ngay_nay,
+                                "Trạng thái": "Chờ duyệt"
+                            }])
+                            df_req = pd.concat([df_req, new_row_rq], ignore_index=True)
+                            for d_sync in [f_req, os.path.join(BASE_DIR, "de_xuat_cap_quyen.csv"), os.path.join("D:/phan_mem_ban_tru_cloud", "de_xuat_cap_quyen.csv"), os.path.join("d:/OneDrive/Hô sơ cá nhan/Học AI", "de_xuat_cap_quyen.csv")]:
                                 try:
-                                    df_tk_pw.to_csv(p_sync, index=False, encoding='utf-8-sig')
+                                    df_req.to_csv(d_sync, index=False, encoding='utf-8-sig')
                                 except Exception:
                                     pass
-                        st.success("🎉 Cập nhật thông tin cá nhân thành công!")
-                        st.rerun()
+                            st.success(f"🎉 Đã gửi đề xuất ({ma_moi}) tới Ban Giám Hiệu thành công!")
+                            st.rerun()
 
-        with tab_req_role:
-            st.caption("📝 Gửi đề xuất cấp quyền tới Ban Giám Hiệu / Admin:")
-            f_req = os.path.join(BASE_DIR, "de_xuat_cap_quyen.csv")
-            if os.path.exists(f_req):
-                df_req = pd.read_csv(f_req, encoding='utf-8-sig', dtype=str).fillna("")
-            else:
-                df_req = pd.DataFrame(columns=["Mã yêu cầu", "Tên đăng nhập", "Họ và tên", "Quyền xin cấp", "Lý do", "Ngày gửi", "Trạng thái"])
+            with tab_my_veh:
+                st.caption("🛵 Quản lý phương tiện cá nhân & Mã QR của bạn:")
+                f_xe = os.path.join(BASE_DIR, "quan_ly_phuong_tien.csv")
+                if os.path.exists(f_xe):
+                    df_xe_all = pd.read_csv(f_xe, encoding='utf-8-sig', dtype=str).fillna("")
+                else:
+                    df_xe_all = pd.DataFrame()
             
-            my_reqs = df_req[df_req["Tên đăng nhập"] == u_username]
-            if not my_reqs.empty:
-                st.markdown("**Các đề xuất bạn đã gửi:**")
-                for _, r_rq in my_reqs.iterrows():
-                    tt = r_rq['Trạng thái']
-                    c_tt = "🟢" if tt == "Đã duyệt" else ("🔴" if tt == "Từ chối" else "🟡")
-                    st.caption(f"{c_tt} **{r_rq['Mã yêu cầu']}**: {r_rq['Quyền xin cấp']} ({tt}) - Ngày gửi: {r_rq['Ngày gửi']}")
-                st.markdown("---")
-
-            with st.form("form_de_xuat_cap_quyen_cb"):
-                opt_quyen = [
-                    "Quản lý phương tiện & Xe cộ",
-                    "Đội Cờ đỏ / Ban Chấp hành Đoàn",
-                    "Quản lý công việc & Lịch công tác tuần",
-                    "Ban Quản lý KTX & Bán trú",
-                    "Quản lý bếp ăn & Suất ăn",
-                    "Toàn quyền quản trị (Admin)"
-                ]
-                quyen_muon_xin = st.selectbox("Quyền muốn đề xuất cấp:", opt_quyen)
-                ly_do_xin = st.text_area("Lý do / Phân công nhiệm vụ:", placeholder="Nhập lý do hoặc phân công của nhà trường để BGH phê duyệt...")
-                btn_gui_dx = st.form_submit_button("📤 GỬI ĐỀ XUẤT CẤP QUYỀN", type="primary", use_container_width=True)
-                if btn_gui_dx:
-                    if not ly_do_xin.strip():
-                        st.warning("Vui lòng ghi rõ lý do xin cấp quyền.")
-                    else:
-                        ma_moi = f"YC-{len(df_req) + 1:03d}"
-                        ngay_nay = date.today().strftime("%d/%m/%Y")
-                        new_row_rq = pd.DataFrame([{
-                            "Mã yêu cầu": ma_moi,
-                            "Tên đăng nhập": u_username,
-                            "Họ và tên": u_curr.get("fullname", ""),
-                            "Quyền xin cấp": quyen_muon_xin,
-                            "Lý do": ly_do_xin.strip(),
-                            "Ngày gửi": ngay_nay,
-                            "Trạng thái": "Chờ duyệt"
-                        }])
-                        df_req = pd.concat([df_req, new_row_rq], ignore_index=True)
-                        for d_sync in [f_req, os.path.join(BASE_DIR, "de_xuat_cap_quyen.csv"), os.path.join("D:/phan_mem_ban_tru_cloud", "de_xuat_cap_quyen.csv"), os.path.join("d:/OneDrive/Hô sơ cá nhan/Học AI", "de_xuat_cap_quyen.csv")]:
-                            try:
-                                df_req.to_csv(d_sync, index=False, encoding='utf-8-sig')
-                            except Exception:
-                                pass
-                        st.success(f"🎉 Đã gửi đề xuất ({ma_moi}) tới Ban Giám Hiệu thành công!")
-                        st.rerun()
-
-        with tab_my_veh:
-            st.caption("🛵 Quản lý phương tiện cá nhân & Mã QR của bạn:")
-            f_xe = os.path.join(BASE_DIR, "quan_ly_phuong_tien.csv")
-            if os.path.exists(f_xe):
-                df_xe_all = pd.read_csv(f_xe, encoding='utf-8-sig', dtype=str).fillna("")
-            else:
-                df_xe_all = pd.DataFrame()
+                u_name = u_curr.get("fullname", "")
+                u_phone = str(u_curr.get("phone", "")).replace(".0", "").strip()
+                u_ref = str(u_curr.get("ma_lien_ket", "")).strip()
             
-            u_name = u_curr.get("fullname", "")
-            u_phone = str(u_curr.get("phone", "")).replace(".0", "").strip()
-            u_ref = str(u_curr.get("ma_lien_ket", "")).strip()
+                mask_my = pd.Series([False] * len(df_xe_all))
+                if not df_xe_all.empty:
+                    mask_my = (df_xe_all['Họ và tên'] == u_name) | (df_xe_all['Mã xe'] == u_ref)
+                    if u_phone:
+                        col_p = df_xe_all['SĐT Học sinh'].astype(str).str.replace(".0", "").str.strip()
+                        mask_my = mask_my | col_p.isin([u_phone, u_phone.lstrip('0'), '0' + u_phone.lstrip('0')])
             
-            mask_my = pd.Series([False] * len(df_xe_all))
-            if not df_xe_all.empty:
-                mask_my = (df_xe_all['Họ và tên'] == u_name) | (df_xe_all['Mã xe'] == u_ref)
-                if u_phone:
-                    col_p = df_xe_all['SĐT Học sinh'].astype(str).str.replace(".0", "").str.strip()
-                    mask_my = mask_my | col_p.isin([u_phone, u_phone.lstrip('0'), '0' + u_phone.lstrip('0')])
-            
-            my_xe = df_xe_all[mask_my] if not df_xe_all.empty else pd.DataFrame()
-            if not my_xe.empty:
-                r_my = my_xe.iloc[0]
-                st.markdown(f"**Biển số:** `{r_my['Biển số xe']}` | **Loại xe:** {r_my['Loại xe']}")
-                st.markdown(f"**Nơi gửi:** {r_my['Nơi gửi xe']} | **Số lần vi phạm:** `{r_my['Số lần vi phạm']}`")
+                my_xe = df_xe_all[mask_my] if not df_xe_all.empty else pd.DataFrame()
+                if not my_xe.empty:
+                    r_my = my_xe.iloc[0]
+                    st.markdown(f"**Biển số:** `{r_my['Biển số xe']}` | **Loại xe:** {r_my['Loại xe']}")
+                    st.markdown(f"**Nơi gửi:** {r_my['Nơi gửi xe']} | **Số lần vi phạm:** `{r_my['Số lần vi phạm']}`")
                 
-                # Hiển thị mã QR thẻ xe
-                txt_qr_my = phan_he_doan_thanh_nien.tao_noi_dung_qr_xe(r_my)
-                img_qr_my = tao_anh_qr_base64(txt_qr_my)
-                st.markdown(f"""
-                    <div style='text-align:center; background:#F0FDF4; border:1px solid #10B981; border-radius:8px; padding:10px; margin:8px 0;'>
-                        <p style='color:#059669; font-weight:bold; margin:0; font-size:12px;'>MÃ QR XE CỦA BẠN</p>
-                        <img src="{img_qr_my}" width="140" style="margin:5px 0;">
-                        <p style='color:#1E3A8A; font-weight:bold; margin:0;'>{r_my['Biển số xe']}</p>
-                    </div>
-                """, unsafe_allow_html=True)
+                    # Hiển thị mã QR thẻ xe
+                    txt_qr_my = phan_he_doan_thanh_nien.tao_noi_dung_qr_xe(r_my)
+                    img_qr_my = tao_anh_qr_base64(txt_qr_my)
+                    st.markdown(f"""
+                        <div style='text-align:center; background:#F0FDF4; border:1px solid #10B981; border-radius:8px; padding:10px; margin:8px 0;'>
+                            <p style='color:#059669; font-weight:bold; margin:0; font-size:12px;'>MÃ QR XE CỦA BẠN</p>
+                            <img src="{img_qr_my}" width="140" style="margin:5px 0;">
+                            <p style='color:#1E3A8A; font-weight:bold; margin:0;'>{r_my['Biển số xe']}</p>
+                        </div>
+                    """, unsafe_allow_html=True)
                 
-                with st.form("form_update_xe_sb"):
-                    my_bs_sb = st.text_input("Biển số xe:", value=str(r_my['Biển số xe']))
-                    my_loai_sb = st.selectbox("Loại xe:", ["Xe máy điện", "Xe đạp điện", "Xe máy <50cc", "Xe đạp"], index=["Xe máy điện", "Xe đạp điện", "Xe máy <50cc", "Xe đạp"].index(r_my['Loại xe']) if r_my['Loại xe'] in ["Xe máy điện", "Xe đạp điện", "Xe máy <50cc", "Xe đạp"] else 0)
-                    my_mau_sb = st.text_input("Màu xe / Nhãn hiệu:", value=str(r_my['Màu xe']))
-                    my_noigui_sb = st.selectbox("Nơi gửi xe:", ["Nhà xe KTX Bán trú", "Nhà xe Học sinh Khu A", "Nhà xe Học sinh Khu B"], index=0)
-                    my_sdt_sb = st.text_input("SĐT liên hệ xe:", value=str(r_my['SĐT Học sinh']))
-                    if st.form_submit_button("💾 LƯU CẬP NHẬT XE CỦA TÔI", use_container_width=True):
-                        idx_xe_sb = r_my.name
-                        df_xe_all.loc[idx_xe_sb, 'Biển số xe'] = my_bs_sb.strip()
-                        df_xe_all.loc[idx_xe_sb, 'Loại xe'] = my_loai_sb
-                        df_xe_all.loc[idx_xe_sb, 'Màu xe'] = my_mau_sb.strip()
-                        df_xe_all.loc[idx_xe_sb, 'Nơi gửi xe'] = my_noigui_sb
-                        df_xe_all.loc[idx_xe_sb, 'SĐT Học sinh'] = my_sdt_sb.strip()
-                        for d_sync in [f_xe, os.path.join(BASE_DIR, "quan_ly_phuong_tien.csv"), os.path.join("D:/phan_mem_ban_tru_cloud", "quan_ly_phuong_tien.csv"), os.path.join("d:/OneDrive/Hô sơ cá nhan/Học AI", "quan_ly_phuong_tien.csv")]:
-                            try:
-                                df_xe_all.to_csv(d_sync, index=False, encoding='utf-8-sig')
-                            except Exception:
-                                pass
-                        st.success("🎉 Cập nhật thông tin xe thành công!")
-                        st.rerun()
-            else:
-                st.info("💡 Bạn chưa đăng ký phương tiện trên hệ thống. Hãy đăng ký thông tin xe dưới đây:")
-                with st.form("form_reg_new_xe"):
-                    reg_bs = st.text_input("Biển số xe (VD: 24MD1-123.45):")
-                    reg_loai = st.selectbox("Loại xe:", ["Xe máy điện", "Xe đạp điện", "Xe máy <50cc", "Xe đạp"])
-                    reg_mau = st.text_input("Màu xe / Nhãn hiệu:")
-                    reg_noigui = st.selectbox("Nơi gửi xe:", ["Nhà xe KTX Bán trú", "Nhà xe Học sinh Khu A", "Nhà xe Học sinh Khu B"])
-                    if st.form_submit_button("✨ ĐĂNG KÝ PHƯƠNG TIỆN MỚI", type="primary", use_container_width=True):
-                        if not reg_bs.strip():
-                            st.warning("Vui lòng nhập biển số xe.")
-                        else:
-                            ma_xe_moi = f"XE-{len(df_xe_all) + 1:03d}"
-                            dong_xe_moi = pd.DataFrame([{
-                                'Mã xe': ma_xe_moi,
-                                'Họ và tên': u_name,
-                                'Lớp': u_curr.get('ma_lien_ket', '10A1'),
-                                'SĐT Học sinh': u_phone,
-                                'Loại xe': reg_loai,
-                                'Biển số xe': reg_bs.strip(),
-                                'Màu xe': reg_mau.strip(),
-                                'Nơi gửi xe': reg_noigui,
-                                'GVCN': 'Thầy/Cô GVCN',
-                                'SĐT GVCN': '0988123001',
-                                'Họ tên Phụ huynh': 'Phụ huynh ' + u_name,
-                                'SĐT Phụ huynh': u_phone,
-                                'Địa chỉ': 'Bảo Hà, Bảo Yên',
-                                'Tình trạng': 'Đủ điều kiện lưu hành',
-                                'Số lần vi phạm': 0,
-                                'Ghi chú': 'Cá nhân tự khai báo'
-                            }])
-                            df_xe_all = pd.concat([df_xe_all, dong_xe_moi], ignore_index=True)
+                    with st.form("form_update_xe_sb"):
+                        my_bs_sb = st.text_input("Biển số xe:", value=str(r_my['Biển số xe']))
+                        my_loai_sb = st.selectbox("Loại xe:", ["Xe máy điện", "Xe đạp điện", "Xe máy <50cc", "Xe đạp"], index=["Xe máy điện", "Xe đạp điện", "Xe máy <50cc", "Xe đạp"].index(r_my['Loại xe']) if r_my['Loại xe'] in ["Xe máy điện", "Xe đạp điện", "Xe máy <50cc", "Xe đạp"] else 0)
+                        my_mau_sb = st.text_input("Màu xe / Nhãn hiệu:", value=str(r_my['Màu xe']))
+                        my_noigui_sb = st.selectbox("Nơi gửi xe:", ["Nhà xe KTX Bán trú", "Nhà xe Học sinh Khu A", "Nhà xe Học sinh Khu B"], index=0)
+                        my_sdt_sb = st.text_input("SĐT liên hệ xe:", value=str(r_my['SĐT Học sinh']))
+                        if st.form_submit_button("💾 LƯU CẬP NHẬT XE CỦA TÔI", use_container_width=True):
+                            idx_xe_sb = r_my.name
+                            df_xe_all.loc[idx_xe_sb, 'Biển số xe'] = my_bs_sb.strip()
+                            df_xe_all.loc[idx_xe_sb, 'Loại xe'] = my_loai_sb
+                            df_xe_all.loc[idx_xe_sb, 'Màu xe'] = my_mau_sb.strip()
+                            df_xe_all.loc[idx_xe_sb, 'Nơi gửi xe'] = my_noigui_sb
+                            df_xe_all.loc[idx_xe_sb, 'SĐT Học sinh'] = my_sdt_sb.strip()
                             for d_sync in [f_xe, os.path.join(BASE_DIR, "quan_ly_phuong_tien.csv"), os.path.join("D:/phan_mem_ban_tru_cloud", "quan_ly_phuong_tien.csv"), os.path.join("d:/OneDrive/Hô sơ cá nhan/Học AI", "quan_ly_phuong_tien.csv")]:
                                 try:
                                     df_xe_all.to_csv(d_sync, index=False, encoding='utf-8-sig')
                                 except Exception:
                                     pass
-                            st.success(f"🎉 Đã đăng ký phương tiện ({reg_bs.strip()}) thành công!")
+                            st.success("🎉 Cập nhật thông tin xe thành công!")
                             st.rerun()
+                else:
+                    st.info("💡 Bạn chưa đăng ký phương tiện trên hệ thống. Hãy đăng ký thông tin xe dưới đây:")
+                    with st.form("form_reg_new_xe"):
+                        reg_bs = st.text_input("Biển số xe (VD: 24MD1-123.45):")
+                        reg_loai = st.selectbox("Loại xe:", ["Xe máy điện", "Xe đạp điện", "Xe máy <50cc", "Xe đạp"])
+                        reg_mau = st.text_input("Màu xe / Nhãn hiệu:")
+                        reg_noigui = st.selectbox("Nơi gửi xe:", ["Nhà xe KTX Bán trú", "Nhà xe Học sinh Khu A", "Nhà xe Học sinh Khu B"])
+                        if st.form_submit_button("✨ ĐĂNG KÝ PHƯƠNG TIỆN MỚI", type="primary", use_container_width=True):
+                            if not reg_bs.strip():
+                                st.warning("Vui lòng nhập biển số xe.")
+                            else:
+                                ma_xe_moi = f"XE-{len(df_xe_all) + 1:03d}"
+                                dong_xe_moi = pd.DataFrame([{
+                                    'Mã xe': ma_xe_moi,
+                                    'Họ và tên': u_name,
+                                    'Lớp': u_curr.get('ma_lien_ket', '10A1'),
+                                    'SĐT Học sinh': u_phone,
+                                    'Loại xe': reg_loai,
+                                    'Biển số xe': reg_bs.strip(),
+                                    'Màu xe': reg_mau.strip(),
+                                    'Nơi gửi xe': reg_noigui,
+                                    'GVCN': 'Thầy/Cô GVCN',
+                                    'SĐT GVCN': '0988123001',
+                                    'Họ tên Phụ huynh': 'Phụ huynh ' + u_name,
+                                    'SĐT Phụ huynh': u_phone,
+                                    'Địa chỉ': 'Bảo Hà, Bảo Yên',
+                                    'Tình trạng': 'Đủ điều kiện lưu hành',
+                                    'Số lần vi phạm': 0,
+                                    'Ghi chú': 'Cá nhân tự khai báo'
+                                }])
+                                df_xe_all = pd.concat([df_xe_all, dong_xe_moi], ignore_index=True)
+                                for d_sync in [f_xe, os.path.join(BASE_DIR, "quan_ly_phuong_tien.csv"), os.path.join("D:/phan_mem_ban_tru_cloud", "quan_ly_phuong_tien.csv"), os.path.join("d:/OneDrive/Hô sơ cá nhan/Học AI", "quan_ly_phuong_tien.csv")]:
+                                    try:
+                                        df_xe_all.to_csv(d_sync, index=False, encoding='utf-8-sig')
+                                    except Exception:
+                                        pass
+                                st.success(f"🎉 Đã đăng ký phương tiện ({reg_bs.strip()}) thành công!")
+                                st.rerun()
 
-    # Nút đăng xuất tài khoản
-    if st.button("🚪 ĐĂNG XUẤT (THOÁT RA)", type="secondary", use_container_width=True):
-        token_to_del = st.query_params.get("token", "")
-        if token_to_del:
-            xoa_phien_ghi_nho(token_to_del)
-            del st.query_params["token"]
-        st.components.v1.html("""
-            <script>
-                try { window.parent.localStorage.removeItem('thpt2_saved_token'); } catch(e) {}
-                try { localStorage.removeItem('thpt2_saved_token'); } catch(e) {}
-            </script>
-        """, height=0, width=0)
-        st.session_state.user_login = {
-            "logged_in": False,
-            "username": "",
-            "fullname": "",
-            "role": ""
-        }
-        st.rerun()
-    
-    # Đảm bảo nhận diện Admin tối cao để cho phép chuyển linh hoạt mọi vai trò
-    if role_curr == "Ban Giám hiệu" or u_curr.get("username") == "admin" or "Toàn quyền" in str(u_curr.get("quyen_quan_ly", "")):
-        st.session_state.is_admin_mode = True
-
-    if st.session_state.get("is_admin_mode", False):
-        st.markdown("---")
-        with st.expander("🔄 **CHUYỂN VAI TRÒ ĐỂ TRẢI NGHIỆM (ADMIN):**", expanded=(role_curr != "Ban Giám hiệu")):
-            danh_sach_vai_tro = [
-                "👑 Ban Giám hiệu (Toàn quyền Admin)",
-                "👨‍🏫 Giáo viên chủ nhiệm (GVCN Lớp 10A1)",
-                "👮 Giáo viên Quản nhiệm KTX Bán trú",
-                "🚩 Bí thư Đoàn trường / BCH Đoàn",
-                "⚖️ Đội Cờ đỏ chấm nề nếp",
-                "💰 Kế toán bán trú",
-                "🍳 Nhà bếp / Cấp dưỡng",
-                "👨‍👩‍👧 Phụ huynh học sinh",
-                "🎒 Học sinh bán trú (Trưởng phòng 301)"
-            ]
-            role_map = {
-                "👑 Ban Giám hiệu (Toàn quyền Admin)": {
-                    "username": "admin", "fullname": "Ban Giám Hiệu", "role": "Ban Giám hiệu", "chuc_danh": "Ban Giám Hiệu", "quyen_quan_ly": "Toàn quyền", "ma_lien_ket": "Toàn trường"
-                },
-                "👨‍🏫 Giáo viên chủ nhiệm (GVCN Lớp 10A1)": {
-                    "username": "gvcn10a1", "fullname": "Thầy Trần Văn Đoàn (GVCN 10A1)", "role": "Giáo viên quản lý", "chuc_danh": "GVCN Lớp 10A1", "ma_lien_ket": "10A1", "quyen_quan_ly": "Cá nhân"
-                },
-                "👮 Giáo viên Quản nhiệm KTX Bán trú": {
-                    "username": "quannhiem", "fullname": "Thầy Đỗ Văn Kiên (Tổ trưởng Quản nhiệm)", "role": "Giáo viên quản lý", "chuc_danh": "Tổ trưởng Quản nhiệm KTX", "ma_lien_ket": "Toàn trường", "quyen_quan_ly": "Ban Quản lý KTX & Bán trú"
-                },
-                "🚩 Bí thư Đoàn trường / BCH Đoàn": {
-                    "username": "doantruong", "fullname": "Thầy Hoàng Văn D (Bí thư Đoàn)", "role": "Ban Chấp hành Đoàn", "chuc_danh": "Bí thư Đoàn trường", "ma_lien_ket": "Toàn trường", "quyen_quan_ly": "Đội Cờ đỏ / Ban Chấp hành Đoàn"
-                },
-                "⚖️ Đội Cờ đỏ chấm nề nếp": {
-                    "username": "codo", "fullname": "Đội Cờ Đỏ Học Sinh", "role": "Đội Cờ đỏ", "chuc_danh": "Cờ đỏ toàn trường", "ma_lien_ket": "Toàn trường", "quyen_quan_ly": "Đội Cờ đỏ / Ban Chấp hành Đoàn"
-                },
-                "💰 Kế toán bán trú": {
-                    "username": "ketoan", "fullname": "Cô Phạm Thị Lan (Kế toán)", "role": "Kế toán bán trú", "chuc_danh": "Kế toán bán trú", "ma_lien_ket": "Toàn trường", "quyen_quan_ly": "Cá nhân"
-                },
-                "🍳 Nhà bếp / Cấp dưỡng": {
-                    "username": "nhabep", "fullname": "Tổ Cấp Dưỡng Nhà Bếp", "role": "Nhà bếp / Cấp dưỡng", "chuc_danh": "Tổ cấp dưỡng", "ma_lien_ket": "Toàn trường", "quyen_quan_ly": "Quản lý bếp ăn & Suất ăn"
-                },
-                "👨‍👩‍👧 Phụ huynh học sinh": {
-                    "username": "phuhuynh", "fullname": "Phụ Huynh Em Nguyễn Thị Thanh Thảo", "role": "Phụ huynh học sinh", "chuc_danh": "Phụ huynh học sinh 10A1", "ma_lien_ket": "HS0001", "quyen_quan_ly": "Cá nhân"
-                },
-                "🎒 Học sinh bán trú (Trưởng phòng 301)": {
-                    "username": "hocsinh", "fullname": "Em Nguyễn Thị Thanh Thảo", "role": "Học sinh", "chuc_danh": "Trưởng phòng (Phòng 301)", "ma_lien_ket": "HS0001", "quyen_quan_ly": "Cá nhân"
-                }
+        # Nút đăng xuất tài khoản
+        if st.button("🚪 ĐĂNG XUẤT (THOÁT RA)", type="secondary", use_container_width=True):
+            token_to_del = st.query_params.get("token", "")
+            if token_to_del:
+                xoa_phien_ghi_nho(token_to_del)
+                del st.query_params["token"]
+            st.components.v1.html("""
+                <script>
+                    try { window.parent.localStorage.removeItem('thpt2_saved_token'); } catch(e) {}
+                    try { localStorage.removeItem('thpt2_saved_token'); } catch(e) {}
+                </script>
+            """, height=0, width=0)
+            st.session_state.user_login = {
+                "logged_in": False,
+                "username": "",
+                "fullname": "",
+                "role": ""
             }
-            chon_role_nhanh = st.selectbox("Chọn vai trò trải nghiệm:", danh_sach_vai_tro, index=0)
-            if st.button("🚀 Chuyển xem & thực hiện ngay", use_container_width=True, type="primary"):
-                info_new = role_map[chon_role_nhanh]
-                st.session_state.user_login = {
-                    "logged_in": True,
-                    **info_new
-                }
-                st.rerun()
+            st.rerun()
+    
+        # Đảm bảo nhận diện Admin tối cao để cho phép chuyển linh hoạt mọi vai trò
+        if role_curr == "Ban Giám hiệu" or u_curr.get("username") == "admin" or "Toàn quyền" in str(u_curr.get("quyen_quan_ly", "")):
+            st.session_state.is_admin_mode = True
 
-            if role_curr != "Ban Giám hiệu":
-                if st.button("⬅️ Quay lại quyền Ban Giám Hiệu (Admin)", use_container_width=True):
+        if st.session_state.get("is_admin_mode", False):
+            st.markdown("---")
+            with st.expander("🔄 **CHUYỂN VAI TRÒ ĐỂ TRẢI NGHIỆM (ADMIN):**", expanded=(role_curr != "Ban Giám hiệu")):
+                danh_sach_vai_tro = [
+                    "👑 Ban Giám hiệu (Toàn quyền Admin)",
+                    "👨‍🏫 Giáo viên chủ nhiệm (GVCN Lớp 10A1)",
+                    "👮 Giáo viên Quản nhiệm KTX Bán trú",
+                    "🚩 Bí thư Đoàn trường / BCH Đoàn",
+                    "⚖️ Đội Cờ đỏ chấm nề nếp",
+                    "💰 Kế toán bán trú",
+                    "🍳 Nhà bếp / Cấp dưỡng",
+                    "👨‍👩‍👧 Phụ huynh học sinh",
+                    "🎒 Học sinh bán trú (Trưởng phòng 301)"
+                ]
+                role_map = {
+                    "👑 Ban Giám hiệu (Toàn quyền Admin)": {
+                        "username": "admin", "fullname": "Ban Giám Hiệu", "role": "Ban Giám hiệu", "chuc_danh": "Ban Giám Hiệu", "quyen_quan_ly": "Toàn quyền", "ma_lien_ket": "Toàn trường"
+                    },
+                    "👨‍🏫 Giáo viên chủ nhiệm (GVCN Lớp 10A1)": {
+                        "username": "gvcn10a1", "fullname": "Thầy Trần Văn Đoàn (GVCN 10A1)", "role": "Giáo viên quản lý", "chuc_danh": "GVCN Lớp 10A1", "ma_lien_ket": "10A1", "quyen_quan_ly": "Cá nhân"
+                    },
+                    "👮 Giáo viên Quản nhiệm KTX Bán trú": {
+                        "username": "quannhiem", "fullname": "Thầy Đỗ Văn Kiên (Tổ trưởng Quản nhiệm)", "role": "Giáo viên quản lý", "chuc_danh": "Tổ trưởng Quản nhiệm KTX", "ma_lien_ket": "Toàn trường", "quyen_quan_ly": "Ban Quản lý KTX & Bán trú"
+                    },
+                    "🚩 Bí thư Đoàn trường / BCH Đoàn": {
+                        "username": "doantruong", "fullname": "Thầy Hoàng Văn D (Bí thư Đoàn)", "role": "Ban Chấp hành Đoàn", "chuc_danh": "Bí thư Đoàn trường", "ma_lien_ket": "Toàn trường", "quyen_quan_ly": "Đội Cờ đỏ / Ban Chấp hành Đoàn"
+                    },
+                    "⚖️ Đội Cờ đỏ chấm nề nếp": {
+                        "username": "codo", "fullname": "Đội Cờ Đỏ Học Sinh", "role": "Đội Cờ đỏ", "chuc_danh": "Cờ đỏ toàn trường", "ma_lien_ket": "Toàn trường", "quyen_quan_ly": "Đội Cờ đỏ / Ban Chấp hành Đoàn"
+                    },
+                    "💰 Kế toán bán trú": {
+                        "username": "ketoan", "fullname": "Cô Phạm Thị Lan (Kế toán)", "role": "Kế toán bán trú", "chuc_danh": "Kế toán bán trú", "ma_lien_ket": "Toàn trường", "quyen_quan_ly": "Cá nhân"
+                    },
+                    "🍳 Nhà bếp / Cấp dưỡng": {
+                        "username": "nhabep", "fullname": "Tổ Cấp Dưỡng Nhà Bếp", "role": "Nhà bếp / Cấp dưỡng", "chuc_danh": "Tổ cấp dưỡng", "ma_lien_ket": "Toàn trường", "quyen_quan_ly": "Quản lý bếp ăn & Suất ăn"
+                    },
+                    "👨‍👩‍👧 Phụ huynh học sinh": {
+                        "username": "phuhuynh", "fullname": "Phụ Huynh Em Nguyễn Thị Thanh Thảo", "role": "Phụ huynh học sinh", "chuc_danh": "Phụ huynh học sinh 10A1", "ma_lien_ket": "HS0001", "quyen_quan_ly": "Cá nhân"
+                    },
+                    "🎒 Học sinh bán trú (Trưởng phòng 301)": {
+                        "username": "hocsinh", "fullname": "Em Nguyễn Thị Thanh Thảo", "role": "Học sinh", "chuc_danh": "Trưởng phòng (Phòng 301)", "ma_lien_ket": "HS0001", "quyen_quan_ly": "Cá nhân"
+                    }
+                }
+                chon_role_nhanh = st.selectbox("Chọn vai trò trải nghiệm:", danh_sach_vai_tro, index=0)
+                if st.button("🚀 Chuyển xem & thực hiện ngay", use_container_width=True, type="primary"):
+                    info_new = role_map[chon_role_nhanh]
                     st.session_state.user_login = {
                         "logged_in": True,
-                        "username": "admin",
-                        "fullname": "Ban Giám Hiệu",
-                        "role": "Ban Giám hiệu",
-                        "chuc_danh": "Ban Giám Hiệu",
-                        "quyen_quan_ly": "Toàn quyền"
+                        **info_new
                     }
                     st.rerun()
 
+                if role_curr != "Ban Giám hiệu":
+                    if st.button("⬅️ Quay lại quyền Ban Giám Hiệu (Admin)", use_container_width=True):
+                        st.session_state.user_login = {
+                            "logged_in": True,
+                            "username": "admin",
+                            "fullname": "Ban Giám Hiệu",
+                            "role": "Ban Giám hiệu",
+                            "chuc_danh": "Ban Giám Hiệu",
+                            "quyen_quan_ly": "Toàn quyền"
+                        }
+                        st.rerun()
 
-# ========================================================
-# Hiển thị thanh thông báo trải nghiệm dành cho Admin khi đang đóng vai trò khác
-if st.session_state.get("is_admin_mode", False) and role_curr != "Ban Giám hiệu":
-    c_w1, c_w2 = st.columns([3, 1])
-    with c_w1:
-        st.info(f"🔄 **CHẾ ĐỘ TRẢI NGHIỆM DÀNH CHO ADMIN:** Bạn đang xem và thao tác thử nghiệm với vai trò **{role_curr}** ({u_curr['fullname']}). Toàn bộ chức năng đã được mở đầy đủ để trải nghiệm.")
-    with c_w2:
-        if st.button("⬅️ Quay lại Admin", key="btn_top_back_bgh", type="primary", use_container_width=True):
-            st.session_state.user_login = {
-                "logged_in": True,
-                "username": "admin",
-                "fullname": "Ban Giám Hiệu",
-                "role": "Ban Giám hiệu",
-                "chuc_danh": "Ban Giám Hiệu",
-                "quyen_quan_ly": "Toàn quyền"
-            }
-            st.rerun()
+
+    # ========================================================
+    # Hiển thị thanh thông báo trải nghiệm dành cho Admin khi đang đóng vai trò khác
+    if st.session_state.get("is_admin_mode", False) and role_curr != "Ban Giám hiệu":
+        c_w1, c_w2 = st.columns([3, 1])
+        with c_w1:
+            st.info(f"🔄 **CHẾ ĐỘ TRẢI NGHIỆM DÀNH CHO ADMIN:** Bạn đang xem và thao tác thử nghiệm với vai trò **{role_curr}** ({u_curr['fullname']}). Toàn bộ chức năng đã được mở đầy đủ để trải nghiệm.")
+        with c_w2:
+            if st.button("⬅️ Quay lại Admin", key="btn_top_back_bgh", type="primary", use_container_width=True):
+                st.session_state.user_login = {
+                    "logged_in": True,
+                    "username": "admin",
+                    "fullname": "Ban Giám Hiệu",
+                    "role": "Ban Giám hiệu",
+                    "chuc_danh": "Ban Giám Hiệu",
+                    "quyen_quan_ly": "Toàn quyền"
+                }
+                st.rerun()
+
+    else:
+        render_khu_vuc_dang_nhap(key_prefix='sb_')
 
 # 4. ĐIỀU HƯỚNG CỔNG ĐIỀU HÀNH TOÀN DIỆN (KIẾN TRÚC SINGLE-PAGE 9 KHỐI LIỀN MẠCH CHUẨN NGHĨA ĐÔ)
 # ========================================================
@@ -1349,9 +1217,12 @@ cong_dieu_hanh_trang_chu.render_cong_dieu_hanh_toan_dien(
     THU_MUC_NAM_HOC=THU_MUC_NAM_HOC,
     nam_hoc_hien_tai=st.session_state.nam_hoc_hien_tai,
     logo_data_uri=logo_data_uri,
-    is_logged_in=True,
+    is_logged_in=st.session_state.user_login.get("logged_in", False),
     u_info=st.session_state.user_login
 )
+if st.query_params.get("dang_nhap") == "1" and not st.session_state.user_login.get("logged_in", False):
+    dialog_dang_nhap_he_thong()
+
 st.stop()
 
 # ========================================================

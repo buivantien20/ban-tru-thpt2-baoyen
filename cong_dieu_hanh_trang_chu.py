@@ -70,7 +70,7 @@ def render_top_brand_bar(nam_hoc="2026 - 2027", logo_data_uri="", is_logged_in=F
             </div>
             <div style="display:flex; align-items:center; gap:10px;">
                 <span style="background:#CBD5E1; color:#334155; padding:2px 10px; border-radius:12px; font-size:11.5px; font-weight:700;">Khách</span>
-                <a href="#khu-vuc-dang-nhap" style="background:#0D5C75; color:white; text-decoration:none; padding:4px 14px; border-radius:6px; font-size:12px; font-weight:700; display:inline-flex; align-items:center; gap:4px;">
+                <a href="?dang_nhap=1" target="_self" style="background:#0D5C75; color:white; text-decoration:none; padding:4px 14px; border-radius:6px; font-size:12px; font-weight:700; display:inline-flex; align-items:center; gap:4px;">
                     🔑 Đăng nhập hệ thống
                 </a>
             </div>
