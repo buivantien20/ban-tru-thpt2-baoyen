@@ -605,32 +605,24 @@ if not st.session_state.user_login.get("logged_in", False):
     import importlib
     importlib.reload(cong_dieu_hanh_trang_chu)
 
-    # 1. Hero Banner Thương Hiệu Đẳng Cấp & Trạng Thái Hệ Thống 24/7
-    cong_dieu_hanh_trang_chu.render_hero_banner(
-        nam_hoc=st.session_state.nam_hoc_hien_tai,
+    # Render Cổng điều hành toàn diện theo chuẩn cấu trúc Nghĩa Đô (9 Kênh & Thư mục tác nghiệp)
+    cong_dieu_hanh_trang_chu.render_cong_dieu_hanh_toan_dien(
+        BASE_DIR=BASE_DIR,
+        THU_MUC_NAM_HOC=THU_MUC_NAM_HOC,
+        nam_hoc_hien_tai=st.session_state.nam_hoc_hien_tai,
         logo_data_uri=logo_data_uri,
         is_logged_in=False
     )
 
-    # 2. Trung Tâm Chỉ Huy Tác Nghiệp Trực Tuyến Trong Ngày (Live Operations)
-    cong_dieu_hanh_trang_chu.render_trung_tam_chi_huy_live(
-        BASE_DIR=BASE_DIR,
-        THU_MUC_NAM_HOC=THU_MUC_NAM_HOC,
-        nam_hoc_hien_tai=st.session_state.nam_hoc_hien_tai
-    )
-
-    # 3. Tiện Ích Giáo Dục Số Mở Nhanh (8 Dịch Vụ Thiết Yếu)
-    cong_dieu_hanh_trang_chu.render_tien_ich_giao_duc_so()
-
-    cong_dieu_hanh_trang_chu.st_html("<hr style='border: 0; height: 1.5px; background: linear-gradient(to right, rgba(30, 58, 138, 0.05), rgba(30, 58, 138, 0.4), rgba(30, 58, 138, 0.05)); margin: 30px 0 20px 0;'>")
+    cong_dieu_hanh_trang_chu.st_html("<hr style='border: 0; height: 2px; background: linear-gradient(to right, rgba(13, 92, 117, 0.05), rgba(13, 92, 117, 0.5), rgba(13, 92, 117, 0.05)); margin: 35px 0 20px 0;'>")
 
     cong_dieu_hanh_trang_chu.st_html("""
-        <div style="background: linear-gradient(135deg, #1E3A8A 0%, #0F172A 100%); color: white; padding: 14px 20px; border-radius: 12px; margin-bottom: 20px; box-shadow: 0 4px 12px rgba(15, 23, 42, 0.15); display: flex; align-items: center; justify-content: space-between;">
+        <div id="khu-vuc-dang-nhap" style="background: linear-gradient(135deg, #0D5C75 0%, #103F75 100%); color: white; padding: 14px 20px; border-radius: 12px; margin-bottom: 20px; box-shadow: 0 4px 12px rgba(13, 92, 117, 0.2); display: flex; align-items: center; justify-content: space-between;">
             <div>
                 <h4 style="color: white; margin: 0; font-size: 16px; font-weight: 800; display: flex; align-items: center; gap: 8px;">
                     <span>🔐</span> KHU VỰC ĐĂNG NHẬP HỆ THỐNG & CÀI ĐẶT ỨNG DỤNG DI ĐỘNG
                 </h4>
-                <div style="color: #94A3B8; font-size: 12.5px; margin-top: 3px;">
+                <div style="color: #E2E8F0; font-size: 12.5px; margin-top: 3px;">
                     Dành cho Ban Giám Hiệu, Thầy Cô giáo, Nhân viên, Học sinh và Phụ huynh trường THPT số 2 Bảo Yên
                 </div>
             </div>
