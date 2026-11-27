@@ -388,8 +388,141 @@ def render_sticky_nav_bar(active_id=None):
             </div>
         </div>
     </nav>
+
+    <!-- SPA INSTANT CLIENT-SIDE SWITCHER (KHÔNG RELOAD TRANG - KHÔNG GIẬT) -->
+    <style>
+    div[class*="st-key-kenh_panel_"] {{
+        display: none !important;
+    }}
+    div[class*="st-key-kenh_panel_"].kenh-panel-active,
+    div.st-key-kenh_panel_{active_str} {{
+        display: block !important;
+    }}
+    .kenh-panel-active {{
+        display: block !important;
+        animation: kenhFadeIn 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    }}
+    @keyframes kenhFadeIn {{
+        0% {{ opacity: 0; transform: translateY(4px); }}
+        100% {{ opacity: 1; transform: translateY(0); }}
+    }}
+    </style>
     """
     st_html(nav_html)
+
+    # Đoạn mã JavaScript SPA Switcher chuyển kênh tức thì (0ms, không reload trình duyệt)
+    js_switcher = r"""
+    <script>
+    (function() {
+        function initKenhSwitcher() {
+            var links = document.querySelectorAll('a[href*="?kenh="]');
+            if (!links || links.length === 0) return;
+            
+            links.forEach(function(a) {
+                if (a._kenhBound) return;
+                a._kenhBound = true;
+                
+                a.addEventListener('click', function(e) {
+                    var href = this.getAttribute('href');
+                    if (!href) return;
+                    var m = href.match(/\?kenh=(\d+)(?:#(.*))?/);
+                    if (!m) return;
+                    
+                    var kId = m[1];
+                    var hash = m[2];
+                    var target = document.querySelector('div[class*="st-key-kenh_panel_' + kId + '"]');
+                    
+                    if (target) {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        
+                        // 1. Ẩn tất cả các panel kênh
+                        var allPanels = document.querySelectorAll('div[class*="st-key-kenh_panel_"]');
+                        allPanels.forEach(function(p) {
+                            p.style.setProperty('display', 'none', 'important');
+                            p.classList.remove('kenh-panel-active');
+                        });
+                        
+                        // 2. Hiện kênh được chọn
+                        target.style.setProperty('display', 'block', 'important');
+                        target.classList.add('kenh-panel-active');
+                        
+                        // 3. Cập nhật active tab trên navbar
+                        document.querySelectorAll('.shortcut-parent, .shortcut-home').forEach(function(el) {
+                            el.classList.remove('active');
+                        });
+                        var group = a.closest('.shortcut-group');
+                        var parentTab = group ? group.querySelector('.shortcut-parent') : a;
+                        if (parentTab && parentTab.classList.contains('shortcut-parent')) {
+                            parentTab.classList.add('active');
+                        } else if (a.classList.contains('shortcut-home')) {
+                            a.classList.add('active');
+                        }
+                        
+                        // 4. Cập nhật URL trình duyệt mà không reload
+                        var newUrl = '?kenh=' + kId + (hash ? '#' + hash : '');
+                        if (window.history && window.history.pushState) {
+                            window.history.pushState({kenh: kId}, '', newUrl);
+                        }
+                        
+                        // 5. Cuộn tới hash hoặc đầu trang
+                        if (hash) {
+                            setTimeout(function() {
+                                var el = document.getElementById(hash);
+                                if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                            }, 50);
+                        } else {
+                            window.scrollTo({ top: 0, behavior: 'smooth' });
+                        }
+                        
+                        // 6. Kích hoạt resize cho dataframe
+                        window.dispatchEvent(new Event('resize'));
+                    }
+                });
+            });
+        }
+
+        window.addEventListener('popstate', function() {
+            var p = new URLSearchParams(window.location.search);
+            var kId = p.get('kenh') || '1';
+            var hash = window.location.hash ? window.location.hash.substring(1) : '';
+            var target = document.querySelector('div[class*="st-key-kenh_panel_' + kId + '"]');
+            if (target) {
+                document.querySelectorAll('div[class*="st-key-kenh_panel_"]').forEach(function(p) {
+                    p.style.setProperty('display', 'none', 'important');
+                    p.classList.remove('kenh-panel-active');
+                });
+                target.style.setProperty('display', 'block', 'important');
+                target.classList.add('kenh-panel-active');
+                
+                document.querySelectorAll('.shortcut-parent, .shortcut-home').forEach(function(el) {
+                    el.classList.remove('active');
+                });
+                var activeLink = document.querySelector('a[href*="?kenh=' + kId + '"]');
+                if (activeLink) {
+                    var group = activeLink.closest('.shortcut-group');
+                    var parentTab = group ? group.querySelector('.shortcut-parent') : activeLink;
+                    if (parentTab) parentTab.classList.add('active');
+                }
+                if (hash) {
+                    var el = document.getElementById(hash);
+                    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+                window.dispatchEvent(new Event('resize'));
+            }
+        });
+
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initKenhSwitcher);
+        } else {
+            initKenhSwitcher();
+        }
+        setInterval(initKenhSwitcher, 350);
+    })();
+    </script>
+    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3C/svg%3E" onload="if(window.initKenhSwitcher) window.initKenhSwitcher();" style="display:none;" />
+    """
+    st_html(js_switcher)
 # =============================================================================
 # 3. HERO BANNER
 # =============================================================================
@@ -2538,71 +2671,57 @@ def render_cong_dieu_hanh_toan_dien(BASE_DIR, THU_MUC_NAM_HOC, nam_hoc_hien_tai,
     # 3. Thanh 9 Kênh ngang ghim trên đỉnh (Active tab sáng đèn tương ứng)
     render_sticky_nav_bar(active_id=kenh_hien_tai)
 
-    # Breadcrumb điều hướng quay về Trang Chủ nếu đang mở kênh con
-    if kenh_hien_tai != "1":
-        ten_kenh_map = {
-            "2": "📋 KÊNH 2: CÔNG VIỆC CẦN HOÀN THÀNH",
-            "3": "📅 KÊNH 3: LỊCH LÀM VIỆC & CÔNG TÁC TUẦN",
-            "4": "📊 KÊNH 4: THEO DÕI HẰNG NGÀY (SĨ SỐ & TIẾN ĐỘ)",
-            "5": "📈 KÊNH 5: KẾT QUẢ DẠY VÀ HỌC",
-            "6": "🚩 KÊNH 6: NỀN NẾP – RÈN LUYỆN & XE HỌC SINH",
-            "7": "🛏️ KÊNH 7: QUẢN LÝ BÁN TRÚ & KÝ TÚC XÁ",
-            "8": "📁 KÊNH 8: TÀI LIỆU, HỒ SƠ ĐIỆN TỬ & ĐÁNH GIÁ KPI",
-            "9": "🚀 KÊNH 9: TIỆN ÍCH GIÁO DỤC SỐ"
-        }
-        ten_k = ten_kenh_map.get(kenh_hien_tai, f"KÊNH {kenh_hien_tai}")
+
+
+    def render_breadcrumb_kenh(kenh_id, ten_k):
         st_html(f"""
         <div style="display:flex; justify-content:space-between; align-items:center; background:#F8FAFC; border:1px solid #E2E8F0; border-radius:8px; padding:6px 14px; margin-bottom:14px; font-size:12px;">
             <div style="color:#64748B;">
-                <a href="?kenh=1" target="_self" style="color:#0D5C75; text-decoration:none; font-weight:700;">🏠 Trang Chủ</a>
+                <a href="?kenh=1" style="color:#0D5C75; text-decoration:none; font-weight:700;">🏠 Trang Chủ</a>
                 <span style="margin: 0 6px;">›</span>
                 <span style="color:#0F172A; font-weight:800;">{ten_k}</span>
             </div>
-            <a href="?kenh=1" target="_self" style="background:#0D5C75; color:white; padding:4px 12px; border-radius:6px; text-decoration:none; font-weight:700; font-size:11.5px;">
+            <a href="?kenh=1" style="background:#0D5C75; color:white; padding:4px 12px; border-radius:6px; text-decoration:none; font-weight:700; font-size:11.5px;">
                 ◀ Quay về Trang Chủ
             </a>
         </div>
         """)
 
-    # 4. CHỈ HIỂN THỊ DUY NHẤT NỘI DUNG CỦA KÊNH ĐƯỢC CHỌN
-    if kenh_hien_tai == "1":
-        # KÊNH 1: TRANG CHỦ & TỔNG QUAN CHỈ SỐ VÀNG
+    # 4. RENDER TOÀN BỘ 9 KÊNH VÀO CONTAINER CHUYÊN BIỆT (SPA 0MS, KHÔNG RELOAD, KHÔNG GIẬT)
+    with st.container(key="kenh_panel_1"):
         render_kpi_tong_quan_trang_chu(BASE_DIR, THU_MUC_NAM_HOC, nam_hoc_hien_tai)
 
-    elif kenh_hien_tai == "2":
-        # KÊNH 2: CÔNG VIỆC CẦN HOÀN THÀNH
+    with st.container(key="kenh_panel_2"):
+        render_breadcrumb_kenh("2", "📋 KÊNH 2: CÔNG VIỆC CẦN HOÀN THÀNH")
         render_section_cong_viec(BASE_DIR, THU_MUC_NAM_HOC, nam_hoc_hien_tai, u_info=u_info)
 
-    elif kenh_hien_tai == "3":
-        # KÊNH 3: LỊCH LÀM VIỆC TUẦN
+    with st.container(key="kenh_panel_3"):
+        render_breadcrumb_kenh("3", "📅 KÊNH 3: LỊCH LÀM VIỆC & CÔNG TÁC TUẦN")
         render_section_lich_lam_viec(BASE_DIR, THU_MUC_NAM_HOC, nam_hoc_hien_tai)
 
-    elif kenh_hien_tai == "4":
-        # KÊNH 4: THEO DÕI HẰNG NGÀY
+    with st.container(key="kenh_panel_4"):
+        render_breadcrumb_kenh("4", "📊 KÊNH 4: THEO DÕI HẰNG NGÀY (SĨ SỐ & TIẾN ĐỘ)")
         render_section_theo_doi_hang_ngay(BASE_DIR, THU_MUC_NAM_HOC, nam_hoc_hien_tai)
 
-    elif kenh_hien_tai == "5":
-        # KÊNH 5: KẾT QUẢ DẠY & HỌC
+    with st.container(key="kenh_panel_5"):
+        render_breadcrumb_kenh("5", "📈 KÊNH 5: KẾT QUẢ DẠY VÀ HỌC")
         render_section_day_va_hoc(BASE_DIR, THU_MUC_NAM_HOC, nam_hoc_hien_tai)
 
-    elif kenh_hien_tai == "6":
-        # KÊNH 6: NỀN NẾP – RÈN LUYỆN
+    with st.container(key="kenh_panel_6"):
+        render_breadcrumb_kenh("6", "🚩 KÊNH 6: NỀN NẾP – RÈN LUYỆN & XE HỌC SINH")
         render_section_nen_nep(BASE_DIR, THU_MUC_NAM_HOC, nam_hoc_hien_tai, u_info=u_info)
 
-    elif kenh_hien_tai == "7":
-        # KÊNH 7: BÁN TRÚ & KTX
+    with st.container(key="kenh_panel_7"):
+        render_breadcrumb_kenh("7", "🛏️ KÊNH 7: QUẢN LÝ BÁN TRÚ & KÝ TÚC XÁ")
         render_section_ban_tru(BASE_DIR, THU_MUC_NAM_HOC, nam_hoc_hien_tai, u_info=u_info)
 
-    elif kenh_hien_tai == "8":
-        # KÊNH 8: HỒ SƠ – ĐÁNH GIÁ KPI
+    with st.container(key="kenh_panel_8"):
+        render_breadcrumb_kenh("8", "📁 KÊNH 8: TÀI LIỆU, HỒ SƠ ĐIỆN TỬ & ĐÁNH GIÁ KPI")
         render_section_ho_so_kpi(BASE_DIR, THU_MUC_NAM_HOC, nam_hoc_hien_tai)
 
-    elif kenh_hien_tai == "9":
-        # KÊNH 9: TIỆN ÍCH GIÁO DỤC SỐ
+    with st.container(key="kenh_panel_9"):
+        render_breadcrumb_kenh("9", "🚀 KÊNH 9: TIỆN ÍCH GIÁO DỤC SỐ")
         render_section_tien_ich_so()
-
-    else:
-        render_kpi_tong_quan_trang_chu(BASE_DIR, THU_MUC_NAM_HOC, nam_hoc_hien_tai)
 
     # 5. Chân trang Cổng điều hành
     render_portal_footer(nam_hoc=nam_hoc_hien_tai)
